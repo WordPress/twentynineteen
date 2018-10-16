@@ -28,3 +28,24 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block .editor-post-tit
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 2.8125em;
 }
+
+/** === Off-Center Content === */
+@media all and (min-width: 768px) {
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+  }
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow > div {
+    grid-column-start: 2;
+  }
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-post-title__block,
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-block-list__block {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-block-list__block[data-align="full"] {
+    width: 136%;
+    position: relative;
+    left: -18%;
+  }
+}

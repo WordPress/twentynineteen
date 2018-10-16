@@ -27,3 +27,31 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block {
 		font-size: $font__size-xxl;
 	}
 }
+
+/** === Off-Center Content === */
+
+body.gutenberg-editor-page .gutenberg .edit-post-layout {
+
+	@media all and (min-width: $tablet_width ) {
+		.editor-writing-flow {
+			display: grid;
+			grid-template-columns: 10% 80% 10%;
+
+			> div {
+				grid-column-start: 2;
+			}
+		}
+
+		.editor-post-title__block,
+		.editor-block-list__block {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.editor-block-list__block[data-align="full"] {
+			width: 136%;
+			position: relative;
+			left: -18%;
+		}
+	}
+}
