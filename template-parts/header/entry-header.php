@@ -1,6 +1,8 @@
 <?php
 /**
- * Displays entry heaer
+ * Template part for displaying entry header
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -8,6 +10,7 @@
  */
 
 ?>
+
 <?php if ( ! is_page() ) : ?>
 <?php $discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
 <?php endif; ?>
