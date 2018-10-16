@@ -1,6 +1,8 @@
 <?php
 /**
- * Displays author information
+ * Template part for displaying author info
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
