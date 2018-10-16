@@ -630,7 +630,7 @@ a {
 
 a:hover,
 a:active {
-  color: #00a0d2;
+  color: #005177;
   outline: 0;
   text-decoration: none;
 }
@@ -873,7 +873,7 @@ a:visited {
 }
 
 a:hover, a:active {
-  color: #00a0d2;
+  color: #005177;
   outline: 0;
   text-decoration: none;
 }
@@ -916,7 +916,7 @@ body.page .main-navigation {
 }
 
 .main-navigation ul.main-menu > li > a:hover {
-  color: #00a0d2;
+  color: #005177;
 }
 
 .main-navigation ul.main-menu > li > a:after {
@@ -1038,7 +1038,7 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a:hover {
-  color: #00a0d2;
+  color: #005177;
 }
 
 @media only screen and (min-width: 1168px) {
@@ -1998,7 +1998,7 @@ body.page .main-navigation {
 }
 
 .comment .comment-author .fn a:hover {
-  color: #00a0d2;
+  color: #005177;
 }
 
 .comment .comment-author .post-author-badge {
@@ -2102,7 +2102,7 @@ body.page .main-navigation {
 
 .comment-reply-link:hover,
 #cancel-comment-reply-link:hover {
-  color: #00a0d2;
+  color: #005177;
 }
 
 .discussion-avatar-list {
@@ -2882,7 +2882,7 @@ body.page .main-navigation {
 }
 
 .author-description p.author-bio a.author-link:hover {
-  color: #00a0d2;
+  color: #005177;
   text-decoration: none;
 }
 
