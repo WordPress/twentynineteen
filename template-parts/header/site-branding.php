@@ -1,6 +1,8 @@
 <?php
 /**
- * Displays header site branding
+ * Template part for displaying site branding
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -8,6 +10,7 @@
  */
 
 ?>
+
 <div class="site-branding">
 
 	<?php if ( has_custom_logo() ) : ?>
