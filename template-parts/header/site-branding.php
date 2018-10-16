@@ -14,9 +14,11 @@
 			if ( ! preg_match( '/\.\s*$/', $description )  ) $description .= '.';
 		}
 	?>
-	<p class="site-description">
-		<span class="separator">&mdash;</span> <?php echo $description; ?>
-	</p>
+	<?php if( ! empty( $description ) ) : ?>
+		<p class="site-description">
+			<span class="separator">&mdash;</span> <?php echo $description; ?>
+		</p>
+	<?php endif; ?>
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
 			<?php wp_nav_menu( array(
