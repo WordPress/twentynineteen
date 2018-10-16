@@ -51,7 +51,7 @@ h1 {
 }
 
 h1:before {
-  background: #919191;
+  background: #767676;
   content: "\020";
   display: block;
   height: 2px;
@@ -64,7 +64,7 @@ h2 {
 }
 
 h2:before {
-  background: #919191;
+  background: #767676;
   content: "\020";
   display: block;
   height: 2px;
@@ -108,7 +108,7 @@ figcaption {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.7111111111em;
   line-height: 1.6;
-  color: #919191;
+  color: #767676;
 }
 
 /** === Paragraph === */
@@ -243,7 +243,7 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.7111111111em;
   line-height: 1.6;
-  color: #919191;
+  color: #767676;
 }
 
 /** === Pullquote === */
@@ -301,7 +301,7 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
   font-size: 0.7111111111em;
   line-height: 1.6;
   text-transform: none;
-  color: #919191;
+  color: #767676;
 }
 
 body[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit,
@@ -363,12 +363,12 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
 
 /** === Table === */
 .wp-block-table td, .wp-block-table th {
-  border-color: #919191;
+  border-color: #767676;
 }
 
 /** === Separator === */
 .wp-block-separator:not(.is-style-dots) {
-  border-bottom: 2px solid #919191;
+  border-bottom: 2px solid #767676;
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
@@ -377,7 +377,7 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
 }
 
 .wp-block-separator.is-style-dots:before {
-  color: #919191;
+  color: #767676;
   font-size: 1.6875em;
   letter-spacing: 0.8888888889em;
 }
@@ -415,14 +415,14 @@ ul.wp-block-archives li a,
 ul.wp-block-archives li a:after,
 .wp-block-categories li a:after,
 .wp-block-latest-posts li a:after {
-  color: #919191;
+  color: #767676;
   content: ",";
 }
 
 ul.wp-block-archives li:last-child a:after,
 .wp-block-categories li:last-child a:after,
 .wp-block-latest-posts li:last-child a:after {
-  color: #919191;
+  color: #767676;
   content: ".";
 }
 
