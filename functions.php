@@ -44,7 +44,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1568, 9999 );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
 			'social' => __( 'Social Links Menu', 'twentynineteen' ),
