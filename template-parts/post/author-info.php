@@ -6,6 +6,7 @@
  * @subpackage Twenty_Nineteen
  * @since 1.0
  */
+
 ?>
 
 <?php if ( (bool) get_the_author_meta( 'description' ) ) : ?>
