@@ -117,8 +117,6 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
 function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) {
 		wp_add_inline_style( 'twentynineteen-style', twentynineteen_header_featured_image_css() );
 	}
@@ -128,6 +126,21 @@ function twentynineteen_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function twentynineteen_skip_link_focus_fix() {
+	echo '<script>';
+	echo file_get_contents( get_template_directory() . '/js/skip-link-focus-fix.js' );
+	echo '</script>';
+}
+add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 
 /**
  * SVG Icons class.
