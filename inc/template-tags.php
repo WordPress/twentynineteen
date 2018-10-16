@@ -290,8 +290,8 @@ if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
 		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 22 );
 		the_posts_pagination( array(
 			'mid_size'  => 2,
-			'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Older posts', 'twentynineteen' ) ),
-			'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Newer posts', 'twentynineteen' ), $next_icon ),
+			'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Newer posts', 'twentynineteen' ) ),
+			'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Older posts', 'twentynineteen' ), $next_icon ),
 		) );
 	}
 endif;
