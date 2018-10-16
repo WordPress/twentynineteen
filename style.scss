@@ -1,12 +1,12 @@
-/*!
+/*
 Theme Name: Twenty Nineteen
-Theme URI: https://github.com/WordPress/twenty-nineteen
-Author: Automattic
-Author URI: https://automattic.com
-Description: A new Gutenberg-ready blogging theme for WordPress.com
+Theme URI: https://github.com/WordPress/twentynineteen
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: A new Gutenberg-ready theme.
 Version: 1.0.0
 License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: LICENSE
 Text Domain: twentynineteen
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
@@ -49,7 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Comments
 # Blocks
 # Jetpack
-# Infinite scroll
 # Media
 	## Captions
 	## Galleries
@@ -108,10 +107,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Jetpack */
 
 @import "sass/modules/jetpack";
-
-/* Infinite scroll */
-
-@import "sass/modules/infinite-scroll";
 
 /* Media */
 
