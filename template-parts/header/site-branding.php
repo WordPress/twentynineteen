@@ -5,6 +5,7 @@
 	<?php endif; ?>
 
 	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		
 	<?php
 		// Only show description on front page.
 		$description = ( is_home() || is_front_page() ) ? get_bloginfo( 'description', 'display' ) : null;
