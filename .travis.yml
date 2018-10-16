@@ -60,14 +60,12 @@ before_script:
     # Create WordPress database.
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
     # Install CodeSniffer for WordPress Coding Standards checks.
-    - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
+    - wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
     # Install WordPress Coding Standards.
     - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
-    # Hop into CodeSniffer directory.
-    - cd php-codesniffer
     # Set install path for WordPress Coding Standards
     # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
+    - php phpcs.phar --config-set installed_paths wordpress-coding-standards
     # Hop into themes directory.
     - cd $theme_dir
     # After CodeSniffer install you should refresh your path.
@@ -94,4 +92,4 @@ script:
     # -n flag: Do not print warnings (shortcut for --warning-severity=0)
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
-    - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --extensions=php
+    - php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php
