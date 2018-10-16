@@ -14,7 +14,7 @@
 			if ( ! preg_match( '/\.\s*$/', $description )  ) $description .= '.';
 		}
 	?>
-	<?php if( ! empty( $description ) ) : ?>
+	<?php if( ! empty( $description ) || ( is_customize_preview() && ! is_null( $description ) ) ) : ?>
 		<p class="site-description">
 			<span class="separator">&mdash;</span> <?php echo $description; ?>
 		</p>
