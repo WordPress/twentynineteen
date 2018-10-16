@@ -10,9 +10,9 @@
 	// Only show description on front page.
 	$description = ( is_home() || is_front_page() ) ? get_bloginfo( 'description', 'display' ) : null;
 	?>
-	<?php if( ! empty( $description ) || ( is_customize_preview() && ! is_null( $description ) ) ) : ?>
+	<?php if( $description || ( is_customize_preview() && ! is_null( $description ) ) ) : ?>
 		<p class="site-description">
-			<span class="separator">&mdash;</span> <?php echo $description; ?>
+			<?php echo $description; ?>
 		</p>
 	<?php endif; ?>
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>

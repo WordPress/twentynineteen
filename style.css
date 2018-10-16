@@ -1379,7 +1379,8 @@ body.page .main-navigation {
   margin: 0;
 }
 
-.site-description .separator {
+.site-description:not(:empty):before {
+  content: "\2014";
   margin: 0 .2em;
 }
 
