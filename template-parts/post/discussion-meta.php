@@ -1,4 +1,15 @@
 <?php
+/**
+ * Displays discussion meta
+ *
+ * @package WordPress
+ * @subpackage Twenty_Nineteen
+ * @since 1.0
+ */
+
+?>
+
+<?php
 
 /* Get data from current discussion on post. */
 $discussion = twentynineteen_get_discussion_data();
@@ -25,5 +36,5 @@ if ( $has_responses ) {
 	<p class="discussion-meta-info">
 		<?php echo twentynineteen_get_icon_svg( 'comment', 24 ); ?>
 		<span><?php echo esc_html( $meta_label ); ?></span>
-	</p>
+	</p><!-- .discussion-meta-info -->
 </div><!-- .discussion-meta -->
