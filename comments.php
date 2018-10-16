@@ -86,7 +86,7 @@ if ( post_password_required() ) {
 				<span class="screen-reader-text"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ) ?></span>
 				<?php twentynineteen_comment_form( 'asc' ); ?>
 				<h2 class="comments-title" aria-hidden="true"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ) ?></h2>
-			</div>
+			</div><!-- .comment-form-flex -->
 		<?php endif;
 
 		// Show comment navigation
@@ -104,7 +104,7 @@ if ( post_password_required() ) {
 		if ( ! comments_open() ) : ?>
 			<p class="no-comments">
 				<?php esc_html_e( 'Comments are closed.', 'twentynineteen' ); ?>
-			</p>
+			</p><!-- .no-comments -->
 			<?php
 		endif;
 
