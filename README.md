@@ -47,10 +47,6 @@ normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 **License:** MIT
 Source: https://necolas.github.io/normalize.css/
 
-Material Design icons, Copyright Google
-**License:** Apache license version 2.0.
-Source: https://material.io/tools/icons/
-
 Bundled header image 1, Copyright XXXXX XXXXX
 **License:** CC0 1.0 Universal (CC0 1.0)
 Source: https://pexels.com/xxxxxxxxxx
