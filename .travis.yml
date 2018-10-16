@@ -1,12 +1,16 @@
 # Travis CI configuration file.
 # @link https://travis-ci.org/
 
-# For use with the Twenty Seventeen WordPress theme
-# @link https://github.com/WordPress/twentyseventeen/
+# For use with the Twenty Nineteen WordPress theme
+# @link https://github.com/WordPress/twentynineteen/
 
 # Declare project language and PHP versions to test against.
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
+
+# Newer versions like trusty don't have PHP 5.2 or 5.3
+# https://blog.travis-ci.com/2017-07-11-trusty-as-default-linux-is-coming
+dist: precise
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
@@ -41,7 +45,7 @@ before_script:
     - mkdir -p $WP_DEVELOP_DIR
     # Use the Git mirror of WordPress.
     - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
-    # Set up Twenty Seventeen theme information.
+    # Set up Twenty Nineteen theme information.
     - theme_slug=$(basename $(pwd))
     - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
     - cd ..
