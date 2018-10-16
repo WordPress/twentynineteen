@@ -7,13 +7,13 @@
 	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		
 	<?php
-		// Only show description on front page.
-		$description = ( is_home() || is_front_page() ) ? get_bloginfo( 'description', 'display' ) : null;
+	// Only show description on front page.
+	$description = ( is_home() || is_front_page() ) ? get_bloginfo( 'description', 'display' ) : null;
 
-		// Add a period to the end of the description sentence, if not available.
-		if ( ! empty( $description ) ) {
-			if ( ! preg_match( '/\.\s*$/', $description )  ) $description .= '.';
-		}
+	// Add a period to the end of the description sentence, if not available.
+	if ( ! empty( $description ) ) {
+		if ( ! preg_match( '/\.\s*$/', $description )  ) $description .= '.';
+	}
 	?>
 	<p class="site-description">
 		<span class="separator">&mdash;</span> <?php echo $description; ?>
