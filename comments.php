@@ -9,6 +9,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /* If the current post is protected by a password and

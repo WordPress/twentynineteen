@@ -13,10 +13,11 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 class Twenty_Nineteen_SVG_Icons {
-	
+
 	/**
 	 * Gets the SVG code for a given icon.
 	 */
@@ -37,7 +38,7 @@ class Twenty_Nineteen_SVG_Icons {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Detects the social network from a URL and returns the SVG code for its icon.
 	 */
@@ -125,7 +126,7 @@ class Twenty_Nineteen_SVG_Icons {
 </svg>',
 
 	);
-	
+
 	/**
 	 * Social Icons – domain mappings.
 	 *
@@ -176,10 +177,10 @@ class Twenty_Nineteen_SVG_Icons {
 			'wordpress.org',
 		),
 	);
-	
+
 	/**
 	 * Social Icons – svg sources.
-	 */	
+	 */
 	static $social_icons = array(
 		"500px" => '
 <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
