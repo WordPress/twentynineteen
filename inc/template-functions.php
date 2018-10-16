@@ -69,7 +69,7 @@ function twentynineteen_get_the_archive_title() {
 	} elseif ( is_month() ) {
 		$title = esc_html__( 'Monthly Archives:', 'twentynineteen' );
 	} elseif ( is_day() ) {
-		$title = esc_html__( 'Dayly Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Daily Archives:', 'twentynineteen' );
 	} elseif ( is_post_type_archive() ) {
 		$title = esc_html__( 'Post Type Archives:', 'twentynineteen' );
 	} elseif ( is_tax() ) {
