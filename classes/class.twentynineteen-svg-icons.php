@@ -53,7 +53,7 @@ class Twenty_Nineteen_SVG_Icons {
 				$regex_map[ $icon ] = sprintf( '/(%s)/i', implode( '|', $domains ) );
 			}
 		}
-		foreach( $regex_map as $icon => $regex ) {
+		foreach ( $regex_map as $icon => $regex ) {
 			if ( preg_match( $regex, $uri ) ) {
 				return self::get_svg( 'social', $icon, $size );
 			}
