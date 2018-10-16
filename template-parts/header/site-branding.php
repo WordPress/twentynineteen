@@ -16,7 +16,7 @@
 	?>
 	<?php if ( $description ) { ?>
 			<p class="site-description">
-			<span class="separator">&mdash;</span> <?php echo $description; ?>
+				<span class="separator">&mdash;</span> <?php echo $description; ?>
 			</p>
 		<?php } ?>
 	
