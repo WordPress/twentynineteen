@@ -8,7 +8,6 @@
  */
 
 ?>
-
 <div class="site-branding">
 
 	<?php if ( has_custom_logo() ) : ?>
