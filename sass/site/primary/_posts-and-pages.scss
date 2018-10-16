@@ -11,6 +11,14 @@
 	margin: 0 0 calc(1.5 * #{$size__spacing-unit});
 }
 
+.error-404 {
+	margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+
+	@include media(tablet) {
+		margin: calc(3 * #{ $size__spacing-unit}) calc(2 * (100vw / 12 ) ) $size__spacing-unit;
+	}
+}
+
 .hentry {
 
 	margin-top: calc(6 * #{$size__spacing-unit});
