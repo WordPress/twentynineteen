@@ -4,7 +4,6 @@ $author_bio_vsep_reduction_factor: 0.6;
 /* Jetpack specific modules */
 
 .author-description {
-	@include post-section-dash;
 
 	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 

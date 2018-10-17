@@ -2835,15 +2835,6 @@ body.page .main-navigation {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 
-.author-description:before {
-  background: #767676;
-  content: "\020";
-  display: block;
-  height: 2px;
-  margin: 1rem 0;
-  width: 1em;
-}
-
 @media only screen and (min-width: 768px) {
   .author-description {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
