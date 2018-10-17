@@ -13,5 +13,9 @@
 }
 
 .wp-caption-text {
+	font-family: $font__heading;
+	font-size: $font__size-xs;
+	line-height: 1.6;
+	color: $color__text-light;
 	text-align: center;
 }
