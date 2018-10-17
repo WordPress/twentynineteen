@@ -188,3 +188,11 @@ function twentynineteen_get_discussion_data() {
 	);
 	return $discussion;
 }
+
+/**
+ * Remove injected hard-coded style from image attachments with captions
+ */
+function twentynineteen_remove_caption_style( $caption_width ) {
+	return 0;
+}
+add_filter( 'img_caption_shortcode_width', 'twentynineteen_remove_caption_style' );
