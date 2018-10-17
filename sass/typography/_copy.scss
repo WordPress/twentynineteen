@@ -28,6 +28,7 @@ pre {
 	font-family: $font__pre;
 	line-height: $font__line-height-body;
 	overflow: hidden;
+	overflow-x: scroll;
 }
 
 code, kbd, tt, var {

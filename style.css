@@ -509,7 +509,8 @@ pre {
   font-size: 0.88889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
   line-height: 1.8;
-  overflow: hidden; }
+  overflow: hidden;
+  overflow-x: scroll; }
 
 code, kbd, tt, var {
   font-size: 0.88889em;
