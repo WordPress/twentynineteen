@@ -13,6 +13,10 @@ blockquote {
 		font-size: $font__size-lg;
 		font-style: italic;
 		line-height: $font__line-height-heading;
+
+		em {
+			font-style: normal;
+		}
 	}
 
 	cite {
