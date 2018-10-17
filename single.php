@@ -53,7 +53,5 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_template_part( 'template-parts/post/post', 'navigation' ); ?>
-
 <?php
 get_footer();
