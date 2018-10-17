@@ -1908,6 +1908,8 @@ a {
     margin-bottom: 0.5em;
     margin-top: 0.5em;
     color: #111; }
+    .entry-content .wp-block-pullquote p em {
+      font-style: normal; }
   .entry-content .wp-block-pullquote cite {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 0.71111em;
