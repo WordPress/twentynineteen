@@ -198,6 +198,26 @@
 		}
 	}
 
+	//! Latest posts grid view
+	.wp-block-latest-posts.is-grid {
+		li {
+			border-top: 2px solid $color__border;
+			padding-top: (1 * $size__spacing-unit);
+			margin-bottom: (2 * $size__spacing-unit);
+			a {
+				&:after {
+					content: '';
+				}
+			}
+			&:last-child {
+				margin-bottom: auto;
+				a:after {
+					content: '';
+				}
+			}
+		}
+	}
+
 	//! Latest preformatted text
 	.wp-block-preformatted {
 		font-size: $font__size-xs;
