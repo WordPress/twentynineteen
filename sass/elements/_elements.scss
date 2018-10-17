@@ -62,8 +62,8 @@ img {
 	max-width: 100%;
 	position: relative;
 	&:not(.emoji):not(.wp-smiley) {
-    	min-height: calc(3 * #{$size__spacing-unit});
-    }
+		min-height: calc(3 * #{$size__spacing-unit});
+	}
 	&:before {
 		background-color: $color__background-pre;
 		border: 1px dashed $color__background-hr;
