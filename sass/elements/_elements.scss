@@ -60,9 +60,10 @@ hr {
 img {
 	height: auto;
 	max-width: 100%;
-	min-height: calc(3 * #{$size__spacing-unit});
 	position: relative;
-
+	&:not(.emoji):not(.wp-smiley) {
+    	min-height: calc(3 * #{$size__spacing-unit});
+    }
 	&:before {
 		background-color: $color__background-pre;
 		border: 1px dashed $color__background-hr;
