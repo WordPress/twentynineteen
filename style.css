@@ -1262,14 +1262,36 @@ body.page .main-navigation {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.site-header {
-  padding: 1em;
+
+.custom-header {
+    position: relative;
+    padding: 1rem;
+    display: block;
+    height: auto;
+}
+
+.has-header-image .custom-header .wp-custom-header img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  top: 0;
+  -ms-transform: none;
+  -moz-transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
 
 @media only screen and (min-width: 768px) {
+  .custom-header {
+    position: relative;
+    padding: 3rem 1rem;
+  }
   .site-header {
     margin: 0;
-    padding: 3rem 0;
+    padding: 0;
   }
   .site-header.featured-image {
     display: flex;

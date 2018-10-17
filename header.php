@@ -26,15 +26,25 @@
 	<?php if ( is_home() || is_front_page() ) { ?>
 
 		<header id="masthead" class="site-header">
-			<?php get_template_part( 'template-parts/header/site', 'branding' ) ?>
+			<div class="custom-header">
+				<div class="custom-header-media">
+					<?php the_custom_header_markup(); ?>
+				</div>   
+				<?php get_template_part( 'template-parts/header/site', 'branding' ) ?>
+			</div><!-- .custom-header -->
 		</header><!-- #masthead -->
 
 	<?php } else { ?>
 
 		<header id="masthead" class="<?php echo ! is_archive() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header' ?>">
-			<div class="site-branding-container">
-				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-			</div><!-- .layout-wrap -->
+			<div class="custom-header">
+				<div class="custom-header-media">
+					<?php the_custom_header_markup(); ?>
+				</div>  
+				<div class="site-branding-container">
+					<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+				</div><!-- .layout-wrap -->
+			</div><!-- .custom-header -->
 
 			<?php if ( ! is_archive() && twentynineteen_can_show_post_thumbnail() ) : ?>
 				<div class="hentry">

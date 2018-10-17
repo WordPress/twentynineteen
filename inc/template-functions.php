@@ -22,6 +22,11 @@ function twentynineteen_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Add a class if there is a custom header.
+	if ( has_header_image() ) {
+		$classes[] = 'has-header-image';
+	}
+
 	// Adds a class if image filters are enabled.
 	if ( twentynineteen_image_filters_enabled() ) {
 		$classes[] = 'image-filters-enabled';

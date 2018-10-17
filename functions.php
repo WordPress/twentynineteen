@@ -140,6 +140,12 @@ require get_template_directory() . '/classes/class.twentynineteen-svg-icons.php'
 require get_template_directory() . '/classes/class.twentynineteen-walker-comment.php';
 
 /**
+* Custom Header.
+*/
+require get_template_directory() . '/inc/custom-header.php';
+
+
+/**
  * Enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
