@@ -430,7 +430,7 @@ ul.wp-block-archives,
 /** === Latest Posts grid view === */
 .wp-block-latest-posts.is-grid {
 		li {
-			border-top: 2px solid #E1E1E1;
+			border-top: 2px solid $color__border;
 			padding-top: (1 * $size__spacing-unit);
 			margin-bottom: (2 * $size__spacing-unit);
 			a {
