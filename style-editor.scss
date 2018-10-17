@@ -427,6 +427,26 @@ ul.wp-block-archives,
 	}
 }
 
+/** === Latest Posts grid view === */
+.wp-block-latest-posts.is-grid {
+		li {
+			border-top: 2px solid #E1E1E1;
+			padding-top: (1 * $size__spacing-unit);
+			margin-bottom: (2 * $size__spacing-unit);
+			a {
+				&:after {
+					content: '';
+				}
+			}
+			&:last-child {
+				margin-bottom: auto;
+				a:after {
+					content: '';
+				}
+			}
+		}
+	}
+
 /** === Latest Comments === */
 
 .wp-block-latest-comments {
