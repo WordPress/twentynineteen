@@ -19,7 +19,7 @@
 		<span class="separator">&mdash;</span> <?php echo $description; ?>
 	</p>
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
+		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
 			<?php 
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -29,7 +29,7 @@
 		</nav><!-- #site-navigation -->
 	<?php endif; ?>
 	<?php if ( has_nav_menu( 'social' ) ) : ?>
-		<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentynineteen' ); ?>">
+		<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentynineteen' ); ?>">
 			<?php 
 			wp_nav_menu( array(
 				'theme_location' => 'social',
