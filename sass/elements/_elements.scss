@@ -78,7 +78,7 @@ img {
 
 	&:after {
 		color: $color__text-input;
-		content: "This image is broken :-/ ( "attr(alt)" )";
+		content: " ";
 		display: block;
 		left: 50%;
 		position: absolute;
