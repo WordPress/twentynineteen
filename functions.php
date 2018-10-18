@@ -98,9 +98,9 @@ add_action( 'after_setup_theme', 'twentynineteen_setup' );
 
 
 /**
- * Set AMP flag.
+ * Check if AMP plugin is enabled and if AMP endpoint.
  */
-function is_amp_enabled() {
+function twentynineteen_amp_enabled() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
 
@@ -126,7 +126,7 @@ function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
 	// Don't include js on AMP endpoints.
-	if ( ! is_amp_enabled ) {
+	if ( ! twentynineteen_amp_enabled ) {
 		wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	}
 

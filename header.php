@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<?php if ( ! is_amp_enabled() ) { ?>
+	<?php if ( ! twentynineteen_amp_enabled() ) { ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php } else { ?>
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
