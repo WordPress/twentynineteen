@@ -1875,6 +1875,17 @@ a {
       color: #767676;
       content: "."; }
 
+.entry-content .wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem; }
+  .entry-content .wp-block-latest-posts.is-grid li a:after {
+    content: ''; }
+  .entry-content .wp-block-latest-posts.is-grid li:last-child {
+    margin-bottom: auto; }
+    .entry-content .wp-block-latest-posts.is-grid li:last-child a:after {
+      content: ''; }
+
 .entry-content .wp-block-preformatted {
   font-size: 0.71111em;
   line-height: 1.8;
@@ -1906,6 +1917,8 @@ a {
     margin-bottom: 0.5em;
     margin-top: 0.5em;
     color: #111; }
+    .entry-content .wp-block-pullquote p em {
+      font-style: normal; }
   .entry-content .wp-block-pullquote cite {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 0.71111em;
