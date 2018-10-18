@@ -2245,6 +2245,20 @@ body.page .main-navigation {
   color: #767676;
   content: ".";
 }
+.entry-content .wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+.entry-content .wp-block-latest-posts.is-grid li a:after {
+  content: "";
+}
+.entry-content .wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+.entry-content .wp-block-latest-posts.is-grid li:last-child a:after {
+  content: "";
+}
 .entry-content .wp-block-preformatted {
   font-size: 0.7111111111em;
   line-height: 1.8;
