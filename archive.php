@@ -8,7 +8,7 @@
  * @subpackage Twenty_Nineteen
  */
 
-get_header(); 
+get_header();
 ?>
 
 	<div id="primary" class="content-area">
@@ -51,5 +51,5 @@ get_header();
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php 
+<?php
 get_footer();
