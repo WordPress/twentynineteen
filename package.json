@@ -18,7 +18,9 @@
     "ie >= 8"
   ],
   "scripts": {
-    "build": "node-sass style.scss style.css && postcss -r style.css",
-    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial" 
+    "build:style": "node-sass style.scss style.css --output-style expanded && postcss -r style.css",
+    "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded && postcss -r style-editor.css",
+    "build": "run-p \"build:style\" \"build:style-editor\"",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
 }
