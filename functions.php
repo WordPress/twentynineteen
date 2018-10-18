@@ -96,6 +96,10 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
 
+function is_amp_enabled() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -118,7 +122,7 @@ function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
 	// Don't include js on AMP endpoints.
-	if ( ! is_amp_endpoint ) {
+	if ( ! is_amp_enabled ) {
 		wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	}
 
