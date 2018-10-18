@@ -470,3 +470,14 @@ ul.wp-block-archives,
 		font-size: $font__size-xs;
 	}
 }
+
+/** === Classic Editor === */
+
+.wp-caption {
+	&.aligncenter {
+		dd {
+			text-align: center;
+			margin-inline-start: 0px;
+		}
+	}
+}
