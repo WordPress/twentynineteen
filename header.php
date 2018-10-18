@@ -77,6 +77,4 @@
 			<?php endif; ?>
 		</header><!-- #masthead -->
 
-	<?php } ?>
-
 	<div id="content" class="site-content">

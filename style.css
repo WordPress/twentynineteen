@@ -49,7 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Comments
 # Blocks
 # Jetpack
-# Infinite scroll
 # Media
 	## Captions
 	## Galleries
@@ -1209,13 +1208,11 @@ body.page .main-navigation {
 
 /* Alignments */
 .alignleft {
-  display: inline;
   float: left;
   margin-right: 1rem;
 }
 
 .alignright {
-  display: inline;
   float: right;
   margin-left: 1rem;
 }
@@ -1320,7 +1317,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
   width: 32px;
   height: 32px;
@@ -1750,6 +1747,7 @@ body.page .main-navigation {
   left: 0;
   content: "\020";
   display: block;
+  pointer-events: none;
 }
 
 .image-filters-enabled .hentry .post-thumbnail:before {
@@ -2269,6 +2267,10 @@ body.page .main-navigation {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
+}
+
+.site-footer .site-info .imprint {
+  margin-right: 1rem;
 }
 
 .site-footer a {
