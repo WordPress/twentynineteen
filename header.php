@@ -23,19 +23,6 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-	<?php if ( is_home() || is_front_page() ) { ?>
-
-		<header id="masthead" class="site-header">
-			<div class="custom-header">
-				<div class="custom-header-media">
-					<?php the_custom_header_markup(); ?>
-				</div>   
-				<?php get_template_part( 'template-parts/header/site', 'branding' ) ?>
-			</div><!-- .custom-header -->
-		</header><!-- #masthead -->
-
-	<?php } else { ?>
-
 		<header id="masthead" class="<?php echo ! is_archive() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header' ?>">
 			<div class="custom-header">
 				<div class="custom-header-media">
@@ -86,7 +73,5 @@
 				</div>
 			<?php endif; ?>
 		</header><!-- #masthead -->
-
-	<?php } ?>
 
 	<div id="content" class="site-content">
