@@ -1,0 +1,24 @@
+{
+  "name": "twentynineteen",
+  "version": "1.0.0",
+  "description": "Default WP Theme",
+  "bugs": {
+    "url": "https://github.com/WordPress/twentynineteen/issues"
+  },
+  "homepage": "https://github.com/WordPress/twentynineteen#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "chokidar-cli": "^1.2.1",
+    "node-sass": "^4.9.3",
+    "postcss-cli": "^6.0.0",
+    "rtlcss": "^2.4.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 8"
+  ],
+  "scripts": {
+    "build": "node-sass style.scss style.css && postcss -r style.css",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial" 
+  }
+}
