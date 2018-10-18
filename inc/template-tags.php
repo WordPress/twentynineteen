@@ -22,8 +22,12 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
-
-		echo '<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>'; // WPCS: XSS OK.
+		
+		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">' . $time_string . '</a></span>',
+		twentynineteen_get_icon_svg( 'watch', 16 ),
+		esc_url( get_permalink() ),
+		$time_string );
+		// WPCS: XSS OK.
 
 	}
 endif;
@@ -56,24 +60,6 @@ if ( ! function_exists( 'twentynineteen_comment_count' ) ) :
 
 			echo '</span>';
 		}
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_estimated_read_time' ) ) :
-	/**
-	 * Prints HTML with the estimated reading time. Does not display when time to read is zero.
-	 */
-	function twentynineteen_estimated_read_time() {
-		$minutes = twentynineteen_get_estimated_reading_time();
-		if ( 0 === $minutes ) return null;
-		$datetime_attr = sprintf( '%dm 0s', $minutes );
-		$read_time_text = sprintf( _nx( '%s Minute', '%s Minutes', $minutes, 'Time to read', 'twentynineteen' ), $minutes );
-		/* translators: 1: SVG icon. 2: Reading time label, only visible to screen readers. 3: The [datetime] attribute for the <time> tag. 4: Estimated reading time text, in minutes. */
-		printf ( '<span class="est-reading-time">%1$s<span class="screen-reader-text">%2$s</span><time datetime="%3$s">%4$s</time></span>',
-			twentynineteen_get_icon_svg( 'watch', 16 ),
-			__( 'Estimated reading time', 'twentynineteen' ),
-			$datetime_attr,
-			$read_time_text );
 	}
 endif;
 
