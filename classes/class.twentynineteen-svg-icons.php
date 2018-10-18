@@ -23,7 +23,7 @@ class Twenty_Nineteen_SVG_Icons {
 	public static function get_svg( $group, $icon, $size ) {
 		if ( 'ui' == $group ) {
 			$arr = self::$ui_icons;
-		} else if ( 'social' == $group ) {
+		} elseif ( 'social' == $group ) {
 			$arr = self::$social_icons;
 		} else {
 			$arr = array();

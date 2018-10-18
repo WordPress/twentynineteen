@@ -255,7 +255,7 @@ if ( ! function_exists( 'twentynineteen_discussion_avatars_list' ) ) :
 	 */
 	function twentynineteen_discussion_avatars_list( $comment_authors ) {
 		if ( ! empty( $comment_authors ) ) {
-			$out = array('<ol class="discussion-avatar-list">');
+			$out = array( '<ol class="discussion-avatar-list">' );
 			foreach( $comment_authors as $id_or_email ) {
 				$out[] = sprintf( '<li>%s</li>', twentynineteen_get_user_avatar_markup( $id_or_email ) );
 			}
