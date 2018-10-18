@@ -1513,7 +1513,7 @@ body.page .main-navigation {
 .site-header.featured-image .hentry:after {
   background: #0073aa;
   mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: 0.69;
   z-index: 3;
 }
 
@@ -1753,7 +1753,7 @@ body.page .main-navigation {
 .image-filters-enabled .hentry .post-thumbnail:after {
   background: #0073aa;
   mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: 0.69;
   z-index: 3;
 }
 
