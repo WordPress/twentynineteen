@@ -96,6 +96,10 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
 
+
+/**
+ * Set AMP flag.
+ */
 function is_amp_enabled() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
