@@ -477,8 +477,6 @@ h2 {
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
   font-size: 1.6875em;
@@ -492,6 +490,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
   font-size: 1.125em;
 }
@@ -2865,16 +2865,20 @@ body.page .main-navigation {
 /* Jetpack */
 /* Jetpack specific modules */
 .author-description {
-  margin: 3.5em 0 2.1em;
+  margin: calc(2 * 1rem) 1rem 1rem;
 }
 
-.author-description:before {
-  background: #767676;
-  content: "\020";
-  display: block;
-  height: 2px;
-  margin: 1rem 0;
-  width: 1em;
+@media only screen and (min-width: 768px) {
+  .author-description {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .author-description {
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 .author-description h2.author-title {

@@ -57,8 +57,6 @@ h2 {
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
 	font-size: $font__size-lg;
@@ -72,6 +70,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
 	font-size: $font__size-md;
 }
