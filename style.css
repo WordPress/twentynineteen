@@ -1741,6 +1741,7 @@ body.page .main-navigation {
   left: 0;
   content: "\020";
   display: block;
+  pointer-events: none;
 }
 
 .image-filters-enabled .hentry .post-thumbnail:before {
