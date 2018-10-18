@@ -462,13 +462,27 @@ img:after,
 }
 
 h1 {
-  font-size: 2.8125em;
+  font-size: 2.25em;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.8125em;
+  }
 }
 
 .entry-title,
 .has-larger-font-size,
 h2 {
-  font-size: 2.25em;
+  font-size: 1.6875em;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-title,
+  .has-larger-font-size,
+  h2 {
+    font-size: 2.25em;
+  }
 }
 
 .has-regular-font-size,
@@ -2477,6 +2491,24 @@ body.page .main-navigation {
   content: ".";
 }
 
+.entry-content .wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.entry-content .wp-block-latest-posts.is-grid li a:after {
+  content: '';
+}
+
+.entry-content .wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+
+.entry-content .wp-block-latest-posts.is-grid li:last-child a:after {
+  content: '';
+}
+
 .entry-content .wp-block-preformatted {
   font-size: 0.7111111111em;
   line-height: 1.8;
@@ -2509,12 +2541,18 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-pullquote p {
-  font-size: 2.25em;
+  font-size: 1.6875em;
   font-style: italic;
   line-height: 1.3;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   color: #111;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content .wp-block-pullquote p {
+    font-size: 2.25em;
+  }
 }
 
 .entry-content .wp-block-pullquote cite {
@@ -2545,10 +2583,16 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color p {
-  font-size: 2.25em;
+  font-size: 1.6875em;
   line-height: 1.3;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content .wp-block-pullquote.is-style-solid-color p {
+    font-size: 2.25em;
+  }
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
@@ -2635,7 +2679,7 @@ body.page .main-navigation {
 .entry-content .wp-block-cover-image .wp-block-cover-image-text,
 .entry-content .wp-block-cover-image h2 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.25em;
+  font-size: 1.6875em;
   font-weight: bold;
   width: calc(100vw - (2 * 1rem));
   max-width: calc(100vw - (2 * 1rem));
@@ -2644,6 +2688,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .entry-content .wp-block-cover-image .wp-block-cover-image-text,
   .entry-content .wp-block-cover-image h2 {
+    font-size: 2.25em;
     width: calc(8 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
