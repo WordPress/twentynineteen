@@ -1311,7 +1311,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
   width: 32px;
   height: 32px;
@@ -2236,6 +2236,10 @@ body.page .main-navigation {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
+}
+
+.site-footer .site-info .imprint {
+  margin-right: 1rem;
 }
 
 .site-footer a {
