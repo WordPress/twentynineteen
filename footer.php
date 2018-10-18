@@ -18,7 +18,10 @@
 		<div class="site-info">
 			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php printf( __( 'Proudly powered by %s', 'twentynineteen' ), 'WordPress' ); ?>.
+				<?php
+				/* translators: %s: WordPress. */
+				printf( esc_html__( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' ); 
+				?>
 			</a>
 			<?php
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
