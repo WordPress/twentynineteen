@@ -620,4 +620,21 @@
 
 		}
 	}
+
+	//! Font Sizes
+	.has-small-font-size {
+		font-size: $font__size-sm;
+	}
+
+	.has-normal-font-size {
+		font-size: $font__size-md;
+	}
+
+	.has-large-font-size {
+		font-size: $font__size-lg;
+	}
+
+	.has-huge-font-size {
+		font-size: $font__size-xl;
+	}
 }
