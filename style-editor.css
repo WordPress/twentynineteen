@@ -238,6 +238,11 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
   text-transform: none;
   color: #767676; }
 
+body[data-type="core/pullquote"] em,
+body[data-type="core/pullquote"][data-align="left"] em,
+body[data-type="core/pullquote"][data-align="right"] em {
+  font-style: normal; }
+
 body[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit,
 body[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit {
   max-width: 50%; }
