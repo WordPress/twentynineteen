@@ -1,13 +1,15 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Custom comment walker for this theme
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
 
 /**
- * TODO: Class doc comment.
+ * This class outputs custom comment walker for HTML5 friendly WordPress comment and threaded replies.
+ *
+ * @since 1.0.0
  */
 class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
@@ -52,7 +54,6 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 							/* translators: %s: comment author link */
 							printf(
-								/* translators: TODO comment on placeholders */
 								__( '%s <span class="screen-reader-text says">says:</span>' ),
 								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
 							);
@@ -63,7 +64,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<?php /* translators: 1: comment date, 2: comment time */ ?>
 							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php echo twentynineteen_human_time_diff( get_comment_date( 'U' ) ); ?>
+								<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
 							</time>
 						</a>
 						<?php
