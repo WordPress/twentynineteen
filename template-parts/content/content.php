@@ -13,6 +13,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+		if ( is_sticky() && is_home() && ! is_paged() ) {
+			printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'twentynineteen' ) );
+		}
+		
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
