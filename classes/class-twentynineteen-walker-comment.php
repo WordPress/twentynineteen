@@ -5,6 +5,12 @@
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
+
+/**
+ * This class outputs custom comment walker for HTML5 friendly WordPress comment and threaded replies.
+ *
+ * @since 1.0.0
+ */
 class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 	/**
