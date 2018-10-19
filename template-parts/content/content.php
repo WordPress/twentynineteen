@@ -16,7 +16,6 @@
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'twentynineteen' ) );
 		}
-		
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
