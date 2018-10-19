@@ -4,9 +4,17 @@ $author_bio_vsep_reduction_factor: 0.6;
 /* Jetpack specific modules */
 
 .author-description {
-	@include post-section-dash;
 
-	margin: $author_bio_vsep 0 $author_bio_vsep_reduction_factor*$author_bio_vsep;
+	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+
+	@include media(tablet) {
+		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(tablet) {
+		max-width: calc(6 * (100vw / 12));
+	}
 
 	h2.author-title {
 		display: inline;

@@ -160,6 +160,7 @@
 				top: 0; left: 0;
 				content: "\020";
 				display: block;
+				pointer-events: none;
 			}
 
 			@include filter-duotone;

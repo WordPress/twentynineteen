@@ -24,10 +24,11 @@ $color__link-visited: #0073aa;
 $color__link-hover: darken( $color__link, 10% );
 
 // Borders
+$color__border: #ccc;
 $color__border-link: #0073aa;
 $color__border-link-hover: darken( $color__link, 10% );
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
+$color__border-input: $color__border;
 $color__border-abbr: #666;

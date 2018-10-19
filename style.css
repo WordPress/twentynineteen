@@ -5,7 +5,7 @@ Theme URI: https://github.com/WordPress/twentynineteen
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: A new Gutenberg-ready theme.
-Version: 1.0.0
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -49,7 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Comments
 # Blocks
 # Jetpack
-# Infinite scroll
 # Media
 	## Captions
 	## Galleries
@@ -422,6 +421,8 @@ textarea {
 .main-navigation,
 .page-description,
 h2.author-title,
+.not-found .page-title,
+.error-404 .page-title,
 .post-navigation .post-title,
 .pagination .nav-links,
 .comments-title,
@@ -467,6 +468,8 @@ h1 {
 }
 
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .has-larger-font-size,
 h2 {
   font-size: 2.25em;
@@ -474,8 +477,6 @@ h2 {
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
   font-size: 1.6875em;
@@ -489,6 +490,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
   font-size: 1.125em;
 }
@@ -529,6 +532,8 @@ h6 {
 
 .post-navigation .post-title,
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .comments-title {
   hyphens: auto;
   word-break: break-word;
@@ -566,7 +571,7 @@ pre {
   font-size: 0.8888888889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
   line-height: 1.8;
-  overflow: hidden;
+  overflow: auto;
 }
 
 code, kbd, tt, var {
@@ -1203,13 +1208,11 @@ body.page .main-navigation {
 
 /* Alignments */
 .alignleft {
-  display: inline;
   float: left;
   margin-right: 1rem;
 }
 
 .alignright {
-  display: inline;
   float: right;
   margin-left: 1rem;
 }
@@ -1314,7 +1317,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
   width: 32px;
   height: 32px;
@@ -1744,6 +1747,7 @@ body.page .main-navigation {
   left: 0;
   content: "\020";
   display: block;
+  pointer-events: none;
 }
 
 .image-filters-enabled .hentry .post-thumbnail:before {
@@ -2167,34 +2171,40 @@ body.page .main-navigation {
 ## Archives
 --------------------------------------------------------------*/
 .archive .page-header,
-.search .page-header {
+.search .page-header,
+.error404 .page-header {
   margin: 1rem 1rem calc(3 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
   .archive .page-header,
-  .search .page-header {
+  .search .page-header,
+  .error404 .page-header {
     margin: 0 calc(2 * (100vw / 12)) calc(3 * 1rem);
     max-width: calc(8 * (100vw / 12));
   }
 }
 
 .archive .page-header .page-title,
-.search .page-header .page-title {
+.search .page-header .page-title,
+.error404 .page-header .page-title {
   color: #767676;
   display: inline;
   letter-spacing: normal;
 }
 
 .archive .page-header .page-title:before,
-.search .page-header .page-title:before {
+.search .page-header .page-title:before,
+.error404 .page-header .page-title:before {
   display: none;
 }
 
 .archive .page-header .search-term,
 .archive .page-header .page-description,
 .search .page-header .search-term,
-.search .page-header .page-description {
+.search .page-header .page-description,
+.error404 .page-header .search-term,
+.error404 .page-header .page-description {
   display: inherit;
   clear: both;
 }
@@ -2202,7 +2212,9 @@ body.page .main-navigation {
 .archive .page-header .search-term:after,
 .archive .page-header .page-description:after,
 .search .page-header .search-term:after,
-.search .page-header .page-description:after {
+.search .page-header .page-description:after,
+.error404 .page-header .search-term:after,
+.error404 .page-header .page-description:after {
   content: ".";
   font-weight: bold;
   color: #767676;
@@ -2214,11 +2226,27 @@ body.page .main-navigation {
   }
 }
 
-.not-found .search-submit {
-  vertical-align: middle;
+/* 404 & Not found */
+.error-404.not-found .page-content,
+.no-results.not-found .page-content {
+  margin: calc(3 * 1rem) 1rem;
 }
 
-.not-found .search-field {
+@media only screen and (min-width: 768px) {
+  .error-404.not-found .page-content,
+  .no-results.not-found .page-content {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
+  }
+}
+
+.error-404.not-found .search-submit,
+.no-results.not-found .search-submit {
+  vertical-align: middle;
+  margin: 1rem 0;
+}
+
+.error-404.not-found .search-field,
+.no-results.not-found .search-field {
   width: 100%;
 }
 
@@ -2239,6 +2267,10 @@ body.page .main-navigation {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
+}
+
+.site-footer .site-info .imprint {
+  margin-right: 1rem;
 }
 
 .site-footer a {
@@ -2833,16 +2865,20 @@ body.page .main-navigation {
 /* Jetpack */
 /* Jetpack specific modules */
 .author-description {
-  margin: 3.5em 0 2.1em;
+  margin: calc(2 * 1rem) 1rem 1rem;
 }
 
-.author-description:before {
-  background: #767676;
-  content: "\020";
-  display: block;
-  height: 2px;
-  margin: 1rem 0;
-  width: 1em;
+@media only screen and (min-width: 768px) {
+  .author-description {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .author-description {
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 .author-description h2.author-title {
