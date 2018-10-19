@@ -1,14 +1,12 @@
 <?php
 /**
- * TODO: File doc comment.
+ * SVG Icons class
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
 
 /**
- * SVG Icons class.
- *
  * This class is in charge of displaying SVG icons across the site.
  *
  * Place each <svg> source on its own array key, without adding the
@@ -17,6 +15,8 @@
  *
  * All icons are assumed to have equal width and height, hence the option
  * to only specify a `$size` parameter in the svg methods.
+ *
+ * @since 1.0.0
  */
 class TwentyNineteen_SVG_Icons {
 

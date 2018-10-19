@@ -71,9 +71,7 @@ if ( ! function_exists( 'twentynineteen_estimated_read_time' ) ) :
 		if ( 0 === $minutes ) {
 			return null;
 		}
-		/* translators: TODO comment on placeholders */
 		$datetime_attr = sprintf( '%dm 0s', $minutes );
-		/* translators: TODO comment on placeholders */
 		$read_time_text = sprintf( _nx( '%s Minute', '%s Minutes', $minutes, 'Time to read', 'twentynineteen' ), $minutes );
 		/* translators: 1: SVG icon. 2: Reading time label, only visible to screen readers. 3: The [datetime] attribute for the <time> tag. 4: Estimated reading time text, in minutes. */
 		printf(
