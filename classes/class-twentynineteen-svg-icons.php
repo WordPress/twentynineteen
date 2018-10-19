@@ -1,13 +1,6 @@
 <?php
 /**
- * TODO: File doc comment.
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- */
-
-/**
- * SVG Icons class.
+ * SVG Icons class
  *
  * This class is in charge of displaying SVG icons across the site.
  *
@@ -17,6 +10,9 @@
  *
  * All icons are assumed to have equal width and height, hence the option
  * to only specify a `$size` parameter in the svg methods.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Nineteen
  */
 class TwentyNineteen_SVG_Icons {
 
