@@ -45,40 +45,54 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		set_post_thumbnail_size( 1568, 9999 );
 
 		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
-			'social' => __( 'Social Links Menu', 'twentynineteen' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'social' => __( 'Social Links Menu', 'twentynineteen' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'twentynineteen_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'twentynineteen_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		/**
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 190,
-			'width'       => 190,
-			'flex-width'  => false,
-			'flex-height' => false,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 190,
+				'width'       => 190,
+				'flex-width'  => false,
+				'flex-height' => false,
+			)
+		);
 
 		// Add support for Block Styles
 		add_theme_support( 'wp-block-styles' );
@@ -132,12 +146,12 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 /**
  * SVG Icons class.
  */
-require get_template_directory() . '/classes/class.twentynineteen-svg-icons.php';
+require get_template_directory() . '/classes/class-twentynineteen-svg-icons.php';
 
 /**
  * Custom Comment Walker template.
  */
-require get_template_directory() . '/classes/class.twentynineteen-walker-comment.php';
+require get_template_directory() . '/classes/class-twentynineteen-walker-comment.php';
 
 /**
  * Enhance the theme by hooking into WordPress.

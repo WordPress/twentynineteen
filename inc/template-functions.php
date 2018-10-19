@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Functions which enhance the theme by hooking into WordPress
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -45,10 +45,10 @@ add_action( 'wp_head', 'twentynineteen_pingback_header' );
  * Changes comment form default fields.
  */
 function twentynineteen_comment_form_defaults( $defaults ) {
-	$comment_field = $defaults[ 'comment_field' ];
+	$comment_field = $defaults['comment_field'];
 
 	// Adjust height of comment form.
-	$defaults[ 'comment_field' ] = preg_replace( '/rows="\d+"/', 'rows="5"', $comment_field );
+	$defaults['comment_field'] = preg_replace( '/rows="\d+"/', 'rows="5"', $comment_field );
 
 	return $defaults;
 }
@@ -118,7 +118,7 @@ function twentynineteen_can_show_post_thumbnail() {
  */
 function twentynineteen_get_estimated_reading_time() {
 	$content = get_post_field( 'post_content', get_the_ID() );
-	$count = str_word_count( strip_tags( $content ) );
+	$count   = str_word_count( strip_tags( $content ) );
 	return (int) round( $count / 250 ); // Assuming 250 words per minute reading speed.
 }
 
@@ -141,7 +141,7 @@ function twentynineteen_get_avatar_size() {
  *
  * @see get_comment_class()
  */
-function twentynineteen_is_comment_by_post_author( $comment=null ) {
+function twentynineteen_is_comment_by_post_author( $comment = null ) {
 	if ( is_object( $comment ) && $comment->user_id > 0 ) {
 		$user = get_userdata( $comment->user_id );
 		$post = get_post( $comment->comment_post_ID );
@@ -161,26 +161,28 @@ function twentynineteen_get_discussion_data() {
 	if ( $current_post_id === $post_id ) { /* If we have discussion information for post ID, return cached object */
 		return $discussion;
 	}
-	$authors = array();
+	$authors    = array();
 	$commenters = array();
-	$user_id = is_user_logged_in() ? get_current_user_id() : -1;
-	$comments = get_comments( array(
-		'post_id' => $current_post_id,
-		'orderby' => 'comment_date_gmt',
-		'order'   => get_option( 'comment_order', 'asc' ), /* Respect comment order from Settings » Discussion. */
-		'status'  => 'approve',
-	) );
-	foreach( $comments as $comment ) {
+	$user_id    = is_user_logged_in() ? get_current_user_id() : -1;
+	$comments   = get_comments(
+		array(
+			'post_id' => $current_post_id,
+			'orderby' => 'comment_date_gmt',
+			'order'   => get_option( 'comment_order', 'asc' ), /* Respect comment order from Settings » Discussion. */
+			'status'  => 'approve',
+		)
+	);
+	foreach ( $comments as $comment ) {
 		$comment_user_id = (int) $comment->user_id;
 		if ( $comment_user_id !== $user_id ) {
-			$authors[] = ( $comment_user_id > 0 ) ? $comment_user_id : $comment->comment_author_email;
+			$authors[]    = ( $comment_user_id > 0 ) ? $comment_user_id : $comment->comment_author_email;
 			$commenters[] = $comment->comment_author_email;
 		}
 	}
-	$authors = array_unique( $authors );
-	$responses = count( $commenters );
+	$authors    = array_unique( $authors );
+	$responses  = count( $commenters );
 	$commenters = array_unique( $commenters );
-	$post_id = $current_post_id;
+	$post_id    = $current_post_id;
 	$discussion = (object) array(
 		'authors'    => array_slice( $authors, 0, 6 ), /* Unique authors commenting on post (a subset of), excluding current user. */
 		'commenters' => count( $commenters ),          /* Number of commenters involved in discussion, excluding current user. */

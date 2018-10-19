@@ -318,6 +318,10 @@ body[data-type="core/pullquote"][data-align="right"] {
 		text-transform: none;
 		color: $color__text-light;
 	}
+
+	em {
+		font-style: normal;
+	}
 }
 
 body[data-type="core/pullquote"][data-align="left"],

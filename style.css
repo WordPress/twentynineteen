@@ -5,7 +5,7 @@ Theme URI: https://github.com/WordPress/twentynineteen
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: A new Gutenberg-ready theme.
-Version: 1.0.0
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -421,6 +421,8 @@ textarea {
 .main-navigation,
 .page-description,
 h2.author-title,
+.not-found .page-title,
+.error-404 .page-title,
 .post-navigation .post-title,
 .pagination .nav-links,
 .comments-title,
@@ -472,6 +474,8 @@ h1 {
 }
 
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .has-larger-font-size,
 h2 {
   font-size: 1.6875em;
@@ -479,6 +483,8 @@ h2 {
 
 @media only screen and (min-width: 768px) {
   .entry-title,
+  .not-found .page-title,
+  .error-404 .page-title,
   .has-larger-font-size,
   h2 {
     font-size: 2.25em;
@@ -487,8 +493,6 @@ h2 {
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
   font-size: 1.6875em;
@@ -502,6 +506,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
   font-size: 1.125em;
 }
@@ -542,6 +548,8 @@ h6 {
 
 .post-navigation .post-title,
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .comments-title {
   hyphens: auto;
   word-break: break-word;
@@ -579,7 +587,7 @@ pre {
   font-size: 0.8888888889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
   line-height: 1.8;
-  overflow: hidden;
+  overflow: auto;
 }
 
 code, kbd, tt, var {
@@ -710,7 +718,6 @@ dd {
 img {
   height: auto;
   max-width: 100%;
-  min-height: calc(3 * 1rem);
   position: relative;
 }
 
@@ -1390,7 +1397,8 @@ body.page .main-navigation {
   margin: 0;
 }
 
-.site-description .separator {
+.site-description:not(:empty):before {
+  content: "\2014";
   margin: 0 .2em;
 }
 
@@ -1755,6 +1763,7 @@ body.page .main-navigation {
   left: 0;
   content: "\020";
   display: block;
+  pointer-events: none;
 }
 
 .image-filters-enabled .hentry .post-thumbnail:before {
@@ -2178,34 +2187,40 @@ body.page .main-navigation {
 ## Archives
 --------------------------------------------------------------*/
 .archive .page-header,
-.search .page-header {
+.search .page-header,
+.error404 .page-header {
   margin: 1rem 1rem calc(3 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
   .archive .page-header,
-  .search .page-header {
+  .search .page-header,
+  .error404 .page-header {
     margin: 0 calc(2 * (100vw / 12)) calc(3 * 1rem);
     max-width: calc(8 * (100vw / 12));
   }
 }
 
 .archive .page-header .page-title,
-.search .page-header .page-title {
+.search .page-header .page-title,
+.error404 .page-header .page-title {
   color: #767676;
   display: inline;
   letter-spacing: normal;
 }
 
 .archive .page-header .page-title:before,
-.search .page-header .page-title:before {
+.search .page-header .page-title:before,
+.error404 .page-header .page-title:before {
   display: none;
 }
 
 .archive .page-header .search-term,
 .archive .page-header .page-description,
 .search .page-header .search-term,
-.search .page-header .page-description {
+.search .page-header .page-description,
+.error404 .page-header .search-term,
+.error404 .page-header .page-description {
   display: inherit;
   clear: both;
 }
@@ -2213,7 +2228,9 @@ body.page .main-navigation {
 .archive .page-header .search-term:after,
 .archive .page-header .page-description:after,
 .search .page-header .search-term:after,
-.search .page-header .page-description:after {
+.search .page-header .page-description:after,
+.error404 .page-header .search-term:after,
+.error404 .page-header .page-description:after {
   content: ".";
   font-weight: bold;
   color: #767676;
@@ -2225,11 +2242,27 @@ body.page .main-navigation {
   }
 }
 
-.not-found .search-submit {
-  vertical-align: middle;
+/* 404 & Not found */
+.error-404.not-found .page-content,
+.no-results.not-found .page-content {
+  margin: calc(3 * 1rem) 1rem;
 }
 
-.not-found .search-field {
+@media only screen and (min-width: 768px) {
+  .error-404.not-found .page-content,
+  .no-results.not-found .page-content {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
+  }
+}
+
+.error-404.not-found .search-submit,
+.no-results.not-found .search-submit {
+  vertical-align: middle;
+  margin: 1rem 0;
+}
+
+.error-404.not-found .search-field,
+.no-results.not-found .search-field {
   width: 100%;
 }
 
@@ -2250,6 +2283,10 @@ body.page .main-navigation {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
+}
+
+.site-footer .site-info .imprint {
+  margin-right: 1rem;
 }
 
 .site-footer a {
@@ -2547,6 +2584,10 @@ body.page .main-navigation {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   color: #111;
+}
+
+.entry-content .wp-block-pullquote p em {
+  font-style: normal;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2875,16 +2916,20 @@ body.page .main-navigation {
 /* Jetpack */
 /* Jetpack specific modules */
 .author-description {
-  margin: 3.5em 0 2.1em;
+  margin: calc(2 * 1rem) 1rem 1rem;
 }
 
-.author-description:before {
-  background: #767676;
-  content: "\020";
-  display: block;
-  height: 2px;
-  margin: 1rem 0;
-  width: 1em;
+@media only screen and (min-width: 768px) {
+  .author-description {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .author-description {
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 .author-description h2.author-title {
@@ -2991,41 +3036,42 @@ svg {
 
 .gallery-item {
   display: inline-block;
+  padding: 0.5rem;
   text-align: center;
   vertical-align: top;
   width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-  max-width: calc(2 * (100vw / 12));
+  max-width: calc( ( 12 / 2 ) * (100% / 12));
 }
 
 .gallery-columns-3 .gallery-item {
-  max-width: calc(3 * (100vw / 12));
+  max-width: calc( ( 12 / 3 ) * (100% / 12));
 }
 
 .gallery-columns-4 .gallery-item {
-  max-width: calc(4 * (100vw / 12));
+  max-width: calc( ( 12 / 4 ) * (100% / 12));
 }
 
 .gallery-columns-5 .gallery-item {
-  max-width: calc(5 * (100vw / 12));
+  max-width: calc( ( 12 / 5 ) * (100% / 12));
 }
 
 .gallery-columns-6 .gallery-item {
-  max-width: calc(6 * (100vw / 12));
+  max-width: calc( ( 12 / 6 ) * (100% / 12));
 }
 
 .gallery-columns-7 .gallery-item {
-  max-width: calc(7 * (100vw / 12));
+  max-width: calc( ( 12 / 7 ) * (100% / 12));
 }
 
 .gallery-columns-8 .gallery-item {
-  max-width: calc(8 * (100vw / 12));
+  max-width: calc( ( 12 / 8 ) * (100% / 12));
 }
 
 .gallery-columns-9 .gallery-item {
-  max-width: calc(9 * (100vw / 12));
+  max-width: calc( ( 12 / 9 ) * (100% / 12));
 }
 
 .gallery-caption {
@@ -3035,7 +3081,6 @@ svg {
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
-  text-align: left;
 }
 
 .gallery-item > div > a {
