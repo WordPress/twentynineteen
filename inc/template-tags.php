@@ -24,8 +24,12 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		echo '<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>'; // WPCS: XSS OK.
-
+		printf(
+			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">' . $time_string . '</a></span>',
+			twentynineteen_get_icon_svg( 'watch', 16 ),
+			esc_url( get_permalink() ),
+			$time_string
+		);
 	}
 endif;
 
@@ -59,30 +63,6 @@ if ( ! function_exists( 'twentynineteen_comment_count' ) ) :
 
 			echo '</span>';
 		}
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_estimated_read_time' ) ) :
-	/**
-	 * Prints HTML with the estimated reading time. Does not display when time to read is zero.
-	 */
-	function twentynineteen_estimated_read_time() {
-		$minutes = twentynineteen_get_estimated_reading_time();
-		if ( 0 === $minutes ) {
-			return null;
-		}
-		/* translators: TODO comment on placeholders */
-		$datetime_attr = sprintf( '%dm 0s', $minutes );
-		/* translators: TODO comment on placeholders */
-		$read_time_text = sprintf( _nx( '%s Minute', '%s Minutes', $minutes, 'Time to read', 'twentynineteen' ), $minutes );
-		/* translators: 1: SVG icon. 2: Reading time label, only visible to screen readers. 3: The [datetime] attribute for the <time> tag. 4: Estimated reading time text, in minutes. */
-		printf(
-			'<span class="est-reading-time">%1$s<span class="screen-reader-text">%2$s</span><time datetime="%3$s">%4$s</time></span>',
-			twentynineteen_get_icon_svg( 'watch', 16 ),
-			__( 'Estimated reading time', 'twentynineteen' ),
-			$datetime_attr,
-			$read_time_text
-		);
 	}
 endif;
 
@@ -217,35 +197,30 @@ if ( ! function_exists( 'twentynineteen_human_time_diff' ) ) :
 			if ( $hours <= 1 ) {
 				$hours = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s hour ago', '%s hours ago', $hours, 'twentynineteen' ), $hours );
 		} elseif ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
 			$days = round( $diff / DAY_IN_SECONDS );
 			if ( $days <= 1 ) {
 				$days = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s day ago', '%s days ago', $days, 'twentynineteen' ), $days );
 		} elseif ( $diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS ) {
 			$weeks = round( $diff / WEEK_IN_SECONDS );
 			if ( $weeks <= 1 ) {
 				$weeks = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s week ago', '%s weeks ago', $weeks, 'twentynineteen' ), $weeks );
 		} elseif ( $diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS ) {
 			$months = round( $diff / ( 30 * DAY_IN_SECONDS ) );
 			if ( $months <= 1 ) {
 				$months = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s month ago', '%s months ago', $months, 'twentynineteen' ), $months );
 		} elseif ( $diff >= YEAR_IN_SECONDS ) {
 			$years = round( $diff / YEAR_IN_SECONDS );
 			if ( $years <= 1 ) {
 				$years = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s year ago', '%s years ago', $years, 'twentynineteen' ), $years );
 		}
 

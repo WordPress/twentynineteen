@@ -304,6 +304,12 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
   color: #767676;
 }
 
+body[data-type="core/pullquote"] em,
+body[data-type="core/pullquote"][data-align="left"] em,
+body[data-type="core/pullquote"][data-align="right"] em {
+  font-style: normal;
+}
+
 body[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit,
 body[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit {
   max-width: 50%;
@@ -424,6 +430,25 @@ ul.wp-block-archives li:last-child a:after,
 .wp-block-latest-posts li:last-child a:after {
   color: #767676;
   content: ".";
+}
+
+/** === Latest Posts grid view === */
+.wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wp-block-latest-posts.is-grid li a:after {
+  content: '';
+}
+
+.wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+
+.wp-block-latest-posts.is-grid li:last-child a:after {
+  content: '';
 }
 
 /** === Latest Comments === */
