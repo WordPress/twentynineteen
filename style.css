@@ -1002,6 +1002,11 @@ body.page .main-navigation {
   transform: rotate(-45deg);
 }
 
+/* Media Element AUdio */
+.entry-content .mejs-container {
+  max-width: calc(6 * (100vw / 12));
+}
+
 /*--------------------------------------------------------------
 ## Next / Previous
 --------------------------------------------------------------*/
