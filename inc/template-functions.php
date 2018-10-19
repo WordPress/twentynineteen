@@ -204,8 +204,8 @@ function twentynineteen_nav_menu_link_attributes( $atts, $item, $args, $depth ) 
 	// Add [aria-haspopup] and [aria-expanded] to menu items that have children
 	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
 	if ( $item_has_children ) {
-		$atts['aria-haspopup'] = "true";
-		$atts['aria-expanded'] = "false";
+		$atts['aria-haspopup'] = 'true';
+		$atts['aria-expanded'] = 'false';
 	}
 
 	return $atts;
