@@ -1568,7 +1568,7 @@ body.page .main-navigation {
 }
 
 .sticky-post {
-	background-color: #0073aa;
+	background: #0073aa;
 	color: #fff;
 	display: inline-block;
 	line-height: 1;
