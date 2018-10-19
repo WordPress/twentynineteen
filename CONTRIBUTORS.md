@@ -1,6 +1,4 @@
-# Contributors
-
-WordPress.org Contributor Usernames
+# Contributors Usernames
 
 Version 1.0:
 
@@ -15,4 +13,4 @@ Version 1.0:
 | @fabiankaegy | |
 | @westonruter | |
 | @aaronjorbin | |
-| @netweb | |
+| @ntwb | @netweb |
