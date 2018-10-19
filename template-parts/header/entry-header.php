@@ -8,12 +8,12 @@
  */
 
 if ( ! is_page() ) {
-	$discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; 
+	$discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null;
 }
 
-the_title( '<h1 class="entry-title">', '</h1>' ); 
+the_title( '<h1 class="entry-title">', '</h1>' );
 
-if ( ! is_page() ) : 
+if ( ! is_page() ) :
 ?>
 
 	<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
@@ -24,7 +24,7 @@ if ( ! is_page() ) :
 			if ( ! empty( $discussion ) ) {
 				twentynineteen_discussion_avatars_list( $discussion->authors );
 			}
-			twentynineteen_comment_count(); 
+			twentynineteen_comment_count();
 			?>
 		</span>
 	</div><!-- .entry-meta -->
