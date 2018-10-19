@@ -1400,7 +1400,8 @@ a {
 
 .comments-area {
   /* Add extra margin when the comments section is located immediately after the
-	 * post itself (this happens on pages). */ }
+	 * post itself (this happens on pages). 
+	 */ }
   .hentry + .comments-area {
     margin-top: calc(3 * 1rem); }
   .comments-area .comments-title-wrap,
