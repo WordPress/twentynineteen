@@ -1,14 +1,18 @@
+# Contributors
+
 WordPress.org Contributor Usernames
 
 Version 1.0:
 
-@allancole
-@karmatosed
-@kjellr
-@yingling017
-@mrasharirfan
-@milana_cap
-@fabiankaegy
-@westonruter
-@aaronjorbin
-@netweb
+| GitHub Username | WordPress.org Username|
+| --------------- | --------------------- |
+| @allancole | |
+| @karmatosed | |
+| @kjellr | |
+| @yingling017 | |
+| @mrasharirfan | |
+| @milana_cap | |
+| @fabiankaegy | |
+| @westonruter | |
+| @aaronjorbin | |
+| @netweb | |
