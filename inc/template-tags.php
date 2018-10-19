@@ -169,65 +169,6 @@ if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'twentynineteen_human_time_diff' ) ) :
-/**
- * Same as core's human_time_diff(), only in the "ago" context,
- * which is different for some languages.
- *
- * @param int $from Unix timestamp from which the difference begins.
- * @param int $to Optional Unix timestamp to end the time difference. Defaults to time() if not set.
- * @return string Human readable time difference.
- */
-	function twentynineteen_human_time_diff( $from, $to = '' ) {
-		if ( empty( $to ) ) {
-			$to = time();
-		}
-
-		$diff = (int) abs( $to - $from );
-
-		if ( $diff < HOUR_IN_SECONDS ) {
-			$mins = round( $diff / MINUTE_IN_SECONDS );
-			if ( $mins <= 1 ) {
-				$mins = 1;
-			}
-			/* translators: min=minute */
-			$since = sprintf( _n( '%s min ago', '%s mins ago', $mins, 'twentynineteen' ), $mins );
-		} elseif ( $diff < DAY_IN_SECONDS && $diff >= HOUR_IN_SECONDS ) {
-			$hours = round( $diff / HOUR_IN_SECONDS );
-			if ( $hours <= 1 ) {
-				$hours = 1;
-			}
-			$since = sprintf( _n( '%s hour ago', '%s hours ago', $hours, 'twentynineteen' ), $hours );
-		} elseif ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
-			$days = round( $diff / DAY_IN_SECONDS );
-			if ( $days <= 1 ) {
-				$days = 1;
-			}
-			$since = sprintf( _n( '%s day ago', '%s days ago', $days, 'twentynineteen' ), $days );
-		} elseif ( $diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS ) {
-			$weeks = round( $diff / WEEK_IN_SECONDS );
-			if ( $weeks <= 1 ) {
-				$weeks = 1;
-			}
-			$since = sprintf( _n( '%s week ago', '%s weeks ago', $weeks, 'twentynineteen' ), $weeks );
-		} elseif ( $diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS ) {
-			$months = round( $diff / ( 30 * DAY_IN_SECONDS ) );
-			if ( $months <= 1 ) {
-				$months = 1;
-			}
-			$since = sprintf( _n( '%s month ago', '%s months ago', $months, 'twentynineteen' ), $months );
-		} elseif ( $diff >= YEAR_IN_SECONDS ) {
-			$years = round( $diff / YEAR_IN_SECONDS );
-			if ( $years <= 1 ) {
-				$years = 1;
-			}
-			$since = sprintf( _n( '%s year ago', '%s years ago', $years, 'twentynineteen' ), $years );
-		}
-
-		return $since;
-	}
-endif;
-
 if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 	/**
 	 * Returns the HTML markup to generate a user avatar.
