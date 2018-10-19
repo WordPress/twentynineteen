@@ -63,16 +63,9 @@
 						margin-left: .25rem;
 					}
 				}
-
-				.menu-item-has-children > a {
-
-					&:after {
-						content: "\203a";
-					}
-				}
 			}
 
-				&:last-child> a:after {
+			&:last-child> a:after {
 				content: ".";
 			}
 
@@ -135,6 +128,18 @@
 			float: none;
 			position: relative;
 
+			&.menu-item-has-children {
+
+				@include media(tablet) {
+					.menu-item-has-children > a {
+
+						&:after {
+							content: "\203a";
+						}
+					}
+				}
+			}
+
 			> a {
 				color: $color__background-body;
 				display: block;
@@ -144,6 +149,10 @@
 				&:hover,
 				&:focus {
 					background: $color__link-hover;
+
+					&:after {
+						background: $color__link-hover;
+					}
 				}
 			}
 		}
@@ -157,8 +166,16 @@
 		opacity: 1;
 
 		.sub-menu {
-			left: 100%;
-			top: 0;
+
+			position: relative;
+			padding-left: $size__spacing-unit;
+
+			@include media(tablet) {
+				padding-left: 0;
+				position: absolute;
+				left: 100%;
+				top: 0;
+			}
 		}
 	}
 }
