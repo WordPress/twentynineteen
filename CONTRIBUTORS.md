@@ -1,4 +1,4 @@
-# Contributors Usernames
+# Contributor Usernames
 
 Version 1.0:
 
