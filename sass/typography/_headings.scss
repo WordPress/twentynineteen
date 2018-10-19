@@ -1,6 +1,8 @@
 .main-navigation,
 .page-description,
 h2.author-title,
+.not-found .page-title,
+.error-404 .page-title,
 .post-navigation .post-title,
 .pagination .nav-links,
 .comments-title,
@@ -46,6 +48,8 @@ h1 {
 }
 
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .has-larger-font-size,
 h2 {
 	font-size: $font__size-xl;
@@ -53,8 +57,6 @@ h2 {
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
 	font-size: $font__size-lg;
@@ -68,6 +70,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
 	font-size: $font__size-md;
 }
@@ -108,6 +112,8 @@ h6 {
 
 .post-navigation .post-title,
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .comments-title {
 	hyphens: auto;
 	word-break: break-word;
