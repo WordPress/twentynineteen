@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Displays the post header
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen

@@ -193,35 +193,30 @@ if ( ! function_exists( 'twentynineteen_human_time_diff' ) ) :
 			if ( $hours <= 1 ) {
 				$hours = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s hour ago', '%s hours ago', $hours, 'twentynineteen' ), $hours );
 		} elseif ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
 			$days = round( $diff / DAY_IN_SECONDS );
 			if ( $days <= 1 ) {
 				$days = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s day ago', '%s days ago', $days, 'twentynineteen' ), $days );
 		} elseif ( $diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS ) {
 			$weeks = round( $diff / WEEK_IN_SECONDS );
 			if ( $weeks <= 1 ) {
 				$weeks = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s week ago', '%s weeks ago', $weeks, 'twentynineteen' ), $weeks );
 		} elseif ( $diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS ) {
 			$months = round( $diff / ( 30 * DAY_IN_SECONDS ) );
 			if ( $months <= 1 ) {
 				$months = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s month ago', '%s months ago', $months, 'twentynineteen' ), $months );
 		} elseif ( $diff >= YEAR_IN_SECONDS ) {
 			$years = round( $diff / YEAR_IN_SECONDS );
 			if ( $years <= 1 ) {
 				$years = 1;
 			}
-			/* translators: TODO comment on placeholders */
 			$since = sprintf( _n( '%s year ago', '%s years ago', $years, 'twentynineteen' ), $years );
 		}
 
