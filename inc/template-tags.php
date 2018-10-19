@@ -162,14 +162,7 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 		<figure class="post-thumbnail">
 			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" style="background-image: url(<?php echo esc_url( $post_thumbnail ); ?>);">
 				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
-							array( 'echo' => false )
-						),
-					)
-				);
+				the_post_thumbnail( 'post-thumbnail' );
 				?>
 			</a>
 		</figure>
