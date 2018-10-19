@@ -75,7 +75,7 @@ function twentynineteen_get_the_archive_title() {
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name */
-		$title = sprintf( __( '%s Archives: ' ), $tax->labels->singular_name );
+		$title = sprintf( __( '%s Archives: ', 'twentynineteen' ), $tax->labels->singular_name );
 	} else {
 		$title = esc_html__( 'Archives:', 'twentynineteen' );
 	}
