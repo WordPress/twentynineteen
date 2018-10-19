@@ -3,14 +3,14 @@
 }
 
 .sticky-post {
-	background: #0073aa;
+	background: $color__background-button;
 	color: #fff;
 	display: inline-block;
 	line-height: 1;
 	padding: .25rem;
 	position: absolute;
 	text-transform: uppercase;
-	top: -1rem;
+	top: -$size__spacing-unit;
 	z-index: 1;
 }
 
