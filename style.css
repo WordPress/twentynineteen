@@ -1317,7 +1317,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 transparent;
   display: block;
   width: 32px;
   height: 32px;
@@ -2513,6 +2513,24 @@ body.page .main-navigation {
   content: ".";
 }
 
+.entry-content .wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.entry-content .wp-block-latest-posts.is-grid li a:after {
+  content: '';
+}
+
+.entry-content .wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+
+.entry-content .wp-block-latest-posts.is-grid li:last-child a:after {
+  content: '';
+}
+
 .entry-content .wp-block-preformatted {
   font-size: 0.7111111111em;
   line-height: 1.8;
@@ -2551,6 +2569,10 @@ body.page .main-navigation {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   color: #111;
+}
+
+.entry-content .wp-block-pullquote p em {
+  font-style: normal;
 }
 
 .entry-content .wp-block-pullquote cite {
