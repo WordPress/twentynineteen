@@ -23,7 +23,7 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
-		
+
 		printf(
 			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">' . $time_string . '</a></span>',
 			twentynineteen_get_icon_svg( 'watch', 16 ),
