@@ -702,7 +702,6 @@ dd {
 img {
   height: auto;
   max-width: 100%;
-  min-height: calc(3 * 1rem);
   position: relative;
 }
 
