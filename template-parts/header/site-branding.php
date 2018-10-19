@@ -1,7 +1,7 @@
 <?php
 /**
  * Displays header site branding
- * 
+ *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */

@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying Current Discussion on posts
- * 
+ *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */

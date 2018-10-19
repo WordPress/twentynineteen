@@ -1,11 +1,10 @@
 <?php
 /**
- * Custom comment walker for this theme 
+ * Custom comment walker for this theme
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
-
 class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 	/**

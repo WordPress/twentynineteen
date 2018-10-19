@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying Author info
- * 
+ *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
