@@ -16,7 +16,8 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
@@ -33,12 +34,14 @@ if ( ! function_exists( 'twentynineteen_posted_by' ) ) :
 	 * Prints HTML with meta information about theme author.
 	 */
 	function twentynineteen_posted_by() {
-		printf( '<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+		printf(
+			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
 			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
 			twentynineteen_get_icon_svg( 'person', 16 ),
 			esc_html__( 'Posted by', 'twentynineteen' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() ) );
+			esc_html( get_the_author() )
+		);
 	}
 endif;
 
@@ -65,15 +68,19 @@ if ( ! function_exists( 'twentynineteen_estimated_read_time' ) ) :
 	 */
 	function twentynineteen_estimated_read_time() {
 		$minutes = twentynineteen_get_estimated_reading_time();
-		if ( 0 === $minutes ) return null;
+		if ( 0 === $minutes ) {
+			return null;
+		}
 		$datetime_attr = sprintf( '%dm 0s', $minutes );
 		$read_time_text = sprintf( _nx( '%s Minute', '%s Minutes', $minutes, 'Time to read', 'twentynineteen' ), $minutes );
 		/* translators: 1: SVG icon. 2: Reading time label, only visible to screen readers. 3: The [datetime] attribute for the <time> tag. 4: Estimated reading time text, in minutes. */
-		printf ( '<span class="est-reading-time">%1$s<span class="screen-reader-text">%2$s</span><time datetime="%3$s">%4$s</time></span>',
+		printf(
+			'<span class="est-reading-time">%1$s<span class="screen-reader-text">%2$s</span><time datetime="%3$s">%4$s</time></span>',
 			twentynineteen_get_icon_svg( 'watch', 16 ),
 			__( 'Estimated reading time', 'twentynineteen' ),
 			$datetime_attr,
-			$read_time_text );
+			$read_time_text
+		);
 	}
 endif;
 
@@ -92,7 +99,8 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
 				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
-				printf( '<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+				printf(
+					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
 					twentynineteen_get_icon_svg( 'archive', 16 ),
 					esc_html__( 'Posted in', 'twentynineteen' ),
 					$categories_list
@@ -119,7 +127,7 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ) ,
+			'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
 			'</span>'
 		);
 	}
@@ -144,18 +152,22 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
-		<?php else :
+		<?php
+		else :
 			$post_thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
 		?>
 
 		<figure class="post-thumbnail">
-			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" style="background-image: url(<?php echo esc_url($post_thumbnail) ?>);">
+			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" style="background-image: url(<?php echo esc_url( $post_thumbnail ); ?>);">
 				<?php
-				the_post_thumbnail( 'post-thumbnail', array(
-					'alt' => the_title_attribute( array(
-						'echo' => false,
-					) ),
-				) );
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => the_title_attribute(
+							array( 'echo' => false )
+						),
+					)
+				);
 				?>
 			</a>
 		</figure>
@@ -238,7 +250,7 @@ if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 	/**
 	 * Returns the HTML markup to generate a user avatar.
 	 */
-	function twentynineteen_get_user_avatar_markup( $id_or_email=null ) {
+	function twentynineteen_get_user_avatar_markup( $id_or_email = null ) {
 		if ( ! isset( $id_or_email ) ) {
 			$id_or_email = get_current_user_id();
 		}
@@ -255,8 +267,8 @@ if ( ! function_exists( 'twentynineteen_discussion_avatars_list' ) ) :
 	 */
 	function twentynineteen_discussion_avatars_list( $comment_authors ) {
 		if ( ! empty( $comment_authors ) ) {
-			$out = array('<ol class="discussion-avatar-list">');
-			foreach( $comment_authors as $id_or_email ) {
+			$out = array( '<ol class="discussion-avatar-list">' );
+			foreach ( $comment_authors as $id_or_email ) {
 				$out[] = sprintf( '<li>%s</li>', twentynineteen_get_user_avatar_markup( $id_or_email ) );
 			}
 			$out[] = '</ol><!-- .discussion-avatar-list -->';
@@ -272,11 +284,13 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 	 */
 	function twentynineteen_comment_form( $order ) {
 		if ( true === $order || strtolower( $order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
-			comment_form( array(
-				'title_reply_before' => twentynineteen_get_user_avatar_markup(),
-				'logged_in_as'       => null,
-				'title_reply'        => null,
-			) );
+			comment_form(
+				array(
+					'title_reply_before' => twentynineteen_get_user_avatar_markup(),
+					'logged_in_as'       => null,
+					'title_reply'        => null,
+				)
+			);
 		}
 	}
 endif;
@@ -286,12 +300,14 @@ if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
 	 * Documentation for function.
 	 */
 	function twentynineteen_the_posts_navigation() {
-		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left',  22 );
+		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 22 );
 		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 22 );
-		the_posts_pagination( array(
-			'mid_size'  => 2,
-			'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Older posts', 'twentynineteen' ) ),
-			'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Newer posts', 'twentynineteen' ), $next_icon ),
-		) );
+		the_posts_pagination(
+			array(
+				'mid_size'  => 2,
+				'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Newer posts', 'twentynineteen' ) ),
+				'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Older posts', 'twentynineteen' ), $next_icon ),
+			)
+		);
 	}
 endif;

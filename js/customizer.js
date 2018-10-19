@@ -6,6 +6,6 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-( function( $ ) {
+( function( $ ) { // jshint ignore:line
 
 } )( jQuery );
