@@ -930,6 +930,30 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children:after {
+  content: ",";
+  display: inline;
+  color: #767676;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children > a:after,
+.main-navigation .main-menu > li.menu-item-has-children .menu-item-has-children > a:after {
+  content: "\2304";
+  color: #fff;
+  background: #0073aa;
+  border-radius: 100%;
+  display: inline-block;
+  width: .7rem;
+  height: .7rem;
+  line-height: .5rem;
+  text-align: center;
+  margin-left: .25rem;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .menu-item-has-children > a:after {
+  content: "\203a";
+}
+
 .main-navigation .main-menu > li:last-child > a:after {
   content: ".";
 }
@@ -996,7 +1020,7 @@ body.page .main-navigation {
   padding: calc( .25 * 1rem) calc( .5 * 1rem);
 }
 
-.main-navigation .sub-menu > li > a:hover {
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
   background: #005177;
 }
 

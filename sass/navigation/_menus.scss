@@ -39,7 +39,40 @@
 				}
 			}
 
-			&:last-child> a:after {
+			&.menu-item-has-children {
+
+				&:after {
+					content: ",";
+					display: inline;
+					color: $color__text-light;
+				}
+
+				& > a,
+				.menu-item-has-children > a {
+
+					&:after {
+						content: "\2304";
+						color: $color__background-body;
+						background: $color__link;
+						border-radius: 100%;
+						display: inline-block;
+						width: .7rem;
+						height: .7rem;
+						line-height: .5rem;
+						text-align: center;
+						margin-left: .25rem;
+					}
+				}
+
+				.menu-item-has-children > a {
+
+					&:after {
+						content: "\203a";
+					}
+				}
+			}
+
+				&:last-child> a:after {
 				content: ".";
 			}
 
@@ -108,7 +141,8 @@
 				line-height: $font__line-height-heading;
 				padding: calc( .25 * #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} );
 
-				&:hover {
+				&:hover,
+				&:focus {
 					background: $color__link-hover;
 				}
 			}
