@@ -1,6 +1,17 @@
 <?php
+/**
+ * Custom comment walker for this theme
+ *
+ * @package WordPress
+ * @subpackage Twenty_Nineteen
+ */
 
-class Twenty_Nineteen_Walker_Comment extends Walker_Comment {
+/**
+ * This class outputs custom comment walker for HTML5 friendly WordPress comment and threaded replies.
+ *
+ * @since 1.0.0
+ */
+class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 	/**
 	 * Outputs a comment in the HTML5 format.
@@ -22,25 +33,28 @@ class Twenty_Nineteen_Walker_Comment extends Walker_Comment {
 					<div class="comment-author vcard">
 						<?php
 							$comment_author_link = get_comment_author_link( $comment );
-							$comment_author_url = get_comment_author_url( $comment );
-							$avatar = get_avatar( $comment, $args['avatar_size'] );
+							$comment_author_url  = get_comment_author_url( $comment );
+							$avatar              = get_avatar( $comment, $args['avatar_size'] );
 							if ( 0 != $args['avatar_size'] ) {
-								if ( empty( $comment_author_url ) ) {
-									echo $avatar;
+							if ( empty( $comment_author_url ) ) {
+								echo $avatar;
 								} else {
-									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
+								echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
 								}
 							}
 
-							/* Using the `check` icon instead of `check_circle`, since we can't add a
-							 * fill color to the inner check shape when in circle form. */
+							/*
+							 * Using the `check` icon instead of `check_circle`, since we can't add a
+							 * fill color to the inner check shape when in circle form.
+							 */
 							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
-								/* translators: %s: SVG Icon */
-								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+							/* translators: %s: SVG Icon */
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
 							/* translators: %s: comment author link */
-							printf( __( '%s <span class="screen-reader-text says">says:</span>' ),
+							printf(
+								__( '%s <span class="screen-reader-text says">says:</span>' ),
 								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
 							);
 						?>
@@ -71,13 +85,18 @@ class Twenty_Nineteen_Walker_Comment extends Walker_Comment {
 			</article><!-- .comment-body -->
 
 			<?php
-			comment_reply_link( array_merge( $args, array(
-				'add_below' => 'div-comment',
-				'depth'     => $depth,
-				'max_depth' => $args['max_depth'],
-				'before'    => '<div class="comment-reply">',
-				'after'     => '</div>'
-			) ) );
+			comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="comment-reply">',
+						'after'     => '</div>',
+					)
+				)
+			);
 			?>
 <?php
 	}
