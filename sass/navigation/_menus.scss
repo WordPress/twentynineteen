@@ -16,7 +16,7 @@
 		display: inline;
 	}
 
-	ul.main-menu {
+	.main-menu {
 
 		display: inline;
 		margin: 0;
@@ -54,8 +54,78 @@
 		}
 	}
 
-	ul.sub-menu {
+	.sub-menu {
+
+		background: $color__link;
+		color: $color__background-body;
+		list-style: none;
+		padding-left: 0;
+
 		display: none;
+		float: left;
+		width: 100%;
+		position: absolute;
+		opacity: 0;
+		left: -999em;
+		z-index: 99999;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		-moz-transition:    opacity 0.5s ease-in-out;
+		transition:         opacity 0.5s ease-in-out;
+
+		&:before {
+			content: "";
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-bottom: 15px solid $color__link;
+			position: absolute;
+			left: $size__spacing-unit;
+			top: -10px;
+		}
+
+		.sub-menu {
+
+			&:before {
+				border: none;
+				content: none;
+				display: none;
+  			}
+		}
+
+		@include media(tablet) {
+			max-width: calc(3 * (100vw / 12));
+		}
+
+		> li {
+
+			clear: both;
+			display: block;
+			float: none;
+			position: relative;
+
+			> a {
+				color: $color__background-body;
+				display: block;
+				line-height: $font__line-height-heading;
+				padding: calc( .25 * #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} );
+
+				&:hover {
+					background: $color__link-hover;
+				}
+			}
+		}
+	}
+
+	.main-menu .menu-item-has-children:hover > .sub-menu,
+	.main-menu .menu-item-has-children .sub-menu:hover,
+	.main-menu .menu-item-has-children:focus-within > .sub-menu {
+		display: block;
+		left: inherit;
+		opacity: 1;
+
+		.sub-menu {
+			left: 100%;
+			top: 0;
+		}
 	}
 }
 
