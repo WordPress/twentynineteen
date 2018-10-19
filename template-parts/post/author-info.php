@@ -1,7 +1,7 @@
 <?php
 /**
- * TODO: File doc comment.
- *
+ * The template for displaying Author info
+ * 
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */

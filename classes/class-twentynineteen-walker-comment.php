@@ -1,14 +1,11 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Custom comment walker for this theme 
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
 
-/**
- * TODO: Class doc comment.
- */
 class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 	/**
@@ -52,7 +49,6 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 							/* translators: %s: comment author link */
 							printf(
-								/* translators: TODO comment on placeholders */
 								__( '%s <span class="screen-reader-text says">says:</span>' ),
 								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
 							);
