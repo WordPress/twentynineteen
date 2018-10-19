@@ -23,7 +23,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header' ?>">
+		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
 			<div class="site-branding-container">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 			</div><!-- .layout-wrap -->
@@ -40,10 +40,14 @@
 						<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 							<?php twentynineteen_posted_by(); ?>
 							<span class="comment-count">
-								<?php if ( ! empty( $discussion ) ) twentynineteen_discussion_avatars_list( $discussion->authors ); ?>
+								<?php
+								if ( ! empty( $discussion ) ) {
+twentynineteen_discussion_avatars_list( $discussion->authors );}
+?>
 								<?php twentynineteen_comment_count(); ?>
 							</span>
-							<?php // Edit post link.
+							<?php
+							// Edit post link.
 								edit_post_link(
 									sprintf(
 										wp_kses(
@@ -57,9 +61,10 @@
 										),
 										get_the_title()
 									),
-									'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ) ,
+									'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
 									'</span>'
-								); ?>
+								);
+								?>
 						</div><!-- .meta-info -->
 						<?php endif; ?>
 					</div><!-- .entry-header -->

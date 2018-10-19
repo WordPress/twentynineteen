@@ -21,10 +21,14 @@
 		<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 			<?php twentynineteen_posted_by(); ?>
 			<span class="comment-count">
-				<?php if ( ! empty( $discussion ) ) twentynineteen_discussion_avatars_list( $discussion->authors ); ?>
+				<?php
+				if ( ! empty( $discussion ) ) {
+twentynineteen_discussion_avatars_list( $discussion->authors );}
+?>
 				<?php twentynineteen_comment_count(); ?>
 			</span>
-			<?php // Edit post link.
+			<?php
+			// Edit post link.
 				edit_post_link(
 					sprintf(
 						wp_kses(
@@ -38,9 +42,10 @@
 						),
 						get_the_title()
 					),
-					'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ) ,
+					'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
 					'</span>'
-				); ?>
+				);
+				?>
 		</div><!-- .meta-info -->
 		<?php endif; ?>
 	</header>
@@ -48,7 +53,8 @@
 
 	<div class="entry-content">
 		<?php
-		the_content( sprintf(
+		the_content(
+			sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
@@ -59,12 +65,15 @@
 				)
 			),
 			get_the_title()
-		) );
+		)
+			);
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'twentynineteen' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'twentynineteen' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 
