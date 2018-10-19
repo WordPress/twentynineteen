@@ -13,23 +13,30 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
 	<header class="entry-header">
-		<?php if ( ! is_page() ) : ?>
-		<?php $discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
-		<?php endif; ?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php if ( ! is_page() ) : ?>
-		<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
-			<?php twentynineteen_posted_by(); ?>
-			<?php twentynineteen_estimated_read_time(); ?>
-			<span class="comment-count">
+		<?php
+		if ( ! is_page() ) {
+			$discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null;
+		}
+		
+		the_title( '<h1 class="entry-title">', '</h1>' );
+		
+		if ( ! is_page() ) : 
+			?>
+			<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
+				<?php 
+				twentynineteen_posted_by(); 
+				twentynineteen_estimated_read_time(); 
+				?>
+				<span class="comment-count">
+					<?php
+					if ( ! empty( $discussion ) ) {
+						twentynineteen_discussion_avatars_list( $discussion->authors );
+					}
+					twentynineteen_comment_count(); 
+					?>
+				</span>
 				<?php
-				if ( ! empty( $discussion ) ) {
-twentynineteen_discussion_avatars_list( $discussion->authors );}
-?>
-				<?php twentynineteen_comment_count(); ?>
-			</span>
-			<?php
-			// Edit post link.
+				// Edit post link.
 				edit_post_link(
 					sprintf(
 						wp_kses(
@@ -47,7 +54,7 @@ twentynineteen_discussion_avatars_list( $discussion->authors );}
 					'</span>'
 				);
 				?>
-		</div><!-- .meta-info -->
+			</div><!-- .meta-info -->
 		<?php endif; ?>
 	</header>
 <?php endif; ?>
@@ -56,18 +63,18 @@ twentynineteen_discussion_avatars_list( $discussion->authors );}
 		<?php
 		the_content(
 			sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		)
-			);
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			)
+		);
 
 		wp_link_pages(
 			array(
