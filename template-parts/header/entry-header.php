@@ -15,6 +15,7 @@ if ( ! is_page() ) :
 <?php if ( ! is_page() ) : ?>
 <div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 	<?php twentynineteen_posted_by(); ?>
+	<?php twentynineteen_posted_on(); ?>
 	<span class="comment-count">
 		<?php
 		if ( ! empty( $discussion ) ) {
