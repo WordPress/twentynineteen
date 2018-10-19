@@ -186,5 +186,18 @@
 				text-decoration: none;
 			}
 		}
+
+		a {
+			border-bottom: 1px dotted $color__link;
+		}
+
+		a:hover,
+		a:active {
+			border-color: $color__link-hover;
+		}
+
+		a:focus {
+			text-decoration: none;
+		}
 	}
 }
