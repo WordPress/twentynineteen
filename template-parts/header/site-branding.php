@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Displays header site branding
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
