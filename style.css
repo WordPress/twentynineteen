@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: Twenty Nineteen
 Theme URI: https://github.com/WordPress/twentynineteen
@@ -1307,7 +1306,8 @@ body.page .main-navigation {
   font-weight: normal;
   margin: 0;
 }
-.site-description .separator {
+.site-description:not(:empty):before {
+  content: "—";
   margin: 0 0.2em;
 }
 
