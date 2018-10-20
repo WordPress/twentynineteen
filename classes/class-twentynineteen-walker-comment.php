@@ -64,7 +64,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<?php /* translators: 1: comment date, 2: comment time */ ?>
 							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php echo twentynineteen_human_time_diff( get_comment_date( 'U' ) ); ?>
+								<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
 							</time>
 						</a>
 						<?php
