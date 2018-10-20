@@ -16,6 +16,14 @@ Here are some good ideas for commit messages:
 - Keep them short (50 chars or less).
 - Make them relevant to the commit.
 
+## Compling SCSS
+Currently team is finalising the approach to which extent the SCSS will be used. So as of now use plain node-sass to compile the SCSS files to CSS. It can be installed from https://sass-lang.com/install.
+Style.scss or style-editor.scss with following commands to watch and compile.
+
+`sass --sourcemap=none --watch --style=expanded style.scss:style.css`
+
+`sass --sourcemap=none --watch --style=expanded style-editor.scss:style-editor.css`
+
 ## Commit Process
 All changes happen through a pull request made by contributors, ideally associated with an issue. After you send your proposed changes, one of the committers will review and test. After that, we can merge the changes.
 
