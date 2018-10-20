@@ -41,6 +41,18 @@ function twentynineteen_pingback_header() {
 }
 add_action( 'wp_head', 'twentynineteen_pingback_header' );
 
+
+
+function twentynineteen_add_product_classes( $classes ){
+    
+    if ( get_post_type() == 'product' ) {
+        $classes[] = 'hentry';
+    }
+ 
+    return $classes;
+}
+add_filter( 'post_class', 'twentynineteen_add_product_classes' );
+
 /**
  * Changes comment form default fields.
  */
