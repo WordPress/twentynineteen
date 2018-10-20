@@ -55,12 +55,8 @@
 		display: none;
 	}
 
-	.comment-form {
-		padding-left: calc(#{$size__spacing-unit} + calc(.5 * (100vw / 12)));
-
-		.comment & {
-			padding-left: 0;
-		}
+	.comment .comment-form {
+		padding-left: 0;
 	}
 
 	> small {
@@ -369,6 +365,13 @@
 }
 
 .comment-form {
+
+	.comment-notes,
+	label {
+		font-family: $font__heading;
+		font-size: $font__size-xs;
+		color: $color__text-light;
+	}
 
 	.comment-form-author,
 	.comment-form-email {
