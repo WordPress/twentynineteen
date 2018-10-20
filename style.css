@@ -1797,6 +1797,10 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
+.hentry .entry-content a {
+  text-decoration: underline;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2114,6 +2118,10 @@ body.page .main-navigation {
 
 .comment .comment-content > *:last-child {
   margin-bottom: 0;
+}
+
+.comment .comment-content a {
+  text-decoration: underline;
 }
 
 .comment-reply-link,
