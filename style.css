@@ -1810,7 +1810,8 @@ body.page .main-navigation {
 
 .comments-area {
   /* Add extra margin when the comments section is located immediately after the
-	 * post itself (this happens on pages). */
+	 * post itself (this happens on pages). 
+	 */
 }
 
 .hentry + .comments-area {
@@ -1868,16 +1869,8 @@ body.page .main-navigation {
   display: none;
 }
 
-#respond .comment-form {
-  padding-left: calc(1rem + calc(.5 * (100vw / 12)));
-}
-
-.comment #respond .comment-form {
+#respond .comment .comment-form {
   padding-left: 0;
-}
-
-#respond .comment-form-comment label[for="comment"]:first-child {
-  display: none;
 }
 
 #respond > small {
@@ -2161,6 +2154,13 @@ body.page .main-navigation {
   fill: currentColor;
   transform: scale(0.6) scaleX(-1) translateY(-0.1em);
   margin-left: -0.25rem;
+}
+
+.comment-form .comment-notes,
+.comment-form label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.7111111111em;
+  color: #767676;
 }
 
 @media only screen and (min-width: 768px) {
