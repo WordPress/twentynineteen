@@ -45,7 +45,7 @@ add_action( 'wp_head', 'twentynineteen_pingback_header' );
 /**
 * Added the 'hentry' class to product page as well as post.
 */
-function twentynineteen_add_product_classes( $classes ){
+function twentynineteen_add_product_classes( $classes, $class, $post_id ){
     
     if ( get_post_type() == 'product' ) {
         $classes[] = 'hentry';
@@ -53,7 +53,7 @@ function twentynineteen_add_product_classes( $classes ){
  
     return $classes;
 }
-add_filter( 'post_class', 'twentynineteen_add_product_classes' );
+add_filter( 'post_class', 'twentynineteen_add_product_classes', 10, 3 );
 
 /**
  * Changes comment form default fields.
