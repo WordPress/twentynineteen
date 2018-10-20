@@ -42,7 +42,9 @@ function twentynineteen_pingback_header() {
 add_action( 'wp_head', 'twentynineteen_pingback_header' );
 
 
-
+/**
+* Added the 'hentry' class to product page as well as post.
+*/
 function twentynineteen_add_product_classes( $classes ){
     
     if ( get_post_type() == 'product' ) {
