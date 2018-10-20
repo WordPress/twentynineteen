@@ -9,8 +9,8 @@
 if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-description">
 	<h2 class="author-title">
-		<span class="author-heading"><?php _e( 'Published by', 'twentynineteen' ); ?></span>
-		<?php echo get_the_author(); ?>
+		<?php /* translators: %s: author name */ ?>
+		<?php printf( __( '<span class="author-heading">Published by</span> %s', 'twentynineteen' ), get_the_author() ); ?>
 	</h2>
 	<p class="author-bio">
 		<?php the_author_meta( 'description' ); ?>

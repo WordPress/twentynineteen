@@ -38,14 +38,13 @@ if ( ! function_exists( 'twentynineteen_posted_by' ) ) :
 	 * Prints HTML with meta information about theme author.
 	 */
 	function twentynineteen_posted_by() {
-		printf(
-			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
-			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
-			twentynineteen_get_icon_svg( 'person', 16 ),
-			esc_html__( 'Posted by', 'twentynineteen' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
+		$posted_by = sprintf(
+			/* translators: %s: post author */
+			__( '<span class="screen-reader-text">Posted by</span>%s', 'twentyseventeen' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
+
+		echo '<span class="byline">' . twentynineteen_get_icon_svg( 'person', 16 ) . $posted_by . '</span>';
 	}
 endif;
 
@@ -80,13 +79,13 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
-				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
-				printf(
-					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
-					twentynineteen_get_icon_svg( 'archive', 16 ),
-					esc_html__( 'Posted in', 'twentynineteen' ),
+				$posted_in = sprintf(
+					/* translators: %s: list of categories */
+					__( '<span class="screen-reader-text">Posted in</span>%s', 'twentyseventeen' ),
 					$categories_list
-				); // WPCS: XSS OK.
+				);
+
+				echo '<span class="cat-links">' . twentynineteen_get_icon_svg( 'archive', 16 ) . $posted_in . '</span>';
 			}
 		}
 
