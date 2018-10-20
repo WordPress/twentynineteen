@@ -1801,6 +1801,10 @@ body.page .main-navigation {
   text-decoration: underline;
 }
 
+.hentry .entry-content a:hover {
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2122,6 +2126,10 @@ body.page .main-navigation {
 
 .comment .comment-content a {
   text-decoration: underline;
+}
+
+.comment .comment-content a:hover {
+  text-decoration: none;
 }
 
 .comment-reply-link,
