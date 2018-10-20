@@ -30,6 +30,11 @@ svg {
 	fill: currentColor;
 }
 
+/* Media Element Audio Player for Posts and Pages */
+.entry-content .mejs-container {
+ 	max-width: calc(6 * (100vw / 12));
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
