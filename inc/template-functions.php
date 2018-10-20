@@ -114,6 +114,15 @@ function twentynineteen_can_show_post_thumbnail() {
 }
 
 /**
+ * Determines the estimated time to read a post, in minutes.
+ */
+function twentynineteen_get_estimated_reading_time() {
+	$content = get_post_field( 'post_content', get_the_ID() );
+	$count   = str_word_count( strip_tags( $content ) );
+	return (int) round( $count / 250 ); // Assuming 250 words per minute reading speed.
+}
+
+/**
  * Returns true if image filters are enabled on the theme options.
  */
 function twentynineteen_image_filters_enabled() {
