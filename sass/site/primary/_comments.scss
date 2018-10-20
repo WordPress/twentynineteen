@@ -80,10 +80,11 @@
 		@include media(desktop) {
 
 			.comment-user-avatar {
-				position: absolute;
+				position: relative;
 				display: block;
-				top: 0;
-				left: 0;
+				float: left;
+				margin-bottom: $size__spacing-unit;
+				margin-right: $size__spacing-unit;
 
 				.avatar {
 					display: block;

@@ -1898,10 +1898,11 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 1168px) {
   #comments > #respond .comment-user-avatar {
-    position: absolute;
+    position: relative;
     display: block;
-    top: 0;
-    left: 0;
+    float: left;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
   }
   #comments > #respond .comment-user-avatar .avatar {
     display: block;
