@@ -1571,6 +1571,7 @@ body.page .main-navigation {
 	background: #0073aa;
 	color: #fff;
 	display: inline-block;
+	font-weight: bold;
 	line-height: 1;
 	padding: .25rem;
 	position: absolute;
