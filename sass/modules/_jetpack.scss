@@ -55,3 +55,18 @@ $author_bio_vsep_reduction_factor: 0.6;
 		}
 	}
 }
+
+.entry-content > #jp-relatedposts {
+
+	margin: 32px $size__spacing-unit;
+	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+
+	@include media(tablet) {
+		margin: 32px calc(2 * (100vw / 12));
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(desktop) {
+		max-width: calc(6 * (100vw / 12));
+	}
+}
