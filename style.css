@@ -1379,12 +1379,7 @@ a {
       color: #0073aa;
       text-decoration: none; }
   .hentry .entry-content a {
-    border-bottom: 1px dotted #0073aa; }
-  .hentry .entry-content a:hover,
-  .hentry .entry-content a:active {
-    border-color: #005177; }
-  .hentry .entry-content a:focus {
-    text-decoration: none; }
+    text-decoration: underline; }
 
 /*--------------------------------------------------------------
 ## Comments
