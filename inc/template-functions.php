@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Functions which enhance the theme by hooking into WordPress
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -111,15 +111,6 @@ add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_descr
  */
 function twentynineteen_can_show_post_thumbnail() {
 	return ! post_password_required() && ! is_attachment() && has_post_thumbnail();
-}
-
-/**
- * Determines the estimated time to read a post, in minutes.
- */
-function twentynineteen_get_estimated_reading_time() {
-	$content = get_post_field( 'post_content', get_the_ID() );
-	$count   = str_word_count( strip_tags( $content ) );
-	return (int) round( $count / 250 ); // Assuming 250 words per minute reading speed.
 }
 
 /**
