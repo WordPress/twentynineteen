@@ -202,5 +202,18 @@
 				max-width: calc(6 * (100vw / 12)) !important;
 			}
 		}
+
+		// Classic editor audio embeds.
+		.wp-audio-shortcode {
+			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+
+			@include media(tablet) {
+				max-width: calc(8 * (100vw / 12));
+			}
+
+			@include media(desktop) {
+				max-width: calc(6 * (100vw / 12));
+			}
+		}
 	}
 }
