@@ -218,11 +218,12 @@
 			position: absolute;
 			background: lighten( $color__link, 8% );
 			right: calc(100% - #{$size__spacing-unit * 3});
+			top: -3px;
+			width: 18px;
+
 			@include media(tablet) {
 				right: calc(100% + #{$size__spacing-unit * .25});
 			}
-			top: -3px;
-			width: 18px;
 
 			svg {
 				width: inherit;
