@@ -1588,16 +1588,16 @@ body.page .main-navigation {
 }
 
 .sticky-post {
-	background: #0073aa;
-	color: #fff;
-	display: inline-block;
-	font-weight: bold;
-	line-height: 1;
-	padding: .25rem;
-	position: absolute;
-	text-transform: uppercase;
-	top: -1rem;
-	z-index: 1;
+  background: #0073aa;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1;
+  padding: .25rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: -1rem;
+  z-index: 1;
 }
 
 .updated:not(.published) {
@@ -1818,6 +1818,40 @@ body.page .main-navigation {
 
 .hentry .entry-content a:hover {
   text-decoration: none;
+}
+
+.hentry .entry-content > iframe[style] {
+  margin: 32px 1rem !important;
+  max-width: calc(100vw - (2 * 1rem)) !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content > iframe[style] {
+    margin: 32px calc(2 * (100vw / 12)) !important;
+    max-width: calc(8 * (100vw / 12)) !important;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content > iframe[style] {
+    max-width: calc(6 * (100vw / 12)) !important;
+  }
+}
+
+.hentry .entry-content .wp-audio-shortcode {
+  max-width: calc(100vw - (2 * 1rem));
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 /*--------------------------------------------------------------
