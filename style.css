@@ -1588,16 +1588,16 @@ body.page .main-navigation {
 }
 
 .sticky-post {
-	background: #0073aa;
-	color: #fff;
-	display: inline-block;
-	font-weight: bold;
-	line-height: 1;
-	padding: .25rem;
-	position: absolute;
-	text-transform: uppercase;
-	top: -1rem;
-	z-index: 1;
+  background: #0073aa;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1;
+  padding: .25rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: -1rem;
+  z-index: 1;
 }
 
 .updated:not(.published) {
