@@ -10,7 +10,6 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-description">
 	<h2 class="author-title">
 		<span class="author-heading"><?php echo esc_html( sprintf( __( 'Published by %s', 'twentynineteen' ), get_the_author() ) ); ?></span>
-		<?php echo esc_html( get_the_author() ); ?>
 	</h2>
 	<p class="author-bio">
 		<?php the_author_meta( 'description' ); ?>
