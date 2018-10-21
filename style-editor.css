@@ -289,6 +289,11 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
   background-color: #0073aa;
 }
 
+.wp-block-pullquote blockquote {
+  hyphens: auto;
+  word-break: break-word;
+}
+
 body[data-type="core/pullquote"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
 body[data-type="core/pullquote"] blockquote > .editor-rich-text p,
 body[data-type="core/pullquote"] p,
