@@ -33,7 +33,6 @@ add_filter( 'body_class', 'twentynineteen_body_classes' );
 
 /**
  * Adds custom class to the array of posts classes.
- *
  */
 function twentynineteen_post_classes( $classes, $class, $post_id ) {
 	$classes[] = 'entry';
