@@ -449,7 +449,8 @@ h1, h2, h3, h4, h5, h6 {
 .comment-reply-link,
 #cancel-comment-reply-link,
 img:after,
-.page-links {
+.page-links,
+.sticky-post {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -528,6 +529,7 @@ h5 {
 .comment-reply-link,
 .comment-metadata,
 .comment-notes,
+.sticky-post,
 #cancel-comment-reply-link,
 img:after,
 h6 {
@@ -1596,6 +1598,19 @@ body.page .main-navigation {
   display: block;
 }
 
+.sticky-post {
+  background: #0073aa;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1;
+  padding: .25rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: -1rem;
+  z-index: 1;
+}
+
 .updated:not(.published) {
   display: none;
 }
@@ -1814,6 +1829,40 @@ body.page .main-navigation {
 
 .hentry .entry-content a:hover {
   text-decoration: none;
+}
+
+.hentry .entry-content > iframe[style] {
+  margin: 32px 1rem !important;
+  max-width: calc(100vw - (2 * 1rem)) !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content > iframe[style] {
+    margin: 32px calc(2 * (100vw / 12)) !important;
+    max-width: calc(8 * (100vw / 12)) !important;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content > iframe[style] {
+    max-width: calc(6 * (100vw / 12)) !important;
+  }
+}
+
+.hentry .entry-content .wp-audio-shortcode {
+  max-width: calc(100vw - (2 * 1rem));
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 /*--------------------------------------------------------------
