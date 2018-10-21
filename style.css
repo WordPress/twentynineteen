@@ -1820,6 +1820,40 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
+.hentry .entry-content > iframe[style] {
+  margin: 32px 1rem !important;
+  max-width: calc(100vw - (2 * 1rem)) !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content > iframe[style] {
+    margin: 32px calc(2 * (100vw / 12)) !important;
+    max-width: calc(8 * (100vw / 12)) !important;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content > iframe[style] {
+    max-width: calc(6 * (100vw / 12)) !important;
+  }
+}
+
+.hentry .entry-content .wp-audio-shortcode {
+  max-width: calc(100vw - (2 * 1rem));
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content .wp-audio-shortcode {
+    max-width: calc(6 * (100vw / 12));
+  }
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
