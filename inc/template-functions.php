@@ -46,7 +46,6 @@ add_action( 'wp_head', 'twentynineteen_pingback_header' );
  * Added the 'hentry' class to product page as well as post.
  */
 function twentynineteen_add_entry_class( $classes, $class, $post_id ) {
-	
 	$classes[] = 'entry';
 
 	return $classes;
