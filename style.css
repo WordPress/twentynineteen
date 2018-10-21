@@ -2710,14 +2710,19 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color.alignleft, .entry-content .wp-block-pullquote.is-style-solid-color.alignright {
-  padding-bottom: 1rem;
-  padding: calc( 2 * 1rem);
+  padding: 1rem 1rem 0;
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color.alignleft blockquote, .entry-content .wp-block-pullquote.is-style-solid-color.alignright blockquote {
-  padding: 0 0 calc(2 * 1rem);
+  padding: 0 0 calc( 1.5 * 1rem);
   margin-left: 0;
   margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content .wp-block-pullquote.is-style-solid-color.alignleft, .entry-content .wp-block-pullquote.is-style-solid-color.alignright {
+    padding: calc( 2 * 1rem) calc( 2 * 1rem) 1rem;
+  }
 }
 
 .entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {

@@ -321,13 +321,16 @@
 
 			&.alignleft,
 			&.alignright {
-				padding-bottom: $size__spacing-unit;
-				padding: calc( 2 * #{$size__spacing-unit} );
+				padding: $size__spacing-unit $size__spacing-unit 0;
 
 				blockquote {
-					padding: 0 0 calc(2 * #{$size__spacing-unit});
+					padding: 0 0 calc( 1.5 * #{$size__spacing-unit} );
 					margin-left: 0;
 					margin-top: 0;
+				}
+
+				@include media(tablet) {
+					padding: calc( 2 * #{$size__spacing-unit} ) calc( 2 * #{$size__spacing-unit} ) $size__spacing-unit;
 				}
 			}
 		}
