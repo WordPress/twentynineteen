@@ -217,7 +217,7 @@
 			height: 18px;
 			position: absolute;
 			background: lighten( $color__link, 8% );
-			right: calc(100% + #{$size__spacing-unit * .25});
+			right: calc(100% - #{$size__spacing-unit * 3});
 			top: -3px;
 			width: 18px;
 
@@ -228,6 +228,9 @@
 				fill: white;
 				transform: scale(0.875);
 			}
+		}
+		@include media(tablet) {
+			right: calc(100% + #{$size__spacing-unit * .25});
 		}
 	}
 
