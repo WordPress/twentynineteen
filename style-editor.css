@@ -496,3 +496,51 @@ ul.wp-block-archives li:last-child a:after,
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
   font-size: 0.7111111111em;
 }
+
+/** === Classic Editor === */
+.wp-block-freeform {
+  /* Add style for galleries in classic-editor block */
+}
+
+.wp-block-freeform .gallery {
+  display: flex;
+}
+
+.wp-block-freeform .gallery .gallery-item {
+  padding: 0.5rem;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+.wp-block-freeform .gallery.gallery-columns-2 .gallery-item {
+  max-width: calc( ( 12 / 2 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-3 .gallery-item {
+  max-width: calc( ( 12 / 3 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-4 .gallery-item {
+  max-width: calc( ( 12 / 4 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-5 .gallery-item {
+  max-width: calc( ( 12 / 5 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-6 .gallery-item {
+  max-width: calc( ( 12 / 6 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-7 .gallery-item {
+  max-width: calc( ( 12 / 7 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-8 .gallery-item {
+  max-width: calc( ( 12 / 8 ) * (100% / 12));
+}
+
+.wp-block-freeform .gallery.gallery-columns-9 .gallery-item {
+  max-width: calc( ( 12 / 9 ) * (100% / 12));
+}
