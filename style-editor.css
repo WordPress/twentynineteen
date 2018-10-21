@@ -81,14 +81,15 @@ h4 {
 }
 
 h5 {
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
 }
 
 h6 {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
 
 a {
+  -webkit-transition: color 110ms ease-in-out;
   transition: color 110ms ease-in-out;
   color: #0073aa;
 }
@@ -106,7 +107,7 @@ a:focus {
 
 figcaption {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.6;
   color: #767676;
 }
@@ -148,7 +149,9 @@ figcaption {
 }
 
 .wp-block-cover-image.has-left-content {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .wp-block-cover-image.has-left-content h2,
@@ -157,7 +160,9 @@ figcaption {
 }
 
 .wp-block-cover-image.has-right-content {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .wp-block-cover-image.has-right-content h2,
@@ -183,7 +188,7 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
 /** === Gallery === */
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.6;
 }
 
@@ -191,7 +196,7 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
 .wp-block-button .wp-block-button__link {
   line-height: 1.8;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-weight: bold;
 }
 
@@ -241,7 +246,7 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
 .wp-block-quote footer,
 .wp-block-quote .wp-block-quote__citation {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.6;
   color: #767676;
 }
@@ -298,7 +303,7 @@ body[data-type="core/pullquote"] .wp-block-pullquote__citation,
 body[data-type="core/pullquote"][data-align="left"] .wp-block-pullquote__citation,
 body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citation {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.6;
   text-transform: none;
   color: #767676;
@@ -344,7 +349,7 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
 
 .wp-block-file .wp-block-file__button {
   line-height: 1.8;
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-weight: bold;
   background-color: #0073aa;
   border-radius: 5px;
@@ -379,7 +384,7 @@ body[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citati
 .wp-block-separator.is-style-dots:before {
   color: #767676;
   font-size: 1.6875em;
-  letter-spacing: 0.8888888889em;
+  letter-spacing: 0.88889em;
 }
 
 /** === Latest Posts, Archives, Categories === */
@@ -426,6 +431,25 @@ ul.wp-block-archives li:last-child a:after,
   content: ".";
 }
 
+/** === Latest Posts grid view === */
+.wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wp-block-latest-posts.is-grid li a:after {
+  content: '';
+}
+
+.wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+
+.wp-block-latest-posts.is-grid li:last-child a:after {
+  content: '';
+}
+
 /** === Latest Comments === */
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -443,5 +467,6 @@ ul.wp-block-archives li:last-child a:after,
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
+/*# sourceMappingURL=style-editor.css.map */

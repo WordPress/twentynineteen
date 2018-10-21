@@ -2,7 +2,7 @@
 
 .entry-content > *,
 .entry-summary > * {
-
+	word-break: break-all;
 	margin: 32px $size__spacing-unit;
 	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
