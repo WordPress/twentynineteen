@@ -1317,7 +1317,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 transparent;
   display: block;
   width: 32px;
   height: 32px;
@@ -1778,6 +1778,24 @@ body.page .main-navigation {
 .hentry .entry-content .more-link:hover {
   color: #0073aa;
   text-decoration: none;
+}
+
+.hentry .entry-content > iframe[style] {
+  margin: 32px 1rem !important;
+  max-width: calc(100vw - (2 * 1rem)) !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .hentry .entry-content > iframe[style] {
+    margin: 32px calc(2 * (100vw / 12)) !important;
+    max-width: calc(8 * (100vw / 12)) !important;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .hentry .entry-content > iframe[style] {
+    max-width: calc(6 * (100vw / 12)) !important;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2396,27 +2414,6 @@ body.page .main-navigation {
   .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
     margin-right: calc(2 * (100vw / 12));
-  }
-}
-
-.entry-content > iframe,
-.entry-summary > iframe {
-  margin: 32px 1rem !important;
-  max-width: calc(100vw - (2 * 1rem)) !important;
-}
-
-@media only screen and (min-width: 768px) {
-  .entry-content > iframe,
-  .entry-summary > iframe {
-    margin: 32px calc(2 * (100vw / 12)) !important;
-    max-width: calc(8 * (100vw / 12)) !important;
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry-content > iframe,
-  .entry-summary > iframe {
-    max-width: calc(6 * (100vw / 12)) !important;
   }
 }
 

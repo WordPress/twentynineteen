@@ -84,23 +84,6 @@
 	}
 }
 
-//! Overwrite inline styles of classic editor iframe embeds
-.entry-content > iframe,
-.entry-summary > iframe {
-
-	margin: 32px $size__spacing-unit !important;
-	max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
-
-	@include media(tablet) {
-		margin: 32px calc(2 * (100vw / 12)) !important;
-		max-width: calc(8 * (100vw / 12)) !important;
-	}
-
-	@include media(desktop) {
-		max-width: calc(6 * (100vw / 12)) !important;
-	}
-}
-
 .entry-content {
 
 	//! Audio

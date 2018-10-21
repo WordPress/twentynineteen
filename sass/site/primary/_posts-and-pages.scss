@@ -186,5 +186,21 @@
 				text-decoration: none;
 			}
 		}
+
+		// Overwrite iframe embeds that have inline styles.
+		> iframe[style] {
+
+			margin: 32px $size__spacing-unit !important;
+			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
+
+			@include media(tablet) {
+				margin: 32px calc(2 * (100vw / 12)) !important;
+				max-width: calc(8 * (100vw / 12)) !important;
+			}
+
+			@include media(desktop) {
+				max-width: calc(6 * (100vw / 12)) !important;
+			}
+		}
 	}
 }
