@@ -553,7 +553,8 @@ h6 {
 .entry-title,
 .not-found .page-title,
 .error-404 .page-title,
-.comments-title {
+.comments-title,
+blockquote {
   hyphens: auto;
   word-break: break-word;
 }
