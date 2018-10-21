@@ -22,7 +22,7 @@
 	.main-navigation a,
 	.social-navigation a,
 	.site-title a,
-	.hentry a {
+	.entry a {
 		color: white;
 		transition: opacity $link_transition ease-in-out;
 
@@ -47,14 +47,14 @@
 	}
 
 	.social-navigation svg,
-	.hentry svg {
+	.entry svg {
 		/* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
 		-webkit-filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
 			filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
 	}
 
 	/* Post header styles */
-	.hentry .entry-header {
+	.entry .entry-header {
 
 		margin-left: 0;
 		margin-right: 0;
@@ -89,15 +89,15 @@
 
 	/* Make sure important elements are above pseudo elements used for effects. */
 	.site-branding,
-	.hentry .entry-header {
+	.entry .entry-header {
 		z-index: 10;
 	}
 
 	/* Set up image filter layer positioning */
 	.site-branding-container:before,
 	.site-branding-container:after,
-	.hentry:before,
-	.hentry:after,
+	.entry:before,
+	.entry:after,
 	&:after {
 		display: block;
 		position: absolute;
@@ -125,7 +125,7 @@
 	}
 
 	/* Second layer: screen. */
-	.hentry:before {
+	.entry:before {
 		background: $color__link;
 		mix-blend-mode: screen;
 		opacity: 0.1;
@@ -133,7 +133,7 @@
 	}
 
 	/* Third layer: multiply. */
-	.hentry:after {
+	.entry:after {
 		background: $color__link;
 		mix-blend-mode: multiply;
 		opacity: 1;
