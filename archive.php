@@ -8,11 +8,11 @@
  * @subpackage Twenty_Nineteen
  */
 
-get_header(); 
+get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -51,5 +51,5 @@ get_header();
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php 
+<?php
 get_footer();

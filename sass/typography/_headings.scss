@@ -8,6 +8,7 @@ h2.author-title,
 .comments-title,
 .comment-author .fn,
 .no-comments,
+.site-title,
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__heading;
 	font-weight: 700;
@@ -44,7 +45,11 @@ img:after,
 }
 
 h1 {
-	font-size: $font__size-xxl;
+	font-size: $font__size-xl;
+
+	@include media(tablet) {
+		font-size: $font__size-xxl;
+	}
 }
 
 .entry-title,
@@ -52,13 +57,15 @@ h1 {
 .error-404 .page-title,
 .has-larger-font-size,
 h2 {
-	font-size: $font__size-xl;
+	font-size: $font__size-lg;
+
+	@include media(tablet) {
+		font-size: $font__size-xl;
+	}
 }
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
 	font-size: $font__size-lg;
@@ -72,6 +79,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
 	font-size: $font__size-md;
 }
