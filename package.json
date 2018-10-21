@@ -35,6 +35,7 @@
     "build:style": "node-sass style.scss style.css --output-style expanded && postcss -r style.css",
     "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded && postcss -r style-editor.css",
     "build:rtl": "rtlcss style.css rtl.css",
+    "build:print": "node-sass print.scss print.css --output-style expanded && postcss -r print.css",
     "build": "run-p \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
