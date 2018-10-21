@@ -2,6 +2,19 @@
 	display: block;
 }
 
+.sticky-post {
+	background: $color__background-button;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1;
+	padding: .25rem;
+	position: absolute;
+	text-transform: uppercase;
+	top: -$size__spacing-unit;
+	z-index: 1;
+}
+
 .updated:not(.published) {
 	display: none;
 }
@@ -183,6 +196,14 @@
 
 			&:hover {
 				color: $color__link;
+				text-decoration: none;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			&:hover {
 				text-decoration: none;
 			}
 		}

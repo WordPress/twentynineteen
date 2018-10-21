@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Displays header site branding
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -12,15 +12,20 @@
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
 	<?php endif; ?>
 
-	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
+	<?php if ( is_front_page() && is_home() ) : ?>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php else : ?>
+		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	<?php endif; ?>
+	
 	<?php
-	// Only show description on front page.
-	$description = ( is_home() || is_front_page() ) ? get_bloginfo( 'description', 'display' ) : null;
+		$description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) :
 	?>
-	<p class="site-description">
-		<span class="separator">&mdash;</span> <?php echo $description; ?>
-	</p>
+			<p class="site-description">
+				<?php echo $description; ?>
+			</p>
+	<?php endif; ?>
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
 			<?php
