@@ -2447,13 +2447,13 @@ body.page .main-navigation {
   float: left;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
-  margin-right: calc(2 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
   .entry-content > *.alignleft,
   .entry-summary > *.alignleft {
     max-width: calc(4 * (100vw / 12));
+    margin-right: calc(2 * 1rem);
   }
 }
 
@@ -2477,6 +2477,7 @@ body.page .main-navigation {
   .entry-content > *.alignright,
   .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
+    margin-left: calc(2 * 1rem);
     margin-right: calc(2 * (100vw / 12));
   }
 }
@@ -2670,23 +2671,15 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-pullquote.alignright {
+  padding: 0;
+}
+
 .entry-content .wp-block-pullquote.alignleft blockquote, .entry-content .wp-block-pullquote.alignright blockquote {
-  padding-right: 1rem;
   margin-left: 0;
+  padding: 0;
   text-align: left;
   max-width: 100%;
-}
-
-.entry-content .wp-block-pullquote.alignleft.is-style-solid-color, .entry-content .wp-block-pullquote.alignright.is-style-solid-color {
-  padding: calc(2 * 1rem);
-}
-
-.entry-content .wp-block-pullquote.alignleft:not(.is-style-solid-color) {
-  padding: 0 calc(2 * 1rem) 0 0;
-}
-
-.entry-content .wp-block-pullquote.alignright:not(.is-style-solid-color) {
-  padding: 0 0 0 calc(2 * 1rem);
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color p {
@@ -2717,6 +2710,7 @@ body.page .main-navigation {
 
 .entry-content .wp-block-pullquote.is-style-solid-color.alignleft, .entry-content .wp-block-pullquote.is-style-solid-color.alignright {
   padding-bottom: 1rem;
+  padding: calc( 2 * 1rem);
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color.alignleft blockquote, .entry-content .wp-block-pullquote.is-style-solid-color.alignright blockquote {
