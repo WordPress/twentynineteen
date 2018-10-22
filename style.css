@@ -1888,6 +1888,7 @@ body.page .main-navigation {
 
 .comments-area .comments-title-wrap,
 .comments-area .comment-list,
+.comments-area .comment-navigation,
 .comments-area > .comment-respond,
 .comments-area .comment-form-flex,
 .comments-area .no-comments {
@@ -1897,6 +1898,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .comments-area .comments-title-wrap,
   .comments-area .comment-list,
+  .comments-area .comment-navigation,
   .comments-area > .comment-respond,
   .comments-area .comment-form-flex,
   .comments-area .no-comments {
