@@ -4,6 +4,7 @@ Theme URI: https://github.com/WordPress/twentynineteen
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: A new Gutenberg-ready theme.
+Tested up to: WordPress 4.9.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -48,7 +49,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Posts and pages
 	## Comments
 # Blocks
-# Jetpack
 # Media
 	## Captions
 	## Galleries
@@ -103,10 +103,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Blocks */
 
 @import "sass/blocks/blocks";
-
-/* Jetpack */
-
-@import "sass/modules/jetpack";
 
 /* Media */
 
