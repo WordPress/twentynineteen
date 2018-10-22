@@ -127,17 +127,14 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( is_singular() ) :
-			?>
+		if ( is_singular() ) : ?>
 
 			<figure class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
 			<?php
-		else :
-			$post_thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-			?>
+		else : ?>
 
 		<figure class="post-thumbnail">
 			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
@@ -152,7 +149,7 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 				);
 				?>
 			</a>
-		</figure>
+		</figure><!-- .post-thumbnail -->
 
 			<?php
 		endif; // End is_singular().
