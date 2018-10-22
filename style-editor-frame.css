@@ -32,7 +32,7 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block .editor-post-tit
 }
 
 /** === Off-Center Content === */
-@media all and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow {
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -41,6 +41,7 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block .editor-post-tit
     grid-column-start: 2;
   }
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-post-title__block,
+  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-default-block-appender,
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-block-list__block {
     margin-left: 0;
     margin-right: 0;

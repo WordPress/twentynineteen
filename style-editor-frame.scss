@@ -34,7 +34,7 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block {
 
 body.gutenberg-editor-page .gutenberg .edit-post-layout {
 
-	@media all and (min-width: $tablet_width ) {
+	@include media(tablet) {
 		.editor-writing-flow {
 			display: grid;
 			grid-template-columns: 10% 80% 10%;
@@ -45,6 +45,7 @@ body.gutenberg-editor-page .gutenberg .edit-post-layout {
 		}
 
 		.editor-post-title__block,
+		.editor-default-block-appender,
 		.editor-block-list__block {
 			margin-left: 0;
 			margin-right: 0;
