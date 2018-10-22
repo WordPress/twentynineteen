@@ -98,25 +98,6 @@
 		-moz-transition:    opacity 0.5s ease-in-out;
 		transition:         opacity 0.5s ease-in-out;
 
-		&:before {
-			content: "";
-			border-left: 15px solid transparent;
-			border-right: 15px solid transparent;
-			border-bottom: 15px solid $color__link;
-			position: absolute;
-			left: calc(50% - #{0.5 * $size__spacing-unit});
-			top: -10px;
-		}
-
-		.sub-menu {
-
-			&:before {
-				border: none;
-				content: none;
-				display: none;
-  			}
-		}
-
 		@include media(tablet) {
 			max-width: calc(3 * (100vw / 12));
 		}
@@ -144,7 +125,7 @@
 				color: $color__background-body;
 				display: block;
 				line-height: $font__line-height-heading;
-				padding: calc( .25 * #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} );
+				padding: calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
 
 				&:hover,
 				&:focus {

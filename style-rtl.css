@@ -1002,25 +1002,7 @@ body.page .main-navigation {
   opacity: 0;
   right: -999em;
   z-index: 99999;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
-}
-
-.main-navigation .sub-menu:before {
-  content: "";
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #0073aa;
-  position: absolute;
-  right: calc(50% - 0.5rem);
-  top: -10px;
-}
-
-.main-navigation .sub-menu .sub-menu:before {
-  border: none;
-  content: none;
-  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1046,7 +1028,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
-  padding: calc( .25 * 1rem) calc( .5 * 1rem);
+  padding: calc( .5 * 1rem) 1rem;
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
@@ -1477,7 +1459,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
   width: 32px;
   height: 32px;
