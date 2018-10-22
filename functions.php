@@ -153,7 +153,7 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
  * Enqueue supplemental block editor styles
  */
 function twentynineteen_editor_frame_styles() {
-    wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
+	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
 }
 
 add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
