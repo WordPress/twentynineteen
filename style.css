@@ -954,6 +954,7 @@ body.page .main-navigation {
 
 .main-navigation .main-menu > li > a + svg {
   color: #0073aa;
+  margin-right: -0.25rem;
 }
 
 .main-navigation .main-menu > li > a:hover {
@@ -1016,6 +1017,12 @@ body.page .main-navigation {
   display: block;
   float: none;
   position: relative;
+}
+
+.main-navigation .sub-menu > li.menu-item-has-children svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.65rem;
 }
 
 @media only screen and (min-width: 768px) {

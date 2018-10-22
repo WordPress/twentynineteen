@@ -952,6 +952,11 @@ body.page .main-navigation {
   color: #0073aa;
 }
 
+.main-navigation .main-menu > li > a + svg {
+  color: #0073aa;
+  margin-left: -0.25rem;
+}
+
 .main-navigation .main-menu > li > a:hover {
   color: #005177;
 }
@@ -964,10 +969,6 @@ body.page .main-navigation {
   content: ",";
   display: inline;
   color: #767676;
-}
-
-.main-navigation .main-menu > li > a + svg {
-  color: #0073aa;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children:after {
@@ -1016,6 +1017,12 @@ body.page .main-navigation {
   display: block;
   float: none;
   position: relative;
+}
+
+.main-navigation .sub-menu > li.menu-item-has-children svg {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.65rem;
 }
 
 @media only screen and (min-width: 768px) {
