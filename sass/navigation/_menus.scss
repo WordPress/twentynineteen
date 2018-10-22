@@ -104,7 +104,7 @@
 			border-right: 15px solid transparent;
 			border-bottom: 15px solid $color__link;
 			position: absolute;
-			left: $size__spacing-unit;
+			left: calc(50% - #{0.5 * $size__spacing-unit});
 			top: -10px;
 		}
 

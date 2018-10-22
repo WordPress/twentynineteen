@@ -990,7 +990,7 @@ body.page .main-navigation {
   border-right: 15px solid transparent;
   border-bottom: 15px solid #0073aa;
   position: absolute;
-  left: 1rem;
+  left: calc(50% - 0.5rem);
   top: -10px;
 }
 
