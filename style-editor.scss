@@ -290,6 +290,11 @@ body[data-type="core/cover-image"][data-align="full"] {
 			background-color: $color__link;
 		}
 	}
+
+	blockquote {
+		hyphens: auto;
+		word-break: break-word;
+	}
 }
 
 body[data-type="core/pullquote"],
