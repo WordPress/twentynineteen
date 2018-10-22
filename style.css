@@ -614,7 +614,7 @@ mark, ins {
 }
 
 big {
-  font-size: 3.375em;
+  font-size: 125%;
 }
 
 a {
@@ -3048,12 +3048,14 @@ svg {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
+  display: flex;
   margin-bottom: calc(1.5 * 1rem);
 }
 
 .gallery-item {
   display: inline-block;
-  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
   width: 100%;
@@ -3089,6 +3091,10 @@ svg {
 
 .gallery-columns-9 .gallery-item {
   max-width: calc( ( 12 / 9 ) * (100% / 12));
+}
+
+.gallery-item:last-of-type {
+  margin-right: 0;
 }
 
 .gallery-caption {
