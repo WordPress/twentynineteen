@@ -40,11 +40,8 @@ body.gutenberg-editor-page .gutenberg .editor-default-block-appender__content {
 /** === Off-Center Content === */
 @media only screen and (min-width: 768px) {
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow {
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-  }
-  body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow > div {
-    grid-column-start: 2;
+    max-width: 80%;
+    margin: 0 10%;
   }
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-post-title__block,
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-default-block-appender,

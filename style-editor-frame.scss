@@ -43,12 +43,8 @@ body.gutenberg-editor-page .gutenberg .edit-post-layout {
 
 	@include media(tablet) {
 		.editor-writing-flow {
-			display: grid;
-			grid-template-columns: 10% 80% 10%;
-
-			> div {
-				grid-column-start: 2;
-			}
+			max-width: 80%;
+			margin: 0 10%;
 		}
 
 		.editor-post-title__block,
