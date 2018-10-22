@@ -17,11 +17,11 @@
 	<?php else : ?>
 		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 	<?php endif; ?>
-	
+
 	<?php
-		$description = get_bloginfo( 'description', 'display' );
-		if ( $description || is_customize_preview() ) :
-	?>
+	$description = get_bloginfo( 'description', 'display' );
+	if ( $description || is_customize_preview() ) :
+		?>
 			<p class="site-description">
 				<?php echo $description; ?>
 			</p>
