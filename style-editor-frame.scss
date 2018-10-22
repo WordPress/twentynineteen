@@ -1,5 +1,7 @@
 /*!
 Twenty Nineteen Editor Frame Styles
+
+NOTE: This file customizes items that are out of the normal scope of style-editor.css due to the auto-prefixing functionality associated with add_editor_style(). When that file is able to edit the post title and a container similar to .edit-post-layout, these styles should be migrated into style-editor.css. 
 */
 
 /** === Includes === */
