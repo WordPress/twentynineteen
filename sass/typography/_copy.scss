@@ -27,7 +27,7 @@ pre {
 	font-size: $font__size-sm;
 	font-family: $font__pre;
 	line-height: $font__line-height-body;
-	overflow: hidden;
+	overflow: auto;
 }
 
 code, kbd, tt, var {

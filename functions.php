@@ -44,41 +44,55 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1568, 9999 );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
-			'social' => __( 'Social Links Menu', 'twentynineteen' ),
-		) );
+		// This theme uses wp_nav_menu() in two locations.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'social' => __( 'Social Links Menu', 'twentynineteen' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'twentynineteen_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'twentynineteen_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		/**
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 190,
-			'width'       => 190,
-			'flex-width'  => false,
-			'flex-height' => false,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 190,
+				'width'       => 190,
+				'flex-width'  => false,
+				'flex-height' => false,
+			)
+		);
 
 		// Add support for Block Styles
 		add_theme_support( 'wp-block-styles' );
@@ -117,7 +131,13 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
 function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
+	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
+
 	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_style( 'ie-theme', get_stylesheet_directory_uri() . '/css/ie.css' );
+
+	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
 	if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) {
 		wp_add_inline_style( 'twentynineteen-style', twentynineteen_header_featured_image_css() );
@@ -141,12 +161,12 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
 /**
  * SVG Icons class.
  */
-require get_template_directory() . '/classes/class.twentynineteen-svg-icons.php';
+require get_template_directory() . '/classes/class-twentynineteen-svg-icons.php';
 
 /**
  * Custom Comment Walker template.
  */
-require get_template_directory() . '/classes/class.twentynineteen-walker-comment.php';
+require get_template_directory() . '/classes/class-twentynineteen-walker-comment.php';
 
 /**
  * Enhance the theme by hooking into WordPress.
