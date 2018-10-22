@@ -5,6 +5,7 @@ Theme URI: https://github.com/WordPress/twentynineteen
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: A new Gutenberg-ready theme.
+Tested up to: WordPress 4.9.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -614,7 +615,7 @@ mark, ins {
 }
 
 big {
-  font-size: 3.375em;
+  font-size: 125%;
 }
 
 a {
@@ -917,6 +918,10 @@ a:focus {
 /** === Main menu === */
 .main-navigation {
   display: inline;
+  /*
+	 * :focus-within needs its own selector so other similar
+	 * selectors don’t get ignored if a browser doesn’t recognize it
+	 */
 }
 
 @media only screen and (min-width: 768px) {
@@ -933,41 +938,161 @@ body.page .main-navigation {
   display: inline;
 }
 
-.main-navigation ul.main-menu {
+.main-navigation .main-menu {
   display: inline;
   margin: 0;
   padding: 0;
 }
 
-.main-navigation ul.main-menu > li {
+.main-navigation .main-menu > li {
   display: inline;
 }
 
-.main-navigation ul.main-menu > li > a:hover {
+.main-navigation .main-menu > li > a {
+  font-weight: 700;
+  color: #0073aa;
+}
+
+.main-navigation .main-menu > li > a + svg {
+  color: #0073aa;
+  margin-right: -0.25rem;
+}
+
+.main-navigation .main-menu > li > a:hover {
   color: #005177;
 }
 
-.main-navigation ul.main-menu > li > a:after {
+.main-navigation .main-menu > li > a:hover + svg {
+  color: #005177;
+}
+
+.main-navigation .main-menu > li > a:after {
   content: ",";
   display: inline;
   color: #767676;
 }
 
-.main-navigation ul.main-menu > li:last-child > a:after {
+.main-navigation .main-menu > li.menu-item-has-children:after {
+  content: ",";
+  display: inline;
+  color: #767676;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children > a:after,
+.main-navigation .main-menu > li.menu-item-has-children .menu-item-has-children > a:after {
+  content: "";
+  display: none;
+}
+
+.main-navigation .main-menu > li:last-child > a:after {
   content: ".";
 }
 
-.main-navigation ul.main-menu > li > a {
-  font-weight: 700;
-  color: #0073aa;
-}
-
-.main-navigation ul.main-menu > li:last-child > a {
+.main-navigation .main-menu > li:last-child > a {
   margin-right: 0;
 }
 
-.main-navigation ul.sub-menu {
+.main-navigation .sub-menu {
+  background: #0073aa;
+  color: #fff;
+  list-style: none;
+  padding-left: 0;
   display: none;
+  float: left;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  left: -999em;
+  z-index: 99999;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .sub-menu {
+    max-width: calc(3 * (100vw / 12));
+  }
+}
+
+.main-navigation .sub-menu > li {
+  clear: both;
+  display: block;
+  float: none;
+  position: relative;
+  word-break: break-word;
+}
+
+.main-navigation .sub-menu > li.menu-item-has-children svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.65rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .sub-menu > li.menu-item-has-children .menu-item-has-children > a:after {
+    content: "\203a";
+  }
+}
+
+.main-navigation .sub-menu > li > a {
+  color: #fff;
+  display: block;
+  line-height: 1.2;
+  padding: calc( .5 * 1rem) 1rem;
+}
+
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
+  background: #005177;
+}
+
+.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after {
+  background: #005177;
+}
+
+.main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
+  display: block;
+  left: inherit;
+  margin-top: -2px;
+  opacity: 1;
+}
+
+.main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+  margin-top: inherit;
+  position: relative;
+  padding-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+    padding-left: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
+  display: block;
+  left: inherit;
+  margin-top: -2px;
+  opacity: 1;
+}
+
+.main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
+  margin-top: inherit;
+  position: relative;
+  padding-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
+    padding-left: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
 }
 
 /* Social menu */
@@ -1443,6 +1568,7 @@ body.page .main-navigation {
 .site-header.featured-image .site-branding .site-title,
 .site-header.featured-image .site-branding .site-description,
 .site-header.featured-image .main-navigation a:after,
+.site-header.featured-image .main-navigation .main-menu > li.menu-item-has-children:after,
 .site-header.featured-image .main-navigation li,
 .site-header.featured-image .social-navigation li,
 .site-header.featured-image .entry-meta,
@@ -3048,12 +3174,14 @@ svg {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
+  display: flex;
   margin-bottom: calc(1.5 * 1rem);
 }
 
 .gallery-item {
   display: inline-block;
-  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
   width: 100%;
@@ -3089,6 +3217,10 @@ svg {
 
 .gallery-columns-9 .gallery-item {
   max-width: calc( ( 12 / 9 ) * (100% / 12));
+}
+
+.gallery-item:last-of-type {
+  margin-right: 0;
 }
 
 .gallery-caption {

@@ -1,10 +1,12 @@
 .gallery {
+	display: flex;
 	margin-bottom: calc(1.5 * #{$size__spacing-unit});
 }
 
 .gallery-item {
 	display: inline-block;
-	padding: ( $size__spacing-unit * .5 );
+	margin-right: $size__spacing-unit;
+	margin-bottom: $size__spacing-unit;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -14,6 +16,10 @@
 		.gallery-columns-#{$i} & {
 			max-width: calc( ( 12 / #{$i} ) * (100% / 12) );
 		}
+	}
+
+	&:last-of-type {
+		margin-right: 0;
 	}
 }
 
