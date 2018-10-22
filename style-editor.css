@@ -139,24 +139,6 @@ figcaption {
   font-size: 2.25em;
   font-weight: bold;
   line-height: 1.4;
-  width: calc(100vw - (2 * 1rem));
-  max-width: calc(100vw - (2 * 1rem));
-}
-
-@media only screen and (min-width: 768px) {
-  .wp-block-cover-image h2,
-  .wp-block-cover-image .wp-block-cover-image-text {
-    width: calc(8 * (100vw / 12));
-    max-width: calc(8 * (100vw / 12));
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .wp-block-cover-image h2,
-  .wp-block-cover-image .wp-block-cover-image-text {
-    width: calc(6 * (100vw / 12));
-    max-width: calc(6 * (100vw / 12));
-  }
 }
 
 .wp-block-cover-image.has-left-content {
@@ -185,11 +167,15 @@ body[data-type="core/cover-image"][data-align="right"] .wp-block-cover-image-tex
   max-width: 305px;
 }
 
-body[data-type="core/cover-image"][data-align="wide"] h2,
-body[data-type="core/cover-image"][data-align="wide"] .wp-block-cover-image-text,
-body[data-type="core/cover-image"][data-align="full"] h2,
-body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text {
-  padding: 0;
+@media only screen and (min-width: 1168px) {
+  body[data-type="core/cover-image"][data-align="wide"] h2,
+  body[data-type="core/cover-image"][data-align="wide"] .wp-block-cover-image-text,
+  body[data-type="core/cover-image"][data-align="full"] h2,
+  body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text {
+    padding: 0;
+    width: calc(6 * (100vw / 12));
+    max-width: calc(6 * (100vw / 12));
+  }
 }
 
 /** === Gallery === */

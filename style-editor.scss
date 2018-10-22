@@ -132,19 +132,6 @@ figcaption {
 		font-size: $font__size-xl;
 		font-weight: bold;
 		line-height: 1.4;
-
-		width: calc(100vw - (2 * #{ $size__spacing-unit}));
-		max-width: calc(100vw - (2 * #{ $size__spacing-unit}));
-
-		@include media(tablet) {
-			width: calc(8 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
-		}
-
-		@include media(desktop) {
-			width: calc(6 * (100vw / 12));
-			max-width: calc(6 * (100vw / 12));
-		}
 	}
 
 	&.has-left-content {
@@ -179,9 +166,13 @@ body[data-type="core/cover-image"][data-align="right"] {
 body[data-type="core/cover-image"][data-align="wide"],
 body[data-type="core/cover-image"][data-align="full"] {
 
-	h2,
-	.wp-block-cover-image-text {
-		padding: 0;
+	@include media(desktop) {
+		h2,
+		.wp-block-cover-image-text {
+			padding: 0;
+			width: calc(6 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
+		}
 	}
 }
 
