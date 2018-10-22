@@ -290,7 +290,9 @@ body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text
 }
 
 .wp-block-pullquote blockquote {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   word-break: break-word;
 }
 

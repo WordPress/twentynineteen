@@ -133,7 +133,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -517,7 +518,7 @@ h4 {
 .pagination .nav-links,
 .comment-content,
 h5 {
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
 }
 
 .entry-meta,
@@ -532,7 +533,7 @@ h5 {
 #cancel-comment-reply-link,
 img:after,
 h6 {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
 
 .site-title,
@@ -555,14 +556,18 @@ h6 {
 .error-404 .page-title,
 .comments-title,
 blockquote {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   word-break: break-word;
 }
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 @media only screen and (min-width: 768px) {
   .entry-title {
-    hyphens: none;
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none;
   }
 }
 
@@ -582,20 +587,20 @@ blockquote > p {
 }
 
 blockquote cite {
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-style: normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 pre {
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
   line-height: 1.8;
   overflow: auto;
 }
 
 code, kbd, tt, var {
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
 }
 
@@ -790,7 +795,7 @@ input[type="submit"] {
   box-sizing: border-box;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-weight: 600;
   line-height: 1.2;
   outline: none;
@@ -1046,7 +1051,10 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .meta-nav {
   color: #767676;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .post-navigation .nav-links a .meta-nav:before, .post-navigation .nav-links a .meta-nav:after {
@@ -1058,7 +1066,9 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a .post-title {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1187,7 +1197,8 @@ body.page .main-navigation {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1203,7 +1214,8 @@ body.page .main-navigation {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  clip-path: none;
+  -webkit-clip-path: none;
+          clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -1336,7 +1348,7 @@ body.page .main-navigation {
 .site-logo .custom-logo-link {
   border-radius: 100%;
   box-sizing: content-box;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
   width: 32px;
   height: 32px;
@@ -1474,7 +1486,6 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation svg,
 .site-header.featured-image .hentry svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
-  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 
@@ -2225,7 +2236,7 @@ body.page .main-navigation {
 .comment-form .comment-notes,
 .comment-form label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   color: #767676;
 }
 
@@ -2518,7 +2529,7 @@ body.page .main-navigation {
   transition: background 150ms ease-in-out;
   border: none;
   background: #0073aa;
-  font-size: 0.8888888889em;
+  font-size: 0.88889em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.2;
   box-sizing: border-box;
@@ -2615,7 +2626,7 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-preformatted {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.8;
   padding: 1rem;
 }
@@ -2667,7 +2678,7 @@ body.page .main-navigation {
 .entry-content .wp-block-pullquote cite {
   display: inline-block;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   line-height: 1.6;
   text-transform: none;
   color: #767676;
@@ -2739,7 +2750,7 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-quote cite {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
 
 .entry-content .wp-block-quote.is-large, .entry-content .wp-block-quote.is-style-large {
@@ -2757,7 +2768,7 @@ body.page .main-navigation {
 .entry-content .wp-block-quote.is-large cite,
 .entry-content .wp-block-quote.is-large footer, .entry-content .wp-block-quote.is-style-large cite,
 .entry-content .wp-block-quote.is-style-large footer {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2850,7 +2861,7 @@ body.page .main-navigation {
 .entry-content .wp-block-image figcaption,
 .entry-content .wp-block-gallery .blocks-gallery-image figcaption,
 .entry-content .wp-block-gallery .blocks-gallery-item figcaption {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -2889,8 +2900,8 @@ body.page .main-navigation {
 .entry-content hr.is-style-dots:before {
   color: #767676;
   font-size: 1.6875em;
-  letter-spacing: 0.8888888889em;
-  padding-left: 0.8888888889em;
+  letter-spacing: 0.88889em;
+  padding-left: 0.88889em;
 }
 
 .entry-content .wp-block-embed-twitter {
@@ -2977,7 +2988,7 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-latest-comments.has-dates .wp-block-latest-comments__comment-date {
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
 }
 
 /* Jetpack */
@@ -3143,7 +3154,7 @@ svg {
 
 .gallery-caption {
   display: block;
-  font-size: 0.7111111111em;
+  font-size: 0.71111em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   margin: 0;
