@@ -1051,6 +1051,7 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
   display: block;
   left: inherit;
+  margin-top: -2px;
   opacity: 1;
 }
 
@@ -1073,6 +1074,7 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   left: inherit;
+  margin-top: -2px;
   opacity: 1;
 }
 
