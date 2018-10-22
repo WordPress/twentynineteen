@@ -116,7 +116,8 @@ a:focus {
   text-decoration: underline;
 }
 
-figcaption {
+figcaption,
+.gallery-caption {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.71111em;
   line-height: 1.6;
@@ -180,7 +181,8 @@ body[data-type="core/cover-image"][data-align="right"] .wp-block-cover-image-tex
 
 /** === Gallery === */
 .wp-block-gallery .blocks-gallery-image figcaption,
-.wp-block-gallery .blocks-gallery-item figcaption {
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-gallery .gallery-item .gallery-caption {
   font-size: 0.71111em;
   line-height: 1.6;
 }
@@ -504,6 +506,10 @@ ul.wp-block-archives li:last-child a:after,
   text-align: center;
   vertical-align: top;
   width: 100%;
+}
+
+.wp-block-freeform .gallery .gallery-item .gallery-caption {
+  margin: 0;
 }
 
 .wp-block-freeform .gallery.gallery-columns-2 .gallery-item {
