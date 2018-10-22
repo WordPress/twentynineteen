@@ -1017,6 +1017,7 @@ body.page .main-navigation {
   display: block;
   float: none;
   position: relative;
+  word-break: break-word;
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children svg {
