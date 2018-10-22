@@ -1005,22 +1005,6 @@ body.page .main-navigation {
   transition: opacity 0.5s ease-in-out;
 }
 
-.main-navigation .sub-menu:before {
-  content: "";
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #0073aa;
-  position: absolute;
-  right: calc(50% - 0.5rem);
-  top: -10px;
-}
-
-.main-navigation .sub-menu .sub-menu:before {
-  border: none;
-  content: none;
-  display: none;
-}
-
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
     max-width: calc(3 * (100vw / 12));
@@ -1044,7 +1028,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
-  padding: calc( .25 * 1rem) calc( .5 * 1rem);
+  padding: calc( .5 * 1rem) 1rem;
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
