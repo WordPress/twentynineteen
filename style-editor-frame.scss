@@ -55,5 +55,9 @@ body.gutenberg-editor-page .gutenberg .edit-post-layout {
 			position: relative;
 			left: calc( -12.5% - 46px - 14px );
 		}
+
+		.editor-block-list__block[data-align="right"] {
+			max-width: 125%;
+		}
 	}
 }
