@@ -31,6 +31,12 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block .editor-post-tit
   font-size: 2.8125em;
 }
 
+/** === Default Appender Text === */
+body.gutenberg-editor-page .gutenberg .editor-default-block-appender__content {
+  font-size: 22px;
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+}
+
 /** === Off-Center Content === */
 @media only screen and (min-width: 768px) {
   body.gutenberg-editor-page .gutenberg .edit-post-layout .editor-writing-flow {

@@ -30,6 +30,13 @@ body.gutenberg-editor-page .gutenberg .editor-post-title__block {
 	}
 }
 
+/** === Default Appender === */
+
+body.gutenberg-editor-page .gutenberg .editor-default-block-appender__content {
+	font-size: $font__size_base;
+	font-family: $font__body;
+}
+
 /** === Off-Center Content === */
 
 body.gutenberg-editor-page .gutenberg .edit-post-layout {
