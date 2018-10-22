@@ -947,7 +947,20 @@ body.page .main-navigation {
   display: inline;
 }
 
+.main-navigation .main-menu > li > a {
+  font-weight: 700;
+  color: #0073aa;
+}
+
+.main-navigation .main-menu > li > a + svg {
+  color: #0073aa;
+}
+
 .main-navigation .main-menu > li > a:hover {
+  color: #005177;
+}
+
+.main-navigation .main-menu > li > a:hover + svg {
   color: #005177;
 }
 
@@ -965,25 +978,12 @@ body.page .main-navigation {
 
 .main-navigation .main-menu > li.menu-item-has-children > a:after,
 .main-navigation .main-menu > li.menu-item-has-children .menu-item-has-children > a:after {
-  content: "\2304";
-  color: #fff;
-  background: #0073aa;
-  border-radius: 100%;
-  display: inline-block;
-  width: .7rem;
-  height: .7rem;
-  line-height: .5rem;
-  text-align: center;
-  margin-left: .25rem;
+  content: "";
+  display: none;
 }
 
 .main-navigation .main-menu > li:last-child > a:after {
   content: ".";
-}
-
-.main-navigation .main-menu > li > a {
-  font-weight: 700;
-  color: #0073aa;
 }
 
 .main-navigation .main-menu > li:last-child > a {

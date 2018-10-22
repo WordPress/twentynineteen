@@ -28,8 +28,18 @@
 
 			> a {
 
+				font-weight: 700;
+				color: $color__link;
+
+				+ svg {
+					color: $color__link;
+				}
+
 				&:hover {
 					color: $color__link-hover;
+					+ svg {
+						color: $color__link-hover;
+					}
 				}
 
 				&:after {
@@ -51,27 +61,14 @@
 				.menu-item-has-children > a {
 
 					&:after {
-						content: "\2304";
-						color: $color__background-body;
-						background: $color__link;
-						border-radius: 100%;
-						display: inline-block;
-						width: .7rem;
-						height: .7rem;
-						line-height: .5rem;
-						text-align: center;
-						margin-left: .25rem;
+						content: "";
+						display: none;
 					}
 				}
 			}
 
 			&:last-child> a:after {
 				content: ".";
-			}
-
-			> a {
-				font-weight: 700;
-				color: $color__link;
 			}
 
 			&:last-child > a {

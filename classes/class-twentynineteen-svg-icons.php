@@ -129,6 +129,18 @@ class TwentyNineteen_SVG_Icons {
     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
 </svg>',
 
+		'arrow_drop_down_circle' => /* material-design – arrow_drop_down_circle */ '
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none"/>
+	<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 12l-4-4h8l-4 4z"/>
+</svg>',
+
+		'keyboard_arrow_down' => /* material-design – keyboard_arrow_down */ '
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+	<path fill="none" d="M0 0h24v24H0V0z"/>
+</svg>',
+
 	);
 
 	/**

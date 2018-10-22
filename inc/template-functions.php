@@ -202,3 +202,19 @@ function twentynineteen_nav_menu_link_attributes( $atts, $item, $args, $depth ) 
 	return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'twentynineteen_nav_menu_link_attributes', 10, 4 );
+
+/**
+ * Add a dropdown icon to top-level menu items
+ */
+function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ){
+
+	//Only add class to 'top level' items on the 'primary' menu.
+	if ( 'menu-1' == $args->theme_location && $depth === 0 ){
+
+		if ( in_array( "menu-item-has-children", $item->classes ) ) {
+			$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
+		}
+	}
+	return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10, 4 );
