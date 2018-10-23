@@ -9,10 +9,11 @@
  * @since 1.0.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -51,4 +52,5 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();
