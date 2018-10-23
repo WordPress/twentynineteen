@@ -39,12 +39,12 @@
 						<?php if ( ! is_page() ) : ?>
 						<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 							<?php twentynineteen_posted_by(); ?>
-							<?php twentynineteen_estimated_read_time(); ?>
+							<?php twentynineteen_posted_on(); ?>
 							<span class="comment-count">
 								<?php
 								if ( ! empty( $discussion ) ) {
-twentynineteen_discussion_avatars_list( $discussion->authors );}
-?>
+								twentynineteen_discussion_avatars_list( $discussion->authors );}
+								?>
 								<?php twentynineteen_comment_count(); ?>
 							</span>
 							<?php
@@ -65,7 +65,7 @@ twentynineteen_discussion_avatars_list( $discussion->authors );}
 									'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
 									'</span>'
 								);
-								?>
+							?>
 						</div><!-- .meta-info -->
 						<?php endif; ?>
 					</div><!-- .entry-header -->

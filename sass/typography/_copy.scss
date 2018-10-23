@@ -22,7 +22,6 @@ blockquote {
 	}
 }
 
-
 pre {
 	font-size: $font__size-sm;
 	font-family: $font__pre;
@@ -46,7 +45,7 @@ mark, ins {
 }
 
 big {
-	font-size: $font__size-xxxl;
+	font-size: 125%;
 }
 
 a {
