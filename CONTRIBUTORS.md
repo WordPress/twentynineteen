@@ -19,3 +19,6 @@ Version 1.0:
 @mmaumio
 @richsalvucci
 @littlebigthing
+@dimadin
+@joyously
+@anevins12
