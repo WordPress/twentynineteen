@@ -18,7 +18,7 @@ if ( $has_responses ) {
 		'%1$s from %2$s.',
 		sprintf( _n( '%d response', '%d responses', $discussion->responses, 'twentynineteen' ), $discussion->responses ),
 		sprintf( _n( '%d other', '%d others', $discussion->commenters, 'twentynineteen' ), $discussion->commenters )
-		);
+	);
 } elseif ( $comments_number > 0 ) {
 	/* Show comment count if not enough discussion information */
 

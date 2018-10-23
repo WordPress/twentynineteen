@@ -192,3 +192,46 @@ function twentynineteen_get_discussion_data() {
 	);
 	return $discussion;
 }
+
+/**
+ * WCAG 2.0 Attributes for Dropdown Menus
+ *
+ * Adjustments to menu attributes tot support WCAG 2.0 recommendations
+ * for flyout and dropdown menus.
+ *
+ * @ref https://www.w3.org/WAI/tutorials/menus/flyout/
+ */
+function twentynineteen_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
+
+	// Add [aria-haspopup] and [aria-expanded] to menu items that have children
+	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
+	if ( $item_has_children ) {
+		$atts['aria-haspopup'] = 'true';
+		$atts['aria-expanded'] = 'false';
+	}
+
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'twentynineteen_nav_menu_link_attributes', 10, 4 );
+
+/**
+ * Add a dropdown icon to top-level menu items
+ */
+function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
+
+	// Only add class to 'top level' items on the 'primary' menu.
+	if ( 'menu-1' == $args->theme_location && 0 === $depth ) {
+
+		if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+			$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
+		}
+	} else if ( 'menu-1' == $args->theme_location && $depth >= 1 ) {
+
+		if ( in_array( 'menu-item-has-children', $item->classes ) ) {
+			$output .= twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
+		}
+	}
+
+	return $output;
+}
+add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10, 4 );

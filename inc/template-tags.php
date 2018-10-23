@@ -88,6 +88,18 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 					$categories_list
 				); // WPCS: XSS OK.
 			}
+
+			/* translators: used between list items, there is a space after the comma. */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'twentynineteen' ) );
+			if ( $tags_list ) {
+				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
+				printf(
+					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+					twentynineteen_get_icon_svg( 'tag', 16 ),
+					esc_html__( 'Tags:', 'twentynineteen' ),
+					$tags_list
+				); // WPCS: XSS OK.
+			}
 		}
 
 		// Comment count.
@@ -134,27 +146,26 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
-		<?php
+			<?php
 		else :
-			$post_thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		?>
+			?>
 
-		<figure class="post-thumbnail">
-			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" style="background-image: url(<?php echo esc_url( $post_thumbnail ); ?>);">
-				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
-							array( 'echo' => false )
-						),
-					)
-				);
-				?>
-			</a>
-		</figure>
+			<figure class="post-thumbnail">
+				<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php
+					the_post_thumbnail(
+						'post-thumbnail',
+						array(
+							'alt' => the_title_attribute(
+								array( 'echo' => false )
+							),
+						)
+					);
+					?>
+				</a>
+			</figure><!-- .post-thumbnail -->
 
-		<?php
+			<?php
 		endif; // End is_singular().
 	}
 endif;
