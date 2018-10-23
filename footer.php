@@ -18,7 +18,6 @@
 		<div class="site-info">
 			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php /* translators: TODO comment on placeholders */ ?>
 				<?php printf( __( 'Proudly powered by %s', 'twentynineteen' ), 'WordPress' ); ?>.
 			</a>
 			<?php
