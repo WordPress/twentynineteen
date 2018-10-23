@@ -2473,23 +2473,42 @@ body.page .main-navigation {
 ## Footer
 --------------------------------------------------------------*/
 /* Site footer */
-.site-footer {
-  color: #767676;
-}
-
+.site-footer .widget-area,
 .site-footer .site-info {
   margin: calc(2 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  .site-footer .widget-area,
   .site-footer .site-info {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 
+.site-footer .widget-area .imprint,
 .site-footer .site-info .imprint {
   margin-left: 1rem;
+}
+
+.site-footer .widget-column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer .widget-column .widget {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1168px) {
+  .site-footer .widget-column .widget {
+    margin-left: calc(3 * 1rem);
+    width: calc(50% - (3 * 1rem));
+  }
+}
+
+.site-footer .site-info {
+  color: #767676;
 }
 
 .site-footer a {
