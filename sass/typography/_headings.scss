@@ -1,11 +1,14 @@
 .main-navigation,
 .page-description,
 h2.author-title,
+.not-found .page-title,
+.error-404 .page-title,
 .post-navigation .post-title,
 .pagination .nav-links,
 .comments-title,
 .comment-author .fn,
 .no-comments,
+.site-title,
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__heading;
 	font-weight: 700;
@@ -25,7 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 .comment-reply-link,
 #cancel-comment-reply-link,
 img:after,
-.page-links {
+.page-links,
+.sticky-post {
 	font-family: $font__heading;
 }
 
@@ -42,19 +46,27 @@ img:after,
 }
 
 h1 {
-	font-size: $font__size-xxl;
+	font-size: $font__size-xl;
+
+	@include media(tablet) {
+		font-size: $font__size-xxl;
+	}
 }
 
 .entry-title,
+.not-found .page-title,
+.error-404 .page-title,
 .has-larger-font-size,
 h2 {
-	font-size: $font__size-xl;
+	font-size: $font__size-lg;
+
+	@include media(tablet) {
+		font-size: $font__size-xl;
+	}
 }
 
 .has-regular-font-size,
 .has-large-font-size,
-h2.author-title,
-p.author-bio,
 .comments-title,
 h3 {
 	font-size: $font__size-lg;
@@ -68,6 +80,8 @@ h3 {
 .page-description,
 .comment-author .fn,
 .no-comments,
+h2.author-title,
+p.author-bio,
 h4 {
 	font-size: $font__size-md;
 }
@@ -86,6 +100,7 @@ h5 {
 .comment-reply-link,
 .comment-metadata,
 .comment-notes,
+.sticky-post,
 #cancel-comment-reply-link,
 img:after,
 h6 {
@@ -108,7 +123,10 @@ h6 {
 
 .post-navigation .post-title,
 .entry-title,
-.comments-title {
+.not-found .page-title,
+.error-404 .page-title,
+.comments-title,
+blockquote {
 	hyphens: auto;
 	word-break: break-word;
 }
