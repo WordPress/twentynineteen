@@ -33,6 +33,12 @@
 	}
 }
 
+.archive .page-header .page-description {
+	display: block;
+	color: #111;
+	font-size: 1em;
+}
+
 .hfeed .hentry .entry-header {
 
 	@include media(tablet) {
