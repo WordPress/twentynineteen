@@ -107,8 +107,8 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		add_editor_style( 'style-editor.css' );
 
 		// Add custom editor font sizes
-		add_theme_support( 
-			'editor-font-sizes', 
+		add_theme_support(
+			'editor-font-sizes',
 			array(
 				array(
 					'name' => __( 'Small', 'twentynineteen' ),
@@ -120,7 +120,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 					'name' => __( 'Normal', 'twentynineteen' ),
 					'shortName' => __( 'M', 'twentynineteen' ),
 					'size' => 22,
-					'slug' => 'normal'm
+					'slug' => 'normal',
 				),
 				array(
 					'name' => __( 'Large', 'twentynineteen' ),
@@ -133,7 +133,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 					'shortName' => __( 'XL', 'twentynineteen' ),
 					'size' => 49.5,
 					'slug' => 'huge',
-				)
+				),
 			)
 		);
 	}
