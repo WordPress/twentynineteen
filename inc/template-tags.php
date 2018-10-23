@@ -93,7 +93,8 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'twentynineteen' ) );
 			if ( $tags_list ) {
 				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
-				printf( '<span class="cat-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+				printf( 
+					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					twentynineteen_get_icon_svg( 'tag', 16 ),
 					esc_html__( 'Tags:', 'twentynineteen' ),
 					$tags_list
