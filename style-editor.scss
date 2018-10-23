@@ -487,6 +487,15 @@ ul.wp-block-archives,
 
 /** === Classic Editor === */
 
+/* Properly center-align captions in the classic-editor block */
+.wp-caption {
+	dd {
+		text-align: center;
+		-webkit-margin-start: 0px;
+		margin-inline-start: 0px;
+	}
+}
+
 .wp-block-freeform {
 
 	/* Add style for galleries in classic-editor block */
