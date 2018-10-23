@@ -140,6 +140,7 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() ) :
+			$post_thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
 			?>
 
 			<figure class="post-thumbnail">
