@@ -33,23 +33,23 @@ if ( post_password_required() ) {
 					esc_html_e( 'Leave a comment', 'twentynineteen' );
 				}
 			} else {
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
-				/* translators: %s: post title */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentynineteen' ), get_the_title() );
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					/* translators: %s: post title */
+					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentynineteen' ), get_the_title() );
 				} else {
-				printf(
-				/* translators: 1: number of comments, 2: post title */
-				_nx(
-				'%1$s reply on &ldquo;%2$s&rdquo;',
-				'%1$s replies on &ldquo;%2$s&rdquo;',
-				$comments_number,
-				'comments title',
-				'twentynineteen'
-				),
-				number_format_i18n( $comments_number ),
-				get_the_title()
-				);
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s reply on &ldquo;%2$s&rdquo;',
+							'%1$s replies on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'twentynineteen'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
 				}
 			}
 		?>
@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new Twenty_Nineteen_Walker_Comment(),
+					'walker'      => new TwentyNineteen_Walker_Comment(),
 					'avatar_size' => twentynineteen_get_avatar_size(),
 					'short_ping'  => true,
 					'style'       => 'ol',
@@ -86,13 +86,13 @@ if ( post_password_required() ) {
 
 		// Show comment form at bottom if showing newest comments at the bottom.
 		if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) :
-		?>
+			?>
 			<div class="comment-form-flex">
 				<span class="screen-reader-text"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ); ?></span>
 				<?php twentynineteen_comment_form( 'asc' ); ?>
 				<h2 class="comments-title" aria-hidden="true"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ); ?></h2>
 			</div>
-		<?php
+			<?php
 		endif;
 
 		// Show comment navigation
@@ -110,7 +110,7 @@ if ( post_password_required() ) {
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
-		?>
+			?>
 			<p class="no-comments">
 				<?php esc_html_e( 'Comments are closed.', 'twentynineteen' ); ?>
 			</p>

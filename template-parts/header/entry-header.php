@@ -1,6 +1,6 @@
 <?php
 /**
- * TODO: File doc comment.
+ * Displays the post header
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -15,12 +15,12 @@ if ( ! is_page() ) :
 <?php if ( ! is_page() ) : ?>
 <div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 	<?php twentynineteen_posted_by(); ?>
-	<?php twentynineteen_estimated_read_time(); ?>
+	<?php twentynineteen_posted_on(); ?>
 	<span class="comment-count">
 		<?php
 		if ( ! empty( $discussion ) ) {
-twentynineteen_discussion_avatars_list( $discussion->authors );}
-?>
+		twentynineteen_discussion_avatars_list( $discussion->authors );}
+		?>
 		<?php twentynineteen_comment_count(); ?>
 	</span>
 </div><!-- .meta-info -->
