@@ -206,18 +206,17 @@ add_filter( 'nav_menu_link_attributes', 'twentynineteen_nav_menu_link_attributes
 /**
  * Add a dropdown icon to top-level menu items
  */
-function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ){
+function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 
 	// Only add class to 'top level' items on the 'primary' menu.
-	if ( 'menu-1' == $args->theme_location && $depth === 0 ){
+	if ( 'menu-1' == $args->theme_location && 0 === $depth ) {
 
-		if ( in_array( "menu-item-has-children", $item->classes ) ) {
+		if ( in_array( 'menu-item-has-children', $item->classes ) ) {
 			$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
 		}
-
 	} else if ( 'menu-1' == $args->theme_location && $depth >= 1 ) {
 
-		if ( in_array( "menu-item-has-children", $item->classes ) ) {
+		if ( in_array( 'menu-item-has-children', $item->classes ) ) {
 			$output .= twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
 		}
 	}
