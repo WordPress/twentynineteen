@@ -117,6 +117,11 @@ h6 {
 	font-weight: bold;
 }
 
+.entry-content .page-links .post-page-numbers {
+	margin: calc(.5 * #{$size__spacing-unit});
+	text-decoration: none;
+}
+
 .site-description {
 	letter-spacing: -0.01em;
 }
