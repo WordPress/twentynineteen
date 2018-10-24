@@ -2203,14 +2203,14 @@ body.page .main-navigation {
   height: 18px;
   position: absolute;
   background: #008fd3;
-  left: calc(100% - 3rem);
+  left: calc(100% - 2.5rem);
   top: -3px;
   width: 18px;
 }
 
 @media only screen and (min-width: 768px) {
   .comment .comment-author .post-author-badge {
-    left: calc(100% + 0.25rem);
+    left: calc(100% + 0.75rem);
   }
 }
 
