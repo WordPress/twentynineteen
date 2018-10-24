@@ -917,17 +917,12 @@ a:focus {
 --------------------------------------------------------------*/
 /** === Main menu === */
 .main-navigation {
-  display: inline;
+  display: block;
+  margin-top: 0.25rem;
   /*
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation {
-    display: block;
-  }
 }
 
 body.page .main-navigation {
@@ -946,16 +941,18 @@ body.page .main-navigation {
 
 .main-navigation .main-menu > li {
   display: inline;
+  position: relative;
 }
 
 .main-navigation .main-menu > li > a {
   font-weight: 700;
   color: #0073aa;
+  margin-right: 0.5rem;
 }
 
 .main-navigation .main-menu > li > a + svg {
   color: #0073aa;
-  margin-right: -0.25rem;
+  margin-right: 0.5rem;
 }
 
 .main-navigation .main-menu > li > a:hover {
@@ -966,26 +963,14 @@ body.page .main-navigation {
   color: #005177;
 }
 
-.main-navigation .main-menu > li > a:after {
-  content: ",";
-  display: inline;
-  color: #767676;
-}
-
-.main-navigation .main-menu > li.menu-item-has-children:after {
-  content: ",";
-  display: inline;
-  color: #767676;
+.main-navigation .main-menu > li.menu-item-has-children > a {
+  margin-right: 0.125rem;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children > a:after,
 .main-navigation .main-menu > li.menu-item-has-children .menu-item-has-children > a:after {
   content: "";
   display: none;
-}
-
-.main-navigation .main-menu > li:last-child > a:after {
-  content: ".";
 }
 
 .main-navigation .main-menu > li:last-child > a {
@@ -1051,9 +1036,13 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
   display: block;
-  left: inherit;
-  margin-top: -2px;
+  left: 0;
+  margin-top: 0;
   opacity: 1;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
@@ -1076,7 +1065,7 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   left: inherit;
-  margin-top: -2px;
+  margin-top: 0;
   opacity: 1;
 }
 
@@ -1449,7 +1438,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .site-branding {
     margin: 0 calc(2 * (100vw / 12));
-    max-width: 22em;
   }
 }
 
