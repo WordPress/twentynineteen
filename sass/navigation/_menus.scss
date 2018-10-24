@@ -3,6 +3,7 @@
 .main-navigation {
 
 	display: block;
+	margin-top: #{0.25 * $size__spacing-unit};
 
 	body.page & {
 		display: block;

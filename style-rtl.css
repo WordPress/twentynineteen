@@ -913,6 +913,7 @@ a:focus {
 /** === Main menu === */
 .main-navigation {
   display: block;
+  margin-top: 0.25rem;
   /*
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
