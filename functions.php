@@ -106,6 +106,22 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles
 		add_editor_style( 'style-editor.css' );
 
+		// Add custom color to the editor color palette
+		add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
+				'slug'  => 'primary',
+				'color' => esc_attr( get_theme_mod( 'primary-color', '#0073aa' ) ),
+			),
+			array(
+				'name'  => esc_html__( 'Primary Color Hover', 'twentynineteen' ),
+				'slug'  => 'primaryhover',
+				'color' => esc_attr( get_theme_mod( 'primary-color-hover', '#005177' ) ),
+			)
+		)
+	);
+
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
