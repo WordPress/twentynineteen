@@ -52,10 +52,11 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
-							/* translators: %s: comment author link */
+							/* translators: %1$s: comment author link */
 							printf(
-								__( '%s <span class="screen-reader-text says">says:</span>' ),
-								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								'%1$s <span class="screen-reader-text says">%2$s</span>',
+								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ),
+								esc_html__( 'says:', 'twentynineteen' )
 							);
 						?>
 					</div><!-- .comment-author -->
