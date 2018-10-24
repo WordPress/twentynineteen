@@ -32,7 +32,7 @@ class TwentyNineteen_SVG_Icons {
 			$arr = array();
 		}
 		if ( array_key_exists( $icon, $arr ) ) {
-			$repl = sprintf( '<svg class="svg-icon" width="%d" height="%d" aria-hidden="true" role="img" ', $size, $size );
+			$repl = sprintf( '<svg class="svg-icon" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $size, $size );
 			$svg  = preg_replace( '/^<svg /', $repl, trim( $arr[ $icon ] ) ); // Add extra attributes to SVG code.
 			$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
 			$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
