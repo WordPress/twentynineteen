@@ -16,7 +16,9 @@ if ( $has_responses ) {
 	/* translators: %1(X responses)$s from %2(X others)$s */
 	$meta_label = sprintf(
 		'%1$s from %2$s.',
+		/* translators: %d(X responses)$s */
 		sprintf( _n( '%d response', '%d responses', $discussion->responses, 'twentynineteen' ), $discussion->responses ),
+		/* translators: %d(X others)$s */
 		sprintf( _n( '%d other', '%d others', $discussion->commenters, 'twentynineteen' ), $discussion->commenters )
 	);
 } elseif ( $comments_number > 0 ) {
