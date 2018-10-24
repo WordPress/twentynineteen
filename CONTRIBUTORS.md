@@ -17,3 +17,8 @@ Version 1.0:
 @audrasjb
 @nielslange
 @mmaumio
+@richsalvucci
+@littlebigthing
+@dimadin
+@joyously
+@anevins12
