@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /**
@@ -110,7 +111,7 @@ add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_descr
  * Determines if post thumbnail can be displayed.
  */
 function twentynineteen_can_show_post_thumbnail() {
-	return ! post_password_required() && ! is_attachment() && has_post_thumbnail();
+	return apply_filters( 'twentynineteen_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**

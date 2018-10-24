@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentynineteen_posted_on' ) ) :

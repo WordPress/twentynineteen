@@ -9,6 +9,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /*
@@ -28,9 +29,9 @@ if ( post_password_required() ) {
 		<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
-					echo esc_html_e( 'Join the Conversation', 'twentynineteen' );
+					esc_html_e( 'Join the Conversation', 'twentynineteen' );
 				} else {
-					echo esc_html_e( 'Leave a comment', 'twentynineteen' );
+					esc_html_e( 'Leave a comment', 'twentynineteen' );
 				}
 			} else {
 				$comments_number = get_comments_number();
