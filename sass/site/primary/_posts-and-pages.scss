@@ -117,7 +117,8 @@
 		}
 	}
 
-	.entry-footer {
+	.entry-footer,
+	.author-description {
 
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 

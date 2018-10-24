@@ -1848,19 +1848,22 @@ body.page .main-navigation {
   }
 }
 
-.hentry .entry-footer {
+.hentry .entry-footer,
+.hentry .author-description {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .hentry .entry-footer {
+  .hentry .entry-footer,
+  .hentry .author-description {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .hentry .entry-footer {
+  .hentry .entry-footer,
+  .hentry .author-description {
     max-width: calc(6 * (100vw / 12));
   }
 }
