@@ -50,6 +50,8 @@ before_script:
     - theme_slug=$(basename $(pwd))
     - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
     - cd ..
+    # Avoid conflict with stock twentynineteen theme
+    - if [ -d $theme_dir ]; then rm -r $theme_dir; fi
     - mv $theme_slug $theme_dir
     # Set up WordPress configuration.
     - cd $WP_DEVELOP_DIR
