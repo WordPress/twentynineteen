@@ -20,9 +20,9 @@
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
-				'<p>' . 
+				'<p>' .
 					/* translators: %s: link to WP admin new post page. */
-					esc_html__( 'Ready to publish your first post? %sGet started here%s.', 'twentynineteen' )
+					esc_html__( 'Ready to publish your first post? %1$sGet started here%2$s.', 'twentynineteen' )
 				. '</p>',
 				'<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">',
 				'</a>'
