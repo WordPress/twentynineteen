@@ -422,6 +422,7 @@ textarea {
 .main-navigation,
 .page-description,
 h2.author-title,
+.author-description .author-link,
 .not-found .page-title,
 .error-404 .page-title,
 .post-navigation .post-title,
@@ -461,7 +462,7 @@ img:after,
 .site-branding,
 .main-navigation ul.main-menu > li,
 .social-navigation,
-.author-description p.author-bio,
+.author-description .author-bio,
 .nav-links {
   line-height: 1.25;
 }
@@ -1977,6 +1978,51 @@ body.page .main-navigation {
   .hentry .entry-content .wp-audio-shortcode {
     max-width: calc(6 * (100vw / 12));
   }
+}
+
+/* Author description */
+.author-bio {
+  margin: calc(2 * 1rem) 1rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .author-bio {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .author-bio {
+    max-width: calc(6 * (100vw / 12));
+  }
+}
+
+.author-bio .author-title {
+  display: inline;
+}
+
+.author-bio .author-title:before {
+  background: #767676;
+  content: "\020";
+  display: block;
+  height: 2px;
+  margin: 1rem 0;
+  width: 1em;
+}
+
+.author-bio .author-description {
+  display: inline;
+  color: #767676;
+}
+
+.author-bio .author-description .author-link {
+  display: inline-block;
+}
+
+.author-bio .author-description .author-link:hover {
+  color: #005177;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
