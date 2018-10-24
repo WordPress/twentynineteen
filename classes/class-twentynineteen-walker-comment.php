@@ -35,22 +35,22 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 							$comment_author_link = get_comment_author_link( $comment );
 							$comment_author_url  = get_comment_author_url( $comment );
 							$avatar              = get_avatar( $comment, $args['avatar_size'] );
-							if ( 0 != $args['avatar_size'] ) {
-								if ( empty( $comment_author_url ) ) {
+						if ( 0 != $args['avatar_size'] ) {
+							if ( empty( $comment_author_url ) ) {
 									echo $avatar;
-								} else {
+							} else {
 									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
-								}
 							}
+						}
 
 							/*
 							 * Using the `check` icon instead of `check_circle`, since we can't add a
 							 * fill color to the inner check shape when in circle form.
 							 */
-							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
+						if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
 								/* translators: %s: SVG Icon */
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
-							}
+						}
 
 							/* translators: %s: comment author link */
 							printf(

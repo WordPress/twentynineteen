@@ -26,18 +26,18 @@ if ( post_password_required() ) {
 	<div class="<?php echo twentynineteen_get_discussion_data()->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
 		<h2 class="comments-title">
 		<?php
-			if ( comments_open() ) {
-				if ( have_comments() ) {
+		if ( comments_open() ) {
+			if ( have_comments() ) {
 					esc_html_e( 'Join the Conversation', 'twentynineteen' );
-				} else {
-					esc_html_e( 'Leave a comment', 'twentynineteen' );
-				}
 			} else {
+					esc_html_e( 'Leave a comment', 'twentynineteen' );
+			}
+		} else {
 				$comments_number = get_comments_number();
-				if ( '1' === $comments_number ) {
+			if ( '1' === $comments_number ) {
 					/* translators: %s: post title */
 					printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentynineteen' ), get_the_title() );
-				} else {
+			} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(
@@ -50,15 +50,15 @@ if ( post_password_required() ) {
 						number_format_i18n( $comments_number ),
 						get_the_title()
 					);
-				}
 			}
+		}
 		?>
 		</h2><!-- .comments-title -->
 		<?php
 			// Only show discussion meta information when comments are open and available.
-			if ( have_comments() && comments_open() ) {
+		if ( have_comments() && comments_open() ) {
 			get_template_part( 'template-parts/post/discussion', 'meta' );
-			}
+		}
 		?>
 	</div><!-- .comments-title-flex -->
 	<?php
