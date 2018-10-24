@@ -22,6 +22,7 @@ if ( $has_responses ) {
 } elseif ( $comments_number > 0 ) {
 	/* Show comment count if not enough discussion information */
 
+	/* translators: %d: number of comments */
 	$meta_label = sprintf( _n( '%d Comment', '%d Comments', $comments_number, 'twentynineteen' ), $comments_number );
 } else {
 	$meta_label = __( 'No comments', 'twentynineteen' );
