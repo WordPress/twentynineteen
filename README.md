@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
 
 **Contributors:** the WordPress team  
-**Requires at least:** WordPress 4.9.8  
+**Requires at least:** WordPress 4.9.6  
 **Tested up to:** WordPress 4.9.8  
 **Version:** 1.0  
 **License:** GPLv2 or later  

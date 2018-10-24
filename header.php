@@ -9,8 +9,7 @@
  * @package WordPress
  * @subpackage Twenty_Nineteen
  */
-?>
-<!doctype html>
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -43,8 +42,8 @@
 							<span class="comment-count">
 								<?php
 								if ( ! empty( $discussion ) ) {
-twentynineteen_discussion_avatars_list( $discussion->authors );}
-?>
+								twentynineteen_discussion_avatars_list( $discussion->authors );}
+								?>
 								<?php twentynineteen_comment_count(); ?>
 							</span>
 							<?php
@@ -65,7 +64,7 @@ twentynineteen_discussion_avatars_list( $discussion->authors );}
 									'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
 									'</span>'
 								);
-								?>
+							?>
 						</div><!-- .meta-info -->
 						<?php endif; ?>
 					</div><!-- .entry-header -->
