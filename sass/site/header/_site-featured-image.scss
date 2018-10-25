@@ -139,6 +139,7 @@
 		opacity: 0.8;
 		z-index: 3;
 		
+		// Browsers supporting mix-blend-mode don't need opacity < 1
 		@supports (mix-blend-mode: multiply) {
 			mix-blend-mode: multiply;
 			opacity: 1;
@@ -151,6 +152,7 @@
 		opacity: 0.5;
 		z-index: 4;
 		
+		// A lighter background color for browsers supporting mix-blend-mode
 		@supports (mix-blend-mode: overlay) {
 			background: rgba(white, 0.35);
 			mix-blend-mode: overlay;
