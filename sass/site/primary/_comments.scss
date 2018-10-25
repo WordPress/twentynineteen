@@ -21,7 +21,6 @@
 	> .comment-respond,
 	.comment-form-flex,
 	.no-comments {
-
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
 
 		@include media(tablet) {
@@ -31,7 +30,6 @@
 	}
 
 	.comments-title-wrap {
-
 		align-items: baseline;
 		display: flex;
 		justify-content: space-between;
@@ -49,11 +47,10 @@
 }
 
 #respond {
-
 	position: relative;
 
 	.comment-user-avatar {
-		display: none;
+		margin: $size__spacing-unit 0 -#{$size__spacing-unit};
 	}
 
 	.comment .comment-form {
@@ -95,7 +92,6 @@
 }
 
 .comment-form-flex {
-
 	display: flex;
 	flex-direction: column;
 
@@ -106,8 +102,8 @@
 	}
 
 	#respond {
-
 		order: 2;
+
 		+ .comments-title {
 			display: block;
 		}
@@ -115,7 +111,6 @@
 }
 
 .comment-list {
-
 	list-style: none;
 	padding: 0;
 
@@ -127,11 +122,9 @@
 	> .comment:first-child {
 		margin-top: 0;
 	}
-
 }
 
 .comment-reply {
-
 	left: calc(#{$size__spacing-unit} + 100%);
 	bottom: 0;
 	position: absolute;
@@ -146,12 +139,10 @@
 }
 
 .comment {
-
 	list-style: none;
 	position: relative;
 
 	@include media(tablet) {
-
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
 		.children {
@@ -288,7 +279,6 @@
 		}
 
 		.comment-edit-link {
-
 			position: relative;
 			padding-left: $size__spacing-unit;
 			margin-left: -#{$size__spacing-unit};
@@ -350,10 +340,6 @@
 		img {
 			height: calc(1.5 * #{$size__spacing-unit});
 			width: calc(1.5 * #{$size__spacing-unit});
-		}
-
-		@include media(tablet) {
-
 		}
 	}
 }

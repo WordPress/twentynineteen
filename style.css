@@ -2050,7 +2050,7 @@ body.page .main-navigation {
 
 .comments-area {
   /* Add extra margin when the comments section is located immediately after the
-	 * post itself (this happens on pages). 
+	 * post itself (this happens on pages).
 	 */
 }
 
@@ -2108,7 +2108,7 @@ body.page .main-navigation {
 }
 
 #respond .comment-user-avatar {
-  display: none;
+  margin: 1rem 0 -1rem;
 }
 
 #respond .comment .comment-form {
