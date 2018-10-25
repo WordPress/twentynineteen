@@ -33,6 +33,17 @@ function twentynineteen_body_classes( $classes ) {
 add_filter( 'body_class', 'twentynineteen_body_classes' );
 
 /**
+ * Adds custom class to the array of posts classes.
+ */
+function twentynineteen_post_classes( $classes, $class, $post_id ) {
+	$classes[] = 'entry';
+
+	return $classes;
+}
+add_filter( 'post_class', 'twentynineteen_post_classes', 10, 3 );
+
+
+/**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function twentynineteen_pingback_header() {
