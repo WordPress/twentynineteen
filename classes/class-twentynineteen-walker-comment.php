@@ -52,7 +52,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
-							/* translators: %1$s: comment author link */
+							/* translators: 1: comment author link, 2: html tag before text, text is only visible to screen readers 3: html tag after text */
 							printf(
 								esc_html__( '%1$s %2$ssays:%3$s' ),
 								'<b class="fn">' . get_comment_author_link( $comment ) . '</b>',
