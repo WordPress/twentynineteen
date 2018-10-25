@@ -9,6 +9,11 @@
 		margin: calc(3 * 1rem) calc(2 * (100vw / 12));
 		max-width: calc(6 * (100vw / 12));
 	}
+	
+	@include media(desktop) {
+		margin: calc(3 * 1rem) 0;
+		max-width: 100%;
+	}
 
 	.nav-links {
 

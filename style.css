@@ -1079,6 +1079,12 @@ body.page .main-navigation {
     max-width: calc(6 * (100vw / 12));
   }
 }
+@media only screen and (min-width: 1168px) {
+  .post-navigation {
+    margin: calc(3 * 1rem) 0;
+    max-width: 100%;
+  }
+}
 .post-navigation .nav-links {
   margin: 0 1rem;
   max-width: 100%;
