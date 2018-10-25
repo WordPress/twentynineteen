@@ -69,7 +69,7 @@
 		}
 	}
 
-	// add focus state to social media icons
+	/* add focus state to social media icons */
 	.social-navigation a {
 		&:focus {
 			color: white;
@@ -84,6 +84,8 @@
 		-webkit-filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
 				filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
 	}
+
+	/* Site header featured image styles */
 
 	.site-featured-image .entry-header {
 
