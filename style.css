@@ -1073,12 +1073,35 @@ body.page .main-navigation {
 .post-navigation {
   margin: calc(3 * 1rem) 0;
 }
+<<<<<<< HEAD
+=======
+@media only screen and (min-width: 768px) {
+  .post-navigation {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(6 * (100vw / 12));
+  }
+}
+@media only screen and (min-width: 1168px) {
+  .post-navigation {
+    margin: calc(3 * 1rem) 0;
+    max-width: 100%;
+  }
+}
+>>>>>>> WordPress/master
 .post-navigation .nav-links {
   margin: 0 1rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
 }
+<<<<<<< HEAD
+=======
+@media only screen and (min-width: 768px) {
+  .post-navigation .nav-links {
+    margin: 0;
+  }
+}
+>>>>>>> WordPress/master
 @media only screen and (min-width: 1168px) {
   .post-navigation .nav-links {
     flex-direction: row;
@@ -1129,6 +1152,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 1168px) {
   .post-navigation .nav-links .nav-next {
     order: 2;
+    padding-left: 1rem;
   }
 }
 .post-navigation .nav-links .nav-next .meta-nav:after {
