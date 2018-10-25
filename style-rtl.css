@@ -985,7 +985,9 @@ body.page .main-navigation {
   padding-right: 0;
   display: none;
   float: right;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   position: absolute;
   opacity: 0;
   right: -999em;
@@ -1023,7 +1025,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
-  padding: calc( .5 * 1rem) 1rem;
+  padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
@@ -1036,14 +1038,11 @@ body.page .main-navigation {
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
-  display: block;
+  display: table;
   right: 0;
   margin-top: 0;
   opacity: 1;
   position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
