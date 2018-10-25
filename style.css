@@ -951,8 +951,6 @@ body.page .main-navigation {
   padding-left: 0;
   display: none;
   float: left;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   position: absolute;
   opacity: 0;
@@ -988,11 +986,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
-<<<<<<< HEAD
-  padding: calc( .5 * 1rem ) 1rem;
-=======
-  padding: calc( .5 * 1rem) calc( 24px + 1rem) calc( .5 * 1rem) 1rem;
->>>>>>> WordPress/master
+  padding: calc( .5 * 1rem ) calc( 24px + 1rem ) calc( .5 * 1rem ) 1rem;
 }
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
   background: #005177;
@@ -1009,10 +1003,6 @@ body.page .main-navigation {
   margin-top: 0;
   opacity: 1;
   position: absolute;
-<<<<<<< HEAD
-  width: max-content;
-=======
->>>>>>> WordPress/master
 }
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
 .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
@@ -1024,13 +1014,9 @@ body.page .main-navigation {
 }
 @media only screen and (min-width: 768px) {
   .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-<<<<<<< HEAD
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
-=======
-  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
->>>>>>> WordPress/master
+.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
     padding-left: 0;
     position: absolute;
     left: 100%;
@@ -1445,10 +1431,9 @@ body.page .main-navigation {
     display: inline;
   }
 }
-
 .site-title:not(:empty) + .site-description:not(:empty):before {
-  content: "\2014";
-  margin: 0 .2em;
+  content: "—";
+  margin: 0 0.2em;
 }
 
 .site-description {
@@ -1457,13 +1442,6 @@ body.page .main-navigation {
   font-weight: normal;
   margin: 0;
 }
-<<<<<<< HEAD
-.site-description:not(:empty):before {
-  content: "—";
-  margin: 0 0.2em;
-}
-=======
->>>>>>> WordPress/master
 
 .site-header.featured-image {
   /* Need relative positioning to properly align layers. */
