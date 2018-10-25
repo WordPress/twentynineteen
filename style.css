@@ -51,7 +51,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Blocks
 # Media
 	## Captions
-	## Galleries
+	## Gallerie
 --------------------------------------------------------------*/
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
@@ -667,7 +667,8 @@ a:active {
 }
 
 a:focus {
-  outline: 0;
+  outline: thin;
+  outline-style: dotted;
   text-decoration: underline;
 }
 
