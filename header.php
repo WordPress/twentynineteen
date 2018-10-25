@@ -8,6 +8,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,18 +24,21 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentynineteen' ); ?></a>
 
 		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
+
 			<div class="site-branding-container">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 			</div><!-- .layout-wrap -->
 
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
-				<div class="hentry">
+				<div class="site-featured-image">
 					<?php the_post(); ?>
 					<div class="entry-header">
 						<?php if ( ! is_page() ) : ?>
 						<?php $discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
 						<?php endif; ?>
+
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
 						<?php if ( ! is_page() ) : ?>
 						<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-meta has-discussion' : 'entry-meta'; ?>">
 							<?php twentynineteen_posted_by(); ?>
@@ -42,7 +46,7 @@
 							<span class="comment-count">
 								<?php
 								if ( ! empty( $discussion ) ) {
-								twentynineteen_discussion_avatars_list( $discussion->authors );}
+									twentynineteen_discussion_avatars_list( $discussion->authors );}
 								?>
 								<?php twentynineteen_comment_count(); ?>
 							</span>
@@ -65,7 +69,7 @@
 									'</span>'
 								);
 							?>
-						</div><!-- .meta-info -->
+						</div><!-- .entry-meta -->
 						<?php endif; ?>
 					</div><!-- .entry-header -->
 					<?php rewind_posts(); ?>

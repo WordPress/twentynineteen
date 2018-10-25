@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /**
@@ -30,6 +31,17 @@ function twentynineteen_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'twentynineteen_body_classes' );
+
+/**
+ * Adds custom class to the array of posts classes.
+ */
+function twentynineteen_post_classes( $classes, $class, $post_id ) {
+	$classes[] = 'entry';
+
+	return $classes;
+}
+add_filter( 'post_class', 'twentynineteen_post_classes', 10, 3 );
+
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
@@ -110,7 +122,7 @@ add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_descr
  * Determines if post thumbnail can be displayed.
  */
 function twentynineteen_can_show_post_thumbnail() {
-	return ! post_password_required() && ! is_attachment() && has_post_thumbnail();
+	return apply_filters( 'twentynineteen_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**

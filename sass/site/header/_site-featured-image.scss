@@ -8,6 +8,37 @@
 	/* Add text shadow to text, to increase readability. */
 	text-shadow: 0 1px 2px rgba(black, 0.35);
 
+	.entry-meta {
+
+		font-weight: 500;
+
+		> span {
+
+			margin-right: $size__spacing-unit;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		a {
+
+			@include link-transition;
+			color: currentColor;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.svg-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 0.5em;
+		}
+	}
+
 	/* Set white text color when featured image is set. */
 	.site-branding .site-title,
 	.site-branding .site-description,
@@ -23,7 +54,7 @@
 	.main-navigation a,
 	.social-navigation a,
 	.site-title a,
-	.hentry a {
+	.site-featured-image a {
 		color: white;
 		transition: opacity $link_transition ease-in-out;
 
@@ -38,7 +69,7 @@
 		}
 	}
 
-	// add focus state to social media icons
+	/* add focus state to social media icons */
 	.social-navigation a {
 		&:focus {
 			color: white;
@@ -48,15 +79,17 @@
 	}
 
 	.social-navigation svg,
-	.hentry svg {
+	.site-featured-image svg {
 		/* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
 		-webkit-filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
-			filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
+				filter: drop-shadow(0 1px 2px rgba(black, 0.35) );
 	}
 
-	/* Post header styles */
-	.hentry .entry-header {
+	/* Site header featured image styles */
 
+	.site-featured-image .entry-header {
+
+		margin-bottom: 0;
 		margin-left: 0;
 		margin-right: 0;
 
@@ -90,15 +123,16 @@
 
 	/* Make sure important elements are above pseudo elements used for effects. */
 	.site-branding,
-	.hentry .entry-header {
+	.site-featured-image .entry-header {
+		position: relative;
 		z-index: 10;
 	}
 
 	/* Set up image filter layer positioning */
 	.site-branding-container:before,
 	.site-branding-container:after,
-	.hentry:before,
-	.hentry:after,
+	.site-featured-image:before,
+	.site-featured-image:after,
 	&:after {
 		display: block;
 		position: absolute;
@@ -126,7 +160,7 @@
 	}
 
 	/* Second layer: screen. */
-	.hentry:before {
+	.site-featured-image:before {
 		background: $color__link;
 		mix-blend-mode: screen;
 		opacity: 0.1;
@@ -134,7 +168,7 @@
 	}
 
 	/* Third layer: multiply. */
-	.hentry:after {
+	.site-featured-image:after {
 		background: $color__link;
 		mix-blend-mode: multiply;
 		opacity: 1;
