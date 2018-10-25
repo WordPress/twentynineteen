@@ -1073,11 +1073,22 @@ body.page .main-navigation {
 .post-navigation {
   margin: calc(3 * 1rem) 0;
 }
+@media only screen and (min-width: 768px) {
+  .post-navigation {
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(6 * (100vw / 12));
+  }
+}
 .post-navigation .nav-links {
   margin: 0 1rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .post-navigation .nav-links {
+    margin: 0;
+  }
 }
 @media only screen and (min-width: 1168px) {
   .post-navigation .nav-links {
