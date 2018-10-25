@@ -731,31 +731,6 @@ img {
   position: relative;
 }
 
-img:before {
-  background-color: #eee;
-  border: 1px dashed #ccc;
-  border-radius: 3px;
-  content: " ";
-  display: block;
-  height: 100%;
-  right: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-img:after {
-  color: #666;
-  content: "This image is broken :-/ ( " attr(alt) " )";
-  display: block;
-  right: 50%;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(50%, -50%);
-  width: 100%;
-}
-
 figure {
   margin: 0;
 }
@@ -1037,7 +1012,9 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
+.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
   display: table;
   right: 0;
   margin-top: 0;
@@ -1046,7 +1023,9 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
   margin-top: inherit;
   position: relative;
   padding-right: 1rem;
@@ -1054,7 +1033,9 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
     padding-right: 0;
     position: absolute;
     right: 100%;
