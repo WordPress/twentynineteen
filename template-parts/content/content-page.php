@@ -6,6 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 ?>
@@ -14,8 +15,8 @@
 	<header class="entry-header">
 		<?php
 		if ( ! twentynineteen_can_show_post_thumbnail() ) {
-get_template_part( 'template-parts/header/entry', 'header' );}
-?>
+		get_template_part( 'template-parts/header/entry', 'header' );}
+		?>
 	</header>
 
 	<div class="entry-content">
