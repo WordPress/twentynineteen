@@ -190,8 +190,6 @@ if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 			$id_or_email = get_current_user_id();
 		}
 
-		$classes = array( 'comment-author', 'vcard' );
-
 		return sprintf( '<div class="comment-user-avatar comment-author vcard">%s</div>', get_avatar( $id_or_email, twentynineteen_get_avatar_size() ) );
 	}
 endif;
