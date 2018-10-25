@@ -9,7 +9,8 @@
 .comments-area {
 
 	/* Add extra margin when the comments section is located immediately after the
-	 * post itself (this happens on pages). */
+	 * post itself (this happens on pages). 
+	 */
 	.hentry + & {
 		margin-top: calc(3 * #{$size__spacing-unit});
 	}
@@ -54,16 +55,8 @@
 		display: none;
 	}
 
-	.comment-form {
-		padding-left: calc(#{$size__spacing-unit} + calc(.5 * (100vw / 12)));
-
-		.comment & {
-			padding-left: 0;
-		}
-	}
-
-	.comment-form-comment label[for="comment"]:first-child {
-		display: none;
+	.comment .comment-form {
+		padding-left: 0;
 	}
 
 	> small {
@@ -79,16 +72,13 @@
 #comments {
 
 	> .comments-title:last-child {
-
 		display: none;
 	}
 
 	> #respond {
-
 		@include media(desktop) {
 
 			.comment-user-avatar {
-
 				position: absolute;
 				display: block;
 				top: 0;
@@ -227,9 +217,13 @@
 			height: 18px;
 			position: absolute;
 			background: lighten( $color__link, 8% );
-			right: calc(100% + #{$size__spacing-unit * .25});
+			right: calc(100% - #{$size__spacing-unit * 2.5});
 			top: -3px;
 			width: 18px;
+
+			@include media(tablet) {
+				right: calc(100% + #{$size__spacing-unit * .75});
+			}
 
 			svg {
 				width: inherit;
@@ -315,6 +309,14 @@
 		> *:last-child {
 			margin-bottom: 0;
 		}
+
+		a {
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -375,6 +377,13 @@
 }
 
 .comment-form {
+
+	.comment-notes,
+	label {
+		font-family: $font__heading;
+		font-size: $font__size-xs;
+		color: $color__text-light;
+	}
 
 	.comment-form-author,
 	.comment-form-email {
