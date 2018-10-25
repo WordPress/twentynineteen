@@ -31,14 +31,14 @@
 				margin-right: #{0.5 * $size__spacing-unit};
 
 				+ svg {
-					color: $color__link;
+					color: currentColor;
 					margin-right: #{0.5 * $size__spacing-unit};
 				}
 
 				&:hover {
 					color: $color__link-hover;
 					+ svg {
-						color: $color__link-hover;
+						color: currentColor;
 					}
 				}
 			}

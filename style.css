@@ -927,7 +927,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li > a + svg {
-  color: #0073aa;
+  color: currentColor;
   margin-right: 0.5rem;
 }
 
@@ -936,7 +936,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li > a:hover + svg {
-  color: #005177;
+  color: currentColor;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children > a {
