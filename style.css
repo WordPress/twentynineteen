@@ -916,6 +916,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li {
+  color: #0073aa;
   display: inline;
   position: relative;
 }
@@ -927,16 +928,12 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li > a + svg {
-  color: currentColor;
   margin-right: 0.5rem;
 }
 
-.main-navigation .main-menu > li > a:hover {
-  color: #005177;
-}
-
+.main-navigation .main-menu > li > a:hover,
 .main-navigation .main-menu > li > a:hover + svg {
-  color: currentColor;
+  color: #005177;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children > a {
@@ -1602,39 +1599,58 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation li,
 .site-header.featured-image .entry-meta,
 .site-header.featured-image .entry-title {
-  color: white;
+  color: #fff;
 }
 
 .site-header.featured-image .main-navigation a,
+.site-header.featured-image .main-navigation a + svg,
 .site-header.featured-image .social-navigation a,
 .site-header.featured-image .site-title a,
 .site-header.featured-image .site-featured-image a {
-  color: white;
+  color: #fff;
   transition: opacity 110ms ease-in-out;
 }
 
 .site-header.featured-image .main-navigation a:hover, .site-header.featured-image .main-navigation a:active,
+.site-header.featured-image .main-navigation a:hover + svg,
+.site-header.featured-image .main-navigation a:active + svg,
+.site-header.featured-image .main-navigation a + svg:hover,
+.site-header.featured-image .main-navigation a + svg:active,
+.site-header.featured-image .main-navigation a + svg:hover + svg,
+.site-header.featured-image .main-navigation a + svg:active + svg,
 .site-header.featured-image .social-navigation a:hover,
 .site-header.featured-image .social-navigation a:active,
+.site-header.featured-image .social-navigation a:hover + svg,
+.site-header.featured-image .social-navigation a:active + svg,
 .site-header.featured-image .site-title a:hover,
 .site-header.featured-image .site-title a:active,
+.site-header.featured-image .site-title a:hover + svg,
+.site-header.featured-image .site-title a:active + svg,
 .site-header.featured-image .site-featured-image a:hover,
-.site-header.featured-image .site-featured-image a:active {
-  color: white;
+.site-header.featured-image .site-featured-image a:active,
+.site-header.featured-image .site-featured-image a:hover + svg,
+.site-header.featured-image .site-featured-image a:active + svg {
+  color: #fff;
   opacity: 0.6;
 }
 
 .site-header.featured-image .main-navigation a:focus,
+.site-header.featured-image .main-navigation a:focus + svg,
+.site-header.featured-image .main-navigation a + svg:focus,
+.site-header.featured-image .main-navigation a + svg:focus + svg,
 .site-header.featured-image .social-navigation a:focus,
+.site-header.featured-image .social-navigation a:focus + svg,
 .site-header.featured-image .site-title a:focus,
-.site-header.featured-image .site-featured-image a:focus {
-  color: white;
+.site-header.featured-image .site-title a:focus + svg,
+.site-header.featured-image .site-featured-image a:focus,
+.site-header.featured-image .site-featured-image a:focus + svg {
+  color: #fff;
 }
 
 .site-header.featured-image .social-navigation a:focus {
-  color: white;
+  color: #fff;
   opacity: 1;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
 }
 
 .site-header.featured-image .social-navigation svg,
@@ -1657,11 +1673,11 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image .entry-header .entry-title:before {
-  background: white;
+  background: #fff;
 }
 
 .site-header.featured-image .custom-logo-link {
-  background: white;
+  background: #fff;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 }
 
