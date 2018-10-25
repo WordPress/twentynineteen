@@ -52,12 +52,17 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
-							/* translators: 1: comment author link, 2: html tag before text, text is only visible to screen readers 3: html tag after text */
+							/* translators: %s: comment author link */
 							printf(
-								esc_html__( '%1$s %2$ssays:%3$s' ),
-								'<b class="fn">' . get_comment_author_link( $comment ) . '</b>',
-								'<span class="screen-reader-text says">',
-								'</span>'
+								wp_kses(
+									__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+									array(
+										'span' => array(
+											'class' => array(),
+										),
+									)
+								),
+								'<b class="fn">' . get_comment_author_link( $comment ) . '</b>'
 							);
 						?>
 					</div><!-- .comment-author -->
