@@ -719,29 +719,6 @@ img {
   max-width: 100%;
   position: relative;
 }
-img:before {
-  background-color: #eee;
-  border: 1px dashed #ccc;
-  border-radius: 3px;
-  content: " ";
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-img:after {
-  color: #666;
-  content: "This image is broken :-/ ( " attr(alt) " )";
-  display: block;
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
 
 figure {
   margin: 0;
@@ -1448,6 +1425,8 @@ body.page .main-navigation {
   /* Add text shadow to text, to increase readability. */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   /* Set white text color when featured image is set. */
+  /* add focus state to social media icons */
+  /* Site header featured image styles */
   /* Custom Logo Link */
   /* Make sure important elements are above pseudo elements used for effects. */
   /* Set up image filter layer positioning */
@@ -1648,25 +1627,25 @@ body.page .main-navigation {
   margin: 0 0 calc(1.5 * 1rem);
 }
 
-.hentry {
+.entry {
   margin-top: calc(6 * 1rem);
 }
-.hentry:first-of-type {
+.entry:first-of-type {
   margin-top: 0;
 }
-.hentry .entry-header {
+.entry .entry-header {
   margin: calc(3 * 1rem) 1rem 1rem;
   position: relative;
 }
 @media only screen and (min-width: 768px) {
-  .hentry .entry-header {
+  .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12 ) ) 1rem;
   }
 }
-.hentry .entry-title {
+.entry .entry-title {
   margin: 0;
 }
-.hentry .entry-title:before {
+.entry .entry-title:before {
   background: #767676;
   content: " ";
   display: block;
@@ -1674,110 +1653,110 @@ body.page .main-navigation {
   margin: 1rem 0;
   width: 1em;
 }
-.hentry .entry-title a {
+.entry .entry-title a {
   color: inherit;
 }
-.hentry .entry-title a:hover {
+.entry .entry-title a:hover {
   color: #4a4a4a;
 }
-.hentry .entry-meta,
-.hentry .entry-footer {
+.entry .entry-meta,
+.entry .entry-footer {
   color: #767676;
   font-weight: 500;
 }
-.hentry .entry-meta > span,
-.hentry .entry-footer > span {
+.entry .entry-meta > span,
+.entry .entry-footer > span {
   margin-right: 1rem;
 }
-.hentry .entry-meta > span:last-child,
-.hentry .entry-footer > span:last-child {
+.entry .entry-meta > span:last-child,
+.entry .entry-footer > span:last-child {
   margin-right: 0;
 }
-.hentry .entry-meta a,
-.hentry .entry-footer a {
+.entry .entry-meta a,
+.entry .entry-footer a {
   transition: color 110ms ease-in-out;
   color: currentColor;
 }
-.hentry .entry-meta a:hover,
-.hentry .entry-footer a:hover {
+.entry .entry-meta a:hover,
+.entry .entry-footer a:hover {
   text-decoration: none;
   color: #0073aa;
 }
-.hentry .entry-meta .svg-icon,
-.hentry .entry-footer .svg-icon {
+.entry .entry-meta .svg-icon,
+.entry .entry-footer .svg-icon {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5em;
 }
-.hentry .entry-meta {
+.entry .entry-meta {
   margin: 1rem 0;
 }
 @media only screen and (min-width: 1168px) {
-  .hentry .entry-meta.has-discussion .comment-count {
+  .entry .entry-meta.has-discussion .comment-count {
     float: right;
     position: relative;
   }
 }
-.hentry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
+.entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
   display: none;
 }
 @media only screen and (min-width: 1168px) {
-  .hentry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
+  .entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
     bottom: 100%;
     display: block;
     position: absolute;
   }
 }
-.hentry .entry-footer {
+.entry .entry-footer {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 @media only screen and (min-width: 768px) {
-  .hentry .entry-footer {
+  .entry .entry-footer {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 @media only screen and (min-width: 768px) {
-  .hentry .entry-footer {
+  .entry .entry-footer {
     max-width: calc(6 * (100vw / 12));
   }
 }
-.hentry .post-thumbnail {
+.entry .post-thumbnail {
   margin: 1rem;
 }
 @media only screen and (min-width: 768px) {
-  .hentry .post-thumbnail {
+  .entry .post-thumbnail {
     margin: 1rem calc(2 * (100vw / 12));
   }
 }
-.hentry .post-thumbnail:focus {
+.entry .post-thumbnail:focus {
   outline: none;
 }
-.hentry .post-thumbnail .post-thumbnail-inner {
+.entry .post-thumbnail .post-thumbnail-inner {
   display: block;
 }
-.hentry .post-thumbnail .post-thumbnail-inner img {
+.entry .post-thumbnail .post-thumbnail-inner img {
   position: relative;
   display: block;
   width: 100%;
 }
-.image-filters-enabled .hentry .post-thumbnail {
+.image-filters-enabled .entry .post-thumbnail {
   position: relative;
   display: block;
 }
-.image-filters-enabled .hentry .post-thumbnail .post-thumbnail-inner {
+.image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner {
   position: relative;
   filter: grayscale(100%);
   z-index: 1;
 }
-.image-filters-enabled .hentry .post-thumbnail .post-thumbnail-inner:after {
+.image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
   display: block;
   width: 100%;
   height: 100%;
   z-index: 10;
 }
-.image-filters-enabled .hentry .post-thumbnail:before, .image-filters-enabled .hentry .post-thumbnail:after {
+.image-filters-enabled .entry .post-thumbnail:before, .image-filters-enabled .entry .post-thumbnail:after {
   position: absolute;
   display: block;
   width: 100%;
@@ -1788,62 +1767,62 @@ body.page .main-navigation {
   display: block;
   pointer-events: none;
 }
-.image-filters-enabled .hentry .post-thumbnail:before {
+.image-filters-enabled .entry .post-thumbnail:before {
   background: #0073aa;
   mix-blend-mode: screen;
   opacity: 0.1;
   z-index: 2;
 }
-.image-filters-enabled .hentry .post-thumbnail:after {
+.image-filters-enabled .entry .post-thumbnail:after {
   background: #0073aa;
   mix-blend-mode: multiply;
   opacity: 1;
   z-index: 3;
 }
-.hentry .entry-content .more-link {
+.entry .entry-content .more-link {
   transition: color 110ms ease-in-out;
   display: inline;
   color: inherit;
 }
-.hentry .entry-content .more-link:after {
+.entry .entry-content .more-link:after {
   content: "»";
   margin-left: 0.5em;
 }
-.hentry .entry-content .more-link:hover {
+.entry .entry-content .more-link:hover {
   color: #0073aa;
   text-decoration: none;
 }
-.hentry .entry-content a {
+.entry .entry-content a {
   text-decoration: underline;
 }
-.hentry .entry-content a:hover {
+.entry .entry-content a:hover {
   text-decoration: none;
 }
-.hentry .entry-content > iframe[style] {
+.entry .entry-content > iframe[style] {
   margin: 32px 1rem !important;
   max-width: calc(100vw - (2 * 1rem)) !important;
 }
 @media only screen and (min-width: 768px) {
-  .hentry .entry-content > iframe[style] {
+  .entry .entry-content > iframe[style] {
     margin: 32px calc(2 * (100vw / 12)) !important;
     max-width: calc(8 * (100vw / 12)) !important;
   }
 }
 @media only screen and (min-width: 1168px) {
-  .hentry .entry-content > iframe[style] {
+  .entry .entry-content > iframe[style] {
     max-width: calc(6 * (100vw / 12)) !important;
   }
 }
-.hentry .entry-content .wp-audio-shortcode {
+.entry .entry-content .wp-audio-shortcode {
   max-width: calc(100vw - (2 * 1rem));
 }
 @media only screen and (min-width: 768px) {
-  .hentry .entry-content .wp-audio-shortcode {
+  .entry .entry-content .wp-audio-shortcode {
     max-width: calc(8 * (100vw / 12));
   }
 }
 @media only screen and (min-width: 1168px) {
-  .hentry .entry-content .wp-audio-shortcode {
+  .entry .entry-content .wp-audio-shortcode {
     max-width: calc(6 * (100vw / 12));
   }
 }
@@ -1904,7 +1883,7 @@ body.page .main-navigation {
    * post itself (this happens on pages). 
    */
 }
-.hentry + .comments-area {
+.entry + .comments-area {
   margin-top: calc(3 * 1rem);
 }
 .comments-area .comments-title-wrap,
@@ -2283,7 +2262,7 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .hfeed .hentry .entry-header {
+  .hfeed .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
   }
 }
