@@ -83,6 +83,6 @@
 		<?php twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php get_template_part( 'template-parts/post/author', 'info' ); ?>
+	<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
 
 </article><!-- #post-${ID} -->
