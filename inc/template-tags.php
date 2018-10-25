@@ -26,7 +26,7 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 		);
 
 		printf(
-			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">' . $time_string . '</a></span>',
+			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
 			twentynineteen_get_icon_svg( 'watch', 16 ),
 			esc_url( get_permalink() ),
 			$time_string
