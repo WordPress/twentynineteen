@@ -132,7 +132,9 @@
 	}
 
 	.main-menu .menu-item-has-children:hover > .sub-menu,
-	.main-menu .menu-item-has-children .sub-menu:hover {
+	.main-menu .menu-item-has-children:focus > .sub-menu,
+	.main-menu .menu-item-has-children .sub-menu:hover,
+	.main-menu .menu-item-has-children .sub-menu:focus {
 		display: table;
 		left: 0;
 		margin-top: 0;
