@@ -219,16 +219,8 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 	function twentynineteen_comment_form( $order ) {
 		if ( true === $order || strtolower( $order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
 
-			/* Only show avatar for logged in users */
-			if ( is_user_logged_in() ) {
-				$show_avatar = twentynineteen_get_user_avatar_markup();
-			} else {
-				$show_avatar = null;
-			}
-
 			comment_form(
 				array(
-					'title_reply_before' => $show_avatar,
 					'logged_in_as'       => null,
 					'title_reply'        => null,
 				)
