@@ -1025,7 +1025,7 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
-  padding: calc( .5 * 1rem) 1rem;
+  padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
@@ -1043,9 +1043,6 @@ body.page .main-navigation {
   margin-top: 0;
   opacity: 1;
   position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
