@@ -2,6 +2,19 @@
 	display: block;
 }
 
+.sticky-post {
+	background: $color__background-button;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1;
+	padding: .25rem;
+	position: absolute;
+	text-transform: uppercase;
+	top: -$size__spacing-unit;
+	z-index: 1;
+}
+
 .updated:not(.published) {
 	display: none;
 }
@@ -191,6 +204,73 @@
 			text-decoration: underline;
 
 			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		// Overwrite iframe embeds that have inline styles.
+		> iframe[style] {
+
+			margin: 32px $size__spacing-unit !important;
+			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
+
+			@include media(tablet) {
+				margin: 32px calc(2 * (100vw / 12)) !important;
+				max-width: calc(8 * (100vw / 12)) !important;
+			}
+
+			@include media(desktop) {
+				max-width: calc(6 * (100vw / 12)) !important;
+			}
+		}
+
+		// Classic editor audio embeds.
+		.wp-audio-shortcode {
+			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+
+			@include media(tablet) {
+				max-width: calc(8 * (100vw / 12));
+			}
+
+			@include media(desktop) {
+				max-width: calc(6 * (100vw / 12));
+			}
+		}
+	}
+}
+
+/* Author description */
+
+.author-bio {
+
+	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+
+	@include media(tablet) {
+		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(tablet) {
+		max-width: calc(6 * (100vw / 12));
+	}
+
+	.author-title {
+		@include post-section-dash;
+		display: inline;
+	}
+
+	.author-description {
+
+		display: inline;
+		color: $color__text-light;
+		font-size: $font__size-md;
+		line-height: $font__line-height-heading;
+
+		.author-link {
+			display: inline-block;
+
+			&:hover {
+				color: $color__link-hover;
 				text-decoration: none;
 			}
 		}

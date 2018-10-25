@@ -102,7 +102,8 @@ a {
 	}
 }
 
-figcaption {
+figcaption,
+.gallery-caption {
 	font-family: $font__heading;
 	font-size: $font__size-xs;
 	line-height: 1.6;
@@ -132,19 +133,6 @@ figcaption {
 		font-size: $font__size-xl;
 		font-weight: bold;
 		line-height: 1.4;
-
-		width: calc(100vw - (2 * #{ $size__spacing-unit}));
-		max-width: calc(100vw - (2 * #{ $size__spacing-unit}));
-
-		@include media(tablet) {
-			width: calc(8 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
-		}
-
-		@include media(desktop) {
-			width: calc(6 * (100vw / 12));
-			max-width: calc(6 * (100vw / 12));
-		}
 	}
 
 	&.has-left-content {
@@ -179,9 +167,13 @@ body[data-type="core/cover-image"][data-align="right"] {
 body[data-type="core/cover-image"][data-align="wide"],
 body[data-type="core/cover-image"][data-align="full"] {
 
-	h2,
-	.wp-block-cover-image-text {
-		padding: 0;
+	@include media(desktop) {
+		h2,
+		.wp-block-cover-image-text {
+			padding: 0;
+			width: calc(6 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
+		}
 	}
 }
 
@@ -190,7 +182,8 @@ body[data-type="core/cover-image"][data-align="full"] {
 .wp-block-gallery {
 
 	.blocks-gallery-image figcaption,
-	.blocks-gallery-item figcaption {
+	.blocks-gallery-item figcaption,
+	.gallery-item .gallery-caption {
 		font-size: $font__size-xs;
 		line-height: 1.6;
 	}
@@ -289,6 +282,11 @@ body[data-type="core/cover-image"][data-align="full"] {
 		&:not(.has-background-color) {
 			background-color: $color__link;
 		}
+	}
+
+	blockquote {
+		hyphens: auto;
+		word-break: break-word;
 	}
 }
 
@@ -484,5 +482,43 @@ ul.wp-block-archives,
 
 	.wp-block-latest-comments__comment-date {
 		font-size: $font__size-xs;
+	}
+}
+
+/** === Classic Editor === */
+
+/* Properly center-align captions in the classic-editor block */
+.wp-caption {
+	dd {
+		text-align: center;
+		-webkit-margin-start: 0px;
+		margin-inline-start: 0px;
+	}
+}
+
+.wp-block-freeform {
+
+	/* Add style for galleries in classic-editor block */
+	.gallery {
+
+		display: flex;
+
+		.gallery-item {
+			padding: ( $size__spacing-unit * .5 );
+			text-align: center;
+			vertical-align: top;
+			width: 100%;
+
+			.gallery-caption {
+				margin: 0;
+			}
+		}
+
+		// Loops to enumerate the classes for gallery columns.
+		@for $i from 2 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				max-width: calc( ( 12 / #{$i} ) * (100% / 12) );
+			}
+		}
 	}
 }

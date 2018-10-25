@@ -16,3 +16,12 @@ Version 1.0:
 @khleomix
 @audrasjb
 @nielslange
+@mmaumio
+@richsalvucci
+@littlebigthing
+@dimadin
+@joyously
+@anevins12
+@peterwilsoncc
+@DannyCooper
+@iCaleb

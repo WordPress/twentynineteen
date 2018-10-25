@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
+ * @since 1.0.0
  */
 
 if ( ! is_page() ) :
@@ -19,8 +19,8 @@ if ( ! is_page() ) :
 	<span class="comment-count">
 		<?php
 		if ( ! empty( $discussion ) ) {
-twentynineteen_discussion_avatars_list( $discussion->authors );}
-?>
+		twentynineteen_discussion_avatars_list( $discussion->authors );}
+		?>
 		<?php twentynineteen_comment_count(); ?>
 	</span>
 </div><!-- .meta-info -->
