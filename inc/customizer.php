@@ -210,7 +210,7 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
  */
 function twentynineteen_primary_color_hover_css() {
 	$default_color         = '#005177';
-	$primary_color = get_theme_mod( 'primary-color-hover', $default_color );
+	$primary_color_hover = get_theme_mod( 'primary-color-hover', $default_color );
 
 	// Don't do anything if the current color is the default.
 	if ( $primary_color_hover === $default_color ) {
