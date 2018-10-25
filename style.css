@@ -2014,6 +2014,8 @@ body.page .main-navigation {
 .author-bio .author-description {
   display: inline;
   color: #767676;
+  font-size: 1.125em;
+  line-height: 1.2;
 }
 
 .author-bio .author-description .author-link {

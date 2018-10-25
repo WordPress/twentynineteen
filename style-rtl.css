@@ -1981,28 +1981,28 @@ body.page .main-navigation {
 }
 
 /* Author description */
-.author-description {
+.author-bio {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .author-description {
+  .author-bio {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .author-description {
+  .author-bio {
     max-width: calc(6 * (100vw / 12));
   }
 }
 
-.author-description .author-title {
+.author-bio .author-title {
   display: inline;
 }
 
-.author-description .author-title:before {
+.author-bio .author-title:before {
   background: #767676;
   content: "\020";
   display: block;
@@ -2011,16 +2011,18 @@ body.page .main-navigation {
   width: 1em;
 }
 
-.author-description .author-bio {
+.author-bio .author-description {
   display: inline;
   color: #767676;
+  font-size: 1.125em;
+  line-height: 1.2;
 }
 
-.author-description .author-bio .author-link {
+.author-bio .author-description .author-link {
   display: inline-block;
 }
 
-.author-description .author-bio .author-link:hover {
+.author-bio .author-description .author-link:hover {
   color: #005177;
   text-decoration: none;
 }

@@ -263,6 +263,8 @@
 
 		display: inline;
 		color: $color__text-light;
+		font-size: $font__size-md;
+		line-height: $font__line-height-heading;
 
 		.author-link {
 			display: inline-block;
