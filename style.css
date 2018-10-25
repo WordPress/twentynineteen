@@ -1534,16 +1534,16 @@ body.page .main-navigation {
   }
 }
 
+.site-title:not(:empty) + .site-description:not(:empty):before {
+  content: "\2014";
+  margin: 0 .2em;
+}
+
 .site-description {
   display: inline;
   color: #767676;
   font-weight: normal;
   margin: 0;
-}
-
-.site-description:not(:empty):before {
-  content: "\2014";
-  margin: 0 .2em;
 }
 
 .site-header.featured-image {
