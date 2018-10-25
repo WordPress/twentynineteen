@@ -138,15 +138,22 @@
 .comment-navigation {
 
 	.nav-links {
-
 		display: flex;
 		flex-direction: row;
+		margin: 0 $size__spacing-unit;
+
+		@include media(desktop) {
+			margin: 0 calc(2 * (100vw / 12));
+			max-width: calc(8 * (100vw / 12));
+		}
 	}
 
 	.nav-previous,
 	.nav-next {
 		min-width: 50%;
 		width: 100%;
+		font-family: $font__heading;
+		font-weight: bold;
 
 		.secondary-text {
 			display: none;
