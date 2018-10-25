@@ -275,7 +275,7 @@
 		cite {
 			display: inline-block;
 			font-family: $font__heading;
-			font-size: $font__size-xs;
+			font-size: $font__size_base / (1.25 * $font__size-ratio);
 			line-height: 1.6;
 			text-transform: none;
 			color: $color__text-light;
