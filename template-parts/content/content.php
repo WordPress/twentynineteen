@@ -32,8 +32,8 @@
 		the_content(
 			sprintf(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				esc_html__( 'Continue reading%s', 'twentynineteen' ),
-				'<span class="screen-reader-text"> "' . get_the_title() . '"</span>'
+				esc_html__( 'Continue reading %s', 'twentynineteen' ),
+				'<span class="screen-reader-text">"' . get_the_title() . '"</span>'
 			)
 		);
 
