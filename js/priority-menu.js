@@ -53,7 +53,6 @@
 	navContainer.innerHTML +=
 		'<button class="main-menu-more is-hidden">More</button>' +
 		'<ul class="hidden-links is-hidden"></ul>';
-	var navContainer = document.querySelector('.main-navigation ');
 	var toggleButton = document.querySelector('.main-navigation .main-menu-more');
 	var visibleList = document.querySelector('.main-navigation .main-menu');
 	var hiddenList = document.querySelector('.main-navigation .hidden-links');
