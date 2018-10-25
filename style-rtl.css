@@ -1939,9 +1939,15 @@ body.page .main-navigation {
 
 .image-filters-enabled .hentry .post-thumbnail:after {
   background: #0073aa;
-  mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: 0.8;
   z-index: 3;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .hentry .post-thumbnail:after {
+    mix-blend-mode: multiply;
+    opacity: 1;
+  }
 }
 
 .hentry .entry-content .more-link {
