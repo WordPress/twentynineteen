@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'walker'      => new Twenty_Nineteen_Walker_Comment(),
+					'walker'      => new TwentyNineteen_Walker_Comment(),
 					'avatar_size' => twentynineteen_get_avatar_size(),
 					'short_ping'  => true,
 					'style'       => 'ol',
