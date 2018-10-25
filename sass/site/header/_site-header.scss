@@ -109,6 +109,11 @@
 	@include media(tablet) {
 		display: inline;
 	}
+
+	&:not(:empty) + .site-description:not(:empty):before {
+		content: "\2014";
+		margin: 0 .2em;
+	}
 }
 
 // Site description
@@ -119,9 +124,4 @@
 	color: $color__text-light;
 	font-weight: normal;
 	margin: 0;
-
-	&:not(:empty):before {
-		content: "\2014";
-		margin: 0 .2em;
-	}
 }

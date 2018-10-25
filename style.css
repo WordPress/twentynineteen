@@ -950,7 +950,9 @@ body.page .main-navigation {
   padding-left: 0;
   display: none;
   float: left;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   position: absolute;
   opacity: 0;
   left: -999em;
@@ -985,7 +987,11 @@ body.page .main-navigation {
   color: #fff;
   display: block;
   line-height: 1.2;
+<<<<<<< HEAD
   padding: calc( .5 * 1rem ) 1rem;
+=======
+  padding: calc( .5 * 1rem) calc( 24px + 1rem) calc( .5 * 1rem) 1rem;
+>>>>>>> WordPress/master
 }
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
   background: #005177;
@@ -994,23 +1000,36 @@ body.page .main-navigation {
   background: #005177;
 }
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
-  display: block;
+.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+  display: table;
   left: 0;
   margin-top: 0;
   opacity: 1;
   position: absolute;
+<<<<<<< HEAD
   width: max-content;
+=======
+>>>>>>> WordPress/master
 }
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+.main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
   margin-top: inherit;
   position: relative;
   padding-left: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
+<<<<<<< HEAD
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu {
+=======
+  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
+>>>>>>> WordPress/master
     padding-left: 0;
     position: absolute;
     left: 100%;
@@ -1426,16 +1445,24 @@ body.page .main-navigation {
   }
 }
 
+.site-title:not(:empty) + .site-description:not(:empty):before {
+  content: "\2014";
+  margin: 0 .2em;
+}
+
 .site-description {
   display: inline;
   color: #767676;
   font-weight: normal;
   margin: 0;
 }
+<<<<<<< HEAD
 .site-description:not(:empty):before {
   content: "—";
   margin: 0 0.2em;
 }
+=======
+>>>>>>> WordPress/master
 
 .site-header.featured-image {
   /* Need relative positioning to properly align layers. */
