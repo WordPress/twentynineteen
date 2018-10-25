@@ -73,6 +73,7 @@
 
 			@include media(desktop) {
 				order: 2;
+				padding-left: $size__spacing-unit;
 			}
 
 			.meta-nav {
