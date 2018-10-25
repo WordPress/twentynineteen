@@ -985,7 +985,9 @@ body.page .main-navigation {
   padding-left: 0;
   display: none;
   float: left;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   position: absolute;
   opacity: 0;
   left: -999em;
@@ -1036,14 +1038,11 @@ body.page .main-navigation {
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover {
-  display: block;
+  display: table;
   left: 0;
   margin-top: 0;
   opacity: 1;
   position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 
 .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
