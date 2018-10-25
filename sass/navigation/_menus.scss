@@ -14,21 +14,19 @@
 	}
 
 	.main-menu {
-
-		display: inline;
+		display: inline-table;
 		margin: 0;
 		padding: 0;
 
 		> li {
-
-			display: inline;
+			display: table-cell;
 			position: relative;
 
 			> a {
-
 				font-weight: 700;
 				color: $color__link;
 				margin-right: #{0.5 * $size__spacing-unit};
+				white-space: nowrap;
 
 				+ svg {
 					color: $color__link;

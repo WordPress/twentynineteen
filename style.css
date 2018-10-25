@@ -56,6 +56,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+.is-hidden {
+  display: none;
+}
+
 /* Normalize */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -935,13 +939,13 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu {
-  display: inline;
+  display: inline-table;
   margin: 0;
   padding: 0;
 }
 
 .main-navigation .main-menu > li {
-  display: inline;
+  display: table-cell;
   position: relative;
 }
 
@@ -949,6 +953,7 @@ body.page .main-navigation {
   font-weight: 700;
   color: #0073aa;
   margin-right: 0.5rem;
+  white-space: nowrap;
 }
 
 .main-navigation .main-menu > li > a + svg {
