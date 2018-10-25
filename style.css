@@ -2128,19 +2128,6 @@ body.page .main-navigation {
   display: none;
 }
 
-@media only screen and (min-width: 1168px) {
-  #comments > #respond .comment-user-avatar {
-    position: relative;
-    display: block;
-    float: left;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-  }
-  #comments > #respond .comment-user-avatar .avatar {
-    display: block;
-  }
-}
-
 .comment-form-flex {
   display: flex;
   flex-direction: column;
