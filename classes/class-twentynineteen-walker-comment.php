@@ -54,9 +54,10 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 							/* translators: %1$s: comment author link */
 							printf(
-								'%1$s <span class="screen-reader-text says">%2$s</span>',
-								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) ),
-								esc_html__( 'says:', 'twentynineteen' )
+								esc_html__( '%1$s %2$ssays:%3$s' ),
+								'<b class="fn">' . get_comment_author_link( $comment ) . '</b>',
+								'<span class="screen-reader-text says">',
+								'</span>'
 							);
 						?>
 					</div><!-- .comment-author -->
