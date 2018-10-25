@@ -15,7 +15,8 @@
 	<header class="entry-header">
 		<?php
 		if ( ! twentynineteen_can_show_post_thumbnail() ) {
-		get_template_part( 'template-parts/header/entry', 'header' );}
+			get_template_part( 'template-parts/header/entry', 'header' );
+		}
 		?>
 	</header>
 

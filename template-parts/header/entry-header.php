@@ -20,7 +20,8 @@ if ( ! is_page() ) : ?>
 	<span class="comment-count">
 		<?php
 		if ( ! empty( $discussion ) ) {
-			twentynineteen_discussion_avatars_list( $discussion->authors );}
+			twentynineteen_discussion_avatars_list( $discussion->authors );
+		}
 		?>
 		<?php twentynineteen_comment_count(); ?>
 	</span>
