@@ -123,12 +123,12 @@ figcaption,
 	}
 }
 
-/** === Cover Image === */
+/** === Cover === */
 
-.wp-block-cover-image {
+.wp-block-cover {
 
 	h2,
-	.wp-block-cover-image-text {
+	.wp-block-cover-text {
 		font-family: $font__heading;
 		font-size: $font__size-xl;
 		font-weight: bold;
@@ -139,7 +139,7 @@ figcaption,
 		justify-content: center;
 
 		h2,
-		.wp-block-cover-image-text {
+		.wp-block-cover-text {
 			padding: 1em;
 		}
 	}
@@ -148,28 +148,28 @@ figcaption,
 		justify-content: center;
 
 		h2,
-		.wp-block-cover-image-text {
+		.wp-block-cover-text {
 			padding: 1em;
 		}
 	}
 }
 
-body[data-type="core/cover-image"][data-align="left"],
-body[data-type="core/cover-image"][data-align="right"] {
+body[data-type="core/cover"][data-align="left"],
+body[data-type="core/cover"][data-align="right"] {
 
 	h2,
-	.wp-block-cover-image-text {
+	.wp-block-cover-text {
 		width: 100%;
 		max-width: 305px;
 	}
 }
 
-body[data-type="core/cover-image"][data-align="wide"],
-body[data-type="core/cover-image"][data-align="full"] {
+body[data-type="core/cover"][data-align="wide"],
+body[data-type="core/cover"][data-align="full"] {
 
 	@include media(desktop) {
 		h2,
-		.wp-block-cover-image-text {
+		.wp-block-cover-text {
 			padding: 0;
 			width: calc(6 * (100vw / 12));
 			max-width: calc(6 * (100vw / 12));
