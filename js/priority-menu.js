@@ -20,7 +20,7 @@
 	 */
 	function showElement(element) {
 		// classList.remove is not supported in IE11
-		element.className = element.className.replace("is-hidden", "");
+		element.className = element.className.replace('is-hidden', '');
 	}
 
 	/**
@@ -30,8 +30,8 @@
 	 */
 	function hideElement(element) {
 		// classList.add is not supported in IE11
-		if (!element.classList.contains("is-hidden")) {
-			element.className += " is-hidden";
+		if (!element.classList.contains('is-hidden')) {
+			element.className += ' is-hidden';
 		}
 	}
 
@@ -41,22 +41,22 @@
 	 * @param {Element} element
 	 */
 	function toggleElementVisibility(element) {
-		if (element.classList.contains("is-hidden")) {
+		if (element.classList.contains('is-hidden')) {
 			showElement(element);
 		} else {
 			hideElement(element);
 		}
 	}
 
-	var navContainer = document.querySelector(".main-navigation ");
+	var navContainer = document.querySelector('.main-navigation ');
 	// Adds the necessary UI to operate the menu.
 	navContainer.innerHTML +=
 		'<button class="main-menu-more is-hidden">More</button>' +
 		'<ul class="hidden-links is-hidden"></ul>';
-	var navContainer = document.querySelector(".main-navigation ");
-	var toggleButton = document.querySelector(".main-navigation .main-menu-more");
-	var visibleList = document.querySelector(".main-navigation .main-menu");
-	var hiddenList = document.querySelector(".main-navigation .hidden-links");
+	var navContainer = document.querySelector('.main-navigation ');
+	var toggleButton = document.querySelector('.main-navigation .main-menu-more');
+	var visibleList = document.querySelector('.main-navigation .main-menu');
+	var hiddenList = document.querySelector('.main-navigation .hidden-links');
 	var breaks = [];
 
 	/**
@@ -65,9 +65,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace() {
-		return toggleButton.classList.contains("hidden")
-			? navContainer.offsetWidth
-			: navContainer.offsetWidth - toggleButton.offsetWidth - 30;
+		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 30;
 	}
 
 	/**
@@ -112,11 +110,11 @@
 	}
 
 	// Event listeners
-	window.addEventListener("resize", function() {
+	window.addEventListener('resize', function() {
 		updateNavigationMenu();
 	});
 
-	toggleButton.addEventListener("click", function() {
+	toggleButton.addEventListener('click', function() {
 		toggleElementVisibility(hiddenList);
 	});
 
