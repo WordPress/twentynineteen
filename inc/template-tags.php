@@ -221,14 +221,14 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 
 			/* Only show avatar for logged in users */
 			if ( is_user_logged_in() ) {
-				$showavatar = twentynineteen_get_user_avatar_markup();
+				$show_avatar = twentynineteen_get_user_avatar_markup();
 			} else {
-				$showavatar = null;
+				$show_avatar = null;
 			}
 
 			comment_form(
 				array(
-					'title_reply_before' => $showavatar,
+					'title_reply_before' => $show_avatar,
 					'logged_in_as'       => null,
 					'title_reply'        => null,
 				)
