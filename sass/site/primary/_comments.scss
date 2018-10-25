@@ -11,7 +11,7 @@
 	/* Add extra margin when the comments section is located immediately after the
 	 * post itself (this happens on pages).
 	 */
-	.hentry + & {
+	.entry + & {
 		margin-top: calc(3 * #{$size__spacing-unit});
 	}
 

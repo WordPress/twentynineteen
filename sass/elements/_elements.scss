@@ -61,30 +61,6 @@ img {
 	height: auto;
 	max-width: 100%;
 	position: relative;
-	&:before {
-		background-color: $color__background-pre;
-		border: 1px dashed $color__background-hr;
-		border-radius: 3px;
-		content: " ";
-		display: block;
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-	}
-
-	&:after {
-		color: $color__text-input;
-		content: "This image is broken :-/ ( "attr(alt)" )";
-		display: block;
-		left: 50%;
-		position: absolute;
-		text-align: center;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-	}
 }
 
 figure {
