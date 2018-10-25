@@ -1268,12 +1268,22 @@ body.page .main-navigation {
 .comment-navigation .nav-links {
   display: flex;
   flex-direction: row;
+  margin: 0 1rem;
+}
+
+@media only screen and (min-width: 1168px) {
+  .comment-navigation .nav-links {
+    margin: 0 calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
 }
 
 .comment-navigation .nav-previous,
 .comment-navigation .nav-next {
   min-width: 50%;
   width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
 
 .comment-navigation .nav-previous .secondary-text,
