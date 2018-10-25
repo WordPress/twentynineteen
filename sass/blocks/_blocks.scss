@@ -233,7 +233,7 @@
 		line-height: 1.8;
 	}
 
-	// !Paragraphs
+	//! Paragraphs
 	.has-drop-cap {
 		&:not(:focus):first-letter {
 			font-family: $font__heading;
@@ -244,7 +244,7 @@
 		}
 	}
 
-	// !Pullquote
+	//! Pullquote
 	.wp-block-pullquote {
 		border: none;
 		padding: $size__spacing-unit;
