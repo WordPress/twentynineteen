@@ -37,6 +37,7 @@
     "build:style-editor-frame": "node-sass style-editor-frame.scss style-editor-frame.css --output-style expanded && postcss -r style-editor-frame.css",
     "build:rtl": "rtlcss style.css style-rtl.css",
     "build:print": "node-sass print.scss print.css --output-style expanded && postcss -r print.css",
+    "build:chinese": "node-sass language/devanagari.scss language/devanagari.css --output-style expanded && postcss -r language/devanagari.css",
     "build": "run-p \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
