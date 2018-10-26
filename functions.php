@@ -145,6 +145,12 @@ function twentynineteen_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	switch ( get_locale() ) {
+		case 'el':
+			wp_enqueue_style( 'twentynineteen-greek', get_template_directory_uri() . '/language/greek.css' );
+			break;
+	}
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 
