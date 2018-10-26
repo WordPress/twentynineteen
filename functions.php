@@ -145,6 +145,18 @@ function twentynineteen_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	switch ( get_locale() ) {
+		case 'ar':
+		case 'ary':
+		case 'azb':
+		case 'ckb':
+		case 'fa-IR':
+		case 'haz':
+		case 'ps':
+			wp_enqueue_style( 'twentynineteen-arabic', get_template_directory_uri() . '/language/arabic.css' );
+			break;
+	}
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 

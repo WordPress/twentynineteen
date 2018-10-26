@@ -1,0 +1,77 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea,
+.page-title,
+.entry-content .wp-block-verse {
+  font-family: Tahoma, Arial, sans_serif;
+}
+
+.main-navigation,
+.page-description,
+h2.author-title,
+.author-description .author-link,
+.not-found .page-title,
+.error-404 .page-title,
+.post-navigation .post-title,
+.pagination .nav-links,
+.comments-title,
+.comment-author .fn,
+.no-comments,
+.site-title,
+h1, h2, h3, h4, h5, h6,
+.site-info,
+.page-description,
+.post-navigation .post-title,
+.comment-metadata,
+.discussion-meta-info,
+.entry-meta,
+.entry-footer,
+.comment-reply-link,
+#cancel-comment-reply-link,
+img:after,
+.page-links,
+.sticky-post,
+blockquote cite,
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.comment-navigation .nav-previous,
+.comment-navigation .nav-next,
+.comment-form .comment-notes,
+.comment-form label,
+.entry-content .wp-block-button .wp-block-button__link,
+.entry-content .wp-block-archives li,
+.entry-content .wp-block-categories li,
+.entry-content .wp-block-latest-posts li,
+.entry-content .has-drop-cap:not(:focus):first-letter,
+.entry-content .wp-block-pullquote cite,
+.entry-content .wp-block-cover-image .wp-block-cover-image-text,
+.entry-content .wp-block-cover-image .wp-block-cover-text,
+.entry-content .wp-block-cover-image h2,
+.entry-content .wp-block-cover .wp-block-cover-image-text,
+.entry-content .wp-block-cover .wp-block-cover-text,
+.entry-content .wp-block-cover h2,
+.entry-content .wp-block-audio figcaption,
+.entry-content .wp-block-video figcaption,
+.entry-content .wp-block-image figcaption,
+.entry-content .wp-block-gallery .blocks-gallery-image figcaption,
+.entry-content .wp-block-gallery .blocks-gallery-item figcaption,
+.entry-content .wp-block-file,
+.entry-content .wp-block-file .wp-block-file__button,
+.entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta,
+.gallery-caption {
+  font-family: Tahoma, Arial, sans_serif;
+}
+
+code, kbd, tt, var {
+  font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
+}
+
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+}
