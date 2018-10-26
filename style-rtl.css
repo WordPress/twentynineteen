@@ -1859,6 +1859,7 @@ body.page .main-navigation {
 .entry .entry-meta > span,
 .entry .entry-footer > span {
   margin-left: 1rem;
+  display: inline-block;
 }
 
 .entry .entry-meta > span:last-child,
