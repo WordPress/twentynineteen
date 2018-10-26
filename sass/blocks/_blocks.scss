@@ -547,6 +547,7 @@
 			line-height: $font__line-height-heading;
 			font-weight: bold;
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
+			text-decoration: none;
 
 			@include media(desktop) {
 				font-size: $font__size-base;
