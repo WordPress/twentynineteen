@@ -232,7 +232,13 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 	}
 
 	if ( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) ) {
-		$output = preg_replace( '/(<a.+?>)/', '$1' . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ), $output );
+		// Inject the keyboard_arrow_left SVG inside the first link.
+		$output = preg_replace(
+			'/<a.+?>/',
+			'$0' . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
+			$output,
+			1 // Limit.
+		);
 	} elseif ( 0 === $depth && in_array( 'menu-item-has-children', $item->classes, true ) ) {
 		$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
 	} elseif ( $depth >= 1 && in_array( 'menu-item-has-children', $item->classes, true ) ) {
