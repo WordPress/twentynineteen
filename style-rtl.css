@@ -3296,12 +3296,14 @@ svg {
 --------------------------------------------------------------*/
 .gallery {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   margin-bottom: calc(1.5 * 1rem);
 }
 
 .gallery-item {
   display: inline-block;
-  margin-left: 1rem;
+  padding-left: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
@@ -3341,7 +3343,7 @@ svg {
 }
 
 .gallery-item:last-of-type {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .gallery-caption {
