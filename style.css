@@ -2751,6 +2751,7 @@ body.page .main-navigation {
   outline: none;
   color: white;
   outline: none;
+  text-decoration: none;
 }
 
 .entry-content .wp-block-button .wp-block-button__link:hover {
