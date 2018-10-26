@@ -985,10 +985,13 @@ body.page .main-navigation {
 .main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
 .main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
   position: absolute;
-  right: 0.5rem;
-  top: 0.65rem;
+  width: calc( 24px + 1rem);
+  right: 0;
+  top: 0;
+  bottom: 0;
   color: white;
   line-height: 1;
+  padding: calc( .5 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {

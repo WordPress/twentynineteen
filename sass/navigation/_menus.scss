@@ -98,10 +98,13 @@
 				.mobile-submenu-expand,
 				.desktop-submenu-expand {
 					position: absolute;
-					right: #{0.5 * $size__spacing-unit};
-					top: #{0.65 * $size__spacing-unit};
+					width: calc( 24px + #{$size__spacing-unit} );
+					right: 0;
+					top: 0;
+					bottom: 0;
 					color: white;
 					line-height: 1;
+					padding: calc( .5 * #{$size__spacing-unit} );
 				}
 
 				@include media(tablet) {
