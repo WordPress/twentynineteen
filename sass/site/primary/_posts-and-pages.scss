@@ -65,6 +65,7 @@
 		> span {
 
 			margin-right: $size__spacing-unit;
+			display: inline-block;
 
 			&:last-child {
 				margin-right: 0;
@@ -91,26 +92,7 @@
 	}
 
 	.entry-meta {
-
 		margin: $size__spacing-unit 0;
-
-		&.has-discussion .comment-count {
-
-			@include media(desktop) {
-				float: right;
-				position: relative;
-			}
-
-			.discussion-avatar-list {
-				display: none;
-
-				@include media(desktop) {
-					bottom: 100%;
-					display: block;
-					position: absolute;
-				}
-			}
-		}
 	}
 
 	.entry-footer {

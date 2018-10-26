@@ -15,6 +15,7 @@
 		> span {
 
 			margin-right: $size__spacing-unit;
+			display: inline-block;
 
 			&:last-child {
 				margin-right: 0;
@@ -36,6 +37,29 @@
 			display: inline-block;
 			vertical-align: middle;
 			margin-right: 0.5em;
+		}
+
+		&.has-discussion {
+
+			.discussion-avatar-list {
+				display: none;
+			}
+
+			@include media (tablet) {
+				display: flex;
+				position: relative;
+
+				.comment-count {
+					position: absolute;
+					right: 0;
+				}
+
+				.discussion-avatar-list {
+					display: block;
+					position: absolute;
+					bottom: 100%;
+				}
+			}
 		}
 	}
 

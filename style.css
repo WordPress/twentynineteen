@@ -1565,6 +1565,7 @@ body.page .main-navigation {
 
 .site-header.featured-image .entry-meta > span {
   margin-right: 1rem;
+  display: inline-block;
 }
 
 .site-header.featured-image .entry-meta > span:last-child {
@@ -1585,6 +1586,26 @@ body.page .main-navigation {
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5em;
+}
+
+.site-header.featured-image .entry-meta.has-discussion .discussion-avatar-list {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .entry-meta.has-discussion {
+    display: flex;
+    position: relative;
+  }
+  .site-header.featured-image .entry-meta.has-discussion .comment-count {
+    position: absolute;
+    right: 0;
+  }
+  .site-header.featured-image .entry-meta.has-discussion .discussion-avatar-list {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+  }
 }
 
 .site-header.featured-image .site-branding .site-title,
@@ -1838,6 +1859,7 @@ body.page .main-navigation {
 .entry .entry-meta > span,
 .entry .entry-footer > span {
   margin-right: 1rem;
+  display: inline-block;
 }
 
 .entry .entry-meta > span:last-child,
@@ -1867,25 +1889,6 @@ body.page .main-navigation {
 
 .entry .entry-meta {
   margin: 1rem 0;
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count {
-    float: right;
-    position: relative;
-  }
-}
-
-.entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-  display: none;
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-    bottom: 100%;
-    display: block;
-    position: absolute;
-  }
 }
 
 .entry .entry-footer {
@@ -2423,11 +2426,6 @@ body.page .main-navigation {
 .discussion-avatar-list .comment-user-avatar img {
   height: calc(1.5 * 1rem);
   width: calc(1.5 * 1rem);
-}
-
-.discussion-meta .discussion-avatar-list {
-  display: inline-block;
-  margin-right: 8px;
 }
 
 .discussion-meta .discussion-meta-info {
