@@ -34,17 +34,6 @@ function twentynineteen_customize_register( $wp_customize ) {
 		);
 	}
 
-	/**
-	 * Theme options.
-	 */
-	$wp_customize->add_section(
-		'theme_options',
-		array(
-			'title'    => __( 'Theme Options', 'twentynineteen' ),
-			'priority' => 130, // Before Additional CSS.
-		)
-	);
-
 	$wp_customize->add_setting(
 		'image_filter',
 		array(
@@ -58,9 +47,9 @@ function twentynineteen_customize_register( $wp_customize ) {
 		'image_filter',
 		array(
 			'label'       => __( 'Featured Image Color Filter', 'twentynineteen' ),
-			'section'     => 'theme_options',
+			'section'     => 'colors',
 			'type'        => 'radio',
-			'description' => __( "By default, Twenty Nineteen adds a duotone-like effect to featured images using your site's primary color. This effect can be turned off. When the color filter is disabled, a standard black overlay will be used on single post pages to preserve readability of the text that sits on top of the featured image.", 'twentynineteen' ),
+			'description' => __( "By default, Twenty Nineteen adds a duotone-like effect to featured images using your site's primary color. This effect can be turned off. When the color filter is disabled, a standard black overlay appears on individual post pages to preserve readability of the text on top of the featured image.", 'twentynineteen' ),
 			'choices'     => array(
 				'active'   => __( 'Have a color filter applied.', 'twentynineteen' ),
 				'inactive' => __( 'Not have a color filter applied.', 'twentynineteen' ),
