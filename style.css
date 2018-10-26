@@ -1462,7 +1462,7 @@ body.page .main-navigation {
   .site-logo {
     margin-bottom: 0;
     position: absolute;
-    right: calc(100% + (0.5 * calc(100vw / 12)));
+    right: calc(100% + (0.5 * 100vw / 12));
     top: 4px;
     z-index: 999;
   }
