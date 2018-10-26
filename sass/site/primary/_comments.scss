@@ -105,6 +105,23 @@
 	> .comment:first-child {
 		margin-top: 0;
 	}
+
+	.pingback {
+		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
+		&:first-child:before {
+			content: 'Pingback:';
+			color: $color__text-light;
+			font-family: $font__heading;
+			font-size: $font__size-sm;
+		}
+		.comment-body {
+			font-size: 0;
+			a {
+				font-size: $font__size_base;
+				padding-right: #{0.5 * $size__spacing-unit};
+			}
+		}
+	}
 }
 
 .comment-reply {

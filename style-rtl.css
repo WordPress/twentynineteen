@@ -2206,6 +2206,26 @@ body.page .main-navigation {
   margin-top: 0;
 }
 
+.comment-list .pingback {
+  padding-right: calc(.5 * (1rem + calc(100vw / 12 )));
+}
+
+.comment-list .pingback:first-child:before {
+  content: 'Pingback:';
+  color: #767676;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.88889em;
+}
+
+.comment-list .pingback .comment-body {
+  font-size: 0;
+}
+
+.comment-list .pingback .comment-body a {
+  font-size: 22px;
+  padding-left: 0.5rem;
+}
+
 .comment-reply {
   right: calc(1rem + 100%);
   bottom: 0;
