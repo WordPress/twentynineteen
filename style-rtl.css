@@ -1894,6 +1894,23 @@ body.page .main-navigation {
   display: block;
 }
 
+.hentry .post-thumbnail .post-thumbnail-inner:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .hentry .post-thumbnail .post-thumbnail-inner:after {
+    display: none;
+  }
+}
+
 .hentry .post-thumbnail .post-thumbnail-inner img {
   position: relative;
   display: block;

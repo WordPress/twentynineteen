@@ -145,6 +145,21 @@
 
 		.post-thumbnail-inner {
 			display: block;
+			
+			&:after {
+				background: rgba(0,0,0,.35);
+				content: "";
+				display: block;
+				height: 100%;
+				opacity: .5;
+				position: absolute;
+				top: 0;
+				width: 100%;
+
+				@supports (mix-blend-mode: multiply) {
+					display: none;
+				}
+			}
 
 			img {
 				position: relative;
