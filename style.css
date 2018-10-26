@@ -2941,12 +2941,14 @@ svg {
 --------------------------------------------------------------*/
 .gallery {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   margin-bottom: calc(1.5 * 1rem);
 }
 
 .gallery-item {
   display: inline-block;
-  margin-right: 1rem;
+  padding-right: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
@@ -2977,7 +2979,7 @@ svg {
   max-width: calc( ( 12 / 9 ) * (100% / 12) );
 }
 .gallery-item:last-of-type {
-  margin-right: 0;
+  padding-right: 0;
 }
 
 .gallery-caption {
