@@ -231,18 +231,25 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		return $output;
 	}
 
-	if ( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) ) {
-		// Inject the keyboard_arrow_left SVG inside the first link.
+	if ( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) && isset( $item->original_id ) ) {
+		// Inject the keyboard_arrow_left SVG inside the parent nav menu item, and let the item link to the parent item.
+		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
 		$output = preg_replace(
-			'/<a.+?>/',
-			'$0' . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
+			'/<a\s.*?>/',
+			"<a href='#menu-item-link-{$item->original_id}'>" . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
 			$output,
 			1 // Limit.
 		);
-	} elseif ( 0 === $depth && in_array( 'menu-item-has-children', $item->classes, true ) ) {
-		$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
-	} elseif ( $depth >= 1 && in_array( 'menu-item-has-children', $item->classes, true ) ) {
-		$output .= twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
+	} elseif ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+		// Add an ID to the link element itself to facilitate navigation from submenu back to parent.
+		$output = preg_replace( '/(?<=<a\s)/', sprintf( ' id="%s" ', esc_attr( "menu-item-link-{$item->ID}" ) ), $output );
+
+		// Add SVG icon to parent items.
+		if ( 0 === $depth ) {
+			$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
+		} elseif ( $depth >= 1 && in_array( 'menu-item-has-children', $item->classes, true ) ) {
+			$output .= twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
+		}
 	}
 
 	return $output;
@@ -269,6 +276,7 @@ function twentynineteen_add_mobile_parent_nav_menu_items( $sorted_menu_items, $a
 		$amended_menu_items[] = $nav_menu_item;
 		if ( in_array( 'menu-item-has-children', $nav_menu_item->classes, true ) ) {
 			$parent_menu_item                   = clone $nav_menu_item;
+			$parent_menu_item->original_id      = $nav_menu_item->ID;
 			$parent_menu_item->ID               = --$pseudo_id;
 			$parent_menu_item->db_id            = $parent_menu_item->ID;
 			$parent_menu_item->object_id        = $parent_menu_item->ID;
