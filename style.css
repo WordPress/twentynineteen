@@ -2748,6 +2748,7 @@ body.page .main-navigation {
   line-height: 1.2;
   box-sizing: border-box;
   font-weight: bold;
+  text-decoration: none;
   padding: 0.76rem 1rem;
   outline: none;
   color: white;

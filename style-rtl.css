@@ -830,7 +830,7 @@ textarea {
   border: solid 1px #ccc;
   box-sizing: border-box;
   outline: none;
-  padding: 0.35rem 0.66rem;
+  padding: 0.36rem 0.66rem;
 }
 
 input[type="text"]:focus,
@@ -2748,6 +2748,7 @@ body.page .main-navigation {
   line-height: 1.2;
   box-sizing: border-box;
   font-weight: bold;
+  text-decoration: none;
   padding: 0.76rem 1rem;
   outline: none;
   color: white;
