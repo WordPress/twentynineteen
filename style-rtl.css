@@ -990,6 +990,8 @@ body.page .main-navigation {
   top: 0;
   bottom: 0;
   color: white;
+  line-height: 1;
+  padding: calc( .5 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
@@ -1018,19 +1020,28 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
   display: table;
-  right: 0;
   margin-top: 0;
   opacity: 1;
-  position: absolute;
+  /* Mobile position */
+  right: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  /* Non-mobile position */
 }
 
-.main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
-  margin-top: inherit;
-  position: relative;
-  padding-right: 1rem;
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1038,6 +1049,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
+    margin-top: inherit;
     padding-right: 0;
     position: absolute;
     right: 100%;
@@ -1089,6 +1101,32 @@ body.page .main-navigation {
     padding-right: 0;
     position: absolute;
     right: 100%;
+    top: 0;
+  }
+}
+
+body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
+body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+  top: 46px;
+  /* Non-mobile position */
+}
+
+@media only screen and (min-width: 768px) {
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+    top: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
+  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
     top: 0;
   }
 }

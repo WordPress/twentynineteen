@@ -1020,19 +1020,31 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
   display: table;
-  left: 0;
   margin-top: 0;
   opacity: 1;
-  position: absolute;
+  /* Mobile position */
+  left: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 100000;
+  /* Make sure appears above mobile admin bar */
+  /* Non-mobile position */
 }
 
-.main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
-  margin-top: inherit;
-  position: relative;
-  padding-left: 1rem;
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
+  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+    position: absolute;
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    z-index: auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1040,6 +1052,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
+    margin-top: inherit;
     padding-left: 0;
     position: absolute;
     left: 100%;

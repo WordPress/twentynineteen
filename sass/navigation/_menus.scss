@@ -140,18 +140,31 @@
 	.main-menu .menu-item-has-children .sub-menu:hover,
 	.main-menu .menu-item-has-children .sub-menu:focus {
 		display: table;
-		left: 0;
 		margin-top: 0;
 		opacity: 1;
-		position: absolute;
+
+		/* Mobile position */
+		left: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		position: fixed;
+		z-index: 100000; /* Make sure appears above mobile admin bar */
+
+		/* Non-mobile position */
+		@include media(tablet) {
+			position: absolute;
+			left: 0;
+			right: auto;
+			top: auto;
+			bottom: auto;
+			z-index: auto;
+		}
 
 		.sub-menu {
 
-			margin-top: inherit;
-			position: relative;
-			padding-left: $size__spacing-unit;
-
 			@include media(tablet) {
+				margin-top: inherit;
 				padding-left: 0;
 				position: absolute;
 				left: 100%;
