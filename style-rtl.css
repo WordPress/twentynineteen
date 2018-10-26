@@ -931,7 +931,8 @@ body.page .main-navigation {
   margin-left: 0.5rem;
 }
 
-.main-navigation .main-menu > li > a:hover {
+.main-navigation .main-menu > li > a:hover,
+.main-navigation .main-menu > li > a:hover + svg {
   color: #005177;
 }
 
