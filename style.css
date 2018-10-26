@@ -3173,6 +3173,7 @@ body.page .main-navigation {
   line-height: 1.2;
   font-weight: bold;
   padding: 0.75rem 1rem;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 1168px) {
