@@ -234,9 +234,17 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 	if ( in_array( 'mobile-parent-nav-menu-item', $item->classes, true ) && isset( $item->original_id ) ) {
 		// Inject the keyboard_arrow_left SVG inside the parent nav menu item, and let the item link to the parent item.
 		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
+		$link = sprintf(
+			'<a id="%s" href="%s" onclick="%s">%s',
+			esc_attr( "menu-item-link-return-{$item->original_id}" ),
+			esc_attr( "#menu-item-link-{$item->original_id}" ),
+			esc_attr( 'event.preventDefault();' ),
+			twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 )
+		);
+
 		$output = preg_replace(
 			'/<a\s.*?>/',
-			"<a id='menu-item-link-return-{$item->original_id}' href='#menu-item-link-{$item->original_id}'>" . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
+			$link,
 			$output,
 			1 // Limit.
 		);
@@ -250,7 +258,16 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		} else {
 			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
 		}
-		$output .= "<a class='mobile-submenu-expand' href='#menu-item-link-return-{$item->ID}'>$icon</a>";
+
+		// @todo We might as well just go back to using the SVG element if the link approach is not suitable for no-JS environments.
+		$link = sprintf(
+			'<a class="mobile-submenu-expand" href="%s" onclick="%s">%s</a>',
+			esc_attr( "#menu-item-link-return-{$item->ID}" ),
+			esc_attr( 'event.preventDefault();' ),
+			$icon
+		);
+
+		$output .= $link;
 		$output .= "<span class='desktop-submenu-expand'>$icon</span>";
 	}
 
