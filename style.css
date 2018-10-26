@@ -1073,8 +1073,6 @@ body.page .main-navigation {
 .post-navigation {
   margin: calc(3 * 1rem) 0;
 }
-<<<<<<< HEAD
-=======
 @media only screen and (min-width: 768px) {
   .post-navigation {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
@@ -1087,21 +1085,17 @@ body.page .main-navigation {
     max-width: 100%;
   }
 }
->>>>>>> WordPress/master
 .post-navigation .nav-links {
   margin: 0 1rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
 }
-<<<<<<< HEAD
-=======
 @media only screen and (min-width: 768px) {
   .post-navigation .nav-links {
     margin: 0;
   }
 }
->>>>>>> WordPress/master
 @media only screen and (min-width: 1168px) {
   .post-navigation .nav-links {
     flex-direction: row;
@@ -1904,7 +1898,7 @@ body.page .main-navigation {
 
 .comments-area {
   /* Add extra margin when the comments section is located immediately after the
-   * post itself (this happens on pages). 
+   * post itself (this happens on pages).
    */
 }
 .entry + .comments-area {
@@ -1912,6 +1906,7 @@ body.page .main-navigation {
 }
 .comments-area .comments-title-wrap,
 .comments-area .comment-list,
+.comments-area .comment-navigation,
 .comments-area > .comment-respond,
 .comments-area .comment-form-flex,
 .comments-area .no-comments {
@@ -1920,6 +1915,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .comments-area .comments-title-wrap,
 .comments-area .comment-list,
+.comments-area .comment-navigation,
 .comments-area > .comment-respond,
 .comments-area .comment-form-flex,
 .comments-area .no-comments {
@@ -1953,7 +1949,7 @@ body.page .main-navigation {
   position: relative;
 }
 #respond .comment-user-avatar {
-  display: none;
+  margin: 1rem 0 -1rem;
 }
 #respond .comment .comment-form {
   padding-left: 0;
@@ -1969,17 +1965,6 @@ body.page .main-navigation {
 
 #comments > .comments-title:last-child {
   display: none;
-}
-@media only screen and (min-width: 1168px) {
-  #comments > #respond .comment-user-avatar {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  #comments > #respond .comment-user-avatar .avatar {
-    display: block;
-  }
 }
 
 .comment-form-flex {
@@ -2198,6 +2183,7 @@ body.page .main-navigation {
   height: calc(1.5 * 1rem);
   width: calc(1.5 * 1rem);
 }
+
 .discussion-meta .discussion-avatar-list {
   display: inline-block;
   margin-right: 8px;
