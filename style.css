@@ -1367,7 +1367,7 @@ body.page .main-navigation {
   .site-logo {
     margin-bottom: 0;
     position: absolute;
-    right: calc(100% + (0.5 * calc(100vw / 12)));
+    right: calc(100% + (0.5 * 100vw / 12));
     top: 4px;
     z-index: 999;
   }
@@ -1745,7 +1745,7 @@ body.page .main-navigation {
 }
 @media only screen and (min-width: 768px) {
   .entry .entry-footer {
-    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    margin: 1rem calc(2 * (100vw / 12)) calc(3 * 1rem);
     max-width: calc(8 * (100vw / 12));
   }
 }
