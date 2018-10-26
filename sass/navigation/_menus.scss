@@ -95,10 +95,13 @@
 
 			&.menu-item-has-children {
 
-				svg {
+				.mobile-submenu-expand,
+				.desktop-submenu-expand {
 					position: absolute;
 					right: #{0.5 * $size__spacing-unit};
 					top: #{0.65 * $size__spacing-unit};
+					color: white;
+					line-height: 1;
 				}
 
 				@include media(tablet) {
@@ -111,7 +114,7 @@
 				}
 			}
 
-			> a {
+			> a:not(.mobile-submenu-expand) {
 				color: $color__background-body;
 				display: block;
 				line-height: $font__line-height-heading;
@@ -155,6 +158,20 @@
 	}
 
 	.sub-menu > .mobile-parent-nav-menu-item {
+		@include media(tablet) {
+			display: none;
+		}
+	}
+
+	/* Only show one submenu expand button at a time (desktop vs mobile) */
+	.desktop-submenu-expand {
+		display: none;
+		@include media(tablet) {
+			display: inline-block;
+		}
+	}
+	.mobile-submenu-expand {
+		display: inline-block;;
 		@include media(tablet) {
 			display: none;
 		}

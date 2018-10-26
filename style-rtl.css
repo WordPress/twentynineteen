@@ -895,6 +895,7 @@ a:focus {
 .main-navigation {
   display: block;
   margin-top: 0.25rem;
+  /* Only show one submenu expand button at a time (desktop vs mobile) */
   /*
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
@@ -981,10 +982,12 @@ body.page .main-navigation {
   word-break: break-word;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children svg {
+.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
   position: absolute;
   left: 0.5rem;
   top: 0.65rem;
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -993,18 +996,18 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .sub-menu > li > a {
+.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand) {
   color: #fff;
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
 }
 
-.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
+.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
   background: #005177;
 }
 
-.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after {
+.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover:after, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus:after {
   background: #005177;
 }
 
@@ -1040,6 +1043,32 @@ body.page .main-navigation {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .main-navigation .sub-menu > .mobile-parent-nav-menu-item {
+    display: none;
+  }
+}
+
+.main-navigation .desktop-submenu-expand {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .desktop-submenu-expand {
+    display: inline-block;
+  }
+}
+
+.main-navigation .mobile-submenu-expand {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .mobile-submenu-expand {
+    display: none;
+  }
+}
+
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   right: inherit;
@@ -1059,12 +1088,6 @@ body.page .main-navigation {
     position: absolute;
     right: 100%;
     top: 0;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .sub-menu > .mobile-parent-nav-menu-item {
-    display: none;
   }
 }
 

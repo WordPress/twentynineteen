@@ -250,7 +250,8 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		} else {
 			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
 		}
-		$output .= "<a href='#menu-item-link-return-{$item->ID}'>$icon</a>";
+		$output .= "<a class='mobile-submenu-expand' href='#menu-item-link-return-{$item->ID}'>$icon</a>";
+		$output .= "<span class='desktop-submenu-expand'>$icon</span>";
 	}
 
 	return $output;
