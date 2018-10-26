@@ -145,6 +145,21 @@ function twentynineteen_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	switch ( get_locale() ) {
+		case 'bel':
+		case 'bg_BG':
+		case 'kk':
+		case 'mk_MK':
+		case 'mn':
+		case 'ru_RU':
+		case 'sah':
+		case 'sr_RS':
+		case 'tt_RU':
+		case 'uk':
+			wp_enqueue_style( 'twentynineteen-cyrillic', get_template_directory_uri() . '/language/cyrillic.css' );
+			break;
+	}
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 
