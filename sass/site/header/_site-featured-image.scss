@@ -48,33 +48,37 @@
 	.social-navigation li,
 	.entry-meta,
 	.entry-title {
-		color: white;
+		color: $color__background-body;
 	}
 
 	.main-navigation a,
+	.main-navigation a + svg,
 	.social-navigation a,
 	.site-title a,
 	.site-featured-image a {
-		color: white;
+		color: $color__background-body;
 		transition: opacity $link_transition ease-in-out;
 
 		&:hover,
-		&:active {
-			color: white;
+		&:active,
+		&:hover + svg,
+		&:active + svg {
+			color: $color__background-body;
 			opacity: 0.6;
 		}
 
-		&:focus {
-			color: white;
+		&:focus,
+		&:focus + svg {
+			color: $color__background-body;
 		}
 	}
 
 	/* add focus state to social media icons */
 	.social-navigation a {
 		&:focus {
-			color: white;
+			color: $color__background-body;
 			opacity: 1;
-			border-bottom: 1px solid white;
+			border-bottom: 1px solid $color__background-body;
 		}
 	}
 
@@ -102,7 +106,7 @@
 		.entry-title {
 
 			&:before {
-				background: white;
+				background: $color__background-body;
 			}
 		}
 	}
@@ -111,13 +115,13 @@
 
 	.custom-logo-link {
 
-		background: white;
-		box-shadow: 0 0 0 0 rgba(white, 0);
+		background: $color__background-body;
+		box-shadow: 0 0 0 0 rgba($color__background-body, 0);
 
 		&:hover,
 		&:active,
 		&:focus {
-			box-shadow: 0 0 0 2px rgba(white, 1);
+			box-shadow: 0 0 0 2px rgba($color__background-body, 1);
 		}
 	}
 
@@ -187,7 +191,7 @@
 
 	/* Fourth layer: overlay. */
   	.image-filters-enabled & .site-branding-container:after {
-		background: rgba(white, 0.35);
+  		background: rgba($color__background-body, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
 		z-index: 4;
@@ -221,10 +225,10 @@
 
 
 	::-moz-selection {
-		background: rgba(white, 0.17);
+		background: rgba($color__background-body, 0.17);
 	}
 
 	::selection {
-		background: rgba(white, 0.17);
+		background: rgba($color__background-body, 0.17);
 	}
 }

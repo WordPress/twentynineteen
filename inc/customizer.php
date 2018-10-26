@@ -34,17 +34,6 @@ function twentynineteen_customize_register( $wp_customize ) {
 		);
 	}
 
-	/**
-	 * Theme options.
-	 */
-	$wp_customize->add_section(
-		'theme_options',
-		array(
-			'title'    => __( 'Theme Options', 'twentynineteen' ),
-			'priority' => 130, // Before Additional CSS.
-		)
-	);
-
 	$wp_customize->add_setting(
 		'image_filter',
 		array(
@@ -57,13 +46,13 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'image_filter',
 		array(
-			'label'       => __( 'Image Filter', 'twentynineteen' ),
-			'section'     => 'theme_options',
+			'label'       => __( 'Featured Image Color Filter', 'twentynineteen' ),
+			'section'     => 'colors',
 			'type'        => 'radio',
-			'description' => __( 'When image filters are active, featured images are tinted blue. When inactive, they will be shown in color although featured images in single posts will have a black overlay to ensure the text is readable on top of bright images.', 'twentynineteen' ),
+			'description' => __( "By default, Twenty Nineteen adds a duotone-like effect to featured images using your site's primary color. This effect can be turned off. When the color filter is disabled, a standard black overlay appears on individual post pages to preserve readability of the text on top of the featured image.", 'twentynineteen' ) . '<br/><span style="font-style: normal; display: block; margin-top: 16px;">' . __( 'Featured images should:', 'twentynineteen' ) . '</span>',
 			'choices'     => array(
-				'active'   => __( 'Active', 'twentynineteen' ),
-				'inactive' => __( 'Inactive', 'twentynineteen' ),
+				'active'   => __( 'Have a color filter applied.', 'twentynineteen' ),
+				'inactive' => __( 'Have a black filter applied.', 'twentynineteen' ),
 			),
 		)
 	);
