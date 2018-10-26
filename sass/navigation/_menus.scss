@@ -154,6 +154,12 @@
 		}
 	}
 
+	.sub-menu > .mobile-parent-nav-menu-item {
+		@include media(tablet) {
+			display: none;
+		}
+	}
+
 	/*
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it

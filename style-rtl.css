@@ -1062,6 +1062,12 @@ body.page .main-navigation {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .sub-menu > .mobile-parent-nav-menu-item {
+    display: none;
+  }
+}
+
 /* Social menu */
 .social-navigation {
   margin-top: calc(1rem / 2);
