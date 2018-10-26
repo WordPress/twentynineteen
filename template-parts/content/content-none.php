@@ -20,12 +20,16 @@
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
 			printf(
-				'<p>' .
-					/* translators: %s: link to WP admin new post page. */
-					esc_html__( 'Ready to publish your first post? %1$sGet started here%2$s.', 'twentynineteen' )
-				. '</p>',
-				'<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">',
-				'</a>'
+				'<p>' . wp_kses(
+					/* translators: 1: link to WP admin new post page. */
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twentynineteen' ),
+					array(
+						'a' => array(
+							'href' => array(),
+						),
+					)
+				) . '</p>',
+				esc_url( admin_url( 'post-new.php' ) )
 			);
 
 		elseif ( is_search() ) :
