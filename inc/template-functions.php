@@ -236,7 +236,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
 		$output = preg_replace(
 			'/<a\s.*?>/',
-			"<a href='#menu-item-link-{$item->original_id}'>" . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
+			"<a id='menu-item-link-return-{$item->original_id}' href='#menu-item-link-{$item->original_id}'>" . twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 ),
 			$output,
 			1 // Limit.
 		);
@@ -246,10 +246,11 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 
 		// Add SVG icon to parent items.
 		if ( 0 === $depth ) {
-			$output .= twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
-		} elseif ( $depth >= 1 && in_array( 'menu-item-has-children', $item->classes, true ) ) {
-			$output .= twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
+			$icon = twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
+		} else {
+			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
 		}
+		$output .= "<a href='#menu-item-link-return-{$item->ID}'>$icon</a>";
 	}
 
 	return $output;
