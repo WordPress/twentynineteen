@@ -21,6 +21,7 @@
 
 		> li {
 
+			color: $color__link;
 			display: inline;
 			position: relative;
 
@@ -31,15 +32,12 @@
 				margin-right: #{0.5 * $size__spacing-unit};
 
 				+ svg {
-					color: $color__link;
 					margin-right: #{0.5 * $size__spacing-unit};
 				}
 
-				&:hover {
+				&:hover,
+				&:hover + svg {
 					color: $color__link-hover;
-					+ svg {
-						color: $color__link-hover;
-					}
 				}
 			}
 
