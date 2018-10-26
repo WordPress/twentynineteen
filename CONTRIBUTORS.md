@@ -28,3 +28,4 @@ Version 1.0:
 | @DannyCooper | @dannycooper |
 | @iCaleb | @icaleb |
 | @siriokun | @siriokun |
+| @briannaorg | @technosiren |
