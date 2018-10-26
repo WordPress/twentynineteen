@@ -880,7 +880,7 @@ a:visited {
 
 a:hover, a:active {
   color: #005177;
-  outline: 0;
+  outline: thin dotted;
   text-decoration: none;
 }
 

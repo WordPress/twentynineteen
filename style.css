@@ -885,7 +885,7 @@ a:hover, a:active {
 }
 
 a:focus {
-  outline: 0;
+  outline: thin dotted;
   text-decoration: underline;
 }
 
