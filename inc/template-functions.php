@@ -166,7 +166,7 @@ function twentynineteen_get_discussion_data() {
 	}
 	$authors    = array();
 	$commenters = array();
-	$user_id    = is_user_logged_in() ? get_current_user_id() : -1;
+	$user_id    = -1; // is_user_logged_in() ? get_current_user_id() : -1;
 	$comments   = get_comments(
 		array(
 			'post_id' => $current_post_id,

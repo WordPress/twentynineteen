@@ -1542,7 +1542,7 @@ body.page .main-navigation {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   /* Set white text color when featured image is set. */
   /* add focus state to social media icons */
-  /* Site header featured image styles */
+  /* Entry header */
   /* Custom Logo Link */
   /* Make sure important elements are above pseudo elements used for effects. */
   /* Set up image filter layer positioning */
@@ -1557,34 +1557,6 @@ body.page .main-navigation {
   /* Third layer: multiply. */
   /* Fourth layer: overlay. */
   /* Fifth layer: readability overlay */
-}
-
-.site-header.featured-image .entry-meta {
-  font-weight: 500;
-}
-
-.site-header.featured-image .entry-meta > span {
-  margin-right: 1rem;
-}
-
-.site-header.featured-image .entry-meta > span:last-child {
-  margin-right: 0;
-}
-
-.site-header.featured-image .entry-meta a {
-  transition: color 110ms ease-in-out;
-  color: currentColor;
-}
-
-.site-header.featured-image .entry-meta a:hover {
-  text-decoration: none;
-}
-
-.site-header.featured-image .entry-meta .svg-icon {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5em;
 }
 
 .site-header.featured-image .site-branding .site-title,
@@ -1659,6 +1631,7 @@ body.page .main-navigation {
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
+  /* Entry meta */
 }
 
 @media only screen and (min-width: 768px) {
@@ -1670,6 +1643,58 @@ body.page .main-navigation {
 
 .site-header.featured-image .site-featured-image .entry-header .entry-title:before {
   background: #fff;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta {
+  font-weight: 500;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta > span {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta > span:last-child {
+  margin-right: 0;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta a {
+  transition: color 110ms ease-in-out;
+  color: currentColor;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta a:hover {
+  text-decoration: none;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta .svg-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta .discussion-avatar-list {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta {
+    display: flex;
+    position: relative;
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-title {
+    padding-right: calc(1 * (100vw / 12) + 1rem);
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .comment-count {
+    position: absolute;
+    right: 0;
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .discussion-avatar-list {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+  }
 }
 
 .site-header.featured-image .custom-logo-link {
@@ -1838,6 +1863,7 @@ body.page .main-navigation {
 .entry .entry-meta > span,
 .entry .entry-footer > span {
   margin-right: 1rem;
+  display: inline-block;
 }
 
 .entry .entry-meta > span:last-child,
@@ -1867,25 +1893,6 @@ body.page .main-navigation {
 
 .entry .entry-meta {
   margin: 1rem 0;
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count {
-    float: right;
-    position: relative;
-  }
-}
-
-.entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-  display: none;
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-    bottom: 100%;
-    display: block;
-    position: absolute;
-  }
 }
 
 .entry .entry-footer {
@@ -2099,7 +2106,6 @@ body.page .main-navigation {
   margin-top: calc(3 * 1rem);
 }
 
-.comments-area .comments-title-wrap,
 .comments-area .comment-list,
 .comments-area .comment-navigation,
 .comments-area > .comment-respond,
@@ -2109,7 +2115,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area .comments-title-wrap,
   .comments-area .comment-list,
   .comments-area .comment-navigation,
   .comments-area > .comment-respond,
@@ -2121,9 +2126,17 @@ body.page .main-navigation {
 }
 
 .comments-area .comments-title-wrap {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+  margin: calc(2 * 1rem) 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
 }
 
 .comments-area .comments-title-wrap .comments-title {
@@ -2137,6 +2150,19 @@ body.page .main-navigation {
   height: 2px;
   margin: 1rem 0;
   width: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap .comments-title {
+    flex: 1 0 calc(3 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap .discussion-meta {
+    flex: 0 0 calc(2 * (100vw / 12));
+    margin-left: 1rem;
+  }
 }
 
 #comment {
@@ -2423,11 +2449,6 @@ body.page .main-navigation {
 .discussion-avatar-list .comment-user-avatar img {
   height: calc(1.5 * 1rem);
   width: calc(1.5 * 1rem);
-}
-
-.discussion-meta .discussion-avatar-list {
-  display: inline-block;
-  margin-right: 8px;
 }
 
 .discussion-meta .discussion-meta-info {
