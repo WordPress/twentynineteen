@@ -947,6 +947,7 @@ body.page .main-navigation {
   display: none;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
 .main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
   margin-right: 0.5rem;
 }

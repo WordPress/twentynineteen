@@ -58,6 +58,7 @@
 
 				&:not(:last-child) {
 					
+					.mobile-submenu-expand,
 					.desktop-submenu-expand {
 						margin-right: #{0.5 * $size__spacing-unit};
 					}
