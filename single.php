@@ -6,6 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 get_header();
@@ -18,7 +19,7 @@ get_header();
 
 			/* Start the Loop */
 			while ( have_posts() ) :
-the_post();
+				the_post();
 
 				get_template_part( 'template-parts/content/content', 'single' );
 

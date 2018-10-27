@@ -1,6 +1,7 @@
 .main-navigation,
 .page-description,
 h2.author-title,
+.author-description .author-link,
 .not-found .page-title,
 .error-404 .page-title,
 .post-navigation .post-title,
@@ -28,7 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 .comment-reply-link,
 #cancel-comment-reply-link,
 img:after,
-.page-links {
+.page-links,
+.sticky-post {
 	font-family: $font__heading;
 }
 
@@ -39,7 +41,7 @@ img:after,
 .site-branding,
 .main-navigation ul.main-menu > li,
 .social-navigation,
-.author-description p.author-bio,
+.author-description .author-bio,
 .nav-links {
 	line-height: 1.25;
 }
@@ -99,6 +101,7 @@ h5 {
 .comment-reply-link,
 .comment-metadata,
 .comment-notes,
+.sticky-post,
 #cancel-comment-reply-link,
 img:after,
 h6 {
@@ -123,7 +126,8 @@ h6 {
 .entry-title,
 .not-found .page-title,
 .error-404 .page-title,
-.comments-title {
+.comments-title,
+blockquote {
 	hyphens: auto;
 	word-break: break-word;
 }
