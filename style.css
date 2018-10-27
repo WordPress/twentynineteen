@@ -991,7 +991,7 @@ body.page .main-navigation {
   position: absolute;
   width: calc( 24px + 1rem);
   right: 0;
-  top: 0;
+  top: calc( .125 * 1rem);
   bottom: 0;
   color: white;
   line-height: 1;
@@ -1047,7 +1047,6 @@ body.page .main-navigation {
     right: auto;
     top: auto;
     bottom: auto;
-    z-index: auto;
   }
 }
 

@@ -107,7 +107,7 @@
 					position: absolute;
 					width: calc( 24px + #{$size__spacing-unit} );
 					right: 0;
-					top: 0;
+					top: calc( .125 * #{$size__spacing-unit} );
 					bottom: 0;
 					color: white;
 					line-height: 1;
@@ -165,7 +165,6 @@
 			right: auto;
 			top: auto;
 			bottom: auto;
-			z-index: auto;
 		}
 
 		.sub-menu {
