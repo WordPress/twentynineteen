@@ -947,6 +947,10 @@ body.page .main-navigation {
   display: none;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+  margin-right: 0.5rem;
+}
+
 .main-navigation .main-menu > li:last-child > a {
   margin-right: 0;
 }
@@ -1058,6 +1062,11 @@ body.page .main-navigation {
     left: 100%;
     top: 0;
   }
+}
+
+.main-navigation .sub-menu > .mobile-parent-nav-menu-item {
+  font-size: 0.88889em;
+  font-weight: normal;
 }
 
 @media only screen and (min-width: 768px) {

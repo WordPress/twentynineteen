@@ -55,6 +55,13 @@
 						display: none;
 					}
 				}
+
+				&:not(:last-child) {
+					
+					.desktop-submenu-expand {
+						margin-right: #{0.5 * $size__spacing-unit};
+					}
+				}
 			}
 
 			&:last-child > a {
@@ -122,7 +129,7 @@
 				display: block;
 				line-height: $font__line-height-heading;
 				padding: calc( .5 * #{$size__spacing-unit} ) calc( 24px + #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
-
+	
 				&:hover,
 				&:focus {
 					background: $color__link-hover;
@@ -174,6 +181,9 @@
 	}
 
 	.sub-menu > .mobile-parent-nav-menu-item {
+		font-size: $font__size-sm;
+		font-weight: normal;
+
 		@include media(tablet) {
 			display: none;
 		}
@@ -182,12 +192,14 @@
 	/* Only show one submenu expand button at a time (desktop vs mobile) */
 	.desktop-submenu-expand {
 		display: none;
+		
 		@include media(tablet) {
 			display: inline-block;
 		}
 	}
 	.mobile-submenu-expand {
-		display: inline-block;;
+		display: inline-block;
+
 		@include media(tablet) {
 			display: none;
 		}

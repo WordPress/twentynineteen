@@ -947,6 +947,10 @@ body.page .main-navigation {
   display: none;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+  margin-left: 0.5rem;
+}
+
 .main-navigation .main-menu > li:last-child > a {
   margin-left: 0;
 }
@@ -1028,6 +1032,8 @@ body.page .main-navigation {
   left: 0;
   bottom: 0;
   position: fixed;
+  z-index: 100000;
+  /* Make sure appears above mobile admin bar */
   /* Non-mobile position */
 }
 
@@ -1055,6 +1061,11 @@ body.page .main-navigation {
     right: 100%;
     top: 0;
   }
+}
+
+.main-navigation .sub-menu > .mobile-parent-nav-menu-item {
+  font-size: 0.88889em;
+  font-weight: normal;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1101,32 +1112,6 @@ body.page .main-navigation {
     padding-right: 0;
     position: absolute;
     right: 100%;
-    top: 0;
-  }
-}
-
-body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
-body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
-body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
-  top: 46px;
-  /* Non-mobile position */
-}
-
-@media only screen and (min-width: 768px) {
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
-    top: auto;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
-  body.admin-bar .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
     top: 0;
   }
 }
