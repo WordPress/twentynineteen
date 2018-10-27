@@ -33,7 +33,7 @@
 	}
 }
 
-.hfeed .hentry .entry-header {
+.hfeed .entry .entry-header {
 
 	@include media(tablet) {
 		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12)) calc(#{ $size__spacing-unit } / 2);

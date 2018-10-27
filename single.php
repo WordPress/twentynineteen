@@ -6,12 +6,13 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 			<?php
@@ -52,7 +53,7 @@ get_header();
 			?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</section><!-- #primary -->
 
 <?php get_template_part( 'template-parts/post/post', 'navigation' ); ?>
 
