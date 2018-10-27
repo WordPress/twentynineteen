@@ -2811,12 +2811,6 @@ body.page .main-navigation {
   border: 2px solid #0073aa;
 }
 
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
-  color: #0073aa;
-}
-
 .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
   border-color: #111;
   color: #111;
@@ -2958,12 +2952,11 @@ body.page .main-navigation {
   margin: 0 auto;
 }
 
-.entry-content .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) p,
-.entry-content .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) cite {
-  color: white;
+.entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color {
+  color: #0073aa;
 }
 
-.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-primary-background-color) {
+.entry-content .wp-block-pullquote.is-style-solid-color.has-primary-background-color {
   background-color: #0073aa;
 }
 
