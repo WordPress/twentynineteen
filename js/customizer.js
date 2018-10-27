@@ -23,10 +23,10 @@
 				 * - Sticky Post
 				 * - WP Block Button
 				 */
-				.site-header.featured-image .hentry:before,
-				.site-header.featured-image .hentry:after,
-				.image-filters-enabled .hentry .post-thumbnail:before,
-				.image-filters-enabled .hentry .post-thumbnail:after,
+				.image-filters-enabled .site-header.featured-image .site-featured-image:before,
+				.image-filters-enabled .site-header.featured-image .site-featured-image:after,
+				.image-filters-enabled .entry .post-thumbnail:before,
+				.image-filters-enabled .entry .post-thumbnail:after,
 				.entry-content .wp-block-button .wp-block-button__link,
 				.button, button, input[type="button"], input[type="reset"], input[type="submit"],
 				.main-navigation .sub-menu,
@@ -52,8 +52,9 @@
 				a:visited,
 				.main-navigation ul.main-menu > li > a,
 				.post-navigation .post-title,
-				.hentry .entry-meta a:hover, .hentry .entry-footer a:hover,
-				.hentry .entry-content .more-link:hover,
+				.entry .entry-meta a:hover,
+				.entry .entry-footer a:hover,
+				.entry .entry-content .more-link:hover,
 				.main-navigation .main-menu > li > a + svg,
 				.comment-navigation .nav-previous a:hover,
 				.comment-navigation .nav-next a:hover,
