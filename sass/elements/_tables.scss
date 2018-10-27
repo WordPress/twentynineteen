@@ -2,7 +2,8 @@ table {
 	margin: 0 0 $size__spacing-unit;
 	width: 100%;
 
-	td, th {
+	th,
+	td {
 		border-color: $color__text-light;
 	}
 }

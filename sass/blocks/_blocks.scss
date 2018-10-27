@@ -141,7 +141,8 @@
 				cursor: pointer;
 			}
 
-			&:hover, &:focus {
+			&:focus,
+			&:hover {
 				background: $color__background-button-hover;
 			}
 
@@ -529,7 +530,8 @@
 	//! Table
 	.wp-block-table {
 
-		td, th {
+		th,
+		td {
 			border-color: $color__text-light;
 		}
 	}
@@ -558,7 +560,8 @@
 				cursor: pointer;
 			}
 
-			&:hover, &:focus {
+			&:focus,
+			&:hover {
 				background: $color__background-button-hover;
 			}
 

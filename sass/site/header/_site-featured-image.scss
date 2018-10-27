@@ -188,7 +188,7 @@
 	/* The intensity of each blend mode is controlled via layer opacity. */
 
 	/* First layer: grayscale. */
-  	.site-branding-container:before {
+	.site-branding-container:before {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -208,8 +208,8 @@
 	}
 
 	/* Third layer: multiply. */
-  	/* When image filters are inactive, a black overlay is added. */
-  	.site-featured-image:after {
+	/* When image filters are inactive, a black overlay is added. */
+	.site-featured-image:after {
 		background: #000;
 		mix-blend-mode: multiply;
 		opacity: .7;
@@ -223,8 +223,8 @@
 	}
 
 	/* Fourth layer: overlay. */
-  	.image-filters-enabled & .site-branding-container:after {
-  		background: rgba($color__background-body, 0.35);
+	.image-filters-enabled & .site-branding-container:after {
+		background: rgba($color__background-body, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
 		z-index: 4;
@@ -238,7 +238,7 @@
 		 * but smooth effect when resizing the screen.
 		 */
 		transition: opacity 1200ms ease-in-out;
-	  	opacity: 0.7;
+		opacity: 0.7;
 		z-index: 5;
 
 		/* When image filters are active, a blue overlay is added. */

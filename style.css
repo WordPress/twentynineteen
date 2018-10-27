@@ -431,7 +431,12 @@ h2.author-title,
 .comment-author .fn,
 .no-comments,
 .site-title,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -577,7 +582,10 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
@@ -594,7 +602,10 @@ pre {
   overflow: auto;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-size: 0.88889em;
   font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
 }
@@ -604,7 +615,8 @@ abbr, acronym {
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -666,12 +678,18 @@ a:focus {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both;
   margin: 1rem 0;
 }
 
-h1:not(.site-title):before, h2:before {
+h1:not(.site-title):before,
+h2:before {
   background: #767676;
   content: "\020";
   display: block;
@@ -749,7 +767,8 @@ table {
   width: 100%;
 }
 
-table td, table th {
+table th,
+table td {
   border-color: #767676;
 }
 
@@ -2790,7 +2809,7 @@ body.page .main-navigation {
   cursor: pointer;
 }
 
-.entry-content .wp-block-button .wp-block-button__link:hover, .entry-content .wp-block-button .wp-block-button__link:focus {
+.entry-content .wp-block-button .wp-block-button__link:focus, .entry-content .wp-block-button .wp-block-button__link:hover {
   background: #111;
 }
 
@@ -3188,7 +3207,8 @@ body.page .main-navigation {
   overflow: hidden;
 }
 
-.entry-content .wp-block-table td, .entry-content .wp-block-table th {
+.entry-content .wp-block-table th,
+.entry-content .wp-block-table td {
   border-color: #767676;
 }
 
@@ -3219,7 +3239,7 @@ body.page .main-navigation {
   cursor: pointer;
 }
 
-.entry-content .wp-block-file .wp-block-file__button:hover, .entry-content .wp-block-file .wp-block-file__button:focus {
+.entry-content .wp-block-file .wp-block-file__button:focus, .entry-content .wp-block-file .wp-block-file__button:hover {
   background: #111;
 }
 
