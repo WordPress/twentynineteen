@@ -43,6 +43,8 @@
 
 			&.menu-item-has-children {
 
+				display: inline-block;
+
 				> a {
 					margin-right: #{0.125 * $size__spacing-unit};
 				}
@@ -63,7 +65,7 @@
 				}
 
 				&:not(:last-child) {
-					
+
 					.mobile-submenu-expand,
 					.desktop-submenu-expand {
 						margin-right: #{0.5 * $size__spacing-unit};
@@ -86,13 +88,13 @@
 
 		display: none;
 		float: left;
-		width: max-content;
 		position: absolute;
 		opacity: 0;
 		left: -999px;
 		z-index: 99999;
 
 		@include media(tablet) {
+			width: max-content;
 			max-width: calc(3 * (100vw / 12));
 		}
 
@@ -123,7 +125,7 @@
 				}
 
 				&:not(:last-child) {
-					
+
 					.mobile-submenu-expand,
 					.desktop-submenu-expand {
 						margin-right: 0;
@@ -145,7 +147,7 @@
 				display: block;
 				line-height: $font__line-height-heading;
 				padding: calc( .5 * #{$size__spacing-unit} ) calc( 24px + #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
-	
+
 				&:hover,
 				&:focus {
 					background: $color__link-hover;
@@ -186,7 +188,7 @@
 			top: auto;
 			bottom: auto;
 			height: auto;
-			width: auto;
+			width: max-content;
 			transform: none;
 			animation: fade_in 0.1s forwards;
 		}
@@ -221,11 +223,12 @@
 	/* Only show one submenu expand button at a time (desktop vs mobile) */
 	.desktop-submenu-expand {
 		display: none;
-		
+
 		@include media(tablet) {
 			display: inline-block;
 		}
 	}
+
 	.mobile-submenu-expand {
 		display: inline-block;
 
@@ -240,7 +243,7 @@
 	 */
 	.main-menu .menu-item-has-children:focus-within > .sub-menu {
 		display: block;
-		left: inherit;
+		left: 0;
 		margin-top: 0;
 		opacity: 1;
 
@@ -254,6 +257,7 @@
 				padding-left: 0;
 				position: absolute;
 				left: 100%;
+				width: max-content;
 				top: 0;
 			}
 		}
