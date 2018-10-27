@@ -52,7 +52,7 @@ the_post();
 			?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</section><!-- #primary -->
 
 <?php get_template_part( 'template-parts/post/post', 'navigation' ); ?>
 

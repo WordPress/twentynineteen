@@ -49,7 +49,7 @@ get_header();
 		?>
 
 		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+	</section><!-- .content-area -->
 
 <?php
 get_footer();
