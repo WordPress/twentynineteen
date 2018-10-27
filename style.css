@@ -1028,13 +1028,15 @@ body.page .main-navigation {
   margin-top: 0;
   opacity: 1;
   /* Mobile position */
-  left: auto;
+  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   position: fixed;
   z-index: 100000;
   /* Make sure appears above mobile admin bar */
+  width: 100%;
+  height: 100%;
   /* Non-mobile position */
 }
 
@@ -1048,6 +1050,8 @@ body.page .main-navigation {
     right: auto;
     top: auto;
     bottom: auto;
+    height: auto;
+    width: auto;
   }
 }
 
