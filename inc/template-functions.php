@@ -86,8 +86,8 @@ function twentynineteen_get_the_archive_title() {
 		$title = esc_html__( 'Post Type Archives:', 'twentynineteen' );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name */
-		$title = sprintf( __( '%s Archives: ' ), $tax->labels->singular_name );
+		/* translators: %s: Taxonomy singular name */
+		$title = sprintf( esc_html__( '%s Archives:', 'twentynineteen' ), $tax->labels->singular_name );
 	} else {
 		$title = esc_html__( 'Archives:', 'twentynineteen' );
 	}
@@ -169,7 +169,7 @@ function twentynineteen_get_discussion_data() {
 	}
 	$authors    = array();
 	$commenters = array();
-	$user_id    = is_user_logged_in() ? get_current_user_id() : -1;
+	$user_id    = -1; // is_user_logged_in() ? get_current_user_id() : -1;
 	$comments   = get_comments(
 		array(
 			'post_id' => $current_post_id,
