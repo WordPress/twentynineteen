@@ -947,6 +947,12 @@ body.page .main-navigation {
   display: none;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand svg,
+.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+  position: relative;
+  top: 0.2rem;
+}
+
 .main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
 .main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
   margin-right: 0.5rem;
@@ -996,6 +1002,11 @@ body.page .main-navigation {
   color: white;
   line-height: 1;
   padding: calc( .5 * 1rem);
+}
+
+.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand svg,
+.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+  top: 0;
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,

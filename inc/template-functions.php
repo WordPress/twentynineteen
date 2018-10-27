@@ -254,7 +254,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 
 		// Add SVG icon to parent items.
 		if ( 0 === $depth ) {
-			$icon = twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
+			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_down', 24 );
 		} else {
 			$icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
 		}
