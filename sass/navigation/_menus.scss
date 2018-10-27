@@ -72,7 +72,7 @@
 	}
 
 	.sub-menu {
-
+		
 		background: $color__link;
 		color: $color__background-body;
 		list-style: none;
@@ -83,11 +83,8 @@
 		width: max-content;
 		position: absolute;
 		opacity: 0;
-		left: -999em;
+		left: -999px;
 		z-index: 99999;
-		-webkit-transition: opacity 0.5s ease-in-out;
-		-moz-transition:    opacity 0.5s ease-in-out;
-		transition:         opacity 0.5s ease-in-out;
 
 		@include media(tablet) {
 			max-width: calc(3 * (100vw / 12));
@@ -160,6 +157,8 @@
 		z-index: 100000; /* Make sure appears above mobile admin bar */
 		width: 100%;
 		height:  100%;
+		transform: translateX(+100%);
+		animation: slide_in_right 0.1s forwards;
 
 		/* Non-mobile position */
 		@include media(tablet) {
@@ -170,6 +169,8 @@
 			bottom: auto;
 			height: auto;
 			width: auto;
+			transform: none;
+			animation: fade_in 0.1s forwards;
 		}
 
 		.sub-menu {
@@ -232,6 +233,23 @@
 				top: 0;
 			}
 		}
+	}
+}
+
+/* Menu Animation */
+
+@keyframes slide_in_right {
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes fade_in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
 

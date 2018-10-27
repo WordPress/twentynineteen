@@ -968,9 +968,8 @@ body.page .main-navigation {
   width: max-content;
   position: absolute;
   opacity: 0;
-  right: -999em;
+  right: -999px;
   z-index: 99999;
-  transition: opacity 0.5s ease-in-out;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1028,8 +1027,6 @@ body.page .main-navigation {
   margin-top: 0;
   opacity: 1;
   /* Mobile position */
-  width: 100%;
-  height: 100%;
   right: 0;
   top: 0;
   left: 0;
@@ -1037,6 +1034,10 @@ body.page .main-navigation {
   position: fixed;
   z-index: 100000;
   /* Make sure appears above mobile admin bar */
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  animation: slide_in_right 0.1s forwards;
   /* Non-mobile position */
 }
 
@@ -1050,6 +1051,10 @@ body.page .main-navigation {
     left: auto;
     top: auto;
     bottom: auto;
+    height: auto;
+    width: auto;
+    transform: none;
+    animation: fade_in 0.1s forwards;
   }
 }
 
@@ -1116,6 +1121,22 @@ body.page .main-navigation {
     position: absolute;
     right: 100%;
     top: 0;
+  }
+}
+
+/* Menu Animation */
+@keyframes slide_in_right {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
