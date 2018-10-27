@@ -1555,6 +1555,7 @@ body.page .main-navigation {
   /* First layer: grayscale. */
   /* Second layer: screen. */
   /* Third layer: multiply. */
+  /* When image filters are inactive, a black overlay is added. */
   /* Fourth layer: overlay. */
   /* Fifth layer: readability overlay */
 }
@@ -1729,25 +1730,34 @@ body.page .main-navigation {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(100%);
   z-index: 1;
+  /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-.site-header.featured-image .site-featured-image:before {
+.image-filters-enabled .site-header.featured-image .site-branding-container:before {
+  filter: grayscale(100%);
+}
+
+.image-filters-enabled .site-header.featured-image .site-featured-image:before {
   background: #0073aa;
   mix-blend-mode: screen;
   opacity: 0.1;
-  z-index: 2;
 }
 
 .site-header.featured-image .site-featured-image:after {
-  background: #0073aa;
+  background: #000;
   mix-blend-mode: multiply;
+  opacity: .7;
+  /* When image filters are active, a blue overlay is added. */
+}
+
+.image-filters-enabled .site-header.featured-image .site-featured-image:after {
+  background: #0073aa;
   opacity: 1;
   z-index: 3;
 }
 
-.site-header.featured-image .site-branding-container:after {
+.image-filters-enabled .site-header.featured-image .site-branding-container:after {
   background: rgba(255, 255, 255, 0.35);
   mix-blend-mode: overlay;
   opacity: 0.5;
@@ -1755,24 +1765,30 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image:after {
-  background: #000e14;
+  background: #000;
   /**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
 		 */
   transition: opacity 1200ms ease-in-out;
+  opacity: 0.7;
   z-index: 5;
+  /* When image filters are active, a blue overlay is added. */
+}
+
+.image-filters-enabled .site-header.featured-image:after {
+  background: #000e14;
   opacity: 0.38;
 }
 
 @media only screen and (min-width: 768px) {
-  .site-header.featured-image:after {
+  .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .site-header.featured-image:after {
+  .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.1;
   }
 }
