@@ -306,12 +306,9 @@
 				color: $color__background-body;
 				margin: 0 auto;
 
-				&.has-primary-color {
-					color: $color__link;
-				}
 			}
 
-			&.has-primary-background-color {
+			.has-primary-background-color {
 				background-color: $color__link;
 			}
 
