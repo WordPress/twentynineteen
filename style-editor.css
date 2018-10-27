@@ -195,8 +195,7 @@ body[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
   font-weight: bold;
 }
 
-.wp-block-button .wp-block-button__link:not(.has-background),
-.wp-block-button .wp-block-button__link:not(.has-background) {
+.wp-block-button .wp-block-button__link:not(.has-background), .wp-block-button .wp-block-button__link:not(.has-background):active, .wp-block-button .wp-block-button__link:not(.has-background):focus, .wp-block-button .wp-block-button__link:not(.has-background):hover {
   background: #0073aa;
 }
 
@@ -204,18 +203,16 @@ body[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
   border-radius: 5px;
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:active {
+.wp-block-button.is-style-outline, .wp-block-button.is-style-outline:hover, .wp-block-button.is-style-outline:focus, .wp-block-button.is-style-outline:active {
   background: transparent;
   border-color: #0073aa;
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.wp-block-button.is-style-outline .wp-block-button__link:hover:not(.has-text-color),
-.wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
+.wp-block-button.is-style-outline .wp-block-button__link, .wp-block-button.is-style-outline:hover .wp-block-button__link, .wp-block-button.is-style-outline:focus .wp-block-button__link, .wp-block-button.is-style-outline:active .wp-block-button__link {
+  background: transparent;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:hover .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:focus .wp-block-button__link:not(.has-text-color), .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color) {
   color: #0073aa;
 }
 

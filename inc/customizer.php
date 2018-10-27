@@ -137,6 +137,7 @@ function twentynineteen_primary_color_css() {
 				 * - Submenu
 				 * - Sticky Post
 				 * - WP Block Button
+				 * - Blocks
 				 */
 				.image-filters-enabled .site-header.featured-image .site-featured-image:before,
 				.image-filters-enabled .site-header.featured-image .site-featured-image:after,
@@ -146,9 +147,6 @@ function twentynineteen_primary_color_css() {
 				.button, button, input[type="button"], input[type="reset"], input[type="submit"],
 				.main-navigation .sub-menu,
 				.sticky-post,
-				.entry-content .wp-block-button .wp-block-button__link,
-				.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color),
-				.entry-content .wp-block-file .wp-block-file__button,
 				.entry-content > *[class^="wp-block-"].has-primary-background-color,
 				.entry-content > *[class^="wp-block-"] .has-primary-background-color,
 				.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color {
@@ -211,10 +209,7 @@ function twentynineteen_primary_color_css() {
 				input[type="datetime"]:focus,
 				input[type="datetime-local"]:focus,
 				input[type="color"]:focus,
-				textarea:focus,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
+				textarea:focus {
 					border-color: %1$s
 				}
 
@@ -226,7 +221,6 @@ function twentynineteen_primary_color_css() {
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
-// add_action( 'enqueue_block_editor_assets', 'twentynineteen_primary_color_css' );
 
 
 /**
@@ -265,7 +259,6 @@ function twentynineteen_primary_hover_color_css() {
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_hover_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_hover_color_css', 11 );
-// add_action( 'enqueue_block_editor_assets', 'twentynineteen_primary_hover_color_css' );
 
 /**
  * Sanitize image filter choice.

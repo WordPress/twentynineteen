@@ -2959,7 +2959,7 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) p,
-.entry-content .wp-block-pullquote.is-style-solid-color cite {
+.entry-content .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) cite {
   color: white;
 }
 

@@ -198,26 +198,32 @@ body[data-type="core/cover"][data-align="full"] {
 		font-family: $font__heading;
 		font-size: $font__size-sm;
 		font-weight: bold;
-	}
 
-	.wp-block-button__link:not(.has-background),
-	.wp-block-button__link:not(.has-background) {
-		background: $color__background-button;
+		&:not(.has-background),
+		&:not(.has-background):active,
+		&:not(.has-background):focus,
+		&:not(.has-background):hover {
+			background: $color__background-button;
+		}
 	}
 
 	&:not(.is-style-squared) .wp-block-button__link {
 		border-radius: 5px;
 	}
 
-	&.is-style-outline .wp-block-button__link,
-	&.is-style-outline .wp-block-button__link:hover,
-	&.is-style-outline .wp-block-button__link:focus,
-	&.is-style-outline .wp-block-button__link:active {
+	&.is-style-outline,
+	&.is-style-outline:hover,
+	&.is-style-outline:focus,
+	&.is-style-outline:active {
 		background: transparent;
 		border-color: $color__background-button;
 
-		&:not(.has-text-color) {
-			color: $color__background-button;
+		.wp-block-button__link {
+			background: transparent;
+
+			&:not(.has-text-color) {
+				color: $color__background-button;
+			}
 		}
 	}
 }
