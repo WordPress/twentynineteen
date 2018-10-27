@@ -48,13 +48,13 @@ function twentynineteen_customize_register( $wp_customize ) {
 	) ) );
 
 	// Add page primary color hover setting and control.
-	$wp_customize->add_setting( 'primary-color-hover', array(
+	$wp_customize->add_setting( 'primary-hover-color', array(
 		'default'           => '#005177',
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary-color-hover', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary-hover-color', array(
 		'label'       => __( 'Primary Color Hover' ),
 		'description' => __( 'Changes the Hover State color of Buttons, Links etc.' ),
 		'section'     => 'colors',
@@ -110,7 +110,7 @@ add_action( 'customize_preview_init', 'twentynineteen_customize_preview_js' );
 
 
 /**
- * Enqueues front-end CSS for the page background color.
+ * Enqueues front-end CSS for colors.
  *
  * @since Twenty Sixteen 1.0
  *
@@ -230,12 +230,12 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
  *
  * @see wp_add_inline_style()
  */
-function twentynineteen_primary_color_hover_css() {
+function twentynineteen_primary_hover_color_css() {
 	$default_color         = '#005177';
-	$primary_color_hover = get_theme_mod( 'primary-color-hover', $default_color );
+	$primary_hover_color = get_theme_mod( 'primary-hover-color', $default_color );
 
 	// Don't do anything if the current color is the default.
-	if ( $primary_color_hover === $default_color ) {
+	if ( $primary_hover_color === $default_color ) {
 		return;
 	}
 
@@ -256,9 +256,9 @@ function twentynineteen_primary_color_hover_css() {
 		}
 	';
 
-	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_color_hover ) );
+	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_hover_css', 11 );
+add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_hover_color_css', 11 );
 
 /**
  * Sanitize image filter choice.

@@ -118,7 +118,7 @@
 	} );
 
 	// Primary hover color...
-	wp.customize( 'primary-color-hover', function( value ) {
+	wp.customize( 'primary-hover-color', function( value ) {
 		value.bind( function( newval ) {
 
 			var css = `

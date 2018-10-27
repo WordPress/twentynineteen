@@ -118,7 +118,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			array(
 				'name'  => esc_html__( 'Primary Color Hover', 'twentynineteen' ),
 				'slug'  => 'primaryhover',
-				'color' => esc_attr( get_theme_mod( 'primary-color-hover', '#005177' ) ),
+				'color' => esc_attr( get_theme_mod( 'primary-hover-color', '#005177' ) ),
 			)
 		)
 	);
