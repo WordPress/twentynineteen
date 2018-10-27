@@ -34,7 +34,7 @@
 				.entry-content .wp-block-button .wp-block-button__link,
 				.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color),
 				.entry-content .wp-block-file .wp-block-file__button {
-				  background: ${newval};
+					background: ${newval};
 				}
 
 				/* Set Color for:
@@ -102,15 +102,15 @@
 					box-shadow: 0 0 0 2px ${newval};
 				}
   			`,
-	    	head = document.head || document.getElementsByTagName( 'head' )[0],
+	    	head  = document.head || document.getElementsByTagName( 'head' )[0],
 	   		style = document.createElement( 'style' );
 
 			style.type = 'text/css';
 			if ( style.styleSheet ){
-			  // This is required for IE8 and below.
-			  style.styleSheet.cssText = css;
+				// This is required for IE8 and below.
+				style.styleSheet.cssText = css;
 			} else {
-			  style.appendChild( document.createTextNode( css ) );
+				style.appendChild( document.createTextNode( css ) );
 			}
 			head.appendChild( style );
 
@@ -137,15 +137,15 @@
 					background: ${newval};
 				}
   			`,
-	    	head = document.head || document.getElementsByTagName( 'head' )[0],
+	    	head  = document.head || document.getElementsByTagName( 'head' )[0],
 	   		style = document.createElement( 'style' );
 
 			style.type = 'text/css';
 			if ( style.styleSheet ){
-			  // This is required for IE8 and below.
-			  style.styleSheet.cssText = css;
+				// This is required for IE8 and below.
+				style.styleSheet.cssText = css;
 			} else {
-			  style.appendChild( document.createTextNode( css ) );
+				style.appendChild( document.createTextNode( css ) );
 			}
 			head.appendChild( style );
 
