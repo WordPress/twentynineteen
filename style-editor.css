@@ -265,8 +265,7 @@ body[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
   }
 }
 
-.wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) p,
-.wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation {
+.wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) {
   color: white;
 }
 

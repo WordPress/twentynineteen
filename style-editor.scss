@@ -280,8 +280,7 @@ body[data-type="core/cover"][data-align="full"] {
 			}
 		}
 
-		blockquote:not(.has-text-color) p,
-		.wp-block-pullquote__citation {
+		blockquote:not(.has-text-color) {
 			color: white;
 		}
 
