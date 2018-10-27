@@ -49,10 +49,10 @@ function twentynineteen_customize_register( $wp_customize ) {
 			'label'       => __( 'Featured Image Color Filter', 'twentynineteen' ),
 			'section'     => 'colors',
 			'type'        => 'radio',
-			'description' => __( "By default, Twenty Nineteen adds a duotone-like effect to featured images using your site's primary color. This effect can be turned off. When the color filter is disabled, a standard black overlay appears on individual post pages to preserve readability of the text on top of the featured image.", 'twentynineteen' ) . '<br/><span style="font-style: normal; display: block; margin-top: 16px;">' . __( 'Featured images should:', 'twentynineteen' ) . '</span>',
+			'description' => __( "Twenty Nineteen adds a color filter to featured images using your site's primary color. If you disable this effect, the theme will use a black filter in individual posts to keep text readable when it appears on top of the featured image.", 'twentynineteen' ) . '<br/><span style="font-style: normal; display: block; margin-top: 16px;">' . __( 'On Featured Images, apply', 'twentynineteen' ) . '</span>',
 			'choices'     => array(
-				'active'   => __( 'Have a color filter applied.', 'twentynineteen' ),
-				'inactive' => __( 'Have a black filter applied.', 'twentynineteen' ),
+				'active'   => __( 'A color filter', 'twentynineteen' ),
+				'inactive' => __( 'A black filter', 'twentynineteen' ),
 			),
 		)
 	);
