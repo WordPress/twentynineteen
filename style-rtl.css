@@ -451,7 +451,8 @@ h1, h2, h3, h4, h5, h6 {
 #cancel-comment-reply-link,
 img:after,
 .page-links,
-.sticky-post {
+.sticky-post,
+.wp-caption-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -531,6 +532,7 @@ h5 {
 .comment-metadata,
 .comment-notes,
 .sticky-post,
+.wp-caption-text,
 #cancel-comment-reply-link,
 img:after,
 h6 {
@@ -3276,16 +3278,18 @@ svg {
 
 .wp-caption img[class*="wp-image-"] {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
   margin: calc(0.875 * 1rem) 0;
 }
 
-.wp-caption-text {
-  text-align: center;
+.wp-caption .wp-caption-text {
+  color: #767676;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: right;
 }
 
 /*--------------------------------------------------------------

@@ -30,7 +30,8 @@ h1, h2, h3, h4, h5, h6 {
 #cancel-comment-reply-link,
 img:after,
 .page-links,
-.sticky-post {
+.sticky-post,
+.wp-caption-text {
 	font-family: $font__heading;
 }
 
@@ -102,6 +103,7 @@ h5 {
 .comment-metadata,
 .comment-notes,
 .sticky-post,
+.wp-caption-text,
 #cancel-comment-reply-link,
 img:after,
 h6 {
