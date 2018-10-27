@@ -149,7 +149,7 @@ function twentynineteen_primary_color_css() {
 				.entry-content .wp-block-button .wp-block-button__link,
 				.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color),
 				.entry-content .wp-block-file .wp-block-file__button,
-				.entry-content > .wp-block-cover.has-primary-background-color,
+				.entry-content > *[class^="wp-block-"].has-primary-background-color,
 				.entry-content > *[class^="wp-block-"] .has-primary-background-color,
 				.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color {
 					background-color: %1$s;
