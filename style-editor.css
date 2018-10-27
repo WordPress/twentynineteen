@@ -122,6 +122,7 @@ figcaption,
   font-size: 0.71111em;
   line-height: 1.6;
   color: #767676;
+  text-align: left;
 }
 
 /** === Paragraph === */
