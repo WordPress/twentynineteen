@@ -68,18 +68,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'twentynineteen_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -114,11 +102,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 				'slug'  => 'primary',
 				'color' => esc_attr( get_theme_mod( 'primary-color', '#0073aa' ) ),
-			),
-			array(
-				'name'  => esc_html__( 'Primary Color Hover', 'twentynineteen' ),
-				'slug'  => 'primaryhover',
-				'color' => esc_attr( get_theme_mod( 'primary-hover-color', '#005177' ) ),
 			)
 		)
 	);
@@ -170,7 +153,6 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 function twentynineteen_editor_frame_styles() {
 	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
 }
-
 add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
 
 /**

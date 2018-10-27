@@ -136,6 +136,19 @@ function twentynineteen_image_filters_enabled() {
 }
 
 /**
+ * Add custom colors to Gutenberg.
+ */
+function twentynineteen_editor_colors() {
+	// Retrieve the accent color fro the Customizer.
+	$accent = get_theme_mod( 'primary-color', '#fff000' );
+	// Build styles.
+	$css  = '';
+	$css .= '.has-accent-color { color: ' . esc_attr( $accent ) . ' !important; }';
+	$css .= '.has-accent-background-color { background-color: ' . esc_attr( $accent ) . '; }';
+	return wp_strip_all_tags( $css );
+}
+
+/**
  * Returns the size for avatars used in the theme.
  */
 function twentynineteen_get_avatar_size() {

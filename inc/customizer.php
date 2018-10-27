@@ -148,8 +148,10 @@ function twentynineteen_primary_color_css() {
 				.sticky-post,
 				.entry-content .wp-block-button .wp-block-button__link,
 				.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color),
-				.entry-content .wp-block-file .wp-block-file__button {
-				  background: %1$s;
+				.entry-content .wp-block-file .wp-block-file__button,
+				.entry-content > *[class^="wp-block-"] .has-primary-background-color,
+				.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color {
+					background-color: %1$s;
 				}
 
 				/* Set Color for:
@@ -177,7 +179,9 @@ function twentynineteen_primary_color_css() {
 				.site-footer a:hover,
 				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color)  {
+				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color),
+				.entry-content > *[class^="wp-block-"] .has-primary-color,
+				.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
 					color: %1$s;
 				}
 
@@ -221,6 +225,7 @@ function twentynineteen_primary_color_css() {
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
+// add_action( 'enqueue_block_editor_assets', 'twentynineteen_primary_color_css' );
 
 
 /**
@@ -231,7 +236,7 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
  * @see wp_add_inline_style()
  */
 function twentynineteen_primary_hover_color_css() {
-	$default_color         = '#005177';
+	$default_color       = '#005177';
 	$primary_hover_color = get_theme_mod( 'primary-hover-color', $default_color );
 
 	// Don't do anything if the current color is the default.
@@ -259,6 +264,7 @@ function twentynineteen_primary_hover_color_css() {
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_hover_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_hover_color_css', 11 );
+// add_action( 'enqueue_block_editor_assets', 'twentynineteen_primary_hover_color_css' );
 
 /**
  * Sanitize image filter choice.
