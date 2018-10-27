@@ -7,7 +7,8 @@
  */
 
 ( function( value ) {
-	//Update site header overlay color...
+
+	// Primary color...
 	wp.customize( 'primary-color', function( value ) {
 		value.bind( function( newval ) {
 			var css = `
@@ -70,7 +71,7 @@
 				.entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {
 					border-left-color: ${newval};
 				}
-				
+
 				/* Set border color for:
 				 * :focus
 				 */
@@ -98,7 +99,7 @@
 
 				.gallery-item > div > a:focus {
 					box-shadow: 0 0 0 2px ${newval};
-				}		
+				}
   			`,
 	    	head = document.head || document.getElementsByTagName( 'head' )[0],
 	   		style = document.createElement( 'style' );
@@ -115,6 +116,7 @@
 		} );
 	} );
 
+	// Primary hover color...
 	wp.customize( 'primary-color-hover', function( value ) {
 		value.bind( function( newval ) {
 
@@ -146,6 +148,17 @@
 			}
 			head.appendChild( style );
 
+		} );
+	} );
+
+	// Image filter.
+	wp.customize( 'image_filter', function( value ) {
+		value.bind( function( to ) {
+			if ( 'active' === to ) {
+				$( 'body' ).addClass( 'image-filters-enabled' );
+			} else {
+				$( 'body' ).removeClass( 'image-filters-enabled' );
+			}
 		} );
 	} );
 
