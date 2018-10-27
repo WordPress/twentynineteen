@@ -239,7 +239,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 			esc_attr( "menu-item-link-return-{$item->original_id}" ),
 			esc_attr( "#menu-item-link-{$item->original_id}" ),
 			esc_attr( 'event.preventDefault();' ),
-			twentynineteen_get_icon_svg( 'keyboard_arrow_left', 16 )
+			twentynineteen_get_icon_svg( 'chevron_left', 24 )
 		);
 
 		$output = preg_replace(
@@ -256,7 +256,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		if ( 0 === $depth ) {
 			$icon = twentynineteen_get_icon_svg( 'arrow_drop_down_circle', 16 );
 		} else {
-			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_right', 24 );
+			$icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
 		}
 
 		// @todo We might as well just go back to using the SVG element if the link approach is not suitable for no-JS environments.

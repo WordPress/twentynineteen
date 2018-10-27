@@ -998,6 +998,11 @@ body.page .main-navigation {
   padding: calc( .5 * 1rem);
 }
 
+.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
+.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+  margin-left: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu > li.menu-item-has-children .menu-item-has-children > a:after {
     content: "\203a";
@@ -1074,6 +1079,12 @@ body.page .main-navigation {
 .main-navigation .sub-menu > .mobile-parent-nav-menu-item {
   font-size: 0.88889em;
   font-weight: normal;
+}
+
+.main-navigation .sub-menu > .mobile-parent-nav-menu-item svg {
+  position: relative;
+  top: 0.2rem;
+  margin-left: calc( .25 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {

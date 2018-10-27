@@ -72,7 +72,7 @@
 	}
 
 	.sub-menu {
-		
+
 		background: $color__link;
 		color: $color__background-body;
 		list-style: none;
@@ -110,6 +110,14 @@
 					color: white;
 					line-height: 1;
 					padding: calc( .5 * #{$size__spacing-unit} );
+				}
+
+				&:not(:last-child) {
+					
+					.mobile-submenu-expand,
+					.desktop-submenu-expand {
+						margin-right: 0;
+					}
 				}
 
 				@include media(tablet) {
@@ -188,6 +196,12 @@
 	.sub-menu > .mobile-parent-nav-menu-item {
 		font-size: $font__size-sm;
 		font-weight: normal;
+
+		svg {
+			position: relative;
+			top: 0.2rem;
+			margin-right: calc( .25 * #{$size__spacing-unit} );
+		}
 
 		@include media(tablet) {
 			display: none;
