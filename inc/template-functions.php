@@ -236,3 +236,11 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 	return $output;
 }
 add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10, 4 );
+
+/**
+ * Remove injected hard-coded style from image attachments with captions
+ */
+function twentynineteen_remove_caption_style( $caption_width ) {
+	return 0;
+}
+add_filter( 'img_caption_shortcode_width', 'twentynineteen_remove_caption_style' );
