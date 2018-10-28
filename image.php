@@ -26,7 +26,7 @@ get_header();
 
 					<div class="entry-content">
 
-						<figure class="entry-attachment">
+						<figure class="entry-attachment wp-block-image">
 							<?php
 								/**
 								 * Filter the default twentynineteen image attachment size.
