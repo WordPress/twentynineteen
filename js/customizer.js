@@ -8,149 +8,35 @@
 
 ( function( value ) {
 
-	// Primary color...
+	// Primary color.
 	wp.customize( 'primary-color', function( value ) {
-		value.bind( function( newval ) {
-			var css = `
-				/* Set background for:
-				 * - featured image :before
-				 * - featured image :before
-				 * - post thumbmail :before
-				 * - post thumbmail :before
-				 * - wp block button
-				 * - other buttons
-				 * - Submenu
-				 * - Sticky Post
-				 * - WP Block Button
-				 */
-				.image-filters-enabled .site-header.featured-image .site-featured-image:before,
-				.image-filters-enabled .site-header.featured-image .site-featured-image:after,
-				.image-filters-enabled .entry .post-thumbnail:before,
-				.image-filters-enabled .entry .post-thumbnail:after,
-				.entry-content .wp-block-button .wp-block-button__link,
-				.button, button, input[type="button"], input[type="reset"], input[type="submit"],
-				.main-navigation .sub-menu,
-				.sticky-post,
-				.entry-content .wp-block-button .wp-block-button__link,
-				.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color),
-				.entry-content .wp-block-file .wp-block-file__button {
-					background: ${newval};
-				}
+		value.bind( function( to ) {
 
-				/* Set Color for:
-				 * - all links
-				 * - main navigation links
-				 * - Post navigation links
-				 * - Post entry meta hover
-				 * - Post entry header more-link hover
-				 * - main navigation svg
-				 * - comment navigation
-				 * - Comment edit link hover
-				 * - Site Footer Link hover
-				 */
-				a,
-				a:visited,
-				.main-navigation ul.main-menu > li > a,
-				.post-navigation .post-title,
-				.entry .entry-meta a:hover,
-				.entry .entry-footer a:hover,
-				.entry .entry-content .more-link:hover,
-				.main-navigation .main-menu > li > a + svg,
-				.comment-navigation .nav-previous a:hover,
-				.comment-navigation .nav-next a:hover,
-				.comment .comment-metadata .comment-edit-link:hover,
-				.site-footer a:hover,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color)  {
-					color: ${newval};
-				}
+			// Update custom color CSS.
+			var style = $( '#custom-theme-colors' ),
+				primary_color = style.data( 'primary-color' ),
+				css = style.html();
 
-				/* Set left border color for:
-				 * wp block quote
-				 */
-				.entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {
-					border-left-color: ${newval};
-				}
+			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
+			css = css.split( primary_color + ',' ).join( to + ',' );
+			style.html( css ).data( 'primary-color', to );
+		});
+	});
 
-				/* Set border color for:
-				 * :focus
-				 */
-				input[type="text"]:focus,
-				input[type="email"]:focus,
-				input[type="url"]:focus,
-				input[type="password"]:focus,
-				input[type="search"]:focus,
-				input[type="number"]:focus,
-				input[type="tel"]:focus,
-				input[type="range"]:focus,
-				input[type="date"]:focus,
-				input[type="month"]:focus,
-				input[type="week"]:focus,
-				input[type="time"]:focus,
-				input[type="datetime"]:focus,
-				input[type="datetime-local"]:focus,
-				input[type="color"]:focus,
-				textarea:focus,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus,
-				.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
-					border-color: ${newval}
-				}
-
-				.gallery-item > div > a:focus {
-					box-shadow: 0 0 0 2px ${newval};
-				}
-  			`,
-	    	head  = document.head || document.getElementsByTagName( 'head' )[0],
-	   		style = document.createElement( 'style' );
-
-			style.type = 'text/css';
-			if ( style.styleSheet ){
-				// This is required for IE8 and below.
-				style.styleSheet.cssText = css;
-			} else {
-				style.appendChild( document.createTextNode( css ) );
-			}
-			head.appendChild( style );
-
-		} );
-	} );
-
-	// Primary hover color...
+	// Primary hover color.
 	wp.customize( 'primary-hover-color', function( value ) {
-		value.bind( function( newval ) {
+		value.bind( function( to ) {
 
-			var css = `
-				a:hover, a:active,
-				.main-navigation .main-menu > li > a:hover,
-				.main-navigation .main-menu > li > a:hover + svg,
-				.post-navigation .nav-links a:hover,
-				.comment .comment-author .fn a:hover,
-				.comment-reply-link:hover,
-				#cancel-comment-reply-link:hover {
-					color: ${newval};
-				}
+			// Update custom color CSS.
+			var style = $( '#custom-theme-colors' ),
+				primary_hover_color = style.data( 'primary-hover-color' ),
+				css = style.html();
 
-				.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
-				.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after {
-					background: ${newval};
-				}
-  			`,
-	    	head  = document.head || document.getElementsByTagName( 'head' )[0],
-	   		style = document.createElement( 'style' );
-
-			style.type = 'text/css';
-			if ( style.styleSheet ){
-				// This is required for IE8 and below.
-				style.styleSheet.cssText = css;
-			} else {
-				style.appendChild( document.createTextNode( css ) );
-			}
-			head.appendChild( style );
-
-		} );
-	} );
+			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
+			css = css.split( primary_hover_color + ',' ).join( to + ',' );
+			style.html( css ).data( 'primary-hover-color', to );
+		});
+	});
 
 	// Image filter.
 	wp.customize( 'image_filter', function( value ) {

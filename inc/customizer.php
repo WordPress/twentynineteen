@@ -36,29 +36,19 @@ function twentynineteen_customize_register( $wp_customize ) {
 
 	// Add page primary color setting and control.
 	$wp_customize->add_setting( 'primary-color', array(
-		'default'           => '#0073aa',
-		'sanitize_callback' => 'sanitize_hex_color',
+		'default'           => 199,
 		'transport'         => 'postMessage',
+		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary-color', array(
-		'label'       => __( 'Primary Color' ),
-		'description' => __( 'Changes the Color of the Featured Image, Buttons, Links etc.' ),
-		'section'     => 'colors',
-	) ) );
-
-	// Add page primary color hover setting and control.
-	$wp_customize->add_setting( 'primary-hover-color', array(
-		'default'           => '#005177',
-		'sanitize_callback' => 'sanitize_hex_color',
-		'transport'         => 'postMessage',
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( $wp_customize, 'primary-color', array(
+			'label'       => __( 'Primary Color' ),
+			'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.' ),
+			'section'     => 'colors',
+			'mode'        => 'hue',
+		)
 	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary-hover-color', array(
-		'label'       => __( 'Primary Color Hover' ),
-		'description' => __( 'Changes the Hover State color of Buttons, Links etc.' ),
-		'section'     => 'colors',
-	) ) );
 
 	$wp_customize->add_setting(
 		'image_filter',
@@ -220,7 +210,7 @@ function twentynineteen_primary_color_css() {
 
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
+// add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_color_css', 11 );
 
 
 /**
@@ -258,7 +248,7 @@ function twentynineteen_primary_hover_color_css() {
 
 	wp_add_inline_style( 'twentynineteen-style', sprintf( $css, $primary_hover_color ) );
 }
-add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_hover_color_css', 11 );
+// add_action( 'wp_enqueue_scripts', 'twentynineteen_primary_hover_color_css', 11 );
 
 /**
  * Sanitize image filter choice.

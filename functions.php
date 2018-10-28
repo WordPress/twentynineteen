@@ -101,7 +101,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			array(
 				'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 				'slug'  => 'primary',
-				'color' => esc_attr( get_theme_mod( 'primary-color', '#0073aa' ) ),
+				'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'primary-color', '199' )), 100, 33 ), // "#ff3333", // esc_attr( 'hsl('. absint( get_theme_mod( 'primary-color', '199' ) ) .', 100, 33)' ),
 			)
 		)
 	);
@@ -154,6 +154,31 @@ function twentynineteen_editor_frame_styles() {
 	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
+
+/**
+ * Display custom color CSS.
+ */
+function twentynineteen_colors_css_wrap() {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+
+	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+
+	$default_primary_color = 199; // '#0073aa';
+	$primary_color         = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
+
+	$customize_preview_data_primary_color = '';
+	if ( is_customize_preview() ) {
+		$customize_preview_data_primary_color = 'data-primary-color="' . $primary_color . '"';
+	}
+?>
+	<style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_primary_color; ?>>
+		<?php echo twentynineteen_custom_colors_css(); ?>
+	</style>
+<?php
+}
+add_action( 'wp_head', 'twentynineteen_colors_css_wrap' );
 
 /**
  * SVG Icons class.
