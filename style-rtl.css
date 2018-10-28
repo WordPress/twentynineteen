@@ -1747,14 +1747,21 @@ body.page .main-navigation {
 .site-header.featured-image .site-featured-image:after {
   background: #111;
   mix-blend-mode: multiply;
-  opacity: 0.7;
+  opacity: .7;
   /* When image filters are active, a blue overlay is added. */
 }
 
 .image-filters-enabled .site-header.featured-image .site-featured-image:after {
   background: #0073aa;
-  opacity: 1;
+  opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .site-header.featured-image .site-featured-image:after {
+    opacity: 1;
+  }
 }
 
 .image-filters-enabled .site-header.featured-image .site-branding-container:after {
@@ -1762,6 +1769,13 @@ body.page .main-navigation {
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
+  /* Browsers supporting mix-blend-mode can have a light overlay */
+}
+
+@supports (mix-blend-mode: overlay) {
+  .image-filters-enabled .site-header.featured-image .site-branding-container:after {
+    background: rgba(255, 255, 255, 0.35);
+  }
 }
 
 .site-header.featured-image:after {
@@ -1958,16 +1972,26 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner {
-  position: relative;
   filter: grayscale(100%);
-  z-index: 1;
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
   display: block;
-  width: 100%;
   height: 100%;
-  z-index: 10;
+  opacity: .5;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+    display: none;
+  }
 }
 
 .image-filters-enabled .entry .post-thumbnail:before, .image-filters-enabled .entry .post-thumbnail:after {
@@ -1992,8 +2016,15 @@ body.page .main-navigation {
 .image-filters-enabled .entry .post-thumbnail:after {
   background: #0073aa;
   mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail:after {
+    opacity: 1;
+  }
 }
 
 .entry .entry-content .more-link {
