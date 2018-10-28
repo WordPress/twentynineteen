@@ -1801,12 +1801,6 @@ body.page .main-navigation {
   }
 }
 
-@media only screen and (min-width: 1168px) {
-  .image-filters-enabled .site-header.featured-image:after {
-    opacity: 0.1;
-  }
-}
-
 .site-header.featured-image ::-moz-selection {
   background: rgba(255, 255, 255, 0.17);
 }

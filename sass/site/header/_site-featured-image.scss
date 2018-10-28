@@ -259,10 +259,6 @@
 			@include media(tablet) {
 				opacity: 0.18;
 			}
-
-			@include media(desktop) {
-				opacity: 0.1;
-			}
 		}
 	}
 
