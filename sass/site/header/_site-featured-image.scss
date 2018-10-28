@@ -217,17 +217,27 @@
 	  	/* When image filters are active, a blue overlay is added. */
 		.image-filters-enabled & {
 			background: $color__link;
-			opacity: 1;
+			opacity: .8;
 			z-index: 3;
+			
+			/* Browsers supporting mix-blend-mode don't need opacity < 1 */
+			@supports (mix-blend-mode: multiply) {
+				opacity: 1;
+			}
 		}
 	}
 
 	/* Fourth layer: overlay. */
   	.image-filters-enabled & .site-branding-container:after {
-  		background: rgba($color__background-body, 0.35);
+  		background: rgba(#000, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
 		z-index: 4;
+		
+		/* Browsers supporting mix-blend-mode can have a light overlay */
+		@supports (mix-blend-mode: overlay) {
+			background: rgba($color__background-body, 0.35);
+		}
 	}
 
 	/* Fifth layer: readability overlay */
