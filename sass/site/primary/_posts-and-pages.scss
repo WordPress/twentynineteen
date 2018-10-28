@@ -140,7 +140,24 @@
 			display: block;
 
 			.post-thumbnail-inner {
-				@include filter-grayscale;
+				filter: grayscale(100%);
+				
+				&:after {
+					background: rgba(#000, 0.35);
+					content: "";
+					display: block;
+					height: 100%;
+					opacity: .5;
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 4;
+
+					@supports (mix-blend-mode: multiply) {
+						display: none;
+					}
+				}
 			}
 
 			&:before, &:after {
@@ -155,7 +172,7 @@
 			}
 
 			@include filter-duotone;
-
+			
 		}
 	}
 
