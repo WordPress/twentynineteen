@@ -12,12 +12,8 @@
  */
 function twentynineteen_custom_colors_css() {
 
-	$default_primary_color       = '199';
+	$default_primary_color       = 199;
 	$primary_color               = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
-
-	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 100 ) );
-	$reduced_saturation = ( .8 * $saturation ) . '%';
-	$saturation = $saturation . '%';
 
 	/**
 	 * Filter Twenty Nineteen default saturation level.
@@ -27,7 +23,11 @@ function twentynineteen_custom_colors_css() {
 	 * @param int $saturation Color saturation level.
 	 */
 
-	$css = '
+	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 100 ) );
+	$reduced_saturation = ( .8 * $saturation ) . '%';
+	$saturation = $saturation . '%';
+
+	$theme_css = '
 	/* Set background for:
 	 * - featured image :before
 	 * - featured image :before
@@ -136,14 +136,50 @@ function twentynineteen_custom_colors_css() {
 		background: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
 	}';
 
+	$editor_css = '
+	/* Set background for:
+	 * - links
+	 * - blockquote
+	 * - pullquote (solid color)
+	 * - buttons
+	 */
+	.editor-block-list__layout .editor-block-list__block a {
+		color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+	}
+
+	.editor-block-list__layout .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
+	.editor-block-list__layout .wp-block-freeform blockquote {
+		border-left: 2px solid hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+	}
+
+	.editor-block-list__layout .editor-block-list__block .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
+		background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+	}
+
+	.editor-block-list__layout .editor-block-list__block .wp-block-file .wp-block-file__button,
+	.editor-block-list__layout .editor-block-list__block .wp-block-button .wp-block-button__link:not(.has-background),
+	.editor-block-list__layout .editor-block-list__block .wp-block-button .wp-block-button__link:not(.has-background):active,
+	.editor-block-list__layout .editor-block-list__block .wp-block-button .wp-block-button__link:not(.has-background):focus,
+	.editor-block-list__layout .editor-block-list__block .wp-block-button .wp-block-button__link:not(.has-background):hover {
+		background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+	}';
+
+	$css = '';
+	if ( function_exists( 'register_block_type' ) ) {
+		$css = $theme_css;
+		$css .= $editor_css;
+	} else {
+		$css = $theme_css;
+	}
+
 	/**
 	 * Filters Twenty Nineteen custom colors CSS.
 	 *
 	 * @since Twenty Nineteen 1.0
 	 *
-	 * @param string $css        Base theme colors CSS.
-	 * @param int    $hue        The user's selected color hue.
-	 * @param string $saturation Filtered theme color saturation level.
+	 * @param string $css           Base theme colors CSS.
+	 * @param int    $primary_color The user's selected color hue.
+	 * @param string $saturation    Filtered theme color saturation level.
 	 */
 	return apply_filters( 'twentynineteen_custom_colors_css', $css, $primary_color, $saturation );
 }

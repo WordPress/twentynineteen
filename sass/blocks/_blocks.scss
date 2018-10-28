@@ -291,6 +291,8 @@
 
 		&.is-style-solid-color {
 
+			background-color: $color__link;
+
 			p {
 				font-size: $font__size-lg;
 				line-height: 1.3;

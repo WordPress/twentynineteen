@@ -12,29 +12,14 @@
 	wp.customize( 'primary-color', function( value ) {
 		value.bind( function( to ) {
 
-			// Update custom color CSS.
-			var style = $( '#custom-theme-colors' ),
+			// Update custom color CSS
+			var style = $( '#custom-theme-colors' ), // Selector of output style element.
 				primary_color = style.data( 'primary-color' ),
 				css = style.html();
-
-			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-			css = css.split( primary_color + ',' ).join( to + ',' );
-			style.html( css ).data( 'primary-color', to );
-		});
-	});
-
-	// Primary hover color.
-	wp.customize( 'primary-hover-color', function( value ) {
-		value.bind( function( to ) {
-
-			// Update custom color CSS.
-			var style = $( '#custom-theme-colors' ),
-				primary_hover_color = style.data( 'primary-hover-color' ),
-				css = style.html();
-
-			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-			css = css.split( primary_hover_color + ',' ).join( to + ',' );
-			style.html( css ).data( 'primary-hover-color', to );
+				// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
+				css = css.split( primary_color ).join( to ); // equivalent to css.replaceAll.
+				style.html( css )
+					.data( 'primary-color', to );
 		});
 	});
 

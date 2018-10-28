@@ -2934,6 +2934,10 @@ body.page .main-navigation {
   max-width: 100%;
 }
 
+.entry-content .wp-block-pullquote.is-style-solid-color {
+  background-color: #0073aa;
+}
+
 .entry-content .wp-block-pullquote.is-style-solid-color p {
   font-size: 1.6875em;
   line-height: 1.3;

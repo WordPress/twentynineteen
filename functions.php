@@ -151,7 +151,12 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
  * Enqueue supplemental block editor styles
  */
 function twentynineteen_editor_frame_styles() {
+
+	// Include color patterns
+	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+
 	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
+	wp_add_inline_style( 'twentynineteen-editor-frame-styles', twentynineteen_custom_colors_css() );
 }
 add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
 
@@ -159,20 +164,23 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
  * Display custom color CSS.
  */
 function twentynineteen_colors_css_wrap() {
-	if ( ! is_customize_preview() ) {
+
+	// Set defaults and grab theme mod
+	$default_primary_color = 199;
+	$primary_color         = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
+
+	if ( $primary_color === $default_primary_color ) {
 		return;
 	}
 
+	// Include color patterns
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 
-	$default_primary_color = 199; // '#0073aa';
-	$primary_color         = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
-
+	// Enable live color changes in customizer
 	$customize_preview_data_primary_color = '';
 	if ( is_customize_preview() ) {
 		$customize_preview_data_primary_color = 'data-primary-color="' . $primary_color . '"';
-	}
-?>
+	} ?>
 	<style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_primary_color; ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
