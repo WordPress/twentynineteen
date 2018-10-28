@@ -1,6 +1,6 @@
 
 html {
-	font-size: $font__size_base;
+	font-size: 100%;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 	color: $color__text-main;
 	font-family: $font__body;
 	font-weight: 400;
-	font-size: 1em;
+	font-size: $font__size_base;
 	line-height: $font__line-height-body;
 	margin: 0;
 	text-rendering: optimizeLegibility;

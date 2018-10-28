@@ -18,7 +18,7 @@ body.block-editor-page .block-editor .editor-post-title__block:before {
 }
 
 body.block-editor-page .block-editor .editor-post-title__block:before {
-  width: 2.8125em;
+  width: 4rem;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 1em;
@@ -28,13 +28,13 @@ body.block-editor-page .block-editor .editor-post-title__block:before {
 
 body.block-editor-page .block-editor .editor-post-title__block .editor-post-title__input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.8125em;
+  font-size: 4rem;
 }
 
 /** === Default Appender === */
 body.block-editor-page .block-editor .editor-default-block-appender__content {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 /** === Off-Center Content === */
