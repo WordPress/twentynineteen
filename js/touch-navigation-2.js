@@ -22,13 +22,35 @@
 
 		console.log( 'running' );
 
-		const toggle = document.querySelectorAll(".mobile-submenu-expand");
+		const openSubMenu = document.querySelectorAll(".mobile-submenu-expand");
 
 		for (let i = 0; i < toggle.length; i++) {
 			toggle[i].addEventListener("click", function() {
-				console.log( 'test'+ this );
+				console.log( 'open test'+ this );
 				this.closest(".menu-item").classList.add("focus");
 				this.parentNode.lastElementChild.classList.add("open");
+			});
+		}
+
+		const closeSubMenu = document.querySelectorAll(".menu-item-link-return");
+
+		for (let i = 0; i < toggleSubMenu.length; i++) {
+			toggleSubMenu[i].addEventListener("click", function() {
+				console.log( 'close test'+ this );
+				this.closest(".menu-item").classList.add("focus");
+				this.parentNode.lastElementChild.classList.add("open");
+
+				// If not already a sub-menu, close all menus
+				if ( this.parents( 'ul' ).hasClass( 'sub-menu' ) ) {
+
+					$( this ).closest( '.sub-menu' ).removeClass( 'open' );
+
+				} else {
+
+					$( this ).parents( '.menu-item, .page_item' ).removeClass( 'focus' );
+					$( this ).siblings( '.sub-menu' ).removeClass( 'open' );
+				}
+
 			});
 		}
 
