@@ -198,13 +198,10 @@ body[data-type="core/cover"][data-align="full"] {
 		font-family: $font__heading;
 		font-size: $font__size-sm;
 		font-weight: bold;
+	}
 
-		&:not(.has-background),
-		&:not(.has-background):active,
-		&:not(.has-background):focus,
-		&:not(.has-background):hover {
-			background: $color__background-button;
-		}
+	&:not(.is-style-outline) .wp-block-button__link {
+		background: $color__background-button;
 	}
 
 	&:not(.is-style-squared) .wp-block-button__link {
@@ -216,7 +213,7 @@ body[data-type="core/cover"][data-align="full"] {
 	&.is-style-outline:focus,
 	&.is-style-outline:active {
 		background: transparent;
-		border-color: $color__background-button;
+		color: $color__background-button;
 
 		.wp-block-button__link {
 			background: transparent;

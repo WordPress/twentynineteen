@@ -2808,11 +2808,11 @@ body.page .main-navigation {
 .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
   transition: all 150ms ease-in-out;
   background: transparent;
-  border: 2px solid #0073aa;
+  border: 2px solid currentColor;
+  color: #0073aa;
 }
 
 .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  border-color: #111;
   color: #111;
 }
 

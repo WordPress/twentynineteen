@@ -161,11 +161,11 @@
 
 			@include button-all-transition;
 			background: transparent;
-			border: 2px solid $color__background-button;
+			border: 2px solid currentColor;
+			color: $color__background-button;
 		}
 
 		&.is-style-outline .wp-block-button__link:hover {
-			border-color: $color__background-button-hover;
 			color: $color__background-button-hover;
 		}
 	}
