@@ -23,157 +23,160 @@ function twentynineteen_custom_colors_css() {
 	 * @param int $saturation Color saturation level.
 	 */
 
-	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 100 ) );
+	$saturation = absint( apply_filters( 'twentynineteen_custom_colors_saturation', 100 ) );
 	$reduced_saturation = ( .8 * $saturation ) . '%';
 	$saturation = $saturation . '%';
 
 	$theme_css = '
-	/* Set background for:
-	 * - featured image :before
-	 * - featured image :before
-	 * - post thumbmail :before
-	 * - post thumbmail :before
-	 * - wp block button
-	 * - other buttons
-	 * - Submenu
-	 * - Sticky Post
-	 * - WP Block Button
-	 * - Blocks
-	 */
-	.image-filters-enabled .site-header.featured-image .site-featured-image:before,
-	.image-filters-enabled .site-header.featured-image .site-featured-image:after,
-	.image-filters-enabled .entry .post-thumbnail:before,
-	.image-filters-enabled .entry .post-thumbnail:after,
-	.entry-content .wp-block-button .wp-block-button__link,
-	.button, button, input[type="button"], input[type="reset"], input[type="submit"],
-	.main-navigation .sub-menu,
-	.sticky-post,
-	.entry-content > *[class^="wp-block-"].has-primary-background-color,
-	.entry-content > *[class^="wp-block-"] .has-primary-background-color,
-	.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
-	.entry-content .wp-block-file .wp-block-file__button {
-		background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		/*
+		 * Set background for:
+		 * - featured image :before
+		 * - featured image :before
+		 * - post thumbmail :before
+		 * - post thumbmail :before
+		 * - Submenu
+		 * - Sticky Post
+		 * - buttons
+		 * - WP Block Button
+		 * - Blocks
+		 */
+		.image-filters-enabled .site-header.featured-image .site-featured-image:before,
+		.image-filters-enabled .site-header.featured-image .site-featured-image:after,
+		.image-filters-enabled .entry .post-thumbnail:before,
+		.image-filters-enabled .entry .post-thumbnail:after,
+		.main-navigation .sub-menu,
+		.sticky-post,
+		.entry-content .wp-block-button .wp-block-button__link,
+		.button, button, input[type="button"], input[type="reset"], input[type="submit"],
+		.entry-content > *[class^="wp-block-"].has-primary-background-color,
+		.entry-content > *[class^="wp-block-"] .has-primary-background-color,
+		.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
+		.entry-content .wp-block-file .wp-block-file__button {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	/* Set Color for:
-	 * - all links
-	 * - main navigation links
-	 * - Post navigation links
-	 * - Post entry meta hover
-	 * - Post entry header more-link hover
-	 * - main navigation svg
-	 * - comment navigation
-	 * - Comment edit link hover
-	 * - Site Footer Link hover
-	 */
-	a,
-	a:visited,
-	.main-navigation ul.main-menu > li > a,
-	.post-navigation .post-title,
-	.entry .entry-meta a:hover,
-	.entry .entry-footer a:hover,
-	.entry .entry-content .more-link:hover,
-	.main-navigation .main-menu > li > a + svg,
-	.comment-navigation .nav-previous a:hover,
-	.comment-navigation .nav-next a:hover,
-	.comment .comment-metadata .comment-edit-link:hover,
-	.site-footer a:hover,
-	.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-	.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-	.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-	.entry-content > *[class^="wp-block-"] .has-primary-color,
-	.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
-		color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		/*
+		 * Set Color for:
+		 * - all links
+		 * - main navigation links
+		 * - Post navigation links
+		 * - Post entry meta hover
+		 * - Post entry header more-link hover
+		 * - main navigation svg
+		 * - comment navigation
+		 * - Comment edit link hover
+		 * - Site Footer Link hover
+		 */
+		a,
+		a:visited,
+		.main-navigation ul.main-menu > li > a,
+		.post-navigation .post-title,
+		.entry .entry-meta a:hover,
+		.entry .entry-footer a:hover,
+		.entry .entry-content .more-link:hover,
+		.main-navigation .main-menu > li > a + svg,
+		.comment-navigation .nav-previous a:hover,
+		.comment-navigation .nav-next a:hover,
+		.comment .comment-metadata .comment-edit-link:hover,
+		.site-footer a:hover,
+		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry-content > *[class^="wp-block-"] .has-primary-color,
+		.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	/* Set left border color for:
-	 * wp block quote
-	 */
-	.entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {
-		border-left-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		/*
+		 * Set left border color for:
+		 * wp block quote
+		 */
+		.entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {
+			border-left-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	/* Set border color for:
-	 * :focus
-	 */
-	input[type="text"]:focus,
-	input[type="email"]:focus,
-	input[type="url"]:focus,
-	input[type="password"]:focus,
-	input[type="search"]:focus,
-	input[type="number"]:focus,
-	input[type="tel"]:focus,
-	input[type="range"]:focus,
-	input[type="date"]:focus,
-	input[type="month"]:focus,
-	input[type="week"]:focus,
-	input[type="time"]:focus,
-	input[type="datetime"]:focus,
-	input[type="datetime-local"]:focus,
-	input[type="color"]:focus,
-	textarea:focus {
-		border-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		/*
+		 * Set border color for:
+		 * :focus
+		 */
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		input[type="url"]:focus,
+		input[type="password"]:focus,
+		input[type="search"]:focus,
+		input[type="number"]:focus,
+		input[type="tel"]:focus,
+		input[type="range"]:focus,
+		input[type="date"]:focus,
+		input[type="month"]:focus,
+		input[type="week"]:focus,
+		input[type="time"]:focus,
+		input[type="datetime"]:focus,
+		input[type="datetime-local"]:focus,
+		input[type="color"]:focus,
+		textarea:focus {
+			border-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	.gallery-item > div > a:focus {
-		box-shadow: 0 0 0 2px hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		.gallery-item > div > a:focus {
+			box-shadow: 0 0 0 2px hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	/* Hover colors */
-	a:hover, a:active,
-	.main-navigation .main-menu > li > a:hover,
-	.main-navigation .main-menu > li > a:hover + svg,
-	.post-navigation .nav-links a:hover,
-	.comment .comment-author .fn a:hover,
-	.comment-reply-link:hover,
-	#cancel-comment-reply-link:hover {
-		color: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
-	}
+		/* Hover colors */
+		a:hover, a:active,
+		.main-navigation .main-menu > li > a:hover,
+		.main-navigation .main-menu > li > a:hover + svg,
+		.post-navigation .nav-links a:hover,
+		.comment .comment-author .fn a:hover,
+		.comment-reply-link:hover,
+		#cancel-comment-reply-link:hover {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
+		}
 
-	.main-navigation .sub-menu > li > a:hover,
-	.main-navigation .sub-menu > li > a:focus,
-	.main-navigation .sub-menu > li > a:hover:after,
-	.main-navigation .sub-menu > li > a:focus:after {
-		background: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
-	}';
+		.main-navigation .sub-menu > li > a:hover,
+		.main-navigation .sub-menu > li > a:focus,
+		.main-navigation .sub-menu > li > a:hover:after,
+		.main-navigation .sub-menu > li > a:focus:after {
+			background: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
+		}';
 
 	$editor_css = '
-	/* Set background for:
-	 * - links
-	 * - blockquote
-	 * - pullquote (solid color)
-	 * - buttons
-	 */
-	.editor-block-list__layout .editor-block-list__block a,
-	.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-	.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:hover .wp-block-button__link:not(.has-text-color),
-	.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:focus .wp-block-button__link:not(.has-text-color),
-	.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color) {
-		color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		/*
+		 * Set colors for:
+		 * - links
+		 * - blockquote
+		 * - pullquote (solid color)
+		 * - buttons
+		 */
+		.editor-block-list__layout .editor-block-list__block a,
+		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:hover .wp-block-button__link:not(.has-text-color),
+		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:focus .wp-block-button__link:not(.has-text-color),
+		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color) {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	.editor-block-list__layout .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-	.editor-block-list__layout .wp-block-freeform blockquote {
-		border-left: 2px solid hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		.editor-block-list__layout .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
+		.editor-block-list__layout .wp-block-freeform blockquote {
+			border-left: 2px solid hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	.editor-block-list__layout .editor-block-list__block .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
-		background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}
+		.editor-block-list__layout .editor-block-list__block .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
 
-	.editor-block-list__layout .editor-block-list__block .wp-block-file .wp-block-file__button,
-	.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link,
-	.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
-	.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
-	.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
-		background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
-	}';
+		.editor-block-list__layout .editor-block-list__block .wp-block-file .wp-block-file__button,
+		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:active,
+		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}';
 
 	$css = '';
 	if ( function_exists( 'register_block_type' ) && is_admin() ) {
-	//	$css = $theme_css;
 		$css .= $editor_css;
-	} else {
+	} else if ( ! is_admin() ) {
 		$css = $theme_css;
 	}
 
