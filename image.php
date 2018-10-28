@@ -76,13 +76,6 @@ get_header();
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-## -->
 
-				<nav id="image-navigation" class="navigation post-navigation post-image-navigation">
-					<div class="nav-links">
-						<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'twentynineteen' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'twentynineteen' ) ); ?></div>
-					</div><!-- .nav-links -->
-				</nav><!-- .image-navigation -->
-
 				<?php
 					// Parent post navigation.
 					the_post_navigation( array(
