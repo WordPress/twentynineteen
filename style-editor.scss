@@ -292,9 +292,9 @@ body[data-type="core/cover"][data-align="full"] {
 	}
 }
 
-[data-type="core/pullquote"],
-[data-type="core/pullquote"][data-align="left"],
-[data-type="core/pullquote"][data-align="right"] {
+body[data-type="core/pullquote"],
+body[data-type="core/pullquote"][data-align="left"],
+body[data-type="core/pullquote"][data-align="right"] {
 
 	blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
 	blockquote > .editor-rich-text p,
@@ -322,8 +322,8 @@ body[data-type="core/cover"][data-align="full"] {
 	}
 }
 
-[data-type="core/pullquote"][data-align="left"],
-[data-type="core/pullquote"][data-align="right"] {
+body[data-type="core/pullquote"][data-align="left"],
+body[data-type="core/pullquote"][data-align="right"] {
 
 	.editor-block-list__block-edit {
 		max-width: 50%;
