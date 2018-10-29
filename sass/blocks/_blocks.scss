@@ -88,7 +88,7 @@
 		margin-left: auto;
 		margin-right: auto;
 
-		@include media(tablet) {
+		@include media(desktop) {
 			margin-left: calc(2 * (100vw / 12));
 			margin-right: calc(2 * (100vw / 12));
 			max-width: calc(10 * (100vw / 12));

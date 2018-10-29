@@ -134,7 +134,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -2762,6 +2762,24 @@ body.page .main-navigation {
     margin-right: calc(2 * 1rem);
     margin-left: calc(2 * (100vw / 12));
   }
+}
+
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content > *.aligncenter,
+  .entry-summary > *.aligncenter {
+    margin-right: calc(2 * (100vw / 12));
+    margin-left: calc(2 * (100vw / 12));
+    max-width: calc(10 * (100vw / 12));
+    position: relative;
+    right: 25%;
+    transform: translateX(50%);
+}
 }
 
 .entry-content .wp-block-audio {
