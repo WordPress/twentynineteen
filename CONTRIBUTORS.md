@@ -28,3 +28,6 @@ Version 1.0:
 | @DannyCooper | @dannycooper |
 | @iCaleb | @icaleb |
 | @siriokun | @siriokun |
+| @briannaorg | @technosiren |
+| @00travelgirl00 | @travel_girl |
+| @shahjehanali1 | @azchughtai

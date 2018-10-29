@@ -1,52 +1,136 @@
-/* global twentynineteenScreenReaderText */
 /**
- * Theme functions file.
+ * Touch navigation.
  *
- * Contains handlers for navigation and widget area.
+ * Contains handlers for navigation on Touch devices.
  */
 
-(function( $ ) {
-	var masthead, siteNavContain, siteNavigation;
+(function() {
 
-	masthead       = $( '#masthead' );
-	siteNavContain = masthead.find( '.main-navigation' );
-	siteNavigation = masthead.find( '.main-navigation > div > ul' );
+	// Toggle Aria Expanded state for screenreaders
+	function toggleAriaExpandedState( menuItems ) {
 
-	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
-	(function() {
-		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+		const getMenuItem = menuItems;
+
+    	for (let i = 0; i < getMenuItem.length; i++) {
+
+			var state = getMenuItem[i].getAttribute("aria-expanded");
+
+			if (state == "true") {
+				state = "false";
+			} else {
+				state = "true";
+			}
+
+			getMenuItem[i].setAttribute("aria-expanded", state);
+		}
+	}
+
+  	// Toggle `focus` class to allow submenu access on tablets.
+	function toggleSubmenuTouchScreen() {
+
+		// Check for submenus and bail if none exist
+		var siteNavigation = document.querySelector( '.main-navigation > div > ul' );
+
+		if ( ! siteNavigation || ! siteNavigation.children ) {
 			return;
 		}
 
-		// Toggle `focus` class to allow submenu access on tablets.
-		function toggleSubmenuTouchScreen() {
+		// Open submenus on touch
+		const openSubMenu = document.querySelectorAll(".mobile-submenu-expand");
 
-			// change this to test on screen
-			// .on( 'focus.twentynineteen blur.twentynineteen',
-			siteNavigation.find( '.mobile-submenu-expand' ).on( 'touchstart.twentynineteen', function() {
-				$( this ).parents( '.menu-item, .page_item' ).addClass( 'focus' );
-				$( this ).siblings( '.sub-menu' ).addClass( 'open' );
+		for (let i = 0; i < openSubMenu.length; i++) {
+
+			openSubMenu[i].addEventListener("touchstart", function() {
+
+				this.addEventListener("touchend", function() {
+					var menuItem     = this.closest(".menu-item"); // this.parentNode
+					var menuItemAria = menuItem.querySelectorAll("a[aria-expanded]");
+
+					menuItem.classList.add("focus");
+					menuItem.lastElementChild.classList.add("expanded-true");
+
+					toggleAriaExpandedState( menuItemAria );
+				});
 			});
+		}
 
-			siteNavigation.find( '.menu-item-link-return' ).on( 'touchstart.twentynineteen', function() {
+		// Close sub-menus or sub-sub-menus on touch
+		const closeSubMenu = document.querySelectorAll(".menu-item-link-return");
 
-				// If not already a sub-menu, close all menus
-				if ( $( this ).parents( 'ul' ).hasClass( 'sub-menu' ) ) {
+		for (let i = 0; i < closeSubMenu.length; i++) {
 
-					$( this ).closest( '.sub-menu' ).removeClass( 'open' );
+			closeSubMenu[i].addEventListener("touchstart", function() {
 
-				} else {
+				this.addEventListener("touchend", function() {
 
-					$( this ).parents( '.menu-item, .page_item' ).removeClass( 'focus' );
-					$( this ).siblings( '.sub-menu' ).removeClass( 'open' );
+					var menuItem       = this.closest(".menu-item"); // this.parentNode
+					var menuItemAria   = menuItem.querySelectorAll("a[aria-expanded]");
+					var nearestSubMenu = this.closest(".sub-menu");
+
+					// If this is in a sub-sub-menu, go back to parent sub-menu
+					if ( this.closest("ul").classList.contains("sub-menu") ) {
+
+						nearestSubMenu.classList.remove("expanded-true");
+						toggleAriaExpandedState( menuItemAria );
+
+					// Or else close all sub-menus
+					} else {
+
+						menuItem.classList.remove("focus");
+						menuItem.lastElementChild.classList.remove("expanded-true");
+						toggleAriaExpandedState( menuItemAria );
+					}
+				});
+			});
+		}
+
+		siteNavigation.blur();
+	}
+
+	// Debounce
+	function debounce(func, wait = 20, immediate = true) {
+
+		var timeout;
+
+		return function() {
+
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+
+				if (!immediate) {
+					func.apply(context, args);
 				}
-			});
+			};
+
+			var callNow = immediate && !timeout;
+
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+
+			if (callNow) {
+				func.apply(context, args);
+			}
+		};
+	}
+
+	// Run our functions once the window has loaded fully
+	window.addEventListener("load", function() {
+		toggleSubmenuTouchScreen();
+	});
+
+	// Annnnnd also every time the window resizes
+	var isResizing = false;
+	window.addEventListener("resize", debounce( function() {
+		if (isResizing) {
+			return;
 		}
 
-		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.twentynineteen', toggleSubmenuTouchScreen );
+		isResizing = true;
+		setTimeout( function() {
 			toggleSubmenuTouchScreen();
-		}
+			isResizing = false;
+		}, 150 );
+	}));
 
-	})();
-})( jQuery );
+})();
