@@ -1488,42 +1488,45 @@ body.page .main-navigation {
   }
 }
 
-#masthead .site-title {
+.site-title {
   margin: auto;
   display: inline;
-  color: #111;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.featured-image #masthead .site-title {
+.site-title a:link {
+  color: #111;
+}
+
+.featured-image .site-title {
   margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
-  .featured-image #masthead .site-title {
+  .featured-image .site-title {
     display: inline-block;
   }
 }
 
-#masthead .site-title + .main-navigation {
+.site-title + .main-navigation {
   display: block;
 }
 
-#masthead .site-title a {
+.site-title a {
   color: inherit;
 }
 
-#masthead .site-title a:hover {
+.site-title a:hover {
   color: #4a4a4a;
 }
 
 @media only screen and (min-width: 768px) {
-  #masthead .site-title {
+  .site-title {
     display: inline;
   }
 }
 
-#masthead .site-title:not(:empty) + .site-description:not(:empty):before {
+.site-title:not(:empty) + .site-description:not(:empty):before {
   content: "\2014";
   margin: 0 .2em;
 }
