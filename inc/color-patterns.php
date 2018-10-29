@@ -163,7 +163,7 @@ function twentynineteen_custom_colors_css() {
 		}
 
 		.editor-block-list__layout .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-		.editor-block-list__layout .wp-block-freeform blockquote {
+		.editor-styles-wrapper .editor-block-list__layout .wp-block-freeform blockquote {
 			border-left: 2px solid hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
 		}
 
