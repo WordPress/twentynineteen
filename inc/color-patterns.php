@@ -50,6 +50,7 @@ function twentynineteen_custom_colors_css() {
 		.button, button, input[type="button"], input[type="reset"], input[type="submit"],
 		.entry-content > *[class^="wp-block-"].has-primary-background-color,
 		.entry-content > *[class^="wp-block-"] .has-primary-background-color,
+		.entry-content > *[class^="wp-block-"].is-style-solid-color,
 		.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
 		.entry-content .wp-block-file .wp-block-file__button {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
