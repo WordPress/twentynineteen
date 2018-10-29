@@ -87,17 +87,6 @@
 			});
 		}
 
-		function blurNavigation( event, parentMenuLink ) {
-
-			if ( ! event ) {
-				event = window.event;
-			}
-
-			// Disable :focus when using touchdevices
-			parentMenuLink.blur();
-			siteNavigation.blur();
-		}
-
 		// Open submenus on touch
 		for ( i = 0; i < subMenuExpand.length; i++) {
 			subMenuExpand[i].addEventListener('touchstart', openSubMenu( subMenuExpand[i] ) );
