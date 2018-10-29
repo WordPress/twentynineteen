@@ -15,7 +15,7 @@ get_header();
 
 			<?php
 				// Start the loop.
-				while ( have_posts() ) : 
+				while ( have_posts() ) :
 					the_post();
 			?>
 
@@ -47,7 +47,7 @@ get_header();
 
 						<?php
 							the_content();
-							wp_link_pages( 
+							wp_link_pages(
 								array(
 									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentynineteen' ) . '</span>',
 									'after'       => '</div>',
@@ -55,7 +55,7 @@ get_header();
 									'link_after'  => '</span>',
 									'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentynineteen' ) . ' </span>%',
 									'separator'   => '<span class="screen-reader-text">, </span>',
-								) 
+								)
 							);
 						?>
 					</div><!-- .entry-content -->
@@ -65,7 +65,7 @@ get_header();
 							// Retrieve attachment metadata.
 							$metadata = wp_get_attachment_metadata();
 							if ( $metadata ) {
-								printf( 
+								printf(
 									'<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
 									esc_html_x( 'Full size', 'Used before full size attachment link.', 'twentynineteen' ),
 									esc_url( wp_get_attachment_url() ),
@@ -82,10 +82,10 @@ get_header();
 
 				<?php
 					// Parent post navigation.
-					the_post_navigation( 
+					the_post_navigation(
 						array(
 							'prev_text' => _x( '<span class="meta-nav">Published in</span><br><span class="post-title">%title</span>', 'Parent post link', 'twentynineteen' ),
-						) 
+						)
 					);
 
 					// If comments are open or we have at least one comment, load up the comment template.
