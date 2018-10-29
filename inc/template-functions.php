@@ -71,19 +71,19 @@ add_filter( 'comment_form_defaults', 'twentynineteen_comment_form_defaults' );
  */
 function twentynineteen_get_the_archive_title() {
 	if ( is_category() ) {
-		$title = esc_html__( 'Category Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Category Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
-		$title = esc_html__( 'Tag Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Tag Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_author() ) {
-		$title = esc_html__( 'Author Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Author Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
 	} elseif ( is_year() ) {
-		$title = esc_html__( 'Yearly Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Yearly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_month() ) {
-		$title = esc_html__( 'Monthly Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Monthly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_day() ) {
-		$title = esc_html__( 'Daily Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Daily Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
-		$title = esc_html__( 'Post Type Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Post Type Archives: ', 'twentynineteen' ) . '<span class="page-description">' . post_type_archive_title( '', false ) . '</span>';
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: %s: Taxonomy singular name */
@@ -94,29 +94,6 @@ function twentynineteen_get_the_archive_title() {
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'twentynineteen_get_the_archive_title' );
-
-/**
- * Filters the default archive descriptions.
- */
-function twentynineteen_get_the_archive_description() {
-	if ( is_category() || is_tag() || is_tax() ) {
-		$description = single_term_title( '', false );
-	} elseif ( is_author() ) {
-		$description = get_the_author_meta( 'display_name' );
-	} elseif ( is_post_type_archive() ) {
-		$description = post_type_archive_title( '', false );
-	} elseif ( is_year() ) {
-		$description = get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) );
-	} elseif ( is_month() ) {
-		$description = get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) );
-	} elseif ( is_day() ) {
-		$description = get_the_date();
-	} else {
-		$description = null;
-	}
-	return $description;
-}
-add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_description' );
 
 /**
  * Determines if post thumbnail can be displayed.

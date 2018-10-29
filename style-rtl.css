@@ -2121,7 +2121,6 @@ body.page .main-navigation {
   top: 0;
   right: 0;
   content: "\020";
-  display: block;
   pointer-events: none;
 }
 
@@ -2153,7 +2152,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "»";
+  content: "\02192";
   margin-right: 0.5em;
 }
 
@@ -2707,6 +2706,12 @@ body.page .main-navigation {
   content: ".";
   font-weight: bold;
   color: #767676;
+}
+
+.archive .page-header .page-description {
+  display: block;
+  color: #111;
+  font-size: 1em;
 }
 
 @media only screen and (min-width: 768px) {
