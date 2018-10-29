@@ -34,7 +34,7 @@
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');
 		var openSubMenu    = document.querySelectorAll('.mobile-submenu-expand');
 		var closeSubMenu   = document.querySelectorAll('.menu-item-link-return');
-		var disableSubMenu = siteNavigation.querySelectorAll('.menu-item-has-children');
+		var disableSubMenu = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 		var i;
 		var o;
 		var u;
@@ -99,19 +99,16 @@
 
 			disableSubMenu[u].addEventListener('touchstart', function(event) {
 
-				var menuItemAria = this.querySelector('a[id^="menu-item-link-"]');
+				// Stop link behavior
+				event.preventDefault();
 
-				// event.preventDefault();
+				// Go to link without openning submenu
+				window.location = this.getAttribute('href');
+
+				// Disable :focus when using touchdevices
 				menuItemAria.blur();
+				siteNavigation.blur();
 
-				this.addEventListener('touchend', function() {
-
-					// event.preventDefault();
-					menuItemAria.blur();
-
-					// Disable :focus when using touchdevices
-					siteNavigation.blur();
-				});
 			});
 		}
 	}
