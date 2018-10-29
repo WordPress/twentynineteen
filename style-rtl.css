@@ -3325,6 +3325,13 @@ body.page .main-navigation {
   background-color: #0073aa;
 }
 
+.entry-content .has-primary-background-color p,
+.entry-content .has-primary-background-color h1,
+.entry-content .has-primary-background-color h2,
+.entry-content .has-primary-background-color h3,
+.entry-content .has-primary-background-color h4,
+.entry-content .has-primary-background-color h5,
+.entry-content .has-primary-background-color h6,
 .entry-content .has-primary-background-color a {
   color: #fff;
 }
