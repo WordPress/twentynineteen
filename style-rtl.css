@@ -2752,23 +2752,42 @@ body.page .main-navigation {
 ## Footer
 --------------------------------------------------------------*/
 /* Site footer */
-#colophon {
-  color: #767676;
-}
-
+#colophon .widget-area,
 #colophon .site-info {
   margin: calc(2 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  #colophon .widget-area,
   #colophon .site-info {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 
+#colophon .widget-area .imprint,
 #colophon .site-info .imprint {
   margin-left: 1rem;
+}
+
+#colophon .widget-column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#colophon .widget-column .widget {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1168px) {
+  #colophon .widget-column .widget {
+    margin-left: calc(3 * 1rem);
+    width: calc(50% - (3 * 1rem));
+  }
+}
+
+#colophon .site-info {
+  color: #767676;
 }
 
 #colophon a {
@@ -2788,6 +2807,64 @@ body.page .main-navigation {
 
 .widget select {
   max-width: 100%;
+}
+
+.widget a {
+  color: #0073aa;
+}
+
+.widget a:hover {
+  color: #005177;
+}
+
+.widget_archive ul,
+.widget_nav_menu ul,
+.widget_meta ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+  padding: 0;
+  list-style: none;
+}
+
+.widget_archive ul li,
+.widget_nav_menu ul li,
+.widget_meta ul li,
+.widget_recent_entries ul li,
+.widget_rss ul li {
+  color: #767676;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: calc(22px * 1.6875);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.widget_archive ul li:not(.menu-item-has-children),
+.widget_nav_menu ul li:not(.menu-item-has-children),
+.widget_meta ul li:not(.menu-item-has-children),
+.widget_recent_entries ul li:not(.menu-item-has-children),
+.widget_rss ul li:not(.menu-item-has-children) {
+  padding-bottom: 0.75rem;
+}
+
+.widget_archive ul li ul,
+.widget_nav_menu ul li ul,
+.widget_meta ul li ul,
+.widget_recent_entries ul li ul,
+.widget_rss ul li ul {
+  padding-right: 1rem;
+}
+
+.widget_archive ul.sub-menu,
+.widget_nav_menu ul.sub-menu,
+.widget_meta ul.sub-menu,
+.widget_recent_entries ul.sub-menu,
+.widget_rss ul.sub-menu {
+  padding-top: 0.75rem;
+}
+
+.widget_search .search-submit {
+  display: block;
+  margin-top: 1rem;
 }
 
 /* Blocks */
@@ -3011,18 +3088,22 @@ body.page .main-navigation {
   line-height: 1.2;
 }
 
-.entry-content .wp-block-archives li a:after,
-.entry-content .wp-block-categories li a:after,
-.entry-content .wp-block-latest-posts li a:after {
-  color: #767676;
-  content: ",";
+.entry-content .wp-block-archives li:not(.menu-item-has-children),
+.entry-content .wp-block-categories li:not(.menu-item-has-children),
+.entry-content .wp-block-latest-posts li:not(.menu-item-has-children) {
+  padding-bottom: 0.75rem;
 }
 
-.entry-content .wp-block-archives li:last-child a:after,
-.entry-content .wp-block-categories li:last-child a:after,
-.entry-content .wp-block-latest-posts li:last-child a:after {
-  color: #767676;
-  content: ".";
+.entry-content .wp-block-archives li a,
+.entry-content .wp-block-categories li a,
+.entry-content .wp-block-latest-posts li a {
+  text-decoration: none;
+}
+
+.entry-content .wp-block-archives li ul,
+.entry-content .wp-block-categories li ul,
+.entry-content .wp-block-latest-posts li ul {
+  padding-right: 1rem;
 }
 
 .entry-content .wp-block-latest-posts.is-grid li {

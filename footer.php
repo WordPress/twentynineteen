@@ -16,6 +16,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<div class="site-info">
 			<?php if ( ! empty( get_bloginfo( 'name' ) ) ) : ?>
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,

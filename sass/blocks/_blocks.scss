@@ -198,15 +198,17 @@
 			font-size: calc(#{$font__size_base} * #{$font__size-lg / 1em} );
 			font-weight: bold;
 			line-height: $font__line-height-heading;
-
-			a:after {
-				color: $color__text-light;
-				content: ",";
+			
+			&:not(.menu-item-has-children) {
+				padding-bottom: ( .75 * $size__spacing-unit );
 			}
 
-			&:last-child a:after {
-				color: $color__text-light;
-				content: ".";
+			a {
+				text-decoration: none;
+			}
+			
+			ul {
+				padding-left: $size__spacing-unit;
 			}
 		}
 	}
