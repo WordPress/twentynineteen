@@ -1996,7 +1996,6 @@ body.page .main-navigation {
   top: 0;
   right: 0;
   content: "\020";
-  display: block;
   pointer-events: none;
 }
 
@@ -2028,7 +2027,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "»";
+  content: "\02192";
   margin-right: 0.5em;
 }
 
