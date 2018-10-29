@@ -2764,6 +2764,24 @@ body.page .main-navigation {
   }
 }
 
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content > *.aligncenter,
+  .entry-summary > *.aligncenter {
+    margin-right: calc(2 * (100vw / 12));
+    margin-left: calc(2 * (100vw / 12));
+    max-width: calc(10 * (100vw / 12));
+    position: relative;
+    right: 25%;
+    transform: translate(50%);
+  }
+}
+
 .entry-content .wp-block-audio {
   width: 100%;
 }
@@ -3171,7 +3189,7 @@ body.page .main-navigation {
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
-  text-align: right;
+  text-align: center;
 }
 
 .entry-content .wp-block-separator,
@@ -3342,11 +3360,13 @@ svg {
   margin-left: auto;
 }
 
-.wp-caption .wp-caption-text {
-  margin: calc(0.875 * 1rem) 0;
-}
-
 .wp-caption-text {
+  color: #767676;
+  font-size: 0.71111em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
   text-align: center;
 }
 
