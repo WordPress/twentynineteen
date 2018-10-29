@@ -5,6 +5,7 @@
 
 	margin: 32px $size__spacing-unit;
 	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+	word-break: break-all;
 
 	@include media(tablet) {
 		margin: 32px calc(2 * (100vw / 12));
@@ -83,6 +84,20 @@
 			margin-right: calc(2 * (100vw / 12));
 		}
 	}
+	&.aligncenter {
+
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media(desktop) {
+			margin-left: calc(2 * (100vw / 12));
+			margin-right: calc(2 * (100vw / 12));
+			max-width: calc(10 * (100vw / 12));
+			position: relative;
+			left: 25%;
+			transform: translate(-50%);
+		}
+	}
 }
 
 .entry-content {
@@ -131,7 +146,8 @@
 			line-height: $font__line-height-heading;
 			box-sizing: border-box;
 			font-weight: bold;
-			padding: ($size__spacing-unit * .66) $size__spacing-unit;
+			text-decoration: none;
+			padding: ($size__spacing-unit * .76) $size__spacing-unit;
 			outline: none;
 			color: white;
 			outline: none;

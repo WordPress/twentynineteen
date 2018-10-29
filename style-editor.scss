@@ -499,6 +499,19 @@ ul.wp-block-archives,
 .wp-block-freeform {
 
 	/* Add style for galleries in classic-editor block */
+	blockquote {
+		border-left: 2px solid $color__link;
+
+		cite {
+			font-family: $font__heading;
+			font-size: $font__size-xs;
+			font-style: normal;
+			line-height: 1.6;
+			color: $color__text-light;
+		}
+	}
+
+	/* Add style for galleries in classic-editor block */
 	.gallery {
 
 		display: flex;
