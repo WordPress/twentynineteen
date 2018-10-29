@@ -8,6 +8,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 ?>
@@ -16,7 +17,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+			<?php if ( ! empty( get_bloginfo( 'name' ) ) ) : ?>
+				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+			<?php endif; ?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
 				<?php printf( __( 'Proudly powered by %s', 'twentynineteen' ), 'WordPress' ); ?>.
 			</a>
