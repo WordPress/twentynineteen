@@ -118,7 +118,7 @@ add_action( 'after_setup_theme', 'twentynineteen_setup' );
  */
 function twentynineteen_widgets_init() {
 
-	register_sidebar( 
+	register_sidebar(
 		array(
 			'name'          => __( 'Footer 1', 'twentynineteen' ),
 			'id'            => 'sidebar-1',
@@ -127,7 +127,7 @@ function twentynineteen_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		) 
+		)
 	);
 
 }
