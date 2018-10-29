@@ -101,7 +101,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			array(
 				'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 				'slug'  => 'primary',
-				'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'primary-color', '199' )), 100, 33 ), // "#ff3333", // esc_attr( 'hsl('. absint( get_theme_mod( 'primary-color', '199' ) ) .', 100, 33)' ),
+				'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'colorscheme_hue', '199' )), 100, 33 ),
 			)
 		)
 	);
@@ -164,24 +164,14 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
  * Display custom color CSS in customizer and on frontend.
  */
 function twentynineteen_colors_css_wrap() {
-
-	// Set defaults and grab theme mod
-	$default_primary_color = 199;
-	$primary_color         = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
-
-	if ( $primary_color === $default_primary_color ) {
+	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
 		return;
 	}
 
-	// Include color patterns
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-
-	// Enable live color changes in customizer
-	$customize_preview_data_primary_color = '';
-	if ( is_customize_preview() ) {
-		$customize_preview_data_primary_color = 'data-primary-color="' . $primary_color . '"';
-	} ?>
-	<style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_primary_color; ?>>
+	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+?>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
 <?php

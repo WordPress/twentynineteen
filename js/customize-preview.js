@@ -6,20 +6,21 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-( function( value ) {
+(function( $ ) {
 
 	// Primary color.
-	wp.customize( 'primary-color', function( value ) {
+	// Custom color hue.
+	wp.customize( 'colorscheme_hue', function( value ) {
 		value.bind( function( to ) {
 
-			// Update custom color CSS
-			var style = $( '#custom-theme-colors' ), // Selector of output style element.
-				primary_color = style.data( 'primary-color' ),
+			// Update custom color CSS.
+			var style = $( '#custom-theme-colors' ),
+				hue = style.data( 'hue' ),
 				css = style.html();
-				// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-				css = css.split( primary_color ).join( to ); // equivalent to css.replaceAll.
-				style.html( css )
-					.data( 'primary-color', to );
+
+			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
+			css = css.split( hue + ',' ).join( to + ',' );
+			style.html( css ).data( 'hue', to );
 		});
 	});
 
@@ -34,4 +35,4 @@
 		} );
 	} );
 
-} )()
+})( jQuery )

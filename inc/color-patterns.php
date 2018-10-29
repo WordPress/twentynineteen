@@ -13,7 +13,7 @@
 function twentynineteen_custom_colors_css() {
 
 	$default_primary_color       = 199;
-	$primary_color               = absint( get_theme_mod( 'primary-color', $default_primary_color ) );
+	$primary_color               = absint( get_theme_mod( 'colorscheme_hue', $default_primary_color ) );
 
 	/**
 	 * Filter Twenty Nineteen default saturation level.
