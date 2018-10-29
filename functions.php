@@ -102,7 +102,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 					'slug'  => 'primary',
-					'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'colorscheme_hue', '199' )), 100, 33 ),
+					'color' => twentynineteen_hsl_hex( absint( get_theme_mod( 'colorscheme_hue', '199' ) ), 100, 33, ),
 				)
 			)
 		);
@@ -173,7 +173,9 @@ function twentynineteen_colors_css_wrap() {
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
 	?>
 
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) {
+		echo 'data-hue="' . $hue . '"';
+	} ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
 <?php

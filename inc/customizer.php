@@ -37,7 +37,8 @@ function twentynineteen_customize_register( $wp_customize ) {
 	/**
 	 * Custom colors.
 	 */
-	$wp_customize->add_setting( 'colorscheme',
+	$wp_customize->add_setting(
+		'colorscheme',
 		array(
 			'default'           => 'default',
 			'transport'         => 'postMessage',
@@ -45,7 +46,8 @@ function twentynineteen_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_control( 'colorscheme',
+	$wp_customize->add_control(
+		'colorscheme',
 		array(
 			'type'    => 'radio',
 			'label'    => __( 'Color Scheme', 'twentynineteen' ),
@@ -59,7 +61,8 @@ function twentynineteen_customize_register( $wp_customize ) {
 	);
 
 	// Add primary color setting and control.
-	$wp_customize->add_setting( 'colorscheme_hue',
+	$wp_customize->add_setting(
+		'colorscheme_hue',
 		array(
 			'default'           => 199,
 			'transport'         => 'postMessage',
@@ -68,7 +71,9 @@ function twentynineteen_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control( $wp_customize, 'colorscheme_hue',
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'colorscheme_hue',
 			array(
 				'label'       => __( 'Primary Color' ),
 				'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.' ),
