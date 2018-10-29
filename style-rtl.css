@@ -1120,7 +1120,7 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.open {
+.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
   display: table;
   margin-top: 0;
   opacity: 1;
@@ -1139,7 +1139,7 @@ body.page .main-navigation {
   animation: slide_in_right 0.3s forwards;
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.open > .mobile-parent-nav-menu-item {
+.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
   display: inline-block;
 }
 
