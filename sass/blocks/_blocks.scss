@@ -631,4 +631,20 @@
 
 		}
 	}
+
+	//! Custom colors
+	.has-primary-background-color {
+		background-color: $color__link;
+
+		p,
+		h1, 
+		h2,
+		h3,
+		h4,
+		h5,
+		h6, 
+		a {
+			color: $color__background-body;
+		}
+	}
 }

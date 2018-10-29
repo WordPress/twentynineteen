@@ -102,6 +102,21 @@ a {
 	}
 }
 
+.has-primary-background-color { 
+	
+	p,
+	h1, 
+	h2,
+	h3,
+	h4,
+	h5,
+	h6, 
+	a,
+	a:hover {
+		color: $color__background-body;
+	}
+}
+
 figcaption,
 .gallery-caption {
 	font-family: $font__heading;

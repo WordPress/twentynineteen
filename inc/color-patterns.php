@@ -48,6 +48,7 @@ function twentynineteen_custom_colors_css() {
 		.sticky-post,
 		.entry-content .wp-block-button .wp-block-button__link,
 		.button, button, input[type="button"], input[type="reset"], input[type="submit"],
+		.entry-content > .has-primary-background-color,
 		.entry-content > *[class^="wp-block-"].has-primary-background-color,
 		.entry-content > *[class^="wp-block-"] .has-primary-background-color,
 		.entry-content > *[class^="wp-block-"].is-style-solid-color,

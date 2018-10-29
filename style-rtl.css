@@ -3297,6 +3297,14 @@ body.page .main-navigation {
   font-size: 0.71111em;
 }
 
+.entry-content .has-primary-background-color {
+  background-color: #0073aa;
+}
+
+.entry-content .has-primary-background-color a {
+  color: #fff;
+}
+
 /* Media */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
