@@ -4,6 +4,31 @@ Twenty Nineteen Editor Frame Styles
 NOTE: This file customizes items that are out of the normal scope of style-editor.css due to the auto-prefixing functionality associated with add_editor_style(). When that file is able to edit the post title and a container similar to .edit-post-layout, these styles should be migrated into style-editor.css. 
 */
 /** === Includes === */
+/* Cyrillic */
+html[lang="be"] *,
+html[lang="bg-BG"] *,
+html[lang="kk"] *,
+html[lang="mk_MK"] *,
+html[lang="mn"] *,
+html[lang="ru-RU"] *,
+html[lang="sah"] *,
+html[lang="sr_RS"] *,
+html[lang="tt_RU"] *,
+html[lang="uk"] * {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans_serif !important;
+}
+
+/* Arabic */
+html[lang="fa-IR"] *,
+html[lang="ur"] * {
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+/* Korean */
+html[lang="ko_KR"] * {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans_serif;
+}
+
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
