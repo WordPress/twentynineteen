@@ -72,19 +72,15 @@
 					// If this is in a sub-sub-menu, go back to parent sub-menu
 					if ( this.closest('ul').classList.contains('sub-menu') ) {
 
-						var menuItemAria = this.closest('.menu-item').querySelectorAll('a[aria-expanded]');
-
 						nearestSubMenu.classList.remove('expanded-true');
-						toggleAriaExpandedState( menuItemAria );
+						toggleAriaExpandedState( this.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 
 					// Or else close all sub-menus
 					} else {
 
-						var menuItemAria = this.closest('.menu-item').querySelectorAll('a[aria-expanded]');
-
 						menuItem.classList.remove('focus');
 						menuItem.lastElementChild.classList.remove('expanded-true');
-						toggleAriaExpandedState( menuItemAria );
+						toggleAriaExpandedState( this.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 					}
 				});
 			});
