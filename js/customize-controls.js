@@ -6,7 +6,7 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-( function( $ ) {
+(function() {
 
 	wp.customize.bind( 'ready', function() {
 
@@ -27,4 +27,4 @@
 		});
 	});
 
-})( jQuery )
+})( jQuery );
