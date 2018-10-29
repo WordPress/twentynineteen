@@ -23,7 +23,10 @@
 
 			color: $color__link;
 			display: inline;
-			position: relative;
+
+			@include media(tablet) {
+				position: relative;
+			}
 
 			> a {
 
@@ -181,6 +184,7 @@
 		left: 0;
 		margin-top: 0;
 		opacity: 1;
+		width: calc( 100vw - #{$size__spacing-unit * 2});
 
 		.sub-menu {
 

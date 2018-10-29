@@ -133,8 +133,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -557,18 +556,14 @@ h6 {
 .error-404 .page-title,
 .comments-title,
 blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 @media only screen and (min-width: 768px) {
   .entry-title {
-    -webkit-hyphens: none;
-        -ms-hyphens: none;
-            hyphens: none;
+    hyphens: none;
   }
 }
 
@@ -919,7 +914,12 @@ body.page .main-navigation {
 .main-navigation .main-menu > li {
   color: #0073aa;
   display: inline;
-  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu > li {
+    position: relative;
+  }
 }
 
 .main-navigation .main-menu > li > a {
@@ -981,8 +981,6 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     max-width: calc(3 * (100vw / 12));
   }
@@ -1056,6 +1054,7 @@ body.page .main-navigation {
   right: 0;
   margin-top: 0;
   opacity: 1;
+  width: calc( 100vw - 2rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
@@ -1069,8 +1068,6 @@ body.page .main-navigation {
     padding-right: 0;
     position: absolute;
     right: 100%;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     top: 0;
   }
@@ -1097,8 +1094,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     transform: none;
     animation: fade_in 0.1s forwards;
@@ -1134,7 +1129,7 @@ body.page .main-navigation {
   width: 100%;
   height: 100%;
   transform: translateX(-100%);
-  animation: slide_in_right 0.1s forwards;
+  animation: slide_in_right 0.3s forwards;
 }
 
 .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.open > .mobile-parent-nav-menu-item {
@@ -1277,10 +1272,7 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .meta-nav {
   color: #767676;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .post-navigation .nav-links a .meta-nav:before, .post-navigation .nav-links a .meta-nav:after {
@@ -1292,9 +1284,7 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a .post-title {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1434,8 +1424,7 @@ body.page .main-navigation {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1451,8 +1440,7 @@ body.page .main-navigation {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -1771,6 +1759,7 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation svg,
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 

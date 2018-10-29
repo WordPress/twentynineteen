@@ -919,7 +919,12 @@ body.page .main-navigation {
 .main-navigation .main-menu > li {
   color: #0073aa;
   display: inline;
-  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu > li {
+    position: relative;
+  }
 }
 
 .main-navigation .main-menu > li > a {
@@ -1056,6 +1061,7 @@ body.page .main-navigation {
   left: 0;
   margin-top: 0;
   opacity: 1;
+  width: calc( 100vw - 2rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
