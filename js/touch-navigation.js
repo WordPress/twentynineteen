@@ -89,14 +89,9 @@
 
 		function blurNavigation( event, parentMenuLink ) {
 
-			if ( ! event ) // i.e. the argument is undefined or null
+			if ( ! event ) {
 				event = window.event;
-
-			// Stop link behavior
-			event.preventDefault();
-
-			// Go to link without openning submenu
-			window.location = parentMenuLink.getAttribute('href');
+			}
 
 			// Disable :focus when using touchdevices
 			parentMenuLink.blur();
@@ -116,8 +111,14 @@
 		// Prevent :focus-within on menu-item links when using touch devices
 		for ( u = 0; u < parentMenuLink.length; u++) {
 			parentMenuLink[u].addEventListener('touchstart', function( event ) {
-				blurNavigation( event, this )
-			}, true );
+
+				// Stop link behavior
+				event.preventDefault();
+
+				// Go to link without openning submenu
+				window.location = this.getAttribute('href');
+
+			});
 		}
 	}
 
