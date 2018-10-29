@@ -210,7 +210,7 @@
 	/* Third layer: multiply. */
   	/* When image filters are inactive, a black overlay is added. */
   	.site-featured-image:after {
-		background: $color__text-main;
+		background: #000;
 		mix-blend-mode: multiply;
 		opacity: .7;
 
@@ -229,7 +229,7 @@
 
 	/* Fourth layer: overlay. */
   	.image-filters-enabled & .site-branding-container:after {
-		background: rgba($color__background-body, 0.35);
+		background: rgba(#000, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
 		z-index: 4;
@@ -242,7 +242,7 @@
 
 	/* Fifth layer: readability overlay */
 	&:after {
-		background: $color__text-main;
+		background: #000;
 		/**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
@@ -258,10 +258,6 @@
 
 			@include media(tablet) {
 				opacity: 0.18;
-			}
-
-			@include media(desktop) {
-				opacity: 0.1;
 			}
 		}
 	}

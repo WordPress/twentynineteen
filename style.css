@@ -1745,7 +1745,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image:after {
-  background: #111;
+  background: #000;
   mix-blend-mode: multiply;
   opacity: .7;
   /* When image filters are active, a blue overlay is added. */
@@ -1765,7 +1765,7 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .site-header.featured-image .site-branding-container:after {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
@@ -1779,7 +1779,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image:after {
-  background: #111;
+  background: #000;
   /**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
@@ -1798,12 +1798,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .image-filters-enabled .site-header.featured-image:after {
-    opacity: 0.1;
   }
 }
 
