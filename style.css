@@ -1772,15 +1772,29 @@ body.page .main-navigation {
 
 .image-filters-enabled .site-header.featured-image .site-featured-image:after {
   background: #0073aa;
-  opacity: 1;
+  opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .site-header.featured-image .site-featured-image:after {
+    opacity: 1;
+  }
 }
 
 .image-filters-enabled .site-header.featured-image .site-branding-container:after {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
+  /* Browsers supporting mix-blend-mode can have a light overlay */
+}
+
+@supports (mix-blend-mode: overlay) {
+  .image-filters-enabled .site-header.featured-image .site-branding-container:after {
+    background: rgba(255, 255, 255, 0.35);
+  }
 }
 
 .site-header.featured-image:after {
@@ -1803,12 +1817,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .image-filters-enabled .site-header.featured-image:after {
-    opacity: 0.1;
   }
 }
 
@@ -1977,16 +1985,26 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner {
-  position: relative;
   filter: grayscale(100%);
-  z-index: 1;
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
   display: block;
-  width: 100%;
   height: 100%;
-  z-index: 10;
+  opacity: .5;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+    display: none;
+  }
 }
 
 .image-filters-enabled .entry .post-thumbnail:before, .image-filters-enabled .entry .post-thumbnail:after {
@@ -1997,7 +2015,6 @@ body.page .main-navigation {
   top: 0;
   left: 0;
   content: "\020";
-  display: block;
   pointer-events: none;
 }
 
@@ -2011,8 +2028,15 @@ body.page .main-navigation {
 .image-filters-enabled .entry .post-thumbnail:after {
   background: #0073aa;
   mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail:after {
+    opacity: 1;
+  }
 }
 
 .entry .entry-content .more-link {
@@ -2022,7 +2046,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "»";
+  content: "\02192";
   margin-left: 0.5em;
 }
 
@@ -2578,6 +2602,12 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.archive .page-header .page-description {
+  display: block;
+  color: #111;
+  font-size: 1em;
+}
+
 @media only screen and (min-width: 768px) {
   .hfeed .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
@@ -2656,6 +2686,7 @@ body.page .main-navigation {
 .entry-summary > * {
   margin: 32px 1rem;
   max-width: calc(100vw - (2 * 1rem));
+  word-break: break-all;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -2755,6 +2786,24 @@ body.page .main-navigation {
     max-width: calc(4 * (100vw / 12));
     margin-left: calc(2 * 1rem);
     margin-right: calc(2 * (100vw / 12));
+  }
+}
+
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry-content > *.aligncenter,
+  .entry-summary > *.aligncenter {
+    margin-left: calc(2 * (100vw / 12));
+    margin-right: calc(2 * (100vw / 12));
+    max-width: calc(10 * (100vw / 12));
+    position: relative;
+    left: 25%;
+    transform: translate(-50%);
   }
 }
 
