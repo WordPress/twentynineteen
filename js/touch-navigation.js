@@ -101,11 +101,17 @@
 
 				var menuItemAria = this.querySelector('a[id^="menu-item-link-"]');
 
-				event.preventDefault();
-				this.blur();
+				// event.preventDefault();
+				menuItemAria.blur();
 
-				// Disable :focus when using touchdevices
-				siteNavigation.blur();
+				this.addEventListener('touchend', function() {
+
+					// event.preventDefault();
+					menuItemAria.blur();
+
+					// Disable :focus when using touchdevices
+					siteNavigation.blur();
+				});
 			});
 		}
 	}
