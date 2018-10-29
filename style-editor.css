@@ -133,46 +133,46 @@ figcaption,
   margin: 0 0.25em 0 0;
 }
 
-/** === Cover Image === */
-.wp-block-cover-image h2,
-.wp-block-cover-image .wp-block-cover-image-text {
+/** === Cover === */
+.wp-block-cover h2,
+.wp-block-cover .wp-block-cover-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 2.25em;
   font-weight: bold;
   line-height: 1.4;
 }
 
-.wp-block-cover-image.has-left-content {
+.wp-block-cover.has-left-content {
   justify-content: center;
 }
 
-.wp-block-cover-image.has-left-content h2,
-.wp-block-cover-image.has-left-content .wp-block-cover-image-text {
+.wp-block-cover.has-left-content h2,
+.wp-block-cover.has-left-content .wp-block-cover-text {
   padding: 1em;
 }
 
-.wp-block-cover-image.has-right-content {
+.wp-block-cover.has-right-content {
   justify-content: center;
 }
 
-.wp-block-cover-image.has-right-content h2,
-.wp-block-cover-image.has-right-content .wp-block-cover-image-text {
+.wp-block-cover.has-right-content h2,
+.wp-block-cover.has-right-content .wp-block-cover-text {
   padding: 1em;
 }
 
-body[data-type="core/cover-image"][data-align="left"] h2,
-body[data-type="core/cover-image"][data-align="left"] .wp-block-cover-image-text,
-body[data-type="core/cover-image"][data-align="right"] h2,
-body[data-type="core/cover-image"][data-align="right"] .wp-block-cover-image-text {
+body[data-type="core/cover"][data-align="left"] h2,
+body[data-type="core/cover"][data-align="left"] .wp-block-cover-text,
+body[data-type="core/cover"][data-align="right"] h2,
+body[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
   width: 100%;
   max-width: 305px;
 }
 
 @media only screen and (min-width: 1168px) {
-  body[data-type="core/cover-image"][data-align="wide"] h2,
-  body[data-type="core/cover-image"][data-align="wide"] .wp-block-cover-image-text,
-  body[data-type="core/cover-image"][data-align="full"] h2,
-  body[data-type="core/cover-image"][data-align="full"] .wp-block-cover-image-text {
+  body[data-type="core/cover"][data-align="wide"] h2,
+  body[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
+  body[data-type="core/cover"][data-align="full"] h2,
+  body[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
     padding: 0;
     width: calc(6 * (100vw / 12));
     max-width: calc(6 * (100vw / 12));
@@ -502,6 +502,19 @@ ul.wp-block-archives li:last-child a:after,
 
 .wp-block-freeform {
   /* Add style for galleries in classic-editor block */
+  /* Add style for galleries in classic-editor block */
+}
+
+.wp-block-freeform blockquote {
+  border-left: 2px solid #0073aa;
+}
+
+.wp-block-freeform blockquote cite {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.71111em;
+  font-style: normal;
+  line-height: 1.6;
+  color: #767676;
 }
 
 .wp-block-freeform .gallery {
