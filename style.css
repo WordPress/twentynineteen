@@ -2000,7 +2000,6 @@ body.page .main-navigation {
   top: 0;
   left: 0;
   content: "\020";
-  display: block;
   pointer-events: none;
 }
 
@@ -2032,7 +2031,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "»";
+  content: "\02192";
   margin-left: 0.5em;
 }
 
@@ -2588,6 +2587,12 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.archive .page-header .page-description {
+  display: block;
+  color: #111;
+  font-size: 1em;
+}
+
 @media only screen and (min-width: 768px) {
   .hfeed .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
@@ -2666,6 +2671,7 @@ body.page .main-navigation {
 .entry-summary > * {
   margin: 32px 1rem;
   max-width: calc(100vw - (2 * 1rem));
+  word-break: break-all;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -2765,6 +2771,24 @@ body.page .main-navigation {
     max-width: calc(4 * (100vw / 12));
     margin-left: calc(2 * 1rem);
     margin-right: calc(2 * (100vw / 12));
+  }
+}
+
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry-content > *.aligncenter,
+  .entry-summary > *.aligncenter {
+    margin-left: calc(2 * (100vw / 12));
+    margin-right: calc(2 * (100vw / 12));
+    max-width: calc(10 * (100vw / 12));
+    position: relative;
+    left: 25%;
+    transform: translate(-50%);
   }
 }
 
