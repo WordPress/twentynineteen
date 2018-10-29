@@ -131,7 +131,8 @@ function twentynineteen_custom_colors_css() {
 		a:hover, a:active,
 		.main-navigation .main-menu > li > a:hover,
 		.main-navigation .main-menu > li > a:hover + svg,
-		.post-navigation .nav-links a:hover,
+		.post-navigation .nav-links a:hover .post-title,
+		.author-bio .author-description .author-link:hover,
 		.comment .comment-author .fn a:hover,
 		.comment-reply-link:hover,
 		#cancel-comment-reply-link:hover {
