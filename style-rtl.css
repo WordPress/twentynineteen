@@ -2583,6 +2583,12 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.archive .page-header .page-description {
+  display: block;
+  color: #111;
+  font-size: 1em;
+}
+
 @media only screen and (min-width: 768px) {
   .hfeed .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
