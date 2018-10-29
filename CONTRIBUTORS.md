@@ -30,4 +30,23 @@ Version 1.0:
 | @siriokun | @siriokun |
 | @briannaorg | @technosiren |
 | @00travelgirl00 | @travel_girl |
-| @shahjehanali1 | @azchughtai
+| @shahjehanali1 | @azchughtai |
+| @ianbelanger79 | @ianbelanger |
+| @nadim1992 | |
+| @ismail-elkorchi | @ismailelkorchi |
+| @nativeinside | |
+| @iamchetanp  | @chetan200891 |
+| @icaleb | @icaleb |
+| @grappler | @grapplerulrich |
+| @ocean90 | @ocean90 |
+| @joshfeck | |
+| @frankew | |
+| @abdulwahab610 | @abdulwahab610 |
+| @mendezcode | @mendezcode |
+| @eliorivero | @eliorivero |
+| @melchoyce | @melchoyce |
+| @jasmussen | @joen |
+| @laurelfulford | @laurelfulford |
+| @mdawaffe | @mdawaffe |
+| @kraftbj | @kraftbj |
+| @dereksmart | @dsmart |
