@@ -159,10 +159,14 @@
 	}
 
 	/* Make sure important elements are above pseudo elements used for effects. */
-	.site-branding,
-	.site-featured-image .entry-header {
+	.site-branding {
 		position: relative;
 		z-index: 10;
+	}
+
+	.site-featured-image .entry-header {
+		position: relative;
+		z-index: 9;
 	}
 
 	/* Set up image filter layer positioning */

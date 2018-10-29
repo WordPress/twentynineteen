@@ -71,6 +71,7 @@ function twentynineteen_custom_colors_css() {
 		 */
 		a,
 		a:visited,
+		.main-navigation .main-menu > li,
 		.main-navigation ul.main-menu > li > a,
 		.post-navigation .post-title,
 		.entry .entry-meta a:hover,
@@ -142,7 +143,9 @@ function twentynineteen_custom_colors_css() {
 		.main-navigation .sub-menu > li > a:hover,
 		.main-navigation .sub-menu > li > a:focus,
 		.main-navigation .sub-menu > li > a:hover:after,
-		.main-navigation .sub-menu > li > a:focus:after {
+		.main-navigation .sub-menu > li > a:focus:after,
+		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover,
+		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
 			background: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
 		}';
 
