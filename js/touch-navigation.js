@@ -8,46 +8,48 @@
 
 	// Toggle Aria Expanded state for screenreaders
 	function toggleAriaExpandedState( menuItems ) {
+		"use strict";
 
-		const getMenuItem = menuItems;
+		var getMenuItem = menuItems;
 
-    	for (let i = 0; i < getMenuItem.length; i++) {
+    	for (var i = 0; i < getMenuItem.length; i++) {
 
-			var state = getMenuItem[i].getAttribute("aria-expanded");
+			var state = getMenuItem[i].getAttribute('aria-expanded');
 
-			if (state == "true") {
-				state = "false";
+			if (state === 'true') {
+				state = 'false';
 			} else {
-				state = "true";
+				state = 'true';
 			}
 
-			getMenuItem[i].setAttribute("aria-expanded", state);
+			getMenuItem[i].setAttribute('aria-expanded', state);
 		}
 	}
 
   	// Toggle `focus` class to allow submenu access on tablets.
 	function toggleSubmenuTouchScreen() {
+		"use strict";
 
 		// Check for submenus and bail if none exist
-		var siteNavigation = document.querySelector( '.main-navigation > div > ul' );
+		var siteNavigation = document.querySelector('.main-navigation > div > ul');
 
 		if ( ! siteNavigation || ! siteNavigation.children ) {
 			return;
 		}
 
 		// Open submenus on touch
-		const openSubMenu = document.querySelectorAll(".mobile-submenu-expand");
+		var openSubMenu = document.querySelectorAll('.mobile-submenu-expand');
 
-		for (let i = 0; i < openSubMenu.length; i++) {
+		for (var i = 0; i < openSubMenu.length; i++) {
 
-			openSubMenu[i].addEventListener("touchstart", function() {
+			openSubMenu[i].addEventListener('touchstart', function() {
 
-				this.addEventListener("touchend", function() {
-					var menuItem     = this.closest(".menu-item"); // this.parentNode
-					var menuItemAria = menuItem.querySelectorAll("a[aria-expanded]");
+				this.addEventListener('touchend', function() {
+					var menuItem     = this.closest('.menu-item'); // this.parentNode
+					var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
 
-					menuItem.classList.add("focus");
-					menuItem.lastElementChild.classList.add("expanded-true");
+					menuItem.classList.add('focus');
+					menuItem.lastElementChild.classList.add('expanded-true');
 
 					toggleAriaExpandedState( menuItemAria );
 				});
@@ -55,29 +57,29 @@
 		}
 
 		// Close sub-menus or sub-sub-menus on touch
-		const closeSubMenu = document.querySelectorAll(".menu-item-link-return");
+		var closeSubMenu = document.querySelectorAll('.menu-item-link-return');
 
-		for (let i = 0; i < closeSubMenu.length; i++) {
+		for (var i = 0; i < closeSubMenu.length; i++) {
 
-			closeSubMenu[i].addEventListener("touchstart", function() {
+			closeSubMenu[i].addEventListener('touchstart', function() {
 
-				this.addEventListener("touchend", function() {
+				this.addEventListener('touchend', function() {
 
-					var menuItem       = this.closest(".menu-item"); // this.parentNode
-					var menuItemAria   = menuItem.querySelectorAll("a[aria-expanded]");
-					var nearestSubMenu = this.closest(".sub-menu");
+					var menuItem       = this.closest('.menu-item'); // this.parentNode
+					var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
+					var nearestSubMenu = this.closest('.sub-menu');
 
 					// If this is in a sub-sub-menu, go back to parent sub-menu
-					if ( this.closest("ul").classList.contains("sub-menu") ) {
+					if ( this.closest('ul').classList.contains('sub-menu') ) {
 
-						nearestSubMenu.classList.remove("expanded-true");
+						nearestSubMenu.classList.remove('expanded-true');
 						toggleAriaExpandedState( menuItemAria );
 
 					// Or else close all sub-menus
 					} else {
 
-						menuItem.classList.remove("focus");
-						menuItem.lastElementChild.classList.remove("expanded-true");
+						menuItem.classList.remove('focus');
+						menuItem.lastElementChild.classList.remove('expanded-true');
 						toggleAriaExpandedState( menuItemAria );
 					}
 				});
@@ -88,9 +90,12 @@
 	}
 
 	// Debounce
-	function debounce(func, wait = 20, immediate = true) {
+	function debounce(func, wait, immediate) {
+		"use strict";
 
 		var timeout;
+		var wait      = (typeof wait !== 'undefined') ? wait : 20;
+		var immediate = (typeof immediate !== 'undefined') ? immediate : true;
 
 		return function() {
 
@@ -115,13 +120,13 @@
 	}
 
 	// Run our functions once the window has loaded fully
-	window.addEventListener("load", function() {
+	window.addEventListener('load', function() {
 		toggleSubmenuTouchScreen();
 	});
 
 	// Annnnnd also every time the window resizes
 	var isResizing = false;
-	window.addEventListener("resize", debounce( function() {
+	window.addEventListener('resize', debounce( function() {
 		if (isResizing) {
 			return;
 		}
