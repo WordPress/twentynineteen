@@ -175,6 +175,12 @@ function twentynineteen_custom_colors_css() {
 		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
 		.editor-block-list__layout .editor-block-list__block .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
+		}
+
+		/* Hover colors */
+		.editor-block-list__layout .editor-block-list__block a:hover,
+		.editor-block-list__layout .editor-block-list__block a:active {
+			color: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
 		}';
 
 	$css = '';
