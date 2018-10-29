@@ -181,8 +181,14 @@ function twentynineteen_custom_colors_css() {
 		.editor-block-list__layout .editor-block-list__block a:hover,
 		.editor-block-list__layout .editor-block-list__block a:active {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
-		}';
+		}
 
+		/* Do not overwrite solid color pullquote or cover links */
+		.editor-block-list__layout .editor-block-list__block .wp-block-pullquote.is-style-solid-color a,
+		.editor-block-list__layout .editor-block-list__block .wp-block-cover a {
+			color: inherit;
+		}
+		';
 	$css = '';
 	if ( function_exists( 'register_block_type' ) && is_admin() ) {
 		$css .= $editor_css;
