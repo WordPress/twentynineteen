@@ -102,7 +102,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 					'slug'  => 'primary',
-					'color' => twentynineteen_hsl_hex( absint( get_theme_mod( 'colorscheme_hue', '199' ) ), 100, 33, ),
+					'color' => twentynineteen_hsl_hex( absint( get_theme_mod( 'colorscheme_hue', '199' ) ), 100, 33 ),
 				),
 			)
 		);
