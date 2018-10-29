@@ -65,6 +65,7 @@
 		> span {
 
 			margin-right: $size__spacing-unit;
+			display: inline-block;
 
 			&:last-child {
 				margin-right: 0;
@@ -91,26 +92,7 @@
 	}
 
 	.entry-meta {
-
 		margin: $size__spacing-unit 0;
-
-		&.has-discussion .comment-count {
-
-			@include media(desktop) {
-				float: right;
-				position: relative;
-			}
-
-			.discussion-avatar-list {
-				display: none;
-
-				@include media(desktop) {
-					bottom: 100%;
-					display: block;
-					position: absolute;
-				}
-			}
-		}
 	}
 
 	.entry-footer {
@@ -118,7 +100,7 @@
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
 		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
+			margin: $size__spacing-unit calc(2 * (100vw / 12)) calc(3 * #{$size__spacing-unit});
 			max-width: calc(8 * (100vw / 12));
 		}
 
@@ -158,7 +140,24 @@
 			display: block;
 
 			.post-thumbnail-inner {
-				@include filter-grayscale;
+				filter: grayscale(100%);
+				
+				&:after {
+					background: rgba(#000, 0.35);
+					content: "";
+					display: block;
+					height: 100%;
+					opacity: .5;
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 4;
+
+					@supports (mix-blend-mode: multiply) {
+						display: none;
+					}
+				}
 			}
 
 			&:before, &:after {
@@ -172,7 +171,7 @@
 			}
 
 			@include filter-duotone;
-
+			
 		}
 	}
 
