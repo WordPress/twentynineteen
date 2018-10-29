@@ -8,4 +8,15 @@
 
 ( function( $ ) { // jshint ignore:line
 
+	// Image filter.
+	wp.customize( 'image_filter', function( value ) {
+		value.bind( function( to ) {
+			if ( 'active' === to ) {
+				$( 'body' ).addClass( 'image-filters-enabled' );
+			} else {
+				$( 'body' ).removeClass( 'image-filters-enabled' );
+			}
+		} );
+	} );
+
 } )( jQuery );

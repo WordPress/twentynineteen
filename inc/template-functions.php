@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /**
@@ -30,6 +31,17 @@ function twentynineteen_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'twentynineteen_body_classes' );
+
+/**
+ * Adds custom class to the array of posts classes.
+ */
+function twentynineteen_post_classes( $classes, $class, $post_id ) {
+	$classes[] = 'entry';
+
+	return $classes;
+}
+add_filter( 'post_class', 'twentynineteen_post_classes', 10, 3 );
+
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
@@ -74,8 +86,8 @@ function twentynineteen_get_the_archive_title() {
 		$title = esc_html__( 'Post Type Archives:', 'twentynineteen' );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name */
-		$title = sprintf( __( '%s Archives: ' ), $tax->labels->singular_name );
+		/* translators: %s: Taxonomy singular name */
+		$title = sprintf( esc_html__( '%s Archives:', 'twentynineteen' ), $tax->labels->singular_name );
 	} else {
 		$title = esc_html__( 'Archives:', 'twentynineteen' );
 	}
@@ -110,13 +122,16 @@ add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_descr
  * Determines if post thumbnail can be displayed.
  */
 function twentynineteen_can_show_post_thumbnail() {
-	return ! post_password_required() && ! is_attachment() && has_post_thumbnail();
+	return apply_filters( 'twentynineteen_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**
  * Returns true if image filters are enabled on the theme options.
  */
 function twentynineteen_image_filters_enabled() {
+	if ( 'inactive' === get_theme_mod( 'image_filter' ) ) {
+		return false;
+	}
 	return true;
 }
 
@@ -154,7 +169,7 @@ function twentynineteen_get_discussion_data() {
 	}
 	$authors    = array();
 	$commenters = array();
-	$user_id    = is_user_logged_in() ? get_current_user_id() : -1;
+	$user_id    = -1; // is_user_logged_in() ? get_current_user_id() : -1;
 	$comments   = get_comments(
 		array(
 			'post_id' => $current_post_id,
@@ -181,27 +196,6 @@ function twentynineteen_get_discussion_data() {
 	);
 	return $discussion;
 }
-
-/**
- * WCAG 2.0 Attributes for Dropdown Menus
- *
- * Adjustments to menu attributes tot support WCAG 2.0 recommendations
- * for flyout and dropdown menus.
- *
- * @ref https://www.w3.org/WAI/tutorials/menus/flyout/
- */
-function twentynineteen_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
-
-	// Add [aria-haspopup] and [aria-expanded] to menu items that have children
-	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
-	if ( $item_has_children ) {
-		$atts['aria-haspopup'] = 'true';
-		$atts['aria-expanded'] = 'false';
-	}
-
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'twentynineteen_nav_menu_link_attributes', 10, 4 );
 
 /**
  * Add a dropdown icon to top-level menu items
