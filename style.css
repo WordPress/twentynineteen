@@ -2980,6 +2980,10 @@ body.page .main-navigation {
   }
 }
 
+.entry-content .wp-block-pullquote.is-style-solid-color a {
+  color: #fff;
+}
+
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
   color: #fff;
   margin: 0 auto;

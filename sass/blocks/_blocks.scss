@@ -304,10 +304,13 @@
 				}
 			}
 
+			a {
+				color: $color__background-body;
+			}
+
 			blockquote {
 				color: $color__background-body;
 				margin: 0 auto;
-
 			}
 
 			.has-primary-background-color {

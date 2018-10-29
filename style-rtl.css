@@ -1494,7 +1494,8 @@ body.page .main-navigation {
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a:link {
+.site-title a:link,
+.site-title a:visited {
   color: #111;
 }
 
@@ -2977,6 +2978,10 @@ body.page .main-navigation {
   .entry-content .wp-block-pullquote.is-style-solid-color p {
     font-size: 2.25em;
   }
+}
+
+.entry-content .wp-block-pullquote.is-style-solid-color a {
+  color: #fff;
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
