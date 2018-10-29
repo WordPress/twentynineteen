@@ -1,5 +1,13 @@
+const postcssFocusWithin = require('postcss-focus-within');
+
 module.exports = {
     plugins: {
-        autoprefixer: {}
+        autoprefixer: {},
     }
 };
+
+module.exports = {
+    plugins: [
+        postcssFocusWithin(/* pluginOptions */)
+    ]
+}

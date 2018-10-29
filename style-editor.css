@@ -286,9 +286,7 @@ body[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
 }
 
 .wp-block-pullquote blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
