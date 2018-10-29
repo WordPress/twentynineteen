@@ -9,85 +9,98 @@
 	// Toggle `focus` class to allow submenu access on tablets.
 	function toggleSubmenuTouchScreen() {
 
-		var masthead, siteNavContain, siteNavigation;
+		// Check for submenus and bail if none exist
+		var siteNavigation = document.querySelector( '.main-navigation > div > ul' );
 
-		masthead       = document.querySelector( "#masthead" );
-		siteNavigation = document.querySelector( '.main-navigation > div > ul' );
-
-		// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
 		if ( ! siteNavigation || ! siteNavigation.children ) {
-			console.log( 'fail' );
 			return;
 		}
 
-		console.log( 'running' );
-
+		// Open submenus on touch
 		const openSubMenu = document.querySelectorAll(".mobile-submenu-expand");
 
-		for (let i = 0; i < toggle.length; i++) {
-			toggle[i].addEventListener("click", function() {
-				console.log( 'open test'+ this );
-				this.closest(".menu-item").classList.add("focus");
-				this.parentNode.lastElementChild.classList.add("open");
+		for (let i = 0; i < openSubMenu.length; i++) {
+
+			openSubMenu[i].addEventListener("touchstart", function() {
+
+				this.addEventListener("touchend", function() {
+					this.closest(".menu-item").classList.add("focus");
+					this.parentNode.lastElementChild.classList.add("open");
+				});
 			});
 		}
 
+		// Close sub-menus or sub-sub-menus on touch
 		const closeSubMenu = document.querySelectorAll(".menu-item-link-return");
 
-		for (let i = 0; i < toggleSubMenu.length; i++) {
-			toggleSubMenu[i].addEventListener("click", function() {
-				console.log( 'close test'+ this );
-				this.closest(".menu-item").classList.add("focus");
-				this.parentNode.lastElementChild.classList.add("open");
+		for (let i = 0; i < closeSubMenu.length; i++) {
 
-				// If not already a sub-menu, close all menus
-				if ( this.parents( 'ul' ).hasClass( 'sub-menu' ) ) {
+			closeSubMenu[i].addEventListener("touchstart", function() {
 
-					$( this ).closest( '.sub-menu' ).removeClass( 'open' );
+				this.addEventListener("touchend", function() {
 
-				} else {
+					// If this is in a sub-sub-menu, go back to parent sub-menu
+					if ( this.closest("ul").classList.contains("sub-menu") ) {
 
-					$( this ).parents( '.menu-item, .page_item' ).removeClass( 'focus' );
-					$( this ).siblings( '.sub-menu' ).removeClass( 'open' );
-				}
+						this.closest(".sub-menu").classList.remove("open");
 
+					// Or else close all sub-menus
+					} else {
+
+						this.closest(".menu-item").classList.remove("focus");
+						this.parentNode.lastElementChild.classList.remove("open");
+					}
+				});
 			});
 		}
 
-		// change this to test on screen
-		// .on( 'focus.twentynineteen blur.twentynineteen',
-	//	siteNavigation.querySelector( '.mobile-submenu-expand' ).addEventListener( 'touchstart.twentynineteen', function(el) {
-/*
-		document.querySelectorAll(".mobile-submenu-expand").addEventListener("click", function(el) {
-			console.log('test'+ el);
-			el.parentNode.classList.add("focus");
-			el.nextSibling.classList.add("open");
-		});
-*/
-
-/*
-		siteNavigation.find( '.menu-item-link-return' ).on( 'touchstart.twentynineteen', function() {
-
-			// If not already a sub-menu, close all menus
-			if ( $( this ).parents( 'ul' ).hasClass( 'sub-menu' ) ) {
-
-				$( this ).closest( '.sub-menu' ).removeClass( 'open' );
-
-			} else {
-
-				$( this ).parents( '.menu-item, .page_item' ).removeClass( 'focus' );
-				$( this ).siblings( '.sub-menu' ).removeClass( 'open' );
-			}
-		});
-*/
-
+		siteNavigation.blur();
 	}
 
-toggleSubmenuTouchScreen();
+	// Debounce
+	function debounce(func, wait = 20, immediate = true) {
 
-//	if ( 'ontouchstart' in window ) {
-//		window.addEventListener("resize.twentynineteen", toggleSubmenuTouchScreen );
-//		toggleSubmenuTouchScreen();
-//	}
+		var timeout;
+
+		return function() {
+
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+
+				if (!immediate) {
+					func.apply(context, args);
+				}
+			};
+
+			var callNow = immediate && !timeout;
+
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+
+			if (callNow) {
+				func.apply(context, args);
+			}
+		};
+	}
+
+	// Run our functions once the window has loaded fully
+	window.addEventListener("load", function() {
+		toggleSubmenuTouchScreen();
+	});
+
+	// Annnnnd also every time the window resizes
+	var isResizing = false;
+	window.addEventListener("resize", debounce( function() {
+		if (isResizing) {
+			return;
+		}
+
+		isResizing = true;
+		setTimeout( function() {
+			toggleSubmenuTouchScreen();
+			isResizing = false;
+		}, 150 );
+	}));
 
 })();
