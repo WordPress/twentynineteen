@@ -80,6 +80,7 @@ function twentynineteen_custom_colors_css() {
 		.comment-navigation .nav-next a:hover,
 		.comment .comment-metadata .comment-edit-link:hover,
 		.site-footer a:hover,
+		#colophon a:hover,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
@@ -92,7 +93,9 @@ function twentynineteen_custom_colors_css() {
 		 * Set left border color for:
 		 * wp block quote
 		 */
-		.entry-content .wp-block-quote:not(.is-large), .entry-content .wp-block-quote:not(.is-style-large) {
+		.entry-content blockquote,
+		.entry-content .wp-block-quote:not(.is-large),
+		.entry-content .wp-block-quote:not(.is-style-large) {
 			border-left-color: hsl( ' . $primary_color . ', ' . $saturation . ', 33% ); /* base: #0073a8; */
 		}
 
