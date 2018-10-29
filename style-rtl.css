@@ -2662,6 +2662,7 @@ body.page .main-navigation {
 .entry-summary > * {
   margin: 32px 1rem;
   max-width: calc(100vw - (2 * 1rem));
+  word-break: break-all;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -2770,7 +2771,7 @@ body.page .main-navigation {
   margin-left: auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1168px) {
   .entry-content > *.aligncenter,
   .entry-summary > *.aligncenter {
     margin-right: calc(2 * (100vw / 12));
