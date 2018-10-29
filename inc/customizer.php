@@ -37,22 +37,26 @@ function twentynineteen_customize_register( $wp_customize ) {
 	/**
 	 * Custom colors.
 	 */
-	$wp_customize->add_setting( 'colorscheme', array(
-		'default'           => 'default',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'twentynineteen_sanitize_color_option',
-	) );
+	$wp_customize->add_setting( 'colorscheme',
+		array(
+			'default'           => 'default',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'twentynineteen_sanitize_color_option',
+		)
+	);
 
-	$wp_customize->add_control( 'colorscheme', array(
-		'type'    => 'radio',
-		'label'    => __( 'Color Scheme', 'twentynineteen' ),
-		'choices'  => array(
-			'default'  => __( 'Default', 'twentynineteen' ),
-			'custom' => __( 'Custom', 'twentynineteen' ),
-		),
-		'section'  => 'colors',
-		'priority' => 5,
-	) );
+	$wp_customize->add_control( 'colorscheme',
+		array(
+			'type'    => 'radio',
+			'label'    => __( 'Color Scheme', 'twentynineteen' ),
+			'choices'  => array(
+				'default'  => __( 'Default', 'twentynineteen' ),
+				'custom' => __( 'Custom', 'twentynineteen' ),
+			),
+			'section'  => 'colors',
+			'priority' => 5,
+		)
+	);
 
 	// Add primary color setting and control.
 	$wp_customize->add_setting( 'colorscheme_hue',

@@ -199,7 +199,7 @@ add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10,
 /**
  * Convert HSL to HEX colors
  */
-function twentynineteen_hsl_hex($h, $s, $l, $to_hex = true) {
+function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 	$h /= 360;
 	$s /= 100;
@@ -208,8 +208,8 @@ function twentynineteen_hsl_hex($h, $s, $l, $to_hex = true) {
 	$r = $l;
 	$g = $l;
 	$b = $l;
-	$v = ($l <= 0.5) ? ($l * (1.0 + $s)) : ($l + $s - $l * $s);
-	if ($v > 0) {
+	$v = ( $l <= 0.5 ) ? ( $l * ( 1.0 + $s ) ) : ( $l + $s - $l * $s );
+	if ( $v > 0 ) {
 		$m;
 		$sv;
 		$sextant;
@@ -219,15 +219,15 @@ function twentynineteen_hsl_hex($h, $s, $l, $to_hex = true) {
 		$mid2;
 
 		$m = $l + $l - $v;
-		$sv = ($v - $m ) / $v;
+		$sv = ( $v - $m ) / $v;
 		$h *= 6.0;
-		$sextant = floor($h);
+		$sextant = floor( $h );
 		$fract = $h - $sextant;
 		$vsf = $v * $sv * $fract;
 		$mid1 = $m + $vsf;
 		$mid2 = $v - $vsf;
 
-		switch ($sextant) {
+		switch ( $sextant ) {
 			case 0:
 				$r = $v;
 				$g = $mid1;
@@ -260,15 +260,15 @@ function twentynineteen_hsl_hex($h, $s, $l, $to_hex = true) {
 				break;
 		}
 	}
-	$r = round($r * 255, 0);
-	$g = round($g * 255, 0);
-	$b = round($b * 255, 0);
+	$r = round( $r * 255, 0 );
+	$g = round( $g * 255, 0 );
+	$b = round( $b * 255, 0 );
 
-	if ($to_hex) {
+	if ( $to_hex ) {
 
-		$r = ($r < 15)? '0' . dechex($r) : dechex($r);
-		$g = ($g < 15)? '0' . dechex($g) : dechex($g);
-		$b = ($b < 15)? '0' . dechex($b) : dechex($b);
+		$r = ( $r < 15 ) ? '0' . dechex( $r ) : dechex( $r );
+		$g = ( $g < 15 ) ? '0' . dechex( $g ) : dechex( $g );
+		$b = ( $b < 15 ) ? '0' . dechex( $b ) : dechex( $b );
 
 		return "#$r$g$b";
 

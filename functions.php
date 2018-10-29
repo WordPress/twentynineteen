@@ -97,14 +97,15 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 
 		// Add custom color to the editor color palette
 		add_theme_support(
-		'editor-color-palette', array(
+		'editor-color-palette',
 			array(
-				'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
-				'slug'  => 'primary',
-				'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'colorscheme_hue', '199' )), 100, 33 ),
+				array(
+					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
+					'slug'  => 'primary',
+					'color' => twentynineteen_hsl_hex( absint(get_theme_mod( 'colorscheme_hue', '199' )), 100, 33 ),
+				)
 			)
-		)
-	);
+		);
 
 	}
 endif;
@@ -170,7 +171,8 @@ function twentynineteen_colors_css_wrap() {
 
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
-?>
+	?>
+
 	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
