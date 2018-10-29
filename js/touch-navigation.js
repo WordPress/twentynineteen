@@ -27,14 +27,14 @@
 		}
 	}
 
-  	// Toggle `focus` class to allow submenu access on tablets.
+	// Toggle `focus` class to allow submenu access on tablets.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
 
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');
-		var openSubMenu    = document.querySelectorAll('.mobile-submenu-expand');
-		var closeSubMenu   = document.querySelectorAll('.menu-item-link-return');
-		var disableSubMenu = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var subMenuExpand  = document.querySelectorAll('.mobile-submenu-expand');
+		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
+		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 		var i;
 		var o;
 		var u;
@@ -44,60 +44,67 @@
 			return;
 		}
 
-		// Open submenus on touch
-		for ( i = 0; i < openSubMenu.length; i++) {
+		function openSubMenu( currentSubmenu ) {
 
-			openSubMenu[i].addEventListener('touchstart', function() {
+			currentSubmenu.addEventListener('touchend', function() {
 
-				this.addEventListener('touchend', function() {
-					var menuItem     = this.closest('.menu-item'); // this.parentNode
-					var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
+				var menuItem     = currentSubmenu.closest('.menu-item'); // this.parentNode
+				var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
 
-					menuItem.classList.add('focus');
-					menuItem.lastElementChild.classList.add('expanded-true');
+				menuItem.classList.add('focus');
+				menuItem.lastElementChild.classList.add('expanded-true');
 
-					toggleAriaExpandedState( menuItemAria );
+				toggleAriaExpandedState( menuItemAria );
 
-					// Disable focus when using touchdevices
-					siteNavigation.blur();
-				});
+				// Disable focus when using touchdevices
+				siteNavigation.blur();
 			});
+		}
+
+		function closeSubMenu( currentSubmenu ) {
+
+			currentSubmenu.addEventListener('touchend', function() {
+
+				var menuItem       = currentSubmenu.closest('.menu-item'); // this.parentNode
+				var nearestSubMenu = currentSubmenu.closest('.sub-menu');
+
+				// If this is in a sub-sub-menu, go back to parent sub-menu
+				if ( currentSubmenu.closest('ul').classList.contains('sub-menu') ) {
+
+					nearestSubMenu.classList.remove('expanded-true');
+					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
+
+				// Or else close all sub-menus
+				} else {
+
+					menuItem.classList.remove('focus');
+					menuItem.lastElementChild.classList.remove('expanded-true');
+					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
+				}
+
+				// Disable :focus when using touchdevices
+				siteNavigation.blur();
+			});
+		}
+
+		function blurNavigation( el) {
+			siteNavigation.blur();
+		}
+
+		// Open submenus on touch
+		for ( i = 0; i < subMenuExpand.length; i++) {
+			subMenuExpand[i].addEventListener('touchstart', openSubMenu( subMenuExpand[i] ) );
 		}
 
 		// Close sub-menus or sub-sub-menus on touch
-		for ( o = 0; o < closeSubMenu.length; o++) {
-
-			closeSubMenu[o].addEventListener('touchstart', function() {
-
-				this.addEventListener('touchend', function() {
-
-					var menuItem       = this.closest('.menu-item'); // this.parentNode
-					var nearestSubMenu = this.closest('.sub-menu');
-
-					// If this is in a sub-sub-menu, go back to parent sub-menu
-					if ( this.closest('ul').classList.contains('sub-menu') ) {
-
-						nearestSubMenu.classList.remove('expanded-true');
-						toggleAriaExpandedState( this.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
-
-					// Or else close all sub-menus
-					} else {
-
-						menuItem.classList.remove('focus');
-						menuItem.lastElementChild.classList.remove('expanded-true');
-						toggleAriaExpandedState( this.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
-					}
-
-					// Disable :focus when using touchdevices
-					siteNavigation.blur();
-				});
-			});
+		for ( o = 0; o < subMenuReturn.length; o++) {
+			subMenuReturn[o].addEventListener('touchstart', closeSubMenu( subMenuReturn[o] ) );
 		}
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		for ( u = 0; u < disableSubMenu.length; u++) {
+		for ( u = 0; u < parentMenuLink.length; u++) {
 
-			disableSubMenu[u].addEventListener('touchstart', function(event) {
+			parentMenuLink[u].addEventListener('touchstart', function( event, el ) {
 
 				// Stop link behavior
 				event.preventDefault();
@@ -106,8 +113,9 @@
 				window.location = this.getAttribute('href');
 
 				// Disable :focus when using touchdevices
-				menuItemAria.blur();
-				siteNavigation.blur();
+				this.blur();
+
+				blurNavigation();
 
 			});
 		}
