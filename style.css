@@ -3147,6 +3147,12 @@ body.page .main-navigation {
   top: 50%;
 }
 
+.entry-content .wp-block-cover-image.aligncenter,
+.entry-content .wp-block-cover.aligncenter {
+  margin: 32px calc(2 * (100vw / 12));
+  max-width: calc(6 * (100vw / 12));
+}
+
 .entry-content .wp-block-cover-image.has-left-content,
 .entry-content .wp-block-cover.has-left-content {
   justify-content: center;

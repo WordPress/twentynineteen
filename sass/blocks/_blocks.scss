@@ -459,6 +459,11 @@
 			}
 		}
 
+		&.aligncenter {
+			margin: 32px calc(2 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
+		}
+
 		&.has-left-content {
 			justify-content: center;
 
