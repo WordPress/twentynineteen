@@ -152,7 +152,7 @@ function twentynineteen_content_width() {
 		'default' => 723,
 		'wide'    => 800,
 		'full'    => 1024,
-		);
+	);
 }
 add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
 
