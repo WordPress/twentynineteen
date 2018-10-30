@@ -198,13 +198,11 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
  * Display custom color CSS in customizer and on frontend.
  */
 
-
 function twentynineteen_colors_css_wrap() {
-/*
-	if ( 'default' === get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+
+	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
 		return;
 	}
-*/
 
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
 
