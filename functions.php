@@ -200,6 +200,7 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
 
 function twentynineteen_colors_css_wrap() {
 
+	// Only include custom colors in customizer or frontend
 	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
 		return;
 	}
