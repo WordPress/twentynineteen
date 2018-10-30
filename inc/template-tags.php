@@ -73,14 +73,15 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 	 */
 	function twentynineteen_entry_footer() {
 
-		// Posted by
-		twentynineteen_posted_by();
-
-		// Posted on
-		twentynineteen_posted_on();
-
-		// Hide category and tag text for pages.
+		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
+			// Posted by
+			twentynineteen_posted_by();
+
+			// Posted on
+			twentynineteen_posted_on();
+
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
