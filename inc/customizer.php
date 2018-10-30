@@ -49,11 +49,11 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'colorscheme',
 		array(
-			'type'    => 'radio',
+			'type'     => 'radio',
 			'label'    => __( 'Color Scheme', 'twentynineteen' ),
 			'choices'  => array(
-				'default'  => __( 'Default', 'twentynineteen' ),
-				'custom' => __( 'Custom', 'twentynineteen' ),
+				'default' => __( 'Default', 'twentynineteen' ),
+				'custom'  => __( 'Custom', 'twentynineteen' ),
 			),
 			'section'  => 'colors',
 			'priority' => 5,
