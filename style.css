@@ -2770,6 +2770,15 @@ body.page .main-navigation {
   margin-right: 1rem;
 }
 
+#colophon .site-info a {
+  color: inherit;
+}
+
+#colophon .site-info a:hover {
+  text-decoration: none;
+  color: #0073aa;
+}
+
 #colophon .widget-column {
   display: flex;
   flex-wrap: wrap;
@@ -2788,15 +2797,6 @@ body.page .main-navigation {
 
 #colophon .site-info {
   color: #767676;
-}
-
-#colophon a {
-  color: inherit;
-}
-
-#colophon a:hover {
-  text-decoration: none;
-  color: #0073aa;
 }
 
 /* Widgets */

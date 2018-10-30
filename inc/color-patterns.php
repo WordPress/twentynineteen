@@ -68,6 +68,7 @@ function twentynineteen_custom_colors_css() {
 		 * - comment navigation
 		 * - Comment edit link hover
 		 * - Site Footer Link hover
+		 * - Widget links
 		 */
 		a,
 		a:visited,
@@ -81,8 +82,8 @@ function twentynineteen_custom_colors_css() {
 		.comment-navigation .nav-previous a:hover,
 		.comment-navigation .nav-next a:hover,
 		.comment .comment-metadata .comment-edit-link:hover,
-		.site-footer a:hover,
-		#colophon a:hover,
+		#colophon .site-info a:hover,
+		.widget a,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
@@ -136,7 +137,8 @@ function twentynineteen_custom_colors_css() {
 		.author-bio .author-description .author-link:hover,
 		.comment .comment-author .fn a:hover,
 		.comment-reply-link:hover,
-		#cancel-comment-reply-link:hover {
+		#cancel-comment-reply-link:hover,
+		.widget a:hover {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', 23% ); /* base: #005177; */
 		}
 
