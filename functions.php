@@ -197,7 +197,6 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
 /**
  * Display custom color CSS in customizer and on frontend.
  */
-
 function twentynineteen_colors_css_wrap() {
 
 	// Only include custom colors in customizer or frontend
