@@ -83,6 +83,9 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 		// Add support for Block Styles
 		add_theme_support( 'wp-block-styles' );
 
