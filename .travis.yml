@@ -64,6 +64,20 @@ before_install:
   # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
   # https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+  # Make sure NVM is updated so it supports the --lts option.
+  - |
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  # Install latest LTS version of Node.
+  - nvm install --lts
+  # Update NPM.
+  - npm install -g npm
+  # Output final versions.
+  - nvm --version
+  - node -v
+  - npm -v
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -80,7 +94,9 @@ before_script:
   - if [[ "$LINT" == "1" ]]; then composer install --no-suggest; fi
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash;
-  # Install JSHint, a JavaScript Code Quality Tool
+  # Install Node dependencies.
+  - if [[ "$LINT" == "1" ]]; then npm install; fi
+  # Install JSHint, a JavaScript Code Quality Tool.
   # @link http://jshint.com/docs/
   - if [[ "$LINT" == "1" ]]; then npm install -g jshint; fi
   - if [[ "$LINT" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
@@ -94,7 +110,9 @@ script:
   # The usage of bash + || exit 1 is to ensure xargs does not exit on first error.
   - find . \( -name '*.php' \) -not -path "./vendor/*" | xargs -n1 bash -c 'php -lf $0 || exit 1'
   # Run the theme through JSHint
-  - if [[ "$LINT" == "1" ]]; then jshint --exclude ./vendor .; fi
+  - if [[ "$LINT" == "1" ]]; then jshint --exclude=./vendor,./node_modules .; fi
+  # Run all other Node-based lints.
+  - if [[ "$LINT" == "1" ]]; then npm run lint; fi
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # -p flag: Show progress of the run.
