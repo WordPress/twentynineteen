@@ -35,6 +35,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<?php
 							$comment_author_link = get_comment_author_link( $comment );
 							$comment_author_url  = get_comment_author_url( $comment );
+							$comment_author      = get_comment_author( $comment );
 							$avatar              = get_avatar( $comment, $args['avatar_size'] );
 							if ( 0 != $args['avatar_size'] ) {
 								if ( empty( $comment_author_url ) ) {
@@ -56,7 +57,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 							/* translators: %s: comment author link */
 							printf(
 								__( '%s <span class="screen-reader-text says">says:</span>' ),
-								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								sprintf( '<span class="fn">%s</span>', $comment_author )
 							);
 						?>
 					</div><!-- .comment-author -->
