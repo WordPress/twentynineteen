@@ -294,14 +294,25 @@
 
 	.hidden-links {
 		position: absolute;
-		right: 0;
-		width: max-content;
+		top: -1rem;
+		left: -1rem;
+		width: 100vw;
+		min-height: 100vh;
 		background: $color__link;
 		color: $color__background-body;
 		list-style: none;
 		padding: 0;
 		margin-top: 0;
 		z-index: 99999;
+
+		@include media(tablet) {
+			position: absolute;
+			top: auto;
+			left: auto;
+			right: 0;
+			width: max-content;
+			min-height: auto;
+		}
 
 		a {
 			color: $color__background-body;

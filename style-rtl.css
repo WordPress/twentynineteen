@@ -1185,16 +1185,29 @@ body.page .main-navigation {
 
 .main-navigation .hidden-links {
   position: absolute;
-  left: 0;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  top: -1em;
+  right: -1em;
+  width: 100vw;
+  min-height: 100vh;
   background: #0073aa;
   color: #fff;
   list-style: none;
   padding: 0;
   margin-top: 0;
   z-index: 99999;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .hidden-links {
+    position: absolute;
+    top: auto;
+    right: auto;
+    left: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-height: auto;
+  }
 }
 
 .main-navigation .hidden-links a {
@@ -1221,9 +1234,9 @@ body.page .main-navigation {
   display: block;
   width: 100%;
   max-width: 100%;
-  opacity: 1;
   position: relative;
   right: 0;
+  opacity: 1;
   float: none;
 }
 
