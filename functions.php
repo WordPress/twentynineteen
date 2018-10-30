@@ -105,7 +105,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 					'slug'  => 'primary',
-					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'colorscheme' ) ? 199 : get_theme_mod( 'colorscheme_hue', 199 ), 100, 33 ),
+					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'colorscheme' ) ? 199 : get_theme_mod( 'colorscheme_primary_hue', 199 ), 100, 33 ),
 				),
 			)
 		);
@@ -210,7 +210,7 @@ function twentynineteen_colors_css_wrap() {
 	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
 		$primary_color = 199;
 	} else {
-		$primary_color = absint( get_theme_mod( 'colorscheme_hue', 199 ) );
+		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
 	}
 	?>
 

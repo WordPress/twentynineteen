@@ -62,7 +62,7 @@ function twentynineteen_customize_register( $wp_customize ) {
 
 	// Add primary color setting and control.
 	$wp_customize->add_setting(
-		'colorscheme_hue',
+		'colorscheme_primary_hue',
 		array(
 			'default'           => 199,
 			'transport'         => 'postMessage',
@@ -73,7 +73,7 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'colorscheme_hue',
+			'colorscheme_primary_hue',
 			array(
 				'label'       => __( 'Primary Color' ),
 				'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.' ),
