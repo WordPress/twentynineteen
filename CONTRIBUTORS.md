@@ -51,3 +51,5 @@ Version 1.0:
 | @kraftbj | @kraftbj |
 | @dereksmart | @dsmart |
 | @mayukojpn | @mayukojpn |
+| @enodekciw | @enodekciw |
+| @chetansatasiya | @ketuchetan |
