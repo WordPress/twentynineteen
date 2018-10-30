@@ -82,7 +82,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				'flex-height' => false,
 			)
 		);
-		
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
