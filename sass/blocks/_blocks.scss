@@ -5,7 +5,6 @@
 
 	margin: 32px $size__spacing-unit;
 	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
-	word-break: break-all;
 
 	@include media(tablet) {
 		margin: 32px calc(2 * (100vw / 12));

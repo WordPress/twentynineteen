@@ -2149,6 +2149,10 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content p {
+  word-wrap: break-word;
+}
+
 .entry .entry-content .more-link {
   transition: color 110ms ease-in-out;
   display: inline;
@@ -2873,7 +2877,6 @@ body.page .main-navigation {
 .entry-summary > * {
   margin: 32px 1rem;
   max-width: calc(100vw - (2 * 1rem));
-  word-break: break-all;
   /*
 	// Set top margins for headings
 	& + h1:before,
