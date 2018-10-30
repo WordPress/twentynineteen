@@ -900,6 +900,7 @@ a:focus {
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
   /* Only show one submenu expand button at a time (desktop vs mobile) */
+  /* Priority+ Menu */
 }
 
 body.page .main-navigation {
@@ -1163,6 +1164,79 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .mobile-submenu-expand {
+    display: none;
+  }
+}
+
+.main-navigation button.main-menu-more {
+  position: relative;
+  top: -0.125rem;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.main-navigation button.main-menu-more svg {
+  height: 24px;
+  width: 24px;
+  fill: #0073aa;
+}
+
+.main-navigation .hidden-links {
+  position: absolute;
+  left: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: #0073aa;
+  color: #fff;
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  z-index: 99999;
+}
+
+.main-navigation .hidden-links a {
+  color: #fff;
+  display: block;
+  line-height: 1.2;
+  padding: calc( .5 * 1rem) 1rem;
+}
+
+.main-navigation .hidden-links a:hover, .main-navigation .hidden-links a:focus {
+  background: #005177;
+}
+
+.main-navigation .hidden-links a:hover:after, .main-navigation .hidden-links a:focus:after {
+  background: #005177;
+}
+
+.main-navigation .hidden-links .desktop-submenu-expand,
+.main-navigation .hidden-links .mobile-submenu-expand {
+  display: none;
+}
+
+.main-navigation .hidden-links .sub-menu {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  opacity: 1;
+  position: relative;
+  right: 0;
+  float: none;
+}
+
+.main-navigation .hidden-links .sub-menu > li a {
+  padding-right: calc( 1.5 * 1rem);
+}
+
+.main-navigation .hidden-links .sub-menu > li ul > li a {
+  padding-right: calc( 2 * 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .hidden-links .sub-menu > li.menu-item-has-children .menu-item-has-children > a:after {
     display: none;
   }
 }

@@ -276,6 +276,79 @@
 		}
 	}
 
+	/* Priority+ Menu */
+	button.main-menu-more {
+		position: relative;
+		top: #{-0.125 * $size__spacing-unit};
+		height: 24px;
+		width: 24px;
+		padding: 0;
+		margin-left: #{0.5 * $size__spacing-unit};
+
+		svg {
+			height: 24px;
+			width: 24px;
+			fill: $color__link;
+		}
+	}
+
+	.hidden-links {
+		position: absolute;
+		right: 0;
+		width: max-content;
+		background: $color__link;
+		color: $color__background-body;
+		list-style: none;
+		padding: 0;
+		margin-top: 0;
+		z-index: 99999;
+
+		a {
+			color: $color__background-body;
+			display: block;
+			line-height: $font__line-height-heading;
+			padding: calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
+
+			&:hover,
+			&:focus {
+				background: $color__link-hover;
+
+				&:after {
+					background: $color__link-hover;
+				}
+			}
+		}
+
+		.desktop-submenu-expand,
+		.mobile-submenu-expand {
+			display: none;
+		}
+
+		.sub-menu {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			position: relative;
+			left: 0;
+			opacity: 1;
+			float: none;
+
+			> li a {
+				padding-left: calc( 1.5 * #{$size__spacing-unit} );
+			}
+
+			> li ul > li a {
+				padding-left: calc( 2 * #{$size__spacing-unit} );
+			}
+			
+			@include media(tablet) {
+				> li.menu-item-has-children .menu-item-has-children > a:after {
+					display: none;
+				}
+			}
+		}
+	}
+
 }
 
 /* Menu Animation */

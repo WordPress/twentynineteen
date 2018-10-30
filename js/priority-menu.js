@@ -51,7 +51,7 @@
 	var navContainer = document.querySelector('.main-navigation ');
 	// Adds the necessary UI to operate the menu.
 	navContainer.innerHTML +=
-		'<button class="main-menu-more is-hidden">More</button>' +
+		'<button class="main-menu-more is-hidden" aria-label="More"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 14c-1.209 0-2-.841-2-2.006C4 10.83 4.791 10 6 10c1.22 0 2 .83 2 1.994C8 13.16 7.22 14 6 14zm6 0c-1.209 0-2-.841-2-2.006C10 10.83 10.791 10 12 10c1.22 0 2 .83 2 1.994C14 13.16 13.22 14 12 14zm6 0c-1.209 0-2-.841-2-2.006C16 10.83 16.791 10 18 10c1.22 0 2 .83 2 1.994C20 13.16 19.22 14 18 14z" fill="#FFF" fill-rule="evenodd"/></svg></button>' +
 		'<ul class="hidden-links is-hidden"></ul>';
 	var toggleButton = document.querySelector('.main-navigation .main-menu-more');
 	var visibleList = document.querySelector('.main-navigation .main-menu');
