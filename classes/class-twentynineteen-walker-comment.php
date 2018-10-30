@@ -41,7 +41,8 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								if ( empty( $comment_author_url ) ) {
 									echo $avatar;
 								} else {
-									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
+									printf('<a href="%s" rel="external nofollow" class="url">', $comment_author_url);
+									echo $avatar;
 								}
 							}
 
@@ -59,6 +60,10 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								__( '%s <span class="screen-reader-text says">says:</span>' ),
 								sprintf( '<span class="fn">%s</span>', $comment_author )
 							);
+
+							if ( !empty( $comment_author_url ) ) {
+								echo '</a>';
+							}
 						?>
 					</div><!-- .comment-author -->
 
