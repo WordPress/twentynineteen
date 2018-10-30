@@ -304,6 +304,17 @@
 		padding: 0;
 		margin-top: 0;
 		z-index: 99999;
+		opacity: 1;
+
+		&.is-hidden {
+			opacity: 0;
+			left: -999em;
+		}
+
+		&:not(.is-hidden) {
+			transform: translateX(+100%);
+			animation: slide_in_right 0.3s forwards;
+		}
 
 		@include media(tablet) {
 			position: absolute;
@@ -312,6 +323,11 @@
 			right: 0;
 			width: max-content;
 			min-height: auto;
+
+			&:not(.is-hidden) {
+				transform: none;
+				animation: fade_in 0.1s forwards;
+			}
 		}
 
 		a {
