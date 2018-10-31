@@ -958,8 +958,8 @@ body.page .main-navigation {
   top: 0.2rem;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
-.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand {
   margin-right: 0.5rem;
 }
 
@@ -1014,8 +1014,8 @@ body.page .main-navigation {
   top: 0;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
   margin-right: 0;
 }
 
@@ -1082,9 +1082,6 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
-  display: table;
-  margin-top: 0;
-  opacity: 1;
   /* Non-mobile position */
 }
 
@@ -1093,6 +1090,9 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+    display: table;
+    margin-top: 0;
+    opacity: 1;
     position: absolute;
     left: 0;
     right: auto;
