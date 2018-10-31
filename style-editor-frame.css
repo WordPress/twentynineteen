@@ -7,6 +7,7 @@ NOTE: This file customizes items that are out of the normal scope of style-edito
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
 /** === Title === */
 body.block-editor-page .block-editor .editor-post-title__block:before {
   background: #767676;
