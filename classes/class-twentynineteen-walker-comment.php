@@ -53,8 +53,8 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
-							/* translators: %s: comment author link */
 							printf(
+								/* translators: %s: comment author link */
 								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
 								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
 							);
@@ -63,9 +63,12 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-							<?php /* translators: 1: comment date, 2: comment time */ ?>
-							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
+							<?php
+								/* translators: 1: comment date, 2: comment time */
+								$comment_timestamp = __( '%1$s at %2$s', 'twentynineteen' );
+							?>
+							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( $comment_timestamp, get_comment_date( '', $comment ), get_comment_time() ); ?>">
+								<?php printf( $comment_timestamp, get_comment_date( '', $comment ), get_comment_time() ); ?>
 							</time>
 						</a>
 						<?php
