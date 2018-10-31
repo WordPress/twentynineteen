@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /**
@@ -26,7 +27,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 
-?>
+		?>
 		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 				<footer class="comment-meta">
@@ -36,10 +37,10 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 							$comment_author_url  = get_comment_author_url( $comment );
 							$avatar              = get_avatar( $comment, $args['avatar_size'] );
 							if ( 0 != $args['avatar_size'] ) {
-							if ( empty( $comment_author_url ) ) {
-								echo $avatar;
+								if ( empty( $comment_author_url ) ) {
+									echo $avatar;
 								} else {
-								echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
+									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
 								}
 							}
 
@@ -71,12 +72,12 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						</a>
 						<?php
 							$edit_comment_icon = twentynineteen_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							edit_comment_link( __( 'Edit', 'twentynineteen' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentynineteen' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 
@@ -100,7 +101,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 				)
 			);
 			?>
-<?php
+		<?php
 	}
 
 }
