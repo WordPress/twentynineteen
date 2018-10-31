@@ -1,18 +1,25 @@
 
 @mixin media( $res ) {
-	@if tablet == $res {
-		@media only screen and (min-width: $tablet_width) {
-			@content;
-		}
-	}
-	@if desktop == $res {
-		@media only screen and (min-width: $desktop_width) {
+	@if small == $res {
+		@media only screen and (min-width: $sm_width) {
 			@content;
 		}
 	}
 
-	@if wide == $res {
-		@media only screen and (min-width: $wide_width) {
+	@if medium == $res {
+		@media only screen and (min-width: $md_width) {
+			@content;
+		}
+	}
+
+	@if large == $res {
+		@media only screen and (min-width: $lg_width) {
+			@content;
+		}
+	}
+
+	@if xlarge == $res {
+		@media only screen and (min-width: $xl_width) {
 			@content;
 		}
 	}

@@ -5,12 +5,12 @@
 
 	margin: calc(3 * 1rem) 0;
 	
-	@include media(tablet) {
+	@include media(medium) {
 		margin: calc(3 * 1rem) calc(2 * (100vw / 12));
 		max-width: calc(6 * (100vw / 12));
 	}
 	
-	@include media(desktop) {
+	@include media(large) {
 		margin: calc(3 * 1rem) 0;
 		max-width: 100%;
 	}
@@ -21,12 +21,16 @@
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
+
+		@include media(small) {
+			margin: 0 calc(3 * #{$size__spacing-unit});
+		}
 		
-		@include media(tablet) {
+		@include media(medium) {
 			margin: 0;
 		}
 
-		@include media(desktop) {
+		@include media(large) {
 			flex-direction: row;
 			margin: 0 calc(2 * (100vw / 12));
 			max-width: calc(8 * (100vw / 12));
@@ -59,7 +63,7 @@
 		.nav-previous,
 		.nav-next {
 
-			@include media(desktop) {
+			@include media(large) {
 				min-width: calc(50% - 2 * #{$size__spacing-unit});
 			}
 		}
@@ -67,7 +71,7 @@
 		.nav-previous {
 			order: 2;
 
-			@include media(desktop) {
+			@include media(large) {
 				order: 1;
 			}
 
@@ -85,7 +89,7 @@
 		.nav-next {
 			order: 1;
 
-			@include media(desktop) {
+			@include media(large) {
 				order: 2;
 				padding-left: $size__spacing-unit;
 			}
@@ -128,7 +132,12 @@
 			display: none;
 		}
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: 0 calc(3 * #{$size__spacing-unit});
+			padding: 0;
+		}
+
+		@include media(medium) {
 
 			margin-left: calc(2 * (100vw / 12) );
 			padding: 0;
@@ -157,7 +166,7 @@
 		flex-direction: row;
 		margin: 0 $size__spacing-unit;
 
-		@include media(desktop) {
+		@include media(large) {
 			margin: 0 calc(2 * (100vw / 12));
 			max-width: calc(8 * (100vw / 12));
 		}
@@ -173,7 +182,7 @@
 		.secondary-text {
 			display: none;
 
-			@include media(tablet) {
+			@include media(medium) {
 				display: inline;
 			}
 		}

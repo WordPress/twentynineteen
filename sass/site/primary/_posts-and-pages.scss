@@ -37,7 +37,11 @@
 		margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 		position: relative;
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: calc(3 * #{$size__spacing-unit}) calc(3 * #{$size__spacing-unit}) $size__spacing-unit;
+		}
+
+		@include media(medium) {
 			margin: calc(3 * #{ $size__spacing-unit}) calc(2 * (100vw / 12 ) ) $size__spacing-unit;
 		}
 	}
@@ -99,12 +103,16 @@
 
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: calc(2 * #{$size__spacing-unit}) calc(3 * #{$size__spacing-unit}) $size__spacing-unit;
+		}
+
+		@include media(medium) {
 			margin: $size__spacing-unit calc(2 * (100vw / 12)) calc(3 * #{$size__spacing-unit});
 			max-width: calc(8 * (100vw / 12));
 		}
 
-		@include media(tablet) {
+		@include media(medium) {
 			max-width: calc(6 * (100vw / 12));
 		}
 	}
@@ -113,7 +121,11 @@
 
 		margin: $size__spacing-unit;
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: $size__spacing-unit calc(3 * #{$size__spacing-unit});
+		}
+
+		@include media(medium) {
 			margin: $size__spacing-unit calc(2 * (100vw / 12));
 		}
 
@@ -211,12 +223,17 @@
 			margin: 32px $size__spacing-unit !important;
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
 
-			@include media(tablet) {
+			@include media(small) {
+				margin: 32px calc(3 * #{ $size__spacing-unit }) !important;
+				max-width: calc(100vw - (6 * #{ $size__spacing-unit })) !important;
+			}
+
+			@include media(medium) {
 				margin: 32px calc(2 * (100vw / 12)) !important;
 				max-width: calc(8 * (100vw / 12)) !important;
 			}
 
-			@include media(desktop) {
+			@include media(large) {
 				max-width: calc(6 * (100vw / 12)) !important;
 			}
 		}
@@ -225,11 +242,15 @@
 		.wp-audio-shortcode {
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
-			@include media(tablet) {
+			@include media(small) {
+				max-width: calc(100vw - (6 * #{ $size__spacing-unit }));
+			}
+
+			@include media(medium) {
 				max-width: calc(8 * (100vw / 12));
 			}
 
-			@include media(desktop) {
+			@include media(large) {
 				max-width: calc(6 * (100vw / 12));
 			}
 		}
@@ -242,12 +263,16 @@
 
 	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
-	@include media(tablet) {
+	@include media(small) {
+		margin: calc(2 * #{$size__spacing-unit}) calc(3 * #{$size__spacing-unit}) $size__spacing-unit;
+	}
+
+	@include media(medium) {
 		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
 		max-width: calc(8 * (100vw / 12));
 	}
 
-	@include media(tablet) {
+	@include media(medium) {
 		max-width: calc(6 * (100vw / 12));
 	}
 

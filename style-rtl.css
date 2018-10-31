@@ -1263,6 +1263,12 @@ body.page .main-navigation {
   flex-direction: column;
 }
 
+@media only screen and (min-width: 600px) {
+  .post-navigation .nav-links {
+    margin: 0 calc(3 * 1rem);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .post-navigation .nav-links {
     margin: 0;
@@ -1364,6 +1370,13 @@ body.page .main-navigation {
 .pagination .nav-links .nav-next-text,
 .pagination .nav-links .nav-prev-text {
   display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .pagination .nav-links {
+    margin: 0 calc(3 * 1rem);
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1537,6 +1550,12 @@ body.page .main-navigation {
 --------------------------------------------------------------*/
 .site-header {
   padding: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .site-header {
+    padding: 1em calc(3 * 1rem);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1980,6 +1999,12 @@ body.page .main-navigation {
   position: relative;
 }
 
+@media only screen and (min-width: 600px) {
+  .entry .entry-header {
+    margin: calc(3 * 1rem) calc(3 * 1rem) 1rem;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12 )) 1rem;
@@ -2052,6 +2077,12 @@ body.page .main-navigation {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+  .entry .entry-footer {
+    margin: calc(2 * 1rem) calc(3 * 1rem) 1rem;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-footer {
     margin: 1rem calc(2 * (100vw / 12)) calc(3 * 1rem);
@@ -2067,6 +2098,12 @@ body.page .main-navigation {
 
 .entry .post-thumbnail {
   margin: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .entry .post-thumbnail {
+    margin: 1rem calc(3 * 1rem);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -2182,6 +2219,13 @@ body.page .main-navigation {
   max-width: calc(100vw - (2 * 1rem)) !important;
 }
 
+@media only screen and (min-width: 600px) {
+  .entry .entry-content > iframe[style] {
+    margin: 32px calc(3 * 1rem) !important;
+    max-width: calc(100vw - (6 * 1rem)) !important;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content > iframe[style] {
     margin: 32px calc(2 * (100vw / 12)) !important;
@@ -2199,6 +2243,12 @@ body.page .main-navigation {
   max-width: calc(100vw - (2 * 1rem));
 }
 
+@media only screen and (min-width: 600px) {
+  .entry .entry-content .wp-audio-shortcode {
+    max-width: calc(100vw - (6 * 1rem));
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content .wp-audio-shortcode {
     max-width: calc(8 * (100vw / 12));
@@ -2214,6 +2264,12 @@ body.page .main-navigation {
 /* Author description */
 .author-bio {
   margin: calc(2 * 1rem) 1rem 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .author-bio {
+    margin: calc(2 * 1rem) calc(3 * 1rem) 1rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -2287,6 +2343,16 @@ body.page .main-navigation {
   margin: calc(2 * 1rem) 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+  .comments-area .comment-list,
+  .comments-area .comment-navigation,
+  .comments-area > .comment-respond,
+  .comments-area .comment-form-flex,
+  .comments-area .no-comments {
+    margin: calc(2 * 1rem) calc(3 * 1rem);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .comments-area .comment-list,
   .comments-area .comment-navigation,
@@ -2300,6 +2366,12 @@ body.page .main-navigation {
 
 .comments-area .comments-title-wrap {
   margin: calc(2 * 1rem) 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .comments-area .comments-title-wrap {
+    margin: 1rem calc(3 * 1rem);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -2761,6 +2833,13 @@ body.page .main-navigation {
   margin: calc(2 * 1rem) 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+  #colophon .widget-area,
+  #colophon .site-info {
+    margin: calc(2 * 1rem) calc(3 * 1rem);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #colophon .widget-area,
   #colophon .site-info {
@@ -2890,6 +2969,14 @@ body.page .main-navigation {
 */
 }
 
+@media only screen and (min-width: 600px) {
+  .entry-content > *,
+  .entry-summary > * {
+    margin: 32px calc(3 * 1rem);
+    max-width: calc(100vw - (6 * 1rem));
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry-content > *,
   .entry-summary > * {
@@ -2970,6 +3057,14 @@ body.page .main-navigation {
   margin-left: 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+  .entry-content > *.alignright,
+  .entry-summary > *.alignright {
+    max-width: calc(5 * (100vw / 12));
+    margin-left: calc(3 * 1rem);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entry-content > *.alignright,
   .entry-summary > *.alignright {
@@ -3008,6 +3103,13 @@ body.page .main-navigation {
 .entry-content .wp-block-audio.alignleft audio,
 .entry-content .wp-block-audio.alignright audio {
   max-width: 190px;
+}
+
+@media only screen and (min-width: 600px) {
+  .entry-content .wp-block-audio.alignleft audio,
+  .entry-content .wp-block-audio.alignright audio {
+    max-width: 300px;
+  }
 }
 
 @media only screen and (min-width: 768px) {

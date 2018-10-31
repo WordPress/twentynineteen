@@ -24,7 +24,7 @@
 			color: $color__link;
 			display: inline;
 
-			@include media(tablet) {
+			@include media(medium) {
 				position: relative;
 			}
 
@@ -93,7 +93,7 @@
 		left: -999px;
 		z-index: 99999;
 
-		@include media(tablet) {
+		@include media(medium) {
 			width: max-content;
 			max-width: calc(3 * (100vw / 12));
 		}
@@ -129,7 +129,7 @@
 					margin-right: 0;
 				}
 
-				@include media(tablet) {
+				@include media(medium) {
 					.menu-item-has-children > a {
 
 						&:after {
@@ -186,7 +186,7 @@
 			position: relative;
 			padding-left: $size__spacing-unit;
 
-			@include media(tablet) {
+			@include media(medium) {
 				padding-left: 0;
 				position: absolute;
 				left: 100%;
@@ -201,7 +201,7 @@
 	.main-menu .menu-item-has-children .sub-menu:hover,
 	.main-menu .menu-item-has-children .sub-menu:focus {
 		/* Non-mobile position */
-		@include media(tablet) {
+		@include media(medium) {
 			display: table;
 			margin-top: 0;
 			opacity: 1;
@@ -218,7 +218,7 @@
 
 		.sub-menu {
 
-			@include media(tablet) {
+			@include media(medium) {
 				margin-top: inherit;
 				padding-left: 0;
 				position: absolute;
@@ -256,7 +256,7 @@
 	.desktop-submenu-expand {
 		display: none;
 
-		@include media(tablet) {
+		@include media(medium) {
 			display: inline-block;
 		}
 	}
@@ -264,7 +264,7 @@
 	.mobile-submenu-expand {
 		display: inline-block;
 
-		@include media(tablet) {
+		@include media(medium) {
 			display: none;
 		}
 	}

@@ -20,7 +20,7 @@ body {
 		}
 	}
 
-	@include media(tablet) {
+	@include media(medium) {
 		overflow-x: hidden;
 
 		.editor-writing-flow {
@@ -58,11 +58,11 @@ body {
 	width: calc(100vw - (2 * #{$size__spacing-unit}));
 	max-width: 100%;
 
-	@include media(tablet) {
+	@include media(medium) {
 		width: calc(8 * (100vw / 12));
 	}
 
-	@include media(desktop) {
+	@include media(large) {
 		width: calc(6 * (100vw / 12 ));
 	}
 }
@@ -92,7 +92,7 @@ h1 {
 	font-size: $font__size-xl;
 	@include post-section-dash;
 
-	@include media(tablet) {
+	@include media(medium) {
 		font-size: $font__size-xxl;
 	}
 }
@@ -101,7 +101,7 @@ h2 {
 	font-size: $font__size-lg;
 	@include post-section-dash;
 
-	@include media(tablet) {
+	@include media(medium) {
 		font-size: $font__size-xl;
 	}
 }
@@ -250,7 +250,7 @@ figcaption,
 .wp-block[data-type="core/cover"][data-align="wide"],
 .wp-block[data-type="core/cover"][data-align="full"] {
 
-	@include media(desktop) {
+	@include media(large) {
 		h2,
 		.wp-block-cover-text {
 			padding: 0;
@@ -351,11 +351,11 @@ figcaption,
 			width: calc(100vw - (2 * #{ $size__spacing-unit}));
 			max-width: 80%;
 
-			@include media(tablet) {
+			@include media(medium) {
 				width: calc(8 * (100vw / 12));
 			}
 
-			@include media(desktop) {
+			@include media(large) {
 				width: calc(6 * (100vw / 12));
 			}
 		}
@@ -388,7 +388,7 @@ figcaption,
 		margin-bottom: 0.5em;
 		margin-top: 0.5em;
 
-		@include media(tablet) {
+		@include media(medium) {
 			font-size: $font__size-xl;
 		}
 	}

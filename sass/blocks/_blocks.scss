@@ -5,13 +5,18 @@
 
 	margin: 32px $size__spacing-unit;
 	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+	
+	@include media(small) {
+		margin: 32px calc(3 * #{$size__spacing-unit});
+		max-width: calc(100vw - (6 * #{ $size__spacing-unit }));
+	}
 
-	@include media(tablet) {
+	@include media(medium) {
 		margin: 32px calc(2 * (100vw / 12));
 		max-width: calc(8 * (100vw / 12));
 	}
 
-	@include media(desktop) {
+	@include media(large) {
 		max-width: calc(6 * (100vw / 12));
 	}
 
@@ -40,7 +45,7 @@
 		margin-left: auto;
 		margin-right: auto;
 
-		@include media(tablet) {
+		@include media(medium) {
 			margin-left: calc(2 * (100vw / 12));
 			margin-right: calc(2 * (100vw / 12));
 			max-width: calc(8 * (100vw / 12));
@@ -60,12 +65,12 @@
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
 
-		@include media(tablet) {
+		@include media(medium) {
 			max-width: calc(4 * (100vw / 12));
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
 
-		@include media(desktop) {
+		@include media(large) {
 			max-width: calc(3 * (100vw / 12));
 		}
 	}
@@ -77,7 +82,12 @@
 		margin-left: $size__spacing-unit;
 		margin-right: $size__spacing-unit;
 
-		@include media(tablet) {
+		@include media(small) {
+			max-width: calc(5 * (100vw / 12));
+			margin-right: calc(3 * #{$size__spacing-unit});
+		}
+
+		@include media(medium) {
 			max-width: calc(4 * (100vw / 12));
 			margin-left: calc(2 * #{$size__spacing-unit});
 			margin-right: calc(2 * (100vw / 12));
@@ -88,7 +98,7 @@
 		margin-left: auto;
 		margin-right: auto;
 
-		@include media(desktop) {
+		@include media(large) {
 			margin-left: calc(2 * (100vw / 12));
 			margin-right: calc(2 * (100vw / 12));
 			max-width: calc(10 * (100vw / 12));
@@ -113,14 +123,18 @@
 		&.alignleft audio,
 		&.alignright audio {
 
-			max-width: (0.5 * $mobile_width);
+			max-width: (0.5 * $xs_width);
 
-			@include media(tablet) {
-				max-width: (0.5 * $tablet_width);
+			@include media(small) {
+				max-width: (0.5 * $sm_width);
 			}
 
-			@include media(wide) {
-				max-width: (0.33 * $desktop_width);
+			@include media(medium) {
+				max-width: (0.5 * $md_width);
+			}
+
+			@include media(xlarge) {
+				max-width: (0.33 * $lg_width);
 			}
 		}
 
@@ -285,7 +299,7 @@
 				font-style: normal;
 			}
 
-			@include media(tablet) {
+			@include media(medium) {
 				font-size: $font__size-xl;
 			}
 		}
@@ -320,7 +334,7 @@
 				margin-bottom: 0.5em;
 				margin-top: 0.5em;
 
-				@include media(tablet) {
+				@include media(medium) {
 					font-size: $font__size-xl;
 				}
 			}
@@ -348,7 +362,7 @@
 					margin-top: 0;
 				}
 
-				@include media(tablet) {
+				@include media(medium) {
 					padding: calc( 2 * #{$size__spacing-unit} ) calc( 2 * #{$size__spacing-unit} ) $size__spacing-unit;
 				}
 			}
@@ -392,7 +406,7 @@
 				font-size: $font__size-xs;
 			}
 
-			@include media(tablet) {
+			@include media(medium) {
 
 				margin: $size__spacing-unit calc(2 * (100vw / 12));
 				max-width: calc(6 * (100vw / 12));
@@ -437,13 +451,13 @@
 			width: calc(100vw - (2 * #{ $size__spacing-unit }));
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
-			@include media(tablet) {
+			@include media(medium) {
 				font-size: $font__size-xl;
 				width: calc(8 * (100vw / 12));
 				max-width: calc(8 * (100vw / 12));
 			}
 
-			@include media(desktop) {
+			@include media(large) {
 				width: calc(6 * (100vw / 12 ));
 				max-width: calc(6 * (100vw / 12 ));
 			}
@@ -572,7 +586,7 @@
 			font-weight: bold;
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
 
-			@include media(desktop) {
+			@include media(large) {
 				font-size: $font__size-base;
 				padding: ($size__spacing-unit * .875) ($size__spacing-unit * 1.5);
 			}

@@ -22,7 +22,11 @@
 	.no-comments {
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: calc(2 * #{$size__spacing-unit}) calc(3 * #{$size__spacing-unit});
+		}
+
+		@include media(medium) {
 			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
 			max-width: calc(6 * (100vw / 12));
 		}
@@ -32,7 +36,11 @@
 
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
 
-		@include media(tablet) {
+		@include media(small) {
+			margin: $size__spacing-unit calc(3 * #{$size__spacing-unit});
+		}
+
+		@include media(medium) {
 			align-items: baseline;
 			display: flex;
 			justify-content: space-between;
@@ -44,13 +52,13 @@
 			@include post-section-dash;
 			margin: 0;
 
-			@include media(tablet) {
+			@include media(medium) {
 				flex: 1 0 calc(3 * (100vw / 12));
 			}
 		}
 
 		.discussion-meta {
-			@include media(tablet) {
+			@include media(medium) {
 				flex: 0 0 calc(2 * (100vw / 12));
 				margin-left: #{$size__spacing-unit};
 			}
@@ -142,7 +150,7 @@
 	list-style: none;
 	position: relative;
 
-	@include media(tablet) {
+	@include media(medium) {
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
 		.children {
@@ -167,7 +175,7 @@
 
 	.comment-author {
 
-		@include media(tablet) {
+		@include media(medium) {
 			display: inline-block;
 			vertical-align: baseline;
 		}
@@ -177,7 +185,7 @@
 			margin-right: $size__spacing-unit;
 			position: relative;
 
-			@include media(tablet) {
+			@include media(medium) {
 				float: inherit;
 				margin-right: inherit;
 				position: absolute;
@@ -190,7 +198,7 @@
 			position: relative;
 			display: block;
 
-			@include media(tablet) {
+			@include media(medium) {
 				display: inline-block;
 				vertical-align: baseline;
 			}
@@ -214,7 +222,7 @@
 			top: -3px;
 			width: 18px;
 
-			@include media(tablet) {
+			@include media(medium) {
 				right: calc(100% + #{$size__spacing-unit * .75});
 			}
 
@@ -230,7 +238,7 @@
 
 	.comment-metadata {
 
-		@include media(tablet) {
+		@include media(medium) {
 			display: inline-block;
 			margin-left: $size__spacing-unit;
 			position: relative;
@@ -370,14 +378,14 @@
 
 	.comment-form-author,
 	.comment-form-email {
-		@include media(tablet) {
+		@include media(medium) {
 			width: calc(50% - #{$size__spacing-unit / 2});
 			float: left;
 		}
 	}
 
 	.comment-form-email {
-		@include media(tablet) {
+		@include media(medium) {
 			margin-left: $size__spacing-unit;
 		}
 	}

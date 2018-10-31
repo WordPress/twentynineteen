@@ -49,7 +49,7 @@ img:after,
 h1 {
 	font-size: $font__size-xl;
 
-	@include media(tablet) {
+	@include media(medium) {
 		font-size: $font__size-xxl;
 	}
 }
@@ -61,7 +61,7 @@ h1 {
 h2 {
 	font-size: $font__size-lg;
 
-	@include media(tablet) {
+	@include media(medium) {
 		font-size: $font__size-xl;
 	}
 }
@@ -134,7 +134,7 @@ blockquote {
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 .entry-title {
-	@include media(tablet) {
+	@include media(medium) {
 		hyphens: none;
 	}
 }
