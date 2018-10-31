@@ -174,7 +174,7 @@ function twentynineteen_get_discussion_data() {
 	return $discussion;
 }
 
-/*
+/**s
  * Add an extra menu to our nav for our priority+ navigation to use
  *
  * @param object $nav_menu  Nav menu.
@@ -187,7 +187,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '<div>';
 		$nav_menu .= '<ul class="main-menu">';
 		$nav_menu .= '<li class="menu-item menu-item-has-children">';
-		$nav_menu .= '<span class="screen-reader-text">'. esc_html( 'More', 'musictheme' ) . '</span>';
+		$nav_menu .= '<span class="screen-reader-text">' . esc_html( 'More', 'musictheme' ) . '</span>';
 		$nav_menu .= '<a href="#" class="main-menu-more is-hidden" aria-label="More" aria-haspopup="true" aria-expanded="false">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
 		$nav_menu .= '</a>';
