@@ -53,6 +53,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/* Arabic */
+html[lang="ar"] *,
+html[lang="ary"] *,
+html[lang="azb"] *,
+html[lang="ckb"] *,
+html[lang="fa-IR"] *,
+html[lang="haz"] *,
+html[lang="ps"] * {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
 /* Cyrillic */
 html[lang="be"] *,
 html[lang="bg-BG"] *,
@@ -64,18 +75,57 @@ html[lang="sah"] *,
 html[lang="sr_RS"] *,
 html[lang="tt_RU"] *,
 html[lang="uk"] * {
-  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans_serif !important;
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 }
 
-/* Arabic */
-html[lang="fa-IR"] *,
-html[lang="ur"] * {
-  font-family: Tahoma, Arial, sans-serif;
+/* Chinese */
+html[lang="zh_HK"] *,
+html[lang="zh_TW"] *,
+html[lang="zh_CN"] * {
+  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
+}
+
+/* Devanagari */
+html[lang="bn_BD"] *,
+html[lang="hi_IN"] *,
+html[lang="mr"] *,
+html[lang="ne_NP"] * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Greek */
+html[lang="el"] * {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Gujarati */
+html[lang="gu"] * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Hebrew */
+html[lang="he-IL"] * {
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+}
+
+/* Japanese */
+html[lang="ja"] * {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
 }
 
 /* Korean */
-html[lang="ko_KR"] * {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans_serif;
+html[lang="ko-KR"] * {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+}
+
+/* Thai */
+html[lang="th"] * {
+  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+}
+
+/* Vietnamese */
+html[lang="vi"] * {
+  font-family: 'Libre Franklin', sans-serif !important;
 }
 
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
