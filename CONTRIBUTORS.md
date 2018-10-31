@@ -41,7 +41,7 @@ Version 1.0:
 | @ocean90 | @ocean90 |
 | @joshfeck | |
 | @frankew | |
-| @abdulwahab610 | @abdulwahab610 |
+| @abdulwahab610 | @AbdulWahab610 |
 | @mendezcode | @mendezcode |
 | @eliorivero | @eliorivero |
 | @melchoyce | @melchoyce |
@@ -51,3 +51,6 @@ Version 1.0:
 | @kraftbj | @kraftbj |
 | @dereksmart | @dsmart |
 | @naokomc | @nao |
+| @mayukojpn | @mayukojpn |
+| @enodekciw | @enodekciw |
+| @chetansatasiya | @ketuchetan |

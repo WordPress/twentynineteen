@@ -123,6 +123,11 @@
 				max-width: (0.33 * $desktop_width);
 			}
 		}
+
+		&.aligncenter {
+			margin: 32px calc(2 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
+		}
 	}
 
 	//! Video
@@ -457,6 +462,11 @@
 				transform: translate(-50%, -50%);
 				top: 50%;
 			}
+		}
+
+		&.aligncenter {
+			margin: 32px calc(2 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
 		}
 
 		&.has-left-content {

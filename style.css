@@ -958,8 +958,8 @@ body.page .main-navigation {
   top: 0.2rem;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
-.main-navigation .main-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand {
   margin-right: 0.5rem;
 }
 
@@ -1014,8 +1014,8 @@ body.page .main-navigation {
   top: 0;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children:not(:last-child) .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
   margin-right: 0;
 }
 
@@ -1082,9 +1082,6 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
 .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
-  display: table;
-  margin-top: 0;
-  opacity: 1;
   /* Non-mobile position */
 }
 
@@ -1093,6 +1090,9 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
   .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+    display: table;
+    margin-top: 0;
+    opacity: 1;
     position: absolute;
     left: 0;
     right: auto;
@@ -1478,11 +1478,13 @@ body.page .main-navigation {
 
 /* Alignments */
 .alignleft {
+  /*rtl:ignore*/
   float: left;
   margin-right: 1rem;
 }
 
 .alignright {
+  /*rtl:ignore*/
   float: right;
   margin-left: 1rem;
 }
@@ -3024,6 +3026,11 @@ body.page .main-navigation {
   }
 }
 
+.entry-content .wp-block-audio.aligncenter {
+  margin: 32px calc(2 * (100vw / 12));
+  max-width: calc(6 * (100vw / 12));
+}
+
 .entry-content .wp-block-video video {
   width: 100%;
 }
@@ -3360,6 +3367,12 @@ body.page .main-navigation {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
+}
+
+.entry-content .wp-block-cover-image.aligncenter,
+.entry-content .wp-block-cover.aligncenter {
+  margin: 32px calc(2 * (100vw / 12));
+  max-width: calc(6 * (100vw / 12));
 }
 
 .entry-content .wp-block-cover-image.has-left-content,
