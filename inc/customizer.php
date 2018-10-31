@@ -75,8 +75,8 @@ function twentynineteen_customize_register( $wp_customize ) {
 			$wp_customize,
 			'colorscheme_primary_hue',
 			array(
-				'label'       => __( 'Primary Color' ),
-				'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.' ),
+				'label'       => __( 'Primary Color', 'twentynineteen' ),
+				'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.', 'twentynineteen' ),
 				'section'     => 'colors',
 				'mode'        => 'hue',
 			)

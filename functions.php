@@ -109,6 +109,10 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 				),
 			)
 		);
+
+		// Add support for responsive embedded content
+		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
