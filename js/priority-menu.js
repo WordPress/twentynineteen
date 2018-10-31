@@ -1,5 +1,3 @@
-/* global twentynineteenScreenReaderText */
-
 (function() {
 	/**
 	 * Prepends an element to a container.
