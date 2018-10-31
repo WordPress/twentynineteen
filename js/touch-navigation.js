@@ -51,8 +51,9 @@
 				var menuItem     = currentSubmenu.closest('.menu-item'); // this.parentNode
 				var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
 
-				menuItem.classList.add('focus');
-				menuItem.lastElementChild.classList.add('expanded-true');
+				// classList.add is not supported in IE11
+				menuItem.className += ' focus';
+				menuItem.lastElementChild.className += ' expanded-true';
 
 				toggleAriaExpandedState( menuItemAria );
 
@@ -71,14 +72,15 @@
 				// If this is in a sub-sub-menu, go back to parent sub-menu
 				if ( currentSubmenu.closest('ul').classList.contains('sub-menu') ) {
 
-					nearestSubMenu.classList.remove('expanded-true');
+					// classList.remove is not supported in IE11
+					nearestSubMenu.className = nearestSubMenu.className.replace('expanded-true', '');
 					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 
 				// Or else close all sub-menus
 				} else {
 
-					menuItem.classList.remove('focus');
-					menuItem.lastElementChild.classList.remove('expanded-true');
+					menuItem.className = menuItem.className.replace('focus', '');
+					menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace('expanded-true', '');
 					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 				}
 
