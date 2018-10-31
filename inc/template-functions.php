@@ -174,7 +174,7 @@ function twentynineteen_get_discussion_data() {
 	return $discussion;
 }
 
-/**s
+/**
  * Add an extra menu to our nav for our priority+ navigation to use
  *
  * @param object $nav_menu  Nav menu.
