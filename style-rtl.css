@@ -75,7 +75,7 @@ html[lang="sah"] *,
 html[lang="sr_RS"] *,
 html[lang="tt_RU"] *,
 html[lang="uk"] * {
-  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans_serif !important;
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 }
 
 /* Chinese */
@@ -90,22 +90,22 @@ html[lang="bn_BD"] *,
 html[lang="hi_IN"] *,
 html[lang="mr"] *,
 html[lang="ne_NP"] * {
-  font-family: Arial, sans_serif !important;
+  font-family: Arial, sans-serif !important;
 }
 
 /* Greek */
 html[lang="el"] * {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans_serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /* Gujarati */
 html[lang="gu"] * {
-  font-family: Arial, sans_serif !important;
+  font-family: Arial, sans-serif !important;
 }
 
 /* Hebrew */
 html[lang="he-IL"] * {
-  font-family: 'Arial Hebrew', Arial, sans_serif !important;
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
 }
 
 /* Japanese */
@@ -115,7 +115,7 @@ html[lang="ja"] * {
 
 /* Korean */
 html[lang="ko-KR"] * {
-  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans_serif !important;
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
 }
 
 /* Thai */
