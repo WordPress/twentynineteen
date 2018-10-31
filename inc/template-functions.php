@@ -174,6 +174,29 @@ function twentynineteen_get_discussion_data() {
 	return $discussion;
 }
 
+/*
+ * Add an extra li to our nav for our priority+ navigation to use
+ */
+function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
+	if ( 'menu-1' === $args->theme_location ) :
+
+		$nav_menu .= '<div>';
+		$nav_menu .= '<ul class="main-menu">';
+		$nav_menu .= '<li class="menu-item menu-item-has-children">';
+		$nav_menu .= '<span class="screen-reader-text">'. esc_html( 'More', 'musictheme' ) . '</span>';
+		$nav_menu .= '<a href="#" class="main-menu-more is-hidden" aria-label="More" aria-haspopup="true" aria-expanded="false">';
+		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
+		$nav_menu .= '</a>';
+		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden"></ul>';
+		$nav_menu .= '</li>';
+		$nav_menu .= '</ul>';
+		$nav_menu .= '</div>';
+
+	endif;
+	return $nav_menu;
+}
+add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );
+
 /**
  * WCAG 2.0 Attributes for Dropdown Menus
  *

@@ -46,8 +46,6 @@
 
 			&.menu-item-has-children {
 
-				display: inline-block;
-
 				> a {
 					margin-right: #{0.125 * $size__spacing-unit};
 				}
@@ -212,6 +210,7 @@
 
 		/* Non-mobile position */
 		@include media(tablet) {
+
 			position: absolute;
 			left: 0;
 			right: auto;
@@ -221,6 +220,11 @@
 			width: max-content;
 			transform: none;
 			animation: fade_in 0.1s forwards;
+
+			&.hidden-links {
+				left: auto;
+				right: 0;
+			}
 		}
 
 		.sub-menu {
@@ -277,7 +281,8 @@
 	}
 
 	/* Priority+ Menu */
-	button.main-menu-more {
+	a.main-menu-more {
+
 		position: relative;
 		top: #{-0.125 * $size__spacing-unit};
 		height: 24px;
@@ -288,91 +293,7 @@
 		svg {
 			height: 24px;
 			width: 24px;
-			fill: $color__link;
-		}
-	}
-
-	.hidden-links {
-		position: absolute;
-		top: -1rem;
-		left: -1rem;
-		width: 100vw;
-		min-height: 100vh;
-		background: $color__link;
-		color: $color__background-body;
-		list-style: none;
-		padding: 0;
-		margin-top: 0;
-		z-index: 99999;
-		opacity: 1;
-
-		&.is-hidden {
-			opacity: 0;
-			left: -999em;
-		}
-
-		&:not(.is-hidden) {
-			transform: translateX(+100%);
-			animation: slide_in_right 0.3s forwards;
-		}
-
-		@include media(tablet) {
-			position: absolute;
-			top: auto;
-			left: auto;
-			right: 0;
-			width: max-content;
-			min-height: auto;
-
-			&:not(.is-hidden) {
-				transform: none;
-				animation: fade_in 0.1s forwards;
-			}
-		}
-
-		a {
-			color: $color__background-body;
-			display: block;
-			line-height: $font__line-height-heading;
-			padding: calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
-
-			&:hover,
-			&:focus {
-				background: $color__link-hover;
-
-				&:after {
-					background: $color__link-hover;
-				}
-			}
-		}
-
-		.desktop-submenu-expand,
-		.mobile-submenu-expand {
-			display: none;
-		}
-
-		.sub-menu {
-			display: block;
-			width: 100%;
-			max-width: 100%;
-			position: relative;
-			left: 0;
-			opacity: 1;
-			float: none;
-
-			> li a {
-				padding-left: calc( 1.5 * #{$size__spacing-unit} );
-			}
-
-			> li ul > li a {
-				padding-left: calc( 2 * #{$size__spacing-unit} );
-			}
-			
-			@include media(tablet) {
-				> li.menu-item-has-children .menu-item-has-children > a:after {
-					display: none;
-				}
-			}
+			vertical-align: text-bottom;
 		}
 	}
 
