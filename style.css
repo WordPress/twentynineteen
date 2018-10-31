@@ -3425,6 +3425,7 @@ body.page .main-navigation {
 .entry-content hr {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  text-align: left;
   /* Remove duplicate rule-line when a separator
 		 * is followed by an H1, or H2 */
 }
