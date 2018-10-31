@@ -55,3 +55,4 @@ Version 1.0:
 | @enodekciw | @enodekciw |
 | @chetansatasiya | @ketuchetan |
 | @atanas-angelov-dev | @atanasangelovdev |
+| @nativeinside | @nativeinside |
