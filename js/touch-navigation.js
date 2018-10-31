@@ -73,6 +73,7 @@
 				if ( currentSubmenu.closest('ul').classList.contains('sub-menu') ) {
 
 					// classList.remove is not supported in IE11
+					menuItem.className = menuItem.className.replace('focus', '');
 					nearestSubMenu.className = nearestSubMenu.className.replace('expanded-true', '');
 					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 
