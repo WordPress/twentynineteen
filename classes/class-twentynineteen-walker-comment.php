@@ -49,12 +49,12 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 							 * fill color to the inner check shape when in circle form.
 							 */
 							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
-							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
 							printf(
 								/* translators: %s: comment author link */
-								__( '%s <span class="screen-reader-text says">says:</span>' ),
+								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
 								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
 							);
 						?>
