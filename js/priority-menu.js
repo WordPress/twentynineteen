@@ -103,7 +103,7 @@
 			// There is space for another item in the nav
 			if (getAvailableSpace() > breaks[breaks.length - 1]) {
 				// Move the item to the visible list
-				visibleList.appendChild(hiddenList.firstChild);
+				visibleList.appendChild(hiddenList.firstChild.nextSibling);
 				breaks.pop();
 			}
 
