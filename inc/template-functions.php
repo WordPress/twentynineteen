@@ -175,7 +175,7 @@ function twentynineteen_get_discussion_data() {
 }
 
 /*
- * Add an extra li to our nav for our priority+ navigation to use
+ * Add an extra menu to our nav for our priority+ navigation to use
  */
 function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 	if ( 'menu-1' === $args->theme_location ) :
@@ -187,7 +187,14 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '<a href="#" class="main-menu-more is-hidden" aria-label="More" aria-haspopup="true" aria-expanded="false">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
 		$nav_menu .= '</a>';
-		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden"></ul>';
+		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden">';
+		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
+		$nav_menu .= '<a class="menu-item-link-return" id="menu-item-link-return-1877" href="#menu-item-link-1877" onclick="event.preventDefault();" tabindex="-1">';
+		$nav_menu .= twentynineteen_get_icon_svg( 'chevron_left' );
+		$nav_menu .= esc_html__( 'Back', 'twentynineteen' );
+		$nav_menu .= '</a>';
+		$nav_menu .= '</li>';
+		$nav_menu .= '</ul>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</div>';

@@ -8,8 +8,8 @@
 	 * @param {Element} element
 	 */
 	function prependElement(container, element) {
-		if (container.firstChild) {
-			return container.insertBefore(element, container.firstChild);
+		if (container.firstChild.nextSibling) {
+			return container.insertBefore(element, container.firstChild.nextSibling);
 		} else {
 			return container.appendChild(element);
 		}
