@@ -200,6 +200,9 @@ class TwentyNineteen_SVG_Icons {
 		'google-plus' => array(
 			'plus.google.com',
 		),
+		'mail'   => array(
+			'mailto:',
+		),
 		'slideshare'  => array(
 			'slideshare.net',
 		),
