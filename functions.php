@@ -100,7 +100,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 
 		// Add custom color to the editor color palette
 		add_theme_support(
-		'editor-color-palette',
+			'editor-color-palette',
 			array(
 				array(
 					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),

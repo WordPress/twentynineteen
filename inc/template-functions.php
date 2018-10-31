@@ -176,6 +176,10 @@ function twentynineteen_get_discussion_data() {
 
 /*
  * Add an extra menu to our nav for our priority+ navigation to use
+ *
+ * @param object $nav_menu  Nav menu.
+ * @param object $args      Nav menu args.
+ * @return string More link for hidden menu items.
  */
 function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 	if ( 'menu-1' === $args->theme_location ) :
@@ -200,6 +204,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '</div>';
 
 	endif;
+
 	return $nav_menu;
 }
 add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );

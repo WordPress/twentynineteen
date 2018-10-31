@@ -52,19 +52,6 @@
 
 	var navContainer = document.querySelector('.main-navigation ');
 	// Adds the necessary UI to operate the menu.
-/*
-	navContainer.innerHTML +=
-		'<div>' +
-			'<ul class="main-menu">' +
-				'<li class="menu-item menu-item-has-children">' +
-					'<a class="main-menu-more is-hidden" aria-label="More" aria-haspopup="true" aria-expanded="false">' +
-						twentynineteenScreenReaderText.icon +
-					'</a>' +
-					'<ul class="sub-menu hidden-links is-hidden"></ul>' +
-				'</li>' +
-			'</ul>' +
-		'</div>';
-*/
 	var toggleButton = document.querySelector('.main-navigation .main-menu-more');
 	var visibleList = document.querySelector('.main-navigation .main-menu');
 	var hiddenList = document.querySelector('.main-navigation .hidden-links');
