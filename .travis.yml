@@ -91,7 +91,8 @@ before_script:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   # Search theme for PHP syntax errors.
-  - find . \( -name '*.php' \) -not -path "./vendor/*" -exec php -lf {} \;
+  # The usage of bash + || exit 1 is to ensure xargs does not exit on first error.
+  - find . \( -name '*.php' \) -not -path "./vendor/*" | xargs -n1 bash -c 'php -lf $0 || exit 1'
   # Run the theme through JSHint
   - if [[ "$LINT" == "1" ]]; then jshint --exclude ./vendor .; fi
   # WordPress Coding Standards
