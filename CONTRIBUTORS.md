@@ -50,6 +50,7 @@ Version 1.0:
 | @mdawaffe | @mdawaffe |
 | @kraftbj | @kraftbj |
 | @dereksmart | @dsmart |
+| @naokomc | @nao |
 | @mayukojpn | @mayukojpn |
 | @enodekciw | @enodekciw |
 | @chetansatasiya | @ketuchetan |
