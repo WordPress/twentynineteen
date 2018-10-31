@@ -1478,12 +1478,12 @@ body.page .main-navigation {
 
 /* Alignments */
 .alignleft {
-  float: right;
+  float: left;
   margin-left: 1rem;
 }
 
 .alignright {
-  float: left;
+  float: right;
   margin-right: 1rem;
 }
 
