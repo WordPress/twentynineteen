@@ -80,10 +80,14 @@
 // Site title
 
 .site-title {
-
 	margin: auto;
 	display: inline;
-	color: $color__text-main;
+	
+
+	a:link,
+	a:visited {
+		color: $color__text-main;
+	}
 
 	.featured-image & {
 		margin: 0;

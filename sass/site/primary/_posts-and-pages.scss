@@ -167,7 +167,6 @@
 				height: 100%;
 				top: 0; left: 0;
 				content: "\020";
-				display: block;
 				pointer-events: none;
 			}
 
@@ -178,13 +177,17 @@
 
 	.entry-content {
 
+		p {
+			word-wrap: break-word;
+		}
+
 		.more-link {
 			@include link-transition;
 			display: inline;
 			color: inherit;
 
 			&:after {
-				content: "»";
+				content: "\02192";
 				margin-left: 0.5em;
 			}
 

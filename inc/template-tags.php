@@ -73,14 +73,15 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 	 */
 	function twentynineteen_entry_footer() {
 
-		// Posted by
-		twentynineteen_posted_by();
-
-		// Posted on
-		twentynineteen_posted_on();
-
-		// Hide category and tag text for pages.
+		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
+			// Posted by
+			twentynineteen_posted_by();
+
+			// Posted on
+			twentynineteen_posted_on();
+
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
@@ -98,7 +99,7 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			if ( $tags_list ) {
 				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 				printf(
-					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					twentynineteen_get_icon_svg( 'tag', 16 ),
 					esc_html__( 'Tags:', 'twentynineteen' ),
 					$tags_list
