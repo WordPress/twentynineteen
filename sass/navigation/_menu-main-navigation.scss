@@ -184,6 +184,11 @@
 		opacity: 1;
 		width: calc( 100vw - #{$size__spacing-unit * 2});
 
+		&.hidden-links {
+			left: auto;
+			right: 0;
+		}
+
 		.sub-menu {
 
 			margin-top: inherit;

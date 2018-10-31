@@ -1057,6 +1057,11 @@ body.page .main-navigation {
   width: calc( 100vw - 2rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu.hidden-links {
+  left: auto;
+  right: 0;
+}
+
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
   margin-top: inherit;
   position: relative;
