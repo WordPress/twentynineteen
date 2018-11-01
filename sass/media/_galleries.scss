@@ -1,9 +1,14 @@
 .gallery {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 	margin-bottom: calc(1.5 * #{$size__spacing-unit});
 }
 
 .gallery-item {
 	display: inline-block;
+	padding-right: $size__spacing-unit;
+	margin-bottom: $size__spacing-unit;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -11,8 +16,12 @@
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
 		.gallery-columns-#{$i} & {
-			max-width: map-get( $columns, $i );
+			max-width: calc( ( 12 / #{$i} ) * (100% / 12) );
 		}
+	}
+
+	&:last-of-type {
+		padding-right: 0;
 	}
 }
 
@@ -23,7 +32,6 @@
 	line-height: $font__line-height-pre;
 	margin: 0;
 	padding: ( $size__spacing-unit * .5 );
-	text-align: left;
 }
 
 .gallery-item > div > a {
