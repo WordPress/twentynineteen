@@ -3418,7 +3418,7 @@ body.page .main-navigation {
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .entry-content .wp-block-separator,
@@ -3607,11 +3607,13 @@ svg {
   margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-  margin: calc(0.875 * 1rem) 0;
-}
-
 .wp-caption-text {
+  color: #767676;
+  font-size: 0.71111em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
   text-align: center;
 }
 
