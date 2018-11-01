@@ -98,14 +98,14 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles
 		add_editor_style( 'style-editor.css' );
 
-		// Add custom color to the editor color palette
+		// Editor color palette
 		add_theme_support(
-		'editor-color-palette',
+			'editor-color-palette',
 			array(
 				array(
 					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
 					'slug'  => 'primary',
-					'color' => twentynineteen_hsl_hex( absint( get_theme_mod( 'colorscheme_hue', 199 ) ), 100, 33 ),
+					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'colorscheme' ) ? 199 : get_theme_mod( 'colorscheme_primary_hue', 199 ), 100, 33 ),
 				),
 			)
 		);
@@ -188,11 +188,13 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
  */
 function twentynineteen_editor_frame_styles() {
 
-	// Include color patterns
-	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-
 	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
-	wp_add_inline_style( 'twentynineteen-editor-frame-styles', twentynineteen_custom_colors_css() );
+
+	if ( 'custom' === get_theme_mod( 'colorscheme' ) ) {
+		// Include color patterns
+		require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+		wp_add_inline_style( 'twentynineteen-editor-frame-styles', twentynineteen_custom_colors_css() );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
 
@@ -200,15 +202,22 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' 
  * Display custom color CSS in customizer and on frontend.
  */
 function twentynineteen_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+
+	// Only include custom colors in customizer or frontend
+	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
 		return;
 	}
 
 	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+
+	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
+		$primary_color = 199;
+	} else {
+		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
+	}
 	?>
 
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $hue . '"' : ''; ?>>
+	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $primary_color . '"' : ''; ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
 <?php
