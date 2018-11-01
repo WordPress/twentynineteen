@@ -2,15 +2,15 @@
   "name": "wordpress/twentynineteen",
   "description": "A new Gutenberg-ready theme.",
   "type": "package",
-  "license": "GPL v2 or later",
+  "license": "GPL-2.0-or-later",
   "keywords": [
 		"WordPress",
 		"Themes"
 	],
   "authors": [
 		{
-			"name": "Contributors",
-			"homepage": "https://github.com/WordPress/twentynineteen/graphs/contributors"
+			"name": "the WordPress team",
+			"homepage": "https://github.com/WordPress/twentynineteen"
 		}
 	],
   "require": {
@@ -21,8 +21,8 @@
   },
   "scripts": {
 		"phpcs-i": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
-		"check-cs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-		"fix-cs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
 	},
 	"support"    : {
 		"issues": "https://github.com/WordPress/twentynineteen/issues",
