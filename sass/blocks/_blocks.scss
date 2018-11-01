@@ -599,6 +599,8 @@
 
 		code {
 			font-size: $font__size-md;
+			white-space: pre-wrap;
+    	                word-break: break-word;
 		}
 	}
 

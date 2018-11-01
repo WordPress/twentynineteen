@@ -3507,6 +3507,8 @@ body.page .main-navigation {
 
 .entry-content .wp-block-code code {
   font-size: 1.125em;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .entry-content .wp-block-columns .wp-block-column > *:first-child {
