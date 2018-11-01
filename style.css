@@ -2206,24 +2206,26 @@ body.page .main-navigation {
   margin-top: 0;
 }
 
-.comment-list .pingback {
-  padding-left: calc(.5 * (1rem + calc(100vw / 12 )));
-}
-
-.comment-list .pingback:first-child:before {
-  content: 'Pingback:';
+.comment-list .pingback .comment-body {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 0.88889em;
+  font-size: 0.71111em;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-.comment-list .pingback .comment-body {
-  font-size: 0;
-}
-
-.comment-list .pingback .comment-body a {
-  font-size: 22px;
+.comment-list .pingback .comment-body a:not(.comment-edit-link) {
+  font-weight: bold;
+  font-size: 19.55556px;
+  line-height: 1.5;
   padding-right: 0.5rem;
+  display: block;
+}
+
+.comment-list .pingback .comment-body .comment-edit-link {
+  color: #767676;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
 }
 
 .comment-reply {
