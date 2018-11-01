@@ -515,6 +515,7 @@
 	hr {
 		margin-bottom: (2 * $size__spacing-unit);
 		margin-top: (2 * $size__spacing-unit);
+		text-align: left;
 
 		&:not(.is-style-dots) {
 			background-color: $color__text-light;
@@ -598,6 +599,8 @@
 
 		code {
 			font-size: $font__size-md;
+			white-space: pre-wrap;
+    	                word-break: break-word;
 		}
 	}
 

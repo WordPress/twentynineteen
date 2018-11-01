@@ -3425,6 +3425,7 @@ body.page .main-navigation {
 .entry-content hr {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  text-align: left;
   /* Remove duplicate rule-line when a separator
 		 * is followed by an H1, or H2 */
 }
@@ -3506,6 +3507,8 @@ body.page .main-navigation {
 
 .entry-content .wp-block-code code {
   font-size: 1.125em;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .entry-content .wp-block-columns .wp-block-column > *:first-child {
