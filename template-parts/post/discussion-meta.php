@@ -1,9 +1,10 @@
 <?php
 /**
- * TODO: File doc comment.
+ * The template for displaying Current Discussion on posts
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /* Get data from current discussion on post. */
@@ -16,15 +17,12 @@ if ( $has_responses ) {
 	/* translators: %1(X responses)$s from %2(X others)$s */
 	$meta_label = sprintf(
 		'%1$s from %2$s.',
-		/* translators: TODO comment on placeholders */
 		sprintf( _n( '%d response', '%d responses', $discussion->responses, 'twentynineteen' ), $discussion->responses ),
-		/* translators: TODO comment on placeholders */
 		sprintf( _n( '%d other', '%d others', $discussion->commenters, 'twentynineteen' ), $discussion->commenters )
-		);
+	);
 } elseif ( $comments_number > 0 ) {
 	/* Show comment count if not enough discussion information */
 
-	/* translators: TODO comment on placeholders */
 	$meta_label = sprintf( _n( '%d Comment', '%d Comments', $comments_number, 'twentynineteen' ), $comments_number );
 } else {
 	$meta_label = __( 'No comments', 'twentynineteen' );
