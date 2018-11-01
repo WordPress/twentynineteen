@@ -9,6 +9,7 @@ when Gutenberg supports styling those variations more intuitively.
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
 /** === Content Width === */
 .wp-block {
   width: calc(100vw - (2 * 1rem));
