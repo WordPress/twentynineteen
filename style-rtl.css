@@ -1478,12 +1478,12 @@ body.page .main-navigation {
 
 /* Alignments */
 .alignleft {
-  float: right;
+  float: left;
   margin-left: 1rem;
 }
 
 .alignright {
-  float: left;
+  float: right;
   margin-right: 1rem;
 }
 
@@ -3024,6 +3024,11 @@ body.page .main-navigation {
   }
 }
 
+.entry-content .wp-block-audio.aligncenter {
+  margin: 32px calc(2 * (100vw / 12));
+  max-width: calc(6 * (100vw / 12));
+}
+
 .entry-content .wp-block-video video {
   width: 100%;
 }
@@ -3360,6 +3365,12 @@ body.page .main-navigation {
   position: absolute;
   transform: translate(50%, -50%);
   top: 50%;
+}
+
+.entry-content .wp-block-cover-image.aligncenter,
+.entry-content .wp-block-cover.aligncenter {
+  margin: 32px calc(2 * (100vw / 12));
+  max-width: calc(6 * (100vw / 12));
 }
 
 .entry-content .wp-block-cover-image.has-left-content,

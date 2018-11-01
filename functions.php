@@ -91,6 +91,9 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 		// Add support for Block Styles
 		add_theme_support( 'wp-block-styles' );
 
@@ -115,6 +118,9 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
+		// Add support for responsive embedded content
+		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
@@ -128,7 +134,7 @@ function twentynineteen_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer 1', 'twentynineteen' ),
+			'name'          => __( 'Footer', 'twentynineteen' ),
 			'id'            => 'sidebar-1',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'twentynineteen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -168,11 +174,10 @@ function twentynineteen_scripts() {
 
 	if ( has_nav_menu( 'menu-1' ) ) {
 		wp_enqueue_script( 'twentynineteen-touch-navigation', get_theme_file_uri( '/js/touch-navigation.js' ), array(), '1.0', true );
-		$twentynineteen_l10n['expand']   = __( 'Expand child menu', 'twentynineteen' );
-		$twentynineteen_l10n['collapse'] = __( 'Collapse child menu', 'twentynineteen' );
+		$l10n_skip_link_focus_fix['expand']   = __( 'Expand child menu', 'twentynineteen' );
+		$l10n_skip_link_focus_fix['collapse'] = __( 'Collapse child menu', 'twentynineteen' );
+		wp_localize_script( 'twentynineteen-skip-link-focus-fix', 'twentynineteenScreenReaderText', $l10n_skip_link_focus_fix );
 	}
-
-	wp_localize_script( 'twentynineteen-skip-link-focus-fix', 'twentynineteenScreenReaderText', $twentynineteen_l10n );
 
 	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
