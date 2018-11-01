@@ -533,6 +533,7 @@
 
 		&.is-style-dots {
 			@include postContentMaxWidth();
+			text-align: center;
 
 			&:before {
 				color: $color__text-light;
