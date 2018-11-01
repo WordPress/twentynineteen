@@ -24,6 +24,10 @@ when Gutenberg supports styling those variations more intuitively.
 	@include media(desktop) {
 		width: calc(6 * (100vw / 12 ));
 	}
+
+	.wp-block {
+		width: 100%;
+	}
 }
 
 /** === Base Typography === */
