@@ -175,16 +175,6 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
-	/**
-	 * Returns the CSS for the header featured image background.
-	 */
-	function twentynineteen_header_featured_image_css() {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		return sprintf( 'body.singular .site-header.featured-image .site-branding-container:before { background-image: url(%s); }', esc_url( $img_url ) );
-	}
-endif;
-
 if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 	/**
 	 * Returns the HTML markup to generate a user avatar.

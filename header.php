@@ -31,6 +31,7 @@
 
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
 				<div class="site-featured-image">
+					<?php the_post_thumbnail(); ?>
 					<?php the_post(); ?>
 					<?php $discussion = ! is_page() && twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
 					<div class="<?php echo ( ! empty( $discussion ) && count( $discussion->authors ) > 0 ) ? 'entry-header has-discussion' : 'entry-header'; ?>">
