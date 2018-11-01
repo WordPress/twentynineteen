@@ -86,6 +86,7 @@
 				}
 
 				// Disable :focus when using touchdevices
+				subMenuExpand.blur();
 				siteNavigation.blur();
 			});
 		}
