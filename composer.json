@@ -1,0 +1,31 @@
+{
+  "name": "wordpress/twentynineteen",
+  "description": "A new Gutenberg-ready theme.",
+  "type": "package",
+  "license": "GPL v2 or later",
+  "keywords": [
+		"WordPress",
+		"Themes"
+	],
+  "authors": [
+		{
+			"name": "Contributors",
+			"homepage": "https://github.com/WordPress/twentynineteen/graphs/contributors"
+		}
+	],
+  "require": {
+      "wptrt/wpthemereview": "^0.1.0"
+  },
+  "require-dev": {
+      "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  },
+  "scripts": {
+		"phpcs-i": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
+		"check-cs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"fix-cs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+	},
+	"support"    : {
+		"issues": "https://github.com/WordPress/twentynineteen/issues",
+		"source": "https://github.com/WordPress/twentynineteen"
+	}
+}
