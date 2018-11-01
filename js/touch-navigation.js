@@ -86,9 +86,12 @@
 				}
 
 				// Disable :focus when using touchdevices
-				subMenuExpand.blur();
 				siteNavigation.blur();
 			});
+		}
+
+		function removeFocus( currentSubmenu ) {
+			currentSubmenu.blur();
 		}
 
 		// Open submenus on touch
