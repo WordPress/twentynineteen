@@ -9,6 +9,7 @@ when Gutenberg supports styling those variations more intuitively.
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
 /** === Content Width === */
 .wp-block {
   width: calc(100vw - (2 * 1rem));
@@ -492,6 +493,13 @@ ul.wp-block-archives li ul,
 /** === Classic Editor === */
 /* Properly center-align captions in the classic-editor block */
 .wp-caption dd {
+  color: #767676;
+  font-size: 0.71111em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: left;
   text-align: center;
   -webkit-margin-start: 0px;
   margin-inline-start: 0px;
