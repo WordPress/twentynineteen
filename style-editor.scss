@@ -478,7 +478,8 @@ figcaption,
 	&.is-style-dots:before {
 		color: $color__text-light;
 		font-size: $font__size-lg;
-		letter-spacing: $font__size-sm;
+		letter-spacing: calc(2 * #{$size__spacing-unit});
+		padding-left: calc(2 * #{$size__spacing-unit});
 	}
 }
 

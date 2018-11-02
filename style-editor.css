@@ -461,7 +461,8 @@ figcaption,
 .wp-block-separator.is-style-dots:before {
   color: #767676;
   font-size: 1.6875em;
-  letter-spacing: 0.88889em;
+  letter-spacing: calc(2 * 1rem);
+  padding-left: calc(2 * 1rem);
 }
 
 /** === Latest Posts, Archives, Categories === */
