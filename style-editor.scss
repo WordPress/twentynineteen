@@ -14,7 +14,8 @@ when Gutenberg supports styling those variations more intuitively.
 
 /** === Content Width === */
 
-.wp-block {
+// Change the width of all top-level blocks, avoid touching nested blocks.
+:not(.editor-inner-blocks) > .editor-block-list__layout > .wp-block {
 	width: calc(100vw - (2 * #{$size__spacing-unit}));
 
 	@include media(tablet) {

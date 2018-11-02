@@ -11,18 +11,18 @@ when Gutenberg supports styling those variations more intuitively.
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Calculates maximum width for post content */
 /** === Content Width === */
-.wp-block {
+:not(.editor-inner-blocks) > .editor-block-list__layout > .wp-block {
   width: calc(100vw - (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
-  .wp-block {
+  :not(.editor-inner-blocks) > .editor-block-list__layout > .wp-block {
     width: calc(8 * (100vw / 12));
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .wp-block {
+  :not(.editor-inner-blocks) > .editor-block-list__layout > .wp-block {
     width: calc(6 * (100vw / 12 ));
   }
 }
