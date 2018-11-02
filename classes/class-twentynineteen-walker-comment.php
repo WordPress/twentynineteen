@@ -41,7 +41,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								if ( empty( $comment_author_url ) ) {
 									echo $avatar;
 								} else {
-									printf('<a href="%s" rel="external nofollow" class="url">', $comment_author_url);
+									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
 									echo $avatar;
 								}
 							}
@@ -61,7 +61,7 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								sprintf( '<span class="fn">%s</span>', $comment_author )
 							);
 
-							if ( !empty( $comment_author_url ) ) {
+							if ( ! empty( $comment_author_url ) ) {
 								echo '</a>';
 							}
 						?>
