@@ -566,6 +566,13 @@ ul.wp-block-archives,
 /* Properly center-align captions in the classic-editor block */
 .wp-caption {
 	dd {
+		color: $color__text-light;
+ 		font-size: $font__size-xs;
+ 		font-family: $font__heading;
+ 		line-height: $font__line-height-pre;
+ 		margin: 0;
+ 		padding: ( $size__spacing-unit * .5 );
+ 		text-align: left;
 		text-align: center;
 		-webkit-margin-start: 0px;
 		margin-inline-start: 0px;

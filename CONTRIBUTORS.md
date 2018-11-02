@@ -34,7 +34,7 @@ Version 1.0:
 | @ianbelanger79 | @ianbelanger |
 | @nadim1992 | |
 | @ismail-elkorchi | @ismailelkorchi |
-| @nativeinside | |
+| @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
 | @icaleb | @icaleb |
 | @grappler | @grapplerulrich |

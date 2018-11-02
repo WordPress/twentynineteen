@@ -122,6 +122,31 @@
 	> .comment:first-child {
 		margin-top: 0;
 	}
+
+	.pingback {
+
+		.comment-body {
+			color: $color__text-light;
+			font-family: $font__heading;
+			font-size: $font__size-xs;
+			font-weight: 500;
+			margin-bottom: $size__spacing-unit;
+
+			a:not(.comment-edit-link) {
+				font-weight: bold;
+				font-size: $font__size-base / (1 * $font__size-ratio);
+				line-height: 1.5;
+				padding-right: #{0.5 * $size__spacing-unit};
+				display: block;
+			}
+
+			.comment-edit-link {
+				color: $color__text-light;
+				font-family: $font__heading;
+				font-weight: 500;
+			}
+		}
+	}
 }
 
 .comment-reply {
