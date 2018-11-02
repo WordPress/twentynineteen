@@ -10,6 +10,10 @@ NOTE: This file customizes items that are out of the normal scope of style-edito
 @import "sass/variables-site/colors";
 @import "sass/mixins/mixins-master";
 
+/** === Non-Latin font fallbacks === */
+
+@include non-latin-fonts( '.wp-block' );
+
 /** === Title === */
 
 body.gutenberg-editor-page .gutenberg .editor-post-title__block {

@@ -53,84 +53,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-/* Arabic */
-html[lang="ar"] *,
-html[lang="ary"] *,
-html[lang="azb"] *,
-html[lang="ckb"] *,
-html[lang="fa-IR"] *,
-html[lang="haz"] *,
-html[lang="ps"] * {
-  font-family: Tahoma, Arial, sans-serif !important;
-}
-
-/* Cyrillic */
-html[lang="be"] *,
-html[lang="bg-BG"] *,
-html[lang="kk"] *,
-html[lang="mk-MK"] *,
-html[lang="mn"] *,
-html[lang="ru-RU"] *,
-html[lang="sah"] *,
-html[lang="sr-RS"] *,
-html[lang="tt-RU"] *,
-html[lang="uk"] * {
-  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
-}
-
-/* Chinese */
-html[lang="zh-HK"] *,
-html[lang="zh-TW"] *,
-html[lang="zh-CN"] * {
-  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
-}
-
-/* Devanagari */
-html[lang="bn-BD"] *,
-html[lang="hi-IN"] *,
-html[lang="mr"] *,
-html[lang="ne-NP"] * {
-  font-family: Arial, sans-serif !important;
-}
-
-/* Greek */
-html[lang="el"] * {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-}
-
-/* Gujarati */
-html[lang="gu"] * {
-  font-family: Arial, sans-serif !important;
-}
-
-/* Hebrew */
-html[lang="he-IL"] * {
-  font-family: 'Arial Hebrew', Arial, sans-serif !important;
-}
-
-/* Japanese */
-html[lang="ja"] * {
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
-}
-
-/* Korean */
-html[lang="ko-KR"] * {
-  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
-}
-
-/* Thai */
-html[lang="th"] * {
-  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
-}
-
-/* Vietnamese */
-html[lang="vi"] * {
-  font-family: 'Libre Franklin', sans-serif !important;
-}
-
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Fallback for non-latin fonts */
 /* Normalize */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -704,6 +630,81 @@ a:hover {
 
 a:focus {
   text-decoration: underline;
+}
+
+/* Arabic */
+html[lang="ar"] .site *,
+html[lang="ary"] .site *,
+html[lang="azb"] .site *,
+html[lang="ckb"] .site *,
+html[lang="fa-IR"] .site *,
+html[lang="haz"] .site *,
+html[lang="ps"] .site * {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
+/* Cyrillic */
+html[lang="be"] .site *,
+html[lang="bg-BG"] .site *,
+html[lang="kk"] .site *,
+html[lang="mk-MK"] .site *,
+html[lang="mn"] .site *,
+html[lang="ru-RU"] .site *,
+html[lang="sah"] .site *,
+html[lang="sr-RS"] .site *,
+html[lang="tt-RU"] .site *,
+html[lang="uk"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Chinese */
+html[lang="zh-HK"] .site *,
+html[lang="zh-TW"] .site *,
+html[lang="zh-CN"] .site * {
+  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
+}
+
+/* Devanagari */
+html[lang="bn-BD"] .site *,
+html[lang="hi-IN"] .site *,
+html[lang="mr"] .site *,
+html[lang="ne-NP"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Greek */
+html[lang="el"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Gujarati */
+html[lang="gu"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Hebrew */
+html[lang="he-IL"] .site * {
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+}
+
+/* Japanese */
+html[lang="ja"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
+}
+
+/* Korean */
+html[lang="ko-KR"] .site * {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+}
+
+/* Thai */
+html[lang="th"] .site * {
+  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+}
+
+/* Vietnamese */
+html[lang="vi"] .site * {
+  font-family: 'Libre Franklin', sans-serif !important;
 }
 
 /* Elements */
