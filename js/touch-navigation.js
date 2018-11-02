@@ -56,8 +56,7 @@
 		}
 	}
 
-	// Find first ancestor of el with tagName
-	// or undefined if not found
+	// Find first ancestor of an element by tagName
 	function getCurrentParent( el, tagName ) {
 
 		tagName = tagName.toLowerCase();
@@ -78,6 +77,7 @@
 
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');
 		var subMenuExpand  = document.querySelectorAll('.mobile-submenu-expand, .main-menu-more');
+		var subMenuFocus   = document.querySelectorAll('.mobile-submenu-expand, .main-menu-more');
 		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
 		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 		var i;
@@ -111,6 +111,18 @@
 			});
 		}
 
+		// Open Sub-menu
+		function focusSubMenu( currentMenuItem ) {
+
+			var menuItem     = currentMenuItem.closest('.menu-item'); // this.parentNode
+			var menuItemAria = menuItem.querySelector('a[aria-expanded]');
+
+			// Update aria-expanded state
+			toggleAriaExpandedState( menuItemAria );
+
+			console.log('We here? - '+ menuItemAria);
+		}
+
 		function closeSubMenu( currentSubmenu ) {
 
 			currentSubmenu.addEventListener('touchend', function() {
@@ -126,7 +138,7 @@
 					// Update classes
 					// classList.remove is not supported in IE11
 					menuItem.className = menuItem.className.replace( 'focus', '' );
-					subMenu.className  = subMenu.className.replace( 'expanded-true', '' );
+					subMenu.className = subMenu.className.replace( 'expanded-true', '' );
 
 					// Update aria-expanded and :focus states
 					toggleAriaExpandedState( menuItemAria );
@@ -168,6 +180,8 @@
 				window.location = this.getAttribute('href');
 
 			});
+
+			parentMenuLink[i].addEventListener('focus', focusSubMenu( parentMenuLink[i] ) );
 		}
 	}
 
