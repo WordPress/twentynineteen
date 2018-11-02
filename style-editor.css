@@ -218,17 +218,9 @@ figcaption,
   line-height: 1.4;
 }
 
-.wp-block-cover.has-left-content {
-  justify-content: center;
-}
-
 .wp-block-cover.has-left-content h2,
 .wp-block-cover.has-left-content .wp-block-cover-text {
   padding: 1em;
-}
-
-.wp-block-cover.has-right-content {
-  justify-content: center;
 }
 
 .wp-block-cover.has-right-content h2,
