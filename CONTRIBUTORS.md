@@ -57,3 +57,4 @@ Version 1.0:
 | @atanas-angelov-dev | @atanasangelovdev |
 | @carolinan | @poena |
 | @sharazghouri | @sharaz |
+| @artisan-asad | @artisticasad
