@@ -60,6 +60,10 @@ Twenty Nineteen Editor Styles
   }
 }
 
+.wp-block .wp-block {
+  width: 100%;
+}
+
 /** === Base Typography === */
 body {
   font-size: 22px;
