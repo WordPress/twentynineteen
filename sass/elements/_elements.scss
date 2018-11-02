@@ -36,7 +36,8 @@ a:active {
 }
 
 a:focus {
-	outline: 0;
+	outline: thin;
+	outline-style: dotted;
 	text-decoration: underline;
 }
 
@@ -68,10 +69,9 @@ figure {
 }
 
 blockquote {
-
 	border-left: 2px solid $color__link;
 	margin-left: -($size__spacing-unit * 2);
-	padding: $size__spacing-unit 0 ($size__spacing-unit * .5) ($size__spacing-unit * 2);
+	padding: 0 0 0 $size__spacing-unit;
 
 	> p {
 		margin: 0 0 $size__spacing-unit;

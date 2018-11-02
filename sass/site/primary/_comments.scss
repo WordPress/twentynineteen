@@ -15,7 +15,6 @@
 		margin-top: calc(3 * #{$size__spacing-unit});
 	}
 
-	.comments-title-wrap,
 	.comment-list,
 	.comment-navigation,
 	> .comment-respond,
@@ -30,13 +29,31 @@
 	}
 
 	.comments-title-wrap {
-		align-items: baseline;
-		display: flex;
-		justify-content: space-between;
+
+		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+
+		@include media(tablet) {
+			align-items: baseline;
+			display: flex;
+			justify-content: space-between;
+			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
+			max-width: calc(8 * (100vw / 12));
+		}
 
 		.comments-title {
 			@include post-section-dash;
 			margin: 0;
+
+			@include media(tablet) {
+				flex: 1 0 calc(3 * (100vw / 12));
+			}
+		}
+
+		.discussion-meta {
+			@include media(tablet) {
+				flex: 0 0 calc(2 * (100vw / 12));
+				margin-left: #{$size__spacing-unit};
+			}
 		}
 	}
 }
@@ -104,6 +121,31 @@
 
 	> .comment:first-child {
 		margin-top: 0;
+	}
+
+	.pingback {
+
+		.comment-body {
+			color: $color__text-light;
+			font-family: $font__heading;
+			font-size: $font__size-xs;
+			font-weight: 500;
+			margin-bottom: $size__spacing-unit;
+
+			a:not(.comment-edit-link) {
+				font-weight: bold;
+				font-size: $font__size-base / (1 * $font__size-ratio);
+				line-height: 1.5;
+				padding-right: #{0.5 * $size__spacing-unit};
+				display: block;
+			}
+
+			.comment-edit-link {
+				color: $color__text-light;
+				font-family: $font__heading;
+				font-weight: 500;
+			}
+		}
 	}
 }
 
@@ -328,11 +370,6 @@
 }
 
 .discussion-meta {
-
-	.discussion-avatar-list {
-		display: inline-block;
-		margin-right: 8px;
-	}
 
 	.discussion-meta-info {
 		margin: 0;

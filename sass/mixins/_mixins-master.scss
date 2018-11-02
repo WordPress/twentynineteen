@@ -40,8 +40,13 @@
 	&:after {
 		background: $color__link;
 		mix-blend-mode: multiply;
-		opacity: 1;
+		opacity: .8;
 		z-index: 3;
+
+		/* Browsers supporting mix-blend-mode don't need opacity < 1 */
+		@supports (mix-blend-mode: multiply) {
+			opacity: 1;
+		}
 	}
 }
 
@@ -159,6 +164,19 @@
 	/* Vietnamese */
 	html[lang="vi"] #{$wrapper_classname} * {
 	  font-family: 'Libre Franklin', sans-serif !important;
+	}
+}
+
+/* Calculates maximum width for post content */
+@mixin postContentMaxWidth() {
+	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+
+	@include media(tablet) {
+		max-width: calc(8 * (100vw / 12));
+	}
+
+	@include media(desktop) {
+		max-width: calc(6 * (100vw / 12));
 	}
 }
 
