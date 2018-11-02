@@ -1522,20 +1522,25 @@ body.page .main-navigation {
   padding: 1em;
 }
 
+.site-header.featured-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+}
+
+.site-header.featured-image .site-branding-container {
+  margin-bottom: auto;
+}
+
 @media only screen and (min-width: 768px) {
   .site-header {
     margin: 0;
     padding: 3rem 0;
   }
   .site-header.featured-image {
-    display: flex;
     min-height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
     margin-bottom: 3rem;
-  }
-  .site-header.featured-image .site-branding-container {
-    margin-bottom: auto;
   }
 }
 
@@ -1738,6 +1743,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
+  margin-top: calc( 4 * 1rem);
   margin-bottom: 0;
   margin-right: 0;
   margin-left: 0;
