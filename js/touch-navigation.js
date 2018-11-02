@@ -65,7 +65,7 @@
 		while ( el && el.parentNode ) {
 			el = el.parentNode;
 
-			if ( el.tagName && el.tagName.toLowerCase() == tagName ) {
+			if ( el.tagName && el.tagName.toLowerCase() === tagName ) {
 				return el;
 			}
 		}
@@ -80,6 +80,7 @@
 		var subMenuExpand  = document.querySelectorAll('.mobile-submenu-expand, .main-menu-more');
 		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
 		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var i;
 
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
@@ -147,17 +148,17 @@
 		}
 
 		// Open submenus on touch
-		for ( var i = 0; i < subMenuExpand.length; i++) {
+		for ( i = 0; i < subMenuExpand.length; i++) {
 			subMenuExpand[i].addEventListener('touchstart', openSubMenu( subMenuExpand[i] ) );
 		}
 
 		// Close sub-menus or sub-sub-menus on touch
-		for ( var i = 0; i < subMenuReturn.length; i++) {
+		for ( i = 0; i < subMenuReturn.length; i++) {
 			subMenuReturn[i].addEventListener('touchstart', closeSubMenu( subMenuReturn[i] ) );
 		}
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		for ( var i = 0; i < parentMenuLink.length; i++) {
+		for ( i = 0; i < parentMenuLink.length; i++) {
 			parentMenuLink[i].addEventListener('touchstart', function( event ) {
 
 				// Stop link behavior
