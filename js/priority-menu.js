@@ -61,7 +61,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace() {
-		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 30;
+		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 60;
 	}
 
 	/**
@@ -77,6 +77,7 @@
 	 * Refreshes the list item from the menu depending on the menu size
 	 */
 	function updateNavigationMenu() {
+
 		if (isOverflowingNavivation()) {
 			// Record the width of the list
 			breaks.push(visibleList.offsetWidth);
