@@ -960,7 +960,9 @@ body.page .main-navigation {
   margin-right: 0.5rem;
 }
 
-.main-navigation .main-menu > li:last-child > a {
+.main-navigation .main-menu > li:last-child > a,
+.main-navigation .main-menu > li:last-child.menu-item-has-children .mobile-submenu-expand,
+.main-navigation .main-menu > li:last-child.menu-item-has-children .desktop-submenu-expand {
   margin-right: 0;
 }
 
