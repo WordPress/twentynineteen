@@ -1760,12 +1760,14 @@ body.page .main-navigation {
 
 .site-header.featured-image .site-featured-image .wp-post-image {
   height: auto;
-  right: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  right: 50%;
+  max-width: 1000%;
+  min-height: 100%;
+  min-width: 100vw;
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 50%;
+  transform: translateX(50%) translateY(-50%);
+  width: auto;
   z-index: 1;
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
@@ -1773,6 +1775,12 @@ body.page .main-navigation {
 @supports ((-o-object-fit: cover) or (object-fit: cover)) {
   .site-header.featured-image .site-featured-image .wp-post-image {
     height: 100%;
+    right: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    top: 0;
+    transform: none;
+    width: 100%;
   }
 }
 

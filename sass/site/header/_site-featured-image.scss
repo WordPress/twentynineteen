@@ -67,13 +67,25 @@
 		
 		/* First layer: grayscale. */
 		.wp-post-image {
-			height: 100%;
-			left: 0;
-			object-fit: cover;
+			height: auto;
+			left: 50%;
+			max-width: 1000%;
+			min-height: 100%;
+			min-width: 100vw;
 			position: absolute;
-			top: 0;
-			width: 100%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: auto;
 			z-index: 1;
+			
+			@supports ( object-fit: cover ) {
+				height: 100%;
+				left: 0;
+				object-fit: cover;
+				top: 0;
+				transform: none;
+				width: 100%;
+			}
 			
 			/* When image filters are active, make it grayscale to colorize it blue. */
 			.image-filters-enabled & {
