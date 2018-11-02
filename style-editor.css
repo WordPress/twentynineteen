@@ -488,7 +488,7 @@ ul.wp-block-archives li,
 .wp-block-categories li,
 .wp-block-latest-posts li {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.6875em;
+  font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
 }

@@ -2862,7 +2862,7 @@ body.page .main-navigation {
 .widget_rss ul li {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: calc(22px * 1.6875);
+  font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
 }
@@ -3122,7 +3122,7 @@ body.page .main-navigation {
 .entry-content .wp-block-latest-posts li {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: calc(22px * 1.6875);
+  font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
 }
