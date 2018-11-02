@@ -56,3 +56,4 @@ Version 1.0:
 | @chetansatasiya | @ketuchetan |
 | @atanas-angelov-dev | @atanasangelovdev |
 | @carolinan | @poena |
+| @sharazghouri | @sharaz
