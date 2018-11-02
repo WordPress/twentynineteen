@@ -61,7 +61,7 @@
 	/* Entry header */
 
 	.site-featured-image .entry-header {
-
+		margin-top: calc( 4 * #{$size__spacing-unit});
 		margin-bottom: 0;
 		margin-left: 0;
 		margin-right: 0;
@@ -159,10 +159,14 @@
 	}
 
 	/* Make sure important elements are above pseudo elements used for effects. */
-	.site-branding,
-	.site-featured-image .entry-header {
+	.site-branding {
 		position: relative;
 		z-index: 10;
+	}
+
+	.site-featured-image .entry-header {
+		position: relative;
+		z-index: 9;
 	}
 
 	/* Set up image filter layer positioning */
@@ -196,7 +200,7 @@
 
 		/* When image filters are active, make it grayscale to colorize it blue. */
 		.image-filters-enabled & {
-		  filter: grayscale(100%);
+			filter: grayscale(100%);
 		}
 	}
 
@@ -217,22 +221,32 @@
 	  	/* When image filters are active, a blue overlay is added. */
 		.image-filters-enabled & {
 			background: $color__link;
-			opacity: 1;
+			opacity: .8;
 			z-index: 3;
+
+			/* Browsers supporting mix-blend-mode don't need opacity < 1 */
+			@supports (mix-blend-mode: multiply) {
+				opacity: 1;
+			}
 		}
 	}
 
 	/* Fourth layer: overlay. */
   	.image-filters-enabled & .site-branding-container:after {
-  		background: rgba($color__background-body, 0.35);
+		background: rgba(#000, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
 		z-index: 4;
+
+		/* Browsers supporting mix-blend-mode can have a light overlay */
+		@supports (mix-blend-mode: overlay) {
+			background: rgba($color__background-body, 0.35);
+		}
 	}
 
 	/* Fifth layer: readability overlay */
 	&:after {
-	  	background: #000;
+		background: #000;
 		/**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
@@ -248,10 +262,6 @@
 
 			@include media(tablet) {
 				opacity: 0.18;
-			}
-
-			@include media(desktop) {
-				opacity: 0.1;
 			}
 		}
 	}

@@ -140,7 +140,24 @@
 			display: block;
 
 			.post-thumbnail-inner {
-				@include filter-grayscale;
+				filter: grayscale(100%);
+				
+				&:after {
+					background: rgba(#000, 0.35);
+					content: "";
+					display: block;
+					height: 100%;
+					opacity: .5;
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 4;
+
+					@supports (mix-blend-mode: multiply) {
+						display: none;
+					}
+				}
 			}
 
 			&:before, &:after {
@@ -150,16 +167,19 @@
 				height: 100%;
 				top: 0; left: 0;
 				content: "\020";
-				display: block;
 				pointer-events: none;
 			}
 
 			@include filter-duotone;
-
+			
 		}
 	}
 
 	.entry-content {
+
+		p {
+			word-wrap: break-word;
+		}
 
 		.more-link {
 			@include link-transition;
@@ -167,7 +187,7 @@
 			color: inherit;
 
 			&:after {
-				content: "»";
+				content: "\02192";
 				margin-left: 0.5em;
 			}
 

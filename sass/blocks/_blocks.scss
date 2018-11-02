@@ -2,19 +2,13 @@
 
 .entry-content > *,
 .entry-summary > * {
+	@include postContentMaxWidth();
 
 	margin: 32px $size__spacing-unit;
-	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
 	@include media(tablet) {
 		margin: 32px calc(2 * (100vw / 12));
-		max-width: calc(8 * (100vw / 12));
 	}
-
-	@include media(desktop) {
-		max-width: calc(6 * (100vw / 12));
-	}
-
 /*
 	// Set top margins for headings
 	& + h1:before,
@@ -41,9 +35,9 @@
 		margin-right: auto;
 
 		@include media(tablet) {
-			margin-left: calc(1 * (100vw / 12));
-			margin-right: calc(1 * (100vw / 12));
-			max-width: calc(10 * (100vw / 12));
+			margin-left: calc(2 * (100vw / 12));
+			margin-right: calc(2 * (100vw / 12));
+			max-width: calc(8 * (100vw / 12));
 		}
 	}
 
@@ -83,6 +77,20 @@
 			margin-right: calc(2 * (100vw / 12));
 		}
 	}
+	&.aligncenter {
+
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media(desktop) {
+			margin-left: calc(2 * (100vw / 12));
+			margin-right: calc(2 * (100vw / 12));
+			max-width: calc(10 * (100vw / 12));
+			position: relative;
+			left: 25%;
+			transform: translate(-50%);
+		}
+	}
 }
 
 .entry-content {
@@ -108,6 +116,11 @@
 			@include media(wide) {
 				max-width: (0.33 * $desktop_width);
 			}
+		}
+
+		&.aligncenter {
+			margin: 32px calc(2 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
 		}
 	}
 
@@ -161,15 +174,11 @@
 
 			@include button-all-transition;
 			background: transparent;
-			border: 2px solid $color__background-button;
-
-			&:not(.has-text-color) {
-				color: $color__background-button;
-			}
+			border: 2px solid currentColor;
+			color: $color__background-button;
 		}
 
 		&.is-style-outline .wp-block-button__link:hover {
-			border-color: $color__background-button-hover;
 			color: $color__background-button-hover;
 		}
 	}
@@ -184,18 +193,20 @@
 		li {
 			color: $color__text-light;
 			font-family: $font__heading;
-			font-size: calc(#{$font__size_base} * #{$font__size-lg / 1em} );
+			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 			font-weight: bold;
 			line-height: $font__line-height-heading;
 
-			a:after {
-				color: $color__text-light;
-				content: ",";
+			&:not(.menu-item-has-children) {
+				padding-bottom: ( .75 * $size__spacing-unit );
 			}
 
-			&:last-child a:after {
-				color: $color__text-light;
-				content: ".";
+			a {
+				text-decoration: none;
+			}
+
+			ul {
+				padding-left: $size__spacing-unit;
 			}
 		}
 	}
@@ -251,6 +262,7 @@
 		padding: $size__spacing-unit;
 
 		blockquote {
+			color: $color__text-main;
 			border: none;
 			padding-bottom: calc(2 * #{$size__spacing-unit});
 			margin-right: 0;
@@ -262,7 +274,6 @@
 			line-height: 1.3;
 			margin-bottom: 0.5em;
 			margin-top: 0.5em;
-			color: $color__text-main;
 
 			em {
 				font-style: normal;
@@ -279,7 +290,6 @@
 			font-size: $font__size-xs;
 			line-height: 1.6;
 			text-transform: none;
-			color: $color__text-light;
 		}
 
 		&.alignleft,
@@ -296,6 +306,8 @@
 
 		&.is-style-solid-color {
 
+			background-color: $color__link;
+
 			p {
 				font-size: $font__size-lg;
 				line-height: 1.3;
@@ -307,16 +319,16 @@
 				}
 			}
 
+			a {
+				color: $color__background-body;
+			}
+
 			blockquote {
+				color: $color__background-body;
 				margin: 0 auto;
 			}
 
-			blockquote:not(.has-text-color) p,
-			cite {
-				color: white;
-			}
-
-			&:not(.has-background-color) {
+			.has-primary-background-color {
 				background-color: $color__link;
 			}
 
@@ -446,6 +458,11 @@
 			}
 		}
 
+		&.aligncenter {
+			margin: 32px calc(2 * (100vw / 12));
+			max-width: calc(6 * (100vw / 12));
+		}
+
 		&.has-left-content {
 			justify-content: center;
 
@@ -484,7 +501,7 @@
 		line-height: $font__line-height-pre;
 		margin: 0;
 		padding: ( $size__spacing-unit * .5 );
-		text-align: left;
+		text-align: center;
 	}
 
 	//! Separator
@@ -492,6 +509,7 @@
 	hr {
 		margin-bottom: (2 * $size__spacing-unit);
 		margin-top: (2 * $size__spacing-unit);
+		text-align: left;
 
 		&:not(.is-style-dots) {
 			background-color: $color__text-light;
@@ -513,11 +531,16 @@
 			}
 		}
 
-		&.is-style-dots:before {
-			color: $color__text-light;
-			font-size: $font__size-lg;
-			letter-spacing: $font__size-sm;
-			padding-left: $font__size-sm;
+		&.is-style-dots {
+			@include postContentMaxWidth();
+			text-align: center;
+
+			&:before {
+				color: $color__text-light;
+				font-size: $font__size-lg;
+				letter-spacing: $font__size-sm;
+				padding-left: $font__size-sm;
+			}
 		}
 	}
 
@@ -575,6 +598,8 @@
 
 		code {
 			font-size: $font__size-md;
+			white-space: pre-wrap;
+    	                word-break: break-word;
 		}
 	}
 
@@ -632,6 +657,22 @@
 
 		&.has-excerpts {
 
+		}
+	}
+
+	//! Custom colors
+	.has-primary-background-color {
+		background-color: $color__link;
+
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		a {
+			color: $color__background-body;
 		}
 	}
 }
