@@ -188,12 +188,16 @@
 
 	.comment-meta {
 		position: relative;
+
+		@include media(tablet) {
+			display: flex;
+		}
 	}
 
 	.comment-author {
 
 		@include media(tablet) {
-			display: inline-block;
+			flex: 0 0 auto;
 			vertical-align: baseline;
 		}
 
@@ -256,7 +260,7 @@
 	.comment-metadata {
 
 		@include media(tablet) {
-			display: inline-block;
+			flex: 1 0 auto;
 			margin-left: $size__spacing-unit;
 			position: relative;
 			vertical-align: baseline;

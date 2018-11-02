@@ -2474,8 +2474,14 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .comment .comment-meta {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .comment .comment-author {
-    display: inline-block;
+    flex: 0 0 auto;
     vertical-align: baseline;
   }
 }
@@ -2543,7 +2549,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .comment .comment-metadata {
-    display: inline-block;
+    flex: 1 0 auto;
     margin-left: 1rem;
     position: relative;
     vertical-align: baseline;
