@@ -2460,11 +2460,6 @@ body.page .main-navigation {
   }
 }
 
-.comment:hover > .comment-body > .comment-meta > .comment-metadata > .edit-link-sep,
-.comment:hover > .comment-body > .comment-meta > .comment-metadata > .edit-link {
-  opacity: 1;
-}
-
 .comment .comment-body {
   margin: calc(2 * 1rem) 0;
 }
@@ -2582,15 +2577,11 @@ body.page .main-navigation {
 .comment .comment-metadata .edit-link-sep {
   color: #767676;
   margin: 0 0.2em;
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
   vertical-align: baseline;
 }
 
 .comment .comment-metadata .edit-link {
   color: #767676;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
 }
 
 .comment .comment-metadata .edit-link svg {

@@ -175,13 +175,6 @@
 		}
 	}
 
-	&:hover > .comment-body > .comment-meta > .comment-metadata {
-		> .edit-link-sep,
-		> .edit-link {
-			opacity: 1;
-		}
-	}
-
 	.comment-body {
 		margin: calc(2 * #{$size__spacing-unit}) 0;
 	}
@@ -290,15 +283,11 @@
 		.edit-link-sep {
 			color: $color__text-light;
 			margin: 0 0.2em;
-			opacity: 0;
-			transition: opacity 200ms ease-in-out;
 			vertical-align: baseline;
 		}
 
 		.edit-link {
 			color: $color__text-light;
-			transition: opacity 200ms ease-in-out;
-			opacity: 0;
 
 			svg {
 				transform: scale(0.8);
