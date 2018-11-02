@@ -10,8 +10,14 @@ when Gutenberg supports styling those variations more intuitively.
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Calculates maximum width for post content */
+/* 
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
+ * This results in a jumping cursor when typing in both the Classic and block 
+ * editors. The following font-face override for this character fixes the issue
+ * by inserting a space from the Georgia font instead.
+ */
 @font-face {
-  font-family: 'NonBreakingSpaceOverwrite';
+  font-family: 'NonBreakingSpaceOverride';
   src: local("Georgia");
   unicode-range: U+00A0;
 }
@@ -36,7 +42,7 @@ when Gutenberg supports styling those variations more intuitively.
 /** === Base Typography === */
 body {
   font-size: 22px;
-  font-family: "NonBreakingSpaceOverwrite", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   line-height: 1.8;
   color: #111;
 }

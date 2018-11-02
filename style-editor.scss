@@ -19,7 +19,7 @@ when Gutenberg supports styling those variations more intuitively.
  * by inserting a space from the Georgia font instead.
  */
 @font-face {
-  font-family: 'NonBreakingSpaceOverwrite';
+  font-family: 'NonBreakingSpaceOverride';
   src: local( 'Georgia' );
   unicode-range: U+00A0;
 }
@@ -42,7 +42,7 @@ when Gutenberg supports styling those variations more intuitively.
 
 body {
 	font-size: $font__size_base;
-	font-family: 'NonBreakingSpaceOverwrite', $font__body;
+	font-family: 'NonBreakingSpaceOverride', $font__body;
 	line-height: $font__line-height-body;
 	color: $color__text-main;
 }
