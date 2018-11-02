@@ -12,6 +12,12 @@ when Gutenberg supports styling those variations more intuitively.
 @import "sass/variables-site/colors";
 @import "sass/mixins/mixins-master";
 
+/* 
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
+ * This results in a jumping cursor when typing in both the Classic and block 
+ * editors. The following font-face override for this character fixes the issue
+ * by inserting a space from the Georgia font instead.
+ */
 @font-face {
   font-family: 'NonBreakingSpaceOverwrite';
   src: local( 'Georgia' );
