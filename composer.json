@@ -13,10 +13,8 @@
 			"homepage": "https://github.com/WordPress/twentynineteen"
 		}
 	],
-  "require": {
-      "wptrt/wpthemereview": "^0.1.0"
-  },
   "require-dev": {
+      "wptrt/wpthemereview": "^0.1.0",
       "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
   },
   "scripts": {
