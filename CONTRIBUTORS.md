@@ -53,3 +53,4 @@ Version 1.0:
 | @mayukojpn | @mayukojpn |
 | @enodekciw | @enodekciw |
 | @chetansatasiya | @ketuchetan |
+| @artisan-asad | @artisticasad
