@@ -186,17 +186,17 @@ add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 /**
  * Enqueue supplemental block editor styles
  */
-function twentynineteen_editor_frame_styles() {
+function twentynineteen_editor_customizer_styles() {
 
-	wp_enqueue_style( 'twentynineteen-editor-frame-styles', get_theme_file_uri( '/style-editor-frame.css' ), false, '1.0', 'all' );
+	wp_enqueue_style( 'twentynineteen-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.0', 'all' );
 
 	if ( 'custom' === get_theme_mod( 'colorscheme' ) ) {
 		// Include color patterns
 		require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-		wp_add_inline_style( 'twentynineteen-editor-frame-styles', twentynineteen_custom_colors_css() );
+		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
 	}
 }
-add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_frame_styles' );
+add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_customizer_styles' );
 
 /**
  * Display custom color CSS in customizer and on frontend.
