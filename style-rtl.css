@@ -1755,6 +1755,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
+  margin-top: calc( 4 * 1rem);
   margin-bottom: 0;
   margin-right: 0;
   margin-left: 0;
@@ -3479,6 +3480,7 @@ body.page .main-navigation {
 .entry-content .wp-block-separator.is-style-dots,
 .entry-content hr.is-style-dots {
   max-width: calc(100vw - (2 * 1rem));
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {

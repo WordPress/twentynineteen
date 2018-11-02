@@ -1757,6 +1757,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
+  margin-top: calc( 4 * 1rem);
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
