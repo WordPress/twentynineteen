@@ -84,6 +84,12 @@
 
 				// Disable :focus when using touchdevices
 				siteNavigation.blur();
+
+				// Prevent click on link at touchend position after menu was closed and un-focus sub menu toggle
+				event.preventDefault();
+				document.querySelectorAll(':focus').forEach(function(item) {
+					item.blur();
+				});
 			});
 		}
 
