@@ -61,14 +61,12 @@
 					}
 				}
 
-				.mobile-submenu-expand svg,
-				.desktop-submenu-expand svg {
+				.submenu-expand svg {
 					position: relative;
 					top: 0.2rem;
 				}
 
-				.mobile-submenu-expand,
-				.desktop-submenu-expand {
+				.submenu-expand {
 					margin-right: #{0.5 * $size__spacing-unit};
 				}
 			}
@@ -108,8 +106,7 @@
 
 			&.menu-item-has-children {
 
-				.mobile-submenu-expand,
-				.desktop-submenu-expand {
+				.submenu-expand {
 					position: absolute;
 					width: calc( 24px + #{$size__spacing-unit} );
 					right: 0;
@@ -124,8 +121,7 @@
 					}
 				}
 
-				.mobile-submenu-expand,
-				.desktop-submenu-expand {
+				.submenu-expand {
 					margin-right: 0;
 				}
 
@@ -249,23 +245,6 @@
 
 		> .mobile-parent-nav-menu-item {
 			display: inline-block;
-		}
-	}
-
-	/* Only show one submenu expand button at a time (desktop vs mobile) */
-	.desktop-submenu-expand {
-		display: none;
-
-		@include media(tablet) {
-			display: inline-block;
-		}
-	}
-
-	.mobile-submenu-expand {
-		display: inline-block;
-
-		@include media(tablet) {
-			display: none;
 		}
 	}
 

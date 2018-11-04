@@ -240,13 +240,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 			$icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
 		}
 
-		$link = sprintf(
-			'<span class="mobile-submenu-expand" tabindex="-1">%s</span>',
-			$icon
-		);
-
-		$output .= $link;
-		$output .= "<span class='desktop-submenu-expand'>$icon</span>";
+		$output .= "<span class='submenu-expand' tabindex='-1'>$icon</span>";
 	}
 
 	return $output;
