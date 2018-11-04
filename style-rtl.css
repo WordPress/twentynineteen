@@ -2825,6 +2825,10 @@ body.page .main-navigation {
   }
 }
 
+#colophon .widget_calendar {
+  text-align: center;
+}
+
 #colophon .site-info {
   color: #767676;
 }
