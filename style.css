@@ -652,11 +652,19 @@ html[lang="uk"] .site * {
   font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 }
 
-/* Chinese */
-html[lang="zh-HK"] .site *,
-html[lang="zh-TW"] .site *,
+/* Chinese (Hong Kong) */
+html[lang="zh-HK"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (Taiwan) */
+html[lang="zh-TW"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (China) */
 html[lang="zh-CN"] .site * {
-  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Devanagari */

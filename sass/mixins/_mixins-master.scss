@@ -116,11 +116,19 @@
 	  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 	}
 
-	/* Chinese */
-	html[lang="zh-HK"] #{$wrapper_classname} *,
-	html[lang="zh-TW"] #{$wrapper_classname} *,
+	/* Chinese (Hong Kong) */
+	html[lang="zh-HK"] #{$wrapper_classname} * {
+		font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+	}
+
+	/* Chinese (Taiwan) */
+	html[lang="zh-TW"] #{$wrapper_classname} * {
+		font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+	}
+
+	/* Chinese (China) */
 	html[lang="zh-CN"] #{$wrapper_classname} * {
-	  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
+		font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 	}
 
 	/* Devanagari */
