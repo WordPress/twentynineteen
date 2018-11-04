@@ -216,10 +216,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		// Inject the keyboard_arrow_left SVG inside the parent nav menu item, and let the item link to the parent item.
 		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
 		$link = sprintf(
-			'<a class="menu-item-link-return" id="%1$s" href="%2$s" onclick="%3$s" tabindex="-1">%4$s',
-			esc_attr( "menu-item-link-return-{$item->original_id}" ),
-			esc_attr( "#menu-item-link-{$item->original_id}" ),
-			esc_attr( 'event.preventDefault();' ),
+			'<span class="menu-item-link-return" tabindex="-1">%s',
 			twentynineteen_get_icon_svg( 'chevron_left', 24 )
 		);
 
@@ -230,9 +227,6 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 			1 // Limit.
 		);
 	} elseif ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
-		// Add an ID to the link element itself to facilitate navigation from submenu back to parent.
-		$output = preg_replace( '/(?<=<a\s)/', sprintf( ' id="%s" ', esc_attr( "menu-item-link-{$item->ID}" ) ), $output );
-
 		// Add SVG icon to parent items.
 		if ( 0 === $depth ) {
 			$icon = twentynineteen_get_icon_svg( 'keyboard_arrow_down', 24 );
@@ -240,7 +234,10 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 			$icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
 		}
 
-		$output .= "<span class='submenu-expand' tabindex='-1'>$icon</span>";
+		$output .= sprintf(
+			'<span class="submenu-expand" tabindex="-1">%s</span>',
+			$icon
+		);
 	}
 
 	return $output;

@@ -1020,18 +1020,23 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .sub-menu > li > a {
+.main-navigation .sub-menu > li > a,
+.main-navigation .sub-menu > li > .menu-item-link-return {
   color: #fff;
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) calc( 24px + 1rem) calc( .5 * 1rem) 1rem;
 }
 
-.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus {
   background: #005177;
 }
 
-.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after {
+.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus:after {
   background: #005177;
 }
 

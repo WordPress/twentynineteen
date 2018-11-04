@@ -135,7 +135,8 @@
 				}
 			}
 
-			> a {
+			> a,
+			> .menu-item-link-return {
 				color: $color__background-body;
 				display: block;
 				line-height: $font__line-height-heading;
