@@ -240,11 +240,8 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 			$icon = twentynineteen_get_icon_svg( 'chevron_right', 24 );
 		}
 
-		// @todo We might as well just go back to using the SVG element if the link approach is not suitable for no-JS environments.
 		$link = sprintf(
-			'<a class="mobile-submenu-expand" href="%s" onclick="%s" tabindex="-1">%s</a>',
-			esc_attr( "#menu-item-link-return-{$item->ID}" ),
-			esc_attr( 'event.preventDefault();' ),
+			'<span class="mobile-submenu-expand" tabindex="-1">%s</span>',
 			$icon
 		);
 

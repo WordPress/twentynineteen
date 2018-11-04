@@ -1026,18 +1026,18 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand) {
+.main-navigation .sub-menu > li > a {
   color: #fff;
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus {
   background: #005177;
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover:after, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus:after {
+.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after {
   background: #005177;
 }
 
