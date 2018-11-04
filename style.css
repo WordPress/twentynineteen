@@ -1766,7 +1766,7 @@ body.page .main-navigation {
   /* First layer: grayscale. */
 }
 
-.site-header.featured-image .site-featured-image .wp-post-image {
+.site-header.featured-image .site-featured-image .post-thumbnail img {
   height: auto;
   left: 50%;
   max-width: 1000%;
@@ -1781,7 +1781,7 @@ body.page .main-navigation {
 }
 
 @supports ((-o-object-fit: cover) or (object-fit: cover)) {
-  .site-header.featured-image .site-featured-image .wp-post-image {
+  .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     left: 0;
     -o-object-fit: cover;
@@ -1792,7 +1792,7 @@ body.page .main-navigation {
   }
 }
 
-.image-filters-enabled .site-header.featured-image .site-featured-image .wp-post-image {
+.image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
   filter: grayscale(100%);
 }
 
