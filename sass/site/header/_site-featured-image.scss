@@ -62,7 +62,6 @@
 	}
 
 	/* Entry header */
-
 	.site-featured-image {
 		
 		/* First layer: grayscale. */
@@ -94,7 +93,8 @@
 		}
 	
 		.entry-header {
-
+			
+			margin-top: calc( 4 * #{$size__spacing-unit});
 			margin-bottom: 0;
 			margin-left: 0;
 			margin-right: 0;

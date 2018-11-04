@@ -57,4 +57,9 @@ Version 1.0:
 | @atanas-angelov-dev | @atanasangelovdev |
 | @carolinan | @poena |
 | @sharazghouri | @sharaz |
-| @artisan-asad | @artisticasad
+| @artisan-asad | @artisticasad |
+| @mukeshpanchal27 | @mukesh27 |
+| @burhandodhy | @burhandodhy |
+| @crunnells | @crunnells |
+| @Ismail-elkorchi | @ismailelkorchi |
+| @aryaprakasa | @aprakasa |
