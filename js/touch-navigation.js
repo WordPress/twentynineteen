@@ -32,7 +32,7 @@
 		'use strict';
 
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');
-		var subMenuExpand  = document.querySelectorAll('.mobile-submenu-expand');
+		var subMenuExpand  = document.querySelectorAll('.submenu-expand');
 		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
 		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 		var i;

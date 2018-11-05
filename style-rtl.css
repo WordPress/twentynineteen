@@ -896,7 +896,6 @@ a:focus {
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
-  /* Only show one submenu expand button at a time (desktop vs mobile) */
 }
 
 body.page .main-navigation {
@@ -953,14 +952,12 @@ body.page .main-navigation {
   display: none;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand svg,
-.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand {
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand {
   margin-left: 0.5rem;
 }
 
@@ -998,8 +995,7 @@ body.page .main-navigation {
   word-break: break-word;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
   position: absolute;
   width: calc( 24px + 1rem);
   left: 0;
@@ -1010,13 +1006,11 @@ body.page .main-navigation {
   padding: calc( .5 * 1rem);
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand svg,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand svg {
   top: 0;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
   margin-left: 0;
 }
 
@@ -1026,18 +1020,23 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand) {
+.main-navigation .sub-menu > li > a,
+.main-navigation .sub-menu > li > .menu-item-link-return {
   color: #fff;
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus {
   background: #005177;
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover:after, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus:after {
+.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus:after {
   background: #005177;
 }
 
@@ -1142,26 +1141,6 @@ body.page .main-navigation {
 
 .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
   display: inline-block;
-}
-
-.main-navigation .desktop-submenu-expand {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .desktop-submenu-expand {
-    display: inline-block;
-  }
-}
-
-.main-navigation .mobile-submenu-expand {
-  display: inline-block;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .mobile-submenu-expand {
-    display: none;
-  }
 }
 
 /* Menu Animation */
