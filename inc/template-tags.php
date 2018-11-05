@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
@@ -24,8 +25,12 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		echo '<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>'; // WPCS: XSS OK.
-
+		printf(
+			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
+			twentynineteen_get_icon_svg( 'watch', 16 ),
+			esc_url( get_permalink() ),
+			$time_string
+		);
 	}
 endif;
 
@@ -62,41 +67,21 @@ if ( ! function_exists( 'twentynineteen_comment_count' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'twentynineteen_estimated_read_time' ) ) :
-	/**
-	 * Prints HTML with the estimated reading time. Does not display when time to read is zero.
-	 */
-	function twentynineteen_estimated_read_time() {
-		$minutes = twentynineteen_get_estimated_reading_time();
-		if ( 0 === $minutes ) {
-			return null;
-		}
-		/* translators: TODO comment on placeholders */
-		$datetime_attr = sprintf( '%dm 0s', $minutes );
-		/* translators: TODO comment on placeholders */
-		$read_time_text = sprintf( _nx( '%s Minute', '%s Minutes', $minutes, 'Time to read', 'twentynineteen' ), $minutes );
-		/* translators: 1: SVG icon. 2: Reading time label, only visible to screen readers. 3: The [datetime] attribute for the <time> tag. 4: Estimated reading time text, in minutes. */
-		printf(
-			'<span class="est-reading-time">%1$s<span class="screen-reader-text">%2$s</span><time datetime="%3$s">%4$s</time></span>',
-			twentynineteen_get_icon_svg( 'watch', 16 ),
-			__( 'Estimated reading time', 'twentynineteen' ),
-			$datetime_attr,
-			$read_time_text
-		);
-	}
-endif;
-
 if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function twentynineteen_entry_footer() {
 
-		// Posted by
-		twentynineteen_posted_by();
-
-		// Hide category and tag text for pages.
+		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
+			// Posted by
+			twentynineteen_posted_by();
+
+			// Posted on
+			twentynineteen_posted_on();
+
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
@@ -106,6 +91,18 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 					twentynineteen_get_icon_svg( 'archive', 16 ),
 					esc_html__( 'Posted in', 'twentynineteen' ),
 					$categories_list
+				); // WPCS: XSS OK.
+			}
+
+			/* translators: used between list items, there is a space after the comma. */
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'twentynineteen' ) );
+			if ( $tags_list ) {
+				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
+				printf(
+					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+					twentynineteen_get_icon_svg( 'tag', 16 ),
+					esc_html__( 'Tags:', 'twentynineteen' ),
+					$tags_list
 				); // WPCS: XSS OK.
 			}
 		}
@@ -154,102 +151,20 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
-		<?php
+			<?php
 		else :
-			$post_thumbnail = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		?>
+			?>
 
 		<figure class="post-thumbnail">
-			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" style="background-image: url(<?php echo esc_url( $post_thumbnail ); ?>);">
+			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
-							array( 'echo' => false )
-						),
-					)
-				);
+				the_post_thumbnail( 'post-thumbnail' );
 				?>
 			</a>
 		</figure>
 
-		<?php
+			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
-	/**
-	 * Returns the CSS for the header featured image background.
-	 */
-	function twentynineteen_header_featured_image_css() {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		return sprintf( 'body.singular .site-header.featured-image .site-branding-container:before { background-image: url(%s); }', esc_url( $img_url ) );
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_human_time_diff' ) ) :
-/**
- * Same as core's human_time_diff(), only in the "ago" context,
- * which is different for some languages.
- *
- * @param int $from Unix timestamp from which the difference begins.
- * @param int $to Optional Unix timestamp to end the time difference. Defaults to time() if not set.
- * @return string Human readable time difference.
- */
-	function twentynineteen_human_time_diff( $from, $to = '' ) {
-		if ( empty( $to ) ) {
-			$to = time();
-		}
-
-		$diff = (int) abs( $to - $from );
-
-		if ( $diff < HOUR_IN_SECONDS ) {
-			$mins = round( $diff / MINUTE_IN_SECONDS );
-			if ( $mins <= 1 ) {
-				$mins = 1;
-			}
-			/* translators: min=minute */
-			$since = sprintf( _n( '%s min ago', '%s mins ago', $mins, 'twentynineteen' ), $mins );
-		} elseif ( $diff < DAY_IN_SECONDS && $diff >= HOUR_IN_SECONDS ) {
-			$hours = round( $diff / HOUR_IN_SECONDS );
-			if ( $hours <= 1 ) {
-				$hours = 1;
-			}
-			/* translators: TODO comment on placeholders */
-			$since = sprintf( _n( '%s hour ago', '%s hours ago', $hours, 'twentynineteen' ), $hours );
-		} elseif ( $diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS ) {
-			$days = round( $diff / DAY_IN_SECONDS );
-			if ( $days <= 1 ) {
-				$days = 1;
-			}
-			/* translators: TODO comment on placeholders */
-			$since = sprintf( _n( '%s day ago', '%s days ago', $days, 'twentynineteen' ), $days );
-		} elseif ( $diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS ) {
-			$weeks = round( $diff / WEEK_IN_SECONDS );
-			if ( $weeks <= 1 ) {
-				$weeks = 1;
-			}
-			/* translators: TODO comment on placeholders */
-			$since = sprintf( _n( '%s week ago', '%s weeks ago', $weeks, 'twentynineteen' ), $weeks );
-		} elseif ( $diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS ) {
-			$months = round( $diff / ( 30 * DAY_IN_SECONDS ) );
-			if ( $months <= 1 ) {
-				$months = 1;
-			}
-			/* translators: TODO comment on placeholders */
-			$since = sprintf( _n( '%s month ago', '%s months ago', $months, 'twentynineteen' ), $months );
-		} elseif ( $diff >= YEAR_IN_SECONDS ) {
-			$years = round( $diff / YEAR_IN_SECONDS );
-			if ( $years <= 1 ) {
-				$years = 1;
-			}
-			/* translators: TODO comment on placeholders */
-			$since = sprintf( _n( '%s year ago', '%s years ago', $years, 'twentynineteen' ), $years );
-		}
-
-		return $since;
 	}
 endif;
 
@@ -258,11 +173,10 @@ if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 	 * Returns the HTML markup to generate a user avatar.
 	 */
 	function twentynineteen_get_user_avatar_markup( $id_or_email = null ) {
+
 		if ( ! isset( $id_or_email ) ) {
 			$id_or_email = get_current_user_id();
 		}
-
-		$classes = array( 'comment-author', 'vcard' );
 
 		return sprintf( '<div class="comment-user-avatar comment-author vcard">%s</div>', get_avatar( $id_or_email, twentynineteen_get_avatar_size() ) );
 	}
@@ -291,9 +205,9 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 	 */
 	function twentynineteen_comment_form( $order ) {
 		if ( true === $order || strtolower( $order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+
 			comment_form(
 				array(
-					'title_reply_before' => twentynineteen_get_user_avatar_markup(),
 					'logged_in_as'       => null,
 					'title_reply'        => null,
 				)

@@ -11,13 +11,14 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) {
@@ -38,9 +39,9 @@ get_header();
 
 		}
 		?>
-
-	</main><!-- .site-main -->
-</div><!-- .content-area -->
+		
+		</main><!-- .site-main -->
+	</section><!-- .content-area -->
 
 <?php
 get_footer();

@@ -6,6 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
@@ -67,18 +68,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'twentynineteen_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -94,6 +83,9 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 		// Add support for Block Styles
 		add_theme_support( 'wp-block-styles' );
 
@@ -106,9 +98,46 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles
 		add_editor_style( 'style-editor.css' );
 
+		// Editor color palette
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
+					'slug'  => 'primary',
+					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'colorscheme' ) ? 199 : get_theme_mod( 'colorscheme_primary_hue', 199 ), 100, 33 ),
+				),
+			)
+		);
+
+		// Add support for responsive embedded content
+		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function twentynineteen_widgets_init() {
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'twentynineteen' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'twentynineteen' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+}
+add_action( 'widgets_init', 'twentynineteen_widgets_init' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -131,17 +160,65 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
 function twentynineteen_scripts() {
 	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
 
+	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
+
 	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) {
-		wp_add_inline_style( 'twentynineteen-style', twentynineteen_header_featured_image_css() );
+	if ( has_nav_menu( 'menu-1' ) ) {
+		wp_enqueue_script( 'twentynineteen-touch-navigation', get_theme_file_uri( '/js/touch-navigation.js' ), array(), '1.0', true );
+		$l10n_skip_link_focus_fix['expand']   = __( 'Expand child menu', 'twentynineteen' );
+		$l10n_skip_link_focus_fix['collapse'] = __( 'Collapse child menu', 'twentynineteen' );
+		wp_localize_script( 'twentynineteen-skip-link-focus-fix', 'twentynineteenScreenReaderText', $l10n_skip_link_focus_fix );
 	}
+
+	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
+
+/**
+ * Enqueue supplemental block editor styles
+ */
+function twentynineteen_editor_customizer_styles() {
+
+	wp_enqueue_style( 'twentynineteen-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.0', 'all' );
+
+	if ( 'custom' === get_theme_mod( 'colorscheme' ) ) {
+		// Include color patterns
+		require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
+	}
+}
+add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_customizer_styles' );
+
+/**
+ * Display custom color CSS in customizer and on frontend.
+ */
+function twentynineteen_colors_css_wrap() {
+
+	// Only include custom colors in customizer or frontend
+	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
+		return;
+	}
+
+	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+
+	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
+		$primary_color = 199;
+	} else {
+		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
+	}
+	?>
+
+	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $primary_color . '"' : ''; ?>>
+		<?php echo twentynineteen_custom_colors_css(); ?>
+	</style>
+<?php
+}
+add_action( 'wp_head', 'twentynineteen_colors_css_wrap' );
 
 /**
  * SVG Icons class.
@@ -172,10 +249,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
