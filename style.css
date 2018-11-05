@@ -1140,7 +1140,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
-  display: inline-block;
+  display: block;
 }
 
 /* Menu Animation */

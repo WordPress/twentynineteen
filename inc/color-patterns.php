@@ -154,8 +154,8 @@ function twentynineteen_custom_colors_css() {
 		.main-navigation .sub-menu > li > a:focus,
 		.main-navigation .sub-menu > li > a:hover:after,
 		.main-navigation .sub-menu > li > a:focus:after,
-		.main-navigation .sub-menu > li > a:hover,
-		.main-navigation .sub-menu > li > a:focus {
+		.main-navigation .sub-menu > li > .menu-item-link-return:hover,
+		.main-navigation .sub-menu > li > .menu-item-link-return:focus {
 			background: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
 		}';
 
