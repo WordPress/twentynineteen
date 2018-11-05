@@ -188,10 +188,10 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '<div>';
 		$nav_menu .= '<ul class="main-menu">';
 		$nav_menu .= '<li class="menu-item menu-item-has-children">';
-		$nav_menu .= '<span class="screen-reader-text">' . esc_html( 'More', 'musictheme' ) . '</span>';
-		$nav_menu .= '<a href="#" class="main-menu-more submenu-expand" aria-label="More" aria-haspopup="true" aria-expanded="false">';
+		$nav_menu .= '<a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">' . esc_html( 'More', 'twentynineteen' ) . '</a>';
+		$nav_menu .= '<span class="main-menu-more submenu-expand" tabindex="-1">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
-		$nav_menu .= '</a>';
+		$nav_menu .= '</span>';
 		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
 		$nav_menu .= '<a class="menu-item-link-return" id="menu-item-link-return-1877" href="#menu-item-link-1877" onclick="event.preventDefault();" tabindex="-1">';
