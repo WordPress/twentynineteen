@@ -224,22 +224,6 @@
 
 	/* The intensity of each blend mode is controlled via layer opacity. */
 
-/*<<<<<<< HEAD*/
-	/* First layer: grayscale. */
-	.site-branding-container:before {
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		z-index: 1;
-
-		/* When image filters are active, make it grayscale to colorize it blue. */
-		.image-filters-enabled & {
-			filter: grayscale(100%);
-		}
-	}
-
-/*=======
-//>>>>>>> master*/
 	/* Second layer: screen. */
 	.image-filters-enabled & .site-featured-image:before {
 		background: $color__link;
@@ -276,8 +260,7 @@
 
 		/* Browsers supporting mix-blend-mode can have a light overlay */
 		@supports (mix-blend-mode: overlay) {
-			background: rgba($
-        -body, 0.35);
+			background: rgba($color__background-body, 0.35);
 		}
 	}
 

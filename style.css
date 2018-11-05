@@ -2028,7 +2028,7 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .site-header.featured-image .site-branding-container:after {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.35);
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
