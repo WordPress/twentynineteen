@@ -57,7 +57,10 @@
 				toggleAriaExpandedState( menuItemAria );
 
 				// Disable focus when using touchdevices
-				siteNavigation.blur();
+				event.preventDefault();
+				document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
+					item.blur();
+				});
 			});
 		}
 
@@ -71,7 +74,6 @@
 				// If this is in a sub-sub-menu, go back to parent sub-menu
 				if ( currentSubmenu.closest('ul').classList.contains('sub-menu') ) {
 
-					menuItem.classList.remove('focus');
 					nearestSubMenu.classList.remove('expanded-true');
 					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 
