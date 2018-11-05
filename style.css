@@ -1170,8 +1170,9 @@ body.page .main-navigation {
   position: fixed;
   z-index: 100000;
   /* Make sure appears above mobile admin bar */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
   transform: translateX(100%);
   animation: slide_in_right 0.3s forwards;
 }
