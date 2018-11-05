@@ -1,6 +1,4 @@
-/*jshint esversion: 3 */
-
-const postcssFocusWithin = require('postcss-focus-within');
+var postcssFocusWithin = require('postcss-focus-within');
 
 module.exports = {
     plugins: {

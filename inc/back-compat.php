@@ -55,7 +55,7 @@ function twentynineteen_customize() {
 		),
 		'',
 		array(
-			'back_link' => true
+			'back_link' => true,
 		),
 	);
 }
