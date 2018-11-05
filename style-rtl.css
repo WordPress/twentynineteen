@@ -948,19 +948,39 @@ body.page .main-navigation {
   display: none;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand {
+  margin-left: 0.5rem;
+  /* Priority+ Menu */
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more svg {
+  height: 24px;
+  width: 24px;
+  top: -0.125rem;
+  vertical-align: text-bottom;
+}
+
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
-}
-
-.main-navigation .main-menu > li.menu-item-has-children .submenu-expand {
-  margin-left: 0.5rem;
 }
 
 .main-navigation .main-menu > li:last-child > a,
 .main-navigation .main-menu > li:last-child.menu-item-has-children .mobile-submenu-expand,
 .main-navigation .main-menu > li:last-child.menu-item-has-children .desktop-submenu-expand {
   margin-left: 0;
+}
+
+.main-navigation .main-menu .is-hidden {
+  display: none;
 }
 
 .main-navigation .sub-menu {
@@ -1002,26 +1022,10 @@ body.page .main-navigation {
   color: white;
   line-height: 1;
   padding: calc( .5 * 1rem);
-  /* Priority+ Menu */
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand svg {
   top: 0;
-}
-
-.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand.main-menu-more {
-  position: relative;
-  height: 24px;
-  width: 24px;
-  padding: 0;
-  margin-right: 0.5rem;
-}
-
-.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand.main-menu-more svg {
-  height: 24px;
-  width: 24px;
-  top: -0.125rem;
-  vertical-align: text-bottom;
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {

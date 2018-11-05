@@ -979,6 +979,10 @@ body.page .main-navigation {
   margin-right: 0;
 }
 
+.main-navigation .main-menu .is-hidden {
+  display: none;
+}
+
 .main-navigation .sub-menu {
   background: #0073aa;
   color: #fff;
