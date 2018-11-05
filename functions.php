@@ -9,6 +9,14 @@
  * @since 1.0.0
  */
 
+/**
+ * Twenty Nineteen only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -172,10 +180,6 @@ function twentynineteen_scripts() {
 	}
 
 	wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
-
-	if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) {
-		wp_add_inline_style( 'twentynineteen-style', twentynineteen_header_featured_image_css() );
-	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

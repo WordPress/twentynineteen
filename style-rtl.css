@@ -56,6 +56,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* Normalize */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -624,6 +625,81 @@ a:hover {
 
 a:focus {
   text-decoration: underline;
+}
+
+/* Arabic */
+html[lang="ar"] .site *,
+html[lang="ary"] .site *,
+html[lang="azb"] .site *,
+html[lang="ckb"] .site *,
+html[lang="fa-IR"] .site *,
+html[lang="haz"] .site *,
+html[lang="ps"] .site * {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
+/* Cyrillic */
+html[lang="be"] .site *,
+html[lang="bg-BG"] .site *,
+html[lang="kk"] .site *,
+html[lang="mk-MK"] .site *,
+html[lang="mn"] .site *,
+html[lang="ru-RU"] .site *,
+html[lang="sah"] .site *,
+html[lang="sr-RS"] .site *,
+html[lang="tt-RU"] .site *,
+html[lang="uk"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Chinese */
+html[lang="zh-HK"] .site *,
+html[lang="zh-TW"] .site *,
+html[lang="zh-CN"] .site * {
+  font-family: 'PingFang TC', 'Helvetica Neue', Helvetica, STHeitiTC-Light, Arial, sans-serif !important;
+}
+
+/* Devanagari */
+html[lang="bn-BD"] .site *,
+html[lang="hi-IN"] .site *,
+html[lang="mr"] .site *,
+html[lang="ne-NP"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Greek */
+html[lang="el"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Gujarati */
+html[lang="gu"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Hebrew */
+html[lang="he-IL"] .site * {
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+}
+
+/* Japanese */
+html[lang="ja"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
+}
+
+/* Korean */
+html[lang="ko-KR"] .site * {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+}
+
+/* Thai */
+html[lang="th"] .site * {
+  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+}
+
+/* Vietnamese */
+html[lang="vi"] .site * {
+  font-family: 'Libre Franklin', sans-serif !important;
 }
 
 /* Elements */
@@ -1667,6 +1743,8 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image {
+  /* Hide overflow for overflowing featured image */
+  overflow: hidden;
   /* Need relative positioning to properly align layers. */
   position: relative;
   /* Add text shadow to text, to increase readability. */
@@ -1678,12 +1756,11 @@ body.page .main-navigation {
   /* Make sure important elements are above pseudo elements used for effects. */
   /* Set up image filter layer positioning */
   /* Background & Effects */
-  /* Shared background settings between pseudo elements. See .site-branding-container */
+  /* Shared background settings between pseudo elements. */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* The intensity of each blend mode is controlled via layer opacity. */
-  /* First layer: grayscale. */
   /* Second layer: screen. */
   /* Third layer: multiply. */
   /* When image filters are inactive, a black overlay is added. */
@@ -1757,6 +1834,40 @@ body.page .main-navigation {
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+.site-header.featured-image .site-featured-image {
+  /* First layer: grayscale. */
+}
+
+.site-header.featured-image .site-featured-image .post-thumbnail img {
+  height: auto;
+  right: 50%;
+  max-width: 1000%;
+  min-height: 100%;
+  min-width: 100vw;
+  position: absolute;
+  top: 50%;
+  transform: translateX(50%) translateY(-50%);
+  width: auto;
+  z-index: 1;
+  /* When image filters are active, make it grayscale to colorize it blue. */
+}
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .site-header.featured-image .site-featured-image .post-thumbnail img {
+    height: 100%;
+    right: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    top: 0;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
+  filter: grayscale(100%);
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
@@ -1849,7 +1960,6 @@ body.page .main-navigation {
   z-index: 9;
 }
 
-.site-header.featured-image .site-branding-container:before,
 .site-header.featured-image .site-branding-container:after,
 .site-header.featured-image .site-featured-image:before,
 .site-header.featured-image .site-featured-image:after, .site-header.featured-image:after {
@@ -1860,18 +1970,6 @@ body.page .main-navigation {
   content: "\020";
   width: 100%;
   height: 100%;
-}
-
-.site-header.featured-image .site-branding-container:before {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-  /* When image filters are active, make it grayscale to colorize it blue. */
-}
-
-.image-filters-enabled .site-header.featured-image .site-branding-container:before {
-  filter: grayscale(100%);
 }
 
 .image-filters-enabled .site-header.featured-image .site-featured-image:before {
