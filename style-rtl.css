@@ -1667,6 +1667,8 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image {
+  /* Hide overflow for overflowing featured image */
+  overflow: hidden;
   /* Need relative positioning to properly align layers. */
   position: relative;
   /* Add text shadow to text, to increase readability. */
@@ -1678,12 +1680,11 @@ body.page .main-navigation {
   /* Make sure important elements are above pseudo elements used for effects. */
   /* Set up image filter layer positioning */
   /* Background & Effects */
-  /* Shared background settings between pseudo elements. See .site-branding-container */
+  /* Shared background settings between pseudo elements. */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* The intensity of each blend mode is controlled via layer opacity. */
-  /* First layer: grayscale. */
   /* Second layer: screen. */
   /* Third layer: multiply. */
   /* When image filters are inactive, a black overlay is added. */
@@ -1757,6 +1758,40 @@ body.page .main-navigation {
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+.site-header.featured-image .site-featured-image {
+  /* First layer: grayscale. */
+}
+
+.site-header.featured-image .site-featured-image .post-thumbnail img {
+  height: auto;
+  right: 50%;
+  max-width: 1000%;
+  min-height: 100%;
+  min-width: 100vw;
+  position: absolute;
+  top: 50%;
+  transform: translateX(50%) translateY(-50%);
+  width: auto;
+  z-index: 1;
+  /* When image filters are active, make it grayscale to colorize it blue. */
+}
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .site-header.featured-image .site-featured-image .post-thumbnail img {
+    height: 100%;
+    right: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    top: 0;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
+  filter: grayscale(100%);
 }
 
 .site-header.featured-image .site-featured-image .entry-header {
@@ -1849,7 +1884,6 @@ body.page .main-navigation {
   z-index: 9;
 }
 
-.site-header.featured-image .site-branding-container:before,
 .site-header.featured-image .site-branding-container:after,
 .site-header.featured-image .site-featured-image:before,
 .site-header.featured-image .site-featured-image:after, .site-header.featured-image:after {
@@ -1860,18 +1894,6 @@ body.page .main-navigation {
   content: "\020";
   width: 100%;
   height: 100%;
-}
-
-.site-header.featured-image .site-branding-container:before {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-  /* When image filters are active, make it grayscale to colorize it blue. */
-}
-
-.image-filters-enabled .site-header.featured-image .site-branding-container:before {
-  filter: grayscale(100%);
 }
 
 .image-filters-enabled .site-header.featured-image .site-featured-image:before {
