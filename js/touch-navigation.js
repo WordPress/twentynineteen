@@ -86,11 +86,6 @@
 			return;
 		}
 
-		// Remove focus states
-		function removeFocus( element ) {
-			element.blur();
-		}
-
 		// Open Sub-menu
 		function openSubMenu( currentSubmenu ) {
 
@@ -131,7 +126,6 @@
 
 				var menuItem       = currentSubmenu.closest('.menu-item'); // this.parentNode
 				var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
-				var menuItemToggle = menuItem.querySelector('.mobile-submenu-expand');
 				var subMenu        = currentSubmenu.closest('.sub-menu');
 
 				// If this is in a sub-sub-menu, go back to parent sub-menu
