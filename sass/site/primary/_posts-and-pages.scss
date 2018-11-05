@@ -177,6 +177,10 @@
 
 	.entry-content {
 
+		p {
+			word-wrap: break-word;
+		}
+
 		.more-link {
 			@include link-transition;
 			display: inline;
