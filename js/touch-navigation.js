@@ -120,6 +120,7 @@
 			toggleAriaExpandedState( menuItemAria );
 		}
 
+		// Close Sub-menu
 		function closeSubMenu( currentSubmenu ) {
 
 			currentSubmenu.addEventListener('touchend', function(event) {
