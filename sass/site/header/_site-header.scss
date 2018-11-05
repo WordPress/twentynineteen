@@ -45,7 +45,7 @@
 	@include media(tablet) {
 		margin-bottom: 0;
 		position: absolute;
-		right: calc(100% + (0.5 * calc(100vw / 12)));
+		right: calc(100% + (0.5 * 100vw / 12));
 		top: 4px; // Accounts for box-shadow widths
 		z-index: 999;
 	}
@@ -80,10 +80,14 @@
 // Site title
 
 .site-title {
-
 	margin: auto;
 	display: inline;
-	color: $color__text-main;
+	
+
+	a:link,
+	a:visited {
+		color: $color__text-main;
+	}
 
 	.featured-image & {
 		margin: 0;

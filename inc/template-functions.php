@@ -71,52 +71,29 @@ add_filter( 'comment_form_defaults', 'twentynineteen_comment_form_defaults' );
  */
 function twentynineteen_get_the_archive_title() {
 	if ( is_category() ) {
-		$title = esc_html__( 'Category Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Category Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
-		$title = esc_html__( 'Tag Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Tag Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_author() ) {
-		$title = esc_html__( 'Author Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Author Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
 	} elseif ( is_year() ) {
-		$title = esc_html__( 'Yearly Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Yearly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_month() ) {
-		$title = esc_html__( 'Monthly Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Monthly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_day() ) {
-		$title = esc_html__( 'Daily Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Daily Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
-		$title = esc_html__( 'Post Type Archives:', 'twentynineteen' );
+		$title = esc_html__( 'Post Type Archives: ', 'twentynineteen' ) . '<span class="page-description">' . post_type_archive_title( '', false ) . '</span>';
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name */
-		$title = sprintf( __( '%s Archives: ' ), $tax->labels->singular_name );
+		/* translators: %s: Taxonomy singular name */
+		$title = sprintf( esc_html__( '%s Archives:', 'twentynineteen' ), $tax->labels->singular_name );
 	} else {
 		$title = esc_html__( 'Archives:', 'twentynineteen' );
 	}
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'twentynineteen_get_the_archive_title' );
-
-/**
- * Filters the default archive descriptions.
- */
-function twentynineteen_get_the_archive_description() {
-	if ( is_category() || is_tag() || is_tax() ) {
-		$description = single_term_title( '', false );
-	} elseif ( is_author() ) {
-		$description = get_the_author_meta( 'display_name' );
-	} elseif ( is_post_type_archive() ) {
-		$description = post_type_archive_title( '', false );
-	} elseif ( is_year() ) {
-		$description = get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) );
-	} elseif ( is_month() ) {
-		$description = get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) );
-	} elseif ( is_day() ) {
-		$description = get_the_date();
-	} else {
-		$description = null;
-	}
-	return $description;
-}
-add_filter( 'get_the_archive_description', 'twentynineteen_get_the_archive_description' );
 
 /**
  * Determines if post thumbnail can be displayed.
@@ -129,6 +106,9 @@ function twentynineteen_can_show_post_thumbnail() {
  * Returns true if image filters are enabled on the theme options.
  */
 function twentynineteen_image_filters_enabled() {
+	if ( 'inactive' === get_theme_mod( 'image_filter' ) ) {
+		return false;
+	}
 	return true;
 }
 
@@ -166,7 +146,7 @@ function twentynineteen_get_discussion_data() {
 	}
 	$authors    = array();
 	$commenters = array();
-	$user_id    = is_user_logged_in() ? get_current_user_id() : -1;
+	$user_id    = -1; // is_user_logged_in() ? get_current_user_id() : -1;
 	$comments   = get_comments(
 		array(
 			'post_id' => $current_post_id,
@@ -195,27 +175,6 @@ function twentynineteen_get_discussion_data() {
 }
 
 /**
- * WCAG 2.0 Attributes for Dropdown Menus
- *
- * Adjustments to menu attributes tot support WCAG 2.0 recommendations
- * for flyout and dropdown menus.
- *
- * @ref https://www.w3.org/WAI/tutorials/menus/flyout/
- */
-function twentynineteen_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
-
-	// Add [aria-haspopup] and [aria-expanded] to menu items that have children
-	$item_has_children = in_array( 'menu-item-has-children', $item->classes );
-	if ( $item_has_children ) {
-		$atts['aria-haspopup'] = 'true';
-		$atts['aria-expanded'] = 'false';
-	}
-
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'twentynineteen_nav_menu_link_attributes', 10, 4 );
-
-/**
  * Add a dropdown icon to top-level menu items
  */
 function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
@@ -236,3 +195,85 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 	return $output;
 }
 add_filter( 'walker_nav_menu_start_el', 'twentynineteen_add_dropdown_icons', 10, 4 );
+
+/**
+ * Convert HSL to HEX colors
+ */
+function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
+
+	$h /= 360;
+	$s /= 100;
+	$l /= 100;
+
+	$r = $l;
+	$g = $l;
+	$b = $l;
+	$v = ( $l <= 0.5 ) ? ( $l * ( 1.0 + $s ) ) : ( $l + $s - $l * $s );
+	if ( $v > 0 ) {
+		$m;
+		$sv;
+		$sextant;
+		$fract;
+		$vsf;
+		$mid1;
+		$mid2;
+
+		$m = $l + $l - $v;
+		$sv = ( $v - $m ) / $v;
+		$h *= 6.0;
+		$sextant = floor( $h );
+		$fract = $h - $sextant;
+		$vsf = $v * $sv * $fract;
+		$mid1 = $m + $vsf;
+		$mid2 = $v - $vsf;
+
+		switch ( $sextant ) {
+			case 0:
+				$r = $v;
+				$g = $mid1;
+				$b = $m;
+				break;
+			case 1:
+				$r = $mid2;
+				$g = $v;
+				$b = $m;
+				break;
+			case 2:
+				$r = $m;
+				$g = $v;
+				$b = $mid1;
+				break;
+			case 3:
+				$r = $m;
+				$g = $mid2;
+				$b = $v;
+				break;
+			case 4:
+				$r = $mid1;
+				$g = $m;
+				$b = $v;
+				break;
+			case 5:
+				$r = $v;
+				$g = $m;
+				$b = $mid2;
+				break;
+		}
+	}
+	$r = round( $r * 255, 0 );
+	$g = round( $g * 255, 0 );
+	$b = round( $b * 255, 0 );
+
+	if ( $to_hex ) {
+
+		$r = ( $r < 15 ) ? '0' . dechex( $r ) : dechex( $r );
+		$g = ( $g < 15 ) ? '0' . dechex( $g ) : dechex( $g );
+		$b = ( $b < 15 ) ? '0' . dechex( $b ) : dechex( $b );
+
+		return "#$r$g$b";
+
+	} else {
+
+		return "rgb($r, $g, $b)";
+	}
+}

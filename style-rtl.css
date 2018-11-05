@@ -581,14 +581,8 @@ dfn, cite, em, i {
   font-style: italic;
 }
 
-blockquote > p {
-  font-size: 1.6875em;
-  font-style: italic;
-  line-height: 1.2;
-}
-
 blockquote cite {
-  font-size: 0.88889em;
+  font-size: 0.71111em;
   font-style: normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -667,7 +661,8 @@ a:active {
 }
 
 a:focus {
-  outline: 0;
+  outline: thin;
+  outline-style: dotted;
   text-decoration: underline;
 }
 
@@ -738,7 +733,7 @@ figure {
 blockquote {
   border-right: 2px solid #0073aa;
   margin-right: -2rem;
-  padding: 1rem 2rem 0.5rem 0;
+  padding: 0 1rem 0 0;
 }
 
 blockquote > p {
@@ -775,7 +770,8 @@ input[type="submit"] {
   font-weight: 600;
   line-height: 1.2;
   outline: none;
-  padding: 0.66rem 1rem;
+  padding: 0.76rem 1rem;
+  vertical-align: bottom;
 }
 
 .button:hover,
@@ -828,7 +824,7 @@ textarea {
   border: solid 1px #ccc;
   box-sizing: border-box;
   outline: none;
-  padding: 0.5rem 0.66rem;
+  padding: 0.36rem 0.66rem;
 }
 
 input[type="text"]:focus,
@@ -884,7 +880,7 @@ a:hover, a:active {
 }
 
 a:focus {
-  outline: 0;
+  outline: thin dotted;
   text-decoration: underline;
 }
 
@@ -1460,7 +1456,7 @@ body.page .main-navigation {
   .site-logo {
     margin-bottom: 0;
     position: absolute;
-    left: calc(100% + (0.5 * calc(100vw / 12)));
+    left: calc(100% + (0.5 * 100vw / 12));
     top: 4px;
     z-index: 999;
   }
@@ -1495,8 +1491,12 @@ body.page .main-navigation {
 .site-title {
   margin: auto;
   display: inline;
-  color: #111;
   /* When there is no description set, make sure navigation appears below title. */
+}
+
+.site-title a:link,
+.site-title a:visited {
+  color: #111;
 }
 
 .featured-image .site-title {
@@ -1546,7 +1546,7 @@ body.page .main-navigation {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   /* Set white text color when featured image is set. */
   /* add focus state to social media icons */
-  /* Site header featured image styles */
+  /* Entry header */
   /* Custom Logo Link */
   /* Make sure important elements are above pseudo elements used for effects. */
   /* Set up image filter layer positioning */
@@ -1559,36 +1559,9 @@ body.page .main-navigation {
   /* First layer: grayscale. */
   /* Second layer: screen. */
   /* Third layer: multiply. */
+  /* When image filters are inactive, a black overlay is added. */
   /* Fourth layer: overlay. */
   /* Fifth layer: readability overlay */
-}
-
-.site-header.featured-image .entry-meta {
-  font-weight: 500;
-}
-
-.site-header.featured-image .entry-meta > span {
-  margin-left: 1rem;
-}
-
-.site-header.featured-image .entry-meta > span:last-child {
-  margin-left: 0;
-}
-
-.site-header.featured-image .entry-meta a {
-  transition: color 110ms ease-in-out;
-  color: currentColor;
-}
-
-.site-header.featured-image .entry-meta a:hover {
-  text-decoration: none;
-}
-
-.site-header.featured-image .entry-meta .svg-icon {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5em;
 }
 
 .site-header.featured-image .site-branding .site-title,
@@ -1663,6 +1636,7 @@ body.page .main-navigation {
   margin-bottom: 0;
   margin-right: 0;
   margin-left: 0;
+  /* Entry meta */
 }
 
 @media only screen and (min-width: 768px) {
@@ -1674,6 +1648,58 @@ body.page .main-navigation {
 
 .site-header.featured-image .site-featured-image .entry-header .entry-title:before {
   background: #fff;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta {
+  font-weight: 500;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta > span {
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta > span:last-child {
+  margin-left: 0;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta a {
+  transition: color 110ms ease-in-out;
+  color: currentColor;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta a:hover {
+  text-decoration: none;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta .svg-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+.site-header.featured-image .site-featured-image .entry-header .entry-meta .discussion-avatar-list {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta {
+    display: flex;
+    position: relative;
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-title {
+    padding-left: calc(1 * (100vw / 12) + 1rem);
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .comment-count {
+    position: absolute;
+    left: 0;
+  }
+  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .discussion-avatar-list {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+  }
 }
 
 .site-header.featured-image .custom-logo-link {
@@ -1708,51 +1734,74 @@ body.page .main-navigation {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(100%);
   z-index: 1;
+  /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-.site-header.featured-image .site-featured-image:before {
+.image-filters-enabled .site-header.featured-image .site-branding-container:before {
+  filter: grayscale(100%);
+}
+
+.image-filters-enabled .site-header.featured-image .site-featured-image:before {
   background: #0073aa;
   mix-blend-mode: screen;
   opacity: 0.1;
-  z-index: 2;
 }
 
 .site-header.featured-image .site-featured-image:after {
-  background: #0073aa;
+  background: #000;
   mix-blend-mode: multiply;
-  opacity: 1;
-  z-index: 3;
+  opacity: .7;
+  /* When image filters are active, a blue overlay is added. */
 }
 
-.site-header.featured-image .site-branding-container:after {
-  background: rgba(255, 255, 255, 0.35);
+.image-filters-enabled .site-header.featured-image .site-featured-image:after {
+  background: #0073aa;
+  opacity: .8;
+  z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .site-header.featured-image .site-featured-image:after {
+    opacity: 1;
+  }
+}
+
+.image-filters-enabled .site-header.featured-image .site-branding-container:after {
+  background: rgba(0, 0, 0, 0.35);
   mix-blend-mode: overlay;
   opacity: 0.5;
   z-index: 4;
+  /* Browsers supporting mix-blend-mode can have a light overlay */
+}
+
+@supports (mix-blend-mode: overlay) {
+  .image-filters-enabled .site-header.featured-image .site-branding-container:after {
+    background: rgba(255, 255, 255, 0.35);
+  }
 }
 
 .site-header.featured-image:after {
-  background: #000e14;
+  background: #000;
   /**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
 		 */
   transition: opacity 1200ms ease-in-out;
+  opacity: 0.7;
   z-index: 5;
+  /* When image filters are active, a blue overlay is added. */
+}
+
+.image-filters-enabled .site-header.featured-image:after {
+  background: #000e14;
   opacity: 0.38;
 }
 
 @media only screen and (min-width: 768px) {
-  .site-header.featured-image:after {
+  .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .site-header.featured-image:after {
-    opacity: 0.1;
   }
 }
 
@@ -1842,6 +1891,7 @@ body.page .main-navigation {
 .entry .entry-meta > span,
 .entry .entry-footer > span {
   margin-left: 1rem;
+  display: inline-block;
 }
 
 .entry .entry-meta > span:last-child,
@@ -1873,32 +1923,13 @@ body.page .main-navigation {
   margin: 1rem 0;
 }
 
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count {
-    float: left;
-    position: relative;
-  }
-}
-
-.entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-  display: none;
-}
-
-@media only screen and (min-width: 1168px) {
-  .entry .entry-meta.has-discussion .comment-count .discussion-avatar-list {
-    bottom: 100%;
-    display: block;
-    position: absolute;
-  }
-}
-
 .entry .entry-footer {
   margin: calc(2 * 1rem) 1rem 1rem;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-footer {
-    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    margin: 1rem calc(2 * (100vw / 12)) calc(3 * 1rem);
     max-width: calc(8 * (100vw / 12));
   }
 }
@@ -1939,16 +1970,26 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner {
-  position: relative;
   filter: grayscale(100%);
-  z-index: 1;
 }
 
 .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
   display: block;
-  width: 100%;
   height: 100%;
-  z-index: 10;
+  opacity: .5;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail .post-thumbnail-inner:after {
+    display: none;
+  }
 }
 
 .image-filters-enabled .entry .post-thumbnail:before, .image-filters-enabled .entry .post-thumbnail:after {
@@ -1959,7 +2000,6 @@ body.page .main-navigation {
   top: 0;
   right: 0;
   content: "\020";
-  display: block;
   pointer-events: none;
 }
 
@@ -1973,8 +2013,15 @@ body.page .main-navigation {
 .image-filters-enabled .entry .post-thumbnail:after {
   background: #0073aa;
   mix-blend-mode: multiply;
-  opacity: 1;
+  opacity: .8;
   z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled .entry .post-thumbnail:after {
+    opacity: 1;
+  }
 }
 
 .entry .entry-content .more-link {
@@ -1984,7 +2031,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "»";
+  content: "\02192";
   margin-right: 0.5em;
 }
 
@@ -2103,7 +2150,6 @@ body.page .main-navigation {
   margin-top: calc(3 * 1rem);
 }
 
-.comments-area .comments-title-wrap,
 .comments-area .comment-list,
 .comments-area .comment-navigation,
 .comments-area > .comment-respond,
@@ -2113,7 +2159,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area .comments-title-wrap,
   .comments-area .comment-list,
   .comments-area .comment-navigation,
   .comments-area > .comment-respond,
@@ -2125,9 +2170,17 @@ body.page .main-navigation {
 }
 
 .comments-area .comments-title-wrap {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
+  margin: calc(2 * 1rem) 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
+  }
 }
 
 .comments-area .comments-title-wrap .comments-title {
@@ -2141,6 +2194,19 @@ body.page .main-navigation {
   height: 2px;
   margin: 1rem 0;
   width: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap .comments-title {
+    flex: 1 0 calc(3 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area .comments-title-wrap .discussion-meta {
+    flex: 0 0 calc(2 * (100vw / 12));
+    margin-right: 1rem;
+  }
 }
 
 #comment {
@@ -2429,11 +2495,6 @@ body.page .main-navigation {
   width: calc(1.5 * 1rem);
 }
 
-.discussion-meta .discussion-avatar-list {
-  display: inline-block;
-  margin-left: 8px;
-}
-
 .discussion-meta .discussion-meta-info {
   margin: 0;
 }
@@ -2526,6 +2587,12 @@ body.page .main-navigation {
   color: #767676;
 }
 
+.archive .page-header .page-description {
+  display: block;
+  color: #111;
+  font-size: 1em;
+}
+
 @media only screen and (min-width: 768px) {
   .hfeed .entry .entry-header {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12)) calc(1rem / 2);
@@ -2560,30 +2627,30 @@ body.page .main-navigation {
 ## Footer
 --------------------------------------------------------------*/
 /* Site footer */
-.site-footer {
+#colophon {
   color: #767676;
 }
 
-.site-footer .site-info {
+#colophon .site-info {
   margin: calc(2 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .site-footer .site-info {
+  #colophon .site-info {
     margin: calc(3 * 1rem) calc(2 * (100vw / 12));
     max-width: calc(8 * (100vw / 12));
   }
 }
 
-.site-footer .site-info .imprint {
+#colophon .site-info .imprint {
   margin-left: 1rem;
 }
 
-.site-footer a {
+#colophon a {
   color: inherit;
 }
 
-.site-footer a:hover {
+#colophon a:hover {
   text-decoration: none;
   color: #0073aa;
 }
@@ -2604,6 +2671,7 @@ body.page .main-navigation {
 .entry-summary > * {
   margin: 32px 1rem;
   max-width: calc(100vw - (2 * 1rem));
+  word-break: break-all;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -2651,9 +2719,9 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .entry-content > *.alignwide,
   .entry-summary > *.alignwide {
-    margin-right: calc(1 * (100vw / 12));
-    margin-left: calc(1 * (100vw / 12));
-    max-width: calc(10 * (100vw / 12));
+    margin-right: calc(2 * (100vw / 12));
+    margin-left: calc(2 * (100vw / 12));
+    max-width: calc(8 * (100vw / 12));
   }
 }
 
@@ -2706,6 +2774,24 @@ body.page .main-navigation {
   }
 }
 
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry-content > *.aligncenter,
+  .entry-summary > *.aligncenter {
+    margin-right: calc(2 * (100vw / 12));
+    margin-left: calc(2 * (100vw / 12));
+    max-width: calc(10 * (100vw / 12));
+    position: relative;
+    right: 25%;
+    transform: translate(50%);
+  }
+}
+
 .entry-content .wp-block-audio {
   width: 100%;
 }
@@ -2746,7 +2832,8 @@ body.page .main-navigation {
   line-height: 1.2;
   box-sizing: border-box;
   font-weight: bold;
-  padding: 0.66rem 1rem;
+  text-decoration: none;
+  padding: 0.76rem 1rem;
   outline: none;
   color: white;
   outline: none;
@@ -2774,17 +2861,11 @@ body.page .main-navigation {
 .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
   transition: all 150ms ease-in-out;
   background: transparent;
-  border: 2px solid #0073aa;
-}
-
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
+  border: 2px solid currentColor;
   color: #0073aa;
 }
 
 .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  border-color: #111;
   color: #111;
 }
 
@@ -2863,6 +2944,7 @@ body.page .main-navigation {
 }
 
 .entry-content .wp-block-pullquote blockquote {
+  color: #111;
   border: none;
   padding-bottom: calc(2 * 1rem);
   margin-left: 0;
@@ -2874,7 +2956,6 @@ body.page .main-navigation {
   line-height: 1.3;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  color: #111;
 }
 
 .entry-content .wp-block-pullquote p em {
@@ -2893,7 +2974,6 @@ body.page .main-navigation {
   font-size: 0.71111em;
   line-height: 1.6;
   text-transform: none;
-  color: #767676;
 }
 
 .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-pullquote.alignright {
@@ -2905,6 +2985,10 @@ body.page .main-navigation {
   padding: 0;
   text-align: right;
   max-width: 100%;
+}
+
+.entry-content .wp-block-pullquote.is-style-solid-color {
+  background-color: #0073aa;
 }
 
 .entry-content .wp-block-pullquote.is-style-solid-color p {
@@ -2920,16 +3004,16 @@ body.page .main-navigation {
   }
 }
 
+.entry-content .wp-block-pullquote.is-style-solid-color a {
+  color: #fff;
+}
+
 .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
+  color: #fff;
   margin: 0 auto;
 }
 
-.entry-content .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) p,
-.entry-content .wp-block-pullquote.is-style-solid-color cite {
-  color: white;
-}
-
-.entry-content .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
+.entry-content .wp-block-pullquote.is-style-solid-color .has-primary-background-color {
   background-color: #0073aa;
 }
 
@@ -3237,6 +3321,21 @@ body.page .main-navigation {
   font-size: 0.71111em;
 }
 
+.entry-content .has-primary-background-color {
+  background-color: #0073aa;
+}
+
+.entry-content .has-primary-background-color p,
+.entry-content .has-primary-background-color h1,
+.entry-content .has-primary-background-color h2,
+.entry-content .has-primary-background-color h3,
+.entry-content .has-primary-background-color h4,
+.entry-content .has-primary-background-color h5,
+.entry-content .has-primary-background-color h6,
+.entry-content .has-primary-background-color a {
+  color: #fff;
+}
+
 /* Media */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -3296,12 +3395,14 @@ svg {
 --------------------------------------------------------------*/
 .gallery {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   margin-bottom: calc(1.5 * 1rem);
 }
 
 .gallery-item {
   display: inline-block;
-  margin-left: 1rem;
+  padding-left: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
@@ -3341,7 +3442,7 @@ svg {
 }
 
 .gallery-item:last-of-type {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .gallery-caption {
