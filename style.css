@@ -1016,6 +1016,10 @@ body.page .main-navigation {
   word-break: break-word;
 }
 
+.main-navigation .sub-menu > li:hover {
+  background: #005177;
+}
+
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
   position: absolute;
   width: calc( 24px + 1rem);

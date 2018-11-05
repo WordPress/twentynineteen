@@ -125,6 +125,10 @@
 			position: relative;
 			word-break: break-word;
 
+			&:hover {
+				background: $color__link-hover;
+			}
+
 			&.menu-item-has-children {
 
 				.submenu-expand {
