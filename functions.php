@@ -9,6 +9,14 @@
  * @since 1.0.0
  */
 
+/**
+ * Twenty Nineteen only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
