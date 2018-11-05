@@ -1130,12 +1130,26 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: calc( 100vw - 2rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
   width: calc( 100vw - 2rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+  margin-top: inherit;
+  position: relative;
+  padding-right: 1rem;
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
@@ -1145,6 +1159,13 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+    padding-right: 0;
+    position: absolute;
+    right: 100%;
+    width: max-content;
+    top: 0;
+  }
   .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
     padding-right: 0;
     position: absolute;
@@ -1845,12 +1866,11 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports (object-fit: cover) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;
