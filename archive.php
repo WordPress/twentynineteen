@@ -6,19 +6,22 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="page-description">', '</div>' );
+					// Remove for now @TODO
+					// the_archive_description( '<div class="page-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -32,7 +35,7 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content/content' );
+				get_template_part( 'template-parts/content/content', 'excerpt' );
 
 				// End the loop.
 			endwhile;
@@ -48,6 +51,7 @@ get_header(); ?>
 		?>
 
 		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+	</section><!-- .content-area -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

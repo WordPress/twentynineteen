@@ -12,7 +12,7 @@ $color__background_selection: mix( $color__background-body, $color__background-b
 
 // Text
 $color__text-main: #111;
-$color__text-light: lighten( #111, 50% );
+$color__text-light: #767676;
 $color__text-hover: lighten( #111, 22.5% );
 $color__text-screen: #21759b;
 $color__text-input: #666;
@@ -21,13 +21,14 @@ $color__text-input-focus: #111;
 // Links
 $color__link: #0073aa;
 $color__link-visited: #0073aa;
-$color__link-hover: #00a0d2;
+$color__link-hover: darken( $color__link, 10% );
 
 // Borders
+$color__border: #ccc;
 $color__border-link: #0073aa;
-$color__border-link-hover: #00a0d2;
+$color__border-link-hover: darken( $color__link, 10% );
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
+$color__border-input: $color__border;
 $color__border-abbr: #666;

@@ -9,25 +9,18 @@ dfn, cite, em, i {
 
 blockquote {
 
-	> p {
-		font-size: $font__size-lg;
-		font-style: italic;
-		line-height: $font__line-height-heading;
-	}
-
 	cite {
-		font-size: $font__size-sm;
+		font-size: $font__size-xs;
 		font-style: normal;
 		font-family: $font__heading;
 	}
 }
 
-
 pre {
 	font-size: $font__size-sm;
 	font-family: $font__pre;
 	line-height: $font__line-height-body;
-	overflow: hidden;
+	overflow: auto;
 }
 
 code, kbd, tt, var {
@@ -46,7 +39,7 @@ mark, ins {
 }
 
 big {
-	font-size: $font__size-xxxl;
+	font-size: 125%;
 }
 
 a {
