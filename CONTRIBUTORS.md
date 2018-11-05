@@ -63,4 +63,5 @@ Version 1.0:
 | @crunnells | @crunnells |
 | @Ismail-elkorchi | @ismailelkorchi |
 | @aryaprakasa | @aprakasa |
-| @whizbangik | @imonly_ik | 
+| @themeroots | @themeroots |
+| @whizbangik | @imonly_ik |
