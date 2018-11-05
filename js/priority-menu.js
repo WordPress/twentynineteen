@@ -94,9 +94,7 @@
 			}
 
 			// Hide the dropdown btn if hidden list is empty
-			console.log(breaks.length);
 			if (breaks.length < 2) {
-				console.log('Test? '+ breaks.length);
 				hideElement(toggleButton);
 				hideElement(hiddenList);
 			}
