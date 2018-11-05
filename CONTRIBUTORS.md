@@ -34,7 +34,7 @@ Version 1.0:
 | @ianbelanger79 | @ianbelanger |
 | @nadim1992 | |
 | @ismail-elkorchi | @ismailelkorchi |
-| @nativeinside | |
+| @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
 | @icaleb | @icaleb |
 | @grappler | @grapplerulrich |
@@ -55,3 +55,11 @@ Version 1.0:
 | @enodekciw | @enodekciw |
 | @chetansatasiya | @ketuchetan |
 | @atanas-angelov-dev | @atanasangelovdev |
+| @carolinan | @poena |
+| @sharazghouri | @sharaz |
+| @artisan-asad | @artisticasad |
+| @mukeshpanchal27 | @mukesh27 |
+| @burhandodhy | @burhandodhy |
+| @crunnells | @crunnells |
+| @Ismail-elkorchi | @ismailelkorchi |
+| @aryaprakasa | @aprakasa |
