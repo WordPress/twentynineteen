@@ -49,9 +49,8 @@ get_header();
 
 		endif;
 		?>
-
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
 <?php
 get_footer();
