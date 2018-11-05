@@ -36,8 +36,6 @@
 		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
 		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 		var i;
-		var o;
-		var u;
 
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
@@ -102,13 +100,13 @@
 		}
 
 		// Close sub-menus or sub-sub-menus on touch
-		for ( o = 0; o < subMenuReturn.length; o++) {
-			subMenuReturn[o].addEventListener('touchstart', closeSubMenu( subMenuReturn[o] ) );
+		for ( i = 0; i < subMenuReturn.length; i++) {
+			subMenuReturn[i].addEventListener('touchstart', closeSubMenu( subMenuReturn[i] ) );
 		}
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		for ( u = 0; u < parentMenuLink.length; u++) {
-			parentMenuLink[u].addEventListener('touchstart', function( event ) {
+		for ( i = 0; i < parentMenuLink.length; i++) {
+			parentMenuLink[i].addEventListener('touchstart', function( event ) {
 
 				// Stop link behavior
 				event.preventDefault();
