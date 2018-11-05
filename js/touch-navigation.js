@@ -57,15 +57,15 @@
 	}
 
 	// Find first ancestor of an element by tagName
-	function getCurrentParent( el, tagName ) {
+	function getCurrentParent( child, tagName ) {
 
 		tagName = tagName.toLowerCase();
 
-		while ( el && el.parentNode ) {
-			el = el.parentNode;
+		while ( child && child.parentNode ) {
+			child = child.parentNode;
 
-			if ( el.tagName && el.tagName.toLowerCase() === tagName ) {
-				return el;
+			if ( child.tagName && child.tagName.toLowerCase() === tagName ) {
+				return child;
 			}
 		}
 		return null;
@@ -73,6 +73,7 @@
 
 	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
+
 		'use strict';
 
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');

@@ -257,6 +257,9 @@
 		}
 	}
 
+	/**
+	 * Full-screen mobile menu styles
+	 */
 	.main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
 
 		display: table;
@@ -282,7 +285,7 @@
 	}
 }
 
-/* Menu Animation */
+/* Menu animation */
 
 @keyframes slide_in_right {
 	100% {

@@ -896,6 +896,9 @@ a:focus {
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
+  /**
+	 * Full-screen mobile menu styles
+	 */
 }
 
 body.page .main-navigation {
@@ -1173,7 +1176,7 @@ body.page .main-navigation {
   display: block;
 }
 
-/* Menu Animation */
+/* Menu animation */
 @keyframes slide_in_right {
   100% {
     transform: translateX(0%);
