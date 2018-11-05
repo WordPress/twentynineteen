@@ -3788,7 +3788,7 @@ svg {
 
 .gallery-item {
   display: inline-block;
-  padding-left: 1rem;
+  margin-left: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   vertical-align: top;
@@ -3796,35 +3796,67 @@ svg {
 }
 
 .gallery-columns-2 .gallery-item {
-  max-width: calc( ( 12 / 2 ) * (100% / 12));
+  max-width: calc( ( 12 / 2 ) * (100% / 12) - ( 1rem * 1.5 ));
+}
+
+.gallery-columns-2 .gallery-item:nth-of-type(2n+2) {
+  margin-left: 0;
 }
 
 .gallery-columns-3 .gallery-item {
-  max-width: calc( ( 12 / 3 ) * (100% / 12));
+  max-width: calc( ( 12 / 3 ) * (100% / 12) - ( 1rem * 2.66667 ));
+}
+
+.gallery-columns-3 .gallery-item:nth-of-type(3n+3) {
+  margin-left: 0;
 }
 
 .gallery-columns-4 .gallery-item {
-  max-width: calc( ( 12 / 4 ) * (100% / 12));
+  max-width: calc( ( 12 / 4 ) * (100% / 12) - ( 1rem * 3.75 ));
+}
+
+.gallery-columns-4 .gallery-item:nth-of-type(4n+4) {
+  margin-left: 0;
 }
 
 .gallery-columns-5 .gallery-item {
-  max-width: calc( ( 12 / 5 ) * (100% / 12));
+  max-width: calc( ( 12 / 5 ) * (100% / 12) - ( 1rem * 4.8 ));
+}
+
+.gallery-columns-5 .gallery-item:nth-of-type(5n+5) {
+  margin-left: 0;
 }
 
 .gallery-columns-6 .gallery-item {
-  max-width: calc( ( 12 / 6 ) * (100% / 12));
+  max-width: calc( ( 12 / 6 ) * (100% / 12) - ( 1rem * 5.83333 ));
+}
+
+.gallery-columns-6 .gallery-item:nth-of-type(6n+6) {
+  margin-left: 0;
 }
 
 .gallery-columns-7 .gallery-item {
-  max-width: calc( ( 12 / 7 ) * (100% / 12));
+  max-width: calc( ( 12 / 7 ) * (100% / 12) - ( 1rem * 6.85714 ));
+}
+
+.gallery-columns-7 .gallery-item:nth-of-type(7n+7) {
+  margin-left: 0;
 }
 
 .gallery-columns-8 .gallery-item {
-  max-width: calc( ( 12 / 8 ) * (100% / 12));
+  max-width: calc( ( 12 / 8 ) * (100% / 12) - ( 1rem * 7.875 ));
+}
+
+.gallery-columns-8 .gallery-item:nth-of-type(8n+8) {
+  margin-left: 0;
 }
 
 .gallery-columns-9 .gallery-item {
-  max-width: calc( ( 12 / 9 ) * (100% / 12));
+  max-width: calc( ( 12 / 9 ) * (100% / 12) - ( 1rem * 8.88889 ));
+}
+
+.gallery-columns-9 .gallery-item:nth-of-type(9n+9) {
+  margin-left: 0;
 }
 
 .gallery-item:last-of-type {
