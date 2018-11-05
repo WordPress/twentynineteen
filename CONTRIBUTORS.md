@@ -63,5 +63,6 @@ Version 1.0:
 | @crunnells | @crunnells |
 | @Ismail-elkorchi | @ismailelkorchi |
 | @aryaprakasa | @aprakasa |
+| @tlxo | |
 | @themeroots | @themeroots |
 | @whizbangik | @imonly_ik |
