@@ -65,10 +65,10 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 							<?php
 								/* translators: 1: comment date, 2: comment time */
-								$comment_timestamp = __( '%1$s at %2$s', 'twentynineteen' );
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
 							?>
-							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( $comment_timestamp, get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php printf( $comment_timestamp, get_comment_date( '', $comment ), get_comment_time() ); ?>
+							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
+								<?php echo $comment_timestamp; ?>
 							</time>
 						</a>
 						<?php
