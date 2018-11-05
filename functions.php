@@ -165,6 +165,7 @@ function twentynineteen_scripts() {
 	wp_enqueue_script( 'twentynineteen-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( has_nav_menu( 'menu-1' ) ) {
+		wp_enqueue_script( 'twentynineteen-priority-menu', get_template_directory_uri() . '/js/priority-menu.js', array(), '20151215', true );
 		wp_enqueue_script( 'twentynineteen-touch-navigation', get_theme_file_uri( '/js/touch-navigation.js' ), array(), '1.0', true );
 		$l10n_skip_link_focus_fix['expand']   = __( 'Expand child menu', 'twentynineteen' );
 		$l10n_skip_link_focus_fix['collapse'] = __( 'Collapse child menu', 'twentynineteen' );

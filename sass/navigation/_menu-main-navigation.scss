@@ -46,8 +46,6 @@
 
 			&.menu-item-has-children {
 
-				display: inline-block;
-
 				> a {
 					margin-right: #{0.125 * $size__spacing-unit};
 				}
@@ -61,17 +59,36 @@
 					}
 				}
 
-				.submenu-expand svg {
-					position: relative;
-					top: 0.2rem;
-				}
-
 				.submenu-expand {
 					margin-right: #{0.5 * $size__spacing-unit};
+
+					/* Priority+ Menu */
+					&.main-menu-more {
+
+						position: relative;
+						height: 24px;
+						width: 24px;
+						padding: 0;
+						margin-left: #{0.5 * $size__spacing-unit};
+
+						svg {
+							height: 24px;
+							width: 24px;
+							top: #{-0.125 * $size__spacing-unit};
+							vertical-align: text-bottom;
+						}
+					}
+
+					svg {
+						position: relative;
+						top: 0.2rem;
+					}
 				}
 			}
 
-			&:last-child > a {
+			&:last-child > a,
+			&:last-child.menu-item-has-children .mobile-submenu-expand,
+			&:last-child.menu-item-has-children .desktop-submenu-expand {
 				margin-right: 0;
 			}
 		}
@@ -177,6 +194,11 @@
 		opacity: 1;
 		width: calc( 100vw - #{$size__spacing-unit * 2});
 
+		&.hidden-links {
+			left: auto;
+			right: 0;
+		}
+
 		.sub-menu {
 
 			margin-top: inherit;
@@ -197,6 +219,7 @@
 	.main-menu .menu-item-has-children:focus > .sub-menu,
 	.main-menu .menu-item-has-children .sub-menu:hover,
 	.main-menu .menu-item-has-children .sub-menu:focus {
+
 		/* Non-mobile position */
 		@include media(tablet) {
 			display: table;
@@ -211,6 +234,11 @@
 			width: max-content;
 			transform: none;
 			animation: fade_in 0.1s forwards;
+
+			&.hidden-links {
+				left: auto;
+				right: 0;
+			}
 		}
 
 		.sub-menu {
@@ -248,7 +276,6 @@
 			display: block;
 		}
 	}
-
 }
 
 /* Menu Animation */
