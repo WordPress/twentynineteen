@@ -2006,7 +2006,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image .site-featured-image:after {
-  background: #000;
+  background: #111;
   mix-blend-mode: multiply;
   opacity: .7;
   /* When image filters are active, a blue overlay is added. */
@@ -2040,7 +2040,7 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image:after {
-  background: #000;
+  background: #111;
   /**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
@@ -2052,7 +2052,7 @@ body.page .main-navigation {
 }
 
 .image-filters-enabled .site-header.featured-image:after {
-  background: #000e14;
+  background: #0f1d23;
   opacity: 0.38;
 }
 
