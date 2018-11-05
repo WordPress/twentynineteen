@@ -27,7 +27,7 @@
 		}
 	}
 
-	// Toggle `focus` class to allow submenu access on tablets.
+	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
 
@@ -71,6 +71,7 @@
 				// If this is in a sub-sub-menu, go back to parent sub-menu
 				if ( currentSubmenu.closest('ul').classList.contains('sub-menu') ) {
 
+					menuItem.classList.remove('focus');
 					nearestSubMenu.classList.remove('expanded-true');
 					toggleAriaExpandedState( currentSubmenu.closest('.menu-item').querySelectorAll('a[aria-expanded]') );
 
@@ -84,6 +85,12 @@
 
 				// Disable :focus when using touchdevices
 				siteNavigation.blur();
+
+				// Prevent click on link at touchend position after menu was closed and un-focus sub menu toggle
+				event.preventDefault();
+				document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
+					item.blur();
+				});
 			});
 		}
 
