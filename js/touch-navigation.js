@@ -73,7 +73,6 @@
 
 	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
-
 		'use strict';
 
 		var siteNavigation = document.querySelector('.main-navigation > div > ul');
