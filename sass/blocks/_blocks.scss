@@ -50,12 +50,14 @@
 	}
 
 	&.alignleft {
+		/*rtl:ignore*/
 		float: left;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
+			/*rtl:ignore*/
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
 
@@ -65,15 +67,18 @@
 	}
 
 	&.alignright {
+		/*rtl:ignore*/
 		float: right;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
+		/*rtl:ignore*/
 		margin-left: $size__spacing-unit;
 		margin-right: $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
 			margin-left: calc(2 * #{$size__spacing-unit});
+			/*rtl:ignore*/
 			margin-right: calc(2 * (100vw / 12));
 		}
 	}
