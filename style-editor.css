@@ -5,6 +5,7 @@ Twenty Nineteen Editor Styles
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* 
  * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
@@ -359,9 +360,7 @@ figcaption,
 }
 
 .wp-block-pullquote blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
@@ -501,7 +500,7 @@ ul.wp-block-archives li,
 .wp-block-categories li,
 .wp-block-latest-posts li {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.6875em;
+  font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
 }

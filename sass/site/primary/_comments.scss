@@ -175,25 +175,22 @@
 		}
 	}
 
-	&:hover > .comment-body > .comment-meta > .comment-metadata {
-		> .edit-link-sep,
-		> .edit-link {
-			opacity: 1;
-		}
-	}
-
 	.comment-body {
 		margin: calc(2 * #{$size__spacing-unit}) 0;
 	}
 
 	.comment-meta {
 		position: relative;
+
+		@include media(tablet) {
+			display: flex;
+		}
 	}
 
 	.comment-author {
 
 		@include media(tablet) {
-			display: inline-block;
+			flex: 0 0 auto;
 			vertical-align: baseline;
 		}
 
@@ -256,7 +253,7 @@
 	.comment-metadata {
 
 		@include media(tablet) {
-			display: inline-block;
+			flex: 1 0 auto;
 			margin-left: $size__spacing-unit;
 			position: relative;
 			vertical-align: baseline;
@@ -286,15 +283,11 @@
 		.edit-link-sep {
 			color: $color__text-light;
 			margin: 0 0.2em;
-			opacity: 0;
-			transition: opacity 200ms ease-in-out;
 			vertical-align: baseline;
 		}
 
 		.edit-link {
 			color: $color__text-light;
-			transition: opacity 200ms ease-in-out;
-			opacity: 0;
 
 			svg {
 				transform: scale(0.8);
