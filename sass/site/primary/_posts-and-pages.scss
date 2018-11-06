@@ -38,7 +38,7 @@
 		position: relative;
 
 		@include media(tablet) {
-			margin: calc(3 * #{ $size__spacing-unit}) calc(2 * (100vw / 12 ) ) $size__spacing-unit;
+			margin: calc(3 * #{ $size__spacing-unit}) $size__site-margins $size__spacing-unit;
 		}
 	}
 
@@ -100,12 +100,12 @@
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
 		@include media(tablet) {
-			margin: $size__spacing-unit calc(2 * (100vw / 12)) calc(3 * #{$size__spacing-unit});
-			max-width: calc(8 * (100vw / 12));
+			margin: $size__spacing-unit $size__site-margins calc(3 * #{$size__spacing-unit});
+			max-width: $size__site-tablet-content;
 		}
 
 		@include media(tablet) {
-			max-width: calc(6 * (100vw / 12));
+			max-width: $size__site-desktop-content;
 		}
 	}
 
@@ -114,7 +114,7 @@
 		margin: $size__spacing-unit;
 
 		@include media(tablet) {
-			margin: $size__spacing-unit calc(2 * (100vw / 12));
+			margin: $size__spacing-unit $size__site-margins;
 		}
 
 		&:focus {
@@ -212,12 +212,12 @@
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
 
 			@include media(tablet) {
-				margin: 32px calc(2 * (100vw / 12)) !important;
-				max-width: calc(8 * (100vw / 12)) !important;
+				margin: 32px 0 !important;
+				max-width: $size__site-tablet-content !important;
 			}
 
 			@include media(desktop) {
-				max-width: calc(6 * (100vw / 12)) !important;
+				max-width: $size__site-desktop-content !important;
 			}
 		}
 
@@ -226,11 +226,11 @@
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
 			@include media(tablet) {
-				max-width: calc(8 * (100vw / 12));
+				max-width: $size__site-tablet-content;
 			}
 
 			@include media(desktop) {
-				max-width: calc(6 * (100vw / 12));
+				max-width: $size__site-desktop-content;
 			}
 		}
 	}
@@ -243,12 +243,13 @@
 	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
 	@include media(tablet) {
-		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
-		max-width: calc(8 * (100vw / 12));
+		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
+		max-width: $size__site-tablet-content;
 	}
 
-	@include media(tablet) {
-		max-width: calc(6 * (100vw / 12));
+	@include media(desktop) {
+		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
+		max-width: $size__site-desktop-content;
 	}
 
 	.author-title {

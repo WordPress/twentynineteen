@@ -1,5 +1,15 @@
 /* !Block styles */
 
+.entry-content,
+.entry-summary {
+
+	@include media(tablet) {
+		max-width: 80%;
+		margin: 0 10%;
+		padding: 0 60px;
+	}
+}
+
 .entry-content > *,
 .entry-summary > * {
 	@include postContentMaxWidth();
@@ -7,7 +17,7 @@
 	margin: 32px $size__spacing-unit;
 
 	@include media(tablet) {
-		margin: 32px calc(2 * (100vw / 12));
+		margin: 32px 0;
 	}
 /*
 	// Set top margins for headings
@@ -35,18 +45,18 @@
 		margin-right: auto;
 
 		@include media(tablet) {
-			margin-left: calc(2 * (100vw / 12));
-			margin-right: calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
+			width: 100%;
+			max-width: 100%;
 		}
 	}
 
 	&.alignfull {
 		margin-top: calc(2 * #{$size__spacing-unit});
-		margin-right: 0;
 		margin-bottom: calc(2 * #{$size__spacing-unit});
-		margin-left: 0;
-		max-width: 100%;
+		position: relative;
+		left: calc( -12.5% - 75px );
+		width: calc( 125% + 150px );
+		max-width: calc( 125% + 150px );
 	}
 
 	&.alignleft {
@@ -73,22 +83,21 @@
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
-			margin-left: calc(2 * #{$size__spacing-unit});
-			margin-right: calc(2 * (100vw / 12));
+			margin-right: 0;
 		}
 	}
 	&.aligncenter {
-
 		margin-left: auto;
 		margin-right: auto;
 
+		@include media(tablet) {
+			margin-left: 0;
+			margin-right: 0;
+			max-width: $size__site-tablet-content;
+		}
+
 		@include media(desktop) {
-			margin-left: calc(2 * (100vw / 12));
-			margin-right: calc(2 * (100vw / 12));
-			max-width: calc(10 * (100vw / 12));
-			position: relative;
-			left: 25%;
-			transform: translate(-50%);
+			max-width: $size__site-desktop-content;
 		}
 	}
 }
@@ -433,13 +442,13 @@
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
-				width: calc(8 * (100vw / 12));
-				max-width: calc(8 * (100vw / 12));
+				width: $size__site-tablet-content;
+				max-width: $size__site-tablet-content;
 			}
 
 			@include media(desktop) {
-				width: calc(6 * (100vw / 12 ));
-				max-width: calc(6 * (100vw / 12 ));
+				width: $size__site-desktop-content;
+				max-width: $size__site-desktop-content;
 			}
 		}
 
