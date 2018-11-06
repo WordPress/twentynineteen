@@ -140,14 +140,13 @@
 	}
 
 	// Remove all focus states
-	function removeAllFocusStates() {
+	function removeAllFocusStates( getFocusedElements ) {
 		'use strict';
 
-		var focusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
 		var i;
 
-		for ( i = 0; i < focusedElements.length; i++) {
-			focusedElements[i].blur();
+		for ( i = 0; i < getFocusedElements.length; i++) {
+			getFocusedElements[i].blur();
 		}
 	}
 
@@ -155,10 +154,11 @@
 	function toggleSubmenuTouchScreen() {
 		'use strict';
 
-		var siteNavigation = document.querySelector('.main-navigation > div > ul');
-		var subMenuExpand  = document.querySelectorAll('.submenu-expand');
-		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
-		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var siteNavigation  = document.querySelector('.main-navigation > div > ul');
+		var subMenuExpand   = document.querySelectorAll('.submenu-expand');
+		var subMenuReturn   = document.querySelectorAll('.menu-item-link-return');
+		var parentMenuLink  = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var focusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
 		var i;
 
 		// Check for submenus and bail if none exist
@@ -174,13 +174,13 @@
 
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 
 			subMenuExpand[i].addEventListener('touchend', function( event ) {
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 		}
 
@@ -193,13 +193,13 @@
 
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 
 			subMenuReturn[i].addEventListener('touchend', function( event ) {
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 
 		}
@@ -212,13 +212,13 @@
 
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 
 			parentMenuLink[i].addEventListener('touchend', function( event ) {
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
+				removeAllFocusStates(focusedElements);
 			});
 
 			// Aria state
