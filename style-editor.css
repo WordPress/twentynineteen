@@ -347,9 +347,7 @@ figcaption,
 }
 
 .wp-block-pullquote blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 

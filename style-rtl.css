@@ -135,8 +135,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -559,18 +558,14 @@ h6 {
 .error-404 .page-title,
 .comments-title,
 blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 @media only screen and (min-width: 768px) {
   .entry-title {
-    -webkit-hyphens: none;
-        -ms-hyphens: none;
-            hyphens: none;
+    hyphens: none;
   }
 }
 
@@ -1067,8 +1062,6 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     max-width: calc(3 * (100vw / 12));
   }
@@ -1137,12 +1130,26 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: calc( 100vw - 2rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
   width: calc( 100vw - 2rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+  margin-top: inherit;
+  position: relative;
+  padding-right: 1rem;
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
@@ -1152,12 +1159,17 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+    padding-right: 0;
+    position: absolute;
+    right: 100%;
+    width: max-content;
+    top: 0;
+  }
   .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
     padding-right: 0;
     position: absolute;
     right: 100%;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     top: 0;
   }
@@ -1184,8 +1196,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     transform: none;
     animation: fade_in 0.1s forwards;
@@ -1364,10 +1374,7 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .meta-nav {
   color: #767676;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .post-navigation .nav-links a .meta-nav:before, .post-navigation .nav-links a .meta-nav:after {
@@ -1379,9 +1386,7 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a .post-title {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1521,8 +1526,7 @@ body.page .main-navigation {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1538,8 +1542,7 @@ body.page .main-navigation {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -1841,6 +1844,7 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation svg,
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 
@@ -1862,12 +1866,11 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports (object-fit: cover) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;
@@ -3793,7 +3796,7 @@ svg {
 }
 
 .gallery-columns-2 .gallery-item {
-  max-width: calc( ( 12 / 2 ) * (100% / 12) - ( 1rem * 1.5 ));
+  max-width: calc( ( 12 / 2 ) * (100% / 12) - ( 1rem * 0.5 ));
 }
 
 .gallery-columns-2 .gallery-item:nth-of-type(2n+2) {
@@ -3801,7 +3804,7 @@ svg {
 }
 
 .gallery-columns-3 .gallery-item {
-  max-width: calc( ( 12 / 3 ) * (100% / 12) - ( 1rem * 2.66667 ));
+  max-width: calc( ( 12 / 3 ) * (100% / 12) - ( 1rem * 0.66667 ));
 }
 
 .gallery-columns-3 .gallery-item:nth-of-type(3n+3) {
@@ -3809,7 +3812,7 @@ svg {
 }
 
 .gallery-columns-4 .gallery-item {
-  max-width: calc( ( 12 / 4 ) * (100% / 12) - ( 1rem * 3.75 ));
+  max-width: calc( ( 12 / 4 ) * (100% / 12) - ( 1rem * 0.75 ));
 }
 
 .gallery-columns-4 .gallery-item:nth-of-type(4n+4) {
@@ -3817,7 +3820,7 @@ svg {
 }
 
 .gallery-columns-5 .gallery-item {
-  max-width: calc( ( 12 / 5 ) * (100% / 12) - ( 1rem * 4.8 ));
+  max-width: calc( ( 12 / 5 ) * (100% / 12) - ( 1rem * 0.8 ));
 }
 
 .gallery-columns-5 .gallery-item:nth-of-type(5n+5) {
@@ -3825,7 +3828,7 @@ svg {
 }
 
 .gallery-columns-6 .gallery-item {
-  max-width: calc( ( 12 / 6 ) * (100% / 12) - ( 1rem * 5.83333 ));
+  max-width: calc( ( 12 / 6 ) * (100% / 12) - ( 1rem * 0.83333 ));
 }
 
 .gallery-columns-6 .gallery-item:nth-of-type(6n+6) {
@@ -3833,7 +3836,7 @@ svg {
 }
 
 .gallery-columns-7 .gallery-item {
-  max-width: calc( ( 12 / 7 ) * (100% / 12) - ( 1rem * 6.85714 ));
+  max-width: calc( ( 12 / 7 ) * (100% / 12) - ( 1rem * 0.85714 ));
 }
 
 .gallery-columns-7 .gallery-item:nth-of-type(7n+7) {
@@ -3841,7 +3844,7 @@ svg {
 }
 
 .gallery-columns-8 .gallery-item {
-  max-width: calc( ( 12 / 8 ) * (100% / 12) - ( 1rem * 7.875 ));
+  max-width: calc( ( 12 / 8 ) * (100% / 12) - ( 1rem * 0.875 ));
 }
 
 .gallery-columns-8 .gallery-item:nth-of-type(8n+8) {
@@ -3849,7 +3852,7 @@ svg {
 }
 
 .gallery-columns-9 .gallery-item {
-  max-width: calc( ( 12 / 9 ) * (100% / 12) - ( 1rem * 8.88889 ));
+  max-width: calc( ( 12 / 9 ) * (100% / 12) - ( 1rem * 0.88889 ));
 }
 
 .gallery-columns-9 .gallery-item:nth-of-type(9n+9) {
