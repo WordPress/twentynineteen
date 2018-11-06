@@ -220,6 +220,9 @@ figcaption,
 		font-size: $font__size-xl;
 		font-weight: bold;
 		line-height: 1.4;
+		strong {
+			font-weight: bolder;
+		}
 	}
 
 	&.has-left-content {
