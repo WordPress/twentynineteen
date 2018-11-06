@@ -83,6 +83,7 @@
 
 	// Open Sub-menu
 	function openSubMenu( currentSubMenu ) {
+		'use strict';
 
 		var menuItem     = currentSubMenu.parentElement; // this.parentNode
 		var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
@@ -98,6 +99,7 @@
 
 	// Close Sub-menu
 	function closeSubMenu( currentSubMenu ) {
+		'use strict';
 
 		var menuItem       = currentSubMenu.closest('.menu-item'); // this.parentNode
 		var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
@@ -139,6 +141,7 @@
 
 	// Remove all focus states
 	function removeAllFocusStates() {
+		'use strict';
 
 		var focusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
 		var i;
