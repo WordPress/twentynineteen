@@ -1329,7 +1329,6 @@ body.page .main-navigation {
     height: auto;
     width: max-content;
     transform: none;
-    animation: fade_in 0.1s forwards;
   }
   .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu.hidden-links,
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu.hidden-links,
@@ -1425,6 +1424,10 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-left: calc( 5.5 * 1rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children.focus .sub-menu {
+  animation: fade_in 0.1s forwards;
 }
 
 .main-navigation .main-menu .menu-item-has-children.focus .sub-menu .submenu-expand .svg-icon {

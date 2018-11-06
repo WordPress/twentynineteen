@@ -1159,6 +1159,15 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: 100%;
+  /* Nested sub-menu padding: 10 levels deep */
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
   display: block;
   right: 0;
@@ -1169,6 +1178,11 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 600px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
+    right: 0;
+    width: 100%;
+    min-width: max-content;
+  }
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
     right: 0;
     width: 100%;
@@ -1176,9 +1190,24 @@ body.page .main-navigation {
   }
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
+  right: auto;
+  left: 0;
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
   right: auto;
   left: 0;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
+  display: block;
+  margin-top: inherit;
+  position: relative;
+  width: 100%;
+  min-width: max-content;
+  right: 0;
+  opacity: 1;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
@@ -1192,6 +1221,11 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
+    width: 100%;
+    min-width: max-content;
+    max-width: calc(3 * (100vw / 12));
+  }
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
     width: 100%;
     min-width: max-content;
@@ -1199,36 +1233,72 @@ body.page .main-navigation {
   }
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu > li > a {
+  padding-right: calc( 1.5 * 1rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu > li > a {
   padding-right: calc( 1.5 * 1rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 2 * 1rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 2 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 2.5 * 1rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 2.5 * 1rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 3 * 1rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 3 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 3.5 * 1rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 3.5 * 1rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 4 * 1rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 4 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 4.5 * 1rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 4.5 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 5 * 1rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
   padding-right: calc( 5 * 1rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+  padding-right: calc( 5.5 * 1rem);
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {

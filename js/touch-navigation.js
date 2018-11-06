@@ -71,6 +71,80 @@
 		return null;
 	}
 
+	// Open Sub-menu
+	function openSubMenu( currentSubmenu ) {
+
+		currentSubmenu.addEventListener('touchend', function(event) {
+
+			var menuItem     = currentSubmenu.closest('.menu-item'); // this.parentNode
+			var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
+
+			// Update classes
+			// classList.add is not supported in IE11
+			menuItem.className += ' focus';
+			menuItem.lastElementChild.className += ' expanded-true';
+
+			// Update aria-expanded state
+			toggleAriaExpandedState( menuItemAria );
+
+			// Disable focus when using touchdevices
+			event.preventDefault();
+			document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
+				item.blur();
+			});
+		});
+	}
+
+	// Focus Sub-menu
+	function focusSubMenu( currentMenuItem ) {
+
+		var menuItem     = currentMenuItem.closest('.menu-item'); // this.parentNode
+		var menuItemAria = menuItem.querySelector('a[aria-expanded]');
+
+		// Update aria-expanded state
+		toggleAriaExpandedState( menuItemAria );
+	}
+
+	// Close Sub-menu
+	function closeSubMenu( currentSubmenu ) {
+
+		currentSubmenu.addEventListener('touchend', function(event) {
+
+			var menuItem       = currentSubmenu.closest('.menu-item'); // this.parentNode
+			var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
+			var subMenu        = currentSubmenu.closest('.sub-menu');
+
+			// If this is in a sub-sub-menu, go back to parent sub-menu
+			if ( getCurrentParent( this, 'ul' ).classList.contains( 'sub-menu' ) ) {
+
+				// Update classes
+				// classList.remove is not supported in IE11
+				menuItem.className = menuItem.className.replace( 'focus', '' );
+				subMenu.className = subMenu.className.replace( 'expanded-true', '' );
+
+				// Update aria-expanded and :focus states
+				toggleAriaExpandedState( menuItemAria );
+
+			// Or else close all sub-menus
+			} else {
+
+				// Update classes
+				// classList.remove is not supported in IE11
+				menuItem.className = menuItem.className.replace( 'focus', '' );
+				menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
+
+				// Update aria-expanded and :focus states
+				toggleAriaExpandedState( menuItemAria );
+			}
+
+			// Prevent click on link at touchend position after menu was closed and un-focus sub menu toggle
+			event.preventDefault();
+			document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
+				item.blur();
+			});
+		});
+	}
+
 	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
@@ -84,80 +158,6 @@
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
 			return;
-		}
-
-		// Open Sub-menu
-		function openSubMenu( currentSubmenu ) {
-
-			currentSubmenu.addEventListener('touchend', function(event) {
-
-				var menuItem     = currentSubmenu.closest('.menu-item'); // this.parentNode
-				var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
-
-				// Update classes
-				// classList.add is not supported in IE11
-				menuItem.className += ' focus';
-				menuItem.lastElementChild.className += ' expanded-true';
-
-				// Update aria-expanded state
-				toggleAriaExpandedState( menuItemAria );
-
-				// Disable focus when using touchdevices
-				event.preventDefault();
-				document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
-					item.blur();
-				});
-			});
-		}
-
-		// Open Sub-menu
-		function focusSubMenu( currentMenuItem ) {
-
-			var menuItem     = currentMenuItem.closest('.menu-item'); // this.parentNode
-			var menuItemAria = menuItem.querySelector('a[aria-expanded]');
-
-			// Update aria-expanded state
-			toggleAriaExpandedState( menuItemAria );
-		}
-
-		// Close Sub-menu
-		function closeSubMenu( currentSubmenu ) {
-
-			currentSubmenu.addEventListener('touchend', function(event) {
-
-				var menuItem       = currentSubmenu.closest('.menu-item'); // this.parentNode
-				var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
-				var subMenu        = currentSubmenu.closest('.sub-menu');
-
-				// If this is in a sub-sub-menu, go back to parent sub-menu
-				if ( getCurrentParent( this, 'ul' ).classList.contains( 'sub-menu' ) ) {
-
-					// Update classes
-					// classList.remove is not supported in IE11
-					menuItem.className = menuItem.className.replace( 'focus', '' );
-					subMenu.className = subMenu.className.replace( 'expanded-true', '' );
-
-					// Update aria-expanded and :focus states
-					toggleAriaExpandedState( menuItemAria );
-
-				// Or else close all sub-menus
-				} else {
-
-					// Update classes
-					// classList.remove is not supported in IE11
-					menuItem.className = menuItem.className.replace( 'focus', '' );
-					menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
-
-					// Update aria-expanded and :focus states
-					toggleAriaExpandedState( menuItemAria );
-				}
-
-				// Prevent click on link at touchend position after menu was closed and un-focus sub menu toggle
-				event.preventDefault();
-				document.querySelectorAll(':hover, :focus, :focus-within').forEach(function(item) {
-					item.blur();
-				});
-			});
 		}
 
 		// Open submenus on touch
@@ -186,8 +186,8 @@
 		}
 	}
 
-	// Run our functions once the window has loaded fully
-	window.addEventListener( 'load', function() {
+	// Run our submenu function as soon as the document is `ready`
+	document.addEventListener( 'DOMContentLoaded', function() {
 		toggleSubmenuTouchScreen();
 	});
 

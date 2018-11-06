@@ -280,7 +280,6 @@
 			height: auto;
 			width: max-content;
 			transform: none;
-			animation: fade_in 0.1s forwards;
 
 			&.hidden-links {
 				left: auto;
@@ -340,6 +339,8 @@
 	.main-menu .menu-item-has-children.focus {
 
 		.sub-menu {
+
+			animation: fade_in 0.1s forwards;
 
 			.submenu-expand .svg-icon {
 				transform: rotate(270deg);
