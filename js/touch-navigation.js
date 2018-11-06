@@ -61,13 +61,20 @@
 
 		var currentParent = null;
 
-		while (child) {
-			if (child.matches(selector)) {
+		while ( child ) {
+
+			if ( child.matches(selector) ) {
+
 				currentParent = child;
-				break
-			} else if (stopSelector && child.matches(stopSelector)) {
-				break
+
+				break;
+
+			} else if ( stopSelector && child.matches(stopSelector) ) {
+
+				break;
+
 			}
+
 			child = child.parentElement;
 		}
 
@@ -141,15 +148,15 @@
 		}
 	}
 
-	var siteNavigation = document.querySelector('.main-navigation > div > ul');
-	var subMenuExpand  = document.querySelectorAll('.submenu-expand');
-	var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
-	var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
-	var i;
-
 	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
+
+		var siteNavigation = document.querySelector('.main-navigation > div > ul');
+		var subMenuExpand  = document.querySelectorAll('.submenu-expand');
+		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
+		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var i;
 
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
