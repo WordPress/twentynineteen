@@ -56,7 +56,7 @@ function twentynineteen_customize() {
 		'',
 		array(
 			'back_link' => true,
-		),
+		)
 	);
 }
 add_action( 'load-customize.php', 'twentynineteen_customize' );
