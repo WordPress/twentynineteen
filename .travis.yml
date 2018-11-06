@@ -57,13 +57,13 @@ env:
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
 before_script:
+    - echo $WP_VERSION
+    - echo $WP_MULTISITE
+    - echo $LINT
     # Speed up build time by disabling Xdebug.
     # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
     # https://twitter.com/kelunik/status/954242454676475904
     - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-    - echo $WP_VERSION
-    - echo $WP_MULTISITE
-    - echo $LINT
     # Set up WordPress installation.
     - export WP_DEVELOP_DIR=/tmp/wordpress/
     - mkdir -p $WP_DEVELOP_DIR
