@@ -127,7 +127,7 @@ function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
 	}
 
 	if ( ! is_singular() ) {
-		$attr['sizes'] = '(max-width: 767px) calc(100vw - 2rem), (max-width: 1167px) calc(8 * (100vw / 12)), (min-width: 1168px) calc(6 * (100vw / 12)), 100vw';
+		$attr['sizes'] = '(max-width: 34.9rem) calc(100vw - 2rem), (max-width: 53rem) calc(8 * (100vw / 12)), (min-width: 53rem) calc(6 * (100vw / 12)), 100vw';
 	}
 
 	return $attr;
