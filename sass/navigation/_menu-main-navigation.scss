@@ -84,6 +84,10 @@
 						top: 0.2rem;
 					}
 				}
+
+				@include media(mobile) {
+					position: relative;
+				}
 			}
 
 			&:last-child > a,
@@ -199,7 +203,12 @@
 		left: 0;
 		margin-top: 0;
 		opacity: 1;
-		width: calc( 100vw - #{$size__spacing-unit * 2});
+		width: 100%;
+
+		@include media(mobile) {
+			left: auto;
+			width: max-content;
+		}
 
 		&.hidden-links {
 			left: auto;
