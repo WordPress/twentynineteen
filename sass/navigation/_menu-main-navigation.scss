@@ -219,7 +219,6 @@
 
 			margin-top: inherit;
 			position: relative;
-			padding-left: $size__spacing-unit;
 
 			@include media(tablet) {
 				padding-left: 0;
@@ -228,6 +227,35 @@
 				width: max-content;
 				top: 0;
 			}
+		}
+
+		/* Nested sub-menu padding: 10 levels deep */
+		.sub-menu > li > a {
+			padding-left: calc( 1.5 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu li > a {
+			padding-left: calc( 2 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 2.5 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 3 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 3.5 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 4 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 4.5 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 5 * #{$size__spacing-unit} );
+		}
+		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a {
+			padding-left: calc( 5.5 * #{$size__spacing-unit} );
 		}
 	}
 
