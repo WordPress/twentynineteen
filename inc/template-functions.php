@@ -113,6 +113,28 @@ function twentynineteen_image_filters_enabled() {
 }
 
 /**
+ * Add custom sizes attribute to responsive image functionality for post thumbnails.
+ *
+ * @origin Twenty Nineteen 1.0
+ *
+ * @param array $attr  Attributes for the image markup.
+ * @return string Value for use in post thumbnail 'sizes' attribute.
+ */
+function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
+
+	if ( is_admin() ) {
+		return;
+	}
+
+	if ( !is_singular() ) {
+		$attr['sizes'] = '(max-width: 767px) calc(100vw - 2rem), (max-width: 1167px) calc(8 * (100vw / 12)), (min-width: 1168px) calc(6 * (100vw / 12)), 100vw';
+	}
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'twentynineteen_post_thumbnail_sizes_attr', 10, 1 );
+
+/**
  * Returns the size for avatars used in the theme.
  */
 function twentynineteen_get_avatar_size() {
