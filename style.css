@@ -1164,7 +1164,7 @@ body.page .main-navigation {
   left: 0;
   margin-top: 0;
   opacity: 1;
-  width: calc( 100vw - 2rem);
+  width: 100%;
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
@@ -1176,12 +1176,19 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 600px) {
-  .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
     left: auto;
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
+  .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
+    left: auto;
+    width: max-content;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu.hidden-links {
+  left: auto;
+  right: 0;
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu.hidden-links {
