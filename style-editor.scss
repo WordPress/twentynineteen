@@ -197,6 +197,13 @@ figcaption,
 	font-size: $font__size_base;
 }
 
+/** === Heading === */
+
+.wp-block-heading {
+	strong {
+		font-weight: bolder;
+	}
+}
 /** === Paragraph === */
 
 .wp-block-paragraph {

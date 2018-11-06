@@ -205,6 +205,11 @@ figcaption,
   font-size: 22px;
 }
 
+/** === Heading === */
+.wp-block-heading strong {
+  font-weight: bolder;
+}
+
 /** === Paragraph === */
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
