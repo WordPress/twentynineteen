@@ -40,17 +40,18 @@ env:
     # @link https://github.com/WordPress/WordPress
     - WP_VERSION=5.0
     - WP_MULTISITE=0
+    - LINT=1
 
 # Declare versions of PHP to use. Use one decimal max.
 matrix:
   fast_finish: true
   include:
     - php: "5.3"
-      env: SHORT_OPEN_TAGS=true PHAR_LINT=1
+      env: SHORT_OPEN_TAGS=true LINT=0
       dist: precise
     # Current minimum $required_php_version for WordPress: 5.2.4
     - php: "5.2"
-      env: SHORT_OPEN_TAGS=true PHAR_LINT=1
+      env: SHORT_OPEN_TAGS=true LINT=0
       dist: precise
 
 # Ditch sudo and use containers.
@@ -77,29 +78,17 @@ before_script:
   - echo $theme_slug
   - echo $theme_dir
   - |
-    if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.2" ]] && [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then
+    if [[ "$LINT" == "1" ]]; then
       # Install WPThemeReview stnadards, which will install PHP_CodeSniffer, WordPress Coding Standards, WPThemeReview and PHPCompatibility standards.
       composer install --no-suggest;
-    else
-      # For PHP versions 5.2 and 5.3 we cannot use composer, instead we need to manually install the necessary standards.
-      # Install PHP_CodeSniffer
-      wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar;
-      # Install WordPress Coding Standards.
-      mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards;
-      # Install PHPCompatibility.
-      mkdir phpcompatibility && curl -L https://github.com/PHPCompatibility/PHPCompatibility/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility;
-      # Install PHPCompatibility-Paragonie.
-      mkdir phpcompatibility-paragonie && curl -L https://github.com/PHPCompatibility/PHPCompatibilityParagonie/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-paragonie;
-      # Install PHPCompatibility-WP.
-      mkdir phpcompatibility-wp && curl -L https://github.com/PHPCompatibility/PHPCompatibilityWP/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-wp;
-      # Install WPThemeReview.
-      mkdir wpthemereview && curl -L https://github.com/WPTRT/WPThemeReview/archive/master.tar.gz | tar xz --strip-components=1 -C wpthemereview;
-      # Set install path for WordPress Coding Standards, PHPCompatibility, PHPCompatibility-Paragonie, PHPCompatibility-WP and WPThemeReview
-      # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-      php phpcs.phar --config-set installed_paths $(pwd)/wordpress-coding-standards,$(pwd)/phpcompatibility,$(pwd)/phpcompatibility-paragonie,$(pwd)/phpcompatibility-wp,$(pwd)/wpthemereview;
     fi
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash;
+  # Install JSHint, a JavaScript Code Quality Tool
+  # @link http://jshint.com/docs/
+  - if [[ "$LINT" == "1" ]]; then npm install -g jshint; fi
+  - if [[ "$LINT" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+
 
 # Run test script commands.
 # Default is specific to project language.
@@ -107,6 +96,8 @@ before_script:
 script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -not -path "./vendor/*" -exec php -lf {} \;
+  # Run the theme through JSHint
+  - if [[ "$LINT" == "1" ]]; then jshint .; fi
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # -p flag: Show progress of the run.
@@ -115,8 +106,4 @@ script:
   # -n flag: Do not print warnings (shortcut for --warning-severity=0)
   # --extensions: Only sniff PHP files.
   - |
-    if [[ "$PHAR_LINT" == "1" ]]; then
-      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php,js;
-    else
-      composer lint . -- -p -s -v -n --extensions=php,js;
-    fi
+    if [[ "$LINT" == "1" ]]; then composer lint . -- -p -s -v -n --extensions=php; fi
