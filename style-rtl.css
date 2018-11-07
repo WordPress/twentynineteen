@@ -1130,12 +1130,26 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: calc( 100vw - 2rem);
+}
+
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
   width: calc( 100vw - 2rem);
+}
+
+.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+  margin-top: inherit;
+  position: relative;
+  padding-right: 1rem;
 }
 
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
@@ -1145,6 +1159,13 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
+    padding-right: 0;
+    position: absolute;
+    right: 100%;
+    width: max-content;
+    top: 0;
+  }
   .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
     padding-right: 0;
     position: absolute;
@@ -3508,12 +3529,6 @@ body.page .main-navigation {
   position: absolute;
   transform: translate(50%, -50%);
   top: 50%;
-}
-
-.entry-content .wp-block-cover-image.aligncenter,
-.entry-content .wp-block-cover.aligncenter {
-  margin: 32px calc(2 * (100vw / 12));
-  max-width: calc(6 * (100vw / 12));
 }
 
 .entry-content .wp-block-cover-image.has-left-content,
