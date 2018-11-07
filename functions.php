@@ -193,7 +193,7 @@ function twentynineteen_editor_customizer_styles() {
 
 	if ( 'custom' === get_theme_mod( 'colorscheme' ) ) {
 		// Include color patterns
-		require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
 	}
 }
