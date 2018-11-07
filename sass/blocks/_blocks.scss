@@ -380,8 +380,8 @@
 
 		&.is-large,
 		&.is-style-large {
-			padding: $size__spacing-unit 0 ($size__spacing-unit) ($size__spacing-unit * 2);
-			margin: $size__spacing-unit 0;
+			margin: $size__spacing-unit;
+			padding: 0;
 			border-left: none;
 
 			p {
@@ -396,9 +396,8 @@
 			}
 
 			@include media(tablet) {
-
-				margin: $size__spacing-unit calc(2 * (100vw / 12));
-				max-width: calc(6 * (100vw / 12));
+				margin: $size__spacing-unit 0;
+				padding: $size__spacing-unit 0;
 
 				p {
 					font-size: $font__size-lg;
