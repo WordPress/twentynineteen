@@ -67,6 +67,27 @@ before_script:
   # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
   # https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+  # Set up WordPress installation.
+  - export WP_DEVELOP_DIR=/tmp/wordpress/
+  - mkdir -p $WP_DEVELOP_DIR
+  # Use the Git mirror of WordPress.
+  - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
+  # Set up Twenty Nineteen theme information.
+  - theme_slug=$(basename $(pwd))
+  - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
+  - cd ..
+  # Avoid conflict with stock twentynineteen theme
+  - if [ -d $theme_dir ]; then rm -r $theme_dir; fi
+  - mv $theme_slug $theme_dir
+  # Set up WordPress configuration.
+  - cd $WP_DEVELOP_DIR
+  - echo $WP_DEVELOP_DIR
+  - cp wp-tests-config-sample.php wp-tests-config.php
+  - sed -i "s/youremptytestdbnamehere/wordpress_test/" wp-tests-config.php
+  - sed -i "s/yourusernamehere/root/" wp-tests-config.php
+  - sed -i "s/yourpasswordhere//" wp-tests-config.php
+  # Create WordPress database.
+  - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
   - |
     if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.2" ]] && [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then
       # Install WPThemeReview stnadards, which will install PHP_CodeSniffer, WordPress Coding Standards, WPThemeReview and PHPCompatibility standards.
@@ -89,6 +110,8 @@ before_script:
       # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
       php phpcs.phar --config-set installed_paths $(pwd)/wordpress-coding-standards,$(pwd)/phpcompatibility,$(pwd)/phpcompatibility-paragonie,$(pwd)/phpcompatibility-wp,$(pwd)/wpthemereview
     fi
+  # Hop into themes directory.
+  - cd $theme_dir
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash
   # Install JSHint, a JavaScript Code Quality Tool
@@ -103,7 +126,7 @@ script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -exec php -lf {} \;
   # Run the theme through JSHint
-  - jshint .
+  - jshint .;
   #
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
@@ -112,8 +135,9 @@ script:
   # -v flag: Print verbose output.
   # -n flag: Do not print warnings (shortcut for --warning-severity=0)
   # --extensions: Only sniff PHP files.
-  - if [[ "$PHAR_LINT" == "1" ]]; then
-      php phpcs.phar -p -s -v -n . --extensions=php
+  - |
+    if [[ "$PHAR_LINT" == "1" ]]; then
+      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php
     else
       composer lint . -- -p -s -v -n --extensions=php
     fi
