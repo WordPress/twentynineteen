@@ -1574,6 +1574,7 @@ body.page .main-navigation {
 .alignright {
   /*rtl:ignore*/
   float: right;
+  /*rtl:ignore*/
   margin-left: 1rem;
 }
 
@@ -3084,6 +3085,7 @@ body.page .main-navigation {
 
 .entry-content > *.alignleft,
 .entry-summary > *.alignleft {
+  /*rtl:ignore*/
   float: left;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
@@ -3093,6 +3095,7 @@ body.page .main-navigation {
   .entry-content > *.alignleft,
   .entry-summary > *.alignleft {
     max-width: calc(4 * (100vw / 12));
+    /*rtl:ignore*/
     margin-right: calc(2 * 1rem);
   }
 }
@@ -3106,9 +3109,11 @@ body.page .main-navigation {
 
 .entry-content > *.alignright,
 .entry-summary > *.alignright {
+  /*rtl:ignore*/
   float: right;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
+  /*rtl:ignore*/
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -3118,6 +3123,7 @@ body.page .main-navigation {
   .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
     margin-left: calc(2 * 1rem);
+    /*rtl:ignore*/
     margin-right: calc(2 * (100vw / 12));
   }
 }
