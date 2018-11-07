@@ -209,7 +209,7 @@ function twentynineteen_colors_css_wrap() {
 		return;
 	}
 
-	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 
 	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
 		$primary_color = 199;
