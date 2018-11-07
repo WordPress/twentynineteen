@@ -239,17 +239,16 @@
 /* Author description */
 
 .author-bio {
-
 	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+
+	@include postContentMaxWidth();
 
 	@include media(tablet) {
 		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
-		max-width: $size__site-tablet-content;
 	}
 
 	@include media(desktop) {
 		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
-		max-width: $size__site-desktop-content;
 	}
 
 	.author-title {

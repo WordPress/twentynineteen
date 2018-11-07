@@ -177,7 +177,6 @@
 
 /* Calculates maximum width for post content */
 @mixin postContentMaxWidth() {
-	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
 	@include media(tablet) {
 		max-width: $size__site-tablet-content;
