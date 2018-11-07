@@ -395,9 +395,9 @@ function twentynineteen_starter_content() {
 				'post_type' => 'page',
 				'post_title' => _x( 'Introducing Twenty Nineteen', 'Theme starter content', 'twentynineteen' ),
 				'post_content' => join( '', array(
-					'<!-- wp:heading -->',
-					'<h2>' . _x( 'The First WordPress Default Theme with Full Support for the New Block Editor', 'Theme starter content', 'twentynineteen' ) . '</h2>',
-					'<!-- /wp:heading -->',
+					'<!-- wp:quote {"className":"is-style-large"} -->',
+					'<blockquote class="wp-block-quote is-style-large"><p>' . _x( 'The First WordPress Default Theme with Full Support for the New Block Editor', 'Theme starter content', 'twentynineteen' ) . '</p></blockquote>',
+					'<!-- /wp:quote -->',
 					'<!-- wp:paragraph {"dropCap":true} -->',
 					'<p class="has-drop-cap">' . _x( 'At the core of Twenty Nineteen is its simple, sophisticated typography. The theme&rsquo;s aesthetic is minimal and non-prescriptive, allowing the theme to work well in a variety of applications. For example: it is effective as an minimal, typography-driven blogging theme, but can also be adapted for use as a static business website.', 'Theme starter content', 'twentynineteen' ) . '</p>',
 					'<!-- /wp:paragraph -->',
