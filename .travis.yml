@@ -35,23 +35,22 @@ php:
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-  global:
-    # Current version in development is 5.0.
-    # @link https://github.com/WordPress/WordPress
-    - WP_VERSION=5.0
-    - WP_MULTISITE=0
-    - LINT=1
+  # Current version in development is 5.0.
+  # @link https://github.com/WordPress/WordPress
+  - WP_VERSION=5.0
+  - WP_MULTISITE=0
+  - LINT=1
 
 # Declare versions of PHP to use. Use one decimal max.
 matrix:
   fast_finish: true
   include:
     - php: "5.3"
-      env: SHORT_OPEN_TAGS=true LINT=0
+      env: LINT=0
       dist: precise
     # Current minimum $required_php_version for WordPress: 5.2.4
     - php: "5.2"
-      env: SHORT_OPEN_TAGS=true LINT=0
+      env: LINT=0
       dist: precise
 
 # Ditch sudo and use containers.
@@ -64,7 +63,6 @@ before_install:
   # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
   # https://twitter.com/kelunik/status/954242454676475904
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-  - if [[ "$SHORT_OPEN_TAGS" == "true" ]]; then echo "short_open_tag = On" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -77,11 +75,8 @@ before_script:
   - theme_dir=$(pwd)
   - echo $theme_slug
   - echo $theme_dir
-  - |
-    if [[ "$LINT" == "1" ]]; then
-      # Install WPThemeReview stnadards, which will install PHP_CodeSniffer, WordPress Coding Standards, WPThemeReview and PHPCompatibility standards.
-      composer install --no-suggest;
-    fi
+  # Install WPThemeReview stnadards, which will install PHP_CodeSniffer, WordPress Coding Standards, WPThemeReview and PHPCompatibility standards.
+  - if [[ "$LINT" == "1" ]]; then composer install --no-suggest; fi
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash;
   # Install JSHint, a JavaScript Code Quality Tool
@@ -97,7 +92,7 @@ script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -not -path "./vendor/*" -exec php -lf {} \;
   # Run the theme through JSHint
-  - if [[ "$LINT" == "1" ]]; then jshint .; fi
+  - if [[ "$LINT" == "1" ]]; then jshint --exclude ./vendor .; fi
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # -p flag: Show progress of the run.
@@ -105,5 +100,4 @@ script:
   # -v flag: Print verbose output.
   # -n flag: Do not print warnings (shortcut for --warning-severity=0)
   # --extensions: Only sniff PHP files.
-  - |
-    if [[ "$LINT" == "1" ]]; then composer lint . -- -p -s -v -n --extensions=php; fi
+  - if [[ "$LINT" == "1" ]]; then composer lint . -- -p -s -v -n --extensions=php; fi
