@@ -197,6 +197,13 @@ figcaption,
 	font-size: $font__size_base;
 }
 
+/** === Heading === */
+
+.wp-block-heading {
+	strong {
+		font-weight: bolder;
+	}
+}
 /** === Paragraph === */
 
 .wp-block-paragraph {
@@ -220,6 +227,9 @@ figcaption,
 		font-size: $font__size-xl;
 		font-weight: bold;
 		line-height: 1.4;
+		strong {
+			font-weight: bolder;
+		}
 	}
 
 	&.has-left-content {
