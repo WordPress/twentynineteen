@@ -389,9 +389,39 @@ function twentynineteen_starter_content() {
 			),
 		),
 
-		// Specify the core-defined pages to create and add custom thumbnails to some of them.
+		// Specify the core-defined and custom pages to create and add custom thumbnails to some of them.
 		'posts' => array(
-			'home',
+			'front' => array(
+				'post_type' => 'page',
+				'post_title' => _x( 'Introducing Twenty Nineteen', 'Theme starter content', 'twentynineteen' ),
+				'post_content' => join( '', array(
+					'<!-- wp:heading -->',
+					'<h2>' . _x( 'The First WordPress Default Theme with Full Support for the New Block Editor', 'Theme starter content', 'twentynineteen' ) . '</h2>',
+					'<!-- /wp:heading -->',
+					'<!-- wp:paragraph {"dropCap":true} -->',
+					'<p class="has-drop-cap">' . _x( 'At the core of Twenty Nineteen is its simple, sophisticated typography. The theme&rsquo;s aesthetic is minimal and non-prescriptive, allowing the theme to work well in a variety of applications. For example: it is effective as an minimal, typography-driven blogging theme, but can also be adapted for use as a static business website.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+					'<!-- /wp:paragraph -->',
+					'<!-- wp:columns {"align":"wide"} -->',
+					'<div class="wp-block-columns alignwide has-2-columns"><!-- wp:column -->',
+					'<div class="wp-block-column"><!-- wp:heading {"level":3} -->',
+					'<h3>' . _x ( 'Column 1', 'Theme starter content', 'twentynineteen'  ) . '</h3>',
+					'<!-- /wp:heading -->',
+					'<!-- wp:paragraph -->',
+					'<p>' . _x( 'You can now create columns.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+					'<!-- /wp:paragraph --></div>',
+					'<!-- /wp:column -->',
+					'<!-- wp:column -->',
+					'<div class="wp-block-column">',
+					'<!-- wp:heading {"level":3} -->',
+					'<h3>' . _x( 'Column 2', 'Theme starter content', 'twentynineteen' ) . '</h3>',
+					'<!-- /wp:heading -->',
+					'<!-- wp:paragraph -->',
+					'<p>' . _x( 'Columns enable you to create a page with more structure.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+					'<!-- /wp:paragraph --></div>',
+					'<!-- /wp:column --></div>',
+					'<!-- /wp:columns -->',
+				) ),
+			),
 			'blog',
 			'about',
 			'contact',
@@ -400,7 +430,7 @@ function twentynineteen_starter_content() {
 		// Default to a static front page and assign the front and posts pages.
 		'options' => array(
 			'show_on_front' => 'page',
-			'page_on_front' => '{{home}}',
+			'page_on_front' => '{{front}}',
 			'page_for_posts' => '{{blog}}',
 		),
 
