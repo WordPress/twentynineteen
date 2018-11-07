@@ -94,19 +94,19 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for Block Styles
+		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
-		// Add support for editor styles
+		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-		// Enqueue editor styles
+		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Editor color palette
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
@@ -118,7 +118,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
-		// Add support for responsive embedded content
+		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
 	}
@@ -185,7 +185,7 @@ function twentynineteen_scripts() {
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 
 /**
- * Enqueue supplemental block editor styles
+ * Enqueue supplemental block editor styles.
  */
 function twentynineteen_editor_customizer_styles() {
 
@@ -204,7 +204,7 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_customizer_sty
  */
 function twentynineteen_colors_css_wrap() {
 
-	// Only include custom colors in customizer or frontend
+	// Only include custom colors in customizer or frontend.
 	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
 		return;
 	}
