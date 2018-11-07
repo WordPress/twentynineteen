@@ -100,10 +100,6 @@ before_script:
     fi
   # After CodeSniffer install you should refresh your path.
   - phpenv rehash;
-  # Install JSHint, a JavaScript Code Quality Tool
-  # @link https://jshint.com/docs/
-  - npm install -g jshint;
-  - wget https://develop.svn.wordpress.org/trunk/.jshintrc;
 
 # Run test script commands.
 # Default is specific to project language.
@@ -111,9 +107,6 @@ before_script:
 script:
   # Search theme for PHP syntax errors.
   - find . \( -name '*.php' \) -not -path "./vendor/*" -exec php -lf {} \;
-  # Run the theme through JSHint
-  - jshint --exclude ./vendor .";
-  #
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # -p flag: Show progress of the run.
@@ -123,7 +116,7 @@ script:
   # --extensions: Only sniff PHP files.
   - |
     if [[ "$PHAR_LINT" == "1" ]]; then
-      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php;
+      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php,js;
     else
-      composer lint . -- -p -s -v -n --extensions=php;
+      composer lint . -- -p -s -v -n --extensions=php,js;
     fi
