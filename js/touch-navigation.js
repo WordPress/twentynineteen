@@ -13,7 +13,7 @@
 		var getMenuItem = menuItems;
 		var i;
 
-    	for (i = 0; i < getMenuItem.length; i++) {
+		for (i = 0; i < getMenuItem.length; i++) {
 
 			var state = getMenuItem[i].getAttribute('aria-expanded');
 
