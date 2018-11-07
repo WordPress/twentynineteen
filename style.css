@@ -1098,10 +1098,6 @@ body.page .main-navigation {
   word-break: break-word;
 }
 
-.main-navigation .sub-menu > li:hover {
-  background: #005177;
-}
-
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
   position: absolute;
   width: calc( 24px + 1rem);
@@ -1187,6 +1183,15 @@ body.page .main-navigation {
     left: 0;
     width: 100%;
     min-width: max-content;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .submenu-expand {
+    display: none;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .submenu-expand {
+    display: none;
   }
 }
 
@@ -1334,6 +1339,12 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
     left: auto;
     right: 0;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .submenu-expand,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .submenu-expand,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .submenu-expand,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .submenu-expand {
+    display: none;
   }
 }
 

@@ -128,10 +128,6 @@
 			position: relative;
 			word-break: break-word;
 
-			&:hover {
-				background: $color__link-hover;
-			}
-
 			&.menu-item-has-children {
 
 				.submenu-expand {
@@ -211,10 +207,17 @@
 			min-width: max-content;
 		}
 
+		@include media(tablet) {
+			.submenu-expand {
+				display: none;
+			}
+		}
+
 		&.hidden-links {
 			left: auto;
 			right: 0;
 		}
+
 
 		.sub-menu {
 			display: block;
@@ -283,6 +286,10 @@
 			&.hidden-links {
 				left: auto;
 				right: 0;
+			}
+
+			.submenu-expand {
+				display: none;
 			}
 		}
 
