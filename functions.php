@@ -152,7 +152,7 @@ add_action( 'widgets_init', 'twentynineteen_widgets_init' );
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
- * @global int $content_width
+ * @global int $content_width Content width.
  */
 function twentynineteen_content_width() {
 	// This variable is intended to be overruled from themes.
