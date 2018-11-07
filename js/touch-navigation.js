@@ -66,6 +66,86 @@
 		toggleAriaExpandedState( menuItemAria );
 	}
 
+	// Open Sub-menu
+	function openSubMenu( currentSubMenu ) {
+		'use strict';
+
+		// Update classes
+		// classList.add is not supported in IE11
+		currentSubMenu.parentElement.className += ' focus';
+		currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
+
+		// Update aria-expanded state
+		toggleAriaExpandedState( currentSubMenu.parentElement.querySelectorAll('a[aria-expanded]') );
+	}
+
+	// Close Sub-menu
+	function closeSubMenu( currentSubMenu ) {
+		'use strict';
+
+		var menuItem       = currentSubMenu.closest('.menu-item'); // this.parentNode
+		var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
+		var subMenu        = currentSubMenu.closest('.sub-menu');
+
+		// If this is in a sub-sub-menu, go back to parent sub-menu
+		if ( getCurrentParent( currentSubMenu, 'ul' ).classList.contains( 'sub-menu' ) ) {
+
+			// Update classes
+			// classList.remove is not supported in IE11
+			menuItem.className = menuItem.className.replace( 'focus', '' );
+			subMenu.className = subMenu.className.replace( 'expanded-true', '' );
+
+			// Update aria-expanded and :focus states
+			toggleAriaExpandedState( menuItemAria );
+
+		// Or else close all sub-menus
+		} else {
+
+			// Update classes
+			// classList.remove is not supported in IE11
+			menuItem.className = menuItem.className.replace( 'focus', '' );
+			menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
+
+			// Update aria-expanded and :focus states
+			toggleAriaExpandedState( menuItemAria );
+		}
+	}
+
+	// Find first ancestor of an element by tagName
+	function getCurrentParent( child, selector, stopSelector ) {
+
+		var currentParent = null;
+
+		while ( child ) {
+
+			if ( child.matches(selector) ) {
+
+				currentParent = child;
+				break;
+
+			} else if ( stopSelector && child.matches(stopSelector) ) {
+
+				break;
+			}
+
+			child = child.parentElement;
+		}
+
+		return currentParent;
+	}
+
+	// Remove all focus states
+	function removeAllFocusStates() {
+		'use strict';
+
+		var getFocusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
+		var i;
+
+		for ( i = 0; i < getFocusedElements.length; i++) {
+			getFocusedElements[i].blur();
+		}
+	}
+
 	// Toggle `focus` class to allow submenu access on touch screens.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
@@ -74,103 +154,17 @@
 		var subMenuExpand   = document.querySelectorAll('.submenu-expand');
 		var subMenuReturn   = document.querySelectorAll('.menu-item-link-return');
 		var parentMenuLink  = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
-		var i;
 
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
 			return;
 		}
 
-		// Open Sub-menu
-		function openSubMenu( currentSubMenu ) {
-			'use strict';
-
-			var menuItem     = currentSubMenu.parentElement; // this.parentNode
-			var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
-
-			// Update classes
-			// classList.add is not supported in IE11
-			menuItem.className += ' focus';
-			menuItem.lastElementChild.className += ' expanded-true';
-
-			// Update aria-expanded state
-			toggleAriaExpandedState( menuItemAria );
-		}
-
-		// Close Sub-menu
-		function closeSubMenu( currentSubMenu ) {
-			'use strict';
-
-			var menuItem       = currentSubMenu.closest('.menu-item'); // this.parentNode
-			var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
-			var subMenu        = currentSubMenu.closest('.sub-menu');
-
-			// Find first ancestor of an element by tagName
-			function getCurrentParent( child, selector, stopSelector ) {
-
-				var currentParent = null;
-
-				while ( child ) {
-
-					if ( child.matches(selector) ) {
-
-						currentParent = child;
-
-						break;
-
-					} else if ( stopSelector && child.matches(stopSelector) ) {
-
-						break;
-
-					}
-
-					child = child.parentElement;
-				}
-
-				return currentParent;
-			}
-
-			// If this is in a sub-sub-menu, go back to parent sub-menu
-			if ( getCurrentParent( currentSubMenu, 'ul' ).classList.contains( 'sub-menu' ) ) {
-
-				// Update classes
-				// classList.remove is not supported in IE11
-				menuItem.className = menuItem.className.replace( 'focus', '' );
-				subMenu.className = subMenu.className.replace( 'expanded-true', '' );
-
-				// Update aria-expanded and :focus states
-				toggleAriaExpandedState( menuItemAria );
-
-			// Or else close all sub-menus
-			} else {
-
-				// Update classes
-				// classList.remove is not supported in IE11
-				menuItem.className = menuItem.className.replace( 'focus', '' );
-				menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
-
-				// Update aria-expanded and :focus states
-				toggleAriaExpandedState( menuItemAria );
-			}
-		}
-
-		// Remove all focus states
-		function removeAllFocusStates() {
-			'use strict';
-
-			var getFocusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
-			var i;
-
-			for ( i = 0; i < getFocusedElements.length; i++) {
-				getFocusedElements[i].blur();
-			}
-		}
-
 		// Open submenus on touch
-		for ( i = 0; i < subMenuExpand.length; i++) {
+		for ( var i = 0; i < subMenuExpand.length; i++) {
 			subMenuExpand[i].addEventListener('touchstart', function( event ) {
 				// Open menu
-				openSubMenu( event.currentTarget );
+				openSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
 				event.preventDefault();
@@ -185,11 +179,11 @@
 		}
 
 		// Close sub-menus or sub-sub-menus on touch
-		for ( i = 0; i < subMenuReturn.length; i++) {
+		for ( var i = 0; i < subMenuReturn.length; i++) {
 
 			subMenuReturn[i].addEventListener('touchstart', function( event ) {
 				// Close menu
-				closeSubMenu( event.currentTarget );
+				closeSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
 				event.preventDefault();
@@ -205,7 +199,7 @@
 		}
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		for ( i = 0; i < parentMenuLink.length; i++) {
+		for ( var i = 0; i < parentMenuLink.length; i++) {
 			parentMenuLink[i].addEventListener('touchstart', function( event ) {
 				// Go to link without openning submenu
 				window.location = this.getAttribute('href');
