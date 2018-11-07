@@ -33,8 +33,8 @@ Version 1.0:
 | @shahjehanali1 | @azchughtai |
 | @ianbelanger79 | @ianbelanger |
 | @nadim1992 | |
-| @ismail-elkorchi | @ismailelkorchi |
-| @nativeinside | |
+| @Ismail-elkorchi | @ismailelkorchi |
+| @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
 | @icaleb | @icaleb |
 | @grappler | @grapplerulrich |
@@ -55,3 +55,15 @@ Version 1.0:
 | @enodekciw | @enodekciw |
 | @chetansatasiya | @ketuchetan |
 | @atanas-angelov-dev | @atanasangelovdev |
+| @carolinan | @poena |
+| @sharazghouri | @sharaz |
+| @artisan-asad | @artisticasad |
+| @mukeshpanchal27 | @mukesh27 |
+| @burhandodhy | @burhandodhy |
+| @crunnells | @crunnells |
+| @aryaprakasa | @aprakasa |
+| @tlxo | |
+| @themeroots | @themeroots |
+| @whizbangik | @imonly_ik |
+| @yingles | @yingling017 |
+| @tlxo | @tlxo |

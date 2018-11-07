@@ -1,6 +1,9 @@
 // Featured image styles
 
 .site-header.featured-image {
+	
+	/* Hide overflow for overflowing featured image */
+	overflow: hidden;
 
 	/* Need relative positioning to properly align layers. */
 	position: relative;
@@ -59,86 +62,117 @@
 	}
 
 	/* Entry header */
-
-	.site-featured-image .entry-header {
-
-		margin-bottom: 0;
-		margin-left: 0;
-		margin-right: 0;
-
-		@include media (tablet) {
-
-			margin-left: calc(2 * (100vw / 12));
-			margin-right: calc(2 * (100vw / 12));
-		}
-
-		.entry-title {
-
-			&:before {
-				background: $color__background-body;
+	.site-featured-image {
+		
+		/* First layer: grayscale. */
+		.post-thumbnail img {
+			height: auto;
+			left: 50%;
+			max-width: 1000%;
+			min-height: 100%;
+			min-width: 100vw;
+			position: absolute;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: auto;
+			z-index: 1;
+			
+			@supports ( object-fit: cover ) {
+				height: 100%;
+				left: 0;
+				object-fit: cover;
+				top: 0;
+				transform: none;
+				width: 100%;
+			}
+			
+			/* When image filters are active, make it grayscale to colorize it blue. */
+			.image-filters-enabled & {
+				filter: grayscale(100%);
 			}
 		}
-
-		/* Entry meta */
-
-		.entry-meta {
-
-			font-weight: 500;
-
-			> span {
-
-				margin-right: $size__spacing-unit;
-				display: inline-block;
-
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-
-			a {
-
-				@include link-transition;
-				color: currentColor;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
-
-			.svg-icon {
-				position: relative;
-				display: inline-block;
-				vertical-align: middle;
-				margin-right: 0.5em;
-			}
-
-			.discussion-avatar-list {
-				display: none;
-			}
-		}
-
-		&.has-discussion {
+	
+		.entry-header {
+			
+			margin-top: calc( 4 * #{$size__spacing-unit});
+			margin-bottom: 0;
+			margin-left: 0;
+			margin-right: 0;
 
 			@include media (tablet) {
 
-				.entry-meta {
-					display: flex;
+				margin-left: calc(2 * (100vw / 12));
+				margin-right: calc(2 * (100vw / 12));
+			}
+
+			.entry-title {
+
+				&:before {
+					background: $color__background-body;
+				}
+			}
+
+			/* Entry meta */
+
+			.entry-meta {
+
+				font-weight: 500;
+
+				> span {
+
+					margin-right: $size__spacing-unit;
+					display: inline-block;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				a {
+
+					@include link-transition;
+					color: currentColor;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				.svg-icon {
 					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 0.5em;
 				}
 
-				.entry-title {
-					padding-right: calc(1 * (100vw / 12) + #{$size__spacing-unit});
+				.discussion-avatar-list {
+					display: none;
 				}
+			}
 
-				.entry-meta .comment-count {
-					position: absolute;
-					right: 0;
-				}
+			&.has-discussion {
 
-				.entry-meta .discussion-avatar-list {
-					display: block;
-					position: absolute;
-					bottom: 100%;
+				@include media (tablet) {
+
+					.entry-meta {
+						display: flex;
+						position: relative;
+					}
+
+					.entry-title {
+						padding-right: calc(1 * (100vw / 12) + #{$size__spacing-unit});
+					}
+
+					.entry-meta .comment-count {
+						position: absolute;
+						right: 0;
+					}
+
+					.entry-meta .discussion-avatar-list {
+						display: block;
+						position: absolute;
+						bottom: 100%;
+					}
 				}
 			}
 		}
@@ -170,7 +204,6 @@
 	}
 
 	/* Set up image filter layer positioning */
-	.site-branding-container:before,
 	.site-branding-container:after,
 	.site-featured-image:before,
 	.site-featured-image:after,
@@ -184,25 +217,12 @@
 	}
 
 	/* Background & Effects */
-	/* Shared background settings between pseudo elements. See .site-branding-container */
+	/* Shared background settings between pseudo elements. */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	/* The intensity of each blend mode is controlled via layer opacity. */
-
-	/* First layer: grayscale. */
-  	.site-branding-container:before {
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		z-index: 1;
-
-		/* When image filters are active, make it grayscale to colorize it blue. */
-		.image-filters-enabled & {
-			filter: grayscale(100%);
-		}
-	}
 
 	/* Second layer: screen. */
 	.image-filters-enabled & .site-featured-image:before {

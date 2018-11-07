@@ -155,33 +155,16 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 		else :
 			?>
 
-			<figure class="post-thumbnail">
-				<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array( 'echo' => false )
-							),
-						)
-					);
-					?>
-				</a>
-			</figure><!-- .post-thumbnail -->
+		<figure class="post-thumbnail">
+			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php
+				the_post_thumbnail( 'post-thumbnail' );
+				?>
+			</a>
+		</figure>
 
 			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
-	/**
-	 * Returns the CSS for the header featured image background.
-	 */
-	function twentynineteen_header_featured_image_css() {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		return sprintf( 'body.singular .site-header.featured-image .site-branding-container:before { background-image: url(%s); }', esc_url( $img_url ) );
 	}
 endif;
 
