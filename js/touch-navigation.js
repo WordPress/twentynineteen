@@ -181,7 +181,6 @@
 			button.addEventListener('click', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
 			});
 		});
 
