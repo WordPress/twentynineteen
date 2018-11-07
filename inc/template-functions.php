@@ -372,3 +372,68 @@ function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
 		return "rgb($r, $g, $b)";
 	}
 }
+
+/**
+ * Define and register starter content to showcase the theme on new sites.
+ *
+ * @return array $starter_content Array of starter content.
+ */
+function twentynineteen_starter_content() {
+	
+	$starter_content = array(
+		'widgets' => array(
+			// Place two core-defined widgets in the footer widget area.
+			'sidebar-1' => array(
+				'text_business_info',
+				'text_about',
+			),
+		),
+
+		// Specify the core-defined pages to create and add custom thumbnails to some of them.
+		'posts' => array(
+			'home',
+			'blog',
+			'about',
+			'contact',
+		),
+
+		// Default to a static front page and assign the front and posts pages.
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+
+		// Set up nav menus for each of the two areas registered in the theme.
+		'nav_menus' => array(
+			// Assign a menu to the "menu-1" location.
+			'menu-1' => array(
+				'name' => __( 'Primary', 'twentynineteen' ),
+				'items' => array(
+					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+					'page_blog',
+					'page_about',
+					'page_contact',
+				),
+			),
+
+			// Assign a menu to the "social" location.
+			'social' => array(
+				'name' => __( 'Social Links', 'twentynineteen' ),
+				'items' => array(
+					'link_facebook',
+					'link_twitter',
+					'link_instagram',
+					'link_email',
+				),
+			),
+		),
+	);
+	
+	/**
+	 * Filters Twenty Nineteen array of starter content.
+	 *
+	 * @param array $starter_content Array of starter content.
+	 */
+	return apply_filters( 'twentynineteen_starter_content', $starter_content );
+}
