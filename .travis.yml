@@ -22,30 +22,15 @@ cache:
     # Cache directory for more recent Composer versions.
     - $HOME/.cache/composer/files
 
-# Declare versions of PHP to use. Use one decimal max.
-matrix:
-  fast_finish: true
-
-  include:
-    - php: "7.3"
-    - php: "7.2"
-    - php: "7.1"
-    - php: "7.0"
-    - php: "5.6"
-    - php: "5.5"
-    - php: "5.4"
-    - php: "5.3"
-      env: PHPCS_BRANCH="2.9.0" SHORT_OPEN_TAGS=true PHAR_LINT=1
-      dist: precise
-    # Current minimum $required_php_version for WordPress: 5.2.4
-    - php: "5.2"
-      env: PHPCS_BRANCH="2.9.0" SHORT_OPEN_TAGS=true PHAR_LINT=1
-      dist: precise
-
-# Ditch sudo and use containers.
-# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
-sudo: false
+# PHP versions to build on
+php:
+  - 7.3
+  - 7.2
+  - 7.1
+  - 7.0
+  - 5.6
+  - 5.5
+  - 5.4
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
@@ -55,7 +40,30 @@ env:
     # @link https://github.com/WordPress/WordPress
     - WP_VERSION=5.0
     - WP_MULTISITE=0
-    - PHPCS_BRANCH="dev-master"
+
+# Declare versions of PHP to use. Use one decimal max.
+matrix:
+  fast_finish: true
+  include:
+    - php: "5.3"
+      env: SHORT_OPEN_TAGS=true PHAR_LINT=1
+      dist: precise
+    # Current minimum $required_php_version for WordPress: 5.2.4
+    - php: "5.2"
+      env: SHORT_OPEN_TAGS=true PHAR_LINT=1
+      dist: precise
+
+# Ditch sudo and use containers.
+# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+sudo: false
+
+before_install:
+  # Speed up build time by disabling Xdebug.
+  # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
+  # https://twitter.com/kelunik/status/954242454676475904
+  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+  - if [[ "$SHORT_OPEN_TAGS" == "true" ]]; then echo "short_open_tag = On" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -63,70 +71,48 @@ env:
 before_script:
   - echo $WP_VERSION
   - echo $WP_MULTISITE
-  # Speed up build time by disabling Xdebug.
-  # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
-  # https://twitter.com/kelunik/status/954242454676475904
-  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
   # Set up WordPress installation.
-  - export WP_DEVELOP_DIR=/tmp/wordpress/
-  - mkdir -p $WP_DEVELOP_DIR
-  # Use the Git mirror of WordPress.
-  - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
-  # Set up Twenty Nineteen theme information.
   - theme_slug=$(basename $(pwd))
-  - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
-  - cd ..
-  # Avoid conflict with stock twentynineteen theme
-  - if [ -d $theme_dir ]; then rm -r $theme_dir; fi
-  - mv $theme_slug $theme_dir
-  # Set up WordPress configuration.
-  - cd $WP_DEVELOP_DIR
-  - echo $WP_DEVELOP_DIR
-  - cp wp-tests-config-sample.php wp-tests-config.php
-  - sed -i "s/youremptytestdbnamehere/wordpress_test/" wp-tests-config.php
-  - sed -i "s/yourusernamehere/root/" wp-tests-config.php
-  - sed -i "s/yourpasswordhere//" wp-tests-config.php
-  # Create WordPress database.
-  - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
+  - theme_dir=$(pwd)
+  - echo $theme_slug
+  - echo $theme_dir
   - |
     if [[ ${TRAVIS_PHP_VERSION:0:3} != "5.2" ]] && [[ ${TRAVIS_PHP_VERSION:0:3} != "5.3" ]]; then
       # Install WPThemeReview stnadards, which will install PHP_CodeSniffer, WordPress Coding Standards, WPThemeReview and PHPCompatibility standards.
-      composer install --dev --no-suggest
+      composer install --no-suggest;
     else
       # For PHP versions 5.2 and 5.3 we cannot use composer, instead we need to manually install the necessary standards.
       # Install PHP_CodeSniffer
-      wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+      wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar;
       # Install WordPress Coding Standards.
-      mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
+      mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards;
       # Install PHPCompatibility.
-      mkdir phpcompatibility && curl -L https://github.com/PHPCompatibility/PHPCompatibility/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility
+      mkdir phpcompatibility && curl -L https://github.com/PHPCompatibility/PHPCompatibility/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility;
       # Install PHPCompatibility-Paragonie.
-      mkdir phpcompatibility-paragonie && curl -L https://github.com/PHPCompatibility/PHPCompatibilityParagonie/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-paragonie
+      mkdir phpcompatibility-paragonie && curl -L https://github.com/PHPCompatibility/PHPCompatibilityParagonie/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-paragonie;
       # Install PHPCompatibility-WP.
-      mkdir phpcompatibility-wp && curl -L https://github.com/PHPCompatibility/PHPCompatibilityWP/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-wp
+      mkdir phpcompatibility-wp && curl -L https://github.com/PHPCompatibility/PHPCompatibilityWP/archive/master.tar.gz | tar xz --strip-components=1 -C phpcompatibility-wp;
       # Install WPThemeReview.
-      mkdir wpthemereview && curl -L https://github.com/WPTRT/WPThemeReview/archive/master.tar.gz | tar xz --strip-components=1 -C wpthemereview
+      mkdir wpthemereview && curl -L https://github.com/WPTRT/WPThemeReview/archive/master.tar.gz | tar xz --strip-components=1 -C wpthemereview;
       # Set install path for WordPress Coding Standards, PHPCompatibility, PHPCompatibility-Paragonie, PHPCompatibility-WP and WPThemeReview
       # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-      php phpcs.phar --config-set installed_paths $(pwd)/wordpress-coding-standards,$(pwd)/phpcompatibility,$(pwd)/phpcompatibility-paragonie,$(pwd)/phpcompatibility-wp,$(pwd)/wpthemereview
+      php phpcs.phar --config-set installed_paths $(pwd)/wordpress-coding-standards,$(pwd)/phpcompatibility,$(pwd)/phpcompatibility-paragonie,$(pwd)/phpcompatibility-wp,$(pwd)/wpthemereview;
     fi
-  # Hop into themes directory.
-  - cd $theme_dir
   # After CodeSniffer install you should refresh your path.
-  - phpenv rehash
+  - phpenv rehash;
   # Install JSHint, a JavaScript Code Quality Tool
   # @link https://jshint.com/docs/
-  - npm install -g jshint
-  - wget https://develop.svn.wordpress.org/trunk/.jshintrc
+  - npm install -g jshint;
+  - wget https://develop.svn.wordpress.org/trunk/.jshintrc;
 
 # Run test script commands.
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   # Search theme for PHP syntax errors.
-  - find . \( -name '*.php' \) -exec php -lf {} \;
+  - find . \( -name '*.php' \) -not -path "./vendor/*" -exec php -lf {} \;
   # Run the theme through JSHint
-  - jshint .;
+  - jshint --exclude ./vendor .";
   #
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
@@ -137,7 +123,7 @@ script:
   # --extensions: Only sniff PHP files.
   - |
     if [[ "$PHAR_LINT" == "1" ]]; then
-      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php
+      php $WP_DEVELOP_DIR/phpcs.phar -p -s -v -n . --extensions=php;
     else
-      composer lint . -- -p -s -v -n --extensions=php
+      composer lint . -- -p -s -v -n --extensions=php;
     fi
