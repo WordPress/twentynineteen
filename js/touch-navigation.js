@@ -56,7 +56,7 @@
 		}
 	}
 
-	// Focus Sub-menu
+	// Focus sub-menu
 	function setAriaState( currentMenuItem ) {
 
 		var menuItem     = currentMenuItem.closest('.menu-item'); // this.parentNode
@@ -66,7 +66,7 @@
 		toggleAriaExpandedState( menuItemAria );
 	}
 
-	// Open Sub-menu
+	// Open sub-menu
 	function openSubMenu( currentSubMenu ) {
 		'use strict';
 
@@ -79,7 +79,7 @@
 		toggleAriaExpandedState( currentSubMenu.parentElement.querySelectorAll('a[aria-expanded]') );
 	}
 
-	// Close Sub-menu
+	// Close sub-menu
 	function closeSubMenu( currentSubMenu ) {
 		'use strict';
 
@@ -146,7 +146,7 @@
 		}
 	}
 
-	// Toggle `focus` class to allow submenu access on touch screens.
+	// Toggle `focus` class to allow sub-menu access on touch screens.
 	function toggleSubmenuTouchScreen() {
 		'use strict';
 
@@ -160,10 +160,10 @@
 			return;
 		}
 
-		// Open submenus on touch
-		for ( var i = 0; i < subMenuExpand.length; i++) {
-			subMenuExpand[i].addEventListener('touchstart', function( event ) {
-				// Open menu
+		// Open sub-menus on touch
+		subMenuExpand.forEach( function( button ) {
+
+			button.addEventListener('touchstart', function(event) {
 				openSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -171,18 +171,17 @@
 				removeAllFocusStates();
 			});
 
-			subMenuExpand[i].addEventListener('touchend', function( event ) {
+			button.addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
 			});
-		}
+		});
 
 		// Close sub-menus or sub-sub-menus on touch
-		for ( var i = 0; i < subMenuReturn.length; i++) {
+		subMenuReturn.forEach( function( button ) {
 
-			subMenuReturn[i].addEventListener('touchstart', function( event ) {
-				// Close menu
+			button.addEventListener('touchstart', function(event) {
 				closeSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -190,17 +189,17 @@
 				removeAllFocusStates();
 			});
 
-			subMenuReturn[i].addEventListener('touchend', function( event ) {
+			button.addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
 			});
-
-		}
+		});
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		for ( var i = 0; i < parentMenuLink.length; i++) {
-			parentMenuLink[i].addEventListener('touchstart', function( event ) {
+		parentMenuLink.forEach( function( button ) {
+
+			button.addEventListener('touchstart', function(event) {
 				// Go to link without openning submenu
 				window.location = this.getAttribute('href');
 
@@ -209,18 +208,18 @@
 				removeAllFocusStates();
 			});
 
-			parentMenuLink[i].addEventListener('touchend', function( event ) {
+			button.addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
 			});
 
-			// Aria state
-			parentMenuLink[i].addEventListener('focus', setAriaState( parentMenuLink[i] ) );
-		}
+			button.addEventListener('focus', setAriaState( button ) );
+		});
+
 	}
 
-	// Run our submenu function as soon as the document is `ready`
+	// Run our sub-menu function as soon as the document is `ready`
 	document.addEventListener( 'DOMContentLoaded', function() {
 		toggleSubmenuTouchScreen();
 	});
