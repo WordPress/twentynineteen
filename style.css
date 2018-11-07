@@ -2552,10 +2552,12 @@ body.page .main-navigation {
   font-weight: 500;
 }
 
-.comment-reply {
-  left: calc(1rem + 100%);
-  bottom: 0;
-  position: absolute;
+@media only screen and (min-width: 1168px) {
+  .comment-reply {
+    left: 100%;
+    bottom: 0;
+    position: absolute;
+  }
 }
 
 #respond + .comment-reply {
@@ -2581,7 +2583,13 @@ body.page .main-navigation {
 }
 
 .comment .comment-body {
-  margin: calc(2 * 1rem) 0;
+  margin: calc(2 * 1rem) 0 0;
+}
+
+@media only screen and (min-width: 1168px) {
+  .comment .comment-body {
+    margin: calc(2 * 1rem) 0;
+  }
 }
 
 .comment .comment-meta {
@@ -2668,6 +2676,7 @@ body.page .main-navigation {
     margin-left: 1rem;
     position: relative;
     vertical-align: baseline;
+    line-height: 2.25;
   }
 }
 
@@ -2723,6 +2732,12 @@ body.page .main-navigation {
 
 .comment .comment-content {
   margin: 1rem 0;
+}
+
+@media only screen and (min-width: 1168px) {
+  .comment .comment-content {
+    padding-right: 1rem;
+  }
 }
 
 .comment .comment-content > *:first-child {

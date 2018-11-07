@@ -2550,10 +2550,12 @@ body.page .main-navigation {
   font-weight: 500;
 }
 
-.comment-reply {
-  right: calc(1rem + 100%);
-  bottom: 0;
-  position: absolute;
+@media only screen and (min-width: 1168px) {
+  .comment-reply {
+    right: 100%;
+    bottom: 0;
+    position: absolute;
+  }
 }
 
 #respond + .comment-reply {
@@ -2579,7 +2581,13 @@ body.page .main-navigation {
 }
 
 .comment .comment-body {
-  margin: calc(2 * 1rem) 0;
+  margin: calc(2 * 1rem) 0 0;
+}
+
+@media only screen and (min-width: 1168px) {
+  .comment .comment-body {
+    margin: calc(2 * 1rem) 0;
+  }
 }
 
 .comment .comment-meta {
@@ -2666,6 +2674,7 @@ body.page .main-navigation {
     margin-right: 1rem;
     position: relative;
     vertical-align: baseline;
+    line-height: 2.25;
   }
 }
 
@@ -2721,6 +2730,12 @@ body.page .main-navigation {
 
 .comment .comment-content {
   margin: 1rem 0;
+}
+
+@media only screen and (min-width: 1168px) {
+  .comment .comment-content {
+    padding-left: 1rem;
+  }
 }
 
 .comment .comment-content > *:first-child {
@@ -3447,8 +3462,8 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .entry-content .wp-block-quote.is-large, .entry-content .wp-block-quote.is-style-large {
-    padding: 1rem 0;
     margin: 1rem 0;
+    padding: 1rem 0;
   }
   .entry-content .wp-block-quote.is-large p, .entry-content .wp-block-quote.is-style-large p {
     font-size: 1.6875em;
