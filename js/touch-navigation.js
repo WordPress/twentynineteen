@@ -56,79 +56,6 @@
 		}
 	}
 
-	// Find first ancestor of an element by tagName
-	function getCurrentParent( child, selector, stopSelector ) {
-
-		var currentParent = null;
-
-		while ( child ) {
-
-			if ( child.matches(selector) ) {
-
-				currentParent = child;
-
-				break;
-
-			} else if ( stopSelector && child.matches(stopSelector) ) {
-
-				break;
-
-			}
-
-			child = child.parentElement;
-		}
-
-		return currentParent;
-	}
-
-	// Open Sub-menu
-	function openSubMenu( currentSubMenu ) {
-		'use strict';
-
-		var menuItem     = currentSubMenu.parentElement; // this.parentNode
-		var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
-
-		// Update classes
-		// classList.add is not supported in IE11
-		menuItem.className += ' focus';
-		menuItem.lastElementChild.className += ' expanded-true';
-
-		// Update aria-expanded state
-		toggleAriaExpandedState( menuItemAria );
-	}
-
-	// Close Sub-menu
-	function closeSubMenu( currentSubMenu ) {
-		'use strict';
-
-		var menuItem       = currentSubMenu.closest('.menu-item'); // this.parentNode
-		var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
-		var subMenu        = currentSubMenu.closest('.sub-menu');
-
-		// If this is in a sub-sub-menu, go back to parent sub-menu
-		if ( getCurrentParent( currentSubMenu, 'ul' ).classList.contains( 'sub-menu' ) ) {
-
-			// Update classes
-			// classList.remove is not supported in IE11
-			menuItem.className = menuItem.className.replace( 'focus', '' );
-			subMenu.className = subMenu.className.replace( 'expanded-true', '' );
-
-			// Update aria-expanded and :focus states
-			toggleAriaExpandedState( menuItemAria );
-
-		// Or else close all sub-menus
-		} else {
-
-			// Update classes
-			// classList.remove is not supported in IE11
-			menuItem.className = menuItem.className.replace( 'focus', '' );
-			menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
-
-			// Update aria-expanded and :focus states
-			toggleAriaExpandedState( menuItemAria );
-		}
-	}
-
 	// Focus Sub-menu
 	function setAriaState( currentMenuItem ) {
 
@@ -137,18 +64,6 @@
 
 		// Update aria-expanded state
 		toggleAriaExpandedState( menuItemAria );
-	}
-
-	// Remove all focus states
-	function removeAllFocusStates() {
-		'use strict';
-
-		var getFocusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
-		var i;
-
-		for ( i = 0; i < getFocusedElements.length; i++) {
-			getFocusedElements[i].blur();
-		}
 	}
 
 	// Toggle `focus` class to allow submenu access on touch screens.
@@ -164,6 +79,91 @@
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
 			return;
+		}
+
+		// Open Sub-menu
+		function openSubMenu( currentSubMenu ) {
+			'use strict';
+
+			var menuItem     = currentSubMenu.parentElement; // this.parentNode
+			var menuItemAria = menuItem.querySelectorAll('a[aria-expanded]');
+
+			// Update classes
+			// classList.add is not supported in IE11
+			menuItem.className += ' focus';
+			menuItem.lastElementChild.className += ' expanded-true';
+
+			// Update aria-expanded state
+			toggleAriaExpandedState( menuItemAria );
+		}
+
+		// Close Sub-menu
+		function closeSubMenu( currentSubMenu ) {
+			'use strict';
+
+			var menuItem       = currentSubMenu.closest('.menu-item'); // this.parentNode
+			var menuItemAria   = menuItem.querySelectorAll('a[aria-expanded]');
+			var subMenu        = currentSubMenu.closest('.sub-menu');
+
+			// Find first ancestor of an element by tagName
+			function getCurrentParent( child, selector, stopSelector ) {
+
+				var currentParent = null;
+
+				while ( child ) {
+
+					if ( child.matches(selector) ) {
+
+						currentParent = child;
+
+						break;
+
+					} else if ( stopSelector && child.matches(stopSelector) ) {
+
+						break;
+
+					}
+
+					child = child.parentElement;
+				}
+
+				return currentParent;
+			}
+
+			// If this is in a sub-sub-menu, go back to parent sub-menu
+			if ( getCurrentParent( currentSubMenu, 'ul' ).classList.contains( 'sub-menu' ) ) {
+
+				// Update classes
+				// classList.remove is not supported in IE11
+				menuItem.className = menuItem.className.replace( 'focus', '' );
+				subMenu.className = subMenu.className.replace( 'expanded-true', '' );
+
+				// Update aria-expanded and :focus states
+				toggleAriaExpandedState( menuItemAria );
+
+			// Or else close all sub-menus
+			} else {
+
+				// Update classes
+				// classList.remove is not supported in IE11
+				menuItem.className = menuItem.className.replace( 'focus', '' );
+				menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
+
+				// Update aria-expanded and :focus states
+				toggleAriaExpandedState( menuItemAria );
+			}
+		}
+
+		// Remove all focus states
+		function removeAllFocusStates() {
+			'use strict';
+
+			var getFocusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
+			var i;
+
+			for ( i = 0; i < getFocusedElements.length; i++) {
+				getFocusedElements[i].blur();
+			}
 		}
 
 		// Open submenus on touch
