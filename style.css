@@ -2947,7 +2947,6 @@ body.page .main-navigation {
   #colophon .widget-area,
   #colophon .site-info {
     margin: calc(3 * 1rem) calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
