@@ -35,11 +35,12 @@ php:
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-  # Current version in development is 5.0.
-  # @link https://github.com/WordPress/WordPress
-  - WP_VERSION=5.0
-  - WP_MULTISITE=0
-  - LINT=1
+  global:
+    # Current version in development is 5.0.
+    # @link https://github.com/WordPress/WordPress
+    - WP_VERSION=5.0
+    - WP_MULTISITE=0
+    - LINT=1
 
 # Declare versions of PHP to use. Use one decimal max.
 matrix:
