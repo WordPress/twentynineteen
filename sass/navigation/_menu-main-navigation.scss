@@ -228,7 +228,6 @@
 			@include media(tablet) {
 				width: 100%;
 				min-width: max-content;
-				max-width: calc(3 * (100vw / 12));
 			}
 		}
 
@@ -299,7 +298,6 @@
 			@include media(tablet) {
 				width: 100%;
 				min-width: max-content;
-				max-width: calc(3 * (100vw / 12));
 			}
 		}
 
