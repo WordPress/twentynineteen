@@ -176,12 +176,6 @@
 				event.preventDefault();
 				removeAllFocusStates();
 			});
-
-			// Disable normal clicks
-			button.addEventListener('click', function(event) {
-				// Prevent default mouse events
-				event.preventDefault();
-			});
 		});
 
 		// Close sub-menus or sub-sub-menus on touch
