@@ -11,13 +11,14 @@ Twenty Nineteen Editor Styles
 /* 
  * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
  * This results in a jumping cursor when typing in both the Classic and block 
- * editors. The following font-face override for this character fixes the issue
- * by inserting a space from the Georgia font instead.
+ * editors. The following font-face override fixes the issue by manually inserting 
+ * a custom font that includes just a Hoefler Text space replacement for that 
+ * character instead.
  */
 @font-face {
-  font-family: 'NonBreakingSpaceOverride';
-  src: local( 'Georgia' );
-  unicode-range: U+00A0;
+	font-family: 'NonBreakingSpaceOverride';
+	src: url( 'fonts/NonBreakingSpaceOverride.woff2' ) format( 'woff2' ),
+		 url( 'fonts/NonBreakingSpaceOverride.woff' ) format( 'woff' );
 }
 
 /** === Editor Frame === */
