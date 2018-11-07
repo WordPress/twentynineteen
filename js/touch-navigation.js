@@ -150,10 +150,10 @@
 	function toggleSubmenuTouchScreen() {
 		'use strict';
 
-		var siteNavigation  = document.querySelector('.main-navigation > div > ul');
-		var subMenuExpand   = document.querySelectorAll('.submenu-expand');
-		var subMenuReturn   = document.querySelectorAll('.menu-item-link-return');
-		var parentMenuLink  = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
+		var siteNavigation = document.querySelector('.main-navigation > div > ul');
+		var subMenuExpand  = document.querySelectorAll('.submenu-expand');
+		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
+		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children a[aria-expanded]');
 
 		// Check for submenus and bail if none exist
 		if ( ! siteNavigation || ! siteNavigation.children ) {
@@ -172,6 +172,13 @@
 			});
 
 			button.addEventListener('touchend', function(event) {
+				// Prevent default mouse events
+				event.preventDefault();
+				removeAllFocusStates();
+			});
+
+			// Disable normal clicks
+			button.addEventListener('click', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
