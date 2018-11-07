@@ -26,6 +26,7 @@
 	if ( $description || is_customize_preview() ) :
 		?>
 			<p class="site-description">
+				<span>&nbsp;&#8212;&nbsp;</span>
 				<?php echo $description; ?>
 			</p>
 	<?php endif; ?>
