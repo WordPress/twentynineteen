@@ -1,17 +1,7 @@
 /* !Block styles */
 
-.entry-content,
-.entry-summary {
-
-	@include media(tablet) {
-		max-width: 80%;
-		margin: 0 10%;
-		padding: 0 60px;
-	}
-}
-
-.entry-content > *,
-.entry-summary > * {
+.entry .entry-content > *,
+.entry .entry-summary > * {
 	margin: 32px $size__spacing-unit;
 	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
@@ -100,7 +90,7 @@
 	}
 }
 
-.entry-content {
+.entry .entry-content {
 
 	//! Audio
 	.wp-block-audio {

@@ -175,6 +175,16 @@
 		}
 	}
 
+	.entry-content,
+	.entry-summary {
+
+		@include media(tablet) {
+			max-width: 80%;
+			margin: 0 10%;
+			padding: 0 60px;
+		}
+	}
+
 	.entry-content {
 
 		p {
