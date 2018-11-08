@@ -1532,10 +1532,17 @@ body.page .main-navigation {
   /* WP core breakpoint */
 }
 
+.admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true .sub-menu.expanded-true {
+  top: 0;
+}
+
 @media only screen and (min-width: 782px) {
   .admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
     top: 32px;
     height: calc( 100vh - 32px);
+  }
+  .admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true .sub-menu.expanded-true {
+    top: 0;
   }
 }
 

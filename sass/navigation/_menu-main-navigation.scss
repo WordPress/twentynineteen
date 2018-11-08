@@ -420,10 +420,18 @@
 				top: 46px;
 				height: calc( 100vh - 46px );
 
+				.sub-menu.expanded-true {
+					top: 0;
+				}
+
 				/* WP core breakpoint */
 				@media only screen and ( min-width: 782px ) {
 					top: 32px;
 					height: calc( 100vh - 32px );
+
+					.sub-menu.expanded-true {
+						top: 0;
+					}
 				}
 			}
 		}
