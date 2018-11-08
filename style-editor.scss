@@ -12,16 +12,32 @@ Twenty Nineteen Editor Styles
 
 body {
 
-	// Non-standard media query necessary to override a Gutenberg breakpoint style. 
-	@media screen and (min-width: 600px) {
+	.wp-block[data-align="full"] {
+		width: 100%;
+	}
+
+	@include media(mobile) {
+		overflow-x: hidden;
+
+		.editor-block-list__layout,
+		.editor-post-title {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
 		.wp-block[data-align="full"] {
-			width: calc( 100% + 90px );
-			max-width: calc( 100% + 90px );
+			position: relative;
+			left: 45px;
 		}
 	}
 
 	@include media(tablet) {
-		overflow-x: hidden;
+
+		.editor-block-list__layout,
+		.editor-post-title {
+			padding-left: 46px;
+			padding-right: 46px;
+		}
 
 		.editor-writing-flow {
 			max-width: 80%;
@@ -187,6 +203,7 @@ figcaption,
 	.editor-post-title__input {
 		font-family: $font__heading;
 		font-size: $font__size-xxl;
+		font-weight: 700;
 	}
 }
 
