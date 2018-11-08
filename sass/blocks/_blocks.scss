@@ -110,7 +110,7 @@
 		&.alignleft audio,
 		&.alignright audio {
 
-			max-width: (0.5 * $mobile_width);
+			max-width: (0.33 * $mobile_width);
 
 			@include media(tablet) {
 				max-width: (0.5 * $tablet_width);

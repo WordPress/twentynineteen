@@ -8,16 +8,30 @@ Twenty Nineteen Editor Styles
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /** === Editor Frame === */
-@media screen and (min-width: 600px) {
+body .wp-block[data-align="full"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  body .editor-block-list__layout,
+  body .editor-post-title {
+    padding-left: 0;
+    padding-right: 0;
+  }
   body .wp-block[data-align="full"] {
-    width: calc( 100% + 90px);
-    max-width: calc( 100% + 90px);
+    position: relative;
+    left: 45px;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  body {
-    overflow-x: hidden;
+  body .editor-block-list__layout,
+  body .editor-post-title {
+    padding-left: 46px;
+    padding-right: 46px;
   }
   body .editor-writing-flow {
     max-width: 80%;
