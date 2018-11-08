@@ -2827,10 +2827,6 @@ body.page .main-navigation {
   }
 }
 
-#colophon .widget_calendar a {
-  text-decoration: underline;
-}
-
 #colophon .site-info {
   color: #767676;
 }
@@ -2901,6 +2897,10 @@ body.page .main-navigation {
 .widget_search .search-submit {
   display: block;
   margin-top: 1rem;
+}
+
+.widget_calendar a {
+  text-decoration: underline;
 }
 
 /* Blocks */
