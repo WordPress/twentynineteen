@@ -3059,6 +3059,11 @@ body.page .main-navigation {
   margin-top: 1rem;
 }
 
+.widget_calendar {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
 .widget_calendar a {
   text-decoration: underline;
 }
@@ -3172,7 +3177,8 @@ body.page .main-navigation {
   .entry .entry-content > *.alignright,
   .entry .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
-    margin-right: 0;
+    margin-left: calc(2 * 1rem);
+    margin-left: 0;
   }
 }
 

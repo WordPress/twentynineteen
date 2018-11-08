@@ -48,14 +48,16 @@
 }
 
 .widget_search {
-
+	
 	.search-submit {
 		display: block;
 		margin-top: $size__spacing-unit;
 	}
 }
 
-.widget_calendar {
+.widget_calendar .calendar_wrap {
+	text-align: center;
+	font-family: $font__heading;
 	
 	a {
 		text-decoration: underline;
