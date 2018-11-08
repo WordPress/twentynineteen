@@ -3,7 +3,7 @@
 .entry .entry-content > *,
 .entry .entry-summary > * {
 	margin: 32px $size__spacing-unit;
-	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
+	max-width: calc(100% - (2 * #{ $size__spacing-unit }));
 
 	@include postContentMaxWidth();
 

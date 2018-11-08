@@ -3067,7 +3067,7 @@ body.page .main-navigation {
 .entry .entry-content > *,
 .entry .entry-summary > * {
   margin: 32px 1rem;
-  max-width: calc(100vw - (2 * 1rem));
+  max-width: calc(100% - (2 * 1rem));
   /*
 	// Set top margins for headings
 	& + h1:before,
