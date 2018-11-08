@@ -234,6 +234,7 @@
 
 		/* Nested sub-menu padding: 10 levels deep */
 		.sub-menu li > a:before {
+			font-family: $font__body;
 			font-weight: normal;
 		}
 		.sub-menu > li > a:before {
@@ -311,6 +312,7 @@
 
 		/* Nested sub-menu padding: 10 levels deep */
 		.sub-menu li > a:before {
+			font-family: $font__body;
 			font-weight: normal;
 		}
 		.sub-menu > li > a:before {

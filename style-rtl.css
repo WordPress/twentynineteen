@@ -1236,83 +1236,85 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu > li > a:before {
-  content: "\2013\00a0";
+  content: "\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu > li > a:before {
-  content: "\2013\00a0";
+  content: "\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu,
@@ -1382,6 +1384,7 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
@@ -1389,63 +1392,63 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu > li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu > li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu > li > a:before {
-  content: "\2013\00a0";
+  content: "\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0\2014\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children.focus .sub-menu {
