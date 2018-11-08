@@ -379,7 +379,7 @@ function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
  * @return array $starter_content Array of starter content.
  */
 function twentynineteen_starter_content() {
-	
+
 	$starter_content = array(
 		'widgets' => array(
 			// Place two core-defined widgets in the footer widget area.
@@ -406,7 +406,7 @@ function twentynineteen_starter_content() {
 						'<!-- wp:columns {"align":"wide"} -->',
 						'<div class="wp-block-columns alignwide has-2-columns"><!-- wp:column -->',
 						'<div class="wp-block-column"><!-- wp:heading {"level":3} -->',
-						'<h2>' . _x ( 'Column 1', 'Theme starter content', 'twentynineteen'  ) . '</h2>',
+						'<h2>' . _x( 'Column 1', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 						'<!-- wp:paragraph -->',
 						'<p>' . _x( 'You can now create columns.', 'Theme starter content', 'twentynineteen' ) . '</p>',
@@ -462,7 +462,7 @@ function twentynineteen_starter_content() {
 			),
 		),
 	);
-	
+
 	/**
 	 * Filters Twenty Nineteen array of starter content.
 	 *
