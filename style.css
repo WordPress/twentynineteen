@@ -2342,6 +2342,11 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content .page-links a {
+  margin: calc(0.5 * 1rem);
+  text-decoration: none;
+}
+
 .entry .entry-content .wp-audio-shortcode {
   max-width: calc(100vw - (2 * 1rem));
 }
