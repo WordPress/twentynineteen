@@ -67,6 +67,7 @@
 
 						position: relative;
 						height: 24px;
+						line-height: $font__line-height-heading;
 						width: 24px;
 						padding: 0;
 						margin-left: #{0.5 * $size__spacing-unit};
@@ -124,7 +125,6 @@
 
 		> li {
 
-			clear: both;
 			display: block;
 			float: none;
 			position: relative;
@@ -152,6 +152,7 @@
 				}
 
 				@include media(tablet) {
+
 					.menu-item-has-children > a {
 
 						&:after {
@@ -163,6 +164,7 @@
 
 			> a,
 			> .menu-item-link-return {
+
 				color: $color__background-body;
 				display: block;
 				line-height: $font__line-height-heading;
@@ -179,6 +181,7 @@
 			}
 
 			&.mobile-parent-nav-menu-item {
+
 				display: none;
 				font-size: $font__size-sm;
 				font-weight: normal;

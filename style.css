@@ -1040,6 +1040,7 @@ body.page .main-navigation {
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more {
   position: relative;
   height: 24px;
+  line-height: 1.2;
   width: 24px;
   padding: 0;
   margin-left: 0.5rem;
@@ -1095,7 +1096,6 @@ body.page .main-navigation {
 }
 
 .main-navigation .sub-menu > li {
-  clear: both;
   display: block;
   float: none;
   position: relative;
