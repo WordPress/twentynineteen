@@ -6,7 +6,7 @@
 	margin: calc(3 * 1rem) 0;
 	
 	@include media(tablet) {
-		margin: calc(3 * 1rem) calc(2 * (100vw / 12));
+		margin: calc(3 * 1rem) $size__site-margins;
 		max-width: calc(6 * (100vw / 12));
 	}
 	
@@ -28,8 +28,8 @@
 
 		@include media(desktop) {
 			flex-direction: row;
-			margin: 0 calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
+			margin: 0 $size__site-margins;
+			max-width: $size__site-desktop-content;
 		}
 
 		a {
@@ -130,7 +130,7 @@
 
 		@include media(tablet) {
 
-			margin-left: calc(2 * (100vw / 12) );
+			margin-left: $size__site-margins;
 			padding: 0;
 
 			.prev,
@@ -158,8 +158,8 @@
 		margin: 0 $size__spacing-unit;
 
 		@include media(desktop) {
-			margin: 0 calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
+			margin: 0 $size__site-margins;
+			max-width: $size__site-tablet-content;
 		}
 	}
 
