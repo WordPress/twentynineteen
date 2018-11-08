@@ -2339,7 +2339,7 @@ body.page .main-navigation {
   }
 }
 
-.entry .entry-content .page-links .post-page-numbers {
+.entry .entry-content .page-links a {
   margin: calc(0.5 * 1rem);
   text-decoration: none;
 }
@@ -2889,8 +2889,7 @@ body.page .main-navigation {
   .archive .page-header,
   .search .page-header,
   .error404 .page-header {
-    margin: 0 calc(2 * (100vw / 12)) calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
+    margin: 0 calc(10% + 60px) calc(10% + 60px);
   }
 }
 
