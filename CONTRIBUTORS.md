@@ -68,3 +68,5 @@ Version 1.0:
 | @yingles | @yingling017 |
 | @tlxo | @tlxo |
 | @youthkee | @youthkee |
+| @brentswisher | |
+| @smy315 | @smyoon315 |
