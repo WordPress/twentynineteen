@@ -33,7 +33,7 @@
 	position: relative;
 
 	@include media(tablet) {
-		margin: 0 calc(2 * (100vw / 12));
+		margin: 0 $size__site-margins;
 	}
 }
 
@@ -48,7 +48,7 @@
 	@include media(tablet) {
 		margin-bottom: 0;
 		position: absolute;
-		right: calc(100% + (0.5 * 100vw / 12));
+		right: calc(100% + (1.25 * #{$size__spacing-unit}));
 		top: 4px; // Accounts for box-shadow widths
 		z-index: 999;
 	}

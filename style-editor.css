@@ -5,6 +5,7 @@ Twenty Nineteen Editor Styles
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /** === Editor Frame === */
 @media screen and (min-width: 600px) {
@@ -204,6 +205,11 @@ figcaption,
   font-size: 22px;
 }
 
+/** === Heading === */
+.wp-block-heading strong {
+  font-weight: bolder;
+}
+
 /** === Paragraph === */
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -220,6 +226,11 @@ figcaption,
   font-size: 2.25em;
   font-weight: bold;
   line-height: 1.4;
+}
+
+.wp-block-cover h2 strong,
+.wp-block-cover .wp-block-cover-text strong {
+  font-weight: bolder;
 }
 
 .wp-block-cover.has-left-content h2,
@@ -346,9 +357,7 @@ figcaption,
 }
 
 .wp-block-pullquote blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
