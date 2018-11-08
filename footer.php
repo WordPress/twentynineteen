@@ -41,7 +41,7 @@
 							'theme_location' => 'footer',
 							'menu_class'     => 'footer-menu',
 							'depth'          => 1,
-							)
+						)
 					);
 					?>
 				</nav><!-- .footer-navigation -->
