@@ -2342,7 +2342,7 @@ body.page .main-navigation {
   }
 }
 
-.entry .entry-content .page-links .post-page-numbers {
+.entry .entry-content .page-links a {
   margin: calc(0.5 * 1rem);
   text-decoration: none;
 }

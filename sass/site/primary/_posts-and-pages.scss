@@ -141,7 +141,7 @@
 
 			.post-thumbnail-inner {
 				filter: grayscale(100%);
-				
+
 				&:after {
 					background: rgba(0, 0, 0, 0.35);
 					content: "";
@@ -171,7 +171,7 @@
 			}
 
 			@include filter-duotone;
-			
+
 		}
 	}
 
@@ -232,7 +232,7 @@
 		}
 
 		// Page links
-		.page-links .post-page-numbers {
+		.page-links a {
 			margin: calc(0.5 * #{$size__spacing-unit});
 			text-decoration: none;
 		}
