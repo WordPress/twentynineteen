@@ -101,8 +101,8 @@
 
 			@include media (tablet) {
 
-				margin-left: calc(2 * (100vw / 12));
-				margin-right: calc(2 * (100vw / 12));
+				margin-left: $size__site-margins;
+				margin-right: $size__site-margins;
 			}
 
 			.entry-title {
