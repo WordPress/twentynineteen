@@ -57,6 +57,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'footer' => __( 'Footer Menu', 'twentynineteen' ),
 				'social' => __( 'Social Links Menu', 'twentynineteen' ),
 			)
 		);
