@@ -22,7 +22,7 @@
 				color = wp.customize.get().colorscheme_primary_hue;
 			} else {
 				//If the "default" option is selected, get the default primary_hue
-				color = wp.customize.settings.values.colorscheme_primary_hue
+				color = 199;
 			}
 
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
