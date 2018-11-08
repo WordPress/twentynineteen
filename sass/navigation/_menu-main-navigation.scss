@@ -368,53 +368,62 @@
 	}
 
 	/**
-	 * Full-screen mobile menu styles
+	 * Full-screen touch device styles
 	 */
-	.main-menu .menu-item-has-children.focus {
+	.main-menu .menu-item-has-children.focus .sub-menu {
+
+		animation: fade_in 0.1s forwards;
+
+		.submenu-expand .svg-icon {
+			transform: rotate(270deg);
+		}
 
 		.sub-menu {
+			opacity: 0;
+			position: absolute;
+			z-index: 0;
+		}
 
-			animation: fade_in 0.1s forwards;
+		li:hover,
+		li:focus,
+		li > a:hover,
+		li > a:focus {
+			background-color: transparent;
+		}
 
-			.submenu-expand .svg-icon {
-				transform: rotate(270deg);
+		&.expanded-true {
+
+			display: table;
+			margin-top: 0;
+			opacity: 1;
+			padding-left: 0;
+
+			/* Mobile position */
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			position: fixed;
+			z-index: 100000; /* Make sure appears above mobile admin bar */
+			width: 100vw;
+			height:  100vh;
+			max-width: 100vw;
+			transform: translateX(+100%);
+			animation: slide_in_right 0.3s forwards;
+
+			> .mobile-parent-nav-menu-item {
+				display: block;
 			}
 
-			.sub-menu {
-				opacity: 0;
-				position: absolute;
-				z-index: 0;
-			}
+			/* Prevent menu from being blocked by admin bar */
+			.admin-bar & {
+				top: 46px;
+				height: calc( 100vh - 46px );
 
-			li:hover,
-			li:focus,
-			li > a:hover,
-			li > a:focus {
-				background-color: transparent;
-			}
-
-			&.expanded-true {
-
-				display: table;
-				margin-top: 0;
-				opacity: 1;
-				padding-left: 0;
-
-				/* Mobile position */
-				left: 0;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				position: fixed;
-				z-index: 100000; /* Make sure appears above mobile admin bar */
-				width: 100vw;
-				height:  100vh;
-				max-width: 100vw;
-				transform: translateX(+100%);
-				animation: slide_in_right 0.3s forwards;
-
-				> .mobile-parent-nav-menu-item {
-					display: block;
+				/* WP core breakpoint */
+				@media only screen and ( min-width: 782px ) {
+					top: 32px;
+					height: calc( 100vh - 32px );
 				}
 			}
 		}
