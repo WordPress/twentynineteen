@@ -826,11 +826,14 @@ blockquote cite {
 
 table {
   margin: 0 0 1rem;
+  border-collapse: collapse;
   width: 100%;
 }
 
 table td, table th {
-  border-color: #767676;
+  padding: 0.5em;
+  border: 1px solid #767676;
+  word-break: break-all;
 }
 
 /* Forms */
