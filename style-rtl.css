@@ -3059,6 +3059,10 @@ body.page .main-navigation {
   margin-top: 1rem;
 }
 
+.widget_calendar a {
+  text-decoration: underline;
+}
+
 /* Blocks */
 /* !Block styles */
 .entry .entry-content > *,
