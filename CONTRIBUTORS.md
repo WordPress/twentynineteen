@@ -67,3 +67,5 @@ Version 1.0:
 | @whizbangik | @imonly_ik |
 | @yingles | @yingling017 |
 | @tlxo | @tlxo |
+| @brentswisher | |
+| @smy315 | @smyoon315 |
