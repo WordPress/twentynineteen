@@ -224,6 +224,12 @@
 			}
 		}
 
+		// Page links
+		.page-links .post-page-numbers {
+			margin: calc(0.5 * #{$size__spacing-unit});
+			text-decoration: none;
+		}
+
 		// Classic editor audio embeds.
 		.wp-audio-shortcode {
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
