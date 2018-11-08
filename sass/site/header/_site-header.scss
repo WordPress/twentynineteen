@@ -33,7 +33,7 @@
 	position: relative;
 
 	@include media(tablet) {
-		margin: 0 calc(2 * (100vw / 12));
+		margin: 0 $size__site-margins;
 	}
 }
 
