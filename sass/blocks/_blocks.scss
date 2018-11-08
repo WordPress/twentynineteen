@@ -585,8 +585,10 @@
 			font-size: $font__size-base;
 			font-family: $font__heading;
 			line-height: $font__line-height-heading;
+			text-decoration: none;
 			font-weight: bold;
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
+			color: #fff;
 
 			@include media(desktop) {
 				font-size: $font__size-base;
@@ -605,6 +607,10 @@
 				outline: thin dotted;
 				outline-offset: -4px;
 			}
+		}
+
+		* + .wp-block-file__button {
+			margin-left: ($size__spacing-unit * .75);
 		}
 	}
 
