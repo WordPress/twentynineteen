@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 /**
@@ -34,12 +35,14 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<?php
 							$comment_author_link = get_comment_author_link( $comment );
 							$comment_author_url  = get_comment_author_url( $comment );
+							$comment_author      = get_comment_author( $comment );
 							$avatar              = get_avatar( $comment, $args['avatar_size'] );
 							if ( 0 != $args['avatar_size'] ) {
 								if ( empty( $comment_author_url ) ) {
 									echo $avatar;
 								} else {
-									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
+									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
+									echo $avatar;
 								}
 							}
 
@@ -52,29 +55,36 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
 							}
 
-							/* translators: %s: comment author link */
 							printf(
-								__( '%s <span class="screen-reader-text says">says:</span>' ),
-								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								/* translators: %s: comment author link */
+								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+								sprintf( '<span class="fn">%s</span>', $comment_author )
 							);
+
+							if ( ! empty( $comment_author_url ) ) {
+								echo '</a>';
+							}
 						?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-							<?php /* translators: 1: comment date, 2: comment time */ ?>
-							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
+							<?php
+								/* translators: 1: comment date, 2: comment time */
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
+							?>
+							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
+								<?php echo $comment_timestamp; ?>
 							</time>
 						</a>
 						<?php
 							$edit_comment_icon = twentynineteen_get_icon_svg( 'edit', 16 );
-							edit_comment_link( __( 'Edit' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+							edit_comment_link( __( 'Edit', 'twentynineteen' ), '<span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentynineteen' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 

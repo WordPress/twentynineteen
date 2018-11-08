@@ -5,8 +5,8 @@
 	margin: $size__spacing-unit $size__spacing-unit calc(3 * #{$size__spacing-unit});
 
 	@include media(tablet) {
-		margin: 0 calc(2 * (100vw / 12)) calc(3 * #{$size__spacing-unit});
-		max-width: calc(8 * (100vw / 12));
+		margin: 0 calc(2 * (100vw / 12)) $size__site-margins;
+		max-width: $size__site-tablet-content;
 	}
 
 	.page-title {
@@ -33,10 +33,16 @@
 	}
 }
 
-.hfeed .hentry .entry-header {
+.archive .page-header .page-description {
+	display: block;
+	color: $color__text-main;
+	font-size: 1em;
+}
+
+.hfeed .entry .entry-header {
 
 	@include media(tablet) {
-		margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12)) calc(#{ $size__spacing-unit } / 2);
+		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins calc(#{ $size__spacing-unit } / 2);
 	}
 }
 
@@ -50,7 +56,7 @@
 		margin: calc(3 * #{$size__spacing-unit}) #{$size__spacing-unit};
 
 		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12)) calc(#{ $size__spacing-unit } / 2);
+			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins calc(#{ $size__spacing-unit } / 2);
 		}
 	}
 

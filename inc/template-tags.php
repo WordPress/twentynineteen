@@ -4,6 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
@@ -25,7 +26,7 @@ if ( ! function_exists( 'twentynineteen_posted_on' ) ) :
 		);
 
 		printf(
-			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">' . $time_string . '</a></span>',
+			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
 			twentynineteen_get_icon_svg( 'watch', 16 ),
 			esc_url( get_permalink() ),
 			$time_string
@@ -72,11 +73,15 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 	 */
 	function twentynineteen_entry_footer() {
 
-		// Posted by
-		twentynineteen_posted_by();
-
-		// Hide category and tag text for pages.
+		// Hide author, post date, category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
+			// Posted by
+			twentynineteen_posted_by();
+
+			// Posted on
+			twentynineteen_posted_on();
+
 			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
@@ -94,7 +99,7 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			if ( $tags_list ) {
 				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 				printf(
-					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					twentynineteen_get_icon_svg( 'tag', 16 ),
 					esc_html__( 'Tags:', 'twentynineteen' ),
 					$tags_list
@@ -150,33 +155,16 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 		else :
 			?>
 
-			<figure class="post-thumbnail">
-				<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array( 'echo' => false )
-							),
-						)
-					);
-					?>
-				</a>
-			</figure><!-- .post-thumbnail -->
+		<figure class="post-thumbnail">
+			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php
+				the_post_thumbnail( 'post-thumbnail' );
+				?>
+			</a>
+		</figure>
 
 			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
-	/**
-	 * Returns the CSS for the header featured image background.
-	 */
-	function twentynineteen_header_featured_image_css() {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		return sprintf( 'body.singular .site-header.featured-image .site-branding-container:before { background-image: url(%s); }', esc_url( $img_url ) );
 	}
 endif;
 
@@ -185,11 +173,10 @@ if ( ! function_exists( 'twentynineteen_comment_avatar' ) ) :
 	 * Returns the HTML markup to generate a user avatar.
 	 */
 	function twentynineteen_get_user_avatar_markup( $id_or_email = null ) {
+
 		if ( ! isset( $id_or_email ) ) {
 			$id_or_email = get_current_user_id();
 		}
-
-		$classes = array( 'comment-author', 'vcard' );
 
 		return sprintf( '<div class="comment-user-avatar comment-author vcard">%s</div>', get_avatar( $id_or_email, twentynineteen_get_avatar_size() ) );
 	}
@@ -218,9 +205,9 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 	 */
 	function twentynineteen_comment_form( $order ) {
 		if ( true === $order || strtolower( $order ) === strtolower( get_option( 'comment_order', 'asc' ) ) ) {
+
 			comment_form(
 				array(
-					'title_reply_before' => twentynineteen_get_user_avatar_markup(),
 					'logged_in_as'       => null,
 					'title_reply'        => null,
 				)
