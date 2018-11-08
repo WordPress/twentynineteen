@@ -2987,10 +2987,6 @@ body.page .main-navigation {
   }
 }
 
-#colophon .widget_calendar {
-  text-align: center;
-}
-
 #colophon .site-info {
   color: #767676;
 }
@@ -3056,6 +3052,10 @@ body.page .main-navigation {
 .widget_recent_entries ul.sub-menu,
 .widget_rss ul.sub-menu {
   padding-top: 0.75rem;
+}
+
+.widget_search {
+  text-align: center;
 }
 
 .widget_search .search-submit {
@@ -3176,7 +3176,8 @@ body.page .main-navigation {
   .entry .entry-content > *.alignright,
   .entry .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
-    margin-right: 0;
+    margin-left: calc(2 * 1rem);
+    margin-left: 0;
   }
 }
 

@@ -48,7 +48,7 @@
 }
 
 .widget_search {
-
+	
 	.search-submit {
 		display: block;
 		margin-top: $size__spacing-unit;
@@ -56,6 +56,7 @@
 }
 
 .widget_calendar {
+	text-align: center;
 	
 	a {
 		text-decoration: underline;
