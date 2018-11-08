@@ -117,6 +117,8 @@
 
 		@include media(tablet) {
 			width: 100%;
+			min-width: -moz-max-content;
+			min-width: -webkit-max-content;
 			min-width: max-content;
 		}
 
@@ -191,20 +193,37 @@
 	}
 
 	/*
+	 * Sub-menu styles
+	 *
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
 	.main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
+
 		display: block;
 		left: 0;
 		margin-top: 0;
 		opacity: 1;
 		width: 100%;
+		min-width: -moz-max-content;
+		min-width: -webkit-max-content;
+		min-width: max-content;
 
-		@include media(mobile) {
+		/* Non-mobile position */
+		@include media(tablet) {
+			display: table;
+			margin-top: 0;
+			opacity: 1;
+			position: absolute;
 			left: 0;
-			width: 100%;
-			min-width: max-content;
+			right: auto;
+			top: auto;
+			bottom: auto;
+			height: auto;
+			width: -moz-max-content;
+			width: -webkit-max-content;
+  			width: max-content;
+			transform: none;
 		}
 
 		.submenu-expand {
@@ -216,20 +235,16 @@
 			right: 0;
 		}
 
-
 		.sub-menu {
 			display: block;
 			margin-top: inherit;
 			position: relative;
 			width: 100%;
+			min-width: -moz-max-content;
+			min-width: -webkit-max-content;
 			min-width: max-content;
 			left: 0;
 			opacity: 1;
-
-			@include media(tablet) {
-				width: 100%;
-				min-width: max-content;
-			}
 		}
 
 		/* Nested sub-menu padding: 10 levels deep */
@@ -271,6 +286,15 @@
 	.main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
 	.main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
 
+		display: block;
+		left: 0;
+		margin-top: 0;
+		opacity: 1;
+		width: 100%;
+		min-width: -moz-max-content;
+		min-width: -webkit-max-content;
+		min-width: max-content;
+
 		/* Non-mobile position */
 		@include media(tablet) {
 			display: table;
@@ -282,17 +306,19 @@
 			top: auto;
 			bottom: auto;
 			height: auto;
-			width: max-content;
+			width: -moz-max-content;
+			width: -webkit-max-content;
+  			width: max-content;
 			transform: none;
+		}
 
-			&.hidden-links {
-				left: auto;
-				right: 0;
-			}
+		&.hidden-links {
+			left: auto;
+			right: 0;
+		}
 
-			.submenu-expand {
-				display: none;
-			}
+		.submenu-expand {
+			display: none;
 		}
 
 		.sub-menu {
@@ -300,14 +326,11 @@
 			margin-top: inherit;
 			position: relative;
 			width: 100%;
+			min-width: -moz-max-content;
+			min-width: -webkit-max-content;
 			min-width: max-content;
 			left: 0;
 			opacity: 1;
-
-			@include media(tablet) {
-				width: 100%;
-				min-width: max-content;
-			}
 		}
 
 		/* Nested sub-menu padding: 10 levels deep */
