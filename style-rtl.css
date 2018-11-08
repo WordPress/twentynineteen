@@ -3222,6 +3222,10 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content p.has-background {
+  padding: 20px 30px;
+}
+
 .entry .entry-content .wp-block-audio {
   width: 100%;
 }
