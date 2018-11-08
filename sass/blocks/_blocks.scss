@@ -492,6 +492,8 @@
 
 	//! Galleries
 	.wp-block-gallery {
+		list-style-type: none;
+		padding-left: 0;
 
 		.blocks-gallery-image:last-child,
 		.blocks-gallery-item:last-child {
