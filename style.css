@@ -1340,6 +1340,7 @@ body.page .main-navigation {
 
 .footer-navigation .footer-menu {
   display: inline;
+  padding-left: 0;
 }
 
 .footer-navigation .footer-menu li {
