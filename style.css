@@ -2438,35 +2438,32 @@ body.page .main-navigation {
 }
 
 .comments-area {
+  margin: calc(2 * 1rem) 1rem;
   /* Add extra margin when the comments section is located immediately after the
 	 * post itself (this happens on pages).
 	 */
 }
 
-.entry + .comments-area {
-  margin-top: calc(3 * 1rem);
-}
-
-.comments-area > * {
-  margin: calc(2 * 1rem) 1rem;
-}
-
 @media only screen and (min-width: 768px) {
-  .comments-area > * {
+  .comments-area {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .comments-area > * {
+  .comments-area {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area > * {
+  .comments-area {
     margin: calc(3 * 1rem) calc(10% + 60px);
   }
+}
+
+.entry + .comments-area {
+  margin-top: calc(3 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {

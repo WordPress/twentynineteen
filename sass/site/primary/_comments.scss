@@ -7,21 +7,18 @@
 }
 
 .comments-area {
+	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+	@include postContentMaxWidth();
+
+	@include media(tablet) {
+		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
+	}
 
 	/* Add extra margin when the comments section is located immediately after the
 	 * post itself (this happens on pages).
 	 */
 	.entry + & {
 		margin-top: calc(3 * #{$size__spacing-unit});
-	}
-
-	> * {
-		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
-		@include postContentMaxWidth();
-
-		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
-		}
 	}
 
 	.comments-title-wrap {
