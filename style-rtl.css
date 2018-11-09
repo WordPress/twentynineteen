@@ -1618,6 +1618,25 @@ body.page .main-navigation {
   transform: rotate(45deg);
 }
 
+/** === Footer menu === */
+.footer-navigation {
+  display: inline;
+}
+
+.footer-navigation > div {
+  display: inline;
+}
+
+.footer-navigation .footer-menu {
+  display: inline;
+  padding-right: 0;
+}
+
+.footer-navigation .footer-menu li {
+  display: inline;
+  margin-left: 1rem;
+}
+
 /*--------------------------------------------------------------
 ## Next / Previous
 --------------------------------------------------------------*/
@@ -2607,6 +2626,11 @@ body.page .main-navigation {
   .entry .entry-content > iframe[style] {
     max-width: calc(6 * (100vw / 12) - 28px) !important;
   }
+}
+
+.entry .entry-content .page-links a {
+  margin: calc(0.5 * 1rem);
+  text-decoration: none;
 }
 
 .entry .entry-content .wp-audio-shortcode {
