@@ -10,7 +10,12 @@ h2.author-title,
 .comment-author .fn,
 .no-comments,
 .site-title,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: $font__heading;
 	font-weight: 700;
 	letter-spacing: -0.02em;

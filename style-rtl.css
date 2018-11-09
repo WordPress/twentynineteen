@@ -432,7 +432,12 @@ h2.author-title,
 .comment-author .fn,
 .no-comments,
 .site-title,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -574,7 +579,10 @@ p {
   -moz-osx-font-smoothing: grayscale;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
@@ -591,7 +599,10 @@ pre {
   overflow: auto;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-size: 0.88889em;
   font-family: Menlo, monaco, Consolas, Lucida Console, monospace;
 }
@@ -601,7 +612,8 @@ abbr, acronym {
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -746,12 +758,18 @@ a:focus {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both;
   margin: 1rem 0;
 }
 
-h1:not(.site-title):before, h2:before {
+h1:not(.site-title):before,
+h2:before {
   background: #767676;
   content: "\020";
   display: block;
@@ -830,7 +848,8 @@ table {
   width: 100%;
 }
 
-table td, table th {
+table td,
+table th {
   padding: 0.5em;
   border: 1px solid #767676;
   word-break: break-all;
@@ -3285,14 +3304,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-button .wp-block-button__link:hover {
+  background: #111;
   cursor: pointer;
 }
 
-.entry .entry-content .wp-block-button .wp-block-button__link:hover, .entry .entry-content .wp-block-button .wp-block-button__link:focus {
-  background: #111;
-}
-
 .entry .entry-content .wp-block-button .wp-block-button__link:focus {
+  background: #111;
   outline: thin dotted;
   outline-offset: -4px;
 }
@@ -3423,9 +3440,9 @@ body.page .main-navigation {
   line-height: 1.6;
   text-transform: none;
   color: #767676;
-  /* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3504,9 +3521,9 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote cite {
-  /* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3526,9 +3543,9 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-quote.is-large cite,
 .entry .entry-content .wp-block-quote.is-large footer, .entry .entry-content .wp-block-quote.is-style-large cite,
 .entry .entry-content .wp-block-quote.is-style-large footer {
-  /* 
-				 * This requires a rem-based font size calculation instead of our normal em-based one, 
-				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+				 * This requires a rem-based font size calculation instead of our normal em-based one,
+				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 				 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3747,7 +3764,8 @@ body.page .main-navigation {
   overflow: hidden;
 }
 
-.entry .entry-content .wp-block-table td, .entry .entry-content .wp-block-table th {
+.entry .entry-content .wp-block-table th,
+.entry .entry-content .wp-block-table td {
   border-color: #767676;
 }
 
@@ -3780,7 +3798,7 @@ body.page .main-navigation {
   cursor: pointer;
 }
 
-.entry .entry-content .wp-block-file .wp-block-file__button:hover, .entry .entry-content .wp-block-file .wp-block-file__button:focus {
+.entry .entry-content .wp-block-file .wp-block-file__button:focus, .entry .entry-content .wp-block-file .wp-block-file__button:hover {
   background: #111;
 }
 

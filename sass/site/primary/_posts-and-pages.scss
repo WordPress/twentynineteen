@@ -130,7 +130,6 @@
 				width: 100%;
 			}
 		}
-
 	}
 
 	.image-filters-enabled & {
@@ -160,7 +159,8 @@
 				}
 			}
 
-			&:before, &:after {
+			&:before,
+			&:after, {
 				position: absolute;
 				display: block;
 				width: 100%;

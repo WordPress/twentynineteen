@@ -3,7 +3,8 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 
-	td, th {
+	td,
+	th {
 		padding: 0.5em;
 		border: 1px solid $color__text-light;
 		word-break: break-all;
