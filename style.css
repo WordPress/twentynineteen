@@ -2630,14 +2630,8 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comment .comment-meta {
-    display: flex;
-  }
-}
-
-@media only screen and (min-width: 768px) {
   .comment .comment-author {
-    flex: 0 0 auto;
+    display: inline-block;
     vertical-align: baseline;
   }
 }
@@ -2705,7 +2699,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .comment .comment-metadata {
-    flex: 1 0 auto;
+    display: inline;
     margin-left: 1rem;
     position: relative;
     vertical-align: baseline;
@@ -2715,7 +2709,7 @@ body.page .main-navigation {
 
 .comment .comment-metadata > a,
 .comment .comment-metadata .comment-edit-link {
-  display: inline-block;
+  display: inline;
   font-weight: 500;
   color: #767676;
   vertical-align: baseline;
