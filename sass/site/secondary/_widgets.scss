@@ -58,6 +58,11 @@
 .widget_calendar .calendar_wrap {
 	text-align: center;
 	font-family: $font__heading;
+
+	table td, 
+	table th {
+		border: none;
+	}
 	
 	a {
 		text-decoration: underline;
