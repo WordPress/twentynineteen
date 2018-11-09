@@ -1332,6 +1332,25 @@ body.page .main-navigation {
   transform: rotate(-45deg);
 }
 
+/** === Footer menu === */
+.footer-navigation {
+  display: inline;
+}
+
+.footer-navigation > div {
+  display: inline;
+}
+
+.footer-navigation .footer-menu {
+  display: inline;
+  padding-left: 0;
+}
+
+.footer-navigation .footer-menu li {
+  display: inline;
+  margin-right: 1rem;
+}
+
 /*--------------------------------------------------------------
 ## Next / Previous
 --------------------------------------------------------------*/
@@ -2326,6 +2345,11 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content .page-links a {
+  margin: calc(0.5 * 1rem);
+  text-decoration: none;
+}
+
 .entry .entry-content .wp-audio-shortcode {
   max-width: calc(100vw - (2 * 1rem));
 }
@@ -2871,8 +2895,7 @@ body.page .main-navigation {
   .archive .page-header,
   .search .page-header,
   .error404 .page-header {
-    margin: 0 calc(2 * (100vw / 12)) calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
+    margin: 0 calc(10% + 60px) calc(10% + 60px);
   }
 }
 
