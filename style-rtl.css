@@ -3494,7 +3494,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote.is-large, .entry .entry-content .wp-block-quote.is-style-large {
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 0;
   border-right: none;
 }
