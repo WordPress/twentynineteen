@@ -3566,6 +3566,7 @@ body.page .main-navigation {
 
 .entry .entry-content .wp-block-cover-image,
 .entry .entry-content .wp-block-cover {
+  position: relative;
   min-height: 430px;
 }
 
@@ -3652,6 +3653,12 @@ body.page .main-navigation {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
+}
+
+.entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
+.entry .entry-content .wp-block-cover.alignleft,
+.entry .entry-content .wp-block-cover.alignright {
+  width: 100%;
 }
 
 .entry .entry-content .wp-block-cover-image.has-left-content, .entry .entry-content .wp-block-cover-image.has-right-content,

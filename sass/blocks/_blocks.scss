@@ -454,6 +454,7 @@
 	//! Cover Image
 	.wp-block-cover-image,
 	.wp-block-cover {
+		position: relative;
 		min-height: 430px;
 
 		.wp-block-cover-image-text,
@@ -494,6 +495,11 @@
 				transform: translate(-50%, -50%);
 				top: 50%;
 			}
+		}
+
+		&.alignleft,
+		&.alignright {
+			width: 100%;
 		}
 
 		&.has-left-content,
