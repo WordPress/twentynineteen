@@ -2442,46 +2442,26 @@ body.page .main-navigation {
   margin-top: calc(3 * 1rem);
 }
 
-.comments-area .comment-list,
-.comments-area .comment-navigation,
-.comments-area > .comment-respond,
-.comments-area .comment-form-flex,
-.comments-area .no-comments {
+.comments-area > * {
   margin: calc(2 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area .comment-list,
-  .comments-area .comment-navigation,
-  .comments-area > .comment-respond,
-  .comments-area .comment-form-flex,
-  .comments-area .no-comments {
+  .comments-area > * {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .comments-area .comment-list,
-  .comments-area .comment-navigation,
-  .comments-area > .comment-respond,
-  .comments-area .comment-form-flex,
-  .comments-area .no-comments {
+  .comments-area > * {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area .comment-list,
-  .comments-area .comment-navigation,
-  .comments-area > .comment-respond,
-  .comments-area .comment-form-flex,
-  .comments-area .no-comments {
+  .comments-area > * {
     margin: calc(3 * 1rem) calc(10% + 60px);
   }
-}
-
-.comments-area .comments-title-wrap {
-  margin: calc(2 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2489,8 +2469,6 @@ body.page .main-navigation {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
-    margin: calc(3 * 1rem) calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
