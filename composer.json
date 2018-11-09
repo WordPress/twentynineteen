@@ -1,0 +1,29 @@
+{
+  "name": "wordpress/twentynineteen",
+  "description": "Let Gutenberg shine with this simple, fast, and powerful theme.",
+  "type": "package",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+		"WordPress",
+		"Themes"
+	],
+  "authors": [
+		{
+			"name": "the WordPress team",
+			"homepage": "https://github.com/WordPress/twentynineteen"
+		}
+	],
+  "require-dev": {
+      "wptrt/wpthemereview": "^0.1.0",
+      "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  },
+  "scripts": {
+		"phpcs-i": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
+		"lint": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"format": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
+	},
+	"support"    : {
+		"issues": "https://github.com/WordPress/twentynineteen/issues",
+		"source": "https://github.com/WordPress/twentynineteen"
+	}
+}

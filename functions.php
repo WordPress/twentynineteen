@@ -57,6 +57,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'footer' => __( 'Footer Menu', 'twentynineteen' ),
 				'social' => __( 'Social Links Menu', 'twentynineteen' ),
 			)
 		);
@@ -205,7 +206,7 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_customizer_sty
 function twentynineteen_colors_css_wrap() {
 
 	// Only include custom colors in customizer or frontend.
-	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
+	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'colorscheme', 'default' ) ) || is_admin() ) {
 		return;
 	}
 

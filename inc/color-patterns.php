@@ -56,12 +56,12 @@ function twentynineteen_custom_colors_css() {
 		.sticky-post,
 		.entry-content .wp-block-button .wp-block-button__link,
 		.button, button, input[type="button"], input[type="reset"], input[type="submit"],
-		.entry-content > .has-primary-background-color,
-		.entry-content > *[class^="wp-block-"].has-primary-background-color,
-		.entry-content > *[class^="wp-block-"] .has-primary-background-color,
-		.entry-content > *[class^="wp-block-"].is-style-solid-color,
-		.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
-		.entry-content .wp-block-file .wp-block-file__button {
+		.entry .entry-content > .has-primary-background-color,
+		.entry .entry-content > *[class^="wp-block-"].has-primary-background-color,
+		.entry .entry-content > *[class^="wp-block-"] .has-primary-background-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
+		.entry .entry-content .wp-block-file .wp-block-file__button {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
 
@@ -92,11 +92,11 @@ function twentynineteen_custom_colors_css() {
 		.comment .comment-metadata .comment-edit-link:hover,
 		#colophon .site-info a:hover,
 		.widget a,
-		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-		.entry-content .wp-block-button.is-style-outline .wp-block-button__link,
-		.entry-content > *[class^="wp-block-"] .has-primary-color,
-		.entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
+		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry .entry-content > *[class^="wp-block-"] .has-primary-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
 
@@ -104,9 +104,9 @@ function twentynineteen_custom_colors_css() {
 		 * Set left border color for:
 		 * wp block quote
 		 */
-		.entry-content blockquote,
-		.entry-content .wp-block-quote:not(.is-large),
-		.entry-content .wp-block-quote:not(.is-style-large) {
+		.entry .entry-content blockquote,
+		.entry .entry-content .wp-block-quote:not(.is-large),
+		.entry .entry-content .wp-block-quote:not(.is-style-large) {
 			border-left-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
 

@@ -177,14 +177,13 @@
 
 /* Calculates maximum width for post content */
 @mixin postContentMaxWidth() {
-	max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
 
 	@include media(tablet) {
-		max-width: calc(8 * (100vw / 12));
+		max-width: $size__site-tablet-content;
 	}
 
 	@include media(desktop) {
-		max-width: calc(6 * (100vw / 12));
+		max-width: $size__site-desktop-content;
 	}
 }
 

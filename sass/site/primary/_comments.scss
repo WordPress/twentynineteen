@@ -15,29 +15,21 @@
 		margin-top: calc(3 * #{$size__spacing-unit});
 	}
 
-	.comment-list,
-	.comment-navigation,
-	> .comment-respond,
-	.comment-form-flex,
-	.no-comments {
+	> * {
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+		@include postContentMaxWidth();
 
 		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
-			max-width: calc(6 * (100vw / 12));
+			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 		}
 	}
 
 	.comments-title-wrap {
 
-		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
-
 		@include media(tablet) {
 			align-items: baseline;
 			display: flex;
 			justify-content: space-between;
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
 		}
 
 		.comments-title {
@@ -150,9 +142,12 @@
 }
 
 .comment-reply {
-	left: calc(#{$size__spacing-unit} + 100%);
-	bottom: 0;
-	position: absolute;
+
+	@include media(desktop) {
+		left: 100%;
+		bottom: 0;
+		position: absolute;
+	}
 
 	#respond + & {
 		display: none;
@@ -176,8 +171,13 @@
 	}
 
 	.comment-body {
-		margin: calc(2 * #{$size__spacing-unit}) 0;
+		margin: calc(2 * #{$size__spacing-unit}) 0 0;
+
+		@include media(desktop) {
+			margin: calc(2 * #{$size__spacing-unit}) 0;
+		}
 	}
+
 
 	.comment-meta {
 		position: relative;
@@ -257,6 +257,7 @@
 			margin-left: $size__spacing-unit;
 			position: relative;
 			vertical-align: baseline;
+			line-height: 2.25;
 		}
 
 		> a,
@@ -311,6 +312,10 @@
 	.comment-content {
 
 		margin: $size__spacing-unit 0;
+
+		@include media(desktop) {
+			padding-right: $size__spacing-unit;
+		}
 
 		> *:first-child {
 			margin-top: 0;
