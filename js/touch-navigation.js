@@ -51,16 +51,6 @@
 		ariaItem.setAttribute('aria-expanded', ariaState);
 	}
 
-	// Focus sub-menu
-	function setAriaState( currentMenuItem ) {
-
-		var menuItem     = getCurrentParent(currentMenuItem, '.menu-item'); // this.parentNode
-		var menuItemAria = menuItem.querySelector('a[aria-expanded]');
-
-		// Update aria-expanded state
-		toggleAriaExpandedState( menuItemAria );
-	}
-
 	// Open sub-menu
 	function openSubMenu( currentSubMenu ) {
 		'use strict';
