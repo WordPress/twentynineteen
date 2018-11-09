@@ -29,9 +29,9 @@ if ( post_password_required() ) {
 		<?php
 			if ( comments_open() ) {
 				if ( have_comments() ) {
-					esc_html_e( 'Join the Conversation', 'twentynineteen' );
+					_e( 'Join the Conversation', 'twentynineteen' );
 				} else {
-					esc_html_e( 'Leave a comment', 'twentynineteen' );
+					_e( 'Leave a comment', 'twentynineteen' );
 				}
 			} else {
 				$comments_number = get_comments_number();
@@ -102,9 +102,9 @@ if ( post_password_required() ) {
 		if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) :
 			?>
 			<div class="comment-form-flex">
-				<span class="screen-reader-text"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ); ?></span>
+				<span class="screen-reader-text"><?php _e( 'Leave a comment', 'twentynineteen' ); ?></span>
 				<?php twentynineteen_comment_form( 'asc' ); ?>
-				<h2 class="comments-title" aria-hidden="true"><?php esc_html_e( 'Leave a comment', 'twentynineteen' ); ?></h2>
+				<h2 class="comments-title" aria-hidden="true"><?php _e( 'Leave a comment', 'twentynineteen' ); ?></h2>
 			</div>
 			<?php
 		endif;
@@ -113,7 +113,7 @@ if ( post_password_required() ) {
 		if ( ! comments_open() ) :
 			?>
 			<p class="no-comments">
-				<?php esc_html_e( 'Comments are closed.', 'twentynineteen' ); ?>
+				<?php _e( 'Comments are closed.', 'twentynineteen' ); ?>
 			</p>
 			<?php
 		endif;
