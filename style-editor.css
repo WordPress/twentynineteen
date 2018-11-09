@@ -28,7 +28,7 @@ body .wp-block[data-align="full"] {
   body {
     overflow-x: hidden;
   }
-  body .editor-block-list__layout,
+  body :not(.editor-inner-blocks) > .editor-block-list__layout,
   body .editor-post-title {
     padding-left: 0;
     padding-right: 0;
@@ -40,7 +40,7 @@ body .wp-block[data-align="full"] {
 }
 
 @media only screen and (min-width: 768px) {
-  body .editor-block-list__layout,
+  body :not(.editor-inner-blocks) > .editor-block-list__layout,
   body .editor-post-title {
     padding-left: 46px;
     padding-right: 46px;
