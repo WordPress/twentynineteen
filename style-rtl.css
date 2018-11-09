@@ -999,12 +999,7 @@ body.page .main-navigation {
 .main-navigation .main-menu > li {
   color: #0073aa;
   display: inline;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .main-menu > li {
-    position: relative;
-  }
+  position: relative;
 }
 
 .main-navigation .main-menu > li > a {
@@ -1020,6 +1015,10 @@ body.page .main-navigation {
 .main-navigation .main-menu > li > a:hover,
 .main-navigation .main-menu > li > a:hover + svg {
   color: #005177;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children {
+  position: inherit;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children > a {
@@ -1056,12 +1055,6 @@ body.page .main-navigation {
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
-}
-
-@media only screen and (min-width: 600px) {
-  .main-navigation .main-menu > li.menu-item-has-children {
-    position: relative;
-  }
 }
 
 .main-navigation .main-menu > li:last-child > a,
@@ -1227,13 +1220,17 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
-  right: auto;
-  left: 0;
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
-  right: auto;
-  left: 0;
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
@@ -1241,9 +1238,9 @@ body.page .main-navigation {
   margin-top: inherit;
   position: relative;
   width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
+  max-width: -moz-max-content;
+  max-width: -webkit-max-content;
+  max-width: max-content;
   right: 0;
   opacity: 1;
 }
@@ -1253,9 +1250,9 @@ body.page .main-navigation {
   margin-top: inherit;
   position: relative;
   width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
+  max-width: -moz-max-content;
+  max-width: -webkit-max-content;
+  max-width: max-content;
   right: 0;
   opacity: 1;
 }
@@ -1351,9 +1348,7 @@ body.page .main-navigation {
   margin-top: 0;
   opacity: 1;
   width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
+  min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
 }
@@ -1383,8 +1378,10 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu.hidden-links,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover.hidden-links,
 .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
-  right: auto;
-  left: 0;
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .submenu-expand,
@@ -1402,11 +1399,20 @@ body.page .main-navigation {
   margin-top: inherit;
   position: relative;
   width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
   right: 0;
   opacity: 1;
+  /* Non-mobile position */
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
+    max-width: -moz-max-content;
+    max-width: -webkit-max-content;
+    max-width: max-content;
+  }
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu li > a:before,

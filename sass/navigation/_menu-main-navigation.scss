@@ -23,10 +23,7 @@
 
 			color: $color__link;
 			display: inline;
-
-			@include media(tablet) {
-				position: relative;
-			}
+			position: relative;
 
 			> a {
 
@@ -45,6 +42,12 @@
 			}
 
 			&.menu-item-has-children {
+
+				position: inherit;
+
+				@include media(tablet) {
+					position: relative;
+				}
 
 				> a {
 					margin-right: #{0.125 * $size__spacing-unit};
@@ -84,10 +87,6 @@
 						position: relative;
 						top: 0.2rem;
 					}
-				}
-
-				@include media(mobile) {
-					position: relative;
 				}
 			}
 
@@ -234,8 +233,10 @@
 		}
 
 		&.hidden-links {
-			left: auto;
-			right: 0;
+			left: 0;
+			width: 100%;
+			display: table;
+			position: absolute;
 		}
 
 		.sub-menu {
@@ -243,9 +244,9 @@
 			margin-top: inherit;
 			position: relative;
 			width: 100%;
-			min-width: -moz-max-content;
-			min-width: -webkit-max-content;
-			min-width: max-content;
+			max-width: -moz-max-content;
+			max-width: -webkit-max-content;
+			max-width: max-content;
 			left: 0;
 			opacity: 1;
 		}
@@ -294,9 +295,8 @@
 		margin-top: 0;
 		opacity: 1;
 		width: 100%;
-		min-width: -moz-max-content;
-		min-width: -webkit-max-content;
-		min-width: max-content;
+		min-width: 100%;
+
 
 		/* Non-mobile position */
 		@include media(tablet) {
@@ -316,8 +316,10 @@
 		}
 
 		&.hidden-links {
-			left: auto;
-			right: 0;
+			left: 0;
+			width: 100%;
+			display: table;
+			position: absolute;
 		}
 
 		.submenu-expand {
@@ -329,11 +331,15 @@
 			margin-top: inherit;
 			position: relative;
 			width: 100%;
-			min-width: -moz-max-content;
-			min-width: -webkit-max-content;
-			min-width: max-content;
 			left: 0;
 			opacity: 1;
+
+			/* Non-mobile position */
+			@include media(tablet) {
+				max-width: -moz-max-content;
+				max-width: -webkit-max-content;
+				max-width: max-content;
+			}
 		}
 
 		/* Nested sub-menu padding: 10 levels deep */
