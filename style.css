@@ -2287,6 +2287,12 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content,
+.entry .entry-summary {
+  max-width: calc(100% - (2 * 1rem));
+  margin: 0 1rem;
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content,
   .entry .entry-summary {
@@ -2325,13 +2331,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content > iframe[style] {
-  margin: 32px 1rem !important;
-  max-width: calc(100vw - (2 * 1rem)) !important;
+  margin: 32px 0 !important;
+  max-width: 100% !important;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content > iframe[style] {
-    margin: 32px 0 !important;
     max-width: calc(8 * (100vw / 12) - 28px) !important;
   }
 }
@@ -3076,8 +3081,8 @@ body.page .main-navigation {
 /* !Block styles */
 .entry .entry-content > *,
 .entry .entry-summary > * {
-  margin: 32px 1rem;
-  max-width: calc(100% - (2 * 1rem));
+  margin: 32px 0;
+  max-width: 100%;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -3140,8 +3145,8 @@ body.page .main-navigation {
 .entry .entry-summary > *.alignfull {
   position: relative;
   left: -1rem;
-  width: 100%;
-  max-width: calc( 100vw + (2 * 1rem));
+  width: calc( 100% + (2 * 1rem));
+  max-width: calc( 100% + (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
@@ -3161,6 +3166,9 @@ body.page .main-navigation {
   float: left;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
+  margin-left: 0;
+  /*rtl:ignore*/
+  margin-right: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -3187,7 +3195,7 @@ body.page .main-navigation {
   margin-top: 0;
   /*rtl:ignore*/
   margin-left: 1rem;
-  margin-right: 1rem;
+  margin-right: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -3495,7 +3503,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote.is-large, .entry .entry-content .wp-block-quote.is-style-large {
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 0;
   border-left: none;
 }
