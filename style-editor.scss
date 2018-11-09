@@ -19,7 +19,7 @@ body {
 	@include media(mobile) {
 		overflow-x: hidden;
 
-		.editor-block-list__layout,
+		:not(.editor-inner-blocks) > .editor-block-list__layout, // Target only the top level layout element, or nested blocks will also be affected.
 		.editor-post-title {
 			padding-left: 0;
 			padding-right: 0;
@@ -33,7 +33,7 @@ body {
 
 	@include media(tablet) {
 
-		.editor-block-list__layout,
+		:not(.editor-inner-blocks) > .editor-block-list__layout, // Target only the top level layout element, or nested blocks will also be affected.
 		.editor-post-title {
 			padding-left: 46px;
 			padding-right: 46px;
@@ -82,6 +82,7 @@ body {
 		width: calc(6 * (100vw / 12 ));
 	}
 
+	// Only the top level blocks need specific widths, therefore override for every nested block.
 	.wp-block {
 		width: 100%;
 	}
