@@ -15,15 +15,11 @@
 		margin-top: calc(3 * #{$size__spacing-unit});
 	}
 
-	.comment-list,
-	.comment-navigation,
-	> .comment-respond,
-	.comment-form-flex,
-	.no-comments {
+	> * {
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
 
 		@include postContentMaxWidth();
-		
+
 		@include media(tablet) {
 			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 		}
@@ -31,14 +27,10 @@
 
 	.comments-title-wrap {
 
-		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
-
 		@include media(tablet) {
 			align-items: baseline;
 			display: flex;
 			justify-content: space-between;
-			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
-			max-width: $size__site-tablet-content;
 		}
 
 		.comments-title {
@@ -181,7 +173,7 @@
 
 	.comment-body {
 		margin: calc(2 * #{$size__spacing-unit}) 0 0;
-		
+
 		@include media(desktop) {
 			margin: calc(2 * #{$size__spacing-unit}) 0;
 		}
