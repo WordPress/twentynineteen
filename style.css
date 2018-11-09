@@ -3312,14 +3312,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-button .wp-block-button__link:hover {
+  background: #111;
   cursor: pointer;
 }
 
-.entry .entry-content .wp-block-button .wp-block-button__link:focus, .entry .entry-content .wp-block-button .wp-block-button__link:hover {
-  background: #111;
-}
-
 .entry .entry-content .wp-block-button .wp-block-button__link:focus {
+  background: #111;
   outline: thin dotted;
   outline-offset: -4px;
 }
@@ -3450,9 +3448,9 @@ body.page .main-navigation {
   line-height: 1.6;
   text-transform: none;
   color: #767676;
-  /* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3531,9 +3529,9 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote cite {
-  /* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3553,9 +3551,9 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-quote.is-large cite,
 .entry .entry-content .wp-block-quote.is-large footer, .entry .entry-content .wp-block-quote.is-style-large cite,
 .entry .entry-content .wp-block-quote.is-style-large footer {
-  /* 
-				 * This requires a rem-based font size calculation instead of our normal em-based one, 
-				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+  /*
+				 * This requires a rem-based font size calculation instead of our normal em-based one,
+				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 				 */
   font-size: calc(1rem / (1.25 * 1.125));
 }
@@ -3805,14 +3803,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-file .wp-block-file__button:hover {
+  background: #111;
   cursor: pointer;
 }
 
-.entry .entry-content .wp-block-file .wp-block-file__button:focus, .entry .entry-content .wp-block-file .wp-block-file__button:hover {
-  background: #111;
-}
-
 .entry .entry-content .wp-block-file .wp-block-file__button:focus {
+  background: #111;
   outline: thin dotted;
   outline-offset: -4px;
 }

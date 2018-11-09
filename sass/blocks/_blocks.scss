@@ -165,15 +165,12 @@
 			outline: none;
 
 			&:hover {
+				background: $color__background-button-hover;
 				cursor: pointer;
 			}
 
-			&:focus,
-			&:hover {
-				background: $color__background-button-hover;
-			}
-
 			&:focus {
+				background: $color__background-button-hover;
 				outline: thin dotted;
 				outline-offset: -4px;
 			}
@@ -305,10 +302,10 @@
 			line-height: 1.6;
 			text-transform: none;
 			color: $color__text-light;
-			
-			/* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+
+			/*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
 			font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 		}
@@ -391,9 +388,9 @@
 		}
 
 		cite {
-			/* 
-			 * This requires a rem-based font size calculation instead of our normal em-based one, 
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+			/*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 			 */
 			font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 		}
@@ -412,9 +409,9 @@
 
 			cite,
 			footer {
-				/* 
-				 * This requires a rem-based font size calculation instead of our normal em-based one, 
-				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs. 
+				/*
+				 * This requires a rem-based font size calculation instead of our normal em-based one,
+				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
 				 */
 				font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 			}
@@ -444,7 +441,7 @@
 
 		&.alignfull img {
 			width: 100vw;
-			
+
 			@include media(tablet) {
 				margin-left: auto;
 				margin-right: auto;
@@ -611,15 +608,12 @@
 			}
 
 			&:hover {
+				background: $color__background-button-hover;
 				cursor: pointer;
 			}
 
-			&:focus,
-			&:hover {
-				background: $color__background-button-hover;
-			}
-
 			&:focus {
+				background: $color__background-button-hover;
 				outline: thin dotted;
 				outline-offset: -4px;
 			}
