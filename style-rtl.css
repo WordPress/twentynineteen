@@ -2584,14 +2584,6 @@ body.page .main-navigation {
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1168px) {
-  .comment-reply {
-    right: 100%;
-    bottom: 0;
-    position: absolute;
-  }
-}
-
 #respond + .comment-reply {
   display: none;
 }
@@ -2617,12 +2609,6 @@ body.page .main-navigation {
 
 .comment .comment-body {
   margin: calc(2 * 1rem) 0 0;
-}
-
-@media only screen and (min-width: 1168px) {
-  .comment .comment-body {
-    margin: calc(2 * 1rem) 0;
-  }
 }
 
 .comment .comment-meta {
@@ -2722,7 +2708,7 @@ body.page .main-navigation {
 
 .comment .comment-metadata > a:hover,
 .comment .comment-metadata .comment-edit-link:hover {
-  color: #4a4a4a;
+  color: #005177;
   text-decoration: none;
 }
 

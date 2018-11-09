@@ -130,6 +130,7 @@
 			font-family: $font__heading;
 			font-size: $font__size-xs;
 			font-weight: 500;
+			margin-top: $size__spacing-unit;
 			margin-bottom: $size__spacing-unit;
 
 			a:not(.comment-edit-link) {
@@ -150,12 +151,6 @@
 }
 
 .comment-reply {
-
-	@include media(desktop) {
-		left: 100%;
-		bottom: 0;
-		position: absolute;
-	}
 
 	#respond + & {
 		display: none;
@@ -182,10 +177,6 @@
 
 	.comment-body {
 		margin: calc(2 * #{$size__spacing-unit}) 0 0;
-
-		@include media(desktop) {
-			margin: calc(2 * #{$size__spacing-unit}) 0;
-		}
 	}
 
 
