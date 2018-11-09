@@ -1493,14 +1493,6 @@ body.page .main-navigation {
 .comment-navigation .nav-links {
   display: flex;
   flex-direction: row;
-  margin: 0 1rem;
-}
-
-@media only screen and (min-width: 1168px) {
-  .comment-navigation .nav-links {
-    margin: 0 calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
-  }
 }
 
 .comment-navigation .nav-previous,
@@ -1529,11 +1521,6 @@ body.page .main-navigation {
   position: relative;
   margin: 0 -0.35em;
   top: -1px;
-}
-
-.comment-navigation .nav-previous a:hover,
-.comment-navigation .nav-next a:hover {
-  color: #0073aa;
 }
 
 .comment-navigation .nav-next {
@@ -2459,6 +2446,18 @@ body.page .main-navigation {
   }
 }
 
+.comments-area > * {
+  margin-top: calc(2 * 1rem);
+  margin-bottom: calc(2 * 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area > * {
+    margin-top: calc(3 * 1rem);
+    margin-bottom: calc(3 * 1rem);
+  }
+}
+
 .entry + .comments-area {
   margin-top: calc(3 * 1rem);
 }
@@ -2560,7 +2559,8 @@ body.page .main-navigation {
   margin-top: 0;
 }
 
-.comment-list .pingback .comment-body {
+.comment-list .pingback .comment-body,
+.comment-list .trackback .comment-body {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.71111em;
@@ -2568,7 +2568,8 @@ body.page .main-navigation {
   margin-bottom: 1rem;
 }
 
-.comment-list .pingback .comment-body a:not(.comment-edit-link) {
+.comment-list .pingback .comment-body a:not(.comment-edit-link),
+.comment-list .trackback .comment-body a:not(.comment-edit-link) {
   font-weight: bold;
   font-size: 19.55556px;
   line-height: 1.5;
@@ -2576,7 +2577,8 @@ body.page .main-navigation {
   display: block;
 }
 
-.comment-list .pingback .comment-body .comment-edit-link {
+.comment-list .pingback .comment-body .comment-edit-link,
+.comment-list .trackback .comment-body .comment-edit-link {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
@@ -2607,6 +2609,7 @@ body.page .main-navigation {
   .comment {
     padding-right: calc(.5 * (1rem + calc(100vw / 12 )));
   }
+  .comment.depth-1,
   .comment .children {
     padding-right: 0;
   }
@@ -2770,6 +2773,10 @@ body.page .main-navigation {
 
 .comment .comment-content > *:last-child {
   margin-bottom: 0;
+}
+
+.comment .comment-content blockquote {
+  margin-right: 0;
 }
 
 .comment .comment-content a {

@@ -14,6 +14,16 @@
 		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 	}
 
+	& > * {
+		margin-top: calc(2 * #{$size__spacing-unit});
+		margin-bottom: calc(2 * #{$size__spacing-unit});
+
+		@include media(tablet) {
+			margin-top: calc(3 * #{$size__spacing-unit});
+			margin-bottom: calc(3 * #{$size__spacing-unit});
+		}
+	}
+
 	/* Add extra margin when the comments section is located immediately after the
 	 * post itself (this happens on pages).
 	 */
@@ -112,7 +122,8 @@
 		margin-top: 0;
 	}
 
-	.pingback {
+	.pingback,
+	.trackback {
 
 		.comment-body {
 			color: $color__text-light;
@@ -160,8 +171,10 @@
 	position: relative;
 
 	@include media(tablet) {
+
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
+		&.depth-1,
 		.children {
 			padding-left: 0;
 		}
@@ -265,7 +278,7 @@
 			}
 
 			&:hover {
-				color: $color__text-hover;
+				color: $color__link-hover;
 				text-decoration: none;
 			}
 		}
@@ -316,6 +329,10 @@
 
 		> *:last-child {
 			margin-bottom: 0;
+		}
+
+		blockquote {
+			margin-left: 0;
 		}
 
 		a {
