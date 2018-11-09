@@ -163,8 +163,8 @@ function twentynineteen_get_discussion_data() {
 
 	$authors    = array_unique( $authors );
 	$discussion = (object) array(
-		'authors'    => array_slice( $authors, 0, 6 ),           /* Six unique authors commenting on the post. */
-		'responses'  => get_comments_number( $current_post_id ), /* Number of responses. */
+		'authors'   => array_slice( $authors, 0, 6 ),           /* Six unique authors commenting on the post. */
+		'responses' => get_comments_number( $current_post_id ), /* Number of responses. */
 	);
 
 	return $discussion;
