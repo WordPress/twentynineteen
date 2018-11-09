@@ -1021,6 +1021,12 @@ body.page .main-navigation {
   position: inherit;
 }
 
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu > li.menu-item-has-children {
+    position: relative;
+  }
+}
+
 .main-navigation .main-menu > li.menu-item-has-children > a {
   margin-left: 0.125rem;
 }
@@ -1233,6 +1239,21 @@ body.page .main-navigation {
   position: absolute;
 }
 
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
+    left: 0;
+    right: auto;
+    display: block;
+    width: max-content;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
+    left: 0;
+    right: auto;
+    display: block;
+    width: max-content;
+  }
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
@@ -1358,7 +1379,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
-    display: table;
+    display: block;
     margin-top: 0;
     opacity: 1;
     position: absolute;
@@ -1367,9 +1388,9 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    width: max-content;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
     transform: none;
   }
 }
@@ -1382,6 +1403,18 @@ body.page .main-navigation {
   width: 100%;
   display: table;
   position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
+    left: 0;
+    right: auto;
+    display: block;
+    width: max-content;
+  }
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .submenu-expand,
