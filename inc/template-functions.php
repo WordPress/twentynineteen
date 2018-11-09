@@ -144,6 +144,8 @@ function twentynineteen_get_discussion_data() {
 	$current_post_id = get_the_ID();
 	if ( $current_post_id === $post_id ) {
 		return $discussion; /* If we have discussion information for post ID, return cached object */
+	} else {
+		$post_id = $current_post_id;
 	}
 
 	$comments = get_comments(
