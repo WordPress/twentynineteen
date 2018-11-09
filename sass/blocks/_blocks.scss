@@ -454,6 +454,7 @@
 	//! Cover Image
 	.wp-block-cover-image,
 	.wp-block-cover {
+		min-height: 430px;
 
 		.wp-block-cover-image-text,
 		.wp-block-cover-text,
@@ -461,6 +462,9 @@
 			font-family: $font__heading;
 			font-size: $font__size-lg;
 			font-weight: bold;
+			line-height: 1.25;
+			padding: $size__spacing-unit;
+			color: #fff;
 
 			width: calc(100vw - (2 * #{ $size__spacing-unit }));
 			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
@@ -492,24 +496,9 @@
 			}
 		}
 
-		&.has-left-content {
-			justify-content: center;
-
-			h2,
-			.wp-block-cover-image-text,
-			.wp-block-cover-text {
-				padding: $size__spacing-unit;
-			}
-		}
-
+		&.has-left-content,
 		&.has-right-content {
 			justify-content: center;
-
-			h2,
-			.wp-block-cover-image-text,
-			.wp-block-cover-text {
-				padding: $size__spacing-unit;
-			}
 		}
 	}
 
