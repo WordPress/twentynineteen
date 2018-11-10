@@ -26,7 +26,7 @@ Version 1.0:
 | @anevins12 | @anevins |
 | @peterwilsoncc | @peterwilsoncc |
 | @DannyCooper | @dannycooper |
-| @iCaleb | @icaleb |
+| @WPprodigy | @iCaleb |
 | @siriokun | @siriokun |
 | @briannaorg | @technosiren |
 | @00travelgirl00 | @travel_girl |
@@ -36,7 +36,6 @@ Version 1.0:
 | @Ismail-elkorchi | @ismailelkorchi |
 | @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
-| @icaleb | @icaleb |
 | @grappler | @grapplerulrich |
 | @ocean90 | @ocean90 |
 | @joshfeck | |
@@ -70,3 +69,4 @@ Version 1.0:
 | @youthkee | @youthkee |
 | @brentswisher | |
 | @smy315 | @smyoon315 |
+| @ahmadawais | @mrahmadawais |
