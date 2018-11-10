@@ -245,12 +245,18 @@
 			display: block;
 			margin-top: inherit;
 			position: relative;
-			width: auto;
-			max-width: -moz-max-content;
-			max-width: -webkit-max-content;
-			max-width: max-content;
+			width: 100%;
 			left: 0;
 			opacity: 1;
+
+			/* Non-mobile position */
+			@include media(tablet) {
+				float: none;
+				width: auto;
+				max-width: -moz-max-content;
+				max-width: -webkit-max-content;
+				max-width: max-content;
+			}
 		}
 
 		/* Nested sub-menu padding: 10 levels deep */
@@ -347,6 +353,7 @@
 			/* Non-mobile position */
 			@include media(tablet) {
 				float: none;
+				width: auto;
 				max-width: -moz-max-content;
 				max-width: -webkit-max-content;
 				max-width: max-content;

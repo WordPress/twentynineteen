@@ -1246,24 +1246,37 @@ body.page .main-navigation {
   display: block;
   margin-top: inherit;
   position: relative;
-  width: auto;
-  max-width: -moz-max-content;
-  max-width: -webkit-max-content;
-  max-width: max-content;
+  width: 100%;
   left: 0;
   opacity: 1;
+  /* Non-mobile position */
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
   position: relative;
-  width: auto;
-  max-width: -moz-max-content;
-  max-width: -webkit-max-content;
-  max-width: max-content;
+  width: 100%;
   left: 0;
   opacity: 1;
+  /* Non-mobile position */
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
+    float: none;
+    width: auto;
+    max-width: -moz-max-content;
+    max-width: -webkit-max-content;
+    max-width: max-content;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
+    float: none;
+    width: auto;
+    max-width: -moz-max-content;
+    max-width: -webkit-max-content;
+    max-width: max-content;
+  }
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu li > a:before {
@@ -1432,6 +1445,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
     float: none;
+    width: auto;
     max-width: -moz-max-content;
     max-width: -webkit-max-content;
     max-width: max-content;
