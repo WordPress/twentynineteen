@@ -227,11 +227,9 @@ function twentynineteen_custom_colors_css() {
 			color: inherit;
 		}
 		';
-	$css = '';
+
 	if ( function_exists( 'register_block_type' ) && is_admin() ) {
-		$css .= $editor_css;
-	} else if ( ! is_admin() ) {
-		$css = $theme_css;
+		$theme_css = $editor_css;
 	}
 
 	/**
@@ -243,5 +241,5 @@ function twentynineteen_custom_colors_css() {
 	 * @param int    $primary_color The user's selected color hue.
 	 * @param string $saturation    Filtered theme color saturation level.
 	 */
-	return apply_filters( 'twentynineteen_custom_colors_css', $css, $primary_color, $saturation );
+	return apply_filters( 'twentynineteen_custom_colors_css', $theme_css, $primary_color, $saturation );
 }
