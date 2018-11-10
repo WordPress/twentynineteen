@@ -258,10 +258,7 @@
 			/* Non-mobile position */
 			@include media(tablet) {
 				float: none;
-				width: auto;
-				max-width: -moz-max-content;
-				max-width: -webkit-max-content;
-				max-width: max-content;
+				max-width: 100%;
 			}
 		}
 
@@ -359,10 +356,7 @@
 			/* Non-mobile position */
 			@include media(tablet) {
 				float: none;
-				width: auto;
-				max-width: -moz-max-content;
-				max-width: -webkit-max-content;
-				max-width: max-content;
+				max-width: 100%;
 			}
 		}
 
