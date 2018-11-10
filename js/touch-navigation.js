@@ -166,7 +166,7 @@
 				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
 
 				// If there’s a link, go to it on touchend
-				if ( '#' != url && '' != url ) {
+				if ( '#' !== url && '' !== url ) {
 					// Go to link
 					window.location = url;
 				}
