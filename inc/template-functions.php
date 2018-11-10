@@ -415,8 +415,7 @@ function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 		return "#$r$g$b";
 
-	} else {
-
-		return "rgb($r, $g, $b)";
 	}
+
+	return "rgb($r, $g, $b)";
 }
