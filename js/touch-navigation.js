@@ -146,9 +146,9 @@
 		}
 
 		// Open sub-menus on touch
-		subMenuExpand.forEach( function( button ) {
+		for (var i = 0; i < subMenuExpand.length; i++) {
 
-			button.addEventListener('touchstart', function(event) {
+			subMenuExpand[i].addEventListener('touchstart', function(event) {
 				openSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -156,17 +156,17 @@
 				removeAllFocusStates();
 			});
 
-			button.addEventListener('touchend', function(event) {
+			subMenuExpand[i].addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
 			});
-		});
+		};
 
 		// Close sub-menus or sub-sub-menus on touch
-		subMenuReturn.forEach( function( button ) {
+		for (var i = 0; i < subMenuReturn.length; i++) {
 
-			button.addEventListener('touchstart', function(event) {
+			subMenuReturn[i].addEventListener('touchstart', function(event) {
 				closeSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -174,17 +174,17 @@
 				removeAllFocusStates();
 			});
 
-			button.addEventListener('touchend', function(event) {
+			subMenuReturn[i].addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
 			});
-		});
+		};
 
 		// Prevent :focus-within on menu-item links when using touch devices
-		parentMenuLink.forEach( function( button ) {
+		for (var i = 0; i < parentMenuLink.length; i++) {
 
-			button.addEventListener('touchstart', function(event) {
+			parentMenuLink[i].addEventListener('touchstart', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
@@ -192,7 +192,7 @@
 				// Go to link without openning submenu
 				window.location = this.getAttribute('href');
 			});
-		});
+		};
 	}
 
 	// Run our sub-menu function as soon as the document is `ready`

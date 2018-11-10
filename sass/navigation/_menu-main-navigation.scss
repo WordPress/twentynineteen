@@ -43,6 +43,7 @@
 
 			&.menu-item-has-children {
 
+				display: inline-block;
 				position: inherit;
 
 				@include media(tablet) {
@@ -109,14 +110,13 @@
 		padding-left: 0;
 
 		display: none;
-		float: left;
 		position: absolute;
 		opacity: 0;
 		left: -999px;
 		z-index: 99999;
 
 		@include media(tablet) {
-			width: 100%;
+			width: auto;
 			min-width: -moz-max-content;
 			min-width: -webkit-max-content;
 			min-width: max-content;
@@ -127,7 +127,6 @@
 			display: block;
 			float: none;
 			position: relative;
-			word-break: break-word;
 
 			&.menu-item-has-children {
 
@@ -168,6 +167,7 @@
 				display: block;
 				line-height: $font__line-height-heading;
 				padding: calc( .5 * #{$size__spacing-unit} ) calc( 24px + #{$size__spacing-unit} ) calc( .5 * #{$size__spacing-unit} ) $size__spacing-unit;
+				white-space: nowrap;
 
 				&:hover,
 				&:focus {
@@ -206,7 +206,7 @@
 		left: 0;
 		margin-top: 0;
 		opacity: 1;
-		width: 100%;
+		width: auto;
 		min-width: 100%;
 
 
@@ -246,11 +246,17 @@
 			margin-top: inherit;
 			position: relative;
 			width: 100%;
-			max-width: -moz-max-content;
-			max-width: -webkit-max-content;
-			max-width: max-content;
 			left: 0;
 			opacity: 1;
+
+			/* Non-mobile position */
+			@include media(tablet) {
+				float: none;
+				width: auto;
+				max-width: -moz-max-content;
+				max-width: -webkit-max-content;
+				max-width: max-content;
+			}
 		}
 
 		/* Nested sub-menu padding: 10 levels deep */
@@ -296,13 +302,14 @@
 		left: 0;
 		margin-top: 0;
 		opacity: 1;
-		width: 100%;
+		width: auto;
 		min-width: 100%;
 
 
 		/* Non-mobile position */
 		@include media(tablet) {
 			display: block;
+			float: none;
 			margin-top: 0;
 			opacity: 1;
 			position: absolute;
@@ -326,7 +333,7 @@
 			@include media(tablet) {
 				right: 0;
 				left: auto;
-				display: block;
+				display: table;
 				width: max-content;
 			}
 		}
@@ -345,6 +352,8 @@
 
 			/* Non-mobile position */
 			@include media(tablet) {
+				float: none;
+				width: auto;
 				max-width: -moz-max-content;
 				max-width: -webkit-max-content;
 				max-width: max-content;
