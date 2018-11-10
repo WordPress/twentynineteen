@@ -3,10 +3,11 @@ html {
 }
 
 ::-moz-selection {
-	background: $color__background_selection;
+	background-color: $color__background_selection;
 }
+
 ::selection {
-	background: $color__background_selection;
+	background-color: $color__background_selection;
 }
 
 *,
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-	background: $color__background-body;
+	background-color: $color__background-body;
 }
 
 a {

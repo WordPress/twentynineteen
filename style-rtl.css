@@ -723,11 +723,11 @@ html {
 }
 
 ::-moz-selection {
-  background: #bfdcea;
+  background-color: #bfdcea;
 }
 
 ::selection {
-  background: #bfdcea;
+  background-color: #bfdcea;
 }
 
 *,
@@ -737,7 +737,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background-color: #fff;
 }
 
 a {
@@ -3766,14 +3766,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-file .wp-block-file__button:hover {
+  background: #111;
   cursor: pointer;
 }
 
-.entry .entry-content .wp-block-file .wp-block-file__button:focus, .entry .entry-content .wp-block-file .wp-block-file__button:hover {
-  background: #111;
-}
-
 .entry .entry-content .wp-block-file .wp-block-file__button:focus {
+  background: #111;
   outline: thin dotted;
   outline-offset: -4px;
 }
