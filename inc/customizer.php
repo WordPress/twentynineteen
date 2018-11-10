@@ -130,7 +130,7 @@ function twentynineteen_customize_partial_blogdescription() {
  * Bind JS handlers to instantly live-preview changes.
  */
 function twentynineteen_customize_preview_js() {
-	wp_enqueue_script( 'twentynineteen-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'twentynineteen-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '20181108', true );
 }
 add_action( 'customize_preview_init', 'twentynineteen_customize_preview_js' );
 
