@@ -3037,11 +3037,11 @@ body.page .main-navigation {
 
 .widget_archive ul,
 .widget_categories ul,
-.widget_nav_menu ul,
 .widget_meta ul,
+.widget_nav_menu ul,
 .widget_pages ul,
-.widget_recent_entries ul,
 .widget_recent_comments ul,
+.widget_recent_entries ul,
 .widget_rss ul {
   padding: 0;
   list-style: none;
@@ -3050,11 +3050,11 @@ body.page .main-navigation {
 
 .widget_archive ul li,
 .widget_categories ul li,
-.widget_nav_menu ul li,
 .widget_meta ul li,
+.widget_nav_menu ul li,
 .widget_pages ul li,
-.widget_recent_entries ul li,
 .widget_recent_comments ul li,
+.widget_recent_entries ul li,
 .widget_rss ul li {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -3067,11 +3067,11 @@ body.page .main-navigation {
 
 .widget_archive ul ul li > a:before,
 .widget_categories ul ul li > a:before,
-.widget_nav_menu ul ul li > a:before,
 .widget_meta ul ul li > a:before,
+.widget_nav_menu ul ul li > a:before,
 .widget_pages ul ul li > a:before,
-.widget_recent_entries ul ul li > a:before,
 .widget_recent_comments ul ul li > a:before,
+.widget_recent_entries ul ul li > a:before,
 .widget_rss ul ul li > a:before {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
@@ -3079,99 +3079,99 @@ body.page .main-navigation {
 
 .widget_archive ul ul > li > a:before,
 .widget_categories ul ul > li > a:before,
-.widget_nav_menu ul ul > li > a:before,
 .widget_meta ul ul > li > a:before,
+.widget_nav_menu ul ul > li > a:before,
 .widget_pages ul ul > li > a:before,
-.widget_recent_entries ul ul > li > a:before,
 .widget_recent_comments ul ul > li > a:before,
+.widget_recent_entries ul ul > li > a:before,
 .widget_rss ul ul > li > a:before {
   content: "\2013\00a0";
 }
 
 .widget_archive ul ul ul li > a:before,
 .widget_categories ul ul ul li > a:before,
-.widget_nav_menu ul ul ul li > a:before,
 .widget_meta ul ul ul li > a:before,
+.widget_nav_menu ul ul ul li > a:before,
 .widget_pages ul ul ul li > a:before,
-.widget_recent_entries ul ul ul li > a:before,
 .widget_recent_comments ul ul ul li > a:before,
+.widget_recent_entries ul ul ul li > a:before,
 .widget_rss ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .widget_archive ul ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_categories ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_meta ul ul ul ul ul ul ul ul ul ul li > a:before,
+.widget_nav_menu ul ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_pages ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_recent_comments ul ul ul ul ul ul ul ul ul ul li > a:before,
+.widget_recent_entries ul ul ul ul ul ul ul ul ul ul li > a:before,
 .widget_rss ul ul ul ul ul ul ul ul ul ul li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
