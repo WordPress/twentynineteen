@@ -166,7 +166,7 @@
 	position: relative;
 
 	@include media(tablet) {
-
+		margin-left: calc(3.25 * #{$size__spacing-unit});
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
 		&.depth-1,
@@ -186,11 +186,6 @@
 
 	.comment-author {
 
-		@include media(tablet) {
-			display: inline-block;
-			vertical-align: baseline;
-		}
-
 		.avatar {
 			float: left;
 			margin-right: $size__spacing-unit;
@@ -208,11 +203,6 @@
 		.fn {
 			position: relative;
 			display: block;
-
-			@include media(tablet) {
-				display: inline-block;
-				vertical-align: baseline;
-			}
 
 			a {
 				color: inherit;
@@ -248,14 +238,6 @@
 	}
 
 	.comment-metadata {
-
-		@include media(tablet) {
-			display: inline;
-			margin-left: $size__spacing-unit;
-			position: relative;
-			vertical-align: baseline;
-			line-height: 2.25;
-		}
 
 		> a,
 		.comment-edit-link {

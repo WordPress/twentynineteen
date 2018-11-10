@@ -2603,6 +2603,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .comment {
+    margin-left: calc(3.25 * 1rem);
     padding-left: calc(.5 * (1rem + calc(100vw / 12 )));
   }
   .comment.depth-1,
@@ -2617,13 +2618,6 @@ body.page .main-navigation {
 
 .comment .comment-meta {
   position: relative;
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-author {
-    display: inline-block;
-    vertical-align: baseline;
-  }
 }
 
 .comment .comment-author .avatar {
@@ -2645,13 +2639,6 @@ body.page .main-navigation {
 .comment .comment-author .fn {
   position: relative;
   display: block;
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-author .fn {
-    display: inline-block;
-    vertical-align: baseline;
-  }
 }
 
 .comment .comment-author .fn a {
@@ -2685,16 +2672,6 @@ body.page .main-navigation {
   display: block;
   fill: white;
   transform: scale(0.875);
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-metadata {
-    display: inline;
-    margin-left: 1rem;
-    position: relative;
-    vertical-align: baseline;
-    line-height: 2.25;
-  }
 }
 
 .comment .comment-metadata > a,
