@@ -7,6 +7,7 @@ Twenty Nineteen Editor Styles
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
 /* 
  * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
  * This results in a jumping cursor when typing in both the Classic and block 
@@ -528,12 +529,15 @@ ul.wp-block-archives li,
   font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
+  padding-bottom: 0.75rem;
 }
 
-ul.wp-block-archives li:not(.menu-item-has-children),
-.wp-block-categories li:not(.menu-item-has-children),
-.wp-block-latest-posts li:not(.menu-item-has-children) {
-  padding-bottom: 0.75rem;
+ul.wp-block-archives li.menu-item-has-children, ul.wp-block-archives li:last-child,
+.wp-block-categories li.menu-item-has-children,
+.wp-block-categories li:last-child,
+.wp-block-latest-posts li.menu-item-has-children,
+.wp-block-latest-posts li:last-child {
+  padding-bottom: 0;
 }
 
 ul.wp-block-archives li a,
@@ -546,6 +550,57 @@ ul.wp-block-archives li ul,
 .wp-block-categories li ul,
 .wp-block-latest-posts li ul {
   padding-left: 1rem;
+}
+
+.wp-block-categories ul {
+  padding-top: 0.75rem;
+}
+
+.wp-block-categories ul ul li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.wp-block-categories ul ul > li > a:before {
+  content: "\2013\00a0";
+}
+
+.wp-block-categories ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories li ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: -0.75rem;
 }
 
 /** === Latest Posts grid view === */

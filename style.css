@@ -58,6 +58,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
 /* Normalize */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -3045,7 +3046,6 @@ body.page .main-navigation {
 .widget_rss ul {
   padding: 0;
   list-style: none;
-  /* Nested sub-menu padding: 10 levels deep */
 }
 
 .widget_archive ul li,
@@ -3455,12 +3455,15 @@ body.page .main-navigation {
   font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
+  padding-bottom: 0.75rem;
 }
 
-.entry .entry-content .wp-block-archives li:not(.menu-item-has-children),
-.entry .entry-content .wp-block-categories li:not(.menu-item-has-children),
-.entry .entry-content .wp-block-latest-posts li:not(.menu-item-has-children) {
-  padding-bottom: 0.75rem;
+.entry .entry-content .wp-block-archives li.menu-item-has-children, .entry .entry-content .wp-block-archives li:last-child,
+.entry .entry-content .wp-block-categories li.menu-item-has-children,
+.entry .entry-content .wp-block-categories li:last-child,
+.entry .entry-content .wp-block-latest-posts li.menu-item-has-children,
+.entry .entry-content .wp-block-latest-posts li:last-child {
+  padding-bottom: 0;
 }
 
 .entry .entry-content .wp-block-archives li a,
@@ -3469,10 +3472,54 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
-.entry .entry-content .wp-block-archives li ul,
-.entry .entry-content .wp-block-categories li ul,
-.entry .entry-content .wp-block-latest-posts li ul {
-  padding-left: 1rem;
+.entry .entry-content .wp-block-categories ul {
+  padding-top: 0.75rem;
+}
+
+.entry .entry-content .wp-block-categories li ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.entry .entry-content .wp-block-categories ul li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.entry .entry-content .wp-block-categories ul > li > a:before {
+  content: "\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .entry .entry-content .wp-block-latest-posts.is-grid li {

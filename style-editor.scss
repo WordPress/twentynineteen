@@ -548,9 +548,11 @@ ul.wp-block-archives,
 		font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 		font-weight: bold;
 		line-height: $font__line-height-heading;
+		padding-bottom: ( .75 * $size__spacing-unit );
 
-		&:not(.menu-item-has-children) {
-			padding-bottom: ( .75 * $size__spacing-unit );
+		&.menu-item-has-children,
+		&:last-child {
+			padding-bottom: 0;
 		}
 
 		a {
@@ -561,6 +563,21 @@ ul.wp-block-archives,
 			padding-left: $size__spacing-unit;
 		}
 	}
+}
+
+.wp-block-categories {
+
+	ul {
+		padding-top: ( .75 * $size__spacing-unit );
+		@include nestedSubMenuPadding();
+	}
+	
+	li ul {
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: ( -.75 * $size__spacing-unit );
+	}
+
 }
 
 /** === Latest Posts grid view === */

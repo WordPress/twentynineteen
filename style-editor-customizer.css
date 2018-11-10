@@ -9,6 +9,7 @@ NOTE: This file is automatically populated with additional styles if the user se
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
 /** === Non-Latin font fallbacks === */
 /* Arabic */
 html[lang="ar"] .wp-block *,
