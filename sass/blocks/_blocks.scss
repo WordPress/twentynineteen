@@ -2,8 +2,8 @@
 
 .entry .entry-content > *,
 .entry .entry-summary > * {
-	margin: 32px $size__spacing-unit;
-	max-width: calc(100% - (2 * #{ $size__spacing-unit }));
+	margin: 32px 0;
+	max-width: 100%;
 
 	@include postContentMaxWidth();
 
@@ -44,8 +44,8 @@
 	&.alignfull {
 		position: relative;
 		left: -#{$size__spacing-unit };
-		width: 100%;
-		max-width: calc( 100vw + (2 * #{$size__spacing-unit}));
+		width: calc( 100% + (2 * #{$size__spacing-unit}));
+		max-width: calc( 100% + (2 * #{$size__spacing-unit}));
 
 		@include media(tablet) {
 			margin-top: calc(2 * #{$size__spacing-unit});
@@ -61,6 +61,9 @@
 		float: left;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
+		margin-left: 0;
+		/*rtl:ignore*/
+		margin-right: $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
@@ -80,7 +83,7 @@
 		margin-top: 0;
 		/*rtl:ignore*/
 		margin-left: $size__spacing-unit;
-		margin-right: $size__spacing-unit;
+		margin-right: 0;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
@@ -397,7 +400,7 @@
 
 		&.is-large,
 		&.is-style-large {
-			margin: $size__spacing-unit;
+			margin: $size__spacing-unit 0;
 			padding: 0;
 			border-left: none;
 

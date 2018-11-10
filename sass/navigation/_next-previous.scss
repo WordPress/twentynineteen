@@ -155,12 +155,6 @@
 	.nav-links {
 		display: flex;
 		flex-direction: row;
-		margin: 0 $size__spacing-unit;
-
-		@include media(desktop) {
-			margin: 0 $size__site-margins;
-			max-width: $size__site-tablet-content;
-		}
 	}
 
 	.nav-previous,
@@ -183,13 +177,6 @@
 			position: relative;
 			margin: 0 -0.35em;
 			top: -1px;
-		}
-
-		a {
-
-			&:hover {
-				color: $color__link;
-			}
 		}
 	}
 

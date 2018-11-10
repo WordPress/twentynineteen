@@ -1515,14 +1515,6 @@ body.page .main-navigation {
 .comment-navigation .nav-links {
   display: flex;
   flex-direction: row;
-  margin: 0 1rem;
-}
-
-@media only screen and (min-width: 1168px) {
-  .comment-navigation .nav-links {
-    margin: 0 calc(10% + 60px);
-    max-width: calc(8 * (100vw / 12) - 28px);
-  }
 }
 
 .comment-navigation .nav-previous,
@@ -1551,11 +1543,6 @@ body.page .main-navigation {
   position: relative;
   margin: 0 -0.35em;
   top: -1px;
-}
-
-.comment-navigation .nav-previous a:hover,
-.comment-navigation .nav-next a:hover {
-  color: #0073aa;
 }
 
 .comment-navigation .nav-next {
@@ -2309,6 +2296,12 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content,
+.entry .entry-summary {
+  max-width: calc(100% - (2 * 1rem));
+  margin: 0 1rem;
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content,
   .entry .entry-summary {
@@ -2347,13 +2340,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content > iframe[style] {
-  margin: 32px 1rem !important;
-  max-width: calc(100vw - (2 * 1rem)) !important;
+  margin: 32px 0 !important;
+  max-width: 100% !important;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content > iframe[style] {
-    margin: 32px 0 !important;
     max-width: calc(8 * (100vw / 12) - 28px) !important;
   }
 }
@@ -2455,35 +2447,44 @@ body.page .main-navigation {
 }
 
 .comments-area {
+  margin: calc(2 * 1rem) 1rem;
   /* Add extra margin when the comments section is located immediately after the
 	 * post itself (this happens on pages).
 	 */
 }
 
-.entry + .comments-area {
-  margin-top: calc(3 * 1rem);
-}
-
-.comments-area > * {
-  margin: calc(2 * 1rem) 1rem;
-}
-
 @media only screen and (min-width: 768px) {
-  .comments-area > * {
+  .comments-area {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .comments-area > * {
+  .comments-area {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comments-area > * {
+  .comments-area {
     margin: calc(3 * 1rem) calc(10% + 60px);
   }
+}
+
+.comments-area > * {
+  margin-top: calc(2 * 1rem);
+  margin-bottom: calc(2 * 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .comments-area > * {
+    margin-top: calc(3 * 1rem);
+    margin-bottom: calc(3 * 1rem);
+  }
+}
+
+.entry + .comments-area {
+  margin-top: calc(3 * 1rem);
 }
 
 @media only screen and (min-width: 768px) {
@@ -2583,15 +2584,18 @@ body.page .main-navigation {
   margin-top: 0;
 }
 
-.comment-list .pingback .comment-body {
+.comment-list .pingback .comment-body,
+.comment-list .trackback .comment-body {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.71111em;
   font-weight: 500;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.comment-list .pingback .comment-body a:not(.comment-edit-link) {
+.comment-list .pingback .comment-body a:not(.comment-edit-link),
+.comment-list .trackback .comment-body a:not(.comment-edit-link) {
   font-weight: bold;
   font-size: 19.55556px;
   line-height: 1.5;
@@ -2599,18 +2603,11 @@ body.page .main-navigation {
   display: block;
 }
 
-.comment-list .pingback .comment-body .comment-edit-link {
+.comment-list .pingback .comment-body .comment-edit-link,
+.comment-list .trackback .comment-body .comment-edit-link {
   color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 500;
-}
-
-@media only screen and (min-width: 1168px) {
-  .comment-reply {
-    left: 100%;
-    bottom: 0;
-    position: absolute;
-  }
 }
 
 #respond + .comment-reply {
@@ -2630,8 +2627,12 @@ body.page .main-navigation {
   .comment {
     padding-left: calc(.5 * (1rem + calc(100vw / 12 )));
   }
+  .comment.depth-1,
   .comment .children {
     padding-left: 0;
+  }
+  .comment.depth-1 {
+    margin-left: calc(3.25 * 1rem);
   }
 }
 
@@ -2639,27 +2640,8 @@ body.page .main-navigation {
   margin: calc(2 * 1rem) 0 0;
 }
 
-@media only screen and (min-width: 1168px) {
-  .comment .comment-body {
-    margin: calc(2 * 1rem) 0;
-  }
-}
-
 .comment .comment-meta {
   position: relative;
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-meta {
-    display: flex;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-author {
-    flex: 0 0 auto;
-    vertical-align: baseline;
-  }
 }
 
 .comment .comment-author .avatar {
@@ -2681,13 +2663,6 @@ body.page .main-navigation {
 .comment .comment-author .fn {
   position: relative;
   display: block;
-}
-
-@media only screen and (min-width: 768px) {
-  .comment .comment-author .fn {
-    display: inline-block;
-    vertical-align: baseline;
-  }
 }
 
 .comment .comment-author .fn a {
@@ -2723,19 +2698,9 @@ body.page .main-navigation {
   transform: scale(0.875);
 }
 
-@media only screen and (min-width: 768px) {
-  .comment .comment-metadata {
-    flex: 1 0 auto;
-    margin-left: 1rem;
-    position: relative;
-    vertical-align: baseline;
-    line-height: 2.25;
-  }
-}
-
 .comment .comment-metadata > a,
 .comment .comment-metadata .comment-edit-link {
-  display: inline-block;
+  display: inline;
   font-weight: 500;
   color: #767676;
   vertical-align: baseline;
@@ -2748,7 +2713,7 @@ body.page .main-navigation {
 
 .comment .comment-metadata > a:hover,
 .comment .comment-metadata .comment-edit-link:hover {
-  color: #4a4a4a;
+  color: #005177;
   text-decoration: none;
 }
 
@@ -2799,6 +2764,10 @@ body.page .main-navigation {
 
 .comment .comment-content > *:last-child {
   margin-bottom: 0;
+}
+
+.comment .comment-content blockquote {
+  margin-left: 0;
 }
 
 .comment .comment-content a {
@@ -3103,8 +3072,8 @@ body.page .main-navigation {
 /* !Block styles */
 .entry .entry-content > *,
 .entry .entry-summary > * {
-  margin: 32px 1rem;
-  max-width: calc(100% - (2 * 1rem));
+  margin: 32px 0;
+  max-width: 100%;
   /*
 	// Set top margins for headings
 	& + h1:before,
@@ -3167,8 +3136,8 @@ body.page .main-navigation {
 .entry .entry-summary > *.alignfull {
   position: relative;
   left: -1rem;
-  width: 100%;
-  max-width: calc( 100vw + (2 * 1rem));
+  width: calc( 100% + (2 * 1rem));
+  max-width: calc( 100% + (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
@@ -3188,6 +3157,9 @@ body.page .main-navigation {
   float: left;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
+  margin-left: 0;
+  /*rtl:ignore*/
+  margin-right: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -3214,7 +3186,7 @@ body.page .main-navigation {
   margin-top: 0;
   /*rtl:ignore*/
   margin-left: 1rem;
-  margin-right: 1rem;
+  margin-right: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -3537,7 +3509,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote.is-large, .entry .entry-content .wp-block-quote.is-style-large {
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 0;
   border-left: none;
 }

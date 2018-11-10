@@ -87,8 +87,7 @@ function twentynineteen_custom_colors_css() {
 		.entry .entry-footer a:hover,
 		.entry .entry-content .more-link:hover,
 		.main-navigation .main-menu > li > a + svg,
-		.comment-navigation .nav-previous a:hover,
-		.comment-navigation .nav-next a:hover,
+		.comment .comment-metadata > a:hover,
 		.comment .comment-metadata .comment-edit-link:hover,
 		#colophon .site-info a:hover,
 		.widget a,
@@ -104,6 +103,7 @@ function twentynineteen_custom_colors_css() {
 		 * Set left border color for:
 		 * wp block quote
 		 */
+		blockquote,
 		.entry .entry-content blockquote,
 		.entry .entry-content .wp-block-quote:not(.is-large),
 		.entry .entry-content .wp-block-quote:not(.is-style-large) {
@@ -145,6 +145,8 @@ function twentynineteen_custom_colors_css() {
 		.author-bio .author-description .author-link:hover,
 		.comment .comment-author .fn a:hover,
 		.comment-reply-link:hover,
+		.comment-navigation .nav-previous a:hover,
+		.comment-navigation .nav-next a:hover,
 		#cancel-comment-reply-link:hover,
 		.widget a:hover {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */

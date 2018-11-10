@@ -177,6 +177,8 @@
 
 	.entry-content,
 	.entry-summary {
+		max-width: calc(100% - (2 * #{ $size__spacing-unit }));
+		margin: 0 $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: 80%;
@@ -218,11 +220,10 @@
 		// Overwrite iframe embeds that have inline styles.
 		> iframe[style] {
 
-			margin: 32px $size__spacing-unit !important;
-			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
+			margin: 32px 0 !important;
+			max-width: 100% !important;
 
 			@include media(tablet) {
-				margin: 32px 0 !important;
 				max-width: $size__site-tablet-content !important;
 			}
 
