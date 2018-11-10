@@ -2600,12 +2600,14 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .comment {
-    margin-right: calc(3.25 * 1rem);
     padding-right: calc(.5 * (1rem + calc(100vw / 12 )));
   }
   .comment.depth-1,
   .comment .children {
     padding-right: 0;
+  }
+  .comment.depth-1 {
+    margin-right: calc(3.25 * 1rem);
   }
 }
 

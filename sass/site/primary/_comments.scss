@@ -166,12 +166,15 @@
 	position: relative;
 
 	@include media(tablet) {
-		margin-left: calc(3.25 * #{$size__spacing-unit});
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
 		&.depth-1,
 		.children {
 			padding-left: 0;
+		}
+
+		&.depth-1 {
+			margin-left: calc(3.25 * #{$size__spacing-unit});
 		}
 	}
 
