@@ -138,7 +138,7 @@ add_action( 'customize_preview_init', 'twentynineteen_customize_preview_js' );
  * Load dynamic logic for the customizer controls area.
  */
 function twentynineteen_panels_js() {
-	wp_enqueue_script( 'twentynineteen-customize-controls', get_theme_file_uri( '/js/customize-controls.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'twentynineteen-customize-controls', get_theme_file_uri( '/js/customize-controls.js' ), array(), '20181031', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'twentynineteen_panels_js' );
 
