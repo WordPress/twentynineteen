@@ -133,79 +133,62 @@
 
 	// Toggle `focus` class to allow sub-menu access on touch screens.
 	function toggleSubmenuTouchScreen() {
-		'use strict';
 
-		var siteNavigation = document.querySelector('.main-navigation > div > ul');
-		var subMenuExpand  = document.querySelectorAll('.submenu-expand');
-		var subMenuReturn  = document.querySelectorAll('.menu-item-link-return');
-		var parentMenuLink = siteNavigation.querySelectorAll('.menu-item-has-children > a[aria-expanded]');
+		document.addEventListener('touchstart', function (event) {
 
-		// Check for submenus and bail if none exist
-		if ( ! siteNavigation || ! siteNavigation.children ) {
-			return;
-		}
+			// Check if .submenu-expand is touched
+			if ( event.target.matches('.submenu-expand') ) {
+				openSubMenu(event.target);
 
-		// Open sub-menus on touch
-		for (var i = 0; i < subMenuExpand.length; i++) {
+			// Check if child of .submenu-expand is touched
+			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) && getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
+				openSubMenu(getCurrentParent( event.target, '.submenu-expand' ));
 
-			var button = subMenuExpand[i];
+			// Check if .menu-item-link-return is touched
+			} else if ( event.target.matches('.menu-item-link-return') ) {
+				closeSubMenu(event.target);
 
-			button.addEventListener('touchstart', function(event) {
-				openSubMenu(event.currentTarget);
+			// Check if child of .menu-item-link-return is touched
+			} else if ( null != getCurrentParent( event.target, '.menu-item-link-return' ) && getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
+				closeSubMenu(getCurrentParent( event.target, '.submenu-expand' ));
 
+			}
+
+			// Prevent default mouse/focus events
+			removeAllFocusStates();
+
+		}, false);
+
+		document.addEventListener('touchend', function (event) {
+
+			if ( event.target.matches('a') ) {
+
+				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
+
+				// If there’s a link, go to it on touchend
+				if ( '#' != url && '' != url ) {
+					// Go to link
+					window.location = url;
+				}
+
+				// Prevent default touch events
+				event.preventDefault();
+
+			} else if ( null != getCurrentParent( event.target, '.main-navigation' ) && getCurrentParent( event.target, '.main-navigation' ).matches( '.main-navigation' ) ) {
 				// Prevent default mouse events
 				event.preventDefault();
-				removeAllFocusStates();
-			});
+			}
 
-			button.addEventListener('touchend', function(event) {
-				// Prevent default mouse events
-				event.preventDefault();
-				removeAllFocusStates();
-			});
-		}
+			// Prevent default mouse/focus events
+			removeAllFocusStates();
 
-		// Close sub-menus or sub-sub-menus on touch
-		for (var o = 0; o < subMenuReturn.length; o++) {
-
-			var button = subMenuReturn[o];
-
-			button.addEventListener('touchstart', function(event) {
-				closeSubMenu(event.currentTarget);
-
-				// Prevent default mouse events
-				event.preventDefault();
-				removeAllFocusStates();
-			});
-
-			button.addEventListener('touchend', function(event) {
-				// Prevent default mouse events
-				event.preventDefault();
-				removeAllFocusStates();
-			});
-		}
-
-		// Prevent :focus-within on menu-item links when using touch devices
-		for (var u = 0; u < parentMenuLink.length; u++) {
-
-			var button = parentMenuLink[u];
-
-			button.addEventListener('touchstart', function(event) {
-				// Prevent default mouse events
-				event.preventDefault();
-				removeAllFocusStates();
-
-				// Go to link without openning submenu
-				window.location = this.getAttribute('href');
-			});
-		}
+		}, false);
 	}
 
 	// Run our sub-menu function as soon as the document is `ready`
 	document.addEventListener( 'DOMContentLoaded', function() {
 		toggleSubmenuTouchScreen();
 	});
-
 	// Annnnnd also every time the window resizes
 	var isResizing = false;
 	window.addEventListener( 'resize',
