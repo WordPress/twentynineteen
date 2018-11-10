@@ -1279,6 +1279,14 @@ body.page .main-navigation {
   }
 }
 
+.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .submenu-expand {
+  display: none;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .submenu-expand {
+  display: none;
+}
+
 .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
