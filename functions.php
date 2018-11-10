@@ -216,11 +216,11 @@ function twentynineteen_colors_css_wrap() {
 	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
 		$primary_color = 199;
 	} else {
-		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
+		$primary_color = get_theme_mod( 'colorscheme_primary_hue', 199 );
 	}
 	?>
 
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $primary_color . '"' : ''; ?>>
+	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
 	<?php
