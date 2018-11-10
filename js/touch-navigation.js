@@ -148,7 +148,9 @@
 		// Open sub-menus on touch
 		for (var i = 0; i < subMenuExpand.length; i++) {
 
-			subMenuExpand[i].addEventListener('touchstart', function(event) {
+			var button = subMenuExpand[i];
+
+			button.addEventListener('touchstart', function(event) {
 				openSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -156,7 +158,7 @@
 				removeAllFocusStates();
 			});
 
-			subMenuExpand[i].addEventListener('touchend', function(event) {
+			button.addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
@@ -166,7 +168,9 @@
 		// Close sub-menus or sub-sub-menus on touch
 		for (var o = 0; o < subMenuReturn.length; o++) {
 
-			subMenuReturn[o].addEventListener('touchstart', function(event) {
+			var button = subMenuReturn[o];
+
+			button.addEventListener('touchstart', function(event) {
 				closeSubMenu(event.currentTarget);
 
 				// Prevent default mouse events
@@ -174,7 +178,7 @@
 				removeAllFocusStates();
 			});
 
-			subMenuReturn[o].addEventListener('touchend', function(event) {
+			button.addEventListener('touchend', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
@@ -184,7 +188,9 @@
 		// Prevent :focus-within on menu-item links when using touch devices
 		for (var u = 0; u < parentMenuLink.length; u++) {
 
-			parentMenuLink[u].addEventListener('touchstart', function(event) {
+			var button = parentMenuLink[u];
+
+			button.addEventListener('touchstart', function(event) {
 				// Prevent default mouse events
 				event.preventDefault();
 				removeAllFocusStates();
