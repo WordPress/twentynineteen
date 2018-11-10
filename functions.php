@@ -213,9 +213,8 @@ function twentynineteen_colors_css_wrap() {
 
 	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 
-	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
-		$primary_color = 199;
-	} else {
+	$primary_color = 199;
+	if ( 'default' !== get_theme_mod( 'colorscheme', 'default' ) ) {
 		$primary_color = get_theme_mod( 'colorscheme_primary_hue', 199 );
 	}
 	?>
