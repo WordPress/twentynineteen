@@ -1018,6 +1018,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li.menu-item-has-children {
+  display: inline-block;
   position: inherit;
 }
 
@@ -1078,7 +1079,6 @@ body.page .main-navigation {
   list-style: none;
   padding-right: 0;
   display: none;
-  float: right;
   position: absolute;
   opacity: 0;
   right: -999px;
@@ -1087,7 +1087,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
-    width: 100%;
+    width: auto;
     min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
@@ -1098,7 +1098,6 @@ body.page .main-navigation {
   display: block;
   float: none;
   position: relative;
-  word-break: break-word;
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
@@ -1132,6 +1131,7 @@ body.page .main-navigation {
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
+  white-space: nowrap;
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
@@ -1158,50 +1158,20 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
-  display: block;
-  right: 0;
-  margin-top: 0;
-  opacity: 1;
-  width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
-  /* Non-mobile position */
-  /* Nested sub-menu padding: 10 levels deep */
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
-  width: 100%;
-  min-width: -moz-max-content;
-  min-width: -webkit-max-content;
-  min-width: max-content;
+  width: auto;
+  min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
-    display: table;
-    margin-top: 0;
-    opacity: 1;
-    position: absolute;
-    right: 0;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    height: auto;
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    width: max-content;
-    transform: none;
-  }
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
-    display: table;
+    display: block;
     margin-top: 0;
     opacity: 1;
     position: absolute;
@@ -1210,26 +1180,11 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    width: max-content;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
     transform: none;
   }
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .submenu-expand {
-  display: none;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .submenu-expand {
-  display: none;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
-  right: 0;
-  width: 100%;
-  display: table;
-  position: absolute;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
@@ -1240,12 +1195,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
-    left: 0;
-    right: auto;
-    display: block;
-    width: max-content;
-  }
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
     left: 0;
     right: auto;
@@ -1254,33 +1203,16 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
-  display: block;
-  margin-top: inherit;
-  position: relative;
-  width: 100%;
-  max-width: -moz-max-content;
-  max-width: -webkit-max-content;
-  max-width: max-content;
-  right: 0;
-  opacity: 1;
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: -moz-max-content;
   max-width: -webkit-max-content;
   max-width: max-content;
   right: 0;
   opacity: 1;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu li > a:before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-weight: normal;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu li > a:before {
@@ -1288,39 +1220,19 @@ body.page .main-navigation {
   font-weight: normal;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu > li > a:before {
-  content: "\2013\00a0";
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu > li > a:before {
   content: "\2013\00a0";
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
@@ -1328,32 +1240,16 @@ body.page .main-navigation {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
@@ -1368,7 +1264,7 @@ body.page .main-navigation {
   right: 0;
   margin-top: 0;
   opacity: 1;
-  width: 100%;
+  width: auto;
   min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
@@ -1380,6 +1276,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
     display: block;
+    float: none;
     margin-top: 0;
     opacity: 1;
     position: absolute;
@@ -1412,7 +1309,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
     left: 0;
     right: auto;
-    display: block;
+    display: table;
     width: max-content;
   }
 }
@@ -1442,6 +1339,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
+    float: none;
     max-width: -moz-max-content;
     max-width: -webkit-max-content;
     max-width: max-content;

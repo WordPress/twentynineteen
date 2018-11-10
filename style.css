@@ -1018,6 +1018,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu > li.menu-item-has-children {
+  display: inline-block;
   position: inherit;
 }
 
@@ -1078,7 +1079,6 @@ body.page .main-navigation {
   list-style: none;
   padding-left: 0;
   display: none;
-  float: left;
   position: absolute;
   opacity: 0;
   left: -999px;
@@ -1087,7 +1087,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
-    width: 100%;
+    width: auto;
     min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
@@ -1098,7 +1098,6 @@ body.page .main-navigation {
   display: block;
   float: none;
   position: relative;
-  word-break: break-word;
 }
 
 .main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
@@ -1132,6 +1131,7 @@ body.page .main-navigation {
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) calc( 24px + 1rem) calc( .5 * 1rem) 1rem;
+  white-space: nowrap;
 }
 
 .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
@@ -1163,7 +1163,7 @@ body.page .main-navigation {
   left: 0;
   margin-top: 0;
   opacity: 1;
-  width: 100%;
+  width: auto;
   min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
@@ -1174,7 +1174,7 @@ body.page .main-navigation {
   left: 0;
   margin-top: 0;
   opacity: 1;
-  width: 100%;
+  width: auto;
   min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
@@ -1246,7 +1246,7 @@ body.page .main-navigation {
   display: block;
   margin-top: inherit;
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: -moz-max-content;
   max-width: -webkit-max-content;
   max-width: max-content;
@@ -1258,7 +1258,7 @@ body.page .main-navigation {
   display: block;
   margin-top: inherit;
   position: relative;
-  width: 100%;
+  width: auto;
   max-width: -moz-max-content;
   max-width: -webkit-max-content;
   max-width: max-content;
@@ -1356,7 +1356,7 @@ body.page .main-navigation {
   left: 0;
   margin-top: 0;
   opacity: 1;
-  width: 100%;
+  width: auto;
   min-width: 100%;
   /* Non-mobile position */
   /* Nested sub-menu padding: 10 levels deep */
@@ -1368,6 +1368,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
     display: block;
+    float: none;
     margin-top: 0;
     opacity: 1;
     position: absolute;
@@ -1400,7 +1401,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
     right: 0;
     left: auto;
-    display: block;
+    display: table;
     width: max-content;
   }
 }
@@ -1430,6 +1431,7 @@ body.page .main-navigation {
   .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
   .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
+    float: none;
     max-width: -moz-max-content;
     max-width: -webkit-max-content;
     max-width: max-content;
