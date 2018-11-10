@@ -130,7 +130,6 @@
 				width: 100%;
 			}
 		}
-
 	}
 
 	.image-filters-enabled & {
@@ -141,9 +140,9 @@
 
 			.post-thumbnail-inner {
 				filter: grayscale(100%);
-				
+
 				&:after {
-					background: rgba(#000, 0.35);
+					background: rgba(0, 0, 0, 0.35);
 					content: "";
 					display: block;
 					height: 100%;
@@ -160,7 +159,8 @@
 				}
 			}
 
-			&:before, &:after {
+			&:before,
+			&:after, {
 				position: absolute;
 				display: block;
 				width: 100%;
@@ -171,12 +171,14 @@
 			}
 
 			@include filter-duotone;
-			
+
 		}
 	}
 
 	.entry-content,
 	.entry-summary {
+		max-width: calc(100% - (2 * #{ $size__spacing-unit }));
+		margin: 0 $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: 80%;
@@ -218,17 +220,22 @@
 		// Overwrite iframe embeds that have inline styles.
 		> iframe[style] {
 
-			margin: 32px $size__spacing-unit !important;
-			max-width: calc(100vw - (2 * #{ $size__spacing-unit })) !important;
+			margin: 32px 0 !important;
+			max-width: 100% !important;
 
 			@include media(tablet) {
-				margin: 32px 0 !important;
 				max-width: $size__site-tablet-content !important;
 			}
 
 			@include media(desktop) {
 				max-width: $size__site-desktop-content !important;
 			}
+		}
+
+		// Page links
+		.page-links a {
+			margin: calc(0.5 * #{$size__spacing-unit});
+			text-decoration: none;
 		}
 
 		// Classic editor audio embeds.

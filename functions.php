@@ -57,6 +57,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'footer' => __( 'Footer Menu', 'twentynineteen' ),
 				'social' => __( 'Social Links Menu', 'twentynineteen' ),
 			)
 		);
@@ -94,19 +95,19 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for Block Styles
+		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
-		// Add support for editor styles
+		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-		// Enqueue editor styles
+		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Editor color palette
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
@@ -118,7 +119,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			)
 		);
 
-		// Add support for responsive embedded content
+		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
 		// Add support for starter content
@@ -155,7 +156,7 @@ add_action( 'widgets_init', 'twentynineteen_widgets_init' );
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
- * @global int $content_width
+ * @global int $content_width Content width.
  */
 function twentynineteen_content_width() {
 	// This variable is intended to be overruled from themes.
@@ -188,7 +189,7 @@ function twentynineteen_scripts() {
 add_action( 'wp_enqueue_scripts', 'twentynineteen_scripts' );
 
 /**
- * Enqueue supplemental block editor styles
+ * Enqueue supplemental block editor styles.
  */
 function twentynineteen_editor_customizer_styles() {
 
@@ -196,7 +197,7 @@ function twentynineteen_editor_customizer_styles() {
 
 	if ( 'custom' === get_theme_mod( 'colorscheme' ) ) {
 		// Include color patterns
-		require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
 	}
 }
@@ -207,12 +208,12 @@ add_action( 'enqueue_block_editor_assets', 'twentynineteen_editor_customizer_sty
  */
 function twentynineteen_colors_css_wrap() {
 
-	// Only include custom colors in customizer or frontend
-	if ( ( ! is_customize_preview() && is_admin() ) || is_admin() ) {
+	// Only include custom colors in customizer or frontend.
+	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'colorscheme', 'default' ) ) || is_admin() ) {
 		return;
 	}
 
-	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 
 	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
 		$primary_color = 199;
@@ -224,7 +225,7 @@ function twentynineteen_colors_css_wrap() {
 	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $primary_color . '"' : ''; ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
-<?php
+	<?php
 }
 add_action( 'wp_head', 'twentynineteen_colors_css_wrap' );
 
