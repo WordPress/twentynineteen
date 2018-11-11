@@ -1079,7 +1079,7 @@ body.page .main-navigation {
   /* Priority+ Menu */
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more {
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle {
   position: relative;
   height: 24px;
   line-height: 1.2;
@@ -1088,7 +1088,7 @@ body.page .main-navigation {
   margin-right: 0.5rem;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more svg {
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle svg {
   height: 24px;
   width: 24px;
   top: -0.125rem;
@@ -1098,11 +1098,6 @@ body.page .main-navigation {
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
-}
-
-.main-navigation .main-menu > li:last-child > a,
-.main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
-  margin-left: 0;
 }
 
 .main-navigation .main-menu .is-hidden {
@@ -1195,7 +1190,7 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
@@ -1206,7 +1201,7 @@ body.page .main-navigation {
   /* Nested sub-menu padding: 10 levels deep */
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
@@ -1218,7 +1213,7 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
     display: block;
     margin-top: 0;
     opacity: 1;
@@ -1233,7 +1228,7 @@ body.page .main-navigation {
     min-width: max-content;
     transform: none;
   }
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
     display: block;
     margin-top: 0;
     opacity: 1;
@@ -1250,14 +1245,14 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
   right: 0;
   width: 100%;
   display: table;
   position: absolute;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
   right: 0;
   width: 100%;
   display: table;
@@ -1265,13 +1260,13 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu.hidden-links {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
     left: 0;
     right: auto;
     display: block;
     width: max-content;
   }
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu.hidden-links {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
     left: 0;
     right: auto;
     display: block;
@@ -1279,15 +1274,15 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .submenu-expand {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .submenu-expand {
   display: none;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .submenu-expand {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .submenu-expand {
   display: none;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
   position: relative;
@@ -1297,7 +1292,7 @@ body.page .main-navigation {
   /* Non-mobile position */
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
   position: relative;
@@ -1308,102 +1303,101 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
     float: none;
     max-width: 100%;
   }
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
     float: none;
     max-width: 100%;
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu li > a:before {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu li > a:before {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu > li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:before {
   content: "\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu > li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:before {
   content: "\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
@@ -1415,10 +1409,9 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu {
     display: block;
     float: none;
     margin-top: 0;
@@ -1436,10 +1429,9 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu.hidden-links,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu.hidden-links,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover.hidden-links,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu.hidden-links,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu.hidden-links,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu.hidden-links {
   right: 0;
   width: 100%;
   display: table;
@@ -1447,10 +1439,9 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu.hidden-links,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu.hidden-links,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover.hidden-links,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus.hidden-links {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu.hidden-links {
     left: 0;
     right: auto;
     display: table;
@@ -1458,17 +1449,15 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .submenu-expand,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .submenu-expand,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .submenu-expand,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .submenu-expand {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .submenu-expand,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .submenu-expand,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .submenu-expand {
   display: none;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu {
   display: block;
   margin-top: inherit;
   position: relative;
@@ -1479,109 +1468,98 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu {
     float: none;
     max-width: 100%;
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu li > a:before {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu > li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu > li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu > li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu > li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:before {
   content: "\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.focus):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:hover .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
-.main-navigation .main-menu .menu-item-has-children:not(.focus) .sub-menu:focus .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu {
   animation: fade_in 0.1s forwards;
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu .submenu-expand .svg-icon {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu .submenu-expand .svg-icon {
   transform: rotate(-270deg);
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu .sub-menu {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu .sub-menu {
   opacity: 0;
   position: absolute;
   z-index: 0;
   transform: translateX(100%);
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu li:hover,
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu li:focus,
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu li > a:hover,
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu li > a:focus {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li:hover,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li:focus,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li > a:hover,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li > a:focus {
   background-color: transparent;
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
   display: table;
   margin-top: 0;
   opacity: 1;
@@ -1602,26 +1580,26 @@ body.page .main-navigation {
   /* Prevent menu from being blocked by admin bar */
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
   display: block;
 }
 
-.admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
+.admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
   top: 46px;
   height: calc( 100vh - 46px);
   /* WP core breakpoint */
 }
 
-.admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true .sub-menu.expanded-true {
+.admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
   top: 0;
 }
 
 @media only screen and (min-width: 782px) {
-  .admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
+  .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
     top: 32px;
     height: calc( 100vh - 32px);
   }
-  .admin-bar .main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true .sub-menu.expanded-true {
+  .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
     top: 0;
   }
 }

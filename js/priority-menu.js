@@ -50,7 +50,7 @@
 
 	var navContainer = document.querySelector('.main-navigation ');
 	// Adds the necessary UI to operate the menu.
-	var toggleButton = document.querySelector('.main-navigation .main-menu-more');
+	var toggleButton = document.querySelector('.main-navigation .main-menu-more-toggle');
 	var visibleList = document.querySelector('.main-navigation .main-menu');
 	var hiddenList = document.querySelector('.main-navigation .hidden-links');
 	var breaks = [];

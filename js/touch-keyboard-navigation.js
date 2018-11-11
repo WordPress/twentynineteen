@@ -1,7 +1,7 @@
 /**
- * Touch navigation.
+ * Touch & Keyboard navigation.
  *
- * Contains handlers for navigation on Touch devices.
+ * Contains handlers for touch devices and keyboard navigation.
  */
 
 (function() {
@@ -36,6 +36,26 @@
 		};
 	}
 
+	// Add Class
+	function addClass(el, cls) {
+		if ( ! el.className.match( '(?:^|\\s)' + cls + '(?!\\S)') ) {
+			el.className += ' ' + cls;
+		}
+	}
+
+	// Delete Class
+	function deleteClass(el, cls) {
+		el.className = el.className.replace( new RegExp( '(?:^|\\s)' + cls + '(?!\\S)' ),'' );
+	}
+
+	// Has Class?
+	function hasClass(el, cls) {
+
+		if ( el.className.match( '(?:^|\\s)' + cls + '(?!\\S)' ) ) {
+			return true;
+		}
+	}
+
 	// Toggle Aria Expanded state for screenreaders
 	function toggleAriaExpandedState( ariaItem ) {
 		'use strict';
@@ -57,7 +77,7 @@
 
 		// Update classes
 		// classList.add is not supported in IE11
-		currentSubMenu.parentElement.className += ' focus';
+		currentSubMenu.parentElement.className += ' off-canvas';
 		currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
 
 		// Update aria-expanded state
@@ -77,7 +97,7 @@
 
 			// Update classes
 			// classList.remove is not supported in IE11
-			menuItem.className = menuItem.className.replace( 'focus', '' );
+			menuItem.className = menuItem.className.replace( 'off-canvas', '' );
 			subMenu.className  = subMenu.className.replace( 'expanded-true', '' );
 
 			// Update aria-expanded and :focus states
@@ -88,7 +108,7 @@
 
 			// Update classes
 			// classList.remove is not supported in IE11
-			menuItem.className = menuItem.className.replace( 'focus', '' );
+			menuItem.className = menuItem.className.replace( 'off-canvas', '' );
 			menuItem.lastElementChild.className = menuItem.lastElementChild.className.replace( 'expanded-true', '' );
 
 			// Update aria-expanded and :focus states
@@ -119,7 +139,7 @@
 		return currentParent;
 	}
 
-	// Remove all focus states
+	// Remove all off-canvas states
 	function removeAllFocusStates() {
 		'use strict';
 
@@ -131,10 +151,30 @@
 		}
 	}
 
-	// Toggle `focus` class to allow sub-menu access on touch screens.
-	function toggleSubmenuTouchScreen() {
+	// Matches polyfill for IE11
+	if (!Element.prototype.matches) {
+		Element.prototype.matches = Element.prototype.msMatchesSelector;
+	}
 
-		document.addEventListener('touchstart', function (event) {
+	// Toggle `focus` class to allow sub-menu access on touch screens.
+	function toggleSubmenuDisplay() {
+
+		document.addEventListener('touchstart', function(event) {
+
+			if ( event.target.matches('a') ) {
+
+				var url     = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '',
+					mainNav = getCurrentParent( event.target, '.main-navigation' );
+
+				// If there’s a link, go to it on touchend
+				if ( '#' !== url && '' !== url ) {
+					// Go to link
+					window.location = url;
+				} else {
+					// Prevent default touch events
+					event.preventDefault();
+				}
+			}
 
 			// Check if .submenu-expand is touched
 			if ( event.target.matches('.submenu-expand') ) {
@@ -142,16 +182,15 @@
 
 			// Check if child of .submenu-expand is touched
 			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) && getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
-				openSubMenu(getCurrentParent( event.target, '.submenu-expand' ));
+				openSubMenu( getCurrentParent( event.target, '.submenu-expand' ) );
 
 			// Check if .menu-item-link-return is touched
 			} else if ( event.target.matches('.menu-item-link-return') ) {
-				closeSubMenu(event.target);
+				closeSubMenu( event.target );
 
 			// Check if child of .menu-item-link-return is touched
 			} else if ( null != getCurrentParent( event.target, '.menu-item-link-return' ) && getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
-				closeSubMenu(getCurrentParent( event.target, '.submenu-expand' ));
-
+				closeSubMenu( event.target );
 			}
 
 			// Prevent default mouse/focus events
@@ -159,35 +198,62 @@
 
 		}, false);
 
-		document.addEventListener('touchend', function (event) {
+		document.addEventListener('touchend', function(event) {
 
-			if ( event.target.matches('a') ) {
+			var mainNav = getCurrentParent( event.target, '.main-navigation' );
 
-				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
-
-				// If there’s a link, go to it on touchend
-				if ( '#' !== url && '' !== url ) {
-					// Go to link
-					window.location = url;
-				}
-
-				// Prevent default touch events
-				event.preventDefault();
-
-			} else if ( null != getCurrentParent( event.target, '.main-navigation' ) && getCurrentParent( event.target, '.main-navigation' ).matches( '.main-navigation' ) ) {
+			if ( null != mainNav && hasClass( mainNav, '.main-navigation' ) ) {
 				// Prevent default mouse events
 				event.preventDefault();
 			}
 
+			// Prevent default mouse events
+			event.preventDefault();
+
 			// Prevent default mouse/focus events
 			removeAllFocusStates();
 
 		}, false);
+
+		document.addEventListener('focus', function(event) {
+
+			if ( event.target.matches('.main-navigation > div > ul > li > a') ) {
+
+				// Remove Focuse elements in sibling div
+				currentDiv        = getCurrentParent( event.target, 'div' );
+				currentDivSibling = currentDiv.previousElementSibling === null ? currentDiv.nextElementSibling : currentDiv.previousElementSibling;
+				focusedElement    = currentDivSibling.querySelector( '.is-focused' );
+				focusedClass      = 'is-focused';
+
+				if ( null !== focusedElement && null !== hasClass( focusedElement, '.is-focused' ) ) {
+					deleteClass( focusedElement, 'is-focused' );
+				}
+
+				// Add .is-focused class to top-level ul
+				if ( event.target.parentNode.querySelector( '.main-navigation ul ul') ) {
+					addClass( event.target.parentNode, 'is-focused' );
+				}
+
+				// Check for previous li
+				prevLi = event.target.parentNode.previousElementSibling;
+
+				if ( prevLi && hasClass( prevLi, 'is-focused' ) ) {
+					deleteClass( prevLi, 'is-focused' );
+				}
+
+				// Check for next li
+				nextLi = event.target.parentNode.nextElementSibling;
+
+				if ( nextLi && hasClass( nextLi, 'is-focused' ) ) {
+					deleteClass( nextLi, 'is-focused' );
+				}
+			}
+		}, true);
 	}
 
 	// Run our sub-menu function as soon as the document is `ready`
 	document.addEventListener( 'DOMContentLoaded', function() {
-		toggleSubmenuTouchScreen();
+		toggleSubmenuDisplay();
 	});
 	// Annnnnd also every time the window resizes
 	var isResizing = false;
@@ -199,7 +265,7 @@
 
 			isResizing = true;
 			setTimeout( function() {
-				toggleSubmenuTouchScreen();
+				toggleSubmenuDisplay();
 				isResizing = false;
 			}, 150 );
 		} )
