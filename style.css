@@ -736,11 +736,11 @@ html {
 }
 
 ::-moz-selection {
-  background: #bfdcea;
+  background-color: #bfdcea;
 }
 
 ::selection {
-  background: #bfdcea;
+  background-color: #bfdcea;
 }
 
 *,
@@ -750,7 +750,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background-color: #fff;
 }
 
 a {
