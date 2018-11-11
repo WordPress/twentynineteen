@@ -1100,6 +1100,11 @@ body.page .main-navigation {
   top: 0.2rem;
 }
 
+.main-navigation .main-menu > li:last-child > a,
+.main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
+  margin-left: 0;
+}
+
 .main-navigation .main-menu .is-hidden {
   display: none;
 }

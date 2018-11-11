@@ -48,7 +48,7 @@
 		}
 	}
 
-	var navContainer = document.querySelector('.main-navigation ');
+	var navContainer = document.querySelector('.main-navigation');
 	// Adds the necessary UI to operate the menu.
 	var toggleButton = document.querySelector('.main-navigation .main-menu-more-toggle');
 	var visibleList = document.querySelector('.main-navigation .main-menu');
@@ -61,7 +61,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace() {
-		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 60;
+		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 100;
 	}
 
 	/**
