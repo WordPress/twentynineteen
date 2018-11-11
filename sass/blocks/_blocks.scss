@@ -291,7 +291,8 @@
 		blockquote {
 			color: $color__text-main;
 			border: none;
-			padding-bottom: calc(2 * #{$size__spacing-unit});
+			margin-top: calc(3 * #{ $size__spacing-unit});
+			margin-bottom: calc(3.33 * #{ $size__spacing-unit});
 			margin-right: 0;
 		}
 
@@ -338,8 +339,9 @@
 		}
 
 		&.is-style-solid-color {
-
 			background-color: $color__link;
+			padding-left: 0;
+			padding-right: 0;
 
 			p {
 				font-size: $font__size-lg;
@@ -362,7 +364,10 @@
 
 			blockquote {
 				color: $color__background-body;
-				margin: 0 auto;
+				max-width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				padding-left: 0;
 			}
 
 			.has-primary-background-color {
@@ -371,17 +376,7 @@
 
 			&.alignleft,
 			&.alignright {
-				padding: $size__spacing-unit $size__spacing-unit 0;
-
-				blockquote {
-					padding: 0 0 calc( 1.5 * #{$size__spacing-unit} );
-					margin-left: 0;
-					margin-top: 0;
-				}
-
-				@include media(tablet) {
-					padding: calc( 2 * #{$size__spacing-unit} ) calc( 2 * #{$size__spacing-unit} ) $size__spacing-unit;
-				}
+				padding: 0 $size__spacing-unit;
 			}
 		}
 	}
