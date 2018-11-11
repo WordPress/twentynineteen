@@ -51,7 +51,7 @@
 	var navContainer = document.querySelector('.main-navigation');
 	// Adds the necessary UI to operate the menu.
 	var toggleButton = document.querySelector('.main-navigation .main-menu-more-toggle');
-	var visibleList = document.querySelector('.main-navigation .main-menu');
+	var visibleList = document.querySelector('.main-navigation .main-menu[id]');
 	var hiddenList = document.querySelector('.main-navigation .hidden-links');
 	var breaks = [];
 
@@ -61,7 +61,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace() {
-		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 100;
+		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 50;
 	}
 
 	/**
@@ -107,6 +107,11 @@
 	}
 
 	// Event listeners
+	// Run our sub-menu function as soon as the document is `ready`
+	document.addEventListener( 'DOMContentLoaded', function() {
+		updateNavigationMenu();
+	});
+
 	window.addEventListener('load', function() {
 		updateNavigationMenu();
 	});
