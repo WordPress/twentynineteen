@@ -26,14 +26,17 @@ function twentynineteen_custom_colors_css() {
 	 * @param int $saturation Color saturation level.
 	 */
 
-	$saturation      = absint( apply_filters( 'twentynineteen_custom_colors_saturation', 100 ) );
-	$saturation      = $saturation . '%';
+	$saturation          = absint( apply_filters( 'twentynineteen_custom_colors_saturation', 100 ) );
+	$saturation          = $saturation . '%';
 
-	$lightness       = absint( apply_filters( 'twentynineteen_custom_colors_lightness', 33 ) );
-	$lightness       = $lightness . '%';
+	$lightness           = absint( apply_filters( 'twentynineteen_custom_colors_lightness', 33 ) );
+	$lightness           = $lightness . '%';
 
-	$lightness_hover = absint( apply_filters( 'twentynineteen_custom_colors_lightness_hover', 23 ) );
-	$lightness_hover = $lightness_hover . '%';
+	$lightness_hover     = absint( apply_filters( 'twentynineteen_custom_colors_lightness_hover', 23 ) );
+	$lightness_hover     = $lightness_hover . '%';
+
+	$lightness_selection = absint( apply_filters( 'twentynineteen_custom_colors_lightness_selection', 90 ) );
+	$lightness_selection = $lightness_selection . '%';
 
 	$theme_css = '
 		/*
@@ -156,9 +159,17 @@ function twentynineteen_custom_colors_css() {
 		.main-navigation .sub-menu > li > a:focus,
 		.main-navigation .sub-menu > li > a:hover:after,
 		.main-navigation .sub-menu > li > a:focus:after,
-		.main-navigation .sub-menu > li > .menu-item-link-return:hover,
-		.main-navigation .sub-menu > li > .menu-item-link-return:focus {
-			background: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
+		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover,
+		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
+		}
+
+		/* Text selection colors */
+		::selection {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_selection . ' ); /* base: #005177; */
+		}
+		::-moz-selection {
+			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_selection . ' ); /* base: #005177; */
 		}';
 
 	$editor_css = '
