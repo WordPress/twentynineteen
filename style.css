@@ -3423,8 +3423,8 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-pullquote blockquote {
   color: #111;
   border: none;
-  margin-top: calc(3 * 1rem);
-  margin-bottom: calc(3.33 * 1rem);
+  margin-top: calc(4 * 1rem);
+  margin-bottom: calc(4.33 * 1rem);
   margin-right: 0;
 }
 
