@@ -3084,17 +3084,6 @@ body.page .main-navigation {
 .entry .entry-summary > * {
   margin: 32px 0;
   max-width: 100%;
-  /*
-	// Set top margins for headings
-	& + h1:before,
-	& + h2:before,
-	& + h3,
-	& + h4,
-	& + h5,
-	& + h6 {
-		margin-top: calc(4 * 1rem);
-	}
-*/
 }
 
 @media only screen and (min-width: 768px) {
@@ -3228,6 +3217,35 @@ body.page .main-navigation {
   .entry .entry-summary > *.aligncenter {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+
+/*
+ * Unset nested content selector styles
+ * - Prevents layout styles from cascading too deeply
+ * - helps with plugin compatibility
+ */
+.entry .entry-content .entry-content,
+.entry .entry-content .entry-summary,
+.entry .entry-content .entry,
+.entry .entry-summary .entry-content,
+.entry .entry-summary .entry-summary,
+.entry .entry-summary .entry {
+  margin: inherit;
+  max-width: inherit;
+  padding: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .entry-content,
+  .entry .entry-content .entry-summary,
+  .entry .entry-content .entry,
+  .entry .entry-summary .entry-content,
+  .entry .entry-summary .entry-summary,
+  .entry .entry-summary .entry {
+    margin: inherit;
+    max-width: inherit;
+    padding: inherit;
   }
 }
 
