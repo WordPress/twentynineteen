@@ -298,8 +298,6 @@
 
 	.main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
 	.main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu,
-//	.main-menu .menu-item-has-children:not(.off-canvas) .sub-menu:hover,
-//	.main-menu .menu-item-has-children:not(.off-canvas) .sub-menu:focus,
 	.main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu {
 
 		display: block;
