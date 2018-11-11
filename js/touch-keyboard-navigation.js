@@ -163,8 +163,7 @@
 
 			if ( event.target.matches('a') ) {
 
-				var url     = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '',
-					mainNav = getCurrentParent( event.target, '.main-navigation' );
+				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
 
 				// If there’s a link, go to it on touchend
 				if ( '#' !== url && '' !== url ) {
@@ -220,10 +219,12 @@
 			if ( event.target.matches('.main-navigation > div > ul > li > a') ) {
 
 				// Remove Focuse elements in sibling div
-				currentDiv        = getCurrentParent( event.target, 'div' );
-				currentDivSibling = currentDiv.previousElementSibling === null ? currentDiv.nextElementSibling : currentDiv.previousElementSibling;
-				focusedElement    = currentDivSibling.querySelector( '.is-focused' );
-				focusedClass      = 'is-focused';
+				var currentDiv        = getCurrentParent( event.target, 'div' );
+				var currentDivSibling = currentDiv.previousElementSibling === null ? currentDiv.nextElementSibling : currentDiv.previousElementSibling;
+				var focusedElement    = currentDivSibling.querySelector( '.is-focused' );
+				var focusedClass      = 'is-focused';
+				var prevLi            = event.target.parentNode.previousElementSibling;
+				var nextLi            = event.target.parentNode.nextElementSibling;
 
 				if ( null !== focusedElement && null !== hasClass( focusedElement, '.is-focused' ) ) {
 					deleteClass( focusedElement, 'is-focused' );
@@ -235,15 +236,11 @@
 				}
 
 				// Check for previous li
-				prevLi = event.target.parentNode.previousElementSibling;
-
 				if ( prevLi && hasClass( prevLi, 'is-focused' ) ) {
 					deleteClass( prevLi, 'is-focused' );
 				}
 
 				// Check for next li
-				nextLi = event.target.parentNode.nextElementSibling;
-
 				if ( nextLi && hasClass( nextLi, 'is-focused' ) ) {
 					deleteClass( nextLi, 'is-focused' );
 				}
