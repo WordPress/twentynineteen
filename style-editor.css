@@ -357,6 +357,18 @@ figcaption,
 /** === Pullquote === */
 .wp-block-pullquote {
   border: none;
+  color: #000;
+}
+
+.wp-block-pullquote blockquote {
+  margin-top: calc(3 * 1rem);
+  margin-bottom: calc(3.33 * 1rem);
+  hyphens: auto;
+  word-break: break-word;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) .wp-block-pullquote__citation {
+  color: #767676;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
@@ -382,11 +394,6 @@ figcaption,
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
   background-color: #0073aa;
-}
-
-.wp-block-pullquote blockquote {
-  hyphens: auto;
-  word-break: break-word;
 }
 
 .wp-block[data-type="core/pullquote"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
