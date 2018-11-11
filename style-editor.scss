@@ -389,6 +389,18 @@ figcaption,
 
 .wp-block-pullquote {
 	border: none;
+	color: #000;
+
+	blockquote {
+		margin-top: calc(3 * #{ $size__spacing-unit});
+		margin-bottom: calc(3.33 * #{ $size__spacing-unit});
+		hyphens: auto;
+		word-break: break-word;
+	}
+
+	&:not(.is-style-solid-color) .wp-block-pullquote__citation {
+		color: $color__text-light;
+	}
 
 	&.is-style-solid-color {
 
@@ -412,11 +424,6 @@ figcaption,
 		&:not(.has-background-color) {
 			background-color: $color__link;
 		}
-	}
-
-	blockquote {
-		hyphens: auto;
-		word-break: break-word;
 	}
 }
 
