@@ -226,23 +226,23 @@
 				var prevLi            = event.target.parentNode.previousElementSibling;
 				var nextLi            = event.target.parentNode.nextElementSibling;
 
-				if ( null !== focusedElement && null !== hasClass( focusedElement, '.is-focused' ) ) {
-					deleteClass( focusedElement, 'is-focused' );
+				if ( null !== focusedElement && null !== hasClass( focusedElement, focusedClass ) ) {
+					deleteClass( focusedElement, focusedClass );
 				}
 
 				// Add .is-focused class to top-level ul
 				if ( event.target.parentNode.querySelector( '.main-navigation ul ul') ) {
-					addClass( event.target.parentNode, 'is-focused' );
+					addClass( event.target.parentNode, focusedClass );
 				}
 
 				// Check for previous li
-				if ( prevLi && hasClass( prevLi, 'is-focused' ) ) {
-					deleteClass( prevLi, 'is-focused' );
+				if ( prevLi && hasClass( prevLi, focusedClass ) ) {
+					deleteClass( prevLi, focusedClass );
 				}
 
 				// Check for next li
-				if ( nextLi && hasClass( nextLi, 'is-focused' ) ) {
-					deleteClass( nextLi, 'is-focused' );
+				if ( nextLi && hasClass( nextLi, focusedClass ) ) {
+					deleteClass( nextLi, focusedClass );
 				}
 			}
 		}, true);
