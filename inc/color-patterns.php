@@ -142,7 +142,6 @@ function twentynineteen_custom_colors_css() {
 
 		/* Hover colors */
 		a:hover, a:active,
-		.main-navigation .main-menu > li > a:hover,
 		.main-navigation .main-menu > li > a:hover + svg,
 		.post-navigation .nav-links a:hover .post-title,
 		.author-bio .author-description .author-link:hover,
@@ -159,8 +158,10 @@ function twentynineteen_custom_colors_css() {
 		.main-navigation .sub-menu > li > a:focus,
 		.main-navigation .sub-menu > li > a:hover:after,
 		.main-navigation .sub-menu > li > a:focus:after,
-		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover,
-		.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
+		.main-navigation .sub-menu > li > .menu-item-link-return:hover,
+		.main-navigation .sub-menu > li > .menu-item-link-return:focus,
+		.main-navigation .sub-menu > li > a:not(.submenu-expand):hover,
+		.main-navigation .sub-menu > li > a:not(.submenu-expand):focus {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
 		}
 

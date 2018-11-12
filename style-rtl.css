@@ -1007,10 +1007,14 @@ a:focus {
   display: block;
   margin-top: 0.25rem;
   /*
+	 * Sub-menu styles
+	 *
 	 * :focus-within needs its own selector so other similar
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
-  /* Only show one submenu expand button at a time (desktop vs mobile) */
+  /**
+	 * Full-screen touch device styles
+	 */
 }
 
 body.page .main-navigation {
@@ -1022,7 +1026,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu {
-  display: inline;
+  display: inline-block;
   margin: 0;
   padding: 0;
 }
@@ -1030,12 +1034,7 @@ body.page .main-navigation {
 .main-navigation .main-menu > li {
   color: #0073aa;
   display: inline;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .main-menu > li {
-    position: relative;
-  }
+  position: relative;
 }
 
 .main-navigation .main-menu > li > a {
@@ -1055,6 +1054,13 @@ body.page .main-navigation {
 
 .main-navigation .main-menu > li.menu-item-has-children {
   display: inline-block;
+  position: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu > li.menu-item-has-children {
+    position: relative;
+  }
 }
 
 .main-navigation .main-menu > li.menu-item-has-children > a {
@@ -1067,28 +1073,48 @@ body.page .main-navigation {
   display: none;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand svg,
-.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand {
+  display: inline-block;
+  margin-left: 0.5rem;
+  /* Priority+ Menu */
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle {
+  position: relative;
+  height: 24px;
+  line-height: 1.2;
+  width: 24px;
+  padding: 0;
+  margin-right: 0.5rem;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle svg {
+  height: 24px;
+  width: 24px;
+  top: -0.125rem;
+  vertical-align: text-bottom;
+}
+
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .main-menu > li.menu-item-has-children .desktop-submenu-expand {
-  margin-left: 0.5rem;
-}
-
-.main-navigation .main-menu > li:last-child > a {
+.main-navigation .main-menu > li:last-child > a,
+.main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
   margin-left: 0;
 }
 
+.main-navigation .main-menu .is-hidden {
+  display: none;
+}
+
 .main-navigation .sub-menu {
-  background: #0073aa;
+  background-color: #0073aa;
   color: #fff;
   list-style: none;
   padding-right: 0;
   display: none;
-  float: right;
   position: absolute;
   opacity: 0;
   right: -999px;
@@ -1097,21 +1123,21 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
-    width: max-content;
-    max-width: calc(3 * (100vw / 12));
+    width: auto;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
   }
 }
 
 .main-navigation .sub-menu > li {
-  clear: both;
   display: block;
   float: none;
   position: relative;
-  word-break: break-word;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
+  display: inline-block;
   position: absolute;
   width: calc( 24px + 1rem);
   left: 0;
@@ -1122,13 +1148,11 @@ body.page .main-navigation {
   padding: calc( .5 * 1rem);
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand svg,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand svg {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand svg {
   top: 0;
 }
 
-.main-navigation .sub-menu > li.menu-item-has-children .mobile-submenu-expand,
-.main-navigation .sub-menu > li.menu-item-has-children .desktop-submenu-expand {
+.main-navigation .sub-menu > li.menu-item-has-children .submenu-expand {
   margin-left: 0;
 }
 
@@ -1138,18 +1162,24 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand) {
+.main-navigation .sub-menu > li > a,
+.main-navigation .sub-menu > li > .menu-item-link-return {
   color: #fff;
   display: block;
   line-height: 1.2;
   padding: calc( .5 * 1rem) 1rem calc( .5 * 1rem) calc( 24px + 1rem);
+  white-space: nowrap;
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus {
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus {
   background: #005177;
 }
 
-.main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):hover:after, .main-navigation .sub-menu > li > a:not(.mobile-submenu-expand):focus:after {
+.main-navigation .sub-menu > li > a:hover:after, .main-navigation .sub-menu > li > a:focus:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:hover:after,
+.main-navigation .sub-menu > li > .menu-item-link-return:focus:after {
   background: #005177;
 }
 
@@ -1165,64 +1195,31 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
-.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
-  width: calc( 100vw - 2rem);
-}
-
-.main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
-  display: block;
-  right: 0;
-  margin-top: 0;
-  opacity: 1;
-  width: calc( 100vw - 2rem);
-}
-
-.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
-  margin-top: inherit;
-  position: relative;
-  padding-right: 1rem;
-}
-
-.main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
-  margin-top: inherit;
-  position: relative;
-  padding-right: 1rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
-    padding-right: 0;
-    position: absolute;
-    right: 100%;
-    width: max-content;
-    top: 0;
-  }
-  .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu .sub-menu {
-    padding-right: 0;
-    position: absolute;
-    right: 100%;
-    width: max-content;
-    top: 0;
-  }
-}
-
-.main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
-.main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
+  width: auto;
+  min-width: 100%;
   /* Non-mobile position */
+  /* Nested sub-menu padding: 10 levels deep */
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: auto;
+  min-width: 100%;
+  /* Non-mobile position */
+  /* Nested sub-menu padding: 10 levels deep */
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus {
-    display: table;
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
+    display: block;
     margin-top: 0;
     opacity: 1;
     position: absolute;
@@ -1231,26 +1228,343 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    width: max-content;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
     transform: none;
-    animation: fade_in 0.1s forwards;
   }
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    height: auto;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
+    transform: none;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:hover > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children:focus > .sub-menu .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:hover .sub-menu,
-  .main-navigation .main-menu .menu-item-has-children .sub-menu:focus .sub-menu {
-    margin-top: inherit;
-    padding-right: 0;
-    position: absolute;
-    right: 100%;
-    top: 0;
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
+    left: 0;
+    right: auto;
+    display: block;
+    width: max-content;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
+    left: 0;
+    right: auto;
+    display: block;
+    width: max-content;
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true {
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .submenu-expand {
+  display: none;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .submenu-expand {
+  display: none;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
+  display: block;
+  margin-top: inherit;
+  position: relative;
+  width: 100%;
+  right: 0;
+  opacity: 1;
+  /* Non-mobile position */
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
+  display: block;
+  margin-top: inherit;
+  position: relative;
+  width: 100%;
+  right: 0;
+  opacity: 1;
+  /* Non-mobile position */
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
+    float: none;
+    max-width: 100%;
+  }
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
+    float: none;
+    max-width: 100%;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:before {
+  content: "\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:before {
+  content: "\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu {
+  display: block;
+  right: 0;
+  margin-top: 0;
+  opacity: 1;
+  width: auto;
+  min-width: 100%;
+  /* Non-mobile position */
+  /* Nested sub-menu padding: 10 levels deep */
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu {
+    display: block;
+    float: none;
+    margin-top: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    height: auto;
+    min-width: -moz-max-content;
+    min-width: -webkit-max-content;
+    min-width: max-content;
+    transform: none;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu.hidden-links,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu.hidden-links,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu.hidden-links {
+  right: 0;
+  width: 100%;
+  display: table;
+  position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu.hidden-links,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu.hidden-links {
+    left: 0;
+    right: auto;
+    display: table;
+    width: max-content;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .submenu-expand,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .submenu-expand,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .submenu-expand {
+  display: none;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu {
+  display: block;
+  margin-top: inherit;
+  position: relative;
+  width: 100%;
+  right: 0;
+  opacity: 1;
+  /* Non-mobile position */
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu,
+  .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu {
+    float: none;
+    max-width: 100%;
+  }
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:before {
+  content: "\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu {
+  animation: fade_in 0.1s forwards;
+}
+
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu .submenu-expand .svg-icon {
+  transform: rotate(-270deg);
+}
+
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu .sub-menu {
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  transform: translateX(100%);
+}
+
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li:hover,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li:focus,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li > a:hover,
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu li > a:focus {
+  background-color: transparent;
+}
+
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
   display: table;
   margin-top: 0;
   opacity: 1;
@@ -1263,37 +1577,39 @@ body.page .main-navigation {
   position: fixed;
   z-index: 100000;
   /* Make sure appears above mobile admin bar */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
   transform: translateX(-100%);
   animation: slide_in_right 0.3s forwards;
+  /* Prevent menu from being blocked by admin bar */
 }
 
-.main-navigation .main-menu .menu-item-has-children.focus .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
-  display: inline-block;
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true > .mobile-parent-nav-menu-item {
+  display: block;
 }
 
-.main-navigation .desktop-submenu-expand {
-  display: none;
+.admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
+  top: 46px;
+  height: calc( 100vh - 46px);
+  /* WP core breakpoint */
 }
 
-@media only screen and (min-width: 768px) {
-  .main-navigation .desktop-submenu-expand {
-    display: inline-block;
+.admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
+  top: 0;
+}
+
+@media only screen and (min-width: 782px) {
+  .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true {
+    top: 32px;
+    height: calc( 100vh - 32px);
+  }
+  .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
+    top: 0;
   }
 }
 
-.main-navigation .mobile-submenu-expand {
-  display: inline-block;
-}
-
-@media only screen and (min-width: 768px) {
-  .main-navigation .mobile-submenu-expand {
-    display: none;
-  }
-}
-
-/* Menu Animation */
+/* Menu animation */
 @keyframes slide_in_right {
   100% {
     transform: translateX(0%);
