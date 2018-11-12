@@ -1505,6 +1505,21 @@ body.page .main-navigation {
   padding-right: 0;
 }
 
+.pagination .nav-links a:focus {
+  text-decoration: underline;
+  outline-offset: -1px;
+}
+
+.pagination .nav-links a:focus.prev, .pagination .nav-links a:focus.next {
+  text-decoration: none;
+}
+
+.pagination .nav-links a:focus.prev .nav-prev-text,
+.pagination .nav-links a:focus.prev .nav-next-text, .pagination .nav-links a:focus.next .nav-prev-text,
+.pagination .nav-links a:focus.next .nav-next-text {
+  text-decoration: underline;
+}
+
 .pagination .nav-links .nav-next-text,
 .pagination .nav-links .nav-prev-text {
   display: none;
