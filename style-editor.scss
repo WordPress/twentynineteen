@@ -257,27 +257,30 @@ figcaption,
 	h2,
 	.wp-block-cover-text {
 		font-family: $font__heading;
-		font-size: $font__size-xl;
+		font-size: $font__size-lg;
 		font-weight: bold;
 		line-height: 1.4;
+		padding-left: $size__spacing-unit;
+		padding-right: $size__spacing-unit;
+
 		strong {
 			font-weight: bolder;
 		}
-	}
 
-	&.has-left-content {
-
-		h2,
-		.wp-block-cover-text {
-			padding: 1em;
+		@include media(tablet) {
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0;
 		}
 	}
 
-	&.has-right-content {
+	@include media(tablet) {
+		padding-left: 10%;
+		padding-right: 10%;
 
 		h2,
 		.wp-block-cover-text {
-			padding: 1em;
+			font-size: $font__size-xl;
 		}
 	}
 }
@@ -285,22 +288,43 @@ figcaption,
 .wp-block[data-type="core/cover"][data-align="left"],
 .wp-block[data-type="core/cover"][data-align="right"] {
 
-	h2,
-	.wp-block-cover-text {
+	.editor-block-list__block-edit {
+		width: calc(4 * (100vw / 12));
+	}
+
+	.wp-block-cover {
 		width: 100%;
-		max-width: 305px;
+		max-width: 100%;
 	}
 }
 
 .wp-block[data-type="core/cover"][data-align="wide"],
 .wp-block[data-type="core/cover"][data-align="full"] {
 
-	@include media(desktop) {
+	@include media(tablet) {
+
 		h2,
 		.wp-block-cover-text {
-			padding: 0;
-			width: calc(6 * (100vw / 12));
+			max-width: calc(8 * (100vw / 12));
+		}
+	}
+
+	@include media(desktop) {
+
+		h2,
+		.wp-block-cover-text {
 			max-width: calc(6 * (100vw / 12));
+		}
+	}
+}
+
+.wp-block[data-type="core/cover"][data-align="full"] {
+
+	@include media(tablet) {
+
+		.wp-block-cover {
+			padding-left: calc(10% + 64px);
+			padding-right: calc(10% + 64px);
 		}
 	}
 }
@@ -405,15 +429,11 @@ figcaption,
 	&.is-style-solid-color {
 
 		blockquote {
-			width: calc(100vw - (2 * #{ $size__spacing-unit}));
-			max-width: 80%;
+			width: calc(100% - (2 * #{ $size__spacing-unit}));
+			max-width: calc( 100% - (2 * #{ $size__spacing-unit}));
 
 			@include media(tablet) {
-				width: calc(8 * (100vw / 12));
-			}
-
-			@include media(desktop) {
-				width: calc(6 * (100vw / 12));
+				max-width: 80%;
 			}
 		}
 
@@ -461,6 +481,7 @@ figcaption,
 .wp-block[data-type="core/pullquote"][data-align="right"] {
 
 	.editor-block-list__block-edit {
+		width: calc(4 * (100vw / 12));
 		max-width: 50%;
 
 		.wp-block-pullquote:not(.is-style-solid-color) {
@@ -479,6 +500,17 @@ figcaption,
 		text-align: left;
 	}
 }
+
+.wp-block[data-type="core/pullquote"][data-align="full"] {
+	
+	@include media(tablet) {
+		
+		.wp-block-pullquote blockquote {
+			max-width: calc(80% - 128px);
+		}
+	}
+}
+
 
 /** === File === */
 

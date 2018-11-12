@@ -20,9 +20,9 @@
 	}
 
 	&.alignwide {
-
 		margin-left: auto;
 		margin-right: auto;
+		clear: both;
 
 		@include media(tablet) {
 			width: 100%;
@@ -35,6 +35,7 @@
 		left: -#{$size__spacing-unit };
 		width: calc( 100% + (2 * #{$size__spacing-unit}));
 		max-width: calc( 100% + (2 * #{$size__spacing-unit}));
+		clear: both;
 
 		@include media(tablet) {
 			margin-top: calc(2 * #{$size__spacing-unit});
@@ -341,6 +342,7 @@
 
 		&.alignleft,
 		&.alignright {
+			width: 100%;
 			padding: 0;
 
 			blockquote {
@@ -355,6 +357,11 @@
 			background-color: $color__link;
 			padding-left: 0;
 			padding-right: 0;
+
+			@include media(tablet) {
+				padding-left: 10%;
+				padding-right: 10%;
+			}
 
 			p {
 				font-size: $font__size-lg;
@@ -376,20 +383,27 @@
 			}
 
 			blockquote {
+				max-width: calc(100% - (2 * #{$size__spacing-unit}));
 				color: $color__background-body;
-				max-width: 80%;
-				margin-left: auto;
-				margin-right: auto;
 				padding-left: 0;
+				margin-left: $size__spacing-unit;
+
+				@include media(tablet) {
+					margin-left: 0;
+					margin-right: 0;
+				}
 			}
 
 			.has-primary-background-color {
 				background-color: $color__link;
 			}
 
-			&.alignleft,
-			&.alignright {
-				padding: 0 $size__spacing-unit;
+			&.alignfull {
+
+				@include media(tablet) {
+					padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
+					padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
+				}
 			}
 		}
 	}
@@ -477,6 +491,11 @@
 	.wp-block-cover {
 		position: relative;
 		min-height: 430px;
+		padding: $size__spacing-unit;
+
+		@include media(tablet) {
+			padding: $size__spacing-unit 10%;
+		}
 
 		.wp-block-cover-image-text,
 		.wp-block-cover-text,
@@ -485,26 +504,15 @@
 			font-size: $font__size-lg;
 			font-weight: bold;
 			line-height: 1.25;
-			padding: $size__spacing-unit;
+			padding: 0;
 			color: #fff;
-
-			width: calc(100vw - (2 * #{ $size__spacing-unit }));
-			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
-
-			@include postContentMaxWidth();
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
-				width: $size__site-tablet-content;
-			}
-
-			@include media(desktop) {
-				width: $size__site-desktop-content;
+				max-width: 100%;
 			}
 		}
 
-		&.alignleft,
-		&.alignright,
 		&.aligncenter {
 			h2,
 			.wp-block-cover-image-text,
@@ -523,9 +531,24 @@
 			width: 100%;
 		}
 
-		&.has-left-content,
-		&.has-right-content {
-			justify-content: center;
+		&.alignfull {
+
+			.wp-block-cover-image-text,
+			.wp-block-cover-text,
+			h2 {
+				@include postContentMaxWidth();
+			}
+
+			@include media(tablet) {
+				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
+				padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
+
+				.wp-block-cover-image-text,
+				.wp-block-cover-text,
+				h2 {
+					padding: 0;
+				}
+			}
 		}
 	}
 
