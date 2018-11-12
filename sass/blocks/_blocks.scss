@@ -20,9 +20,9 @@
 	}
 
 	&.alignwide {
-
 		margin-left: auto;
 		margin-right: auto;
+		clear: both;
 
 		@include media(tablet) {
 			width: 100%;
@@ -35,6 +35,7 @@
 		left: -#{$size__spacing-unit };
 		width: calc( 100% + (2 * #{$size__spacing-unit}));
 		max-width: calc( 100% + (2 * #{$size__spacing-unit}));
+		clear: both;
 
 		@include media(tablet) {
 			margin-top: calc(2 * #{$size__spacing-unit});
@@ -328,6 +329,7 @@
 
 		&.alignleft,
 		&.alignright {
+			width: 100%;
 			padding: 0;
 
 			blockquote {
@@ -479,7 +481,7 @@
 		padding: $size__spacing-unit;
 
 		@include media(tablet) {
-			padding: $size__spacing-unit 10%;
+			padding: $size__spacing-unit 0;
 		}
 
 		.wp-block-cover-image-text,
@@ -494,12 +496,10 @@
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
-				padding: 0;
+				padding: 10%;
 			}
 		}
 
-		&.alignleft,
-		&.alignright,
 		&.aligncenter {
 			h2,
 			.wp-block-cover-image-text,
@@ -523,6 +523,12 @@
 			@include media(tablet) {
 				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 				padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
+
+				.wp-block-cover-image-text,
+				.wp-block-cover-text,
+				h2 {
+					padding: 0;
+				}
 			}
 		}
 	}
