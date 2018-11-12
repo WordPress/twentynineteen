@@ -10,17 +10,6 @@
 	@include media(tablet) {
 		margin: 32px 0;
 	}
-/*
-	// Set top margins for headings
-	& + h1:before,
-	& + h2:before,
-	& + h3,
-	& + h4,
-	& + h5,
-	& + h6 {
-		margin-top: calc(4 * #{ $size__spacing-unit});
-	}
-*/
 
 	> *:first-child {
 		margin-top: 0;
@@ -101,6 +90,29 @@
 		@include media(tablet) {
 			margin-left: 0;
 			margin-right: 0;
+		}
+	}
+}
+
+/*
+ * Unset nested content selector styles
+ * - Prevents layout styles from cascading too deeply
+ * - helps with plugin compatibility
+ */
+.entry .entry-content,
+.entry .entry-summary {
+
+	.entry-content,
+	.entry-summary,
+	.entry {
+		margin: inherit;
+		max-width: inherit;
+		padding: inherit;
+
+		@include media(tablet) {
+			margin: inherit;
+			max-width: inherit;
+			padding: inherit;
 		}
 	}
 }
@@ -279,7 +291,8 @@
 		blockquote {
 			color: $color__text-main;
 			border: none;
-			padding-bottom: calc(2 * #{$size__spacing-unit});
+			margin-top: calc(4 * #{ $size__spacing-unit});
+			margin-bottom: calc(4.33 * #{ $size__spacing-unit});
 			margin-right: 0;
 		}
 
@@ -326,8 +339,9 @@
 		}
 
 		&.is-style-solid-color {
-
 			background-color: $color__link;
+			padding-left: 0;
+			padding-right: 0;
 
 			p {
 				font-size: $font__size-lg;
@@ -350,7 +364,10 @@
 
 			blockquote {
 				color: $color__background-body;
-				margin: 0 auto;
+				max-width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				padding-left: 0;
 			}
 
 			.has-primary-background-color {
@@ -359,17 +376,7 @@
 
 			&.alignleft,
 			&.alignright {
-				padding: $size__spacing-unit $size__spacing-unit 0;
-
-				blockquote {
-					padding: 0 0 calc( 1.5 * #{$size__spacing-unit} );
-					margin-left: 0;
-					margin-top: 0;
-				}
-
-				@include media(tablet) {
-					padding: calc( 2 * #{$size__spacing-unit} ) calc( 2 * #{$size__spacing-unit} ) $size__spacing-unit;
-				}
+				padding: 0 $size__spacing-unit;
 			}
 		}
 	}
