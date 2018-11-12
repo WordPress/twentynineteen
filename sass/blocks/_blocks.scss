@@ -363,20 +363,20 @@
 			}
 
 			blockquote {
+				max-width: calc(100% - (2 * #{$size__spacing-unit}));
 				color: $color__background-body;
-				max-width: 80%;
-				margin-left: auto;
-				margin-right: auto;
 				padding-left: 0;
+				margin-left: $size__spacing-unit;
+
+				@include media(tablet) {
+					max-width: 80%;
+					margin-left: auto;
+					margin-right: auto;
+				}
 			}
 
 			.has-primary-background-color {
 				background-color: $color__link;
-			}
-
-			&.alignleft,
-			&.alignright {
-				padding: 0 $size__spacing-unit;
 			}
 		}
 	}
@@ -464,6 +464,11 @@
 	.wp-block-cover {
 		position: relative;
 		min-height: 430px;
+		padding: $size__spacing-unit;
+
+		@include media(tablet) {
+			padding: $size__spacing-unit 0;
+		}
 
 		.wp-block-cover-image-text,
 		.wp-block-cover-text,
@@ -472,21 +477,12 @@
 			font-size: $font__size-lg;
 			font-weight: bold;
 			line-height: 1.25;
-			padding: $size__spacing-unit;
+			padding: 0;
 			color: #fff;
-
-			width: calc(100vw - (2 * #{ $size__spacing-unit }));
-			max-width: calc(100vw - (2 * #{ $size__spacing-unit }));
-
-			@include postContentMaxWidth();
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
-				width: $size__site-tablet-content;
-			}
-
-			@include media(desktop) {
-				width: $size__site-desktop-content;
+				max-width: 80%;
 			}
 		}
 
