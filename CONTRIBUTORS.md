@@ -26,17 +26,16 @@ Version 1.0:
 | @anevins12 | @anevins |
 | @peterwilsoncc | @peterwilsoncc |
 | @DannyCooper | @dannycooper |
-| @iCaleb | @icaleb |
+| @WPprodigy | @iCaleb |
 | @siriokun | @siriokun |
 | @briannaorg | @technosiren |
 | @00travelgirl00 | @travel_girl |
 | @shahjehanali1 | @azchughtai |
 | @ianbelanger79 | @ianbelanger |
 | @nadim1992 | |
-| @ismail-elkorchi | @ismailelkorchi |
+| @Ismail-elkorchi | @ismailelkorchi |
 | @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
-| @icaleb | @icaleb |
 | @grappler | @grapplerulrich |
 | @ocean90 | @ocean90 |
 | @joshfeck | |
@@ -61,5 +60,13 @@ Version 1.0:
 | @mukeshpanchal27 | @mukesh27 |
 | @burhandodhy | @burhandodhy |
 | @crunnells | @crunnells |
-| @Ismail-elkorchi | @ismailelkorchi |
 | @aryaprakasa | @aprakasa |
+| @tlxo | |
+| @themeroots | @themeroots |
+| @whizbangik | @imonly_ik |
+| @yingles | @yingling017 |
+| @tlxo | @tlxo |
+| @youthkee | @youthkee |
+| @brentswisher | |
+| @smy315 | @smyoon315 |
+| @ahmadawais | @mrahmadawais |
