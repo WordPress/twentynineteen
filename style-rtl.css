@@ -1542,9 +1542,8 @@ body.page .main-navigation {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children .sub-menu {
-  transform: translateX(0%);
-  animation: slide_out_right 0.3s forwards;
+.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu {
+  animation: fade_in 0.1s forwards;
 }
 
 .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu .submenu-expand .svg-icon {
@@ -1614,12 +1613,6 @@ body.page .main-navigation {
 @keyframes slide_in_right {
   100% {
     transform: translateX(0%);
-  }
-}
-
-@keyframes slide_out_right {
-  0% {
-    transform: translateX(-100%);
   }
 }
 
