@@ -187,15 +187,17 @@ if ( ! function_exists( 'twentynineteen_discussion_avatars_list' ) ) :
 	 * Displays a list of avatars involved in a discussion for a given post.
 	 */
 	function twentynineteen_discussion_avatars_list( $comment_authors ) {
-		if ( ! empty( $comment_authors ) ) {
-			$out = array( '<ol class="discussion-avatar-list">' );
-			foreach ( $comment_authors as $id_or_email ) {
-				$out[] = sprintf( '<li>%s</li>', twentynineteen_get_user_avatar_markup( $id_or_email ) );
-			}
-			$out[] = '</ol><!-- .discussion-avatar-list -->';
-			echo implode( "\n", $out );
+		if ( empty( $comment_authors ) ) {
+			return;
 		}
-		return null;
+		echo '<ol class="discussion-avatar-list">', "\n";
+		foreach ( $comment_authors as $id_or_email ) {
+			printf(
+				"<li>%s</li>\n",
+				twentynineteen_get_user_avatar_markup( $id_or_email )
+			);
+		}
+		echo '</ol><!-- .discussion-avatar-list -->', "\n";
 	}
 endif;
 
