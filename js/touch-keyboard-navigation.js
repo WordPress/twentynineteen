@@ -313,6 +313,7 @@
 	 */
 	document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
 		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
+			console.log('Customizer Menu');
 			toggleSubmenuDisplay();
 		}
 	});

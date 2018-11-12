@@ -85,20 +85,13 @@
 		}
 	}
 
-	var navContainer = document.querySelector('.main-navigation');
-	// Adds the necessary UI to operate the menu.
-	var toggleButton = document.querySelector('.main-navigation .main-menu-more-toggle');
-	var visibleList = document.querySelector('.main-navigation .main-menu[id]');
-	var hiddenList = document.querySelector('.main-navigation .hidden-links');
-	var breaks = [];
-
 	/**
 	 * Returns the currently available space in the menu container.
 	 *
 	 * @returns {number} Available space
 	 */
-	function getAvailableSpace() {
-		return toggleButton.classList.contains('hidden') ? navContainer.offsetWidth : navContainer.offsetWidth - toggleButton.offsetWidth - 50;
+	function getAvailableSpace( button, container ) {
+		return button.classList.contains('hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
 	}
 
 	/**
@@ -106,40 +99,51 @@
 	 *
 	 * @returns {boolean} Is overflowing
 	 */
-	function isOverflowingNavivation() {
-		return visibleList.offsetWidth > getAvailableSpace();
+	function isOverflowingNavivation( list, button, container ) {
+		return list.offsetWidth > getAvailableSpace( button, container );
 	}
+
+	/**
+	 * Set menu container variable
+	 */
+	var navContainer = document.querySelector('.main-navigation');
 
 	/**
 	 * Refreshes the list item from the menu depending on the menu size
 	 */
-	function updateNavigationMenu() {
+	function updateNavigationMenu( container ) {
 
-		if (isOverflowingNavivation()) {
+		// Adds the necessary UI to operate the menu.
+		var toggleButton = container.querySelector('.main-menu-more-toggle');
+		var visibleList = container.querySelector('.main-menu[id]');
+		var hiddenList = container.querySelector('.hidden-links');
+		var breaks = [];
+
+		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
 			// Record the width of the list
-			breaks.push(visibleList.offsetWidth);
+			breaks.push( visibleList.offsetWidth );
 			// Move item to the hidden list
-			prependElement(hiddenList, visibleList.lastChild);
+			prependElement( hiddenList, visibleList.lastChild );
 			// Show the toggle button
-			showElement(toggleButton);
+			showElement( toggleButton );
 		} else {
 			// There is space for another item in the nav
-			if (getAvailableSpace() > breaks[breaks.length - 1]) {
+			if ( getAvailableSpace( toggleButton, container ) > breaks[breaks.length - 1] ) {
 				// Move the item to the visible list
-				visibleList.appendChild(hiddenList.firstChild.nextSibling);
+				visibleList.appendChild( hiddenList.firstChild.nextSibling );
 				breaks.pop();
 			}
 
 			// Hide the dropdown btn if hidden list is empty
 			if (breaks.length < 2) {
-				hideElement(toggleButton);
-				hideElement(hiddenList);
+				hideElement( toggleButton );
+				hideElement( hiddenList );
 			}
 		}
 
 		// Recur if the visible list is still overflowing the nav
-		if (isOverflowingNavivation()) {
-			updateNavigationMenu();
+		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
+			updateNavigationMenu( container );
 		}
 	}
 
@@ -147,7 +151,7 @@
 	 * Run our priority+ function as soon as the document is `ready`
 	 */
 	document.addEventListener( 'DOMContentLoaded', function() {
-		updateNavigationMenu();
+		updateNavigationMenu( navContainer );
 	});
 
 	/**
@@ -155,15 +159,19 @@
 	 */
 	document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
 		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
-			updateNavigationMenu();
+			// console.log( 'New Customizer Menu: '+ params.newContainer );
+			updateNavigationMenu( params.newContainer );
 		}
 	});
+
+	var event = new CustomEvent( 'customize-preview-menu-refreshed', { bubbles: true, cancelable: true } );
+	someElement.dispatchEvent(event);
 
 	/**
 	 * Run our priority+ function on load
 	 */
 	window.addEventListener('load', function() {
-		updateNavigationMenu();
+		updateNavigationMenu( navContainer );
 	});
 
 	/**
@@ -178,7 +186,7 @@
 
 			isResizing = true;
 			setTimeout( function() {
-				updateNavigationMenu();
+				updateNavigationMenu( navContainer );
 				isResizing = false;
 			}, 150 );
 		} )
@@ -187,6 +195,6 @@
 	/**
 	 * Run our priority+ function
 	 */
-	updateNavigationMenu();
+	updateNavigationMenu( navContainer );
 
 })();
