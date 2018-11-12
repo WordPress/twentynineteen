@@ -1941,7 +1941,15 @@ body.page .main-navigation {
 .alignleft {
   /*rtl:ignore*/
   float: left;
+  /*rtl:ignore*/
   margin-right: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .alignleft {
+    /*rtl:ignore*/
+    margin-right: calc(2 * 1rem);
+  }
 }
 
 .alignright {
@@ -1949,6 +1957,13 @@ body.page .main-navigation {
   float: right;
   /*rtl:ignore*/
   margin-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .alignright {
+    /*rtl:ignore*/
+    margin-left: calc(2 * 1rem);
+  }
 }
 
 .aligncenter {
@@ -3618,18 +3633,18 @@ body.page .main-navigation {
   float: right;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
+  margin-right: 0;
   /*rtl:ignore*/
   margin-left: 1rem;
-  margin-right: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignright,
   .entry .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
+    margin-right: 0;
     /*rtl:ignore*/
     margin-left: calc(2 * 1rem);
-    margin-right: 0;
   }
 }
 

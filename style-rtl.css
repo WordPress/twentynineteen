@@ -1940,12 +1940,24 @@ body.page .main-navigation {
 /* Alignments */
 .alignleft {
   float: left;
-  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .alignleft {
+    margin-right: calc(2 * 1rem);
+  }
 }
 
 .alignright {
   float: right;
   margin-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .alignright {
+    margin-left: calc(2 * 1rem);
+  }
 }
 
 .aligncenter {
@@ -3611,16 +3623,16 @@ body.page .main-navigation {
   float: right;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
-  margin-left: 1rem;
   margin-left: 0;
+  margin-left: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignright,
   .entry .entry-summary > *.alignright {
     max-width: calc(4 * (100vw / 12));
-    margin-left: calc(2 * 1rem);
     margin-left: 0;
+    margin-left: calc(2 * 1rem);
   }
 }
 

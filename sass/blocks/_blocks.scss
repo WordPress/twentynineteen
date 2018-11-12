@@ -70,15 +70,15 @@
 		float: right;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
+		margin-right: 0;
 		/*rtl:ignore*/
 		margin-left: $size__spacing-unit;
-		margin-right: 0;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
+			margin-right: 0;
 			/*rtl:ignore*/
 			margin-left: calc(2 * #{$size__spacing-unit});
-			margin-right: 0;
 		}
 	}
 	&.aligncenter {
