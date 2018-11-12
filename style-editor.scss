@@ -260,6 +260,8 @@ figcaption,
 		font-size: $font__size-lg;
 		font-weight: bold;
 		line-height: 1.4;
+		padding-left: $size__spacing-unit;
+		padding-right: $size__spacing-unit;
 
 		strong {
 			font-weight: bolder;
