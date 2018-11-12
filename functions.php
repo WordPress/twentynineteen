@@ -56,7 +56,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'twentynineteen' ),
+				'menu-1' => __( 'Primary', 'twentynineteen' ),
 				'footer' => __( 'Footer Menu', 'twentynineteen' ),
 				'social' => __( 'Social Links Menu', 'twentynineteen' ),
 			)
@@ -112,7 +112,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => esc_html__( 'Primary Color', 'twentynineteen' ),
+					'name'  => __( 'Primary Color', 'twentynineteen' ),
 					'slug'  => 'primary',
 					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'colorscheme' ) ? 199 : get_theme_mod( 'colorscheme_primary_hue', 199 ), 100, 33 ),
 				),
