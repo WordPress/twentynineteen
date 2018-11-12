@@ -248,6 +248,13 @@ figcaption,
 }
 
 /** === Cover === */
+@media only screen and (min-width: 768px) {
+  .wp-block-cover {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -261,14 +268,17 @@ figcaption,
   font-weight: bolder;
 }
 
-.wp-block-cover.has-left-content h2,
-.wp-block-cover.has-left-content .wp-block-cover-text {
-  padding: 1em;
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h2,
+  .wp-block-cover .wp-block-cover-text {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
 }
 
-.wp-block-cover.has-right-content h2,
-.wp-block-cover.has-right-content .wp-block-cover-text {
-  padding: 1em;
+.wp-block-cover.has-left-content, .wp-block-cover.has-right-content {
+  justify-content: center;
 }
 
 .wp-block[data-type="core/cover"][data-align="left"] h2,
@@ -279,13 +289,20 @@ figcaption,
   max-width: 305px;
 }
 
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="wide"] h2,
+  .wp-block[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
+  .wp-block[data-type="core/cover"][data-align="full"] h2,
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
+    max-width: calc(8 * (100vw / 12));
+  }
+}
+
 @media only screen and (min-width: 1168px) {
   .wp-block[data-type="core/cover"][data-align="wide"] h2,
   .wp-block[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
   .wp-block[data-type="core/cover"][data-align="full"] h2,
   .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
-    padding: 0;
-    width: calc(6 * (100vw / 12));
     max-width: calc(6 * (100vw / 12));
   }
 }
@@ -372,12 +389,13 @@ figcaption,
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
-  width: calc(100vw - (2 * 1rem));
-  max-width: 80%;
+  width: calc(100% - (2 * 1rem));
+  max-width: calc( 100% - (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
   .wp-block-pullquote.is-style-solid-color blockquote {
+    max-width: 80%;
     width: calc(8 * (100vw / 12));
   }
 }
