@@ -481,7 +481,7 @@
 		padding: $size__spacing-unit;
 
 		@include media(tablet) {
-			padding: $size__spacing-unit 0;
+			padding: $size__spacing-unit 10%;
 		}
 
 		.wp-block-cover-image-text,
@@ -496,7 +496,6 @@
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
-				padding: 10%;
 				max-width: 100%;
 			}
 		}
