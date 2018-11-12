@@ -254,15 +254,10 @@ figcaption,
 
 .wp-block-cover {
 
-	@include media(tablet) {
-		padding-left: 10%;
-		padding-right: 10%;
-	}
-
 	h2,
 	.wp-block-cover-text {
 		font-family: $font__heading;
-		font-size: $font__size-xl;
+		font-size: $font__size-lg;
 		font-weight: bold;
 		line-height: 1.4;
 
@@ -280,6 +275,16 @@ figcaption,
 	&.has-left-content,
 	&.has-right-content {
 		justify-content: center;
+	}
+
+	@include media(tablet) {
+		padding-left: 10%;
+		padding-right: 10%;
+
+		h2,
+		.wp-block-cover-text {
+			font-size: $font__size-xl;
+		}
 	}
 }
 

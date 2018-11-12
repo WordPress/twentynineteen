@@ -248,17 +248,10 @@ figcaption,
 }
 
 /** === Cover === */
-@media only screen and (min-width: 768px) {
-  .wp-block-cover {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.25em;
+  font-size: 1.6875em;
   font-weight: bold;
   line-height: 1.4;
 }
@@ -279,6 +272,17 @@ figcaption,
 
 .wp-block-cover.has-left-content, .wp-block-cover.has-right-content {
   justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .wp-block-cover h2,
+  .wp-block-cover .wp-block-cover-text {
+    font-size: 2.25em;
+  }
 }
 
 .wp-block[data-type="core/cover"][data-align="left"] h2,
