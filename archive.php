@@ -6,12 +6,13 @@
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
+ * @since 1.0.0
  */
 
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -19,7 +20,8 @@ get_header();
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="page-description">', '</div>' );
+					// Remove for now @TODO
+					// the_archive_description( '<div class="page-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -33,7 +35,7 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content/content' );
+				get_template_part( 'template-parts/content/content', 'excerpt' );
 
 				// End the loop.
 			endwhile;
@@ -43,13 +45,12 @@ get_header();
 
 			// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content/content', 'none' );
 
 		endif;
 		?>
-
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
 <?php
 get_footer();

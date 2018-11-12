@@ -2,14 +2,13 @@
 
 [![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
 
-**Contributors:** the WordPress team  
-**Requires at least:** WordPress 4.9.8  
-**Tested up to:** WordPress 4.9.6  
-**Version:** 1.0  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+**Contributors:** the WordPress team
+**Requires at least:** WordPress 4.9.6
+**Tested up to:** WordPress 4.9.8
+**Version:** 1.0
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-
 
 ## Description
 
@@ -23,11 +22,10 @@ Twenty Nineteen is a Gutenberg-ready theme for WordPress.
 4. Go to https://codex.wordpress.org/Twenty_Nineteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
- 
 ## Copyright
 
 Twenty Nineteen WordPress Theme, Copyright 2018 WordPress.org
-Twenty Nineteen is distributed under the terms of the GNU GPL
+Twenty Nineteen is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -60,6 +58,7 @@ Source: https://pexels.com/xxxxxxxxxx
 ## Changelog
 
 ### X.X
+
 * Released: XX-XX-XXXX
 
 Initial release

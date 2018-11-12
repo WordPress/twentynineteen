@@ -5,6 +5,16 @@
 
 	margin: calc(3 * 1rem) 0;
 
+	@include media(tablet) {
+		margin: calc(3 * 1rem) $size__site-margins;
+		max-width: calc(6 * (100vw / 12));
+	}
+
+	@include media(desktop) {
+		margin: calc(3 * 1rem) 0;
+		max-width: 100%;
+	}
+
 	.nav-links {
 
 		margin: 0 $size__spacing-unit;
@@ -12,10 +22,14 @@
 		display: flex;
 		flex-direction: column;
 
+		@include media(tablet) {
+			margin: 0;
+		}
+
 		@include media(desktop) {
 			flex-direction: row;
-			margin: 0 calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
+			margin: 0 $size__site-margins;
+			max-width: $size__site-desktop-content;
 		}
 
 		a {
@@ -73,6 +87,7 @@
 
 			@include media(desktop) {
 				order: 2;
+				padding-left: $size__spacing-unit;
 			}
 
 			.meta-nav {
@@ -108,6 +123,21 @@
 			}
 		}
 
+		a:focus {
+			text-decoration: underline;
+			outline-offset: -1px;
+
+			&.prev,
+			&.next {
+				text-decoration: none;
+
+				.nav-prev-text,
+				.nav-next-text {
+					text-decoration: underline;
+				}
+			}
+		}
+
 		.nav-next-text,
 		.nav-prev-text {
 			display: none;
@@ -115,7 +145,7 @@
 
 		@include media(tablet) {
 
-			margin-left: calc(2 * (100vw / 12) );
+			margin-left: $size__site-margins;
 			padding: 0;
 
 			.prev,
@@ -138,7 +168,6 @@
 .comment-navigation {
 
 	.nav-links {
-
 		display: flex;
 		flex-direction: row;
 	}
@@ -147,6 +176,8 @@
 	.nav-next {
 		min-width: 50%;
 		width: 100%;
+		font-family: $font__heading;
+		font-weight: bold;
 
 		.secondary-text {
 			display: none;
@@ -161,13 +192,6 @@
 			position: relative;
 			margin: 0 -0.35em;
 			top: -1px;
-		}
-
-		a {
-
-			&:hover {
-				color: $color__link;
-			}
 		}
 	}
 

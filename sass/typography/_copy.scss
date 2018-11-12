@@ -3,20 +3,17 @@ p {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
 blockquote {
 
-	> p {
-		font-size: $font__size-lg;
-		font-style: italic;
-		line-height: $font__line-height-heading;
-	}
-
 	cite {
-		font-size: $font__size-sm;
+		font-size: $font__size-xs;
 		font-style: normal;
 		font-family: $font__heading;
 	}
@@ -29,7 +26,10 @@ pre {
 	overflow: auto;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font-size: $font__size-sm;
 	font-family: $font__code;
 }
@@ -39,7 +39,8 @@ abbr, acronym {
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }

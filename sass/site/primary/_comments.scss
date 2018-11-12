@@ -7,37 +7,52 @@
 }
 
 .comments-area {
+	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+	@include postContentMaxWidth();
 
-	/* Add extra margin when the comments section is located immediately after the
-	 * post itself (this happens on pages). 
-	 */
-	.hentry + & {
-		margin-top: calc(3 * #{$size__spacing-unit});
+	@include media(tablet) {
+		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 	}
 
-	.comments-title-wrap,
-	.comment-list,
-	> .comment-respond,
-	.comment-form-flex,
-	.no-comments {
-
-		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+	& > * {
+		margin-top: calc(2 * #{$size__spacing-unit});
+		margin-bottom: calc(2 * #{$size__spacing-unit});
 
 		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
-			max-width: calc(6 * (100vw / 12));
+			margin-top: calc(3 * #{$size__spacing-unit});
+			margin-bottom: calc(3 * #{$size__spacing-unit});
 		}
+	}
+
+	/* Add extra margin when the comments section is located immediately after the
+	 * post itself (this happens on pages).
+	 */
+	.entry + & {
+		margin-top: calc(3 * #{$size__spacing-unit});
 	}
 
 	.comments-title-wrap {
 
-		align-items: baseline;
-		display: flex;
-		justify-content: space-between;
+		@include media(tablet) {
+			align-items: baseline;
+			display: flex;
+			justify-content: space-between;
+		}
 
 		.comments-title {
 			@include post-section-dash;
 			margin: 0;
+
+			@include media(tablet) {
+				flex: 1 0 calc(3 * (100vw / 12));
+			}
+		}
+
+		.discussion-meta {
+			@include media(tablet) {
+				flex: 0 0 calc(2 * (100vw / 12));
+				margin-left: #{$size__spacing-unit};
+			}
 		}
 	}
 }
@@ -48,11 +63,10 @@
 }
 
 #respond {
-
 	position: relative;
 
 	.comment-user-avatar {
-		display: none;
+		margin: $size__spacing-unit 0 -#{$size__spacing-unit};
 	}
 
 	.comment .comment-form {
@@ -74,26 +88,9 @@
 	> .comments-title:last-child {
 		display: none;
 	}
-
-	> #respond {
-		@include media(desktop) {
-
-			.comment-user-avatar {
-				position: absolute;
-				display: block;
-				top: 0;
-				left: 0;
-
-				.avatar {
-					display: block;
-				}
-			}
-		}
-	}
 }
 
 .comment-form-flex {
-
 	display: flex;
 	flex-direction: column;
 
@@ -104,8 +101,8 @@
 	}
 
 	#respond {
-
 		order: 2;
+
 		+ .comments-title {
 			display: block;
 		}
@@ -113,7 +110,6 @@
 }
 
 .comment-list {
-
 	list-style: none;
 	padding: 0;
 
@@ -126,13 +122,35 @@
 		margin-top: 0;
 	}
 
+	.pingback,
+	.trackback {
+
+		.comment-body {
+			color: $color__text-light;
+			font-family: $font__heading;
+			font-size: $font__size-xs;
+			font-weight: 500;
+			margin-top: $size__spacing-unit;
+			margin-bottom: $size__spacing-unit;
+
+			a:not(.comment-edit-link) {
+				font-weight: bold;
+				font-size: $font__size-base / (1 * $font__size-ratio);
+				line-height: 1.5;
+				padding-right: #{0.5 * $size__spacing-unit};
+				display: block;
+			}
+
+			.comment-edit-link {
+				color: $color__text-light;
+				font-family: $font__heading;
+				font-weight: 500;
+			}
+		}
+	}
 }
 
 .comment-reply {
-
-	left: calc(#{$size__spacing-unit} + 100%);
-	bottom: 0;
-	position: absolute;
 
 	#respond + & {
 		display: none;
@@ -144,40 +162,32 @@
 }
 
 .comment {
-
 	list-style: none;
 	position: relative;
 
 	@include media(tablet) {
-
 		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
 
+		&.depth-1,
 		.children {
 			padding-left: 0;
 		}
-	}
 
-	&:hover > .comment-body > .comment-meta > .comment-metadata {
-		> .edit-link-sep,
-		> .edit-link {
-			opacity: 1;
+		&.depth-1 {
+			margin-left: calc(3.25 * #{$size__spacing-unit});
 		}
 	}
 
 	.comment-body {
-		margin: calc(2 * #{$size__spacing-unit}) 0;
+		margin: calc(2 * #{$size__spacing-unit}) 0 0;
 	}
+
 
 	.comment-meta {
 		position: relative;
 	}
 
 	.comment-author {
-
-		@include media(tablet) {
-			display: inline-block;
-			vertical-align: baseline;
-		}
 
 		.avatar {
 			float: left;
@@ -197,11 +207,6 @@
 			position: relative;
 			display: block;
 
-			@include media(tablet) {
-				display: inline-block;
-				vertical-align: baseline;
-			}
-
 			a {
 				color: inherit;
 
@@ -217,9 +222,13 @@
 			height: 18px;
 			position: absolute;
 			background: lighten( $color__link, 8% );
-			right: calc(100% + #{$size__spacing-unit * .25});
+			right: calc(100% - #{$size__spacing-unit * 2.5});
 			top: -3px;
 			width: 18px;
+
+			@include media(tablet) {
+				right: calc(100% + #{$size__spacing-unit * .75});
+			}
 
 			svg {
 				width: inherit;
@@ -233,16 +242,9 @@
 
 	.comment-metadata {
 
-		@include media(tablet) {
-			display: inline-block;
-			margin-left: $size__spacing-unit;
-			position: relative;
-			vertical-align: baseline;
-		}
-
 		> a,
 		.comment-edit-link {
-			display: inline-block;
+			display: inline;
 			font-weight: 500;
 			color: $color__text-light;
 			vertical-align: baseline;
@@ -252,7 +254,7 @@
 			}
 
 			&:hover {
-				color: $color__text-hover;
+				color: $color__link-hover;
 				text-decoration: none;
 			}
 		}
@@ -264,15 +266,11 @@
 		.edit-link-sep {
 			color: $color__text-light;
 			margin: 0 0.2em;
-			opacity: 0;
-			transition: opacity 200ms ease-in-out;
 			vertical-align: baseline;
 		}
 
 		.edit-link {
 			color: $color__text-light;
-			transition: opacity 200ms ease-in-out;
-			opacity: 0;
 
 			svg {
 				transform: scale(0.8);
@@ -282,7 +280,6 @@
 		}
 
 		.comment-edit-link {
-
 			position: relative;
 			padding-left: $size__spacing-unit;
 			margin-left: -#{$size__spacing-unit};
@@ -298,12 +295,20 @@
 
 		margin: $size__spacing-unit 0;
 
+		@include media(desktop) {
+			padding-right: $size__spacing-unit;
+		}
+
 		> *:first-child {
 			margin-top: 0;
 		}
 
 		> *:last-child {
 			margin-bottom: 0;
+		}
+
+		blockquote {
+			margin-left: 0;
 		}
 
 		a {
@@ -345,19 +350,10 @@
 			height: calc(1.5 * #{$size__spacing-unit});
 			width: calc(1.5 * #{$size__spacing-unit});
 		}
-
-		@include media(tablet) {
-
-		}
 	}
 }
 
 .discussion-meta {
-
-	.discussion-avatar-list {
-		display: inline-block;
-		margin-right: 8px;
-	}
 
 	.discussion-meta-info {
 		margin: 0;
