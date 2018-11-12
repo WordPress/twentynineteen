@@ -169,6 +169,13 @@
 				if ( '#' !== url && '' !== url ) {
 					// Go to link
 					window.location = url;
+
+				// Open submenu if url is #
+				} else if ( '#' === url && event.target.nextSibling.matches('.submenu-expand') ) {
+
+					console.log( event.target.nextSibling.classList );
+					openSubMenu( event.target );
+
 				} else {
 					// Prevent default touch events
 					event.preventDefault();
