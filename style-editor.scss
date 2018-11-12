@@ -8,11 +8,11 @@ Twenty Nineteen Editor Styles
 @import "sass/variables-site/colors";
 @import "sass/mixins/mixins-master";
 
-/* 
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
- * This results in a jumping cursor when typing in both the Classic and block 
- * editors. The following font-face override fixes the issue by manually inserting 
- * a custom font that includes just a Hoefler Text space replacement for that 
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
  * character instead.
  */
 @font-face {
@@ -179,15 +179,15 @@ a {
 	}
 }
 
-.has-primary-background-color { 
-	
+.has-primary-background-color {
+
 	p,
-	h1, 
+	h1,
 	h2,
 	h3,
 	h4,
 	h5,
-	h6, 
+	h6,
 	a,
 	a:hover {
 		color: $color__background-body;
@@ -551,13 +551,16 @@ ul.wp-block-archives,
 	}
 
 	li {
+		color: $color__text-light;
 		font-family: $font__heading;
 		font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 		font-weight: bold;
 		line-height: $font__line-height-heading;
+		padding-bottom: ( .75 * $size__spacing-unit );
 
-		&:not(.menu-item-has-children) {
-			padding-bottom: ( .75 * $size__spacing-unit );
+		&.menu-item-has-children,
+		&:last-child {
+			padding-bottom: 0;
 		}
 
 		a {
@@ -568,6 +571,21 @@ ul.wp-block-archives,
 			padding-left: $size__spacing-unit;
 		}
 	}
+}
+
+.wp-block-categories {
+
+	ul {
+		padding-top: ( .75 * $size__spacing-unit );
+		@include nestedSubMenuPadding();
+	}
+
+	li ul {
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: ( -.75 * $size__spacing-unit );
+	}
+
 }
 
 /** === Latest Posts grid view === */

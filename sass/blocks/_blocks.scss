@@ -223,19 +223,32 @@
 			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 			font-weight: bold;
 			line-height: $font__line-height-heading;
+			padding-bottom: ( .75 * $size__spacing-unit );
 
-			&:not(.menu-item-has-children) {
-				padding-bottom: ( .75 * $size__spacing-unit );
+			&.menu-item-has-children,
+			&:last-child {
+				padding-bottom: 0;
 			}
 
 			a {
 				text-decoration: none;
 			}
-
-			ul {
-				padding-left: $size__spacing-unit;
-			}
 		}
+	}
+
+	//! Latest categories
+	.wp-block-categories {
+
+		ul {
+			padding-top: ( .75 * $size__spacing-unit );
+		}
+		
+		li ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+		@include nestedSubMenuPadding();
 	}
 
 	//! Latest posts grid view
