@@ -270,10 +270,6 @@ figcaption,
   }
 }
 
-.wp-block-cover.has-left-content, .wp-block-cover.has-right-content {
-  justify-content: center;
-}
-
 @media only screen and (min-width: 768px) {
   .wp-block-cover {
     padding-left: 10%;
@@ -308,6 +304,13 @@ figcaption,
   .wp-block[data-type="core/cover"][data-align="full"] h2,
   .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
     max-width: calc(6 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover {
+    padding-left: calc(10% + 64px);
+    padding-right: calc(10% + 64px);
   }
 }
 

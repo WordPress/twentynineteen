@@ -272,11 +272,6 @@ figcaption,
 		}
 	}
 
-	&.has-left-content,
-	&.has-right-content {
-		justify-content: center;
-	}
-
 	@include media(tablet) {
 		padding-left: 10%;
 		padding-right: 10%;
@@ -314,6 +309,17 @@ figcaption,
 		h2,
 		.wp-block-cover-text {
 			max-width: calc(6 * (100vw / 12));
+		}
+	}
+}
+
+.wp-block[data-type="core/cover"][data-align="full"] {
+
+	@include media(tablet) {
+
+		.wp-block-cover {
+			padding-left: calc(10% + 64px);
+			padding-right: calc(10% + 64px);
 		}
 	}
 }
