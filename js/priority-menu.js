@@ -113,11 +113,13 @@
 	 */
 	function updateNavigationMenu( container ) {
 
+		//console.log( 'Old Customizer Menu: '+ container );
+
 		// Adds the necessary UI to operate the menu.
 		var toggleButton = container.querySelector('.main-menu-more-toggle');
-		var visibleList = container.querySelector('.main-menu[id]');
-		var hiddenList = container.querySelector('.hidden-links');
-		var breaks = [];
+		var visibleList  = container.querySelector('.main-menu[id]');
+		var hiddenList   = container.querySelector('.hidden-links');
+		var breaks       = [];
 
 		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
 			// Record the width of the list
@@ -157,15 +159,15 @@
 	/**
 	 * Run our priority+ function on selective refresh in the customizer
 	 */
-	document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
+/*
+	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
+	//document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
 		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
-			// console.log( 'New Customizer Menu: '+ params.newContainer );
-			updateNavigationMenu( params.newContainer );
+			console.log( 'New Customizer Menu: '+ params.newContainer[0].classList );
+			updateNavigationMenu( params.newContainer[0] );
 		}
 	});
-
-	var event = new CustomEvent( 'customize-preview-menu-refreshed', { bubbles: true, cancelable: true } );
-	someElement.dispatchEvent(event);
+*/
 
 	/**
 	 * Run our priority+ function on load
