@@ -557,18 +557,33 @@
 	//! Separator
 	.wp-block-separator,
 	hr {
+		background-color: $color__text-light;
+		border: 0;
+		height: 2px;
 		margin-bottom: (2 * $size__spacing-unit);
 		margin-top: (2 * $size__spacing-unit);
+		max-width: 2.25em;
 		text-align: left;
 
-		&:not(.is-style-dots) {
-			background-color: $color__text-light;
-			border: 0;
-			height: 2px;
+		&.is-style-wide {
+			max-width: 100%;
+			@include postContentMaxWidth();
 		}
 
-		&:not(.is-style-wide):not(.is-style-dots) {
-			max-width: 2.25em;
+		&.is-style-dots {
+			max-width: 100%;
+			@include postContentMaxWidth();
+			background-color: inherit;
+			border: inherit;
+			height: inherit;
+			text-align: center;
+
+			&:before {
+				color: $color__text-light;
+				font-size: $font__size-lg;
+				letter-spacing: $font__size-sm;
+				padding-left: $font__size-sm;
+			}
 		}
 
 		/* Remove duplicate rule-line when a separator
@@ -578,18 +593,6 @@
 
 			&:before {
 				display: none;
-			}
-		}
-
-		&.is-style-dots {
-			@include postContentMaxWidth();
-			text-align: center;
-
-			&:before {
-				color: $color__text-light;
-				font-size: $font__size-lg;
-				letter-spacing: $font__size-sm;
-				padding-left: $font__size-sm;
 			}
 		}
 	}

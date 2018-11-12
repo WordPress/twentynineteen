@@ -4206,34 +4206,42 @@ body.page .main-navigation {
 
 .entry .entry-content .wp-block-separator,
 .entry .entry-content hr {
+  background-color: #767676;
+  border: 0;
+  height: 2px;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  max-width: 2.25em;
   text-align: left;
   /* Remove duplicate rule-line when a separator
 		 * is followed by an H1, or H2 */
 }
 
-.entry .entry-content .wp-block-separator:not(.is-style-dots),
-.entry .entry-content hr:not(.is-style-dots) {
-  background-color: #767676;
-  border: 0;
-  height: 2px;
+.entry .entry-content .wp-block-separator.is-style-wide,
+.entry .entry-content hr.is-style-wide {
+  max-width: 100%;
 }
 
-.entry .entry-content .wp-block-separator:not(.is-style-wide):not(.is-style-dots),
-.entry .entry-content hr:not(.is-style-wide):not(.is-style-dots) {
-  max-width: 2.25em;
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-separator.is-style-wide,
+  .entry .entry-content hr.is-style-wide {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
 }
 
-.entry .entry-content .wp-block-separator + h1:before,
-.entry .entry-content .wp-block-separator + h2:before,
-.entry .entry-content hr + h1:before,
-.entry .entry-content hr + h2:before {
-  display: none;
+@media only screen and (min-width: 1168px) {
+  .entry .entry-content .wp-block-separator.is-style-wide,
+  .entry .entry-content hr.is-style-wide {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
 }
 
 .entry .entry-content .wp-block-separator.is-style-dots,
 .entry .entry-content hr.is-style-dots {
+  max-width: 100%;
+  background-color: inherit;
+  border: inherit;
+  height: inherit;
   text-align: center;
 }
 
@@ -4257,6 +4265,13 @@ body.page .main-navigation {
   font-size: 1.6875em;
   letter-spacing: 0.88889em;
   padding-left: 0.88889em;
+}
+
+.entry .entry-content .wp-block-separator + h1:before,
+.entry .entry-content .wp-block-separator + h2:before,
+.entry .entry-content hr + h1:before,
+.entry .entry-content hr + h2:before {
+  display: none;
 }
 
 .entry .entry-content .wp-block-embed-twitter {
