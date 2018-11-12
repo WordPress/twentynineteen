@@ -4369,6 +4369,22 @@ body.page .main-navigation {
   font-size: 0.71111em;
 }
 
+.entry .entry-content .has-small-font-size {
+  font-size: 0.88889em;
+}
+
+.entry .entry-content .has-normal-font-size {
+  font-size: 1.125em;
+}
+
+.entry .entry-content .has-large-font-size {
+  font-size: 1.6875em;
+}
+
+.entry .entry-content .has-huge-font-size {
+  font-size: 2.25em;
+}
+
 .entry .entry-content .has-primary-background-color {
   background-color: #0073aa;
 }
