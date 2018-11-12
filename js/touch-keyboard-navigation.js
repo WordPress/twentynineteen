@@ -6,7 +6,13 @@
 
 (function() {
 
-	// Debounce
+	/**
+	 * Debounce
+	 *
+	 * @param {Function} func
+	 * @param {number} wait
+	 * @param {boolean} immediate
+	 */
 	function debounce(func, wait, immediate) {
 		'use strict';
 
@@ -36,19 +42,36 @@
 		};
 	}
 
-	// Add Class
+	/**
+	 * Add class
+	 *
+	 * @param {Object} el
+	 * @param {string} cls
+	 */
 	function addClass(el, cls) {
 		if ( ! el.className.match( '(?:^|\\s)' + cls + '(?!\\S)') ) {
 			el.className += ' ' + cls;
 		}
 	}
 
-	// Delete Class
+	/**
+	 * Delete class
+	 *
+	 * @param {Object} el
+	 * @param {string} cls
+	 */
 	function deleteClass(el, cls) {
 		el.className = el.className.replace( new RegExp( '(?:^|\\s)' + cls + '(?!\\S)' ),'' );
 	}
 
-	// Has Class?
+	/**
+	 * Has class?
+	 *
+	 * @param {Object} el
+	 * @param {string} cls
+	 *
+	 * @returns {boolean} Has class
+	 */
 	function hasClass(el, cls) {
 
 		if ( el.className.match( '(?:^|\\s)' + cls + '(?!\\S)' ) ) {
@@ -56,7 +79,11 @@
 		}
 	}
 
-	// Toggle Aria Expanded state for screenreaders
+	/**
+	 * Toggle Aria Expanded state for screenreaders
+	 *
+	 * @param {Object} ariaItem
+	 */
 	function toggleAriaExpandedState( ariaItem ) {
 		'use strict';
 
@@ -71,7 +98,11 @@
 		ariaItem.setAttribute('aria-expanded', ariaState);
 	}
 
-	// Open sub-menu
+	/**
+	 * Open sub-menu
+	 *
+	 * @param {Object} currentSubMenu
+	 */
 	function openSubMenu( currentSubMenu ) {
 		'use strict';
 
@@ -84,7 +115,11 @@
 		toggleAriaExpandedState( currentSubMenu.previousSibling );
 	}
 
-	// Close sub-menu
+	/**
+	 * Close sub-menu
+	 *
+	 * @param {Object} currentSubMenu
+	 */
 	function closeSubMenu( currentSubMenu ) {
 		'use strict';
 
@@ -116,7 +151,13 @@
 		}
 	}
 
-	// Find first ancestor of an element by selector
+	/**
+	 * Find first ancestor of an element by selector
+	 *
+	 * @param {Object} child
+	 * @param {String} selector
+	 * @param {String} stopSelector
+	 */
 	function getCurrentParent( child, selector, stopSelector ) {
 
 		var currentParent = null;
@@ -139,7 +180,9 @@
 		return currentParent;
 	}
 
-	// Remove all off-canvas states
+	/**
+	 * Remove all off-canvas states
+	 */
 	function removeAllFocusStates() {
 		'use strict';
 
@@ -151,12 +194,16 @@
 		}
 	}
 
-	// Matches polyfill for IE11
+	/**
+	 * Matches polyfill for IE11
+	 */
 	if (!Element.prototype.matches) {
 		Element.prototype.matches = Element.prototype.msMatchesSelector;
 	}
 
-	// Toggle `focus` class to allow sub-menu access on touch screens.
+	/**
+	 * Toggle `focus` class to allow sub-menu access on touch screens.
+	 */
 	function toggleSubmenuDisplay() {
 
 		document.addEventListener('touchstart', function(event) {
@@ -254,11 +301,25 @@
 		}, true);
 	}
 
-	// Run our sub-menu function as soon as the document is `ready`
+	/**
+	 * Run our sub-menu function as soon as the document is `ready`
+	 */
 	document.addEventListener( 'DOMContentLoaded', function() {
 		toggleSubmenuDisplay();
 	});
-	// Annnnnd also every time the window resizes
+
+	/**
+	 * Run our sub-menu function on selective refresh in the customizer
+	 */
+	document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
+		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
+			toggleSubmenuDisplay();
+		}
+	});
+
+	/**
+	 * Run our sub-menu function every time the window resizes
+	 */
 	var isResizing = false;
 	window.addEventListener( 'resize',
 		debounce( function() {

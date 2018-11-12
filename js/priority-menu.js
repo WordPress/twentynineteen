@@ -1,4 +1,41 @@
 (function() {
+
+	/**
+	 * Debounce
+	 *
+	 * @param {Function} func
+	 * @param {number} wait
+	 * @param {boolean} immediate
+	 */
+	function debounce(func, wait, immediate) {
+		'use strict';
+
+		var timeout;
+		wait      = (typeof wait !== 'undefined') ? wait : 20;
+		immediate = (typeof immediate !== 'undefined') ? immediate : true;
+
+		return function() {
+
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+
+				if (!immediate) {
+					func.apply(context, args);
+				}
+			};
+
+			var callNow = immediate && !timeout;
+
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+
+			if (callNow) {
+				func.apply(context, args);
+			}
+		};
+	}
+
 	/**
 	 * Prepends an element to a container.
 	 *
@@ -106,23 +143,50 @@
 		}
 	}
 
-	// Event listeners
-	// Run our sub-menu function as soon as the document is `ready`
+	/**
+	 * Run our priority+ function as soon as the document is `ready`
+	 */
 	document.addEventListener( 'DOMContentLoaded', function() {
 		updateNavigationMenu();
 	});
 
+	/**
+	 * Run our priority+ function on selective refresh in the customizer
+	 */
+	document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
+		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
+			updateNavigationMenu();
+		}
+	});
+
+	/**
+	 * Run our priority+ function on load
+	 */
 	window.addEventListener('load', function() {
 		updateNavigationMenu();
 	});
 
-	window.addEventListener('resize', function() {
-		updateNavigationMenu();
-	});
+	/**
+	 * Run our priority+ function every time the window resizes
+	 */
+	var isResizing = false;
+	window.addEventListener( 'resize',
+		debounce( function() {
+			if ( isResizing ) {
+				return;
+			}
 
-	toggleButton.addEventListener('click', function() {
-		toggleElementVisibility(hiddenList);
-	});
+			isResizing = true;
+			setTimeout( function() {
+				updateNavigationMenu();
+				isResizing = false;
+			}, 150 );
+		} )
+	);
 
+	/**
+	 * Run our priority+ function
+	 */
 	updateNavigationMenu();
+
 })();
