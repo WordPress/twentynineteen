@@ -1096,6 +1096,10 @@ body.page .main-navigation {
   vertical-align: text-bottom;
 }
 
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
+  display: none;
+}
+
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
@@ -1104,10 +1108,6 @@ body.page .main-navigation {
 .main-navigation .main-menu > li:last-child > a,
 .main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
   margin-left: 0;
-}
-
-.main-navigation .main-menu .is-hidden {
-  display: none;
 }
 
 .main-navigation .sub-menu {
