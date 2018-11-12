@@ -167,17 +167,16 @@
 
 				// If there’s a link, go to it on touchend
 				if ( '#' !== url && '' !== url ) {
-					// Go to link
 					window.location = url;
 
 				// Open submenu if url is #
 				} else if ( '#' === url && event.target.nextSibling.matches('.submenu-expand') ) {
 
-					console.log( event.target.nextSibling.classList );
 					openSubMenu( event.target );
 
+				// Prevent default touch events
 				} else {
-					// Prevent default touch events
+
 					event.preventDefault();
 				}
 			}
