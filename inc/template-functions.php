@@ -123,7 +123,7 @@ function twentynineteen_image_filters_enabled() {
 function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
 
 	if ( is_admin() ) {
-		return;
+		return $attr;
 	}
 
 	if ( ! is_singular() ) {
