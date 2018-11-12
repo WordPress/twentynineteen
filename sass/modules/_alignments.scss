@@ -1,7 +1,13 @@
 .alignleft {
 	/*rtl:ignore*/
 	float: left;
+	/*rtl:ignore*/
 	margin-right: $size__spacing-unit;
+
+	@include media(tablet) {
+		/*rtl:ignore*/
+		margin-right: calc(2 * #{$size__spacing-unit});
+	}
 }
 
 .alignright {
@@ -9,6 +15,11 @@
 	float: right;
 	/*rtl:ignore*/
 	margin-left: $size__spacing-unit;
+
+	@include media(tablet) {
+		/*rtl:ignore*/
+		margin-left: calc(2 * #{$size__spacing-unit});
+	}
 }
 
 .aligncenter {
