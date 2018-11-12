@@ -497,6 +497,7 @@
 			@include media(tablet) {
 				font-size: $font__size-xl;
 				padding: 10%;
+				max-width: 100%;
 			}
 		}
 
@@ -519,6 +520,12 @@
 		}
 
 		&.alignfull {
+
+			.wp-block-cover-image-text,
+			.wp-block-cover-text,
+			h2 {
+				@include postContentMaxWidth();
+			}
 
 			@include media(tablet) {
 				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));

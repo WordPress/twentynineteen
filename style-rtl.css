@@ -1173,26 +1173,12 @@ body.page .main-navigation {
   width: calc( 100vw - 2rem);
 }
 
-.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu {
-  display: block;
-  right: 0;
-  margin-top: 0;
-  opacity: 1;
-  width: calc( 100vw - 2rem);
-}
-
 .main-navigation .main-menu .menu-item-has-children:focus-within > .sub-menu {
   display: block;
   right: 0;
   margin-top: 0;
   opacity: 1;
   width: calc( 100vw - 2rem);
-}
-
-.main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
-  margin-top: inherit;
-  position: relative;
-  padding-right: 1rem;
 }
 
 .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
@@ -1208,13 +1194,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
-    padding-right: 0;
-    position: absolute;
-    right: 100%;
-    width: max-content;
-    top: 0;
-  }
   .main-navigation .main-menu .menu-item-has-children[focus-within] > .sub-menu .sub-menu {
     padding-right: 0;
     position: absolute;
@@ -3667,6 +3646,7 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-cover h2 {
     font-size: 2.25em;
     padding: 10%;
+    max-width: 100%;
   }
 }
 
@@ -3703,6 +3683,7 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-text,
   .entry .entry-content .wp-block-cover.alignfull h2 {
     padding: 0;
+    max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
