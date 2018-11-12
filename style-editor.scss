@@ -429,11 +429,6 @@ figcaption,
 
 			@include media(tablet) {
 				max-width: 80%;
-				width: calc(8 * (100vw / 12));
-			}
-
-			@include media(desktop) {
-				width: calc(6 * (100vw / 12));
 			}
 		}
 
@@ -499,6 +494,17 @@ figcaption,
 		text-align: left;
 	}
 }
+
+.wp-block[data-type="core/pullquote"][data-align="full"] {
+	
+	@include media(tablet) {
+		
+		.wp-block-pullquote blockquote {
+			max-width: calc(80% - 128px);
+		}
+	}
+}
+
 
 /** === File === */
 

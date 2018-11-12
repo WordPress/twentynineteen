@@ -403,13 +403,6 @@ figcaption,
 @media only screen and (min-width: 768px) {
   .wp-block-pullquote.is-style-solid-color blockquote {
     max-width: 80%;
-    width: calc(8 * (100vw / 12));
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    width: calc(6 * (100vw / 12));
   }
 }
 
@@ -490,6 +483,12 @@ figcaption,
 .wp-block[data-type="core/pullquote"][data-align="right"] p,
 .wp-block[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citation {
   text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/pullquote"][data-align="full"] .wp-block-pullquote blockquote {
+    max-width: calc(80% - 128px);
+  }
 }
 
 /** === File === */
