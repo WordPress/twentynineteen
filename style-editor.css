@@ -8,11 +8,11 @@ Twenty Nineteen Editor Styles
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* Nested sub-menu padding: 10 levels deep */
-/* 
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
- * This results in a jumping cursor when typing in both the Classic and block 
- * editors. The following font-face override fixes the issue by manually inserting 
- * a custom font that includes just a Hoefler Text space replacement for that 
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
  * character instead.
  */
 @font-face {
@@ -525,6 +525,7 @@ ul.wp-block-archives ul,
 ul.wp-block-archives li,
 .wp-block-categories li,
 .wp-block-latest-posts li {
+  color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: calc(22px * 1.125);
   font-weight: bold;
