@@ -223,8 +223,8 @@ if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
 	 * Documentation for function.
 	 */
 	function twentynineteen_the_posts_navigation() {
-		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 22 );
-		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 22 );
+		$prev_icon = '&lsaquo;';
+		$next_icon = '&rsaquo;';
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
