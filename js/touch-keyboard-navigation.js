@@ -210,10 +210,10 @@
 			if ( null != mainNav && hasClass( mainNav, '.main-navigation' ) ) {
 				// Prevent default mouse events
 				event.preventDefault();
+			} else if ( event.target.matches('.submenu-expand') || null != getCurrentParent( event.target, '.submenu-expand' ) && getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) || event.target.matches('.menu-item-link-return') || null != getCurrentParent( event.target, '.menu-item-link-return' ) && getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
+				// Prevent default mouse events
+				event.preventDefault();
 			}
-
-			// Prevent default mouse events
-			event.preventDefault();
 
 			// Prevent default mouse/focus events
 			removeAllFocusStates();
