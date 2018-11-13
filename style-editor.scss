@@ -543,6 +543,7 @@ figcaption,
 	}
 
 	.wp-block-file__button-richtext-wrapper {
+		display: block;
 		margin-top: calc(0.75 * #{$size__spacing-unit});
 		margin-left: 0;
 	}

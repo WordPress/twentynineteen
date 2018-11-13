@@ -528,6 +528,7 @@ figcaption,
 }
 
 .wp-block-file .wp-block-file__button-richtext-wrapper {
+  display: block;
   margin-top: calc(0.75 * 1rem);
   margin-left: 0;
 }
