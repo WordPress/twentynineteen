@@ -36,7 +36,6 @@ body .wp-block[data-align="full"] {
   }
   body .editor-writing-flow {
     padding-top: 50px;
-    overflow: hidden;
   }
   body .wp-block[data-align="full"] {
     position: relative;
