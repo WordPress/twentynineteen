@@ -234,7 +234,7 @@ figcaption,
 }
 
 /** === Default Appender === */
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender .editor-default-block-appender__content {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-size: 22px;
 }
