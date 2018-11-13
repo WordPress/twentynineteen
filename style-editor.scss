@@ -523,13 +523,30 @@ figcaption,
 .wp-block-file {
 	font-family: $font__heading;
 
+	.wp-block-file__textlink {
+		text-decoration: underline;
+		color: $color__link;
+
+		&:hover {
+			color: $color__link-hover;
+			text-decoration: none;
+		}
+	}
+
 	.wp-block-file__button {
+		display: table;
 		line-height: 1.8;
 		font-size: $font__size-sm;
 		font-weight: bold;
 		background-color: $color__link;
 		border-radius: 5px;
 	}
+
+	.wp-block-file__button-richtext-wrapper {
+		margin-top: calc(0.75 * #{$size__spacing-unit});
+		margin-left: 0;
+	}
+
 }
 
 /** === Verse === */

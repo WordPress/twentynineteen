@@ -652,10 +652,7 @@
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
 			color: #fff;
 			margin-left: 0;
-
-			@include media(tablet) {
-				display: inline-block;
-			}
+			margin-top: calc(0.75 * #{$size__spacing-unit});
 
 			@include media(desktop) {
 				font-size: $font__size-base;
@@ -671,15 +668,6 @@
 				background: $color__background-button-hover;
 				outline: thin dotted;
 				outline-offset: -4px;
-			}
-		}
-
-		* + .wp-block-file__button {
-			margin-top: calc(0.75 * #{$size__spacing-unit});
-			
-			@include media(tablet) {
-				margin-top: 0;
-				margin-left: calc(0.75 * #{$size__spacing-unit});
 			}
 		}
 	}
