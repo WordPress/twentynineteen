@@ -70,3 +70,5 @@ Version 1.0:
 | @brentswisher | |
 | @smy315 | @smyoon315 |
 | @ahmadawais | @mrahmadawais |
+| @desi-developer | @desideveloper |
+| @2ndkauboy | @Kau-Boy |

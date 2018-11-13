@@ -7,11 +7,12 @@ Twenty Nineteen Editor Styles
  * layers of box-shadow to add the border visually, which will render the border smoother. */
 /* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
-/* 
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font. 
- * This results in a jumping cursor when typing in both the Classic and block 
- * editors. The following font-face override fixes the issue by manually inserting 
- * a custom font that includes just a Hoefler Text space replacement for that 
+/* Nested sub-menu padding: 10 levels deep */
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
  * character instead.
  */
 @font-face {
@@ -26,12 +27,16 @@ body .wp-block[data-align="full"] {
 
 @media only screen and (min-width: 600px) {
   body {
-    overflow-x: hidden;
+    padding-top: 0;
   }
   body :not(.editor-inner-blocks) > .editor-block-list__layout,
   body .editor-post-title {
     padding-left: 0;
     padding-right: 0;
+  }
+  body .editor-writing-flow {
+    padding-top: 50px;
+    overflow: hidden;
   }
   body .wp-block[data-align="full"] {
     position: relative;
@@ -45,7 +50,8 @@ body .wp-block[data-align="full"] {
     padding-left: 46px;
     padding-right: 46px;
   }
-  body .editor-writing-flow {
+  body .editor-block-list__layout,
+  body .editor-post-title {
     max-width: 80%;
     margin: 0 10%;
   }
@@ -228,7 +234,7 @@ figcaption,
 }
 
 /** === Default Appender === */
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender .editor-default-block-appender__content {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-size: 22px;
 }
@@ -251,9 +257,11 @@ figcaption,
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.25em;
+  font-size: 1.6875em;
   font-weight: bold;
   line-height: 1.4;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .wp-block-cover h2 strong,
@@ -261,22 +269,44 @@ figcaption,
   font-weight: bolder;
 }
 
-.wp-block-cover.has-left-content h2,
-.wp-block-cover.has-left-content .wp-block-cover-text {
-  padding: 1em;
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h2,
+  .wp-block-cover .wp-block-cover-text {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
 }
 
-.wp-block-cover.has-right-content h2,
-.wp-block-cover.has-right-content .wp-block-cover-text {
-  padding: 1em;
+@media only screen and (min-width: 768px) {
+  .wp-block-cover {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .wp-block-cover h2,
+  .wp-block-cover .wp-block-cover-text {
+    font-size: 2.25em;
+  }
 }
 
-.wp-block[data-type="core/cover"][data-align="left"] h2,
-.wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover-text,
-.wp-block[data-type="core/cover"][data-align="right"] h2,
-.wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover-text {
+.wp-block[data-type="core/cover"][data-align="left"] .editor-block-list__block-edit,
+.wp-block[data-type="core/cover"][data-align="right"] .editor-block-list__block-edit {
+  width: calc(4 * (100vw / 12));
+}
+
+.wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover,
+.wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover {
   width: 100%;
-  max-width: 305px;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="wide"] h2,
+  .wp-block[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
+  .wp-block[data-type="core/cover"][data-align="full"] h2,
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
+    max-width: calc(8 * (100vw / 12));
+  }
 }
 
 @media only screen and (min-width: 1168px) {
@@ -284,9 +314,14 @@ figcaption,
   .wp-block[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
   .wp-block[data-type="core/cover"][data-align="full"] h2,
   .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover-text {
-    padding: 0;
-    width: calc(6 * (100vw / 12));
     max-width: calc(6 * (100vw / 12));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover {
+    padding-left: calc(10% + 64px);
+    padding-right: calc(10% + 64px);
   }
 }
 
@@ -372,19 +407,13 @@ figcaption,
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
-  width: calc(100vw - (2 * 1rem));
-  max-width: 80%;
+  width: calc(100% - (2 * 1rem));
+  max-width: calc( 100% - (2 * 1rem));
 }
 
 @media only screen and (min-width: 768px) {
   .wp-block-pullquote.is-style-solid-color blockquote {
-    width: calc(8 * (100vw / 12));
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    width: calc(6 * (100vw / 12));
+    max-width: 80%;
   }
 }
 
@@ -443,6 +472,7 @@ figcaption,
 
 .wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit,
 .wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit {
+  width: calc(4 * (100vw / 12));
   max-width: 50%;
 }
 
@@ -465,6 +495,12 @@ figcaption,
 .wp-block[data-type="core/pullquote"][data-align="right"] p,
 .wp-block[data-type="core/pullquote"][data-align="right"] .wp-block-pullquote__citation {
   text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/pullquote"][data-align="full"] .wp-block-pullquote blockquote {
+    max-width: calc(80% - 128px);
+  }
 }
 
 /** === File === */
@@ -531,16 +567,20 @@ ul.wp-block-archives ul,
 ul.wp-block-archives li,
 .wp-block-categories li,
 .wp-block-latest-posts li {
+  color: #767676;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: calc(22px * 1.125);
   font-weight: bold;
   line-height: 1.2;
+  padding-bottom: 0.75rem;
 }
 
-ul.wp-block-archives li:not(.menu-item-has-children),
-.wp-block-categories li:not(.menu-item-has-children),
-.wp-block-latest-posts li:not(.menu-item-has-children) {
-  padding-bottom: 0.75rem;
+ul.wp-block-archives li.menu-item-has-children, ul.wp-block-archives li:last-child,
+.wp-block-categories li.menu-item-has-children,
+.wp-block-categories li:last-child,
+.wp-block-latest-posts li.menu-item-has-children,
+.wp-block-latest-posts li:last-child {
+  padding-bottom: 0;
 }
 
 ul.wp-block-archives li a,
@@ -553,6 +593,57 @@ ul.wp-block-archives li ul,
 .wp-block-categories li ul,
 .wp-block-latest-posts li ul {
   padding-left: 1rem;
+}
+
+.wp-block-categories ul {
+  padding-top: 0.75rem;
+}
+
+.wp-block-categories ul ul li > a:before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+.wp-block-categories ul ul > li > a:before {
+  content: "\2013\00a0";
+}
+
+.wp-block-categories ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories ul ul ul ul ul ul ul ul ul ul li > a:before {
+  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+}
+
+.wp-block-categories li ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: -0.75rem;
 }
 
 /** === Latest Posts grid view === */
