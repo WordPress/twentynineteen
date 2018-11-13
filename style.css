@@ -844,7 +844,7 @@ figure {
 
 blockquote {
   border-left: 2px solid #0073aa;
-  margin-left: -2rem;
+  margin-left: 0;
   padding: 0 0 0 1rem;
 }
 
