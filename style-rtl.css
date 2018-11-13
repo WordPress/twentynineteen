@@ -941,6 +941,9 @@ textarea {
   box-sizing: border-box;
   outline: none;
   padding: 0.36rem 0.66rem;
+  -webkit-appearance: none;
+  outline-offset: 0;
+  border-radius: 0;
 }
 
 input[type="text"]:focus,
@@ -964,12 +967,22 @@ textarea:focus {
   outline-offset: -4px;
 }
 
-input[type="search"] {
-  -webkit-appearance: none;
-  outline-offset: 0;
-}
-
-input[type="search"]::-webkit-search-decoration {
+input[type="text"]::-webkit-search-decoration,
+input[type="email"]::-webkit-search-decoration,
+input[type="url"]::-webkit-search-decoration,
+input[type="password"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-decoration,
+input[type="number"]::-webkit-search-decoration,
+input[type="tel"]::-webkit-search-decoration,
+input[type="range"]::-webkit-search-decoration,
+input[type="date"]::-webkit-search-decoration,
+input[type="month"]::-webkit-search-decoration,
+input[type="week"]::-webkit-search-decoration,
+input[type="time"]::-webkit-search-decoration,
+input[type="datetime"]::-webkit-search-decoration,
+input[type="datetime-local"]::-webkit-search-decoration,
+input[type="color"]::-webkit-search-decoration,
+textarea::-webkit-search-decoration {
   display: none;
 }
 
