@@ -253,6 +253,11 @@ figcaption,
   margin: 0 0.25em 0 0;
 }
 
+/** === Table === */
+.wp-block-table {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
 /** === Cover === */
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
