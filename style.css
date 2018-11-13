@@ -3738,11 +3738,6 @@ body.page .main-navigation {
   }
 }
 
-.entry .entry-content .wp-block-audio.aligncenter {
-  margin: 32px calc(2 * (100vw / 12));
-  max-width: calc(6 * (100vw / 12));
-}
-
 .entry .entry-content .wp-block-video video {
   width: 100%;
 }
