@@ -28,6 +28,14 @@ textarea {
 	}
 }
 
+input[type="search"] {
+	-webkit-appearance: none;
+	outline-offset: 0;
+	&::-webkit-search-decoration {
+		display: none;
+	}
+}
+
 select {
 
 }

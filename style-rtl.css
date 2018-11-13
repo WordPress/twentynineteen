@@ -964,6 +964,15 @@ textarea:focus {
   outline-offset: -4px;
 }
 
+input[type="search"] {
+  -webkit-appearance: none;
+  outline-offset: 0;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
 textarea {
   box-sizing: border-box;
   display: block;
