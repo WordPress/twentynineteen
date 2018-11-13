@@ -860,6 +860,7 @@ table {
   margin: 0 0 1rem;
   border-collapse: collapse;
   width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 table td,
@@ -3516,7 +3517,6 @@ body.page .main-navigation {
 
 .widget_calendar .calendar_wrap {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .widget_calendar .calendar_wrap table td,
