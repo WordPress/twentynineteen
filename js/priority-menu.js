@@ -91,7 +91,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
-		return button.classList.contains('hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
+		return button.classList.contains('is-hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
 	}
 
 	/**
@@ -107,6 +107,7 @@
 	 * Set menu container variable
 	 */
 	var navContainer = document.querySelector('.main-navigation');
+	var breaks       = [];
 
 	/**
 	 * Refreshes the list item from the menu depending on the menu size
@@ -119,9 +120,9 @@
 		var toggleButton = container.querySelector('.main-menu-more-toggle');
 		var visibleList  = container.querySelector('.main-menu[id]');
 		var hiddenList   = container.querySelector('.hidden-links');
-		var breaks       = [];
 
 		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
+			console.log('is-overflow');
 			// Record the width of the list
 			breaks.push( visibleList.offsetWidth );
 			// Move item to the hidden list
@@ -130,7 +131,11 @@
 			showElement( toggleButton );
 		} else {
 			// There is space for another item in the nav
+			console.log('more-space: '+ getAvailableSpace( toggleButton, container ) );
+			console.log('breaks: '+ breaks[breaks.length - 1] );
+
 			if ( getAvailableSpace( toggleButton, container ) > breaks[breaks.length - 1] ) {
+				console.log('more-space: '+ getAvailableSpace( toggleButton, container ) );
 				// Move the item to the visible list
 				visibleList.appendChild( hiddenList.firstChild.nextSibling );
 				breaks.pop();
@@ -154,6 +159,25 @@
 	 */
 	document.addEventListener( 'DOMContentLoaded', function() {
 		updateNavigationMenu( navContainer );
+
+		/**
+		* Selectice refresh check from https://github.com/xwp/wp-jetpack/blob/feature/selective-refresh-widget-support/modules/widgets/contact-info/contact-info-map.js#L35
+		* @type {*}
+		*/
+		hasSelectiveRefresh = (
+			'undefined' !== typeof wp &&
+			wp.customize &&
+			wp.customize.selectiveRefresh &&
+			wp.customize.widgetsPreview &&
+			wp.customize.widgetsPreview.WidgetPartial
+		);
+
+		if ( hasSelectiveRefresh ) {
+			wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
+				console.log(placement);
+				updateNavigationMenu( navContainer );
+			});
+        }
 	});
 
 	/**
