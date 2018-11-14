@@ -27,8 +27,8 @@ body .wp-block[data-align="full"] {
 
 @media only screen and (min-width: 600px) {
   body .wp-block[data-align="full"] {
-    position: relative;
-    left: 45px;
+    width: calc( 100% + 90px);
+    max-width: calc( 100% + 90px);
   }
 }
 
