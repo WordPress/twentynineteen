@@ -4311,7 +4311,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-embed-twitter {
-  overflow: hidden;
+  word-break: break-word;
 }
 
 .entry .entry-content .wp-block-table th,
