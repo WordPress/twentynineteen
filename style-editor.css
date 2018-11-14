@@ -26,32 +26,14 @@ body .wp-block[data-align="full"] {
 }
 
 @media only screen and (min-width: 600px) {
-  body {
-    padding-top: 0;
-  }
-  body :not(.editor-inner-blocks) > .editor-block-list__layout,
-  body .editor-post-title {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  body .editor-writing-flow {
-    padding-top: 50px;
-    overflow: hidden;
-  }
   body .wp-block[data-align="full"] {
-    position: relative;
-    left: 45px;
+    width: calc( 100% + 90px);
+    max-width: calc( 100% + 90px);
   }
 }
 
 @media only screen and (min-width: 768px) {
-  body :not(.editor-inner-blocks) > .editor-block-list__layout,
-  body .editor-post-title {
-    padding-left: 46px;
-    padding-right: 46px;
-  }
-  body .editor-block-list__layout,
-  body .editor-post-title {
+  body .editor-writing-flow {
     max-width: 80%;
     margin: 0 10%;
   }
@@ -68,7 +50,7 @@ body .wp-block[data-align="full"] {
     position: relative;
     left: calc( -12.5% - 14px);
     width: calc( 125% + 116px);
-    max-width: calc( 125% + 116px);
+    max-width: calc( 125% + 115px);
   }
   body .wp-block[data-align="right"] {
     max-width: 125%;

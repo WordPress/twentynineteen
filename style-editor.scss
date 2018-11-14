@@ -17,35 +17,16 @@ body {
 	}
 
 	@include media(mobile) {
-		padding-top: 0;
-
-		:not(.editor-inner-blocks) > .editor-block-list__layout, // Target only the top level layout element, or nested blocks will also be affected.
-		.editor-post-title {
-			padding-left: 0;
-			padding-right: 0;
-		}
-
-		.editor-writing-flow {
-			padding-top: 50px;
-			overflow: hidden;
-		}
 
 		.wp-block[data-align="full"] {
-			position: relative;
-			left: 45px;
+			width: calc( 100% + 90px );
+			max-width: calc( 100% + 90px );
 		}
 	}
 
 	@include media(tablet) {
 
-		:not(.editor-inner-blocks) > .editor-block-list__layout, // Target only the top level layout element, or nested blocks will also be affected.
-		.editor-post-title {
-			padding-left: 46px;
-			padding-right: 46px;
-		}
-
-		.editor-block-list__layout,
-		.editor-post-title {
+		.editor-writing-flow {
 			max-width: 80%;
 			margin: 0 10%;
 		}
@@ -65,7 +46,7 @@ body {
 			position: relative;
 			left: calc( -12.5% - 14px );
 			width: calc( 125% + 116px );
-			max-width: calc( 125% + 116px );
+			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages. 
 		}
 
 		.wp-block[data-align="right"] {
