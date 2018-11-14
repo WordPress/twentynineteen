@@ -1205,7 +1205,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .sub-menu > li > a:empty {
-  height: 0;
+  display: none;
 }
 
 .main-navigation .sub-menu > li.mobile-parent-nav-menu-item {
