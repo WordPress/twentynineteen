@@ -95,9 +95,9 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'image_filter',
 		array(
-			'label'       => __( 'Apply a color filter to featured images using your site\'s primary color', 'twentynineteen' ),
-			'section'     => 'colors',
-			'type'        => 'checkbox',
+			'label'   => __( 'Apply a color filter to featured images using your site&rsquo;s primary color', 'twentynineteen' ),
+			'section' => 'colors',
+			'type'    => 'checkbox',
 		)
 	);
 }
