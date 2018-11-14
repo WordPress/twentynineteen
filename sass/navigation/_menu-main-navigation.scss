@@ -64,6 +64,7 @@
 				}
 
 				.submenu-expand {
+
 					display: inline-block;
 					margin-right: #{0.5 * $size__spacing-unit};
 
@@ -85,6 +86,11 @@
 						}
 					}
 
+					.wp-customizer-unloading &,
+					&.is-hidden {
+						display: none;
+					}
+
 					svg {
 						position: relative;
 						top: 0.2rem;
@@ -96,10 +102,6 @@
 			&:last-child.menu-item-has-children .submenu-expand {
 				margin-right: 0;
 			}
-		}
-
-		.is-hidden {
-			display: none;
 		}
 	}
 
@@ -467,6 +469,14 @@
 			}
 		}
 	}
+
+	// Hide duplicate menu-more-link when re-loading a menu in the customizer
+	.main-menu-more {
+		&:nth-child(n+3) {
+			display: none;
+		}
+	}
+
 }
 
 /* Menu animation */

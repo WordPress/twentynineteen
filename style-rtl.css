@@ -1116,6 +1116,10 @@ body.page .main-navigation {
   vertical-align: text-bottom;
 }
 
+.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
+  display: none;
+}
+
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {
   position: relative;
   top: 0.2rem;
@@ -1124,10 +1128,6 @@ body.page .main-navigation {
 .main-navigation .main-menu > li:last-child > a,
 .main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
   margin-left: 0;
-}
-
-.main-navigation .main-menu .is-hidden {
-  display: none;
 }
 
 .main-navigation .sub-menu {
@@ -1205,7 +1205,7 @@ body.page .main-navigation {
 }
 
 .main-navigation .sub-menu > li > a:empty {
-  height: 0;
+  display: none;
 }
 
 .main-navigation .sub-menu > li.mobile-parent-nav-menu-item {
@@ -1632,6 +1632,10 @@ body.page .main-navigation {
   .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
     top: 0;
   }
+}
+
+.main-navigation .main-menu-more:nth-child(n+3) {
+  display: none;
 }
 
 /* Menu animation */
