@@ -466,7 +466,7 @@
 		}
 	}
 
-	// Prevent duplicate menu-more-link when re-loading a menu
+	// Hide duplicate menu-more-link when re-loading a menu in the customizer
 	.main-menu-more {
 		&:nth-child(n+3) {
 			display: none;
