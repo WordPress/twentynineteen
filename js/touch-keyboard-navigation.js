@@ -314,15 +314,14 @@
 
 		document.addEventListener('click', function(event) {
 
+			// Remove all focused states when clicking outside the site branding
 			if ( event.target !== document.getElementsByClassName( 'site-branding' )[0] ) {
-				console.log('outside');
 				removeAllFocusStates();
 			} else {
-				console.log('inside');
+				// nothing
 			}
 
-			//console.log( event.target );
-		}, true);
+		}, false);
 	}
 
 	/**
@@ -345,18 +344,17 @@
 	 * Run our sub-menu function every time the window resizes
 	 */
 	var isResizing = false;
-	window.addEventListener( 'resize',
+	window.addEventListener( 'resize', function() {
+		isResizing = true;
 		debounce( function() {
 			if ( isResizing ) {
 				return;
 			}
 
-			isResizing = true;
-			setTimeout( function() {
-				toggleSubmenuDisplay();
-				isResizing = false;
-			}, 150 );
-		} )
-	);
+			toggleSubmenuDisplay();
+			isResizing = false;
+
+		}, 150 );
+	} );
 
 })();
