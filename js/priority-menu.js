@@ -154,6 +154,7 @@
 	 * Run our priority+ function as soon as the document is `ready`
 	 */
 	document.addEventListener( 'DOMContentLoaded', function() {
+
 		updateNavigationMenu( navContainer );
 
 		// Also, run our priority+ function on selective refresh in the customizer
