@@ -1110,10 +1110,6 @@ body.page .main-navigation {
   margin-left: 0;
 }
 
-.main-navigation .main-menu-more:nth-child(n+2) {
-  display: none;
-}
-
 .main-navigation .sub-menu {
   background-color: #0073aa;
   color: #fff;
@@ -1612,6 +1608,10 @@ body.page .main-navigation {
   .admin-bar .main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu.expanded-true .sub-menu.expanded-true {
     top: 0;
   }
+}
+
+.main-navigation .main-menu-more:nth-child(n+3) {
+  display: none;
 }
 
 /* Menu animation */
