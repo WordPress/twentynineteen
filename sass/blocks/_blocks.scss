@@ -700,6 +700,17 @@
 					margin-right: 0;
 				}
 			}
+
+			&.alignfull,
+			&.alignfull .wp-block-column {
+				padding-left: calc(2 * #{$size__spacing-unit});
+				padding-right: calc(2 * #{$size__spacing-unit});
+			}
+		}
+
+		&.alignfull, {
+			padding-left: $size__spacing-unit;
+			padding-right: $size__spacing-unit;
 		}
 	}
 

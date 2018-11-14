@@ -4373,6 +4373,16 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-columns[class*='has-'] > *:last-child {
     margin-right: 0;
   }
+  .entry .entry-content .wp-block-columns.alignfull,
+  .entry .entry-content .wp-block-columns.alignfull .wp-block-column {
+    padding-left: calc(2 * 1rem);
+    padding-right: calc(2 * 1rem);
+  }
+}
+
+.entry .entry-content .wp-block-columns.alignfull {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
