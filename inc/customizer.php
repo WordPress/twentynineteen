@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Nineteen Theme Customizer
+ * Twenty Nineteen: Customizer
  *
  * @package WordPress
  * @subpackage Twenty_Nineteen
@@ -86,8 +86,8 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'image_filter',
 		array(
-			'default'           => 'active',
-			'sanitize_callback' => 'twentynineteen_sanitize_image_filter',
+			'default'           => 1,
+			'sanitize_callback' => 'absint',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -95,14 +95,9 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'image_filter',
 		array(
-			'label'       => __( 'Featured Image Color Filter', 'twentynineteen' ),
+			'label'       => __( 'Apply a color filter to featured images using your site\'s primary color', 'twentynineteen' ),
 			'section'     => 'colors',
-			'type'        => 'radio',
-			'description' => __( "Twenty Nineteen adds a color filter to featured images using your site's primary color. If you disable this effect, the theme will use a black filter in individual posts to keep text readable when it appears on top of the featured image.", 'twentynineteen' ) . '<br/><span style="font-style: normal; display: block; margin-top: 16px;">' . __( 'On Featured Images, apply', 'twentynineteen' ) . '</span>',
-			'choices'     => array(
-				'active'   => __( 'A color filter', 'twentynineteen' ),
-				'inactive' => __( 'A black filter', 'twentynineteen' ),
-			),
+			'type'        => 'checkbox',
 		)
 	);
 }
@@ -143,7 +138,7 @@ function twentynineteen_panels_js() {
 add_action( 'customize_controls_enqueue_scripts', 'twentynineteen_panels_js' );
 
 /**
- * Sanitize image filter choice.
+ * Sanitize custom color choice.
  *
  * @param string $choice Whether image filter is active.
  *
@@ -160,23 +155,4 @@ function twentynineteen_sanitize_color_option( $choice ) {
 	}
 
 	return 'default';
-}
-/**
- * Sanitize image filter choice.
- *
- * @param string $choice Whether image filter is active.
- *
- * @return string
- */
-function twentynineteen_sanitize_image_filter( $choice ) {
-	$valid = array(
-		'active',
-		'inactive',
-	);
-
-	if ( in_array( $choice, $valid, true ) ) {
-		return $choice;
-	}
-
-	return 'active';
 }

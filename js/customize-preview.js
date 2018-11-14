@@ -17,7 +17,7 @@
 				css = style.html(),
 				color;
 
-			if( to  === 'custom' ){
+			if( 'custom' === to ){
 				//If a "custom" color option is selected, use the currently set colorscheme_primary_hue
 				color = wp.customize.get().colorscheme_primary_hue;
 			} else {
@@ -49,7 +49,7 @@
 	// Image filter.
 	wp.customize( 'image_filter', function( value ) {
 		value.bind( function( to ) {
-			if ( 'active' === to ) {
+			if ( to ) {
 				$( 'body' ).addClass( 'image-filters-enabled' );
 			} else {
 				$( 'body' ).removeClass( 'image-filters-enabled' );
