@@ -73,19 +73,6 @@
 	}
 
 	/**
-	 * Toggles the element visibility.
-	 *
-	 * @param {Element} element
-	 */
-	function toggleElementVisibility(element) {
-		if (element.classList.contains('is-hidden')) {
-			showElement(element);
-		} else {
-			hideElement(element);
-		}
-	}
-
-	/**
 	 * Returns the currently available space in the menu container.
 	 *
 	 * @returns {number} Available space
@@ -158,7 +145,7 @@
 		updateNavigationMenu( navContainer );
 
 		// Also, run our priority+ function on selective refresh in the customizer
-		hasSelectiveRefresh = (
+		var hasSelectiveRefresh = (
 			'undefined' !== typeof wp &&
 			wp.customize &&
 			wp.customize.selectiveRefresh
@@ -166,7 +153,7 @@
 
 		if ( hasSelectiveRefresh ) {
 			// Force a full refresh on partial content renders to re-run updateNavigationMenu()
-			wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
+			wp.customize.selectiveRefresh.bind('partial-content-rendered', function () {
 				wp.customize.preview.send('refresh');
 			});
         }
