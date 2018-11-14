@@ -114,28 +114,24 @@
 	 */
 	function updateNavigationMenu( container ) {
 
-		//console.log( 'Old Customizer Menu: '+ container );
-
 		// Adds the necessary UI to operate the menu.
-		var toggleButton = container.querySelector('.main-menu-more-toggle');
-		var visibleList  = container.querySelector('.main-menu[id]');
-		var hiddenList   = container.querySelector('.hidden-links');
+		var visibleList  = container.parentNode.querySelector('.main-menu[id]');
+		var hiddenList   = visibleList.parentNode.nextElementSibling.querySelector('.hidden-links');
+		var toggleButton = visibleList.parentNode.nextElementSibling.querySelector('.main-menu-more-toggle');
 
 		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
-			console.log('is-overflow');
+
 			// Record the width of the list
 			breaks.push( visibleList.offsetWidth );
-			// Move item to the hidden list
-			prependElement( hiddenList, visibleList.lastChild );
+			// Move last item to the hidden list
+			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? visibleList.previousElementSibling : visibleList.lastChild );
 			// Show the toggle button
 			showElement( toggleButton );
-		} else {
-			// There is space for another item in the nav
-			console.log('more-space: '+ getAvailableSpace( toggleButton, container ) );
-			console.log('breaks: '+ breaks[breaks.length - 1] );
 
+		} else {
+
+			// There is space for another item in the nav
 			if ( getAvailableSpace( toggleButton, container ) > breaks[breaks.length - 1] ) {
-				console.log('more-space: '+ getAvailableSpace( toggleButton, container ) );
 				// Move the item to the visible list
 				visibleList.appendChild( hiddenList.firstChild.nextSibling );
 				breaks.pop();
@@ -161,37 +157,31 @@
 		updateNavigationMenu( navContainer );
 
 		/**
-		* Selectice refresh check from https://github.com/xwp/wp-jetpack/blob/feature/selective-refresh-widget-support/modules/widgets/contact-info/contact-info-map.js#L35
-		* @type {*}
-		*/
+		 * Also, run our priority+ function on selective refresh in the customizer
+		 */
 		hasSelectiveRefresh = (
 			'undefined' !== typeof wp &&
 			wp.customize &&
-			wp.customize.selectiveRefresh &&
-			wp.customize.widgetsPreview &&
-			wp.customize.widgetsPreview.WidgetPartial
+			wp.customize.selectiveRefresh
 		);
 
 		if ( hasSelectiveRefresh ) {
+
 			wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
 				console.log(placement);
-				updateNavigationMenu( navContainer );
+				console.log(placement.container[0]);
+				console.log(placement.partial.id);
+				// Empty .hidden-links list from previous refresh
+				//if ( placement.container[1] ) {
+				//	document.querySelector('.hidden-links').innerHTML = "";
+				//}
+				// Run our priority+ function
+				//updateNavigationMenu( document.getElementById( placement.partial.id ) );
+				//updateNavigationMenu( placement );
+				wp.customize.preview.send('refresh');
 			});
         }
 	});
-
-	/**
-	 * Run our priority+ function on selective refresh in the customizer
-	 */
-/*
-	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
-	//document.addEventListener( 'customize-preview-menu-refreshed', function( e, params ) {
-		if ( 'menu-1' === params.wpNavMenuArgs.theme_location ) {
-			console.log( 'New Customizer Menu: '+ params.newContainer[0].classList );
-			updateNavigationMenu( params.newContainer[0] );
-		}
-	});
-*/
 
 	/**
 	 * Run our priority+ function on load
