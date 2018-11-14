@@ -46,7 +46,7 @@ body {
 			position: relative;
 			left: calc( -12.5% - 14px );
 			width: calc( 125% + 116px );
-			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages. 
+			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages.
 		}
 
 		.wp-block[data-align="right"] {
@@ -482,9 +482,9 @@ figcaption,
 }
 
 .wp-block[data-type="core/pullquote"][data-align="full"] {
-	
+
 	@include media(tablet) {
-		
+
 		.wp-block-pullquote blockquote {
 			max-width: calc(80% - 128px);
 		}

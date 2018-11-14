@@ -212,8 +212,14 @@
 		a {
 			text-decoration: underline;
 
+			&.button,
 			&:hover {
 				text-decoration: none;
+			}
+
+			&.button:hover {
+				background: $color__background-button-hover;
+				cursor: pointer;
 			}
 		}
 
