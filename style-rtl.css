@@ -1096,7 +1096,7 @@ body.page .main-navigation {
   vertical-align: text-bottom;
 }
 
-.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
+.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
   display: none;
 }
 
@@ -1108,6 +1108,10 @@ body.page .main-navigation {
 .main-navigation .main-menu > li:last-child > a,
 .main-navigation .main-menu > li:last-child.menu-item-has-children .submenu-expand {
   margin-left: 0;
+}
+
+.main-navigation .main-menu-more:nth-child(n+2) {
+  display: none;
 }
 
 .main-navigation .sub-menu {

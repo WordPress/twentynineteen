@@ -86,6 +86,7 @@
 						}
 					}
 
+					.wp-customizer-unloading &,
 					&.is-hidden {
 						display: none;
 					}
@@ -464,6 +465,14 @@
 			}
 		}
 	}
+
+	// Prevent duplicate menu-more-link when re-loading a menu
+	.main-menu-more {
+		&:nth-child(n+3) {
+			display: none;
+		}
+	}
+
 }
 
 /* Menu animation */
