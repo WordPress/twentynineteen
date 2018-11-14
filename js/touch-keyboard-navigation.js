@@ -186,8 +186,9 @@
 	function removeAllFocusStates() {
 		'use strict';
 
-		var getFocusedElements      = document.querySelectorAll(':hover, :focus, :focus-within');
-		var getFocusedClassElements = document.querySelectorAll('.is-focused');
+		var siteBranding            = document.getElementsByClassName( 'site-branding' )[0];
+		var getFocusedElements      = siteBranding.querySelectorAll(':hover, :focus, :focus-within');
+		var getFocusedClassElements = siteBranding.querySelectorAll('.is-focused');
 		var i;
 		var o;
 
@@ -314,7 +315,7 @@
 
 		document.addEventListener('click', function(event) {
 
-			// Remove all focused states when clicking outside the site branding
+			// Remove all focused menu states when clicking outside site branding
 			if ( event.target !== document.getElementsByClassName( 'site-branding' )[0] ) {
 				removeAllFocusStates();
 			} else {
