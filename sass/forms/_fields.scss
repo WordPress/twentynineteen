@@ -29,7 +29,9 @@ textarea {
 		outline: thin solid rgba( $color__link, 0.15 );
 		outline-offset: -4px;
 	}
+}
 
+input[type="search"] {
 	&::-webkit-search-decoration {
 		display: none;
 	}
