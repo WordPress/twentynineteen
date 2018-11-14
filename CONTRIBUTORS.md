@@ -72,3 +72,4 @@ Version 1.0:
 | @ahmadawais | @mrahmadawais |
 | @desi-developer | @desideveloper |
 | @2ndkauboy | @Kau-Boy |
+| @mor10 | @mor10 |
