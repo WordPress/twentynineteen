@@ -18,10 +18,10 @@
 				color;
 
 			if( 'custom' === to ){
-				//If a "custom" color option is selected, use the currently set colorscheme_primary_hue
+				// If a "custom" color option is selected, use the currently set colorscheme_primary_hue
 				color = wp.customize.get().colorscheme_primary_hue;
 			} else {
-				//If the "default" option is selected, get the default primary_hue
+				// If the "default" option is selected, get the default primary_hue
 				color = 199;
 			}
 
