@@ -156,9 +156,7 @@
 	document.addEventListener( 'DOMContentLoaded', function() {
 		updateNavigationMenu( navContainer );
 
-		/**
-		 * Also, run our priority+ function on selective refresh in the customizer
-		 */
+		// Also, run our priority+ function on selective refresh in the customizer
 		hasSelectiveRefresh = (
 			'undefined' !== typeof wp &&
 			wp.customize &&
@@ -166,18 +164,8 @@
 		);
 
 		if ( hasSelectiveRefresh ) {
-
+			// Force a full refresh on partial content renders to re-run updateNavigationMenu()
 			wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
-				console.log(placement);
-				console.log(placement.container[0]);
-				console.log(placement.partial.id);
-				// Empty .hidden-links list from previous refresh
-				//if ( placement.container[1] ) {
-				//	document.querySelector('.hidden-links').innerHTML = "";
-				//}
-				// Run our priority+ function
-				//updateNavigationMenu( document.getElementById( placement.partial.id ) );
-				//updateNavigationMenu( placement );
 				wp.customize.preview.send('refresh');
 			});
         }
