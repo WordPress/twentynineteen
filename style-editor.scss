@@ -31,12 +31,17 @@ body {
 	}
 
 	@include media(mobile) {
-		overflow-x: hidden;
+		padding-top: 0;
 
 		:not(.editor-inner-blocks) > .editor-block-list__layout, // Target only the top level layout element, or nested blocks will also be affected.
 		.editor-post-title {
 			padding-left: 0;
 			padding-right: 0;
+		}
+
+		.editor-writing-flow {
+			padding-top: 50px;
+			overflow: hidden;
 		}
 
 		.wp-block[data-align="full"] {
@@ -53,7 +58,8 @@ body {
 			padding-right: 46px;
 		}
 
-		.editor-writing-flow {
+		.editor-block-list__layout,
+		.editor-post-title {
 			max-width: 80%;
 			margin: 0 10%;
 		}
@@ -225,7 +231,7 @@ figcaption,
 
 /** === Default Appender === */
 
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender .editor-default-block-appender__content {
 	font-family: $font__body;
 	font-size: $font__size_base;
 }
