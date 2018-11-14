@@ -186,11 +186,17 @@
 	function removeAllFocusStates() {
 		'use strict';
 
-		var getFocusedElements = document.querySelectorAll(':hover, :focus, :focus-within');
+		var getFocusedElements      = document.querySelectorAll(':hover, :focus, :focus-within');
+		var getFocusedClassElements = document.querySelectorAll('.is-focused');
 		var i;
+		var o;
 
 		for ( i = 0; i < getFocusedElements.length; i++) {
 			getFocusedElements[i].blur();
+		}
+
+		for ( o = 0; o < getFocusedClassElements.length; o++) {
+			deleteClass( getFocusedClassElements[o], 'is-focused' );
 		}
 	}
 
@@ -257,9 +263,15 @@
 			if ( null != mainNav && hasClass( mainNav, '.main-navigation' ) ) {
 				// Prevent default mouse events
 				event.preventDefault();
-			} else if ( event.target.matches('.submenu-expand') || null != getCurrentParent( event.target, '.submenu-expand' ) && getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) || event.target.matches('.menu-item-link-return') || null != getCurrentParent( event.target, '.menu-item-link-return' ) && getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
-				// Prevent default mouse events
-				event.preventDefault();
+			} else if (
+				event.target.matches('.submenu-expand') ||
+				null != getCurrentParent( event.target, '.submenu-expand' ) &&
+				getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ||
+				event.target.matches('.menu-item-link-return') ||
+				null != getCurrentParent( event.target, '.menu-item-link-return' ) &&
+				getCurrentParent( event.target, '.menu-item-link-return' ).matches( '.menu-item-link-return' ) ) {
+					// Prevent default mouse events
+					event.preventDefault();
 			}
 
 			// Prevent default mouse/focus events
@@ -298,6 +310,18 @@
 					deleteClass( nextLi, focusedClass );
 				}
 			}
+		}, true);
+
+		document.addEventListener('click', function(event) {
+
+			if ( event.target !== document.getElementsByClassName( 'site-branding' )[0] ) {
+				console.log('outside');
+				removeAllFocusStates();
+			} else {
+				console.log('inside');
+			}
+
+			//console.log( event.target );
 		}, true);
 	}
 
