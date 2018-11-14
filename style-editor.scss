@@ -31,11 +31,6 @@ body {
 	}
 
 	@include media(mobile) {
-		padding-top: 0;
-
-		.editor-writing-flow {
-			padding-top: 50px;
-		}
 
 		.wp-block[data-align="full"] {
 			position: relative;
@@ -45,8 +40,7 @@ body {
 
 	@include media(tablet) {
 
-		.editor-block-list__layout,
-		.editor-post-title {
+		.editor-writing-flow {
 			max-width: 80%;
 			margin: 0 10%;
 		}
