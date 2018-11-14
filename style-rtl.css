@@ -1184,6 +1184,10 @@ body.page .main-navigation {
   background: #005177;
 }
 
+.main-navigation .sub-menu > li > a:empty {
+  height: 0;
+}
+
 .main-navigation .sub-menu > li.mobile-parent-nav-menu-item {
   display: none;
   font-size: 0.88889em;

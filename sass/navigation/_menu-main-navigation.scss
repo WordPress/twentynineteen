@@ -181,6 +181,10 @@
 				}
 			}
 
+			> a:empty {
+				display: none;
+			}
+
 			&.mobile-parent-nav-menu-item {
 
 				display: none;
