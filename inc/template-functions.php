@@ -208,7 +208,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '<div class="main-menu-more"	>';
 		$nav_menu .= '<ul class="main-menu" tabindex="0">';
 		$nav_menu .= '<li class="menu-item menu-item-has-children">';
-		$nav_menu .= '<a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">' . esc_html( 'More', 'twentynineteen' ) . '</a>';
+		$nav_menu .= '<a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">' . esc_html__( 'More', 'twentynineteen' ) . '</a>';
 		$nav_menu .= '<span class="submenu-expand main-menu-more-toggle" tabindex="-1">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
 		$nav_menu .= '</span>';
