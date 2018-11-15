@@ -73,6 +73,28 @@
 	}
 
 	/**
+	 * Shows an element by adding a hidden className.
+	 *
+	 * @param {Element} element
+	 */
+	function showButton(element) {
+		// classList.remove is not supported in IE11
+		element.className = element.className.replace('is-empty', '');
+	}
+
+	/**
+	 * Hides an element by removing the hidden className.
+	 *
+	 * @param {Element} element
+	 */
+	function hideButton(element) {
+		// classList.add is not supported in IE11
+		if (!element.classList.contains('is-empty')) {
+			element.className += ' is-empty';
+		}
+	}
+
+	/**
 	 * Returns the currently available space in the menu container.
 	 *
 	 * @returns {number} Available space
@@ -113,7 +135,9 @@
 			// Move last item to the hidden list
 			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? visibleList.previousElementSibling : visibleList.lastChild );
 			// Show the toggle button
-			showElement( toggleButton );
+			showButton( toggleButton );
+
+			console.log(toggleButton);
 
 		} else {
 
@@ -126,7 +150,7 @@
 
 			// Hide the dropdown btn if hidden list is empty
 			if (breaks.length < 2) {
-				hideElement( toggleButton );
+				hideButton( toggleButton );
 				hideElement( hiddenList );
 			}
 		}

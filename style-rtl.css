@@ -1116,8 +1116,8 @@ body.page .main-navigation {
   vertical-align: text-bottom;
 }
 
-.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
-  display: none;
+.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-empty {
+  opacity: 0;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {

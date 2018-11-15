@@ -87,8 +87,8 @@
 					}
 
 					.wp-customizer-unloading &,
-					&.is-hidden {
-						display: none;
+					&.is-empty {
+						opacity: 0;
 					}
 
 					svg {
