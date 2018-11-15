@@ -1034,6 +1034,9 @@ a:focus {
 	 * selectors don’t get ignored if a browser doesn’t recognize it
 	 */
   /**
+	 * Fade-in animation for top-level submenus
+	 */
+  /**
 	 * Full-screen touch device styles
 	 */
 }
@@ -1135,10 +1138,9 @@ body.page .main-navigation {
   color: #fff;
   list-style: none;
   padding-left: 0;
-  display: none;
   position: absolute;
   opacity: 0;
-  left: -999px;
+  left: -9999px;
   z-index: 99999;
 }
 
@@ -1567,7 +1569,7 @@ body.page .main-navigation {
   content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
-.main-navigation .main-menu .menu-item-has-children.off-canvas .sub-menu {
+.main-navigation .main-menu > .menu-item-has-children:not(.off-canvas):hover > .sub-menu {
   animation: fade_in 0.1s forwards;
 }
 

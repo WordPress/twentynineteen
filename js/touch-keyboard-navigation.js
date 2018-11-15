@@ -282,23 +282,23 @@
 
 		document.addEventListener('focus', function(event) {
 
-			if ( event.target.matches('.main-navigation > div > ul > li > a') ) {
+			if ( event.target.matches('.main-navigation > div > ul > li a') ) {
 
-				// Remove Focuse elements in sibling div
-				var currentDiv        = getCurrentParent( event.target, 'div' );
+				// Remove Focused elements in sibling div
+				var currentDiv        = getCurrentParent( event.target, 'div', '.main-navigation' );
 				var currentDivSibling = currentDiv.previousElementSibling === null ? currentDiv.nextElementSibling : currentDiv.previousElementSibling;
 				var focusedElement    = currentDivSibling.querySelector( '.is-focused' );
 				var focusedClass      = 'is-focused';
-				var prevLi            = event.target.parentNode.previousElementSibling;
-				var nextLi            = event.target.parentNode.nextElementSibling;
+				var prevLi            = getCurrentParent( event.target, '.main-navigation > div > ul > li', '.main-navigation' ).previousElementSibling;
+				var nextLi            = getCurrentParent( event.target, '.main-navigation > div > ul > li', '.main-navigation' ).nextElementSibling;
 
 				if ( null !== focusedElement && null !== hasClass( focusedElement, focusedClass ) ) {
 					deleteClass( focusedElement, focusedClass );
 				}
 
-				// Add .is-focused class to top-level ul
-				if ( event.target.parentNode.querySelector( '.main-navigation ul ul') ) {
-					addClass( event.target.parentNode, focusedClass );
+				// Add .is-focused class to top-level li
+				if ( getCurrentParent( event.target, '.main-navigation > div > ul > li', '.main-navigation' ) ) {
+					addClass( getCurrentParent( event.target, '.main-navigation > div > ul > li', '.main-navigation' ), focusedClass );
 				}
 
 				// Check for previous li
@@ -311,6 +311,7 @@
 					deleteClass( nextLi, focusedClass );
 				}
 			}
+
 		}, true);
 
 		document.addEventListener('click', function(event) {
