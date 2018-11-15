@@ -2727,8 +2727,13 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
+.entry .entry-content a.button {
+  display: inline-block;
+}
+
 .entry .entry-content a.button:hover {
   background: #111;
+  color: #fff;
   cursor: pointer;
 }
 

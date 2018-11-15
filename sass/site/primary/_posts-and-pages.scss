@@ -217,8 +217,13 @@
 				text-decoration: none;
 			}
 
+			&.button {
+				display: inline-block;
+			}
+
 			&.button:hover {
 				background: $color__background-button-hover;
+				color: $color__background-body;
 				cursor: pointer;
 			}
 		}
