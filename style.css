@@ -1138,7 +1138,6 @@ body.page .main-navigation {
   color: #fff;
   list-style: none;
   padding-left: 0;
-  display: none;
   position: absolute;
   opacity: 0;
   left: -999px;
