@@ -214,10 +214,10 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '</span>';
 		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
-		$nav_menu .= '<a class="menu-item-link-return" id="menu-item-link-return-1877" href="#menu-item-link-1877" onclick="event.preventDefault();" tabindex="-1">';
+		$nav_menu .= '<span class="menu-item-link-return">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'chevron_left' );
 		$nav_menu .= esc_html__( 'Back', 'twentynineteen' );
-		$nav_menu .= '</a>';
+		$nav_menu .= '</span>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</li>';
