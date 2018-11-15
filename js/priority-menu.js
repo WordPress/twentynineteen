@@ -55,28 +55,6 @@
 	 *
 	 * @param {Element} element
 	 */
-	function showElement(element) {
-		// classList.remove is not supported in IE11
-		element.className = element.className.replace('is-hidden', '');
-	}
-
-	/**
-	 * Hides an element by removing the hidden className.
-	 *
-	 * @param {Element} element
-	 */
-	function hideElement(element) {
-		// classList.add is not supported in IE11
-		if (!element.classList.contains('is-hidden')) {
-			element.className += ' is-hidden';
-		}
-	}
-
-	/**
-	 * Shows an element by adding a hidden className.
-	 *
-	 * @param {Element} element
-	 */
 	function showButton(element) {
 		// classList.remove is not supported in IE11
 		element.className = element.className.replace('is-empty', '');
@@ -100,7 +78,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
-		return button.classList.contains('is-hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
+		return container.offsetWidth - button.offsetWidth - 50;
 	}
 
 	/**
@@ -137,8 +115,6 @@
 			// Show the toggle button
 			showButton( toggleButton );
 
-			console.log(toggleButton);
-
 		} else {
 
 			// There is space for another item in the nav
@@ -151,7 +127,6 @@
 			// Hide the dropdown btn if hidden list is empty
 			if (breaks.length < 2) {
 				hideButton( toggleButton );
-				hideElement( hiddenList );
 			}
 		}
 

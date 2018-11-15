@@ -1117,7 +1117,7 @@ body.page .main-navigation {
 }
 
 .wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-empty {
-  opacity: 0;
+  display: none;
 }
 
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand svg {

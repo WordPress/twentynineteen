@@ -212,7 +212,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '<span class="submenu-expand main-menu-more-toggle is-empty" tabindex="-1">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
 		$nav_menu .= '</span>';
-		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden">';
+		$nav_menu .= '<ul class="sub-menu hidden-links">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
 		$nav_menu .= '<span class="menu-item-link-return">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'chevron_left' );
