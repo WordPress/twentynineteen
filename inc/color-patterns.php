@@ -38,7 +38,7 @@ function twentynineteen_custom_colors_css() {
 	$lightness_hover      = absint( apply_filters( 'twentynineteen_custom_colors_lightness_hover', 23 ) );
 	$lightness_hover      = $lightness_hover . '%';
 
-	$lightness_selection  = absint( apply_filters( 'twentynineteen_custom_colors_lightness_selection', 95 ) );
+	$lightness_selection  = absint( apply_filters( 'twentynineteen_custom_colors_lightness_selection', 90 ) );
 	$lightness_selection  = $lightness_selection . '%';
 
 	$theme_css = '
