@@ -114,7 +114,7 @@
 
 		position: absolute;
 		opacity: 0;
-		left: -999px;
+		left: -9999px;
 		z-index: 99999;
 
 		@include media(tablet) {
