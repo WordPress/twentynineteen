@@ -694,28 +694,4 @@ ul.wp-block-archives,
 			color: $color__text-light;
 		}
 	}
-
-	/* Add style for galleries in classic-editor block */
-	.gallery {
-
-		display: flex;
-
-		.gallery-item {
-			padding: ( $size__spacing-unit * .5 );
-			text-align: center;
-			vertical-align: top;
-			width: 100%;
-
-			.gallery-caption {
-				margin: 0;
-			}
-		}
-
-		// Loops to enumerate the classes for gallery columns.
-		@for $i from 2 through 9 {
-			&.gallery-columns-#{$i} .gallery-item {
-				max-width: calc( ( 12 / #{$i} ) * (100% / 12) );
-			}
-		}
-	}
 }
