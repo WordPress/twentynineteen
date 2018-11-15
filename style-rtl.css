@@ -893,13 +893,14 @@ input[type="submit"] {
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
-  color: white;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.88889em;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   outline: none;
   padding: 0.76rem 1rem;
+  text-decoration: none;
   vertical-align: bottom;
 }
 
@@ -908,19 +909,17 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
+  background: #111;
   cursor: pointer;
 }
 
-.button:hover, .button:focus,
-button:hover,
-button:focus,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  background: #111;
+.button:visited,
+button:visited,
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited {
+  color: #fff;
+  text-decoration: none;
 }
 
 .button:focus,
@@ -928,6 +927,7 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
+  background: #111;
   outline: thin dotted;
   outline-offset: -4px;
 }
@@ -1119,7 +1119,7 @@ body.page .main-navigation {
   vertical-align: text-bottom;
 }
 
-.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-hidden {
+.wp-customizer-unloading .main-navigation .main-menu > li.menu-item-has-children .submenu-expand, .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.is-empty {
   display: none;
 }
 
@@ -2719,8 +2719,18 @@ body.page .main-navigation {
   text-decoration: underline;
 }
 
-.entry .entry-content a:hover {
+.entry .entry-content a.button, .entry .entry-content a:hover {
   text-decoration: none;
+}
+
+.entry .entry-content a.button {
+  display: inline-block;
+}
+
+.entry .entry-content a.button:hover {
+  background: #111;
+  color: #fff;
+  cursor: pointer;
 }
 
 .entry .entry-content > iframe[style] {
