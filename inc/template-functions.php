@@ -444,41 +444,134 @@ function twentynineteen_starter_content() {
 		'posts' => array(
 			'front' => array(
 				'post_type' => 'page',
-				'post_title' => _x( 'Introducing Twenty Nineteen', 'Theme starter content', 'twentynineteen' ),
+				'post_title' => _x( 'A title is required', 'Theme starter content without a Title', 'twentynineteen' ),
 				'post_content' => join(
 					'',
 					array(
-						'<!-- wp:quote {"className":"is-style-large"} -->',
-						'<blockquote class="wp-block-quote is-style-large"><p>' . _x( 'The First WordPress Default Theme with Full Support for the New Block Editor', 'Theme starter content', 'twentynineteen' ) . '</p></blockquote>',
-						'<!-- /wp:quote -->',
-						'<!-- wp:paragraph {"dropCap":true} -->',
-						'<p class="has-drop-cap">' . _x( 'At the core of Twenty Nineteen is its simple, sophisticated typography. The theme&rsquo;s aesthetic is minimal and non-prescriptive, allowing the theme to work well in a variety of applications. For example: it is effective as an minimal, typography-driven blogging theme, but can also be adapted for use as a static business website.', 'Theme starter content', 'twentynineteen' ) . '</p>',
-						'<!-- /wp:paragraph -->',
-						'<!-- wp:columns {"align":"wide"} -->',
-						'<div class="wp-block-columns alignwide has-2-columns"><!-- wp:column -->',
-						'<div class="wp-block-column"><!-- wp:heading {"level":3} -->',
-						'<h2>' . _x( 'Column 1', 'Theme starter content', 'twentynineteen' ) . '</h2>',
-						'<!-- /wp:heading -->',
+						'<!-- wp:cover {"url":"http://twentynineteen.local/wp-content/uploads/2018/11/Office-Space.jpg","align":"full","contentAlign":"left","id":784,"dimRatio":70} -->',
+						'<div class="wp-block-cover has-background-dim-70 has-background-dim has-left-content alignfull has-undefined-content" style="background-image:url(http://twentynineteen.local/wp-content/uploads/2018/11/Office-Space.jpg)"><p class="wp-block-cover-text">Digital strategies for unique small businesses</p></div>',
+						'<!-- /wp:cover -->',
+
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'You can now create columns.', 'Theme starter content', 'twentynineteen' ) . '</p>',
-						'<!-- /wp:paragraph --></div>',
-						'<!-- /wp:column -->',
+						'<p>' . _x( 'We help startups define a clear brand identity and digital strategy that will carry them through their financing rounds and scale as their business grows. This is an example of a page. Unlike posts, which are displayed on your blog&rsquo;s front page in the order they&rsquo;re published, pages are better suited for more timeless content that you want to be easily accessible, like your About or Contact information. Click the Edit link to make changes to this page or add another page after that one.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:heading -->',
+						'<h2>' . _x( 'Services', 'Theme starter content', 'twentynineteen' ) . '</h2>',
+						'<!-- /wp:heading -->',
+
+						'<!-- wp:columns --><div class="wp-block-columns has-2-columns">',
 						'<!-- wp:column -->',
 						'<div class="wp-block-column">',
-						'<!-- wp:heading {"level":3} -->',
-						'<h2>' . _x( 'Column 2', 'Theme starter content', 'twentynineteen' ) . '</h2>',
-						'<!-- /wp:heading -->',
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Columns enable you to create a page with more structure.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<p>' . _x( 'Website Design', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Mobile  Apps', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Social Media Strategy', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<!-- /wp:paragraph -->',
+						'</div><!-- /wp:column -->',
+
+						'<!-- wp:column -->',
+						'<div class="wp-block-column">',
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Marketing', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Copywriting', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Content Strategy', 'Theme starter content', 'twentynineteen') . '</p>',
 						'<!-- /wp:paragraph --></div>',
-						'<!-- /wp:column --></div>',
-						'<!-- /wp:columns -->',
+						'<!-- /wp:column -->',
+						'</div><!-- /wp:columns -->',
+
+						'<!-- wp:heading -->',
+						'<h2>' . _x( 'Case Studies', 'Theme starter content', 'twentynineteen') . '</h2>',
+						'<!-- /wp:heading -->',
+
+						'<!-- wp:pullquote {"align":"full","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignfull is-style-solid-color"><blockquote><p><strong>' . _x( 'Redifining a Brand', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- /wp:pullquote -->',
+
+						'<!-- wp:pullquote {"customMainColor":"#0e0f0f","align":"full","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignfull is-style-solid-color" style="background-color:#0e0f0f"><blockquote><p><strong>' . _x( 'Activating new customers', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- /wp:pullquote -->',
+
+						'<!-- wp:pullquote {"customMainColor":"#e8e8e8","customTextColor":"#18191a","align":"full","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignfull is-style-solid-color" style="background-color:#e8e8e8"><blockquote class="has-text-color" style="color:#18191a"><p><strong>' . _x( 'Sparking interest on social media', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- /wp:pullquote -->',
+
+						'<!-- wp:heading -->',
+						'<h2>' . _x( 'Our Leadership', 'Theme starter content', 'twentynineteen') . '</h2>',
+						'<!-- /wp:heading -->',
+
+						'<!-- wp:gallery {"columns":3,"align":"wide"} -->',
+						'<ul class="wp-block-gallery alignwide columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="" data-id="97" data-link="http://twentynineteen.local/two-cows-in-a-bath-tub/image/" class="wp-image-97"/><figcaption><strong>' . _x( 'Ava Young, Founder', 'Theme starter content', 'twentynineteen' )  . '</strong></figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="Csaba" data-id="44" data-link="http://twentynineteen.local/photo/" class="wp-image-44"/><figcaption>' . _x( 'Doug Watson, Creative Director', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="logo" data-id="631" data-link="http://twentynineteen.local/logo/" class="wp-image-631"/><figcaption><strong>' . _x( 'Taco, Good Dog',  'Theme starter content', 'twentynineteen' ) . '</strong></figcaption></figure></li></ul>',
+						'<!-- /wp:gallery -->',
+
+						'<!-- wp:pullquote {"align":"wide"} -->',
+						'<figure class="wp-block-pullquote alignwide"><blockquote><p>' . _x( '&rdquo;Ava&rsquo;s team was essential to our online success&rdquo;', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( '&emdash; A Happy Customer', 'Theme starter content', 'twentynineteen' ) . '<br></cite></blockquote></figure>',
+						'<!-- /wp:pullquote -->',
+
+						'<!-- wp:columns -->',
+						'<div class="wp-block-columns has-2-columns">',
+						'<!-- wp:column -->',
+						'<div class="wp-block-column">',
+						'<!-- wp:heading -->',
+						'<h2>' . _x( 'Get in touch', 'Theme starter content', 'twentynineteen' ) . '</h2>',
+						'<!-- /wp:heading -->',
+						
+						'<!-- wp:paragraph {"fontSize":"medium"} -->',
+						'<p class="has-medium-font-size">' . _x( 'Discover how we can boost your brand with a unique and powerful digital marketing strategy.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:button -->',
+						'<div class="wp-block-button"><a class="wp-block-button__link" href="#">' . _x( 'Contact Us', 'Theme starter content', 'twentynineteen' ) . '</a></div>',
+						'<!-- /wp:button -->',
+						'</div><!-- /wp:column -->',
+
+						'<!-- wp:column -->',
+						'<div class="wp-block-column">',
+						'<!-- wp:heading -->',
+						'<h2>' . _x( 'Visit our office', 'Theme starter content', 'twentynineteen' ) . '</h2>',
+						'<!-- /wp:heading -->',
+
+						'<!-- wp:paragraph {"fontSize":"medium"} -->',
+						'<p class="has-medium-font-size">' . _x( '4324 Buena Vista Drive<br>San Francisco, CA 01234', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- /wp:paragraph -->',
+
+						'<!-- wp:paragraph {"fontSize":"medium"} -->',
+						'<p class="has-medium-font-size">' . _x( 'Monday–Friday: 8AM-6PM<br>Saturday–Sunday: By Appointment', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- /wp:paragraph -->',
+						'</div><!-- /wp:column -->',
+						'</div><!-- /wp:columns -->',
 					)
 				),
 			),
 			'blog',
-			'about',
+			'about' => array(
+				'thumbnail' => '{{placeholder-landscape}}',
+			),
 			'contact',
+		),
+		
+		// Create the custom image attachments used as post thumbnails for pages.
+		'attachments' => array(
+			'placeholder-landscape' => array(
+				'post_title' => _x( 'Landscape image', 'Theme starter content', 'twentynineteen' ),
+				'file' => 'img/placeholder-image-landscape.png', // URL relative to the template directory.
+			),
+			'placeholder-portrait' => array(
+				'post_title' => _x( 'Portrait image', 'Theme starter content', 'twentynineteen' ),
+				'file' => 'img/placeholder-image-portrait.png',
+			),
 		),
 
 		// Default to a static front page and assign the front and posts pages.
