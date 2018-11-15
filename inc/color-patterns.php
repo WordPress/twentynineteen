@@ -85,7 +85,7 @@ function twentynineteen_custom_colors_css() {
 		 * - Widget links
 		 */
 		a,
-		a:visited,
+		a:not(.button):visited,
 		.main-navigation .main-menu > li,
 		.main-navigation ul.main-menu > li > a,
 		.post-navigation .post-title,
