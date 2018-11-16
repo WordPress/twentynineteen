@@ -2121,15 +2121,15 @@ body.page .main-navigation {
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a {
+#masthead .site-title a {
   color: #111;
 }
 
-.site-title a:link, .site-title a:visited {
+#masthead .site-title a:link, #masthead .site-title a:visited {
   color: #111;
 }
 
-.site-title a:hover {
+#masthead .site-title a:hover {
   color: #4a4a4a;
 }
 
@@ -2205,7 +2205,7 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a,
 .site-header.featured-image .main-navigation a + svg,
 .site-header.featured-image .social-navigation a,
-.site-header.featured-image .site-title a,
+#masthead .site-header.featured-image .site-title a,
 .site-header.featured-image .site-featured-image a {
   color: #fff;
   transition: opacity 110ms ease-in-out;
@@ -2222,10 +2222,10 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation a:active,
 .site-header.featured-image .social-navigation a:hover + svg,
 .site-header.featured-image .social-navigation a:active + svg,
-.site-header.featured-image .site-title a:hover,
-.site-header.featured-image .site-title a:active,
-.site-header.featured-image .site-title a:hover + svg,
-.site-header.featured-image .site-title a:active + svg,
+#masthead .site-header.featured-image .site-title a:hover,
+#masthead .site-header.featured-image .site-title a:active,
+#masthead .site-header.featured-image .site-title a:hover + svg,
+#masthead .site-header.featured-image .site-title a:active + svg,
 .site-header.featured-image .site-featured-image a:hover,
 .site-header.featured-image .site-featured-image a:active,
 .site-header.featured-image .site-featured-image a:hover + svg,
@@ -2240,8 +2240,8 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a + svg:focus + svg,
 .site-header.featured-image .social-navigation a:focus,
 .site-header.featured-image .social-navigation a:focus + svg,
-.site-header.featured-image .site-title a:focus,
-.site-header.featured-image .site-title a:focus + svg,
+#masthead .site-header.featured-image .site-title a:focus,
+#masthead .site-header.featured-image .site-title a:focus + svg,
 .site-header.featured-image .site-featured-image a:focus,
 .site-header.featured-image .site-featured-image a:focus + svg {
   color: #fff;
