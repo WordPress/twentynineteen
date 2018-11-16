@@ -60,10 +60,6 @@
 			/*rtl:ignore*/
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
-
-		@include media(desktop) {
-			max-width: calc(3 * (100vw / 12));
-		}
 	}
 
 	&.alignright {
