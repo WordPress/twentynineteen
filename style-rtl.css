@@ -2115,6 +2115,13 @@ body.page .main-navigation {
   box-shadow: 0 0 0 2px black;
 }
 
+@media only screen and (min-width: 768px) {
+  .site-logo .custom-logo-link {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 .site-title {
   margin: auto;
   display: inline;
@@ -2205,7 +2212,7 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a,
 .site-header.featured-image .main-navigation a + svg,
 .site-header.featured-image .social-navigation a,
-#masthead .site-header.featured-image .site-title a,
+.site-header.featured-image#masthead .site-title a,
 .site-header.featured-image .site-featured-image a {
   color: #fff;
   transition: opacity 110ms ease-in-out;
@@ -2222,10 +2229,10 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation a:active,
 .site-header.featured-image .social-navigation a:hover + svg,
 .site-header.featured-image .social-navigation a:active + svg,
-#masthead .site-header.featured-image .site-title a:hover,
-#masthead .site-header.featured-image .site-title a:active,
-#masthead .site-header.featured-image .site-title a:hover + svg,
-#masthead .site-header.featured-image .site-title a:active + svg,
+.site-header.featured-image#masthead .site-title a:hover,
+.site-header.featured-image#masthead .site-title a:active,
+.site-header.featured-image#masthead .site-title a:hover + svg,
+.site-header.featured-image#masthead .site-title a:active + svg,
 .site-header.featured-image .site-featured-image a:hover,
 .site-header.featured-image .site-featured-image a:active,
 .site-header.featured-image .site-featured-image a:hover + svg,
@@ -2240,8 +2247,8 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a + svg:focus + svg,
 .site-header.featured-image .social-navigation a:focus,
 .site-header.featured-image .social-navigation a:focus + svg,
-#masthead .site-header.featured-image .site-title a:focus,
-#masthead .site-header.featured-image .site-title a:focus + svg,
+.site-header.featured-image#masthead .site-title a:focus,
+.site-header.featured-image#masthead .site-title a:focus + svg,
 .site-header.featured-image .site-featured-image a:focus,
 .site-header.featured-image .site-featured-image a:focus + svg {
   color: #fff;
