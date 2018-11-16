@@ -4360,6 +4360,11 @@ body.page .main-navigation {
   word-break: break-word;
 }
 
+.entry .entry-content .wp-block-columns.alignfull {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content .wp-block-columns .wp-block-column > *:first-child {
     margin-top: 0;
@@ -4378,11 +4383,6 @@ body.page .main-navigation {
     padding-left: calc(2 * 1rem);
     padding-right: calc(2 * 1rem);
   }
-}
-
-.entry .entry-content .wp-block-columns.alignfull {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
