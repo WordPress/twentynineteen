@@ -432,13 +432,6 @@ function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
 function twentynineteen_starter_content() {
 
 	$starter_content = array(
-		'widgets' => array(
-			// Place two core-defined widgets in the footer widget area.
-			'sidebar-1' => array(
-				'text_business_info',
-				'text_about',
-			),
-		),
 
 		// Specify the core-defined and custom pages to create and add custom thumbnails to some of them.
 		'posts' => array(
