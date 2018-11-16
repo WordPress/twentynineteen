@@ -46,13 +46,21 @@ body {
 			position: relative;
 			left: calc( -12.5% - 14px );
 			width: calc( 125% + 116px );
-			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages. 
+			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages.
 		}
 
 		.wp-block[data-align="right"] {
 			max-width: 125%;
 		}
 	}
+}
+
+/** === Editor Block Toolbar Position === */
+
+// Since 2019 left-aligns wide and fullwide blocks, left align the toolbar too.
+.editor-block-list__block[data-align="wide"] .editor-block-contextual-toolbar .editor-block-toolbar.editor-block-toolbar,
+.editor-block-list__block[data-align="full"] .editor-block-contextual-toolbar .editor-block-toolbar.editor-block-toolbar {
+		max-width: none;
 }
 
 /** === Content Width === */
@@ -276,6 +284,13 @@ figcaption,
 		width: 100%;
 		max-width: 100%;
 	}
+	
+	@include media(tablet) {
+		
+		.wp-block-cover {
+			padding: $size__spacing-unit;
+		}
+	}
 }
 
 .wp-block[data-type="core/cover"][data-align="wide"],
@@ -482,9 +497,9 @@ figcaption,
 }
 
 .wp-block[data-type="core/pullquote"][data-align="full"] {
-	
+
 	@include media(tablet) {
-		
+
 		.wp-block-pullquote blockquote {
 			max-width: calc(80% - 128px);
 		}
@@ -692,30 +707,6 @@ ul.wp-block-archives,
 			font-style: normal;
 			line-height: 1.6;
 			color: $color__text-light;
-		}
-	}
-
-	/* Add style for galleries in classic-editor block */
-	.gallery {
-
-		display: flex;
-
-		.gallery-item {
-			padding: ( $size__spacing-unit * .5 );
-			text-align: center;
-			vertical-align: top;
-			width: 100%;
-
-			.gallery-caption {
-				margin: 0;
-			}
-		}
-
-		// Loops to enumerate the classes for gallery columns.
-		@for $i from 2 through 9 {
-			&.gallery-columns-#{$i} .gallery-item {
-				max-width: calc( ( 12 / #{$i} ) * (100% / 12) );
-			}
 		}
 	}
 }

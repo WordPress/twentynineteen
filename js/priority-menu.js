@@ -55,9 +55,9 @@
 	 *
 	 * @param {Element} element
 	 */
-	function showElement(element) {
+	function showButton(element) {
 		// classList.remove is not supported in IE11
-		element.className = element.className.replace('is-hidden', '');
+		element.className = element.className.replace('is-empty', '');
 	}
 
 	/**
@@ -65,10 +65,10 @@
 	 *
 	 * @param {Element} element
 	 */
-	function hideElement(element) {
+	function hideButton(element) {
 		// classList.add is not supported in IE11
-		if (!element.classList.contains('is-hidden')) {
-			element.className += ' is-hidden';
+		if (!element.classList.contains('is-empty')) {
+			element.className += ' is-empty';
 		}
 	}
 
@@ -78,7 +78,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
-		return button.classList.contains('is-hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
+		return container.offsetWidth - button.offsetWidth - 50;
 	}
 
 	/**
@@ -113,7 +113,7 @@
 			// Move last item to the hidden list
 			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? visibleList.previousElementSibling : visibleList.lastChild );
 			// Show the toggle button
-			showElement( toggleButton );
+			showButton( toggleButton );
 
 		} else {
 
@@ -126,8 +126,7 @@
 
 			// Hide the dropdown btn if hidden list is empty
 			if (breaks.length < 2) {
-				hideElement( toggleButton );
-				hideElement( hiddenList );
+				hideButton( toggleButton );
 			}
 		}
 
