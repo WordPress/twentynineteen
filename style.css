@@ -743,6 +743,12 @@ html[lang="vi"] .site * {
   font-family: 'Libre Franklin', sans-serif !important;
 }
 
+/* Use standard monospace font for all non-english code and pre */
+html:not([lang^="en-"]) .site * code,
+html:not([lang^="en-"]) .site * pre {
+  font-family: monospace;
+}
+
 /* Elements */
 html {
   box-sizing: border-box;

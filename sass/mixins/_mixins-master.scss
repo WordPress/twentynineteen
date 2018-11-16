@@ -173,6 +173,13 @@
 	html[lang="vi"] #{$wrapper_selector} {
 	  font-family: 'Libre Franklin', sans-serif !important;
 	}
+
+	/* Use standard monospace font for all non-english code and pre */
+	html:not([lang^="en-"]) #{$wrapper_selector} code,
+	html:not([lang^="en-"]) #{$wrapper_selector} pre {
+		font-family: monospace;
+	}
+
 }
 
 /* Calculates maximum width for post content */
