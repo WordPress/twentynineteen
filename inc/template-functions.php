@@ -444,14 +444,11 @@ function twentynineteen_starter_content() {
 		'posts' => array(
 			'front' => array(
 				'post_type' => 'page',
-				'post_title' => _x( 'A title is required', 'Theme starter content without a Title', 'twentynineteen' ),
+				'post_title' => _x( 'Digital strategies for unique small businesses', 'Theme starter content without a Title', 'twentynineteen' ),
+				'thumbnail' => '{{placeholder-landscape}}',
 				'post_content' => join(
 					'',
 					array(
-						'<!-- wp:cover {"url":"http://twentynineteen.local/wp-content/uploads/2018/11/Office-Space.jpg","align":"full","contentAlign":"left","id":784,"dimRatio":70} -->',
-						'<div class="wp-block-cover has-background-dim-70 has-background-dim has-left-content alignfull has-undefined-content" style="background-image:url(http://twentynineteen.local/wp-content/uploads/2018/11/Office-Space.jpg)"><p class="wp-block-cover-text">Digital strategies for unique small businesses</p></div>',
-						'<!-- /wp:cover -->',
-
 						'<!-- wp:paragraph -->',
 						'<p>' . _x( 'We help startups define a clear brand identity and digital strategy that will carry them through their financing rounds and scale as their business grows. This is an example of a page. Unlike posts, which are displayed on your blog&rsquo;s front page in the order they&rsquo;re published, pages are better suited for more timeless content that you want to be easily accessible, like your About or Contact information. Click the Edit link to make changes to this page or add another page after that one.', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
@@ -556,13 +553,11 @@ function twentynineteen_starter_content() {
 				),
 			),
 			'blog',
-			'about' => array(
-				'thumbnail' => '{{placeholder-landscape}}',
-			),
+			'about',
 			'contact',
 		),
 		
-		// Create the custom image attachments used as post thumbnails for pages.
+		// Create the custom image attachments.
 		'attachments' => array(
 			'placeholder-landscape' => array(
 				'post_title' => _x( 'Landscape image', 'Theme starter content', 'twentynineteen' ),
