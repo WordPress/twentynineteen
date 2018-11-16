@@ -406,7 +406,7 @@
 	}
 
 	/**
-	 * Full-screen touch device styles
+	 * Off-canvas touch device styles
 	 */
 	.main-menu .menu-item-has-children.off-canvas .sub-menu {
 
@@ -426,6 +426,11 @@
 		li > a:hover,
 		li > a:focus {
 			background-color: transparent;
+		}
+
+		> li > a,
+		> li > .menu-item-link-return {
+			white-space: inherit;
 		}
 
 		&.expanded-true {
