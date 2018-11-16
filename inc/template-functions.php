@@ -502,7 +502,7 @@ function twentynineteen_starter_content() {
 						'<!-- /wp:pullquote -->',
 
 						'<!-- wp:heading -->',
-						'<h2>' . _x( 'Our Leadership', 'Theme starter content', 'twentynineteen') . '</h2>',
+						'<h2>' . _x( 'Our Leadership', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 
 						'<!-- wp:gallery {"columns":3,"align":"wide"} -->',
