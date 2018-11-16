@@ -2107,8 +2107,8 @@ body.page .main-navigation {
   box-sizing: content-box;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   overflow: hidden;
   transition: box-shadow 200ms ease-in-out;
 }
@@ -2121,22 +2121,22 @@ body.page .main-navigation {
   box-shadow: 0 0 0 2px black;
 }
 
-@media only screen and (min-width: 768px) {
-  .site-logo .custom-logo-link {
-    width: 64px;
-    height: 64px;
-  }
-}
-
 .site-title {
   margin: auto;
   display: inline;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a:link,
-.site-title a:visited {
+.site-title a {
   color: #111;
+}
+
+.site-title a:link, .site-title a:visited {
+  color: #111;
+}
+
+.site-title a:hover {
+  color: #4a4a4a;
 }
 
 .featured-image .site-title {
@@ -2151,14 +2151,6 @@ body.page .main-navigation {
 
 .site-title + .main-navigation {
   display: block;
-}
-
-.site-title a {
-  color: inherit;
-}
-
-.site-title a:hover {
-  color: #4a4a4a;
 }
 
 @media only screen and (min-width: 768px) {
