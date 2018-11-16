@@ -681,6 +681,11 @@
 	//! Columns
 	.wp-block-columns {
 
+		&.alignfull {
+			padding-left: $size__spacing-unit;
+			padding-right: $size__spacing-unit;
+		}
+
 		@include media(tablet) {
 			.wp-block-column > * {
 
@@ -699,6 +704,12 @@
 				&:last-child {
 					margin-right: 0;
 				}
+			}
+
+			&.alignfull,
+			&.alignfull .wp-block-column {
+				padding-left: calc(2 * #{$size__spacing-unit});
+				padding-right: calc(2 * #{$size__spacing-unit});
 			}
 		}
 	}
