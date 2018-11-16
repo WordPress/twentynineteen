@@ -55,6 +55,21 @@ body {
 	}
 }
 
+/** === Editor Changes === */
+
+// Since 2019 left-aligns wide and fullwide blocks, left align the toolbar too.
+.editor-block-list__block[data-align="wide"] .editor-block-contextual-toolbar .editor-block-toolbar.editor-block-toolbar,
+.editor-block-list__block[data-align="full"] .editor-block-contextual-toolbar .editor-block-toolbar.editor-block-toolbar {
+		max-width: none;
+}
+
+.editor-block-list__block[data-align="full"] .editor-block-contextual-toolbar .editor-block-toolbar.editor-block-toolbar {
+	max-width: calc( 100% - (2 * 46px));
+	@include media(tablet) {
+		max-width: calc( 80% - (2 * 46px) - 6px);
+	}
+}
+
 /** === Content Width === */
 
 .wp-block {
