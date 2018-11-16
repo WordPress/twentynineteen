@@ -457,7 +457,7 @@ function twentynineteen_starter_content() {
 						'<!-- wp:column -->',
 						'<div class="wp-block-column">',
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Website Design', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<p>' . _x( 'Website Design', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:paragraph -->',
@@ -465,28 +465,28 @@ function twentynineteen_starter_content() {
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Social Media Strategy', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<p>' . _x( 'Social Media Strategy', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 						'</div><!-- /wp:column -->',
 
 						'<!-- wp:column -->',
 						'<div class="wp-block-column">',
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Marketing', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<p>' . _x( 'Marketing', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Copywriting', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<p>' . _x( 'Copywriting', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'Content Strategy', 'Theme starter content', 'twentynineteen') . '</p>',
+						'<p>' . _x( 'Content Strategy', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph --></div>',
 						'<!-- /wp:column -->',
 						'</div><!-- /wp:columns -->',
 
 						'<!-- wp:heading -->',
-						'<h2>' . _x( 'Case Studies', 'Theme starter content', 'twentynineteen') . '</h2>',
+						'<h2>' . _x( 'Case Studies', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 
 						'<!-- wp:pullquote {"align":"full","className":"is-style-solid-color"} -->',
@@ -506,7 +506,7 @@ function twentynineteen_starter_content() {
 						'<!-- /wp:heading -->',
 
 						'<!-- wp:gallery {"columns":3,"align":"wide"} -->',
-						'<ul class="wp-block-gallery alignwide columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Ava Young, Founder', 'Theme starter content', 'twentynineteen' )  . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Doug Watson, Creative Director', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Taco, Good Dog',  'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li></ul>',
+						'<ul class="wp-block-gallery alignwide columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Ava Young, Founder', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Doug Watson, Creative Director', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Taco, Good Dog', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li></ul>',
 						'<!-- /wp:gallery -->',
 
 						'<!-- wp:pullquote {"align":"wide"} -->',
