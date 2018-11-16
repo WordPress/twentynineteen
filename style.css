@@ -4178,6 +4178,14 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
+  .entry .entry-content .wp-block-cover.alignleft,
+  .entry .entry-content .wp-block-cover.alignright {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-image-text,
   .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-text,
   .entry .entry-content .wp-block-cover-image.alignfull h2,
