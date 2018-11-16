@@ -12,84 +12,84 @@ NOTE: This file is automatically populated with additional styles if the user se
 /* Nested sub-menu padding: 10 levels deep */
 /** === Non-Latin font fallbacks === */
 /* Arabic */
-html[lang="ar"] .wp-block .editor-rich-text__tinymce,
-html[lang="ary"] .wp-block .editor-rich-text__tinymce,
-html[lang="azb"] .wp-block .editor-rich-text__tinymce,
-html[lang="ckb"] .wp-block .editor-rich-text__tinymce,
-html[lang="fa-IR"] .wp-block .editor-rich-text__tinymce,
-html[lang="haz"] .wp-block .editor-rich-text__tinymce,
-html[lang="ps"] .wp-block .editor-rich-text__tinymce {
+html[lang="ar"] .wp-block .mce-content-body,
+html[lang="ary"] .wp-block .mce-content-body,
+html[lang="azb"] .wp-block .mce-content-body,
+html[lang="ckb"] .wp-block .mce-content-body,
+html[lang="fa-IR"] .wp-block .mce-content-body,
+html[lang="haz"] .wp-block .mce-content-body,
+html[lang="ps"] .wp-block .mce-content-body {
   font-family: Tahoma, Arial, sans-serif !important;
 }
 
 /* Cyrillic */
-html[lang="be"] .wp-block .editor-rich-text__tinymce,
-html[lang="bg-BG"] .wp-block .editor-rich-text__tinymce,
-html[lang="kk"] .wp-block .editor-rich-text__tinymce,
-html[lang="mk-MK"] .wp-block .editor-rich-text__tinymce,
-html[lang="mn"] .wp-block .editor-rich-text__tinymce,
-html[lang="ru-RU"] .wp-block .editor-rich-text__tinymce,
-html[lang="sah"] .wp-block .editor-rich-text__tinymce,
-html[lang="sr-RS"] .wp-block .editor-rich-text__tinymce,
-html[lang="tt-RU"] .wp-block .editor-rich-text__tinymce,
-html[lang="uk"] .wp-block .editor-rich-text__tinymce {
+html[lang="be"] .wp-block .mce-content-body,
+html[lang="bg-BG"] .wp-block .mce-content-body,
+html[lang="kk"] .wp-block .mce-content-body,
+html[lang="mk-MK"] .wp-block .mce-content-body,
+html[lang="mn"] .wp-block .mce-content-body,
+html[lang="ru-RU"] .wp-block .mce-content-body,
+html[lang="sah"] .wp-block .mce-content-body,
+html[lang="sr-RS"] .wp-block .mce-content-body,
+html[lang="tt-RU"] .wp-block .mce-content-body,
+html[lang="uk"] .wp-block .mce-content-body {
   font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 }
 
 /* Chinese (Hong Kong) */
-html[lang="zh-HK"] .wp-block .editor-rich-text__tinymce {
+html[lang="zh-HK"] .wp-block .mce-content-body {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Chinese (Taiwan) */
-html[lang="zh-TW"] .wp-block .editor-rich-text__tinymce {
+html[lang="zh-TW"] .wp-block .mce-content-body {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Chinese (China) */
-html[lang="zh-CN"] .wp-block .editor-rich-text__tinymce {
+html[lang="zh-CN"] .wp-block .mce-content-body {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Devanagari */
-html[lang="bn-BD"] .wp-block .editor-rich-text__tinymce,
-html[lang="hi-IN"] .wp-block .editor-rich-text__tinymce,
-html[lang="mr"] .wp-block .editor-rich-text__tinymce,
-html[lang="ne-NP"] .wp-block .editor-rich-text__tinymce {
+html[lang="bn-BD"] .wp-block .mce-content-body,
+html[lang="hi-IN"] .wp-block .mce-content-body,
+html[lang="mr"] .wp-block .mce-content-body,
+html[lang="ne-NP"] .wp-block .mce-content-body {
   font-family: Arial, sans-serif !important;
 }
 
 /* Greek */
-html[lang="el"] .wp-block .editor-rich-text__tinymce {
+html[lang="el"] .wp-block .mce-content-body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /* Gujarati */
-html[lang="gu"] .wp-block .editor-rich-text__tinymce {
+html[lang="gu"] .wp-block .mce-content-body {
   font-family: Arial, sans-serif !important;
 }
 
 /* Hebrew */
-html[lang="he-IL"] .wp-block .editor-rich-text__tinymce {
+html[lang="he-IL"] .wp-block .mce-content-body {
   font-family: 'Arial Hebrew', Arial, sans-serif !important;
 }
 
 /* Japanese */
-html[lang="ja"] .wp-block .editor-rich-text__tinymce {
+html[lang="ja"] .wp-block .mce-content-body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
 }
 
 /* Korean */
-html[lang="ko-KR"] .wp-block .editor-rich-text__tinymce {
+html[lang="ko-KR"] .wp-block .mce-content-body {
   font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
 }
 
 /* Thai */
-html[lang="th"] .wp-block .editor-rich-text__tinymce {
+html[lang="th"] .wp-block .mce-content-body {
   font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
 }
 
 /* Vietnamese */
-html[lang="vi"] .wp-block .editor-rich-text__tinymce {
+html[lang="vi"] .wp-block .mce-content-body {
   font-family: 'Libre Franklin', sans-serif !important;
 }

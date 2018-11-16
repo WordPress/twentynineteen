@@ -10,4 +10,4 @@ NOTE: This file is automatically populated with additional styles if the user se
 
 /** === Non-Latin font fallbacks === */
 
-@include non-latin-fonts( '.wp-block .editor-rich-text__tinymce' );
+@include non-latin-fonts( '.wp-block .mce-content-body' );
