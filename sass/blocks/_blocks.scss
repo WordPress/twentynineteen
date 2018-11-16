@@ -60,10 +60,6 @@
 			/*rtl:ignore*/
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
-
-		@include media(desktop) {
-			max-width: calc(3 * (100vw / 12));
-		}
 	}
 
 	&.alignright {
@@ -501,6 +497,10 @@
 			line-height: 1.25;
 			padding: 0;
 			color: #fff;
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			-webkit-hyphens: auto;
+			hyphens: auto;
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
@@ -508,22 +508,13 @@
 			}
 		}
 
-		&.aligncenter {
-			h2,
-			.wp-block-cover-image-text,
-			.wp-block-cover-text {
-				width: 100%;
-				z-index: 1;
-				left: 50%;
-				position: absolute;
-				transform: translate(-50%, -50%);
-				top: 50%;
-			}
-		}
-
 		&.alignleft,
 		&.alignright {
 			width: 100%;
+
+			@include media(tablet) {
+				padding: $size__spacing-unit;
+			}
 		}
 
 		&.alignfull {

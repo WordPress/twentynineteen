@@ -284,6 +284,13 @@ figcaption,
 		width: 100%;
 		max-width: 100%;
 	}
+	
+	@include media(tablet) {
+		
+		.wp-block-cover {
+			padding: $size__spacing-unit;
+		}
+	}
 }
 
 .wp-block[data-type="core/cover"][data-align="wide"],

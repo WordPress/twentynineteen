@@ -295,6 +295,13 @@ figcaption,
 }
 
 @media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover,
+  .wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .wp-block[data-type="core/cover"][data-align="wide"] h2,
   .wp-block[data-type="core/cover"][data-align="wide"] .wp-block-cover-text,
   .wp-block[data-type="core/cover"][data-align="full"] h2,
