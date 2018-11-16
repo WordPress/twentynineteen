@@ -437,7 +437,7 @@ function twentynineteen_starter_content() {
 		'posts' => array(
 			'front' => array(
 				'post_type' => 'page',
-				'post_title' => _x( 'A title is required', 'Theme starter content', 'twentynineteen' ),
+				'post_title' => _x( 'Business site example', 'Theme starter content', 'twentynineteen' ),
 				'post_content' => join(
 					'',
 					array(
