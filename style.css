@@ -2107,8 +2107,8 @@ body.page .main-navigation {
   box-sizing: content-box;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   overflow: hidden;
   transition: box-shadow 200ms ease-in-out;
 }
@@ -2123,8 +2123,8 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .site-logo .custom-logo-link {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -2134,9 +2134,16 @@ body.page .main-navigation {
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a:link,
-.site-title a:visited {
+#masthead .site-title a {
   color: #111;
+}
+
+#masthead .site-title a:link, #masthead .site-title a:visited {
+  color: #111;
+}
+
+#masthead .site-title a:hover {
+  color: #4a4a4a;
 }
 
 .featured-image .site-title {
@@ -2151,14 +2158,6 @@ body.page .main-navigation {
 
 .site-title + .main-navigation {
   display: block;
-}
-
-.site-title a {
-  color: inherit;
-}
-
-.site-title a:hover {
-  color: #4a4a4a;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2219,7 +2218,7 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a,
 .site-header.featured-image .main-navigation a + svg,
 .site-header.featured-image .social-navigation a,
-.site-header.featured-image .site-title a,
+.site-header.featured-image#masthead .site-title a,
 .site-header.featured-image .site-featured-image a {
   color: #fff;
   transition: opacity 110ms ease-in-out;
@@ -2236,10 +2235,10 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation a:active,
 .site-header.featured-image .social-navigation a:hover + svg,
 .site-header.featured-image .social-navigation a:active + svg,
-.site-header.featured-image .site-title a:hover,
-.site-header.featured-image .site-title a:active,
-.site-header.featured-image .site-title a:hover + svg,
-.site-header.featured-image .site-title a:active + svg,
+.site-header.featured-image#masthead .site-title a:hover,
+.site-header.featured-image#masthead .site-title a:active,
+.site-header.featured-image#masthead .site-title a:hover + svg,
+.site-header.featured-image#masthead .site-title a:active + svg,
 .site-header.featured-image .site-featured-image a:hover,
 .site-header.featured-image .site-featured-image a:active,
 .site-header.featured-image .site-featured-image a:hover + svg,
@@ -2254,8 +2253,8 @@ body.page .main-navigation {
 .site-header.featured-image .main-navigation a + svg:focus + svg,
 .site-header.featured-image .social-navigation a:focus,
 .site-header.featured-image .social-navigation a:focus + svg,
-.site-header.featured-image .site-title a:focus,
-.site-header.featured-image .site-title a:focus + svg,
+.site-header.featured-image#masthead .site-title a:focus,
+.site-header.featured-image#masthead .site-title a:focus + svg,
 .site-header.featured-image .site-featured-image a:focus,
 .site-header.featured-image .site-featured-image a:focus + svg {
   color: #fff;

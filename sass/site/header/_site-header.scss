@@ -58,8 +58,8 @@
 		box-sizing: content-box;
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 		display: block;
-		width: 32px;
-		height: 32px;
+		width: 64px;
+		height: 64px;
 		overflow: hidden;
 		transition: box-shadow $background_transition ease-in-out;
 
@@ -74,8 +74,8 @@
 		}
 
 		@include media(tablet) {
-			width: 64px;
-			height: 64px;
+			width: 50px;
+			height: 50px;
 		}
 	}
 }
@@ -85,11 +85,18 @@
 .site-title {
 	margin: auto;
 	display: inline;
-	
 
-	a:link,
-	a:visited {
+	#masthead & a {
 		color: $color__text-main;
+
+		&:link,
+		&:visited {
+			color: $color__text-main;
+		}
+
+		&:hover {
+			color: $color__text-hover;
+		}
 	}
 
 	.featured-image & {
@@ -103,14 +110,6 @@
 	/* When there is no description set, make sure navigation appears below title. */
 	+ .main-navigation {
 		display: block;
-	}
-
-	a {
-		color: inherit;
-
-		&:hover {
-			color: $color__text-hover;
-		}
 	}
 
 	@include media(tablet) {
