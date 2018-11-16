@@ -26,7 +26,7 @@
 	.main-navigation a,
 	.main-navigation a + svg,
 	.social-navigation a,
-	&#masthead .site-title a,
+	.site-title a,
 	.site-featured-image a {
 		color: $color__background-body;
 		transition: opacity $link_transition ease-in-out;
