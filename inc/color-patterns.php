@@ -8,14 +8,14 @@
  */
 
 /**
- * Generate the CSS for the current custom color scheme.
+ * Generate the CSS for the current primary color.
  */
 function twentynineteen_custom_colors_css() {
 
-	if ( 'default' === get_theme_mod( 'colorscheme', 'default' ) ) {
+	if ( 'default' === get_theme_mod( 'primary_color', 'default' ) ) {
 		$primary_color = 199;
 	} else {
-		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
+		$primary_color = absint( get_theme_mod( 'primary_color_hue', 199 ) );
 	}
 
 	/**
