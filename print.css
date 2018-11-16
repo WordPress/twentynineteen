@@ -123,7 +123,8 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   .site-header.featured-image .main-navigation li,
   .site-header.featured-image .social-navigation li,
   .site-header.featured-image .entry-meta,
-  .site-header.featured-image .entry-title {
+  .site-header.featured-image .entry-title,
+  .site-header.featured-image#masthead .site-title a {
     color: #000;
     text-shadow: none;
   }
@@ -145,6 +146,9 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   /* Remove image filters from featured image */
   .image-filters-enabled *:after {
     display: none !important;
+  }
+  .image-filters-enabled .site-header.featured-image .site-featured-image:before {
+    display: none;
   }
   .image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
     filter: none;

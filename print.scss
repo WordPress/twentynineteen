@@ -148,7 +148,8 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
     .main-navigation li, 
     .social-navigation li, 
     .entry-meta, 
-    .entry-title {
+    .entry-title,
+    &#masthead .site-title a {
       color: #000;
       text-shadow: none;
     }
@@ -176,6 +177,10 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 
     *:after {
       display: none !important;
+    }
+
+    .site-header.featured-image .site-featured-image:before {
+      display: none;
     }
 
     .site-header.featured-image .site-featured-image .post-thumbnail img {
