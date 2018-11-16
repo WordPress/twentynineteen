@@ -35,10 +35,10 @@ function twentynineteen_customize_register( $wp_customize ) {
 	}
 
 	/**
-	 * Custom colors.
+	 * Primary color.
 	 */
 	$wp_customize->add_setting(
-		'colorscheme',
+		'primary_color',
 		array(
 			'default'           => 'default',
 			'transport'         => 'postMessage',
@@ -47,22 +47,22 @@ function twentynineteen_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		'colorscheme',
+		'primary_color',
 		array(
 			'type'     => 'radio',
-			'label'    => __( 'Color Scheme', 'twentynineteen' ),
+			'label'    => __( 'Primary Color', 'twentynineteen' ),
 			'choices'  => array(
-				'default'  => _x( 'Default', 'color scheme', 'twentynineteen' ),
-				'custom' => _x( 'Custom', 'color scheme', 'twentynineteen' ),
+				'default'  => _x( 'Default', 'primary color', 'twentynineteen' ),
+				'custom' => _x( 'Custom', 'primary color', 'twentynineteen' ),
 			),
 			'section'  => 'colors',
 			'priority' => 5,
 		)
 	);
 
-	// Add primary color setting and control.
+	// Add primary color hue setting and control.
 	$wp_customize->add_setting(
-		'colorscheme_primary_hue',
+		'primary_color_hue',
 		array(
 			'default'           => 199,
 			'transport'         => 'postMessage',
@@ -73,16 +73,16 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'colorscheme_primary_hue',
+			'primary_color_hue',
 			array(
-				'label'       => __( 'Primary Color', 'twentynineteen' ),
-				'description' => __( 'Changes the Color of the Featured Image overlay, Buttons, Links etc.', 'twentynineteen' ),
+				'description' => __( 'Apply a custom color for buttons, links, featured images, etc.', 'twentynineteen' ),
 				'section'     => 'colors',
 				'mode'        => 'hue',
 			)
 		)
 	);
 
+	// Add image filter setting and control.
 	$wp_customize->add_setting(
 		'image_filter',
 		array(
@@ -95,7 +95,7 @@ function twentynineteen_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'image_filter',
 		array(
-			'label'   => __( 'Apply a color filter to featured images using your site&rsquo;s primary color', 'twentynineteen' ),
+			'label'   => __( 'Apply a filter to featured images using the primary color', 'twentynineteen' ),
 			'section' => 'colors',
 			'type'    => 'checkbox',
 		)

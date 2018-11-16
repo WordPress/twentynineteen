@@ -8,8 +8,8 @@
 
 (function( $ ) {
 
-	// Default color.
-	wp.customize( 'colorscheme', function( value ) {
+	// Primary color.
+	wp.customize( 'primary_color', function( value ) {
 		value.bind( function( to ) {
 			// Update custom color CSS.
 			var style = $( '#custom-theme-colors' ),
@@ -18,10 +18,10 @@
 				color;
 
 			if( 'custom' === to ){
-				// If a "custom" color option is selected, use the currently set colorscheme_primary_hue
-				color = wp.customize.get().colorscheme_primary_hue;
+				// If a custom primary color is selected, use the currently set primary_color_hue
+				color = wp.customize.get().primary_color_hue;
 			} else {
-				// If the "default" option is selected, get the default primary_hue
+				// If the "default" option is selected, get the default primary_color_hue
 				color = 199;
 			}
 
@@ -31,8 +31,8 @@
 		});
 	});
 
-	// Primary color.
-	wp.customize( 'colorscheme_primary_hue', function( value ) {
+	// Primary color hue.
+	wp.customize( 'primary_color_hue', function( value ) {
 		value.bind( function( to ) {
 
 			// Update custom color CSS.
