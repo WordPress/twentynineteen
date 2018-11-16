@@ -109,6 +109,11 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   .comment .comment-metadata .edit-link {
     display: none;
   }
+  .entry .entry-content .wp-block-button .wp-block-button__link,
+  .entry .entry-content .button {
+    color: #000;
+    background: none;
+  }
   /* Site Header (With Featured Image) */
   .site-header.featured-image {
     min-height: 0;
