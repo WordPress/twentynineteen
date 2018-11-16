@@ -128,7 +128,9 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   .author-description:before, 
   .post-navigation,
   .widget-area,
-  .comment-form-flex {
+  .comment-form-flex,
+  .comment-reply,
+  .comment .comment-metadata .edit-link {
     display: none;
   }
 
