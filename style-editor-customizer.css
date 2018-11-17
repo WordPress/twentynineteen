@@ -97,5 +97,5 @@ html[lang="vi"] .wp-block .mce-content-body {
 /* Use standard monospace font for all non-english code and pre */
 html:not([lang^="en-"]) .wp-block .mce-content-body code,
 html:not([lang^="en-"]) .wp-block .mce-content-body pre {
-  font-family: monospace;
+  font-family: monospace !important;
 }

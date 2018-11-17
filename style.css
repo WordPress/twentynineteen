@@ -746,7 +746,7 @@ html[lang="vi"] .site * {
 /* Use standard monospace font for all non-english code and pre */
 html:not([lang^="en-"]) .site * code,
 html:not([lang^="en-"]) .site * pre {
-  font-family: monospace;
+  font-family: monospace !important;
 }
 
 /* Elements */
