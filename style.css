@@ -2095,8 +2095,8 @@ body.page .main-navigation {
   box-sizing: content-box;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
   overflow: hidden;
   transition: box-shadow 200ms ease-in-out;
 }
@@ -2111,8 +2111,8 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .site-logo .custom-logo-link {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
   }
 }
 
