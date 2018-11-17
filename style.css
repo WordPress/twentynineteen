@@ -3407,6 +3407,39 @@ body.page .main-navigation {
 .widget_rss ul {
   padding: 0;
   list-style: none;
+  /*
+	ul li > a:before {
+		font-family: $font__body;
+		font-weight: normal;
+	}
+	ul > li > a:before {
+		content: "\2013\00a0";
+	}
+	ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0";
+	}
+	ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+*/
 }
 
 .widget_archive ul li,
@@ -3426,115 +3459,36 @@ body.page .main-navigation {
   margin-bottom: 0.5rem;
 }
 
-.widget_archive ul ul li > a:before,
-.widget_categories ul ul li > a:before,
-.widget_meta ul ul li > a:before,
-.widget_nav_menu ul ul li > a:before,
-.widget_pages ul ul li > a:before,
-.widget_recent_comments ul ul li > a:before,
-.widget_recent_entries ul ul li > a:before,
-.widget_rss ul ul li > a:before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-weight: normal;
+.widget_archive ul ul,
+.widget_categories ul ul,
+.widget_meta ul ul,
+.widget_nav_menu ul ul,
+.widget_pages ul ul,
+.widget_recent_comments ul ul,
+.widget_recent_entries ul ul,
+.widget_rss ul ul {
+  counter-reset: section;
+  /* Creates a new instance of the
+                                        section counter with each ol
+                                        element */
+  list-style-type: none;
 }
 
-.widget_archive ul ul > li > a:before,
-.widget_categories ul ul > li > a:before,
-.widget_meta ul ul > li > a:before,
-.widget_nav_menu ul ul > li > a:before,
-.widget_pages ul ul > li > a:before,
-.widget_recent_comments ul ul > li > a:before,
-.widget_recent_entries ul ul > li > a:before,
-.widget_rss ul ul > li > a:before {
-  content: "\2013\00a0";
-}
-
-.widget_archive ul ul ul li > a:before,
-.widget_categories ul ul ul li > a:before,
-.widget_meta ul ul ul li > a:before,
-.widget_nav_menu ul ul ul li > a:before,
-.widget_pages ul ul ul li > a:before,
-.widget_recent_comments ul ul ul li > a:before,
-.widget_recent_entries ul ul ul li > a:before,
-.widget_rss ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.widget_archive ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_categories ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_meta ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_nav_menu ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_pages ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_comments ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_recent_entries ul ul ul ul ul ul ul ul ul ul li > a:before,
-.widget_rss ul ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+.widget_archive ul li::before,
+.widget_categories ul li::before,
+.widget_meta ul li::before,
+.widget_nav_menu ul li::before,
+.widget_pages ul li::before,
+.widget_recent_comments ul li::before,
+.widget_recent_entries ul li::before,
+.widget_rss ul li::before {
+  counter-increment: section;
+  /* Increments only this instance
+                                        of the section counter */
+  content: counters(section, ".") " ";
+  /* Combines the values of all instances
+                                        of the section counter, separated
+                                        by a period */
 }
 
 .widget_tag_cloud .tagcloud {
@@ -3853,6 +3807,42 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
+.entry .entry-content .wp-block-categories {
+  /*
+	ul li > a:before {
+		font-family: $font__body;
+		font-weight: normal;
+	}
+	ul > li > a:before {
+		content: "\2013\00a0";
+	}
+	ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0";
+	}
+	ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+*/
+}
+
 .entry .entry-content .wp-block-categories ul {
   padding-top: 0.75rem;
 }
@@ -3862,45 +3852,22 @@ body.page .main-navigation {
   padding-left: 0;
 }
 
-.entry .entry-content .wp-block-categories ul li > a:before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-weight: normal;
+.entry .entry-content .wp-block-categories ul {
+  counter-reset: section;
+  /* Creates a new instance of the
+                                        section counter with each ol
+                                        element */
+  list-style-type: none;
 }
 
-.entry .entry-content .wp-block-categories ul > li > a:before {
-  content: "\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.entry .entry-content .wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+.entry .entry-content .wp-block-categories li::before {
+  counter-increment: section;
+  /* Increments only this instance
+                                        of the section counter */
+  content: counters(section, ".") " ";
+  /* Combines the values of all instances
+                                        of the section counter, separated
+                                        by a period */
 }
 
 .entry .entry-content .wp-block-latest-posts.is-grid li {

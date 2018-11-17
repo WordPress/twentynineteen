@@ -616,47 +616,57 @@ ul.wp-block-archives li ul,
 
 .wp-block-categories ul {
   padding-top: 0.75rem;
+  /*
+	ul li > a:before {
+		font-family: $font__body;
+		font-weight: normal;
+	}
+	ul > li > a:before {
+		content: "\2013\00a0";
+	}
+	ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0";
+	}
+	ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+	ul ul ul ul ul ul ul ul ul li > a:before {
+		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+	}
+*/
 }
 
-.wp-block-categories ul ul li > a:before {
-  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-weight: normal;
+.wp-block-categories ul ul {
+  counter-reset: section;
+  /* Creates a new instance of the
+                                        section counter with each ol
+                                        element */
+  list-style-type: none;
 }
 
-.wp-block-categories ul ul > li > a:before {
-  content: "\2013\00a0";
-}
-
-.wp-block-categories ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+.wp-block-categories ul li::before {
+  counter-increment: section;
+  /* Increments only this instance
+                                        of the section counter */
+  content: counters(section, ".") " ";
+  /* Combines the values of all instances
+                                        of the section counter, separated
+                                        by a period */
 }
 
 .wp-block-categories li ul {
