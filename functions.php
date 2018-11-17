@@ -107,6 +107,37 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
+		// Add custom editor font sizes
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name' => __( 'Small', 'twentynineteen' ),
+					'shortName' => __( 'S', 'twentynineteen' ),
+					'size' => 19.5,
+					'slug' => 'small',
+				),
+				array(
+					'name' => __( 'Normal', 'twentynineteen' ),
+					'shortName' => __( 'M', 'twentynineteen' ),
+					'size' => 22,
+					'slug' => 'normal',
+				),
+				array(
+					'name' => __( 'Large', 'twentynineteen' ),
+					'shortName' => __( 'L', 'twentynineteen' ),
+					'size' => 36.5,
+					'slug' => 'large',
+				),
+				array(
+					'name' => __( 'Huge', 'twentynineteen' ),
+					'shortName' => __( 'XL', 'twentynineteen' ),
+					'size' => 49.5,
+					'slug' => 'huge',
+				),
+			)
+		);
+
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
@@ -121,7 +152,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
