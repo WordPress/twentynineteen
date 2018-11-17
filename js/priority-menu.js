@@ -151,7 +151,7 @@
 		);
 
 		if ( hasSelectiveRefresh ) {
-			// Force a full refresh on partial content renders to re-run updateNavigationMenu()
+			// Re-run our priority+ function on partial content renders
 			wp.customize.selectiveRefresh.bind('partial-content-rendered', function ( placement ) {
 				if ( placement ) {
 					updateNavigationMenu( placement.container[0].parentNode );
