@@ -45,7 +45,7 @@ function twentynineteen_custom_colors_css() {
 	 * @param int $lightness Color lightness level.
 	 */
 	$lightness = apply_filters( 'twentynineteen_custom_colors_lightness', 33 );
- 	$lightness = absint( $lightness ) . '%';
+	$lightness = absint( $lightness ) . '%';
 
 	/**
 	 * Filter Twenty Nineteen default hover lightness level.
@@ -55,7 +55,7 @@ function twentynineteen_custom_colors_css() {
 	 * @param int $lightness_hover Hover color lightness level.
 	 */
 	$lightness_hover = apply_filters( 'twentynineteen_custom_colors_lightness_hover', 23 );
- 	$lightness_hover = absint( $lightness_hover ) . '%';
+	$lightness_hover = absint( $lightness_hover ) . '%';
 
 	/**
 	 * Filter Twenty Nineteen default selection lightness level.
