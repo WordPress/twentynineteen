@@ -3542,6 +3542,16 @@ body.page .main-navigation {
   font-weight: 700;
 }
 
+.widget_search .search-field {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .widget_search .search-field {
+    width: auto;
+  }
+}
+
 .widget_search .search-submit {
   display: block;
   margin-top: 1rem;
