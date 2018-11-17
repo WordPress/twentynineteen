@@ -176,7 +176,8 @@
 
 	/* Use standard monospace font for all non-english code and pre */
 	html:not([lang^="en-"]) #{$wrapper_selector} code,
-	html:not([lang^="en-"]) #{$wrapper_selector} pre {
+	html:not([lang^="en-"]) #{$wrapper_selector} pre,
+	html:not([lang^="en-"]) #{$wrapper_selector}.editor-plain-text {
 		font-family: monospace !important;
 	}
 

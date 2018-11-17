@@ -12,90 +12,181 @@ NOTE: This file is automatically populated with additional styles if the user se
 /* Nested sub-menu padding: 10 levels deep */
 /** === Non-Latin font fallbacks === */
 /* Arabic */
-html[lang="ar"] .wp-block .mce-content-body,
-html[lang="ary"] .wp-block .mce-content-body,
-html[lang="azb"] .wp-block .mce-content-body,
-html[lang="ckb"] .wp-block .mce-content-body,
-html[lang="fa-IR"] .wp-block .mce-content-body,
-html[lang="haz"] .wp-block .mce-content-body,
-html[lang="ps"] .wp-block .mce-content-body {
+html[lang="ar"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="ary"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="azb"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="ckb"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="fa-IR"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="haz"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="ps"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: Tahoma, Arial, sans-serif !important;
 }
 
 /* Cyrillic */
-html[lang="be"] .wp-block .mce-content-body,
-html[lang="bg-BG"] .wp-block .mce-content-body,
-html[lang="kk"] .wp-block .mce-content-body,
-html[lang="mk-MK"] .wp-block .mce-content-body,
-html[lang="mn"] .wp-block .mce-content-body,
-html[lang="ru-RU"] .wp-block .mce-content-body,
-html[lang="sah"] .wp-block .mce-content-body,
-html[lang="sr-RS"] .wp-block .mce-content-body,
-html[lang="tt-RU"] .wp-block .mce-content-body,
-html[lang="uk"] .wp-block .mce-content-body {
+html[lang="be"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="bg-BG"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="kk"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="mk-MK"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="mn"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="ru-RU"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="sah"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="sr-RS"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="tt-RU"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="uk"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
 }
 
 /* Chinese (Hong Kong) */
-html[lang="zh-HK"] .wp-block .mce-content-body {
+html[lang="zh-HK"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Chinese (Taiwan) */
-html[lang="zh-TW"] .wp-block .mce-content-body {
+html[lang="zh-TW"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Chinese (China) */
-html[lang="zh-CN"] .wp-block .mce-content-body {
+html[lang="zh-CN"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
 }
 
 /* Devanagari */
-html[lang="bn-BD"] .wp-block .mce-content-body,
-html[lang="hi-IN"] .wp-block .mce-content-body,
-html[lang="mr"] .wp-block .mce-content-body,
-html[lang="ne-NP"] .wp-block .mce-content-body {
+html[lang="bn-BD"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="hi-IN"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="mr"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] *,
+html[lang="ne-NP"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: Arial, sans-serif !important;
 }
 
 /* Greek */
-html[lang="el"] .wp-block .mce-content-body {
+html[lang="el"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 /* Gujarati */
-html[lang="gu"] .wp-block .mce-content-body {
+html[lang="gu"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: Arial, sans-serif !important;
 }
 
 /* Hebrew */
-html[lang="he-IL"] .wp-block .mce-content-body {
+html[lang="he-IL"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Arial Hebrew', Arial, sans-serif !important;
 }
 
 /* Japanese */
-html[lang="ja"] .wp-block .mce-content-body {
+html[lang="ja"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
 }
 
 /* Korean */
-html[lang="ko-KR"] .wp-block .mce-content-body {
+html[lang="ko-KR"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
 }
 
 /* Thai */
-html[lang="th"] .wp-block .mce-content-body {
+html[lang="th"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
 }
 
 /* Vietnamese */
-html[lang="vi"] .wp-block .mce-content-body {
+html[lang="vi"] .editor-styles-wrapper .wp-block *[class^="wp-block-"] * {
   font-family: 'Libre Franklin', sans-serif !important;
 }
 
 /* Use standard monospace font for all non-english code and pre */
-html:not([lang^="en-"]) .wp-block .mce-content-body code,
-html:not([lang^="en-"]) .wp-block .mce-content-body pre {
+html:not([lang^="en-"]) .editor-styles-wrapper .wp-block *[class^="wp-block-"] * code,
+html:not([lang^="en-"]) .editor-styles-wrapper .wp-block *[class^="wp-block-"] * pre,
+html:not([lang^="en-"]) .editor-styles-wrapper .wp-block *[class^="wp-block-"] *.editor-plain-text {
+  font-family: monospace !important;
+}
+
+/* Arabic */
+html[lang="ar"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="ary"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="azb"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="ckb"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="fa-IR"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="haz"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="ps"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
+/* Cyrillic */
+html[lang="be"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="bg-BG"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="kk"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="mk-MK"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="mn"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="ru-RU"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="sah"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="sr-RS"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="tt-RU"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="uk"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Chinese (Hong Kong) */
+html[lang="zh-HK"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (Taiwan) */
+html[lang="zh-TW"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (China) */
+html[lang="zh-CN"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Devanagari */
+html[lang="bn-BD"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="hi-IN"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="mr"] .editor-styles-wrapper .editor-post-title__input,
+html[lang="ne-NP"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Greek */
+html[lang="el"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Gujarati */
+html[lang="gu"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Hebrew */
+html[lang="he-IL"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+}
+
+/* Japanese */
+html[lang="ja"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
+}
+
+/* Korean */
+html[lang="ko-KR"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+}
+
+/* Thai */
+html[lang="th"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+}
+
+/* Vietnamese */
+html[lang="vi"] .editor-styles-wrapper .editor-post-title__input {
+  font-family: 'Libre Franklin', sans-serif !important;
+}
+
+/* Use standard monospace font for all non-english code and pre */
+html:not([lang^="en-"]) .editor-styles-wrapper .editor-post-title__input code,
+html:not([lang^="en-"]) .editor-styles-wrapper .editor-post-title__input pre,
+html:not([lang^="en-"]) .editor-styles-wrapper .editor-post-title__input.editor-plain-text {
   font-family: monospace !important;
 }
