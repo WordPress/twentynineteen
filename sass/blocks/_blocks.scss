@@ -60,10 +60,6 @@
 			/*rtl:ignore*/
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
-
-		@include media(desktop) {
-			max-width: calc(3 * (100vw / 12));
-		}
 	}
 
 	&.alignright {
@@ -146,11 +142,6 @@
 			@include media(wide) {
 				max-width: (0.33 * $desktop_width);
 			}
-		}
-
-		&.aligncenter {
-			margin: 32px calc(2 * (100vw / 12));
-			max-width: calc(6 * (100vw / 12));
 		}
 	}
 
@@ -243,7 +234,7 @@
 		ul {
 			padding-top: ( .75 * $size__spacing-unit );
 		}
-		
+
 		li ul {
 			list-style: none;
 			padding-left: 0;
@@ -506,6 +497,10 @@
 			line-height: 1.25;
 			padding: 0;
 			color: #fff;
+			-ms-hyphens: auto;
+			-moz-hyphens: auto;
+			-webkit-hyphens: auto;
+			hyphens: auto;
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
@@ -513,22 +508,13 @@
 			}
 		}
 
-		&.aligncenter {
-			h2,
-			.wp-block-cover-image-text,
-			.wp-block-cover-text {
-				width: 100%;
-				z-index: 1;
-				left: 50%;
-				position: absolute;
-				transform: translate(-50%, -50%);
-				top: 50%;
-			}
-		}
-
 		&.alignleft,
 		&.alignright {
 			width: 100%;
+
+			@include media(tablet) {
+				padding: $size__spacing-unit;
+			}
 		}
 
 		&.alignfull {
@@ -622,7 +608,7 @@
 
 	//! Twitter Embed
 	.wp-block-embed-twitter {
-		overflow: hidden;
+		word-break: break-word;
 	}
 
 	//! Table
@@ -639,6 +625,7 @@
 		font-family: $font__heading;
 
 		.wp-block-file__button {
+			display: table;
 			@include button-transition;
 			border: none;
 			border-radius: 5px;
@@ -650,6 +637,8 @@
 			font-weight: bold;
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
 			color: #fff;
+			margin-left: 0;
+			margin-top: calc(0.75 * #{$size__spacing-unit});
 
 			@include media(desktop) {
 				font-size: $font__size-base;
@@ -667,10 +656,6 @@
 				outline-offset: -4px;
 			}
 		}
-
-		* + .wp-block-file__button {
-			margin-left: ($size__spacing-unit * .75);
-		}
 	}
 
 	//! Code
@@ -686,6 +671,11 @@
 
 	//! Columns
 	.wp-block-columns {
+
+		&.alignfull {
+			padding-left: $size__spacing-unit;
+			padding-right: $size__spacing-unit;
+		}
 
 		@include media(tablet) {
 			.wp-block-column > * {
@@ -705,6 +695,12 @@
 				&:last-child {
 					margin-right: 0;
 				}
+			}
+
+			&.alignfull,
+			&.alignfull .wp-block-column {
+				padding-left: calc(2 * #{$size__spacing-unit});
+				padding-right: calc(2 * #{$size__spacing-unit});
 			}
 		}
 	}

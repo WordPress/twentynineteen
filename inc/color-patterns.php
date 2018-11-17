@@ -8,13 +8,13 @@
  */
 
 /**
- * Generate the CSS for the current custom color scheme.
+ * Generate the CSS for the current primary color.
  */
 function twentynineteen_custom_colors_css() {
 
 	$primary_color = 199;
-	if ( 'default' !== get_theme_mod( 'colorscheme', 'default' ) ) {
-		$primary_color = absint( get_theme_mod( 'colorscheme_primary_hue', 199 ) );
+	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
+		$primary_color = absint( get_theme_mod( 'primary_color', 199 ) );
 	}
 
 	/**
@@ -28,24 +28,44 @@ function twentynineteen_custom_colors_css() {
 	$saturation = absint( $saturation ) . '%';
 
 	/**
+	 * Filter Twenty Nineteen default selection saturation level.
+	 *
+	 * @since Twenty Nineteen 1.0
+	 *
+	 * @param int $saturation_selection Selection color saturation level.
+	 */
+	$saturation_selection = absint( apply_filters( 'twentynineteen_custom_colors_saturation_selection', 50 ) );
+	$saturation_selection = $saturation_selection . '%';
+
+	/**
 	 * Filter Twenty Nineteen default lightness level.
 	 *
 	 * @since Twenty Nineteen 1.0
 	 *
-	 * @param int $saturation Color saturation level.
+	 * @param int $lightness Color lightness level.
 	 */
 	$lightness = apply_filters( 'twentynineteen_custom_colors_lightness', 33 );
-	$lightness = absint( $lightness ) . '%';
+ 	$lightness = absint( $lightness ) . '%';
 
 	/**
 	 * Filter Twenty Nineteen default hover lightness level.
 	 *
 	 * @since Twenty Nineteen 1.0
 	 *
-	 * @param int $saturation Color saturation level.
+	 * @param int $lightness_hover Hover color lightness level.
 	 */
 	$lightness_hover = apply_filters( 'twentynineteen_custom_colors_lightness_hover', 23 );
-	$lightness_hover = absint( $lightness_hover ) . '%';
+ 	$lightness_hover = absint( $lightness_hover ) . '%';
+
+	/**
+	 * Filter Twenty Nineteen default selection lightness level.
+	 *
+	 * @since Twenty Nineteen 1.0
+	 *
+	 * @param int $lightness_selection Selection color lightness level.
+	 */
+	$lightness_selection = apply_filters( 'twentynineteen_custom_colors_lightness_selection', 90 );
+	$lightness_selection = absint( $lightness_selection ) . '%';
 
 	$theme_css = '
 		/*
@@ -151,6 +171,7 @@ function twentynineteen_custom_colors_css() {
 
 		/* Hover colors */
 		a:hover, a:active,
+		.main-navigation .main-menu > li > a:hover,
 		.main-navigation .main-menu > li > a:hover + svg,
 		.post-navigation .nav-links a:hover .post-title,
 		.author-bio .author-description .author-link:hover,
@@ -176,10 +197,10 @@ function twentynineteen_custom_colors_css() {
 
 		/* Text selection colors */
 		::selection {
-			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_selection . ' ); /* base: #005177; */
+			background-color: hsl( ' . $primary_color . ', ' . $saturation_selection . ', ' . $lightness_selection . ' ); /* base: #005177; */
 		}
 		::-moz-selection {
-			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_selection . ' ); /* base: #005177; */
+			background-color: hsl( ' . $primary_color . ', ' . $saturation_selection . ', ' . $lightness_selection . ' ); /* base: #005177; */
 		}';
 
 	$editor_css = '
@@ -194,7 +215,8 @@ function twentynineteen_custom_colors_css() {
 		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:hover .wp-block-button__link:not(.has-text-color),
 		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:focus .wp-block-button__link:not(.has-text-color),
-		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color) {
+		.editor-block-list__layout .editor-block-list__block .wp-block-button.is-style-outline:active .wp-block-button__link:not(.has-text-color),
+		.editor-block-list__layout .editor-block-list__block .wp-block-file .wp-block-file__textlink {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
 
@@ -217,7 +239,8 @@ function twentynineteen_custom_colors_css() {
 
 		/* Hover colors */
 		.editor-block-list__layout .editor-block-list__block a:hover,
-		.editor-block-list__layout .editor-block-list__block a:active {
+		.editor-block-list__layout .editor-block-list__block a:active,
+		.editor-block-list__layout .editor-block-list__block .wp-block-file .wp-block-file__textlink:hover {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
 		}
 
