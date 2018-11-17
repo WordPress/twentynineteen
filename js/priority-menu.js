@@ -78,7 +78,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
-		return container.offsetWidth - button.offsetWidth - 50;
+		return container.offsetWidth - button.offsetWidth - 22;
 	}
 
 	/**
