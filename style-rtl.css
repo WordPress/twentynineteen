@@ -3401,39 +3401,6 @@ body.page .main-navigation {
 .widget_rss ul {
   padding: 0;
   list-style: none;
-  /*
-	ul li > a:before {
-		font-family: $font__body;
-		font-weight: normal;
-	}
-	ul > li > a:before {
-		content: "\2013\00a0";
-	}
-	ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0";
-	}
-	ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-*/
 }
 
 .widget_archive ul li,
@@ -3786,42 +3753,6 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-categories li a,
 .entry .entry-content .wp-block-latest-posts li a {
   text-decoration: none;
-}
-
-.entry .entry-content .wp-block-categories {
-  /*
-	ul li > a:before {
-		font-family: $font__body;
-		font-weight: normal;
-	}
-	ul > li > a:before {
-		content: "\2013\00a0";
-	}
-	ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0";
-	}
-	ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-*/
 }
 
 .entry .entry-content .wp-block-categories ul {
