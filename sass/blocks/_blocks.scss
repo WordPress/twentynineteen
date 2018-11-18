@@ -33,51 +33,58 @@
 	&.alignfull {
 		position: relative;
 		left: -#{$size__spacing-unit };
-		width: calc( 100% + (2 * #{$size__spacing-unit}));
-		max-width: calc( 100% + (2 * #{$size__spacing-unit}));
+		width: calc(100% + (2 * #{$size__spacing-unit}));
+		max-width: calc(100% + (2 * #{$size__spacing-unit}));
 		clear: both;
 
 		@include media(tablet) {
 			margin-top: calc(2 * #{$size__spacing-unit});
 			margin-bottom: calc(2 * #{$size__spacing-unit});
-			left: calc( -12.5% - 75px );
-			width: calc( 125% + 150px );
-			max-width: calc( 125% + 150px );
+			left: calc(-12.5% - 75px);
+			width: calc(125% + 150px);
+			max-width: calc(125% + 150px);
 		}
 	}
 
 	&.alignleft {
+
 		/*rtl:ignore*/
 		float: left;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
 		margin-left: 0;
+
 		/*rtl:ignore*/
 		margin-right: $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
+
 			/*rtl:ignore*/
 			margin-right: calc(2 * #{$size__spacing-unit});
 		}
 	}
 
 	&.alignright {
+
 		/*rtl:ignore*/
 		float: right;
 		max-width: calc(5 * (100vw / 12));
 		margin-top: 0;
 		margin-right: 0;
+
 		/*rtl:ignore*/
 		margin-left: $size__spacing-unit;
 
 		@include media(tablet) {
 			max-width: calc(4 * (100vw / 12));
 			margin-right: 0;
+
 			/*rtl:ignore*/
 			margin-left: calc(2 * #{$size__spacing-unit});
 		}
 	}
+
 	&.aligncenter {
 		margin-left: auto;
 		margin-right: auto;
@@ -157,6 +164,7 @@
 	.wp-block-button {
 
 		.wp-block-button__link {
+
 			@include button-transition;
 			border: none;
 			background: $color__background-button;
@@ -164,12 +172,11 @@
 			font-family: $font__heading;
 			line-height: $font__line-height-heading;
 			box-sizing: border-box;
-			font-weight: bold;
+			font-weight: 700;
 			text-decoration: none;
-			padding: ($size__spacing-unit * .76) $size__spacing-unit;
+			padding: ($size__spacing-unit * 0.76) $size__spacing-unit;
 			outline: none;
-			color: white;
-			outline: none;
+			color: #fff;
 
 			&:hover {
 				background: $color__background-button-hover;
@@ -213,9 +220,9 @@
 			color: $color__text-light;
 			font-family: $font__heading;
 			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
-			font-weight: bold;
+			font-weight: 700;
 			line-height: $font__line-height-heading;
-			padding-bottom: ( .75 * $size__spacing-unit );
+			padding-bottom: ( 0.75 * $size__spacing-unit );
 
 			&.menu-item-has-children,
 			&:last-child {
@@ -232,7 +239,7 @@
 	.wp-block-categories {
 
 		ul {
-			padding-top: ( .75 * $size__spacing-unit );
+			padding-top: ( 0.75 * $size__spacing-unit );
 		}
 
 		li ul {
@@ -245,19 +252,24 @@
 
 	//! Latest posts grid view
 	.wp-block-latest-posts.is-grid {
+
 		li {
 			border-top: 2px solid $color__border;
 			padding-top: (1 * $size__spacing-unit);
 			margin-bottom: (2 * $size__spacing-unit);
+
 			a {
-				&:after {
-					content: '';
+
+				&::after {
+					content: "";
 				}
 			}
+
 			&:last-child {
 				margin-bottom: auto;
-				a:after {
-					content: '';
+
+				a::after {
+					content: "";
 				}
 			}
 		}
@@ -279,11 +291,12 @@
 
 	//! Paragraphs
 	.has-drop-cap {
-		&:not(:focus):first-letter {
+
+		&:not(:focus)::first-letter {
 			font-family: $font__heading;
 			font-size: $font__size-xxxl;
 			line-height: 1;
-			font-weight: bold;
+			font-weight: 700;
 			margin: 0 0.25em 0 0;
 		}
 	}
@@ -325,8 +338,9 @@
 			color: $color__text-light;
 
 			/*
-			 * This requires a rem-based font size calculation instead of our normal em-based one,
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 * This requires a rem-based font size calculation instead of our
+			 * normal em-based one, because the cite tag sometimes gets wrapped
+			 * in a p tag. This is equivalent to $font-size_xs.
 			 */
 			font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 		}
@@ -416,9 +430,11 @@
 		}
 
 		cite {
+
 			/*
-			 * This requires a rem-based font size calculation instead of our normal em-based one,
-			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 * This requires a rem-based font size calculation instead of our
+			 * normal em-based one, because the cite tag sometimes gets wrapped
+			 * in a p tag. This is equivalent to $font-size_xs.
 			 */
 			font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 		}
@@ -437,9 +453,11 @@
 
 			cite,
 			footer {
+
 				/*
-				 * This requires a rem-based font size calculation instead of our normal em-based one,
-				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+				 * This requires a rem-based font size calculation instead of
+				 * our normal em-based one, because the cite tag sometimes gets
+				 * wrapped in a p tag. This is equivalent to $font-size_xs.
 				 */
 				font-size: calc(1rem / (1.25 * #{$font__size-ratio}));
 			}
@@ -493,7 +511,7 @@
 		h2 {
 			font-family: $font__heading;
 			font-size: $font__size-lg;
-			font-weight: bold;
+			font-weight: 700;
 			line-height: 1.25;
 			padding: 0;
 			color: #fff;
@@ -522,6 +540,7 @@
 			.wp-block-cover-image-text,
 			.wp-block-cover-text,
 			h2 {
+
 				@include postContentMaxWidth();
 			}
 
@@ -559,7 +578,7 @@
 		font-family: $font__heading;
 		line-height: $font__line-height-pre;
 		margin: 0;
-		padding: ( $size__spacing-unit * .5 );
+		padding: ( $size__spacing-unit * 0.5 );
 		text-align: center;
 	}
 
@@ -576,18 +595,20 @@
 
 		&.is-style-wide {
 			max-width: 100%;
+
 			@include postContentMaxWidth();
 		}
 
 		&.is-style-dots {
 			max-width: 100%;
+
 			@include postContentMaxWidth();
 			background-color: inherit;
 			border: inherit;
 			height: inherit;
 			text-align: center;
 
-			&:before {
+			&::before {
 				color: $color__text-light;
 				font-size: $font__size-lg;
 				letter-spacing: $font__size-sm;
@@ -597,10 +618,10 @@
 
 		/* Remove duplicate rule-line when a separator
 		 * is followed by an H1, or H2 */
-		& + h1,
-		& + h2 {
+		h1,
+		h2 {
 
-			&:before {
+			&::before {
 				display: none;
 			}
 		}
@@ -626,6 +647,7 @@
 
 		.wp-block-file__button {
 			display: table;
+
 			@include button-transition;
 			border: none;
 			border-radius: 5px;
@@ -634,15 +656,15 @@
 			font-family: $font__heading;
 			line-height: $font__line-height-heading;
 			text-decoration: none;
-			font-weight: bold;
-			padding: ($size__spacing-unit * .75) $size__spacing-unit;
+			font-weight: 700;
+			padding: ($size__spacing-unit * 0.75) $size__spacing-unit;
 			color: #fff;
 			margin-left: 0;
 			margin-top: calc(0.75 * #{$size__spacing-unit});
 
 			@include media(desktop) {
 				font-size: $font__size-base;
-				padding: ($size__spacing-unit * .875) ($size__spacing-unit * 1.5);
+				padding: ($size__spacing-unit * 0.875) ($size__spacing-unit * 1.5);
 			}
 
 			&:hover {
@@ -665,7 +687,7 @@
 		code {
 			font-size: $font__size-md;
 			white-space: pre-wrap;
-    	                word-break: break-word;
+			word-break: break-word;
 		}
 	}
 
@@ -678,6 +700,7 @@
 		}
 
 		@include media(tablet) {
+
 			.wp-block-column > * {
 
 				&:first-child {
@@ -689,7 +712,7 @@
 				}
 			}
 
-			&[class*='has-'] > * {
+			&[class*="has-"] > * {
 				margin-right: $size__spacing-unit;
 
 				&:last-child {
@@ -710,10 +733,10 @@
 
 		.wp-block-latest-comments__comment-meta {
 			font-family: $font__heading;
-			font-weight: bold;
+			font-weight: 700;
 
 			.wp-block-latest-comments__comment-date {
-				font-weight: normal;
+				font-weight: 400;
 			}
 		}
 
@@ -723,19 +746,11 @@
 			font-size: inherit;
 		}
 
-		&.has-avatars {
-
-		}
-
 		&.has-dates {
 
 			.wp-block-latest-comments__comment-date {
 				font-size: $font__size-xs;
 			}
-		}
-
-		&.has-excerpts {
-
 		}
 	}
 

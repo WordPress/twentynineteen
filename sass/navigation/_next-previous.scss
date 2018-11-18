@@ -33,12 +33,13 @@
 		}
 
 		a {
+
 			.meta-nav {
 				color: $color__text-light;
 				user-select: none;
 
-				&:before,
-				&:after {
+				&::before,
+				&::after {
 					display: none;
 					content: "—";
 					width: 2em;
@@ -76,7 +77,8 @@
 			}
 
 			.meta-nav {
-				&:before {
+
+				&::before {
 					display: inline;
 				}
 			}
@@ -91,7 +93,8 @@
 			}
 
 			.meta-nav {
-				&:after {
+
+				&::after {
 					display: inline;
 				}
 			}
@@ -106,11 +109,11 @@
 
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 calc(.5 * #{$size__spacing-unit});
+		padding: 0 calc(0.5 * #{$size__spacing-unit});
 
 
-		& > * {
-			padding: calc(.5 * #{$size__spacing-unit});
+		* {
+			padding: calc(0.5 * #{$size__spacing-unit});
 
 			&.dots,
 			&.prev {
@@ -151,13 +154,13 @@
 			.prev,
 			.next {
 
-				& > * {
+				* {
 					display: inline-block;
 					vertical-align: text-bottom;
 				}
 			}
 
-			& > * {
+			* {
 				padding: $size__spacing-unit;
 			}
 		}
@@ -177,7 +180,7 @@
 		min-width: 50%;
 		width: 100%;
 		font-family: $font__heading;
-		font-weight: bold;
+		font-weight: 700;
 
 		.secondary-text {
 			display: none;

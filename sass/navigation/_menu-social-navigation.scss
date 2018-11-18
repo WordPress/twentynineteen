@@ -1,10 +1,11 @@
 /* Social menu */
 
 .social-navigation {
-	margin-top: calc(#{$size__spacing-unit} / 2 );
+	margin-top: calc(#{$size__spacing-unit} / 2);
 	text-align: left;
 
 	ul.social-links-menu {
+
 		@include clearfix;
 
 		display: inline-block;

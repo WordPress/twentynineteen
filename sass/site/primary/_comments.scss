@@ -8,13 +8,14 @@
 
 .comments-area {
 	margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
+
 	@include postContentMaxWidth();
 
 	@include media(tablet) {
 		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 	}
 
-	& > * {
+	* {
 		margin-top: calc(2 * #{$size__spacing-unit});
 		margin-bottom: calc(2 * #{$size__spacing-unit});
 
@@ -40,6 +41,7 @@
 		}
 
 		.comments-title {
+
 			@include post-section-dash;
 			margin: 0;
 
@@ -49,6 +51,7 @@
 		}
 
 		.discussion-meta {
+
 			@include media(tablet) {
 				flex: 0 0 calc(2 * (100vw / 12));
 				margin-left: #{$size__spacing-unit};
@@ -79,7 +82,7 @@
 		position: absolute;
 		left: calc(#{$size__spacing-unit} + 100%);
 		top: calc(-3.5 * #{$size__spacing-unit});
-		width: calc(100vw / 12 );
+		width: calc(100vw / 12);
 	}
 }
 
@@ -134,7 +137,7 @@
 			margin-bottom: $size__spacing-unit;
 
 			a:not(.comment-edit-link) {
-				font-weight: bold;
+				font-weight: 700;
 				font-size: $font__size-base / (1 * $font__size-ratio);
 				line-height: 1.5;
 				padding-right: #{0.5 * $size__spacing-unit};
@@ -166,7 +169,7 @@
 	position: relative;
 
 	@include media(tablet) {
-		padding-left: calc(.5 * (#{$size__spacing-unit} + calc(100vw / 12 )));
+		padding-left: calc(0.5 * (#{$size__spacing-unit} + calc(100vw / 12)));
 
 		&.depth-1,
 		.children {
@@ -221,20 +224,20 @@
 			display: block;
 			height: 18px;
 			position: absolute;
-			background: lighten( $color__link, 8% );
+			background: lighten($color__link, 8%);
 			right: calc(100% - #{$size__spacing-unit * 2.5});
 			top: -3px;
 			width: 18px;
 
 			@include media(tablet) {
-				right: calc(100% + #{$size__spacing-unit * .75});
+				right: calc(100% + #{$size__spacing-unit * 0.75});
 			}
 
 			svg {
 				width: inherit;
 				height: inherit;
 				display: block;
-				fill: white;
+				fill: #fff;
 				transform: scale(0.875);
 			}
 		}
@@ -331,6 +334,7 @@
 }
 
 .discussion-avatar-list {
+
 	@include clearfix;
 
 	margin: 0;
@@ -361,8 +365,8 @@
 		.svg-icon {
 			vertical-align: middle;
 			fill: currentColor;
-			transform: scale( 0.6 ) scaleX(-1) translateY(-0.1em);
-			margin-left: -#{.25 * $size__spacing-unit}; // Align icon with avatars above.
+			transform: scale(0.6) scaleX(-1) translateY(-0.1em);
+			margin-left: -#{0.25 * $size__spacing-unit}; // Align icon with avatars above.
 		}
 	}
 
@@ -379,6 +383,7 @@
 
 	.comment-form-author,
 	.comment-form-email {
+
 		@include media(tablet) {
 			width: calc(50% - #{$size__spacing-unit / 2});
 			float: left;
@@ -386,6 +391,7 @@
 	}
 
 	.comment-form-email {
+
 		@include media(tablet) {
 			margin-left: $size__spacing-unit;
 		}

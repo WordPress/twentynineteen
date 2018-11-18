@@ -11,8 +11,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
@@ -21,12 +21,9 @@ body {
 }
 
 a {
+
 	@include link-transition;
 	color: $color__link;
-}
-
-a:visited {
-
 }
 
 a:hover,
@@ -54,6 +51,7 @@ h6 {
 
 h1:not(.site-title),
 h2 {
+
 	@include post-section-dash;
 }
 

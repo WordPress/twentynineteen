@@ -18,7 +18,7 @@
 .site-title,
 .site-info,
 #cancel-comment-reply-link,
-img:after,
+img::after,
 h1,
 h2,
 h3,
@@ -121,19 +121,19 @@ h5 {
 .comment-notes,
 .sticky-post,
 #cancel-comment-reply-link,
-img:after,
+img::after,
 h6 {
 	font-size: $font__size-xs;
 }
 
 .site-title,
 .page-title {
-	font-weight: normal;
+	font-weight: 400;
 }
 
 .page-description,
 .page-links a {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .site-description {
@@ -152,6 +152,7 @@ blockquote {
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 .entry-title {
+
 	@include media(tablet) {
 		hyphens: none;
 	}

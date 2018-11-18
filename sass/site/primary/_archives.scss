@@ -14,7 +14,7 @@
 		display: inline;
 		letter-spacing: normal;
 
-		&:before {
+		&::before {
 			display: none;
 		}
 	}
@@ -24,9 +24,9 @@
 		display: inherit;
 		clear: both;
 
-		&:after {
+		&::after {
 			content: ".";
-			font-weight: bold;
+			font-weight: 700;
 			color: $color__text-light;
 		}
 	}

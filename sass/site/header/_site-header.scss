@@ -43,7 +43,7 @@
 
 	position: relative;
 	z-index: 999;
-	margin-bottom: calc(.66 * #{$size__spacing-unit});
+	margin-bottom: calc(0.66 * #{$size__spacing-unit});
 
 	@include media(tablet) {
 		margin-bottom: 0;
@@ -108,7 +108,8 @@
 		}
 	}
 
-	/* When there is no description set, make sure navigation appears below title. */
+	/* When there is no description set, make sure navigation
+	 appears below title. */
 	+ .main-navigation {
 		display: block;
 	}
@@ -117,18 +118,17 @@
 		display: inline;
 	}
 
-	&:not(:empty) + .site-description:not(:empty):before {
+	&:not(:empty) + .site-description:not(:empty)::before {
 		content: "\2014";
-		margin: 0 .2em;
+		margin: 0 0.2em;
 	}
 }
 
 // Site description
 
 .site-description {
-
 	display: inline;
 	color: $color__text-light;
-	font-weight: normal;
+	font-weight: 400;
 	margin: 0;
 }

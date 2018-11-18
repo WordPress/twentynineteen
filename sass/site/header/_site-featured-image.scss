@@ -14,8 +14,8 @@
 	/* Set white text color when featured image is set. */
 	.site-branding .site-title,
 	.site-branding .site-description,
-	.main-navigation a:after,
-	.main-navigation .main-menu > li.menu-item-has-children:after,
+	.main-navigation a::after,
+	.main-navigation .main-menu > li.menu-item-has-children::after,
 	.main-navigation li,
 	.social-navigation li,
 	.entry-meta,
@@ -47,6 +47,7 @@
 
 	/* add focus state to social media icons */
 	.social-navigation a {
+
 		&:focus {
 			color: $color__background-body;
 			opacity: 1;
@@ -56,9 +57,10 @@
 
 	.social-navigation svg,
 	.site-featured-image svg {
+
 		/* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
-		-webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35) );
-				filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35) );
+		-webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+		filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 	}
 
 	/* Entry header */
@@ -94,10 +96,12 @@
 
 		.entry-header {
 
-			margin-top: calc( 4 * #{$size__spacing-unit});
+			margin-top: calc(4 * #{$size__spacing-unit});
 			margin-bottom: 0;
 			margin-left: 0;
 			margin-right: 0;
+			position: relative;
+			z-index: 9;
 
 			@include media (tablet) {
 
@@ -107,7 +111,7 @@
 
 			.entry-title {
 
-				&:before {
+				&::before {
 					background: $color__background-body;
 				}
 			}
@@ -198,25 +202,22 @@
 		z-index: 10;
 	}
 
-	.site-featured-image .entry-header {
-		position: relative;
-		z-index: 9;
-	}
-
 	/* Set up image filter layer positioning */
-	.site-branding-container:after,
-	.site-featured-image:before,
-	.site-featured-image:after,
-	&:after {
+	.site-branding-container::after,
+	.site-featured-image::before,
+	.site-featured-image::after,
+	&::after {
 		display: block;
 		position: absolute;
-		top: 0; left: 0;
+		top: 0;
+		left: 0;
 		content: "\020";
 		width: 100%;
 		height: 100%;
 	}
 
 	/* Background & Effects */
+
 	/* Shared background settings between pseudo elements. */
 	background-position: center;
 	background-repeat: no-repeat;
@@ -225,23 +226,24 @@
 	/* The intensity of each blend mode is controlled via layer opacity. */
 
 	/* Second layer: screen. */
-	.image-filters-enabled & .site-featured-image:before {
+	.image-filters-enabled & .site-featured-image::before {
 		background: $color__link;
 		mix-blend-mode: screen;
 		opacity: 0.1;
 	}
 
 	/* Third layer: multiply. */
+
 	/* When image filters are inactive, a black overlay is added. */
-	.site-featured-image:after {
+	.site-featured-image::after {
 		background: #000;
 		mix-blend-mode: multiply;
-		opacity: .7;
+		opacity: 0.7;
 
-	  	/* When image filters are active, a blue overlay is added. */
+		/* When image filters are active, a blue overlay is added. */
 		.image-filters-enabled & {
 			background: $color__link;
-			opacity: .8;
+			opacity: 0.8;
 			z-index: 3;
 
 			/* Browsers supporting mix-blend-mode don't need opacity < 1 */
@@ -252,7 +254,7 @@
 	}
 
 	/* Fourth layer: overlay. */
-  	.image-filters-enabled & .site-branding-container:after {
+	.image-filters-enabled & .site-branding-container::after {
 		background: rgba(0, 0, 0, 0.35);
 		mix-blend-mode: overlay;
 		opacity: 0.5;
@@ -265,8 +267,9 @@
 	}
 
 	/* Fifth layer: readability overlay */
-	&:after {
+	&::after {
 		background: #000;
+
 		/**
 		 * Add a transition to the readability overlay, to add a subtle
 		 * but smooth effect when resizing the screen.
@@ -277,7 +280,7 @@
 
 		/* When image filters are active, a blue overlay is added. */
 		.image-filters-enabled & {
-			background: mix($color__link, black, 12%);
+			background: mix($color__link, #000, 12%);
 			opacity: 0.38;
 
 			@include media(tablet) {
@@ -285,7 +288,6 @@
 			}
 		}
 	}
-
 
 	::-moz-selection {
 		background: rgba($color__background-body, 0.17);
