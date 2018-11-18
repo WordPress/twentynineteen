@@ -190,54 +190,17 @@
 /* Nested sub-menu padding: 10 levels deep */
 @mixin nestedSubMenuPadding() {
 
-ul {
-	counter-reset: section;          /* Creates a new instance of the
-                                        section counter with each ol
-                                        element */
-	list-style-type: none;
-}
+	ul {
+		counter-reset: submenu;
+	}
 
-li::before {
-	counter-increment: section;      /* Increments only this instance
-                                        of the section counter */
-	content: counters(section, ".") " ";   /* Combines the values of all instances
-                                        of the section counter, separated
-                                        by a period */
-}
-
-/*
-	ul li > a:before {
+	ul > li > a::before {
 		font-family: $font__body;
 		font-weight: normal;
+		content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+		counter-increment: submenu
 	}
-	ul > li > a:before {
-		content: "\2013\00a0";
-	}
-	ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0";
-	}
-	ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-	ul ul ul ul ul ul ul ul ul li > a:before {
-		content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-	}
-*/
+
 }
 
 @import "utilities";

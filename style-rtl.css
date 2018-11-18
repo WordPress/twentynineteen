@@ -3461,28 +3461,21 @@ body.page .main-navigation {
 .widget_recent_comments ul ul,
 .widget_recent_entries ul ul,
 .widget_rss ul ul {
-  counter-reset: section;
-  /* Creates a new instance of the
-                                        section counter with each ol
-                                        element */
-  list-style-type: none;
+  counter-reset: submenu;
 }
 
-.widget_archive ul li::before,
-.widget_categories ul li::before,
-.widget_meta ul li::before,
-.widget_nav_menu ul li::before,
-.widget_pages ul li::before,
-.widget_recent_comments ul li::before,
-.widget_recent_entries ul li::before,
-.widget_rss ul li::before {
-  counter-increment: section;
-  /* Increments only this instance
-                                        of the section counter */
-  content: counters(section, ".") " ";
-  /* Combines the values of all instances
-                                        of the section counter, separated
-                                        by a period */
+.widget_archive ul ul > li > a::before,
+.widget_categories ul ul > li > a::before,
+.widget_meta ul ul > li > a::before,
+.widget_nav_menu ul ul > li > a::before,
+.widget_pages ul ul > li > a::before,
+.widget_recent_comments ul ul > li > a::before,
+.widget_recent_entries ul ul > li > a::before,
+.widget_rss ul ul > li > a::before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  content: "– " counters(submenu, "– ", none);
+  counter-increment: submenu;
 }
 
 .widget_tag_cloud .tagcloud {
@@ -3841,21 +3834,14 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-categories ul {
-  counter-reset: section;
-  /* Creates a new instance of the
-                                        section counter with each ol
-                                        element */
-  list-style-type: none;
+  counter-reset: submenu;
 }
 
-.entry .entry-content .wp-block-categories li::before {
-  counter-increment: section;
-  /* Increments only this instance
-                                        of the section counter */
-  content: counters(section, ".") " ";
-  /* Combines the values of all instances
-                                        of the section counter, separated
-                                        by a period */
+.entry .entry-content .wp-block-categories ul > li > a::before {
+  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  content: "– " counters(submenu, "– ", none);
+  counter-increment: submenu;
 }
 
 .entry .entry-content .wp-block-latest-posts.is-grid li {
