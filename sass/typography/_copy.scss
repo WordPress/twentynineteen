@@ -17,6 +17,12 @@ blockquote {
 		font-style: normal;
 		font-family: $font__heading;
 	}
+	// non-latin
+	@each $lang, $ff_heading in $fonts__heading {
+		cite:lang(#{$lang}) {
+			font-family: $ff_heading;
+		}
+    }
 }
 
 pre {

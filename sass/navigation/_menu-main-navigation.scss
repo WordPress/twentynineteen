@@ -272,6 +272,12 @@
 			font-family: $font__body;
 			font-weight: normal;
 		}
+		// non-latin
+		@each $lang, $ff_body in $fonts__body {
+			.sub-menu li > a:before:lang(#{$lang}) {
+				font-family: unquote($ff_body);
+			}
+		}
 		.sub-menu > li > a:before {
 			content: "\2013\00a0";
 		}
@@ -368,6 +374,12 @@
 		.sub-menu li > a:before {
 			font-family: $font__body;
 			font-weight: normal;
+		}
+		// non-latin
+		@each $lang, $ff_body in $fonts__body {
+			.sub-menu li > a:before:lang(#{$lang}) {
+				font-family: unquote($ff_body);
+			}
 		}
 		.sub-menu > li > a:before {
 			content: "\2013\00a0";

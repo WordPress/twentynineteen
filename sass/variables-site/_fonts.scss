@@ -1,7 +1,60 @@
 // Font and typographic variables
 
 $font__body: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+$fonts__body: (
+	/* Arabic */
+	ar: '"Noto Naskh Arabic", serif',
+	ary: '"Noto Naskh Arabic", serif',
+	azb: '"Noto Naskh Arabic", serif',
+	ckb: '"Noto Naskh Arabic", serif',
+	fa-IR: '"Noto Naskh Arabic", serif',
+	haz: '"Noto Naskh Arabic", serif',
+	ps: '"Noto Naskh Arabic", serif',
+	/* Cyrillic */
+	/* Chinese */
+	zh-cmn-Hant-HK: '"Noto Serif CJK TC", serif',
+	zh-cmn-Hant-TW: '"Noto Serif CJK TC", serif',
+	zh-cmn-Hans-CN: '"Noto Serif CJK SC", serif',
+	/* Devanagari */
+	bn-BD: '"Noto Serif Devanagari", serif',
+	hi-IN: '"Noto Serif Devanagari", serif',
+	mr: '"Noto Serif Devanagari", serif',
+	ne-NP: '"Noto Serif Devanagari", serif',
+	/* Greek */
+	/* Gujarati */
+	gu: '"Noto Serif Gujarati", serif',
+	/* Hebrew */
+	he-IL: '"Noto Serif Hebrew", serif',
+	/* Japanese */
+	ja: '"Noto Serif CJK JP", serif',
+	/* Korean */
+	kr-KR: '"Noto Serif CJK KR", serif',
+	/* Thai */
+	th: '"Noto Serif Thai", serif',
+	/* Vietnamese */
+);
 $font__heading: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$fonts__heading: (
+	/* Arabic */
+	/* Cyrillic */
+	/* Chinese */
+	zh-cmn-Hant-HK: "-apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif",
+	zh-cmn-Hant-TW: "-apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif",
+	zh-cmn-Hans-CN: "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei New', STHeiti Light, sans-serif",
+	/* Devanagari */
+	/* Greek */
+	/* Gujarati */
+	/* Hebrew */
+	he-IL: "'Arial Hebrew', Arial, sans-serif",
+	/* Japanese */
+	ja: '-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif',
+	/* Korean */
+	ko-KR: "'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif",
+	/* Thai */
+	th: "'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif",
+	/* Vietnamese */
+	vi: "'Libre Franklin', sans-serif",
+);
 $font__code: Menlo, monaco, Consolas, Lucida Console, monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 

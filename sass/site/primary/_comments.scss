@@ -146,6 +146,18 @@
 				font-family: $font__heading;
 				font-weight: 500;
 			}
+			// non-latin
+			@each $lang, $ff_heading in $fonts__heading {
+				.comment-edit-link:lang(#{$lang}) {
+					font-family: $ff_heading;
+				}
+			}
+		}
+		// non-latin
+		@each $lang, $ff_heading in $fonts__heading {
+			.comment-body:lang(#{$lang}) {
+				font-family: $ff_heading;
+			}
 		}
 	}
 }
@@ -375,6 +387,13 @@
 		font-family: $font__heading;
 		font-size: $font__size-xs;
 		color: $color__text-light;
+	}
+	// non-latin
+	@each $lang, $ff_heading in $fonts__heading {
+		.comment-notes:lang(#{$lang}),
+		label:lang(#{$lang}) {
+			font-family: $ff_heading;
+		}
 	}
 
 	.comment-form-author,

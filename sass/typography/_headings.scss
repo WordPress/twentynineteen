@@ -27,6 +27,38 @@ h5,
 h6 {
 	font-family: $font__heading;
 }
+// non-latin
+@each $lang, $ff_heading in $fonts__heading {
+	.author-description .author-link:lang(#{$lang}),
+	.comment-metadata:lang(#{$lang}),
+	.comment-reply-link:lang(#{$lang}),
+	.comments-title:lang(#{$lang}),
+	.comment-author .fn:lang(#{$lang}),
+	.discussion-meta-info:lang(#{$lang}),
+	.entry-meta:lang(#{$lang}),
+	.entry-footer:lang(#{$lang}),
+	.main-navigation:lang(#{$lang}),
+	.no-comments:lang(#{$lang}),
+	.not-found .page-title:lang(#{$lang}),
+	.error-404 .page-title:lang(#{$lang}),
+	.post-navigation .post-title:lang(#{$lang}),
+	.page-links:lang(#{$lang}),
+	.page-description:lang(#{$lang}),
+	.pagination .nav-links:lang(#{$lang}),
+	.sticky-post:lang(#{$lang}),
+	.site-title:lang(#{$lang}),
+	.site-info:lang(#{$lang}),
+	#cancel-comment-reply-link:lang(#{$lang}),
+	img:after:lang(#{$lang}),
+	h1:lang(#{$lang}),
+	h2:lang(#{$lang}),
+	h3:lang(#{$lang}),
+	h4:lang(#{$lang}),
+	h5:lang(#{$lang}),
+	h6:lang(#{$lang}) {
+		font-family: $ff_heading;
+	}
+}
 
 .main-navigation,
 .page-description,
@@ -54,6 +86,12 @@ h6 {
 
 .page-title {
 	font-family: $font__body;
+}
+// non-latin
+@each $lang, $ff_body in $fonts__body {
+	.page-title:lang(#{$lang}) {
+		font-family: unquote($ff_body);
+	}
 }
 
 .site-branding,

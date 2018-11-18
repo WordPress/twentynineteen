@@ -14,6 +14,12 @@ body {
 	margin: 0;
 	text-rendering: optimizeLegibility;
 }
+/* non-latin */
+@each $lang, $ff_body in $fonts__body {
+	body:lang(#{$lang}) {
+		font-family: unquote($ff_body);
+	}
+}
 
 button,
 input,
@@ -26,9 +32,17 @@ textarea {
 	line-height: $font__line-height-body;
 	text-rendering: optimizeLegibility;
 }
+/* non-latin */
+@each $lang, $ff_body in $fonts__body {
+	button:lang(#{$lang}),
+	input:lang(#{$lang}),
+	select:lang(#{$lang}),
+	optgroup:lang(#{$lang}),
+	textarea:lang(#{$lang}) {
+		font-family: unquote($ff_body);
+	}
+}
 
 @import "headings";
 
 @import "copy";
-
-@include non-latin-fonts();

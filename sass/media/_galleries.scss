@@ -37,6 +37,12 @@
 	margin: 0;
 	padding: ( $size__spacing-unit * .5 );
 }
+/* non-latin */
+@each $lang, $ff_heading in $fonts__heading {
+	.gallery-caption:lang(#{$lang}) {
+		font-family: $ff_heading;
+	}
+}
 
 .gallery-item > div > a {
 	display: block;

@@ -35,3 +35,13 @@ input[type="submit"] {
 		outline-offset: -4px;
 	}
 }
+/* non-latin */
+@each $lang, $ff_heading in $fonts__heading {
+	.button:lang(#{$lang}),
+	button:lang(#{$lang}),
+	input[type="button"]:lang(#{$lang}),
+	input[type="reset"]:lang(#{$lang}),
+	input[type="submit"]:lang(#{$lang}) {
+		font-family: $ff_heading;
+	}
+}

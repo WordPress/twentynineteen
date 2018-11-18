@@ -11,3 +11,9 @@ table {
 		word-break: break-all;
 	}
 }
+/* non-latin */
+@each $lang, $ff_heading in $fonts__heading {
+	table:lang(#{$lang}) {
+		font-family: $ff_heading;
+	}
+}

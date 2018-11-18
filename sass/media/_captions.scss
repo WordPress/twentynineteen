@@ -30,3 +30,9 @@
  	padding: ( $size__spacing-unit * .5 );
 	text-align: center;
 }
+/* non-latin */
+@each $lang, $ff_heading in $fonts__heading {
+	.wp-caption-text:lang(#{$lang}) {
+		font-family: $ff_heading;
+	}
+}
