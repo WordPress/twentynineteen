@@ -5,7 +5,6 @@ Twenty Nineteen Editor Styles
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
-/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* Nested sub-menu padding: 10 levels deep */
 /** === Font Overide === */
@@ -621,6 +620,82 @@ ul.wp-block-archives li ul,
 .wp-block-categories ul ul li > a:before {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ar) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ary) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(azb) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ckb) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(fa-IR) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(haz) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ps) {
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hant-HK) {
+  font-family: "Noto Serif CJK TC", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hant-TW) {
+  font-family: "Noto Serif CJK TC", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hans-CN) {
+  font-family: "Noto Serif CJK SC", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(bn-BD) {
+  font-family: "Noto Serif Devanagari", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(hi-IN) {
+  font-family: "Noto Serif Devanagari", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(mr) {
+  font-family: "Noto Serif Devanagari", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ne-NP) {
+  font-family: "Noto Serif Devanagari", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(gu) {
+  font-family: "Noto Serif Gujarati", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(he-IL) {
+  font-family: "Noto Serif Hebrew", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(ja) {
+  font-family: "Noto Serif CJK JP", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(kr-KR) {
+  font-family: "Noto Serif CJK KR", serif;
+}
+
+.wp-block-categories ul ul li > a:before:lang(th) {
+  font-family: "Noto Serif Thai", serif;
 }
 
 .wp-block-categories ul ul > li > a:before {
