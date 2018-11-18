@@ -153,7 +153,9 @@
 		if ( hasSelectiveRefresh ) {
 			// Re-run our priority+ function on partial content renders
 			wp.customize.selectiveRefresh.bind('partial-content-rendered', function ( placement ) {
-				if ( placement ) {
+				console.log( placement );
+				console.log( placement.partial.id );
+				if ( placement && placement.partial.id.includes( 'nav_menu_instance' ) ) {
 					updateNavigationMenu( placement.container[0].parentNode );
 				}
 			});
