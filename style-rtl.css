@@ -4403,15 +4403,15 @@ svg {
 
 .gallery-item {
   display: inline-block;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  margin-left: 16px;
+  margin-bottom: 16px;
   text-align: center;
   vertical-align: top;
   width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-  max-width: calc( ( 12 / 2 ) * (100% / 12) - ( 1rem * 0.5 ));
+  max-width: calc((100% - 16px * 1) / 2);
 }
 
 .gallery-columns-2 .gallery-item:nth-of-type(2n+2) {
@@ -4419,7 +4419,7 @@ svg {
 }
 
 .gallery-columns-3 .gallery-item {
-  max-width: calc( ( 12 / 3 ) * (100% / 12) - ( 1rem * 0.66667 ));
+  max-width: calc((100% - 16px * 2) / 3);
 }
 
 .gallery-columns-3 .gallery-item:nth-of-type(3n+3) {
@@ -4427,7 +4427,7 @@ svg {
 }
 
 .gallery-columns-4 .gallery-item {
-  max-width: calc( ( 12 / 4 ) * (100% / 12) - ( 1rem * 0.75 ));
+  max-width: calc((100% - 16px * 3) / 4);
 }
 
 .gallery-columns-4 .gallery-item:nth-of-type(4n+4) {
@@ -4435,7 +4435,7 @@ svg {
 }
 
 .gallery-columns-5 .gallery-item {
-  max-width: calc( ( 12 / 5 ) * (100% / 12) - ( 1rem * 0.8 ));
+  max-width: calc((100% - 16px * 4) / 5);
 }
 
 .gallery-columns-5 .gallery-item:nth-of-type(5n+5) {
@@ -4443,7 +4443,7 @@ svg {
 }
 
 .gallery-columns-6 .gallery-item {
-  max-width: calc( ( 12 / 6 ) * (100% / 12) - ( 1rem * 0.83333 ));
+  max-width: calc((100% - 16px * 5) / 6);
 }
 
 .gallery-columns-6 .gallery-item:nth-of-type(6n+6) {
@@ -4451,7 +4451,7 @@ svg {
 }
 
 .gallery-columns-7 .gallery-item {
-  max-width: calc( ( 12 / 7 ) * (100% / 12) - ( 1rem * 0.85714 ));
+  max-width: calc((100% - 16px * 6) / 7);
 }
 
 .gallery-columns-7 .gallery-item:nth-of-type(7n+7) {
@@ -4459,7 +4459,7 @@ svg {
 }
 
 .gallery-columns-8 .gallery-item {
-  max-width: calc( ( 12 / 8 ) * (100% / 12) - ( 1rem * 0.875 ));
+  max-width: calc((100% - 16px * 7) / 8);
 }
 
 .gallery-columns-8 .gallery-item:nth-of-type(8n+8) {
@@ -4467,7 +4467,7 @@ svg {
 }
 
 .gallery-columns-9 .gallery-item {
-  max-width: calc( ( 12 / 9 ) * (100% / 12) - ( 1rem * 0.88889 ));
+  max-width: calc((100% - 16px * 8) / 9);
 }
 
 .gallery-columns-9 .gallery-item:nth-of-type(9n+9) {
