@@ -4116,8 +4116,20 @@ body.page .main-navigation {
   max-width: 100%;
 }
 
+.entry .entry-content .wp-block-image.alignwide img {
+	width: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-image.alignwide img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .entry .entry-content .wp-block-image.alignfull img {
-  width: 100vw;
+	width: auto;
+  max-width: 100vw;
 }
 
 @media only screen and (min-width: 768px) {
