@@ -42,6 +42,6 @@ input[type="submit"] {
 	input[type="button"]:lang(#{$lang}),
 	input[type="reset"]:lang(#{$lang}),
 	input[type="submit"]:lang(#{$lang}) {
-		font-family: $ff_heading;
+		font-family: unquote($ff_heading);
 	}
 }

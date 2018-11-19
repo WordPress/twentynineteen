@@ -20,7 +20,7 @@ blockquote {
 	// non-latin
 	@each $lang, $ff_heading in $fonts__heading {
 		cite:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
     }
 }

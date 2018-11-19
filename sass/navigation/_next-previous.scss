@@ -198,7 +198,7 @@
 	@each $lang, $ff_heading in $fonts__heading {
 		.nav-previous:lang(#{$lang}),
 		.nav-next:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
 	}
 

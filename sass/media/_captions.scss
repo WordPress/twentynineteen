@@ -33,6 +33,6 @@
 /* non-latin */
 @each $lang, $ff_heading in $fonts__heading {
 	.wp-caption-text:lang(#{$lang}) {
-		font-family: $ff_heading;
+		font-family: unquote($ff_heading);
 	}
 }
