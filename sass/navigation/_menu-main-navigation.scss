@@ -267,44 +267,22 @@
 			}
 		}
 
-		/* Nested sub-menu padding: 10 levels deep */
-		.sub-menu li > a:before {
+		/* Nested sub-menu dashes */
+		.sub-menu {
+			counter-reset: submenu;
+		}
+
+		.sub-menu > li > a::before {
 			font-family: $font__body;
 			font-weight: normal;
+			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+			counter-increment: submenu
 		}
 		// non-latin
 		@each $lang, $ff_body in $fonts__body {
-			.sub-menu li > a:before:lang(#{$lang}) {
+			.sub-menu > li > a::before:lang(#{$lang}) {
 				font-family: unquote($ff_body);
 			}
-		}
-		.sub-menu > li > a:before {
-			content: "\2013\00a0";
-		}
-		.sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
 	}
 
 	.main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
@@ -370,44 +348,22 @@
 			}
 		}
 
-		/* Nested sub-menu padding: 10 levels deep */
-		.sub-menu li > a:before {
+		/* Nested sub-menu dashes */
+		.sub-menu {
+			counter-reset: submenu;
+		}
+
+		.sub-menu > li > a::before {
 			font-family: $font__body;
 			font-weight: normal;
+			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+			counter-increment: submenu
 		}
 		// non-latin
 		@each $lang, $ff_body in $fonts__body {
-			.sub-menu li > a:before:lang(#{$lang}) {
+			.sub-menu > li > a::before:lang(#{$lang}) {
 				font-family: unquote($ff_body);
 			}
-		}
-		.sub-menu > li > a:before {
-			content: "\2013\00a0";
-		}
-		.sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
-		.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu li > a:before {
-			content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-		}
 	}
 
 	/**
