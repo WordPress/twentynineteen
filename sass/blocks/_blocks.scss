@@ -385,8 +385,29 @@
 				}
 			}
 
-			.has-primary-background-color {
+			// The custom color styles need to be duplicated here to override our custom default background.  
+			&.has-primary-background-color {
 				background-color: $color__link;
+			}
+
+			&.has-secondary-background-color {
+				background-color: $color__border-link-hover;
+			}
+
+			&.has-black-background-color {
+				background-color: #000;
+			}
+
+			&.has-dark-gray-background-color {
+				background-color: $color__text-main;
+			}
+
+			&.has-light-gray-background-color {
+				background-color: $color__text-light;
+			}
+
+			&.has-white-background-color {
+				background-color: #FFF;
 			}
 
 			&.alignfull {

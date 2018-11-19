@@ -66,7 +66,7 @@ function twentynineteen_custom_colors_css() {
 		.entry .entry-content > *[class^="wp-block-"].has-primary-background-color,
 		.entry .entry-content > *[class^="wp-block-"] .has-primary-background-color,
 		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color,
-		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-background-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color.has-primary-background-color,
 		.entry .entry-content .wp-block-file .wp-block-file__button {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
@@ -102,7 +102,7 @@ function twentynineteen_custom_colors_css() {
 		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry .entry-content > .has-primary-color,
 		.entry .entry-content > *[class^="wp-block-"] .has-primary-color,
-		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color.has-primary-color {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
 		}
 
@@ -153,7 +153,7 @@ function twentynineteen_custom_colors_css() {
 		.author-bio .author-description .author-link:hover,
 		.entry .entry-content > .has-secondary-color,
 		.entry .entry-content > *[class^="wp-block-"] .has-secondary-color,
-		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-secondary-color
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color.has-secondary-color
 		.comment .comment-author .fn a:hover,
 		.comment-reply-link:hover,
 		.comment-navigation .nav-previous a:hover,
@@ -174,7 +174,7 @@ function twentynineteen_custom_colors_css() {
 		.entry .entry-content > .has-secondary-background-color,
 		.entry .entry-content > *[class^="wp-block-"].has-secondary-background-color,
 		.entry .entry-content > *[class^="wp-block-"] .has-secondary-background-color,
-		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-secondary-background-color {
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color.has-secondary-background-color {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
 		}
 
