@@ -290,7 +290,8 @@
 
 	//! Pullquote
 	.wp-block-pullquote {
-		border: none;
+		border-color: transparent;
+		border-width: 2px;
 		padding: $size__spacing-unit;
 
 		blockquote {
