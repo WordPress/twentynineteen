@@ -3576,7 +3576,6 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-button .wp-block-button__link {
   transition: background 150ms ease-in-out;
   border: none;
-  background: #0073aa;
   font-size: 0.88889em;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 1.2;
@@ -3585,16 +3584,25 @@ body.page .main-navigation {
   text-decoration: none;
   padding: 0.76rem 1rem;
   outline: none;
-  color: white;
   outline: none;
 }
 
+.entry .entry-content .wp-block-button .wp-block-button__link:not(.has-background) {
+  background-color: #0073aa;
+}
+
+.entry .entry-content .wp-block-button .wp-block-button__link:not(.has-text-color) {
+  color: white;
+}
+
 .entry .entry-content .wp-block-button .wp-block-button__link:hover {
+  color: white;
   background: #111;
   cursor: pointer;
 }
 
 .entry .entry-content .wp-block-button .wp-block-button__link:focus {
+  color: white;
   background: #111;
   outline: thin dotted;
   outline-offset: -4px;
@@ -3608,9 +3616,21 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
   transition: all 150ms ease-in-out;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background),
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-background),
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-background) {
   background: transparent;
-  border: 2px solid currentColor;
+}
+
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
   color: #0073aa;
+  border-color: currentColor;
 }
 
 .entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
@@ -3708,7 +3728,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-pullquote {
-  border: transparent;
+  border-color: transparent;
   border-width: 2px;
   padding: 1rem;
 }
@@ -3805,15 +3825,15 @@ body.page .main-navigation {
   margin-right: 1rem;
 }
 
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-text-color p, .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color, .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color, .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color, .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color, .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
+  color: inherit;
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
     margin-right: 0;
     margin-left: 0;
   }
-}
-
-.entry .entry-content .wp-block-pullquote.is-style-solid-color .has-primary-background-color {
-  background-color: #0073aa;
 }
 
 @media only screen and (min-width: 768px) {
@@ -4201,8 +4221,11 @@ body.page .main-navigation {
   font-size: 2.25em;
 }
 
-.entry .entry-content .has-primary-background-color {
-  background-color: #0073aa;
+.entry .entry-content .has-primary-background-color,
+.entry .entry-content .has-secondary-background-color,
+.entry .entry-content .has-dark-gray-background-color,
+.entry .entry-content .has-light-gray-background-color {
+  color: #fff;
 }
 
 .entry .entry-content .has-primary-background-color p,
@@ -4212,8 +4235,101 @@ body.page .main-navigation {
 .entry .entry-content .has-primary-background-color h4,
 .entry .entry-content .has-primary-background-color h5,
 .entry .entry-content .has-primary-background-color h6,
-.entry .entry-content .has-primary-background-color a {
+.entry .entry-content .has-primary-background-color a,
+.entry .entry-content .has-secondary-background-color p,
+.entry .entry-content .has-secondary-background-color h1,
+.entry .entry-content .has-secondary-background-color h2,
+.entry .entry-content .has-secondary-background-color h3,
+.entry .entry-content .has-secondary-background-color h4,
+.entry .entry-content .has-secondary-background-color h5,
+.entry .entry-content .has-secondary-background-color h6,
+.entry .entry-content .has-secondary-background-color a,
+.entry .entry-content .has-dark-gray-background-color p,
+.entry .entry-content .has-dark-gray-background-color h1,
+.entry .entry-content .has-dark-gray-background-color h2,
+.entry .entry-content .has-dark-gray-background-color h3,
+.entry .entry-content .has-dark-gray-background-color h4,
+.entry .entry-content .has-dark-gray-background-color h5,
+.entry .entry-content .has-dark-gray-background-color h6,
+.entry .entry-content .has-dark-gray-background-color a,
+.entry .entry-content .has-light-gray-background-color p,
+.entry .entry-content .has-light-gray-background-color h1,
+.entry .entry-content .has-light-gray-background-color h2,
+.entry .entry-content .has-light-gray-background-color h3,
+.entry .entry-content .has-light-gray-background-color h4,
+.entry .entry-content .has-light-gray-background-color h5,
+.entry .entry-content .has-light-gray-background-color h6,
+.entry .entry-content .has-light-gray-background-color a {
   color: #fff;
+}
+
+.entry .entry-content .has-white-background-color {
+  color: #111;
+}
+
+.entry .entry-content .has-white-background-color p,
+.entry .entry-content .has-white-background-color h1,
+.entry .entry-content .has-white-background-color h2,
+.entry .entry-content .has-white-background-color h3,
+.entry .entry-content .has-white-background-color h4,
+.entry .entry-content .has-white-background-color h5,
+.entry .entry-content .has-white-background-color h6,
+.entry .entry-content .has-white-background-color a {
+  color: #111;
+}
+
+.entry .entry-content .has-primary-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-primary-background-color {
+  background-color: #0073aa;
+}
+
+.entry .entry-content .has-secondary-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-secondary-background-color {
+  background-color: #005177;
+}
+
+.entry .entry-content .has-dark-gray-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-dark-gray-background-color {
+  background-color: #111;
+}
+
+.entry .entry-content .has-light-gray-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-light-gray-background-color {
+  background-color: #767676;
+}
+
+.entry .entry-content .has-white-background-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color.has-white-background-color {
+  background-color: #FFF;
+}
+
+.entry .entry-content .has-primary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color p {
+  color: #0073aa;
+}
+
+.entry .entry-content .has-secondary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color p {
+  color: #005177;
+}
+
+.entry .entry-content .has-dark-gray-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color p {
+  color: #111;
+}
+
+.entry .entry-content .has-light-gray-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color p {
+  color: #767676;
+}
+
+.entry .entry-content .has-white-color,
+.entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
+  color: #FFF;
 }
 
 /* Media */
