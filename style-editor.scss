@@ -177,7 +177,13 @@ a {
 	}
 }
 
-.has-primary-background-color {
+// Use white text against these backgrounds by default.
+.has-primary-background-color,
+.has-secondary-background-color,
+.has-black-background-color,
+.has-dark-gray-background-color,
+.has-light-gray-background-color {
+	color: $color__background-body;
 
 	p,
 	h1,
@@ -186,9 +192,24 @@ a {
 	h4,
 	h5,
 	h6,
-	a,
-	a:hover {
+	a {
 		color: $color__background-body;
+	}
+}
+
+// Use dark gray text against this background by default.
+.has-white-background-color {
+	color: $color__text-main;
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	a {
+		color: $color__text-main;
 	}
 }
 

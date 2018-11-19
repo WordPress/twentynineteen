@@ -756,9 +756,15 @@
 		font-size: $font__size-xl;
 	}
 
-	//! Custom colors
-	.has-primary-background-color {
-		background-color: $color__link;
+	//! Custom background colors
+	.has-primary-background-color,
+	.has-secondary-background-color,
+	.has-black-background-color,
+	.has-dark-gray-background-color,
+	.has-light-gray-background-color {
+		
+		// Use white text against these backgrounds by default.
+		color: $color__background-body;
 
 		p,
 		h1,
@@ -770,5 +776,67 @@
 		a {
 			color: $color__background-body;
 		}
+	}
+
+	.has-primary-background-color {
+		background-color: $color__link;
+	}
+
+	.has-secondary-background-color {
+		background-color: $color__border-link-hover;
+	}
+
+	.has-black-background-color {
+		background-color: #000;
+	}
+
+	.has-dark-gray-background-color {
+		background-color: $color__text-main;
+	}
+
+	.has-light-gray-background-color {
+		background-color: $color__text-light;
+	}
+
+	.has-white-background-color {
+		background-color: #FFF;
+		color: $color__text-main;
+
+		// Use dark gray text against this background by default.
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		a {
+			color: $color__text-main;
+		}
+	}
+
+	//! Custom foreground colors
+	.has-primary-color {
+		color: $color__link;
+	}
+
+	.has-secondary-color {
+		color: $color__border-link-hover;
+	}
+
+	.has-black-color {
+		color: #000;
+	}
+
+	.has-dark-gray-color {
+		color: $color__text-main;
+	}
+
+	.has-light-gray-color {
+		color: $color__text-light;
+	}
+
+	.has-white-color {
+		color: #FFF;
 	}
 }
