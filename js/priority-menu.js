@@ -147,15 +147,21 @@
 		var hasSelectiveRefresh = (
 			'undefined' !== typeof wp &&
 			wp.customize &&
-			wp.customize.selectiveRefresh
+			wp.customize.selectiveRefresh &&
+			wp.customize.navMenusPreview.NavMenuInstancePartial
 		);
 
 		if ( hasSelectiveRefresh ) {
-			// Re-run our priority+ function on partial content renders
+			// Re-run our priority+ function on Nav Menu partial refreshes
 			wp.customize.selectiveRefresh.bind('partial-content-rendered', function ( placement ) {
-				console.log( placement );
-				console.log( placement.partial.id );
-				if ( placement && placement.partial.id.includes( 'nav_menu_instance' ) ) {
+
+				var isNewNavMenu = (
+					placement &&
+					placement.partial.id.includes( 'nav_menu_instance' ) &&
+					placement.container[0].parentNode.classList.contains('main-navigation')
+				);
+
+				if ( isNewNavMenu ) {
 					updateNavigationMenu( placement.container[0].parentNode );
 				}
 			});
