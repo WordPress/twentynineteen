@@ -3233,20 +3233,6 @@ body.page .main-navigation {
   }
 }
 
-#colophon .widget-area .imprint,
-#colophon .site-info .imprint {
-  margin-left: 1rem;
-}
-
-#colophon .site-info a {
-  color: inherit;
-}
-
-#colophon .site-info a:hover {
-  text-decoration: none;
-  color: #0073aa;
-}
-
 #colophon .widget-column {
   display: flex;
   flex-wrap: wrap;
@@ -3265,6 +3251,20 @@ body.page .main-navigation {
 
 #colophon .site-info {
   color: #767676;
+}
+
+#colophon .site-info a {
+  color: inherit;
+}
+
+#colophon .site-info a:hover {
+  text-decoration: none;
+  color: #0073aa;
+}
+
+#colophon .site-info .imprint,
+#colophon .site-info .privacy-policy-link {
+  margin-left: 1rem;
 }
 
 /* Widgets */
