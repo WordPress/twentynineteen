@@ -73,3 +73,5 @@ Version 1.0:
 | @desi-developer | @desideveloper |
 | @2ndkauboy | @Kau-Boy |
 | @mor10 | @mor10 |
+| @mikeyarce | @mikeyarce |
+| @dingo-d | @dingo_bastard |
