@@ -100,6 +100,7 @@ function twentynineteen_custom_colors_css() {
 		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
 		.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link,
+		.entry .entry-content > .has-primary-color,
 		.entry .entry-content > *[class^="wp-block-"] .has-primary-color,
 		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-primary-color {
 			color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness . ' ); /* base: #0073a8; */
@@ -150,6 +151,9 @@ function twentynineteen_custom_colors_css() {
 		.post-navigation .nav-links a:hover,
 		.post-navigation .nav-links a:hover .post-title,
 		.author-bio .author-description .author-link:hover,
+		.entry .entry-content > .has-secondary-color,
+		.entry .entry-content > *[class^="wp-block-"] .has-secondary-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-secondary-color
 		.comment .comment-author .fn a:hover,
 		.comment-reply-link:hover,
 		.comment-navigation .nav-previous a:hover,
@@ -166,7 +170,11 @@ function twentynineteen_custom_colors_css() {
 		.main-navigation .sub-menu > li > .menu-item-link-return:hover,
 		.main-navigation .sub-menu > li > .menu-item-link-return:focus,
 		.main-navigation .sub-menu > li > a:not(.submenu-expand):hover,
-		.main-navigation .sub-menu > li > a:not(.submenu-expand):focus {
+		.main-navigation .sub-menu > li > a:not(.submenu-expand):focus,
+		.entry .entry-content > .has-secondary-background-color,
+		.entry .entry-content > *[class^="wp-block-"].has-secondary-background-color,
+		.entry .entry-content > *[class^="wp-block-"] .has-secondary-background-color,
+		.entry .entry-content > *[class^="wp-block-"].is-style-solid-color .has-secondary-background-color {
 			background-color: hsl( ' . $primary_color . ', ' . $saturation . ', ' . $lightness_hover . ' ); /* base: #005177; */
 		}
 
