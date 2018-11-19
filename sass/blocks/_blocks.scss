@@ -383,7 +383,6 @@
 				&.has-text-color p,
 				&.has-primary-color,
 				&.has-secondary-color,
-				&.has-black-color,
 				&.has-dark-gray-color,
 				&.has-light-gray-color,
 				&.has-white-color {
@@ -766,7 +765,6 @@
 	//! Custom background colors
 	.has-primary-background-color,
 	.has-secondary-background-color,
-	.has-black-background-color,
 	.has-dark-gray-background-color,
 	.has-light-gray-background-color {
 		
@@ -811,11 +809,6 @@
 		background-color: $color__border-link-hover;
 	}
 
-	.has-black-background-color,
-	.wp-block-pullquote.is-style-solid-color.has-black-background-color {
-		background-color: #000;
-	}
-
 	.has-dark-gray-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-dark-gray-background-color {
 		background-color: $color__text-main;
@@ -842,12 +835,6 @@
 	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
 	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color p {
 		color: $color__border-link-hover;
-	}
-
-	.has-black-color,
-	.wp-block-pullquote.is-style-solid-color blockquote.has-black-color,
-	.wp-block-pullquote.is-style-solid-color blockquote.has-black-color p {
-		color: #000;
 	}
 
 	.has-dark-gray-color,

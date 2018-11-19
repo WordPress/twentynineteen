@@ -153,11 +153,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
 				),
 				array(
-					'name'  => __( 'Black', 'twentynineteen' ),
-					'slug'  => 'black',
-					'color' => '#000',
-				),
-				array(
 					'name'  => __( 'Dark Gray', 'twentynineteen' ),
 					'slug'  => 'dark-gray',
 					'color' => '#111',

@@ -181,7 +181,6 @@ a:focus {
 
 .has-primary-background-color,
 .has-secondary-background-color,
-.has-black-background-color,
 .has-dark-gray-background-color,
 .has-light-gray-background-color {
   color: #fff;
@@ -203,14 +202,6 @@ a:focus {
 .has-secondary-background-color h5,
 .has-secondary-background-color h6,
 .has-secondary-background-color a,
-.has-black-background-color p,
-.has-black-background-color h1,
-.has-black-background-color h2,
-.has-black-background-color h3,
-.has-black-background-color h4,
-.has-black-background-color h5,
-.has-black-background-color h6,
-.has-black-background-color a,
 .has-dark-gray-background-color p,
 .has-dark-gray-background-color h1,
 .has-dark-gray-background-color h2,
