@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Twenty Nineteen Editor Styles
 */
@@ -617,121 +618,91 @@ ul.wp-block-archives li ul,
   padding-top: 0.75rem;
 }
 
-.wp-block-categories ul ul li > a:before {
+.wp-block-categories ul ul {
+  counter-reset: submenu;
+}
+
+.wp-block-categories ul ul > li > a::before {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
+  content: "– " counters(submenu, "– ", none);
+  counter-increment: submenu;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ar) {
+.wp-block-categories ul ul > li > a::before:lang(ar) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ary) {
+.wp-block-categories ul ul > li > a::before:lang(ary) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(azb) {
+.wp-block-categories ul ul > li > a::before:lang(azb) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ckb) {
+.wp-block-categories ul ul > li > a::before:lang(ckb) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(fa-IR) {
+.wp-block-categories ul ul > li > a::before:lang(fa-IR) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(haz) {
+.wp-block-categories ul ul > li > a::before:lang(haz) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ps) {
+.wp-block-categories ul ul > li > a::before:lang(ps) {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hant-HK) {
+.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hant-HK) {
   font-family: "Noto Serif CJK TC", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hant-TW) {
+.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hant-TW) {
   font-family: "Noto Serif CJK TC", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(zh-cmn-Hans-CN) {
+.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hans-CN) {
   font-family: "Noto Serif CJK SC", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(bn-BD) {
+.wp-block-categories ul ul > li > a::before:lang(bn-BD) {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(hi-IN) {
+.wp-block-categories ul ul > li > a::before:lang(hi-IN) {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(mr) {
+.wp-block-categories ul ul > li > a::before:lang(mr) {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ne-NP) {
+.wp-block-categories ul ul > li > a::before:lang(ne-NP) {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(gu) {
+.wp-block-categories ul ul > li > a::before:lang(gu) {
   font-family: "Noto Serif Gujarati", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(he-IL) {
+.wp-block-categories ul ul > li > a::before:lang(he-IL) {
   font-family: "Noto Serif Hebrew", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(ja) {
+.wp-block-categories ul ul > li > a::before:lang(ja) {
   font-family: "Noto Serif CJK JP", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(kr-KR) {
+.wp-block-categories ul ul > li > a::before:lang(kr-KR) {
   font-family: "Noto Serif CJK KR", serif;
 }
 
-.wp-block-categories ul ul li > a:before:lang(th) {
+.wp-block-categories ul ul > li > a::before:lang(th) {
   font-family: "Noto Serif Thai", serif;
-}
-
-.wp-block-categories ul ul > li > a:before {
-  content: "\2013\00a0";
-}
-
-.wp-block-categories ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
 }
 
 .wp-block-categories li ul {

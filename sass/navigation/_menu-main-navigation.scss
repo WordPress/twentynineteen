@@ -283,6 +283,7 @@
 			.sub-menu > li > a::before:lang(#{$lang}) {
 				font-family: unquote($ff_body);
 			}
+		}
 	}
 
 	.main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
@@ -364,6 +365,7 @@
 			.sub-menu > li > a::before:lang(#{$lang}) {
 				font-family: unquote($ff_body);
 			}
+		}
 	}
 
 	/**
