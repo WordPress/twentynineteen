@@ -114,7 +114,7 @@
 	}
 	// non-latin
 	@each $lang, $ff_body in $fonts__body {
-		ul > li > a::before:lang(#{$lang}) {
+		ul > li > a:lang(#{$lang})::before {
 			font-family: unquote($ff_body);
 		}
 	}

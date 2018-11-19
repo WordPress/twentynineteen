@@ -280,7 +280,7 @@
 		}
 		// non-latin
 		@each $lang, $ff_body in $fonts__body {
-			.sub-menu > li > a::before:lang(#{$lang}) {
+			.sub-menu > li > a:lang(#{$lang})::before {
 				font-family: unquote($ff_body);
 			}
 		}
@@ -362,7 +362,7 @@
 		}
 		// non-latin
 		@each $lang, $ff_body in $fonts__body {
-			.sub-menu > li > a::before:lang(#{$lang}) {
+			.sub-menu > li > a:lang(#{$lang})::before {
 				font-family: unquote($ff_body);
 			}
 		}

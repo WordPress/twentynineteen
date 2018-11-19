@@ -629,79 +629,79 @@ ul.wp-block-archives li ul,
   counter-increment: submenu;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ar) {
+.wp-block-categories ul ul > li > a:lang(ar)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ary) {
+.wp-block-categories ul ul > li > a:lang(ary)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(azb) {
+.wp-block-categories ul ul > li > a:lang(azb)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ckb) {
+.wp-block-categories ul ul > li > a:lang(ckb)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(fa-IR) {
+.wp-block-categories ul ul > li > a:lang(fa-IR)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(haz) {
+.wp-block-categories ul ul > li > a:lang(haz)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ps) {
+.wp-block-categories ul ul > li > a:lang(ps)::before {
   font-family: "Noto Naskh Arabic", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hant-HK) {
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-HK)::before {
   font-family: "Noto Serif CJK TC", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hant-TW) {
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-TW)::before {
   font-family: "Noto Serif CJK TC", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(zh-cmn-Hans-CN) {
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hans-CN)::before {
   font-family: "Noto Serif CJK SC", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(bn-BD) {
+.wp-block-categories ul ul > li > a:lang(bn-BD)::before {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(hi-IN) {
+.wp-block-categories ul ul > li > a:lang(hi-IN)::before {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(mr) {
+.wp-block-categories ul ul > li > a:lang(mr)::before {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ne-NP) {
+.wp-block-categories ul ul > li > a:lang(ne-NP)::before {
   font-family: "Noto Serif Devanagari", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(gu) {
+.wp-block-categories ul ul > li > a:lang(gu)::before {
   font-family: "Noto Serif Gujarati", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(he-IL) {
+.wp-block-categories ul ul > li > a:lang(he-IL)::before {
   font-family: "Noto Serif Hebrew", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(ja) {
+.wp-block-categories ul ul > li > a:lang(ja)::before {
   font-family: "Noto Serif CJK JP", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(kr-KR) {
+.wp-block-categories ul ul > li > a:lang(kr-KR)::before {
   font-family: "Noto Serif CJK KR", serif;
 }
 
-.wp-block-categories ul ul > li > a::before:lang(th) {
+.wp-block-categories ul ul > li > a:lang(th)::before {
   font-family: "Noto Serif Thai", serif;
 }
 
