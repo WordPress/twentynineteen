@@ -185,7 +185,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			.wp-block-button__link:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 
@@ -235,7 +235,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			li:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 	}
@@ -307,7 +307,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			&:not(:focus):first-letter:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 	}
@@ -357,7 +357,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			cite:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 
@@ -542,7 +542,7 @@
 			.wp-block-cover-image-text:lang(#{$lang}),
 			.wp-block-cover-text:lang(#{$lang}),
 			h2:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 
@@ -607,7 +607,7 @@
 		.wp-block-image figcaption:lang(#{$lang}),
 		.wp-block-gallery .blocks-gallery-image figcaption:lang(#{$lang}),
 		.wp-block-gallery .blocks-gallery-item figcaption:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
 	}
 
@@ -708,7 +708,7 @@
 	// non-latin
 	@each $lang, $ff_heading in $fonts__heading {
 		.wp-block-file:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
 	}
 
@@ -773,7 +773,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			.wp-block-latest-comments__comment-meta:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 

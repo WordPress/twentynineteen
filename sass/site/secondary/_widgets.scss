@@ -40,7 +40,7 @@
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			li:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 
@@ -57,7 +57,7 @@
 	// non-latin
 	@each $lang, $ff_heading in $fonts__heading {
 		.tagcloud:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
 	}
 }

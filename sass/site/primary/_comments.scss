@@ -149,14 +149,14 @@
 			// non-latin
 			@each $lang, $ff_heading in $fonts__heading {
 				.comment-edit-link:lang(#{$lang}) {
-					font-family: $ff_heading;
+					font-family: unquote($ff_heading);
 				}
 			}
 		}
 		// non-latin
 		@each $lang, $ff_heading in $fonts__heading {
 			.comment-body:lang(#{$lang}) {
-				font-family: $ff_heading;
+				font-family: unquote($ff_heading);
 			}
 		}
 	}
@@ -392,7 +392,7 @@
 	@each $lang, $ff_heading in $fonts__heading {
 		.comment-notes:lang(#{$lang}),
 		label:lang(#{$lang}) {
-			font-family: $ff_heading;
+			font-family: unquote($ff_heading);
 		}
 	}
 
