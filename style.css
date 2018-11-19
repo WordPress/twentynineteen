@@ -3240,7 +3240,9 @@ body.page .main-navigation {
 }
 
 #colophon .widget-area .imprint,
-#colophon .site-info .imprint {
+#colophon .widget-area .privacy-policy-link,
+#colophon .site-info .imprint,
+#colophon .site-info .privacy-policy-link {
   margin-right: 1rem;
 }
 

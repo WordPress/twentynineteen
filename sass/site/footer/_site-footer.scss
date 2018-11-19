@@ -10,7 +10,8 @@
 			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 		}
 
-		.imprint {
+		.imprint, 
+		.privacy-policy-link {
 			margin-right: $size__spacing-unit;
 		}
 	}
