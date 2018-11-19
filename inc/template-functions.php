@@ -513,8 +513,8 @@ function twentynineteen_starter_content() {
 						'<figure class="wp-block-pullquote alignwide"><blockquote><p>' . _x( '&rdquo;Ava&rsquo;s team was essential to our online success&rdquo;', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( '&emdash; A Happy Customer', 'Theme starter content', 'twentynineteen' ) . '<br></cite></blockquote></figure>',
 						'<!-- /wp:pullquote -->',
 
-						'<!-- wp:columns -->',
-						'<div class="wp-block-columns has-2-columns">',
+						'<!-- wp:columns {"align":"wide"} -->',
+						'<div class="wp-block-columns alignwide has-2-columns">',
 						'<!-- wp:column -->',
 						'<div class="wp-block-column">',
 						'<!-- wp:heading -->',
