@@ -379,6 +379,16 @@
 				padding-left: 0;
 				margin-left: $size__spacing-unit;
 
+				&.has-text-color p,
+				&.has-primary-color,
+				&.has-secondary-color,
+				&.has-black-color,
+				&.has-dark-gray-color,
+				&.has-light-gray-color,
+				&.has-white-color {
+					color: inherit;
+				}
+
 				@include media(tablet) {
 					margin-left: 0;
 					margin-right: 0;
@@ -837,27 +847,38 @@
 	}
 
 	//! Custom foreground colors
-	.has-primary-color {
+	.has-primary-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-primary-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-primary-color p {
 		color: $color__link;
 	}
 
-	.has-secondary-color {
+	.has-secondary-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color p {
 		color: $color__border-link-hover;
 	}
 
-	.has-black-color {
+	.has-black-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-black-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-black-color p {
 		color: #000;
 	}
 
-	.has-dark-gray-color {
+	.has-dark-gray-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color p {
 		color: $color__text-main;
 	}
 
-	.has-light-gray-color {
+	.has-light-gray-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color p {
 		color: $color__text-light;
 	}
 
-	.has-white-color {
+	.has-white-color,
+	.wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		color: #FFF;
 	}
 }
