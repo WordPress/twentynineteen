@@ -153,12 +153,12 @@
 
 		if ( hasSelectiveRefresh ) {
 			// Re-run our priority+ function on Nav Menu partial refreshes
-			wp.customize.selectiveRefresh.bind('partial-content-rendered', function ( placement ) {
+			wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function ( placement ) {
 
 				var isNewNavMenu = (
 					placement &&
 					placement.partial.id.includes( 'nav_menu_instance' ) &&
-					placement.container[0].parentNode.classList.contains('main-navigation')
+					placement.container[0].parentNode.classList.contains( 'main-navigation' )
 				);
 
 				if ( isNewNavMenu ) {
@@ -171,7 +171,7 @@
 	/**
 	 * Run our priority+ function on load
 	 */
-	window.addEventListener('load', function() {
+	window.addEventListener( 'load', function() {
 		updateNavigationMenu( navContainer );
 	});
 
