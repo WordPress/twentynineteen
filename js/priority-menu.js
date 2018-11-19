@@ -97,9 +97,23 @@
 	var breaks       = [];
 
 	/**
+	 * Let’s bail if we our menu doesn't exist
+	 */
+	if ( ! navContainer ) {
+		return;
+	}
+
+	/**
 	 * Refreshes the list item from the menu depending on the menu size
 	 */
 	function updateNavigationMenu( container ) {
+
+		/**
+		 * Let’s bail if our menu is empty
+		 */
+		if ( ! container.parentNode.querySelector('.main-menu[id]') ) {
+			return;
+		}
 
 		// Adds the necessary UI to operate the menu.
 		var visibleList  = container.parentNode.querySelector('.main-menu[id]');
@@ -158,6 +172,7 @@
 				var isNewNavMenu = (
 					placement &&
 					placement.partial.id.includes( 'nav_menu_instance' ) &&
+					'null' !== placement.container[0].parentNode &&
 					placement.container[0].parentNode.classList.contains( 'main-navigation' )
 				);
 
