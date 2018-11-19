@@ -143,9 +143,34 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary Color', 'twentynineteen' ),
+					'name'  => __( 'Primary', 'twentynineteen' ),
 					'slug'  => 'primary',
 					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
+				),
+				array(
+					'name'  => __( 'Light Primary', 'twentynineteen' ),
+					'slug'  => 'primary-light',
+					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 77 ),
+				),
+				array(
+					'name'  => __( 'Black', 'twentynineteen' ),
+					'slug'  => 'black',
+					'color' => '#000000',
+				),
+				array(
+					'name'  => __( 'Black', 'twentynineteen' ),
+					'slug'  => 'black',
+					'color' => '#000000',
+				),
+				array(
+					'name'  => __( 'White', 'twentynineteen' ),
+					'slug'  => 'black',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'Jam', 'twentynineteen' ),
+					'slug'  => 'jam',
+					'color' => '#aa053f',
 				),
 			)
 		);
