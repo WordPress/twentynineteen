@@ -1575,6 +1575,7 @@ body.page .main-navigation {
   color: #111;
   margin-bottom: -1px;
   transition: opacity 110ms ease-in-out;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .social-navigation ul.social-links-menu li a:hover, .social-navigation ul.social-links-menu li a:active {
@@ -3634,7 +3635,8 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
-  color: #111;
+  color: white;
+  border-color: #111;
 }
 
 .entry .entry-content .wp-block-archives,

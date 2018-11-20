@@ -28,6 +28,9 @@
 				margin-bottom: -1px;
 				transition: opacity $link_transition ease-in-out;
 
+				// Prevent icons from jumping in Safari using hardware acceleration.
+				-webkit-transform: translate3d(0, 0, 0);
+
 				&:hover,
 				&:active {
 					color: $color__text-main;
