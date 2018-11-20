@@ -468,6 +468,10 @@ figcaption,
   color: #fff;
 }
 
+.wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) a {
+  color: #fff;
+}
+
 @media only screen and (min-width: 768px) {
   .wp-block-pullquote.is-style-solid-color blockquote {
     max-width: 80%;
