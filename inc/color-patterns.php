@@ -54,8 +54,10 @@ function twentynineteen_custom_colors_css() {
 		 * - WP Block Button
 		 * - Blocks
 		 */
-		.image-filters-enabled .site-header.featured-image .site-featured-image:before,
-		.image-filters-enabled .site-header.featured-image .site-featured-image:after,
+		.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image:before,
+		.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image:after,
+		.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:before,
+		.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:after,
 		.image-filters-enabled .entry .post-thumbnail:before,
 		.image-filters-enabled .entry .post-thumbnail:after,
 		.main-navigation .sub-menu,

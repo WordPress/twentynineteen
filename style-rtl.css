@@ -2056,6 +2056,156 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image {
+  /* Entry header */
+  /* Entry meta */
+}
+
+.site-header.featured-image .entry-header {
+  margin: calc(2 * 1rem) 1rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .entry-header {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .site-header.featured-image .entry-header {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .entry-header {
+    margin: 1rem calc(10% + 60px) calc(3 * 1rem);
+  }
+}
+
+.site-header.featured-image .post-thumbnail {
+  margin: calc(2 * 1rem) 1rem 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image .post-thumbnail {
+    margin: 1rem calc(10% + 60px) calc(3 * 1rem);
+    max-width: 100%;
+  }
+}
+
+.site-header.featured-image .site-featured-image .entry-meta {
+  font-weight: 500;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta > span {
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta > span:last-child {
+  margin-left: 0;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta a {
+  transition: color 110ms ease-in-out;
+  color: currentColor;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta a:hover {
+  text-decoration: none;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta .svg-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+.site-header.featured-image .site-featured-image .entry-meta .discussion-avatar-list {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-header.featured-image.has-discussion .entry-meta {
+    display: flex;
+    position: relative;
+  }
+  .site-header.featured-image.has-discussion .entry-title {
+    padding-left: calc(1 * (100vw / 12) + 1rem);
+  }
+  .site-header.featured-image.has-discussion .entry-meta .comment-count {
+    position: absolute;
+    left: 0;
+  }
+  .site-header.featured-image.has-discussion .entry-meta .discussion-avatar-list {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+  }
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail {
+  position: relative;
+  display: block;
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail .post-thumbnail-inner {
+  filter: grayscale(100%);
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail .post-thumbnail-inner:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: .5;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail .post-thumbnail-inner:after {
+    display: none;
+  }
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:before, .image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  content: "\020";
+  pointer-events: none;
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:before {
+  background: #0073aa;
+  mix-blend-mode: screen;
+  opacity: 0.1;
+  z-index: 2;
+}
+
+.image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:after {
+  background: #0073aa;
+  mix-blend-mode: multiply;
+  opacity: .8;
+  z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .image-filters-enabled:not(.full-screen-image-enabled) .site-header.featured-image .post-thumbnail:after {
+    opacity: 1;
+  }
+}
+
+.full-screen-image-enabled .site-header.featured-image {
   /* Hide overflow for overflowing featured image */
   overflow: hidden;
   /* Need relative positioning to properly align layers. */
@@ -2074,87 +2224,85 @@ body.page .main-navigation {
   background-repeat: no-repeat;
   background-size: cover;
   /* The intensity of each blend mode is controlled via layer opacity. */
-  /* Second layer: screen. */
-  /* Third layer: multiply. */
+  /* Multiply layer. */
   /* When image filters are inactive, a black overlay is added. */
-  /* Fourth layer: overlay. */
-  /* Fifth layer: readability overlay */
+  /* Readability overlay */
 }
 
-.site-header.featured-image .site-branding .site-title,
-.site-header.featured-image .site-branding .site-description,
-.site-header.featured-image .main-navigation a:after,
-.site-header.featured-image .main-navigation .main-menu > li.menu-item-has-children:after,
-.site-header.featured-image .main-navigation li,
-.site-header.featured-image .social-navigation li,
-.site-header.featured-image .entry-meta,
-.site-header.featured-image .entry-title {
+.full-screen-image-enabled .site-header.featured-image .site-branding .site-title,
+.full-screen-image-enabled .site-header.featured-image .site-branding .site-description,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:after,
+.full-screen-image-enabled .site-header.featured-image .main-navigation .main-menu > li.menu-item-has-children:after,
+.full-screen-image-enabled .site-header.featured-image .main-navigation li,
+.full-screen-image-enabled .site-header.featured-image .social-navigation li,
+.full-screen-image-enabled .site-header.featured-image .entry-meta,
+.full-screen-image-enabled .site-header.featured-image .entry-title {
   color: #fff;
 }
 
-.site-header.featured-image .main-navigation a,
-.site-header.featured-image .main-navigation a + svg,
-.site-header.featured-image .social-navigation a,
-.site-header.featured-image .site-title a,
-.site-header.featured-image .site-featured-image a {
+.full-screen-image-enabled .site-header.featured-image .main-navigation a,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a,
+.full-screen-image-enabled .site-header.featured-image .site-title a,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a {
   color: #fff;
   transition: opacity 110ms ease-in-out;
 }
 
-.site-header.featured-image .main-navigation a:hover, .site-header.featured-image .main-navigation a:active,
-.site-header.featured-image .main-navigation a:hover + svg,
-.site-header.featured-image .main-navigation a:active + svg,
-.site-header.featured-image .main-navigation a + svg:hover,
-.site-header.featured-image .main-navigation a + svg:active,
-.site-header.featured-image .main-navigation a + svg:hover + svg,
-.site-header.featured-image .main-navigation a + svg:active + svg,
-.site-header.featured-image .social-navigation a:hover,
-.site-header.featured-image .social-navigation a:active,
-.site-header.featured-image .social-navigation a:hover + svg,
-.site-header.featured-image .social-navigation a:active + svg,
-.site-header.featured-image .site-title a:hover,
-.site-header.featured-image .site-title a:active,
-.site-header.featured-image .site-title a:hover + svg,
-.site-header.featured-image .site-title a:active + svg,
-.site-header.featured-image .site-featured-image a:hover,
-.site-header.featured-image .site-featured-image a:active,
-.site-header.featured-image .site-featured-image a:hover + svg,
-.site-header.featured-image .site-featured-image a:active + svg {
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:hover, .full-screen-image-enabled .site-header.featured-image .main-navigation a:active,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:hover + svg,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:active + svg,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:hover,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:active,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:hover + svg,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:active + svg,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:hover,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:active,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:hover + svg,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:active + svg,
+.full-screen-image-enabled .site-header.featured-image .site-title a:hover,
+.full-screen-image-enabled .site-header.featured-image .site-title a:active,
+.full-screen-image-enabled .site-header.featured-image .site-title a:hover + svg,
+.full-screen-image-enabled .site-header.featured-image .site-title a:active + svg,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:hover,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:active,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:hover + svg,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:active + svg {
   color: #fff;
   opacity: 0.6;
 }
 
-.site-header.featured-image .main-navigation a:focus,
-.site-header.featured-image .main-navigation a:focus + svg,
-.site-header.featured-image .main-navigation a + svg:focus,
-.site-header.featured-image .main-navigation a + svg:focus + svg,
-.site-header.featured-image .social-navigation a:focus,
-.site-header.featured-image .social-navigation a:focus + svg,
-.site-header.featured-image .site-title a:focus,
-.site-header.featured-image .site-title a:focus + svg,
-.site-header.featured-image .site-featured-image a:focus,
-.site-header.featured-image .site-featured-image a:focus + svg {
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:focus,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a:focus + svg,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:focus,
+.full-screen-image-enabled .site-header.featured-image .main-navigation a + svg:focus + svg,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:focus,
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:focus + svg,
+.full-screen-image-enabled .site-header.featured-image .site-title a:focus,
+.full-screen-image-enabled .site-header.featured-image .site-title a:focus + svg,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:focus,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image a:focus + svg {
   color: #fff;
 }
 
-.site-header.featured-image .social-navigation a:focus {
+.full-screen-image-enabled .site-header.featured-image .social-navigation a:focus {
   color: #fff;
   opacity: 1;
   border-bottom: 1px solid #fff;
 }
 
-.site-header.featured-image .social-navigation svg,
-.site-header.featured-image .site-featured-image svg {
+.full-screen-image-enabled .site-header.featured-image .social-navigation svg,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
   -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 
-.site-header.featured-image .site-featured-image {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image {
   /* First layer: grayscale. */
 }
 
-.site-header.featured-image .site-featured-image .post-thumbnail img {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
   height: auto;
   right: 50%;
   max-width: 1000%;
@@ -2165,11 +2313,10 @@ body.page .main-navigation {
   transform: translateX(50%) translateY(-50%);
   width: auto;
   z-index: 1;
-  /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
 @supports (object-fit: cover) {
-  .site-header.featured-image .site-featured-image .post-thumbnail img {
+  .full-screen-image-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
     object-fit: cover;
@@ -2179,103 +2326,46 @@ body.page .main-navigation {
   }
 }
 
-.image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
-  filter: grayscale(100%);
-}
-
-.site-header.featured-image .site-featured-image .entry-header {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image .entry-header {
   margin-top: calc( 4 * 1rem);
   margin-bottom: 0;
   margin-right: 0;
   margin-left: 0;
-  /* Entry meta */
 }
 
 @media only screen and (min-width: 768px) {
-  .site-header.featured-image .site-featured-image .entry-header {
+  .full-screen-image-enabled .site-header.featured-image .site-featured-image .entry-header {
     margin-right: calc(10% + 60px);
     margin-left: calc(10% + 60px);
   }
 }
 
-.site-header.featured-image .site-featured-image .entry-header .entry-title:before {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image .entry-header .entry-title:before {
   background: #fff;
 }
 
-.site-header.featured-image .site-featured-image .entry-header .entry-meta {
-  font-weight: 500;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta > span {
-  margin-left: 1rem;
-  display: inline-block;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta > span:last-child {
-  margin-left: 0;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta a {
-  transition: color 110ms ease-in-out;
-  color: currentColor;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta a:hover {
-  text-decoration: none;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta .svg-icon {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5em;
-}
-
-.site-header.featured-image .site-featured-image .entry-header .entry-meta .discussion-avatar-list {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta {
-    display: flex;
-    position: relative;
-  }
-  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-title {
-    padding-left: calc(1 * (100vw / 12) + 1rem);
-  }
-  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .comment-count {
-    position: absolute;
-    left: 0;
-  }
-  .site-header.featured-image .site-featured-image .entry-header.has-discussion .entry-meta .discussion-avatar-list {
-    display: block;
-    position: absolute;
-    bottom: 100%;
-  }
-}
-
-.site-header.featured-image .custom-logo-link {
+.full-screen-image-enabled .site-header.featured-image .custom-logo-link {
   background: #fff;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 }
 
-.site-header.featured-image .custom-logo-link:hover, .site-header.featured-image .custom-logo-link:active, .site-header.featured-image .custom-logo-link:focus {
+.full-screen-image-enabled .site-header.featured-image .custom-logo-link:hover, .full-screen-image-enabled .site-header.featured-image .custom-logo-link:active, .full-screen-image-enabled .site-header.featured-image .custom-logo-link:focus {
   box-shadow: 0 0 0 2px white;
 }
 
-.site-header.featured-image .site-branding {
+.full-screen-image-enabled .site-header.featured-image .site-branding {
   position: relative;
   z-index: 10;
 }
 
-.site-header.featured-image .site-featured-image .entry-header {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image .entry-header {
   position: relative;
   z-index: 9;
 }
 
-.site-header.featured-image .site-branding-container:after,
-.site-header.featured-image .site-featured-image:before,
-.site-header.featured-image .site-featured-image:after, .site-header.featured-image:after {
+.full-screen-image-enabled .site-header.featured-image .site-branding-container:after,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image:before,
+.full-screen-image-enabled .site-header.featured-image .site-featured-image:after, .full-screen-image-enabled .site-header.featured-image:after {
   display: block;
   position: absolute;
   top: 0;
@@ -2285,47 +2375,13 @@ body.page .main-navigation {
   height: 100%;
 }
 
-.image-filters-enabled .site-header.featured-image .site-featured-image:before {
-  background: #0073aa;
-  mix-blend-mode: screen;
-  opacity: 0.1;
-}
-
-.site-header.featured-image .site-featured-image:after {
+.full-screen-image-enabled .site-header.featured-image .site-featured-image:after {
   background: #000;
   mix-blend-mode: multiply;
   opacity: .7;
-  /* When image filters are active, a blue overlay is added. */
 }
 
-.image-filters-enabled .site-header.featured-image .site-featured-image:after {
-  background: #0073aa;
-  opacity: .8;
-  z-index: 3;
-  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
-}
-
-@supports (mix-blend-mode: multiply) {
-  .image-filters-enabled .site-header.featured-image .site-featured-image:after {
-    opacity: 1;
-  }
-}
-
-.image-filters-enabled .site-header.featured-image .site-branding-container:after {
-  background: rgba(0, 0, 0, 0.35);
-  mix-blend-mode: overlay;
-  opacity: 0.5;
-  z-index: 4;
-  /* Browsers supporting mix-blend-mode can have a light overlay */
-}
-
-@supports (mix-blend-mode: overlay) {
-  .image-filters-enabled .site-header.featured-image .site-branding-container:after {
-    background: rgba(255, 255, 255, 0.35);
-  }
-}
-
-.site-header.featured-image:after {
+.full-screen-image-enabled .site-header.featured-image:after {
   background: #000;
   /**
 		 * Add a transition to the readability overlay, to add a subtle
@@ -2334,26 +2390,72 @@ body.page .main-navigation {
   transition: opacity 1200ms ease-in-out;
   opacity: 0.7;
   z-index: 5;
-  /* When image filters are active, a blue overlay is added. */
 }
 
-.image-filters-enabled .site-header.featured-image:after {
+.full-screen-image-enabled .site-header.featured-image ::-moz-selection {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.full-screen-image-enabled .site-header.featured-image ::selection {
+  background: rgba(255, 255, 255, 0.17);
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image {
+  /* First layer: grayscale. */
+  /* Second layer: screen. */
+  /* Third layer: multiply. */
+  /* When image filters are active, a blue overlay is added. */
+  /* Fourth layer: overlay. */
+  /* Fifth layer: readability overlay */
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image .post-thumbnail img {
+  filter: grayscale(100%);
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image:before {
+  background: #0073aa;
+  mix-blend-mode: screen;
+  opacity: 0.1;
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image:after {
+  background: #0073aa;
+  opacity: .8;
+  z-index: 3;
+  /* Browsers supporting mix-blend-mode don't need opacity < 1 */
+}
+
+@supports (mix-blend-mode: multiply) {
+  .full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-featured-image:after {
+    opacity: 1;
+  }
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-branding-container:after {
+  background: rgba(0, 0, 0, 0.35);
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  z-index: 4;
+  /* Browsers supporting mix-blend-mode can have a light overlay */
+}
+
+@supports (mix-blend-mode: overlay) {
+  .full-screen-image-enabled.image-filters-enabled .site-header.featured-image .site-branding-container:after {
+    background: rgba(255, 255, 255, 0.35);
+  }
+}
+
+.full-screen-image-enabled.image-filters-enabled .site-header.featured-image:after {
+  /* When image filters are active, a blue overlay is added. */
   background: #000e14;
   opacity: 0.38;
 }
 
 @media only screen and (min-width: 768px) {
-  .image-filters-enabled .site-header.featured-image:after {
+  .full-screen-image-enabled.image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
   }
-}
-
-.site-header.featured-image ::-moz-selection {
-  background: rgba(255, 255, 255, 0.17);
-}
-
-.site-header.featured-image ::selection {
-  background: rgba(255, 255, 255, 0.17);
 }
 
 /*--------------------------------------------------------------
