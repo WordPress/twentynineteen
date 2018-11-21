@@ -679,60 +679,24 @@ ul.wp-block-archives li ul,
   counter-increment: submenu;
 }
 
-.wp-block-categories ul ul > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.wp-block-categories ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.wp-block-categories ul ul > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.wp-block-categories ul ul > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.wp-block-categories ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(gu)::before {
@@ -740,7 +704,7 @@ ul.wp-block-archives li ul,
 }
 
 .wp-block-categories ul ul > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(ja)::before {
@@ -748,11 +712,11 @@ ul.wp-block-archives li ul,
 }
 
 .wp-block-categories ul ul > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .wp-block-categories ul ul > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .wp-block-categories li ul {

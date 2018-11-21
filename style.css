@@ -409,60 +409,24 @@ body {
 }
 
 /* non-latin */
-body:lang(ar) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(ary) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(azb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(ckb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(fa-IR) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(haz) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-body:lang(ps) {
-  font-family: "Noto Naskh Arabic", serif;
+body:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 body:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 body:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 body:lang(zh-cmn-Hans-CN) {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-body:lang(bn-BD) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-body:lang(hi-IN) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-body:lang(mr) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-body:lang(ne-NP) {
-  font-family: "Noto Serif Devanagari", serif;
+body:lang(bn-BD, hi-IN, mr, ne-NP) {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 body:lang(gu) {
@@ -470,7 +434,7 @@ body:lang(gu) {
 }
 
 body:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 body:lang(ja) {
@@ -478,11 +442,11 @@ body:lang(ja) {
 }
 
 body:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 body:lang(th) {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 button,
@@ -498,60 +462,12 @@ textarea {
 }
 
 /* non-latin */
-button:lang(ar),
-input:lang(ar),
-select:lang(ar),
-optgroup:lang(ar),
-textarea:lang(ar) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(ary),
-input:lang(ary),
-select:lang(ary),
-optgroup:lang(ary),
-textarea:lang(ary) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(azb),
-input:lang(azb),
-select:lang(azb),
-optgroup:lang(azb),
-textarea:lang(azb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(ckb),
-input:lang(ckb),
-select:lang(ckb),
-optgroup:lang(ckb),
-textarea:lang(ckb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(fa-IR),
-input:lang(fa-IR),
-select:lang(fa-IR),
-optgroup:lang(fa-IR),
-textarea:lang(fa-IR) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(haz),
-input:lang(haz),
-select:lang(haz),
-optgroup:lang(haz),
-textarea:lang(haz) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-button:lang(ps),
-input:lang(ps),
-select:lang(ps),
-optgroup:lang(ps),
-textarea:lang(ps) {
-  font-family: "Noto Naskh Arabic", serif;
+button:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
+input:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
+select:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
+optgroup:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
+textarea:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 button:lang(zh-cmn-Hant-HK),
@@ -559,7 +475,7 @@ input:lang(zh-cmn-Hant-HK),
 select:lang(zh-cmn-Hant-HK),
 optgroup:lang(zh-cmn-Hant-HK),
 textarea:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 button:lang(zh-cmn-Hant-TW),
@@ -567,7 +483,7 @@ input:lang(zh-cmn-Hant-TW),
 select:lang(zh-cmn-Hant-TW),
 optgroup:lang(zh-cmn-Hant-TW),
 textarea:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 button:lang(zh-cmn-Hans-CN),
@@ -575,39 +491,15 @@ input:lang(zh-cmn-Hans-CN),
 select:lang(zh-cmn-Hans-CN),
 optgroup:lang(zh-cmn-Hans-CN),
 textarea:lang(zh-cmn-Hans-CN) {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-button:lang(bn-BD),
-input:lang(bn-BD),
-select:lang(bn-BD),
-optgroup:lang(bn-BD),
-textarea:lang(bn-BD) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-button:lang(hi-IN),
-input:lang(hi-IN),
-select:lang(hi-IN),
-optgroup:lang(hi-IN),
-textarea:lang(hi-IN) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-button:lang(mr),
-input:lang(mr),
-select:lang(mr),
-optgroup:lang(mr),
-textarea:lang(mr) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-button:lang(ne-NP),
-input:lang(ne-NP),
-select:lang(ne-NP),
-optgroup:lang(ne-NP),
-textarea:lang(ne-NP) {
-  font-family: "Noto Serif Devanagari", serif;
+button:lang(bn-BD, hi-IN, mr, ne-NP),
+input:lang(bn-BD, hi-IN, mr, ne-NP),
+select:lang(bn-BD, hi-IN, mr, ne-NP),
+optgroup:lang(bn-BD, hi-IN, mr, ne-NP),
+textarea:lang(bn-BD, hi-IN, mr, ne-NP) {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 button:lang(gu),
@@ -623,7 +515,7 @@ input:lang(he-IL),
 select:lang(he-IL),
 optgroup:lang(he-IL),
 textarea:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 button:lang(ja),
@@ -639,7 +531,7 @@ input:lang(kr-KR),
 select:lang(kr-KR),
 optgroup:lang(kr-KR),
 textarea:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 button:lang(th),
@@ -647,7 +539,7 @@ input:lang(th),
 select:lang(th),
 optgroup:lang(th),
 textarea:lang(th) {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .author-description .author-link,
@@ -948,60 +840,24 @@ h6 {
   font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
-.page-title:lang(ar) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(ary) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(azb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(ckb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(fa-IR) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(haz) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.page-title:lang(ps) {
-  font-family: "Noto Naskh Arabic", serif;
+.page-title:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .page-title:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .page-title:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .page-title:lang(zh-cmn-Hans-CN) {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.page-title:lang(bn-BD) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.page-title:lang(hi-IN) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.page-title:lang(mr) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.page-title:lang(ne-NP) {
-  font-family: "Noto Serif Devanagari", serif;
+.page-title:lang(bn-BD, hi-IN, mr, ne-NP) {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .page-title:lang(gu) {
@@ -1009,7 +865,7 @@ h6 {
 }
 
 .page-title:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .page-title:lang(ja) {
@@ -1017,11 +873,11 @@ h6 {
 }
 
 .page-title:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .page-title:lang(th) {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .site-branding,
@@ -1947,116 +1803,44 @@ body.page .main-navigation {
   counter-increment: submenu;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(gu)::before {
@@ -2068,11 +1852,11 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ja)::before {
@@ -2084,19 +1868,19 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
@@ -2195,88 +1979,34 @@ body.page .main-navigation {
   counter-increment: submenu;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ar)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ar)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ary)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ary)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(azb)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(azb)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ckb)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ckb)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(fa-IR)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(fa-IR)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(haz)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(haz)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ps)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ps)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(bn-BD)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(bn-BD)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(hi-IN)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(hi-IN)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(mr)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(mr)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ne-NP)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ne-NP)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(gu)::before,
@@ -2288,7 +2018,7 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(he-IL)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(he-IL)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ja)::before,
@@ -2300,13 +2030,13 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(kr-KR)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(kr-KR)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(th)::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(th)::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .main-navigation .main-menu > .menu-item-has-children:not(.off-canvas):hover > .sub-menu {
@@ -4451,81 +4181,15 @@ body.page .main-navigation {
   counter-increment: submenu;
 }
 
-.widget_archive ul ul > li > a:lang(ar)::before,
-.widget_categories ul ul > li > a:lang(ar)::before,
-.widget_meta ul ul > li > a:lang(ar)::before,
-.widget_nav_menu ul ul > li > a:lang(ar)::before,
-.widget_pages ul ul > li > a:lang(ar)::before,
-.widget_recent_comments ul ul > li > a:lang(ar)::before,
-.widget_recent_entries ul ul > li > a:lang(ar)::before,
-.widget_rss ul ul > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(ary)::before,
-.widget_categories ul ul > li > a:lang(ary)::before,
-.widget_meta ul ul > li > a:lang(ary)::before,
-.widget_nav_menu ul ul > li > a:lang(ary)::before,
-.widget_pages ul ul > li > a:lang(ary)::before,
-.widget_recent_comments ul ul > li > a:lang(ary)::before,
-.widget_recent_entries ul ul > li > a:lang(ary)::before,
-.widget_rss ul ul > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(azb)::before,
-.widget_categories ul ul > li > a:lang(azb)::before,
-.widget_meta ul ul > li > a:lang(azb)::before,
-.widget_nav_menu ul ul > li > a:lang(azb)::before,
-.widget_pages ul ul > li > a:lang(azb)::before,
-.widget_recent_comments ul ul > li > a:lang(azb)::before,
-.widget_recent_entries ul ul > li > a:lang(azb)::before,
-.widget_rss ul ul > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(ckb)::before,
-.widget_categories ul ul > li > a:lang(ckb)::before,
-.widget_meta ul ul > li > a:lang(ckb)::before,
-.widget_nav_menu ul ul > li > a:lang(ckb)::before,
-.widget_pages ul ul > li > a:lang(ckb)::before,
-.widget_recent_comments ul ul > li > a:lang(ckb)::before,
-.widget_recent_entries ul ul > li > a:lang(ckb)::before,
-.widget_rss ul ul > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(fa-IR)::before,
-.widget_categories ul ul > li > a:lang(fa-IR)::before,
-.widget_meta ul ul > li > a:lang(fa-IR)::before,
-.widget_nav_menu ul ul > li > a:lang(fa-IR)::before,
-.widget_pages ul ul > li > a:lang(fa-IR)::before,
-.widget_recent_comments ul ul > li > a:lang(fa-IR)::before,
-.widget_recent_entries ul ul > li > a:lang(fa-IR)::before,
-.widget_rss ul ul > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(haz)::before,
-.widget_categories ul ul > li > a:lang(haz)::before,
-.widget_meta ul ul > li > a:lang(haz)::before,
-.widget_nav_menu ul ul > li > a:lang(haz)::before,
-.widget_pages ul ul > li > a:lang(haz)::before,
-.widget_recent_comments ul ul > li > a:lang(haz)::before,
-.widget_recent_entries ul ul > li > a:lang(haz)::before,
-.widget_rss ul ul > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.widget_archive ul ul > li > a:lang(ps)::before,
-.widget_categories ul ul > li > a:lang(ps)::before,
-.widget_meta ul ul > li > a:lang(ps)::before,
-.widget_nav_menu ul ul > li > a:lang(ps)::before,
-.widget_pages ul ul > li > a:lang(ps)::before,
-.widget_recent_comments ul ul > li > a:lang(ps)::before,
-.widget_recent_entries ul ul > li > a:lang(ps)::before,
-.widget_rss ul ul > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.widget_archive ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_categories ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_meta ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_nav_menu ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_pages ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_recent_comments ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_recent_entries ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
+.widget_rss ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .widget_archive ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
@@ -4536,7 +4200,7 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
 .widget_recent_entries ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
 .widget_rss ul ul > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .widget_archive ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
@@ -4547,7 +4211,7 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
 .widget_recent_entries ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
 .widget_rss ul ul > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .widget_archive ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
@@ -4558,51 +4222,18 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
 .widget_recent_entries ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
 .widget_rss ul ul > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.widget_archive ul ul > li > a:lang(bn-BD)::before,
-.widget_categories ul ul > li > a:lang(bn-BD)::before,
-.widget_meta ul ul > li > a:lang(bn-BD)::before,
-.widget_nav_menu ul ul > li > a:lang(bn-BD)::before,
-.widget_pages ul ul > li > a:lang(bn-BD)::before,
-.widget_recent_comments ul ul > li > a:lang(bn-BD)::before,
-.widget_recent_entries ul ul > li > a:lang(bn-BD)::before,
-.widget_rss ul ul > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.widget_archive ul ul > li > a:lang(hi-IN)::before,
-.widget_categories ul ul > li > a:lang(hi-IN)::before,
-.widget_meta ul ul > li > a:lang(hi-IN)::before,
-.widget_nav_menu ul ul > li > a:lang(hi-IN)::before,
-.widget_pages ul ul > li > a:lang(hi-IN)::before,
-.widget_recent_comments ul ul > li > a:lang(hi-IN)::before,
-.widget_recent_entries ul ul > li > a:lang(hi-IN)::before,
-.widget_rss ul ul > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.widget_archive ul ul > li > a:lang(mr)::before,
-.widget_categories ul ul > li > a:lang(mr)::before,
-.widget_meta ul ul > li > a:lang(mr)::before,
-.widget_nav_menu ul ul > li > a:lang(mr)::before,
-.widget_pages ul ul > li > a:lang(mr)::before,
-.widget_recent_comments ul ul > li > a:lang(mr)::before,
-.widget_recent_entries ul ul > li > a:lang(mr)::before,
-.widget_rss ul ul > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.widget_archive ul ul > li > a:lang(ne-NP)::before,
-.widget_categories ul ul > li > a:lang(ne-NP)::before,
-.widget_meta ul ul > li > a:lang(ne-NP)::before,
-.widget_nav_menu ul ul > li > a:lang(ne-NP)::before,
-.widget_pages ul ul > li > a:lang(ne-NP)::before,
-.widget_recent_comments ul ul > li > a:lang(ne-NP)::before,
-.widget_recent_entries ul ul > li > a:lang(ne-NP)::before,
-.widget_rss ul ul > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.widget_archive ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_categories ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_meta ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_nav_menu ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_pages ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_recent_comments ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_recent_entries ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
+.widget_rss ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .widget_archive ul ul > li > a:lang(gu)::before,
@@ -4624,7 +4255,7 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(he-IL)::before,
 .widget_recent_entries ul ul > li > a:lang(he-IL)::before,
 .widget_rss ul ul > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .widget_archive ul ul > li > a:lang(ja)::before,
@@ -4646,7 +4277,7 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(kr-KR)::before,
 .widget_recent_entries ul ul > li > a:lang(kr-KR)::before,
 .widget_rss ul ul > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .widget_archive ul ul > li > a:lang(th)::before,
@@ -4657,7 +4288,7 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a:lang(th)::before,
 .widget_recent_entries ul ul > li > a:lang(th)::before,
 .widget_rss ul ul > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .widget_tag_cloud .tagcloud {
@@ -5025,6 +4656,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  color: white;
   border-color: #111;
 }
 
@@ -5128,60 +4760,24 @@ body.page .main-navigation {
   counter-increment: submenu;
 }
 
-.entry .entry-content .wp-block-categories ul > li > a:lang(ar)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ary)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(azb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ckb)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(fa-IR)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(haz)::before {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ps)::before {
-  font-family: "Noto Naskh Arabic", serif;
+.entry .entry-content .wp-block-categories ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.entry .entry-content .wp-block-categories ul > li > a:lang(bn-BD)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(hi-IN)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(mr)::before {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ne-NP)::before {
-  font-family: "Noto Serif Devanagari", serif;
+.entry .entry-content .wp-block-categories ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(gu)::before {
@@ -5189,7 +4785,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(ja)::before {
@@ -5197,11 +4793,11 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .entry .entry-content .wp-block-categories ul > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .entry .entry-content .wp-block-latest-posts.is-grid li {
@@ -5234,60 +4830,24 @@ body.page .main-navigation {
   line-height: 1.8;
 }
 
-.entry .entry-content .wp-block-verse:lang(ar) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(ary) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(azb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(ckb) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(fa-IR) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(haz) {
-  font-family: "Noto Naskh Arabic", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(ps) {
-  font-family: "Noto Naskh Arabic", serif;
+.entry .entry-content .wp-block-verse:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", serif;
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(zh-cmn-Hans-CN) {
-  font-family: "Noto Serif CJK SC", serif;
+  font-family: "STFangSong", "FangSong", serif;
 }
 
-.entry .entry-content .wp-block-verse:lang(bn-BD) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(hi-IN) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(mr) {
-  font-family: "Noto Serif Devanagari", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(ne-NP) {
-  font-family: "Noto Serif Devanagari", serif;
+.entry .entry-content .wp-block-verse:lang(bn-BD, hi-IN, mr, ne-NP) {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(gu) {
@@ -5295,7 +4855,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-verse:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", serif;
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(ja) {
@@ -5303,11 +4863,11 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-verse:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", serif;
+  font-family: "Noto Serif CJK KR", "Batang", serif;
 }
 
 .entry .entry-content .wp-block-verse:lang(th) {
-  font-family: "Noto Serif Thai", serif;
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .entry .entry-content .has-drop-cap:not(:focus):first-letter {
