@@ -100,6 +100,25 @@ function twentynineteen_customize_register( $wp_customize ) {
 			'type'    => 'checkbox',
 		)
 	);
+
+	// Add image filter setting and control.
+	$wp_customize->add_setting(
+		'full_screen_image',
+		array(
+			'default'           => 1,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		'full_screen_image',
+		array(
+			'label'   => __( 'Use a full screen featured image on individual pages', 'twentynineteen' ),
+			'section' => 'colors',
+			'type'    => 'checkbox',
+		)
+	);
 }
 add_action( 'customize_register', 'twentynineteen_customize_register' );
 

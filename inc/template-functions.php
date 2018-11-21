@@ -28,6 +28,11 @@ function twentynineteen_body_classes( $classes ) {
 		$classes[] = 'image-filters-enabled';
 	}
 
+	// Adds a class if image filters are enabled.
+	if ( is_single() && twentynineteen_full_screen_image_enabled() ) {
+		$classes[] = 'full-screen-image-enabled';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'twentynineteen_body_classes' );
@@ -107,6 +112,16 @@ function twentynineteen_can_show_post_thumbnail() {
  */
 function twentynineteen_image_filters_enabled() {
 	if ( get_theme_mod( 'image_filter', 1 ) ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Returns true if full-screen featured images are enabled in the theme options.
+ */
+function twentynineteen_full_screen_image_enabled() {
+	if ( get_theme_mod( 'full_screen_image', 1 ) ) {
 		return true;
 	}
 	return false;

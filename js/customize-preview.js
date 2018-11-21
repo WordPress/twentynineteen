@@ -57,4 +57,15 @@
 		} );
 	} );
 
+	// Image treatment.
+	wp.customize( 'full_screen_image', function( value ) {
+		value.bind( function( to ) {
+			if ( to ) {
+				$( 'body' ).addClass( 'full-screen-image-enabled' );
+			} else {
+				$( 'body' ).removeClass( 'full-screen-image-enabled' );
+			}
+		} );
+	} );
+
 })( jQuery );
