@@ -178,6 +178,13 @@ a:focus {
   text-decoration: underline;
 }
 
+.has-primary-background-color,
+.has-secondary-background-color,
+.has-dark-gray-background-color,
+.has-light-gray-background-color {
+  color: #fff;
+}
+
 .has-primary-background-color p,
 .has-primary-background-color h1,
 .has-primary-background-color h2,
@@ -186,8 +193,46 @@ a:focus {
 .has-primary-background-color h5,
 .has-primary-background-color h6,
 .has-primary-background-color a,
-.has-primary-background-color a:hover {
+.has-secondary-background-color p,
+.has-secondary-background-color h1,
+.has-secondary-background-color h2,
+.has-secondary-background-color h3,
+.has-secondary-background-color h4,
+.has-secondary-background-color h5,
+.has-secondary-background-color h6,
+.has-secondary-background-color a,
+.has-dark-gray-background-color p,
+.has-dark-gray-background-color h1,
+.has-dark-gray-background-color h2,
+.has-dark-gray-background-color h3,
+.has-dark-gray-background-color h4,
+.has-dark-gray-background-color h5,
+.has-dark-gray-background-color h6,
+.has-dark-gray-background-color a,
+.has-light-gray-background-color p,
+.has-light-gray-background-color h1,
+.has-light-gray-background-color h2,
+.has-light-gray-background-color h3,
+.has-light-gray-background-color h4,
+.has-light-gray-background-color h5,
+.has-light-gray-background-color h6,
+.has-light-gray-background-color a {
   color: #fff;
+}
+
+.has-white-background-color {
+  color: #111;
+}
+
+.has-white-background-color p,
+.has-white-background-color h1,
+.has-white-background-color h2,
+.has-white-background-color h3,
+.has-white-background-color h4,
+.has-white-background-color h5,
+.has-white-background-color h6,
+.has-white-background-color a {
+  color: #111;
 }
 
 figcaption,
@@ -393,7 +438,8 @@ figcaption,
 
 /** === Pullquote === */
 .wp-block-pullquote {
-  border: none;
+  border-color: transparent;
+  border-width: 2px;
   color: #000;
 }
 
@@ -413,14 +459,18 @@ figcaption,
   max-width: calc( 100% - (2 * 1rem));
 }
 
-@media only screen and (min-width: 768px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    max-width: 80%;
-  }
+.wp-block-pullquote.is-style-solid-color blockquote.has-text-color p {
+  color: inherit;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) {
   color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-pullquote.is-style-solid-color blockquote {
+    max-width: 80%;
+  }
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
