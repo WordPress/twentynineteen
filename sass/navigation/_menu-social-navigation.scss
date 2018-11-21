@@ -1,7 +1,7 @@
 /* Social menu */
 
 .social-navigation {
-	margin-top: calc(#{$size__spacing-unit} / 5 );
+	margin-top: calc(#{$size__spacing-unit} / 2 );
 	text-align: left;
 
 	ul.social-links-menu {
@@ -51,5 +51,13 @@
 				}
 			}
 		}
+	}
+}
+
+.site-title + .social-navigation,
+.site-description + .social-navigation {
+
+	@include media(tablet) {
+		margin-top: calc(#{$size__spacing-unit} / 5 );
 	}
 }
