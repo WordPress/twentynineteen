@@ -38,7 +38,7 @@ Version 1.0:
 | @iamchetanp  | @chetan200891 |
 | @grappler | @grapplerulrich |
 | @ocean90 | @ocean90 |
-| @joshfeck | |
+| @joshfeck | @builtbynorthby |
 | @frankew | |
 | @abdulwahab610 | @AbdulWahab610 |
 | @mendezcode | @mendezcode |
