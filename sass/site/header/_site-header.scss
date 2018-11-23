@@ -58,8 +58,8 @@
 		box-sizing: content-box;
 		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 		display: block;
-		width: 64px;
-		height: 64px;
+		width: 50px;
+		height: 50px;
 		overflow: hidden;
 		transition: box-shadow $background_transition ease-in-out;
 
@@ -74,8 +74,8 @@
 		}
 
 		@include media(tablet) {
-			width: 50px;
-			height: 50px;
+			width: 64px;
+			height: 64px;
 		}
 	}
 }
@@ -85,8 +85,9 @@
 .site-title {
 	margin: auto;
 	display: inline;
+	color: $color__text-main;
 
-	#masthead & a {
+	a {
 		color: $color__text-main;
 
 		&:link,
