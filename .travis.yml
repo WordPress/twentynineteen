@@ -54,11 +54,6 @@ matrix:
       env: LINT=0
       dist: precise
 
-# Ditch sudo and use containers.
-# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
-sudo: false
-
 before_install:
   # Speed up build time by disabling Xdebug.
   # https://johnblackbourn.com/reducing-travis-ci-build-times-for-wordpress-projects/
