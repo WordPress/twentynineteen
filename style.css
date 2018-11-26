@@ -1575,7 +1575,6 @@ body.page .main-navigation {
   color: #111;
   margin-bottom: -1px;
   transition: opacity 110ms ease-in-out;
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .social-navigation ul.social-links-menu li a:hover, .social-navigation ul.social-links-menu li a:active {
@@ -1593,6 +1592,7 @@ body.page .main-navigation {
   display: block;
   width: 32px;
   height: 32px;
+  transform: translateZ(0);
 }
 
 .social-navigation ul.social-links-menu li a svg#ui-icon-link {
