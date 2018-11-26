@@ -107,21 +107,71 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
+		// Add custom editor font sizes.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => __( 'Small', 'twentynineteen' ),
+					'shortName' => __( 'S', 'twentynineteen' ),
+					'size'      => 19.5,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => __( 'Normal', 'twentynineteen' ),
+					'shortName' => __( 'M', 'twentynineteen' ),
+					'size'      => 22,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Large', 'twentynineteen' ),
+					'shortName' => __( 'L', 'twentynineteen' ),
+					'size'      => 36.5,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'Huge', 'twentynineteen' ),
+					'shortName' => __( 'XL', 'twentynineteen' ),
+					'size'      => 49.5,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary Color', 'twentynineteen' ),
+					'name'  => __( 'Primary', 'twentynineteen' ),
 					'slug'  => 'primary',
 					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 33 ),
+				),
+				array(
+					'name'  => __( 'Secondary', 'twentynineteen' ),
+					'slug'  => 'secondary',
+					'color' => twentynineteen_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? 199 : get_theme_mod( 'primary_color_hue', 199 ), 100, 23 ),
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'twentynineteen' ),
+					'slug'  => 'dark-gray',
+					'color' => '#111',
+				),
+				array(
+					'name'  => __( 'Light Gray', 'twentynineteen' ),
+					'slug'  => 'light-gray',
+					'color' => '#767676',
+				),
+				array(
+					'name'  => __( 'White', 'twentynineteen' ),
+					'slug'  => 'white',
+					'color' => '#FFF',
 				),
 			)
 		);
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
@@ -167,7 +217,7 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function twentynineteen_scripts() {
-	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
@@ -194,7 +244,7 @@ function twentynineteen_editor_customizer_styles() {
 	wp_enqueue_style( 'twentynineteen-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.0', 'all' );
 
 	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
-		// Include color patterns
+		// Include color patterns.
 		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
 	}
