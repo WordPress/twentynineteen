@@ -73,3 +73,4 @@ Version 1.0:
 | @mor10 | @mor10 |
 | @mikeyarce | @mikeyarce |
 | @dingo-d | @dingo_bastard |
+| @mrxkon | @xkon |
