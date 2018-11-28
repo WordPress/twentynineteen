@@ -55,7 +55,7 @@ if ( ! function_exists( 'twentynineteen_comment_count' ) ) :
 	 * Prints HTML with the comment count for the current post.
 	 */
 	function twentynineteen_comment_count() {
-		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if ( ! post_password_required() && comments_open() ) {
 			echo '<span class="comments-link">';
 			echo twentynineteen_get_icon_svg( 'comment', 16 );
 
