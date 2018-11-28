@@ -74,3 +74,4 @@ Version 1.0:
 | @mikeyarce | @mikeyarce |
 | @dingo-d | @dingo_bastard |
 | @mrxkon | @xkon |
+| @richtabor | @richtabor |
