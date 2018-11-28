@@ -3690,6 +3690,11 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
+.entry .entry-content .wp-block-archives.aligncenter,
+.entry .entry-content .wp-block-categories.aligncenter {
+  text-align: center;
+}
+
 .entry .entry-content .wp-block-categories ul {
   padding-top: 0.75rem;
 }
@@ -4040,6 +4045,10 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-gallery .blocks-gallery-image:last-child,
 .entry .entry-content .wp-block-gallery .blocks-gallery-item:last-child {
   margin-bottom: 16px;
+}
+
+.entry .entry-content .wp-block-gallery figcaption a {
+  color: #fff;
 }
 
 .entry .entry-content .wp-block-audio figcaption,
