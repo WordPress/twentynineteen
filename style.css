@@ -4059,6 +4059,10 @@ body.page .main-navigation {
   margin-bottom: 16px;
 }
 
+.entry .entry-content .wp-block-gallery figcaption a {
+  color: #fff;
+}
+
 .entry .entry-content .wp-block-audio figcaption,
 .entry .entry-content .wp-block-video figcaption,
 .entry .entry-content .wp-block-image figcaption,
