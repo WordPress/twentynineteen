@@ -244,6 +244,14 @@
 		}
 	}
 
+	.wp-block-archives,
+	.wp-block-categories {
+
+		&.aligncenter {
+			text-align: center;
+		}
+	}
+
 	//! Latest categories
 	.wp-block-categories {
 
