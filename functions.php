@@ -107,33 +107,33 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
-		// Add custom editor font sizes
+		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',
 			array(
 				array(
-					'name' => __( 'Small', 'twentynineteen' ),
+					'name'      => __( 'Small', 'twentynineteen' ),
 					'shortName' => __( 'S', 'twentynineteen' ),
-					'size' => 19.5,
-					'slug' => 'small',
+					'size'      => 19.5,
+					'slug'      => 'small',
 				),
 				array(
-					'name' => __( 'Normal', 'twentynineteen' ),
+					'name'      => __( 'Normal', 'twentynineteen' ),
 					'shortName' => __( 'M', 'twentynineteen' ),
-					'size' => 22,
-					'slug' => 'normal',
+					'size'      => 22,
+					'slug'      => 'normal',
 				),
 				array(
-					'name' => __( 'Large', 'twentynineteen' ),
+					'name'      => __( 'Large', 'twentynineteen' ),
 					'shortName' => __( 'L', 'twentynineteen' ),
-					'size' => 36.5,
-					'slug' => 'large',
+					'size'      => 36.5,
+					'slug'      => 'large',
 				),
 				array(
-					'name' => __( 'Huge', 'twentynineteen' ),
+					'name'      => __( 'Huge', 'twentynineteen' ),
 					'shortName' => __( 'XL', 'twentynineteen' ),
-					'size' => 49.5,
-					'slug' => 'huge',
+					'size'      => 49.5,
+					'slug'      => 'huge',
 				),
 			)
 		);
@@ -217,7 +217,7 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function twentynineteen_scripts() {
-	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'twentynineteen-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
@@ -244,7 +244,7 @@ function twentynineteen_editor_customizer_styles() {
 	wp_enqueue_style( 'twentynineteen-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.0', 'all' );
 
 	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
-		// Include color patterns
+		// Include color patterns.
 		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 		wp_add_inline_style( 'twentynineteen-editor-customizer-styles', twentynineteen_custom_colors_css() );
 	}
@@ -263,14 +263,13 @@ function twentynineteen_colors_css_wrap() {
 
 	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
 
-	if ( 'default' === get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = 199;
-	} else {
-		$primary_color = absint( get_theme_mod( 'primary_color_hue', 199 ) );
+	$primary_color = 199;
+	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
+		$primary_color = get_theme_mod( 'primary_color_hue', 199 );
 	}
 	?>
 
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . $primary_color . '"' : ''; ?>>
+	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
 		<?php echo twentynineteen_custom_colors_css(); ?>
 	</style>
 	<?php
