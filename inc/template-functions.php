@@ -13,7 +13,6 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-
 function twentynineteen_body_classes( $classes ) {
 
 	if ( is_singular() ) {
