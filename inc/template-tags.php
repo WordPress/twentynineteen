@@ -39,13 +39,14 @@ if ( ! function_exists( 'twentynineteen_posted_by' ) ) :
 	 * Prints HTML with meta information about theme author.
 	 */
 	function twentynineteen_posted_by() {
-		$posted_by = sprintf(
-			/* translators: %s: post author */
-			__( '<span class="screen-reader-text">Posted by</span>%s', 'twentyseventeen' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		printf(
+			/* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
+			'<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+			twentynineteen_get_icon_svg( 'person', 16 ),
+			__( 'Posted by', 'twentynineteen' ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_html( get_the_author() )
 		);
-
-		echo '<span class="byline">' . twentynineteen_get_icon_svg( 'person', 16 ) . $posted_by . '</span>';
 	}
 endif;
 
@@ -82,25 +83,25 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 			twentynineteen_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'twentynineteen' ) );
+			$categories_list = get_the_category_list( __( ', ', 'twentynineteen' ) );
 			if ( $categories_list ) {
-				$posted_in = sprintf(
-					/* translators: %s: list of categories */
-					__( '<span class="screen-reader-text">Posted in</span>%s', 'twentyseventeen' ),
+				printf(
+					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of categories. */
+					'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+					twentynineteen_get_icon_svg( 'archive', 16 ),
+					__( 'Posted in', 'twentynineteen' ),
 					$categories_list
-				);
-
-				echo '<span class="cat-links">' . twentynineteen_get_icon_svg( 'archive', 16 ) . $posted_in . '</span>';
+				); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'twentynineteen' ) );
+			$tags_list = get_the_tag_list( '', __( ', ', 'twentynineteen' ) );
 			if ( $tags_list ) {
-				/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 				printf(
+					/* translators: 1: SVG icon. 2: posted in label, only visible to screen readers. 3: list of tags. */
 					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
 					twentynineteen_get_icon_svg( 'tag', 16 ),
-					esc_html__( 'Tags:', 'twentynineteen' ),
+					__( 'Tags:', 'twentynineteen' ),
 					$tags_list
 				); // WPCS: XSS OK.
 			}
@@ -154,33 +155,14 @@ if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
 		else :
 			?>
 
-			<figure class="post-thumbnail">
-				<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array( 'echo' => false )
-							),
-						)
-					);
-					?>
-				</a>
-			</figure><!-- .post-thumbnail -->
+		<figure class="post-thumbnail">
+			<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+			</a>
+		</figure>
 
 			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'twentynineteen_header_featured_image_css' ) ) :
-	/**
-	 * Returns the CSS for the header featured image background.
-	 */
-	function twentynineteen_header_featured_image_css() {
-		$img_url = get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' );
-		return sprintf( 'body.singular .site-header.featured-image .site-branding-container:before { background-image: url(%s); }', esc_url( $img_url ) );
 	}
 endif;
 
@@ -203,15 +185,17 @@ if ( ! function_exists( 'twentynineteen_discussion_avatars_list' ) ) :
 	 * Displays a list of avatars involved in a discussion for a given post.
 	 */
 	function twentynineteen_discussion_avatars_list( $comment_authors ) {
-		if ( ! empty( $comment_authors ) ) {
-			$out = array( '<ol class="discussion-avatar-list">' );
-			foreach ( $comment_authors as $id_or_email ) {
-				$out[] = sprintf( '<li>%s</li>', twentynineteen_get_user_avatar_markup( $id_or_email ) );
-			}
-			$out[] = '</ol><!-- .discussion-avatar-list -->';
-			echo implode( "\n", $out );
+		if ( empty( $comment_authors ) ) {
+			return;
 		}
-		return null;
+		echo '<ol class="discussion-avatar-list">', "\n";
+		foreach ( $comment_authors as $id_or_email ) {
+			printf(
+				"<li>%s</li>\n",
+				twentynineteen_get_user_avatar_markup( $id_or_email )
+			);
+		}
+		echo '</ol><!-- .discussion-avatar-list -->', "\n";
 	}
 endif;
 
@@ -224,8 +208,8 @@ if ( ! function_exists( 'twentynineteen_comment_form' ) ) :
 
 			comment_form(
 				array(
-					'logged_in_as'       => null,
-					'title_reply'        => null,
+					'logged_in_as' => null,
+					'title_reply'  => null,
 				)
 			);
 		}
@@ -237,13 +221,19 @@ if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
 	 * Documentation for function.
 	 */
 	function twentynineteen_the_posts_navigation() {
-		$prev_icon = twentynineteen_get_icon_svg( 'chevron_left', 22 );
-		$next_icon = twentynineteen_get_icon_svg( 'chevron_right', 22 );
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
-				'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( 'Newer posts', 'twentynineteen' ) ),
-				'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Older posts', 'twentynineteen' ), $next_icon ),
+				'prev_text' => sprintf(
+					'%s <span class="nav-prev-text">%s</span>',
+					twentynineteen_get_icon_svg( 'chevron_left', 22 ),
+					__( 'Newer posts', 'twentynineteen' )
+				),
+				'next_text' => sprintf(
+					'<span class="nav-next-text">%s</span> %s',
+					__( 'Older posts', 'twentynineteen' ),
+					twentynineteen_get_icon_svg( 'chevron_right', 22 )
+				),
 			)
 		);
 	}

@@ -4,25 +4,10 @@
 
 	.widget-area,
 	.site-info {
-
 		margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit;
 
 		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) calc(2 * (100vw / 12));
-			max-width: calc(8 * (100vw / 12));
-		}
-
-		.imprint {
-			margin-right: $size__spacing-unit;
-		}
-	}
-
-	.site-info a {
-		color: inherit;
-
-		&:hover {
-			text-decoration: none;
-			color: $color__link;
+			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 		}
 	}
 
@@ -40,5 +25,19 @@
 
 	.site-info {
 		color: $color__text-light;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+				color: $color__link;
+			}
+		}
+
+		.imprint,
+		.privacy-policy-link {
+			margin-right: $size__spacing-unit;
+		}
 	}
 }

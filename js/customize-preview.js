@@ -8,23 +8,31 @@
 
 (function( $ ) {
 
-	// Default color.
-	wp.customize( 'colorscheme', function( value ) {
+	// Primary color.
+	wp.customize( 'primary_color', function( value ) {
 		value.bind( function( to ) {
-
 			// Update custom color CSS.
 			var style = $( '#custom-theme-colors' ),
 				hue = style.data( 'hue' ),
-				css = style.html();
+				css = style.html(),
+				color;
+
+			if( 'custom' === to ){
+				// If a custom primary color is selected, use the currently set primary_color_hue
+				color = wp.customize.get().primary_color_hue;
+			} else {
+				// If the "default" option is selected, get the default primary_color_hue
+				color = 199;
+			}
 
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.
-			css = css.split( hue + ',' ).join( to + ',' );
-			style.html( css ).data( 'hue', to );
+			css = css.split( hue + ',' ).join( color + ',' );
+			style.html( css ).data( 'hue', color );
 		});
 	});
 
-	// Primary color.
-	wp.customize( 'colorscheme_hue', function( value ) {
+	// Primary color hue.
+	wp.customize( 'primary_color_hue', function( value ) {
 		value.bind( function( to ) {
 
 			// Update custom color CSS.
@@ -41,7 +49,7 @@
 	// Image filter.
 	wp.customize( 'image_filter', function( value ) {
 		value.bind( function( to ) {
-			if ( 'active' === to ) {
+			if ( to ) {
 				$( 'body' ).addClass( 'image-filters-enabled' );
 			} else {
 				$( 'body' ).removeClass( 'image-filters-enabled' );

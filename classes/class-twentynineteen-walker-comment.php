@@ -35,12 +35,14 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 						<?php
 							$comment_author_link = get_comment_author_link( $comment );
 							$comment_author_url  = get_comment_author_url( $comment );
+							$comment_author      = get_comment_author( $comment );
 							$avatar              = get_avatar( $comment, $args['avatar_size'] );
 							if ( 0 != $args['avatar_size'] ) {
 								if ( empty( $comment_author_url ) ) {
 									echo $avatar;
 								} else {
-									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
+									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
+									echo $avatar;
 								}
 							}
 
@@ -55,19 +57,23 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 							printf(
 								/* translators: %s: comment author link */
 								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
-								sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								sprintf( '<span class="fn">%s</span>', $comment_author )
 							);
+
+							if ( ! empty( $comment_author_url ) ) {
+								echo '</a>';
+							}
 						?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-							<?php /* translators: 1: comment date, 2: comment time */ ?>
-							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php
+							<?php
 								/* translators: 1: comment date, 2: comment time */
-								printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
-								?>
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
+							?>
+							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
+								<?php echo $comment_timestamp; ?>
 							</time>
 						</a>
 						<?php
@@ -103,5 +109,4 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 			?>
 		<?php
 	}
-
 }
