@@ -8,12 +8,11 @@
  */
 
 /* Get data from current discussion on post. */
-$discussion = twentynineteen_get_discussion_data();
-
-$comments_number = get_comments_number();
-$has_responses   = $discussion->responses > 0;
+$discussion    = twentynineteen_get_discussion_data();
+$has_responses = $discussion->responses > 0;
 
 if ( $has_responses ) {
+<<<<<<< HEAD
 	/* translators: %1(X responses)$s from %2(X others)$s */
 	$meta_label = sprintf(
 		'%1$s from %2$s.',
@@ -27,6 +26,10 @@ if ( $has_responses ) {
 
 	/* translators: %d: number of comments */
 	$meta_label = sprintf( _n( '%d Comment', '%d Comments', $comments_number, 'twentynineteen' ), $comments_number );
+=======
+	/* translators: %1(X comments)$s */
+	$meta_label = sprintf( _n( '%d Comment', '%d Comments', $discussion->responses, 'twentynineteen' ), $discussion->responses );
+>>>>>>> master
 } else {
 	$meta_label = __( 'No comments', 'twentynineteen' );
 }

@@ -12,8 +12,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
+	<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
 	<header class="entry-header">
+<<<<<<< HEAD
 		<?php if ( ! is_page() ) : ?>
 			<?php $discussion = twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
 		<?php endif; ?>
@@ -50,8 +51,11 @@
 			?>
 		</div><!-- .meta-info -->
 		<?php endif; ?>
+=======
+		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
+>>>>>>> master
 	</header>
-<?php endif; ?>
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -72,7 +76,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'twentynineteen' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
 				'after'  => '</div>',
 			)
 		);
@@ -83,6 +87,8 @@
 		<?php twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php get_template_part( 'template-parts/post/author', 'info' ); ?>
+	<?php if ( ! is_singular( 'attachment' ) ) : ?>
+	<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
+	<?php endif; ?>
 
 </article><!-- #post-${ID} -->

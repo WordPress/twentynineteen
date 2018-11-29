@@ -23,7 +23,11 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
     margin: 2cm;
   }
 
-  .hentry .entry-header, .site-footer .site-info {
+  .entry {
+    margin-top: 1em;
+  }
+
+  .entry .entry-header, .site-footer .site-info {
     margin: 0;
   }
 
@@ -89,14 +93,13 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 
   a:link, a:visited, a {
     background: transparent;
-    color: #520;
     font-weight: bold;
     text-decoration: underline;
     text-align: left;
   }
 
   a {
-    page-break-inside: avoid
+    page-break-inside: avoid;
   }
 
   a[href^=http]:after {
@@ -117,12 +120,79 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 
   /* Visibility */
   .main-navigation,
+  .site-title + .main-navigation,
   .social-navigation,
   .site-branding-container:before, 
-  .hentry .entry-title:before, 
-  .entry-meta, .entry-footer, 
+  .entry .entry-title:before, 
+  .entry-footer, 
   .author-description:before, 
-  .post-navigation {
+  .post-navigation,
+  .widget-area,
+  .comment-form-flex,
+  .comment-reply,
+  .comment .comment-metadata .edit-link {
     display: none;
+  }
+
+  .entry .entry-content .wp-block-button .wp-block-button__link,
+  .entry .entry-content .button {
+    color: #000;
+    background: none;
+  }
+
+  /* Site Header (With Featured Image) */
+  .site-header.featured-image {
+    min-height: 0;
+    
+    .main-navigation a, 
+    .main-navigation a + svg, 
+    .social-navigation a, 
+    .site-title a, 
+    .site-featured-image a,
+    .site-branding .site-title, 
+    .site-branding .site-description, 
+    .main-navigation a:after, 
+    .main-navigation .main-menu > li.menu-item-has-children:after, 
+    .main-navigation li, 
+    .social-navigation li, 
+    .entry-meta, 
+    .entry-title,
+    &#masthead .site-title a {
+      color: #000;
+      text-shadow: none;
+    }
+
+    .site-featured-image .entry-header,
+    .site-branding-container {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .site-featured-image .post-thumbnail img {
+      position: relative;
+      height: initial;
+      width: initial;
+      object-fit: none;
+      min-width: 0;
+      min-height: 0;
+      max-width: 100%;
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Remove image filters from featured image */
+  .image-filters-enabled {
+
+    *:after {
+      display: none !important;
+    }
+
+    .site-header.featured-image .site-featured-image:before {
+      display: none;
+    }
+
+    .site-header.featured-image .site-featured-image .post-thumbnail img {
+      filter: none;
+    }
   }
 }
