@@ -33,46 +33,55 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php
-							$comment_author_link = get_comment_author_link( $comment );
-							$comment_author_url  = get_comment_author_url( $comment );
-							$avatar              = get_avatar( $comment, $args['avatar_size'] );
-							if ( 0 != $args['avatar_size'] ) {
-								if ( empty( $comment_author_url ) ) {
-									echo $avatar;
-								} else {
-									echo preg_replace( '/>[^<]+</', sprintf( '>%s<', $avatar ), $comment_author_link );
-								}
-							}
+						$comment_author_link = get_comment_author_link( $comment );
+						$comment_author_url  = get_comment_author_url( $comment );
+						$comment_author      = get_comment_author( $comment );
+						$avatar              = get_avatar( $comment, $args['avatar_size'] );
 
-							/*
-							 * Using the `check` icon instead of `check_circle`, since we can't add a
-							 * fill color to the inner check shape when in circle form.
-							 */
-							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
-								/* translators: %s: SVG Icon */
-								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+						if ( 0 != $args['avatar_size'] ) {
+							if ( empty( $comment_author_url ) ) {
+								echo $avatar;
+							} else {
+								printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
+								echo $avatar;
 							}
+						}
 
+						/*
+						 * Using the `check` icon instead of `check_circle`, since we can't add a
+						 * fill color to the inner check shape when in circle form.
+						 */
+						if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+						}
+
+						printf(
 							/* translators: %s: comment author link */
-							printf(
-								wp_kses(
-									__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
-									array(
-										'span' => array(
-											'class' => array(),
-										),
-									)
-								),
-								'<b class="fn">' . get_comment_author_link( $comment ) . '</b>'
-							);
+							wp_kses(
+								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+								array(
+									'span' => array(
+										'class' => array(),
+									),
+								)
+							),
+							'<b class="fn">' . get_comment_author_link( $comment ) . '</b>'
+						);
+
+						if ( ! empty( $comment_author_url ) ) {
+							echo '</a>';
+						}
 						?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
-							<?php /* translators: 1: comment date, 2: comment time */ ?>
-							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>">
-								<?php printf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
+							<?php
+								/* translators: 1: comment date, 2: comment time */
+								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() );
+							?>
+							<time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo $comment_timestamp; ?>">
+								<?php echo $comment_timestamp; ?>
 							</time>
 						</a>
 						<?php
@@ -108,5 +117,4 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 			?>
 		<?php
 	}
-
 }

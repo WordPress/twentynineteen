@@ -7,7 +7,7 @@ Version 1.0:
 | @allancole | @allancole |
 | @karmatosed | @karmatosed |
 | @kjellr | @kjellr |
-| @yingling017 | @yingling017 |
+| @yingles | @yingling017 |
 | @mrasharirfan | @mrasharirfan |
 | @milana_cap | @milana_cap |
 | @fabiankaegy | @fabiankaegy |
@@ -26,22 +26,21 @@ Version 1.0:
 | @anevins12 | @anevins |
 | @peterwilsoncc | @peterwilsoncc |
 | @DannyCooper | @dannycooper |
-| @iCaleb | @icaleb |
+| @WPprodigy | @iCaleb |
 | @siriokun | @siriokun |
 | @briannaorg | @technosiren |
 | @00travelgirl00 | @travel_girl |
 | @shahjehanali1 | @azchughtai |
 | @ianbelanger79 | @ianbelanger |
 | @nadim1992 | |
-| @ismail-elkorchi | @ismailelkorchi |
-| @nativeinside | |
+| @Ismail-elkorchi | @ismailelkorchi |
+| @nativeinside | @nativeinside |
 | @iamchetanp  | @chetan200891 |
-| @icaleb | @icaleb |
 | @grappler | @grapplerulrich |
 | @ocean90 | @ocean90 |
-| @joshfeck | |
+| @joshfeck | @builtbynorthby |
 | @frankew | |
-| @abdulwahab610 | @abdulwahab610 |
+| @abdulwahab610 | @AbdulWahab610 |
 | @mendezcode | @mendezcode |
 | @eliorivero | @eliorivero |
 | @melchoyce | @melchoyce |
@@ -50,3 +49,29 @@ Version 1.0:
 | @mdawaffe | @mdawaffe |
 | @kraftbj | @kraftbj |
 | @dereksmart | @dsmart |
+| @naokomc | @nao |
+| @mayukojpn | @mayukojpn |
+| @enodekciw | @enodekciw |
+| @chetansatasiya | @ketuchetan |
+| @atanas-angelov-dev | @atanasangelovdev |
+| @carolinan | @poena |
+| @sharazghouri | @sharaz |
+| @artisan-asad | @artisticasad |
+| @mukeshpanchal27 | @mukesh27 |
+| @burhandodhy | @burhandodhy |
+| @crunnells | @crunnells |
+| @aryaprakasa | @aprakasa |
+| @themeroots | @themeroots |
+| @whizbangik | @imonly_ik |
+| @tlxo | @tlxo |
+| @youthkee | @youthkee |
+| @brentswisher | |
+| @smy315 | @smyoon315 |
+| @ahmadawais | @mrahmadawais |
+| @desi-developer | @desideveloper |
+| @2ndkauboy | @Kau-Boy |
+| @mor10 | @mor10 |
+| @mikeyarce | @mikeyarce |
+| @dingo-d | @dingo_bastard |
+| @mrxkon | @xkon |
+| @richtabor | @richtabor |

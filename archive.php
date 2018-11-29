@@ -20,7 +20,6 @@ get_header();
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="page-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -44,13 +43,12 @@ get_header();
 
 			// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content/content', 'none' );
 
 		endif;
 		?>
-
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
 <?php
 get_footer();

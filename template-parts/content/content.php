@@ -15,7 +15,7 @@
 	<header class="entry-header">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post">%s</span>', __( 'Featured', 'twentynineteen' ) );
+			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'twentynineteen' ) );
 		}
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -46,7 +46,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'twentynineteen' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
 				'after'  => '</div>',
 			)
 		);
