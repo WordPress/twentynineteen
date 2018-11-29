@@ -10,7 +10,6 @@
 if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-bio">
 	<h2 class="author-title">
-<<<<<<< HEAD:template-parts/post/author-info.php
 		<span class="author-heading">
 			<?php
 			printf(
@@ -20,10 +19,6 @@ if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 			);
 			?>
 		</span>
-=======
-		<?php /* translators: %s: author name */ ?>
-		<span class="author-heading"><?php echo esc_html( sprintf( __( 'Published by %s', 'twentynineteen' ), get_the_author() ) ); ?></span>
->>>>>>> master:template-parts/post/author-bio.php
 	</h2>
 	<p class="author-description">
 		<?php the_author_meta( 'description' ); ?>
