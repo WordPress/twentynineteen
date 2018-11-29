@@ -1,0 +1,21 @@
+=== Twenty Nineteen ===
+Contributors: the WordPress team
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.9.6
+Tested up to: 5.0
+Stable tag: 1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Our 2019 default theme is designed to show off the power of the block editor.
+
+== Description ==
+Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the blocks available by default, and makes extensive use of editor styles throughout the theme. Twenty Nineteen is designed to work for a wide variety of use cases. Whether you’re running a photo blog, launching a new business, or supporting a non-profit, Twenty Nineteen is flexible enough to fit your needs. Featuring ample whitespace, and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes. 
+
+== Changelog ==
+
+= 1.0 =
+* Initial Release
+
+== Resources ==
+* normalize.css, © 2012-2016 Nicolas Gallagher and Jonathan Neal, MIT
