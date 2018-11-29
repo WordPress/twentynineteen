@@ -33,36 +33,37 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php
-							$comment_author_link = get_comment_author_link( $comment );
-							$comment_author_url  = get_comment_author_url( $comment );
-							$comment_author      = get_comment_author( $comment );
-							$avatar              = get_avatar( $comment, $args['avatar_size'] );
-							if ( 0 != $args['avatar_size'] ) {
-								if ( empty( $comment_author_url ) ) {
-									echo $avatar;
-								} else {
-									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
-									echo $avatar;
-								}
-							}
+						$comment_author_link = get_comment_author_link( $comment );
+						$comment_author_url  = get_comment_author_url( $comment );
+						$comment_author      = get_comment_author( $comment );
+						$avatar              = get_avatar( $comment, $args['avatar_size'] );
 
-							/*
-							 * Using the `check` icon instead of `check_circle`, since we can't add a
-							 * fill color to the inner check shape when in circle form.
-							 */
-							if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
-								printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+						if ( 0 != $args['avatar_size'] ) {
+							if ( empty( $comment_author_url ) ) {
+								echo $avatar;
+							} else {
+								printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url );
+								echo $avatar;
 							}
+						}
 
-							printf(
-								/* translators: %s: comment author link */
-								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
-								sprintf( '<span class="fn">%s</span>', $comment_author )
-							);
+						/*
+						 * Using the `check` icon instead of `check_circle`, since we can't add a
+						 * fill color to the inner check shape when in circle form.
+						 */
+						if ( twentynineteen_is_comment_by_post_author( $comment ) ) {
+							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', twentynineteen_get_icon_svg( 'check', 24 ) );
+						}
 
-							if ( ! empty( $comment_author_url ) ) {
-								echo '</a>';
-							}
+						printf(
+							/* translators: %s: comment author link */
+							__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+							sprintf( '<span class="fn">%s</span>', $comment_author )
+						);
+
+						if ( ! empty( $comment_author_url ) ) {
+							echo '</a>';
+						}
 						?>
 					</div><!-- .comment-author -->
 
