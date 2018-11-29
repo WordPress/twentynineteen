@@ -18,4 +18,5 @@ Our 2019 default theme is designed to show off the power of the block editor. It
 * Initial Release
 
 == Resources ==
-* normalize.css, © 2012-2016 Nicolas Gallagher and Jonathan Neal, MIT
+* normalize.css, © 2012-2018 Nicolas Gallagher and Jonathan Neal, MIT
+* Underscores, © 2012-2018 Automattic, Inc., GNU GPL v2 or later
