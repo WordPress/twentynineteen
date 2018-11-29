@@ -57,8 +57,15 @@ class TwentyNineteen_Walker_Comment extends Walker_Comment {
 
 						printf(
 							/* translators: %s: comment author link */
-							__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
-							sprintf( '<span class="fn">%s</span>', $comment_author )
+							wp_kses(
+								__( '%s <span class="screen-reader-text says">says:</span>', 'twentynineteen' ),
+								array(
+									'span' => array(
+										'class' => array(),
+									),
+								)
+							),
+							'<b class="fn">' . get_comment_author_link( $comment ) . '</b>'
 						);
 
 						if ( ! empty( $comment_author_url ) ) {
