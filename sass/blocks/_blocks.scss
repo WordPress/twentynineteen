@@ -206,9 +206,9 @@
 		&.is-style-outline .wp-block-button__link,
 		&.is-style-outline .wp-block-button__link:focus,
 		&.is-style-outline .wp-block-button__link:active {
-			@include button-all-transition;	
+			@include button-all-transition;
 			border-width: 2px;
-			border-style: solid;		
+			border-style: solid;
 
 			&:not(.has-background) {
 				background: transparent;
@@ -249,6 +249,14 @@
 			a {
 				text-decoration: none;
 			}
+		}
+	}
+
+	.wp-block-archives,
+	.wp-block-categories {
+
+		&.aligncenter {
+			text-align: center;
 		}
 	}
 
@@ -330,6 +338,7 @@
 			margin-top: calc(4 * #{ $size__spacing-unit});
 			margin-bottom: calc(4.33 * #{ $size__spacing-unit});
 			margin-right: 0;
+			padding-left: 0;
 		}
 
 		p {
@@ -412,6 +421,7 @@
 				margin-left: $size__spacing-unit;
 
 				&.has-text-color p,
+				&.has-text-color a,
 				&.has-primary-color,
 				&.has-secondary-color,
 				&.has-dark-gray-color,
@@ -589,6 +599,10 @@
 		.blocks-gallery-item:last-child {
 			margin-bottom: 16px;
 		}
+
+		figcaption a {
+			color: #fff;
+		}
 	}
 
 	//! Captions
@@ -722,6 +736,10 @@
 			padding-right: $size__spacing-unit;
 		}
 
+		@include media(mobile) {
+			flex-wrap: nowrap;
+		}
+
 		@include media(tablet) {
 
 			.wp-block-column > * {
@@ -799,7 +817,7 @@
 	.has-secondary-background-color,
 	.has-dark-gray-background-color,
 	.has-light-gray-background-color {
-		
+
 		// Use white text against these backgrounds by default.
 		color: $color__background-body;
 

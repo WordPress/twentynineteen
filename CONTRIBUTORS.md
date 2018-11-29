@@ -7,7 +7,7 @@ Version 1.0:
 | @allancole | @allancole |
 | @karmatosed | @karmatosed |
 | @kjellr | @kjellr |
-| @yingling017 | @yingling017 |
+| @yingles | @yingling017 |
 | @mrasharirfan | @mrasharirfan |
 | @milana_cap | @milana_cap |
 | @fabiankaegy | @fabiankaegy |
@@ -38,7 +38,7 @@ Version 1.0:
 | @iamchetanp  | @chetan200891 |
 | @grappler | @grapplerulrich |
 | @ocean90 | @ocean90 |
-| @joshfeck | |
+| @joshfeck | @builtbynorthby |
 | @frankew | |
 | @abdulwahab610 | @AbdulWahab610 |
 | @mendezcode | @mendezcode |
@@ -61,10 +61,8 @@ Version 1.0:
 | @burhandodhy | @burhandodhy |
 | @crunnells | @crunnells |
 | @aryaprakasa | @aprakasa |
-| @tlxo | |
 | @themeroots | @themeroots |
 | @whizbangik | @imonly_ik |
-| @yingles | @yingling017 |
 | @tlxo | @tlxo |
 | @youthkee | @youthkee |
 | @brentswisher | |
@@ -73,3 +71,7 @@ Version 1.0:
 | @desi-developer | @desideveloper |
 | @2ndkauboy | @Kau-Boy |
 | @mor10 | @mor10 |
+| @mikeyarce | @mikeyarce |
+| @dingo-d | @dingo_bastard |
+| @mrxkon | @xkon |
+| @richtabor | @richtabor |
