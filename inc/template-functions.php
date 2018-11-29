@@ -71,25 +71,25 @@ add_filter( 'comment_form_defaults', 'twentynineteen_comment_form_defaults' );
  */
 function twentynineteen_get_the_archive_title() {
 	if ( is_category() ) {
-		$title = esc_html__( 'Category Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
+		$title = __( 'Category Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
-		$title = esc_html__( 'Tag Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
+		$title = __( 'Tag Archives: ', 'twentynineteen' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_author() ) {
-		$title = esc_html__( 'Author Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
+		$title = __( 'Author Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
 	} elseif ( is_year() ) {
-		$title = esc_html__( 'Yearly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) ) . '</span>';
+		$title = __( 'Yearly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_month() ) {
-		$title = esc_html__( 'Monthly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) ) . '</span>';
+		$title = __( 'Monthly Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentynineteen' ) ) . '</span>';
 	} elseif ( is_day() ) {
-		$title = esc_html__( 'Daily Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date() . '</span>';
+		$title = __( 'Daily Archives: ', 'twentynineteen' ) . '<span class="page-description">' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
-		$title = esc_html__( 'Post Type Archives: ', 'twentynineteen' ) . '<span class="page-description">' . post_type_archive_title( '', false ) . '</span>';
+		$title = __( 'Post Type Archives: ', 'twentynineteen' ) . '<span class="page-description">' . post_type_archive_title( '', false ) . '</span>';
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: %s: Taxonomy singular name */
 		$title = sprintf( esc_html__( '%s Archives:', 'twentynineteen' ), $tax->labels->singular_name );
 	} else {
-		$title = esc_html__( 'Archives:', 'twentynineteen' );
+		$title = __( 'Archives:', 'twentynineteen' );
 	}
 	return $title;
 }
@@ -106,10 +106,7 @@ function twentynineteen_can_show_post_thumbnail() {
  * Returns true if image filters are enabled on the theme options.
  */
 function twentynineteen_image_filters_enabled() {
-	if ( 'inactive' === get_theme_mod( 'image_filter' ) ) {
-		return false;
-	}
-	return true;
+	return 0 !== get_theme_mod( 'image_filter', 1 );
 }
 
 /**
@@ -123,7 +120,7 @@ function twentynineteen_image_filters_enabled() {
 function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
 
 	if ( is_admin() ) {
-		return;
+		return $attr;
 	}
 
 	if ( ! is_singular() ) {
@@ -205,19 +202,19 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 
 	if ( 'menu-1' === $args->theme_location ) :
 
-		$nav_menu .= '<div class="main-menu-more"	>';
+		$nav_menu .= '<div class="main-menu-more">';
 		$nav_menu .= '<ul class="main-menu" tabindex="0">';
 		$nav_menu .= '<li class="menu-item menu-item-has-children">';
-		$nav_menu .= '<a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">' . esc_html( 'More', 'twentynineteen' ) . '</a>';
-		$nav_menu .= '<span class="submenu-expand main-menu-more-toggle" tabindex="-1">';
+		$nav_menu .= '<a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">' . esc_html__( 'More', 'twentynineteen' ) . '</a>';
+		$nav_menu .= '<span class="submenu-expand main-menu-more-toggle is-empty" tabindex="-1">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'arrow_drop_down_ellipsis' );
 		$nav_menu .= '</span>';
-		$nav_menu .= '<ul class="sub-menu hidden-links is-hidden">';
+		$nav_menu .= '<ul class="sub-menu hidden-links">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
-		$nav_menu .= '<a class="menu-item-link-return" id="menu-item-link-return-1877" href="#menu-item-link-1877" onclick="event.preventDefault();" tabindex="-1">';
+		$nav_menu .= '<span class="menu-item-link-return">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'chevron_left' );
 		$nav_menu .= esc_html__( 'Back', 'twentynineteen' );
-		$nav_menu .= '</a>';
+		$nav_menu .= '</span>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</li>';
@@ -418,8 +415,7 @@ function twentynineteen_hsl_hex( $h, $s, $l, $to_hex = true ) {
 
 		return "#$r$g$b";
 
-	} else {
-
-		return "rgb($r, $g, $b)";
 	}
+
+	return "rgb($r, $g, $b)";
 }
