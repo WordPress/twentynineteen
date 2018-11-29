@@ -62,6 +62,6 @@
 .site-description + .social-navigation {
 
 	@include media(tablet) {
-		margin-top: calc(#{$size__spacing-unit} / 5 );
+		margin-top: calc(#{$size__spacing-unit} / 5);
 	}
 }
