@@ -497,12 +497,34 @@ figcaption,
 		width: calc(4 * (100vw / 12));
 		max-width: 50%;
 
-		.wp-block-pullquote:not(.is-style-solid-color) {
+		.wp-block-pullquote {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.wp-block-pullquote {
 			padding: 0;
 		}
 
 		.wp-block-pullquote.is-style-solid-color {
-			padding: 1em;
+
+			blockquote {
+				width: 100%;
+				max-width: 100%;
+				padding: calc(1.375 * #{$size__spacing-unit});
+
+				@include media(tablet) {
+					padding: calc(2.75 * #{$size__spacing-unit}) calc(2.75 * #{$size__spacing-unit}) calc(3.125 * #{$size__spacing-unit});
+				}
+			}
+		}
+	}
+
+	blockquote {
+		margin: $size__spacing-unit 0;
+
+		p:first-child {
+			margin-top: 0;
 		}
 	}
 
