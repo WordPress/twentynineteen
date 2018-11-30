@@ -4019,7 +4019,7 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
   .entry .entry-content .wp-block-cover.alignleft,
   .entry .entry-content .wp-block-cover.alignright {
-    padding: 1rem;
+    padding: 1rem calc(2 * 1rem);
   }
 }
 
