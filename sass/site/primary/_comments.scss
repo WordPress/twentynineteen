@@ -15,7 +15,7 @@
 		margin: calc(3 * #{$size__spacing-unit}) $size__site-margins;
 	}
 
-	* {
+	& > * {
 		margin-top: calc(2 * #{$size__spacing-unit});
 		margin-bottom: calc(2 * #{$size__spacing-unit});
 
