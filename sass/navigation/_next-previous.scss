@@ -154,7 +154,7 @@
 			.prev,
 			.next {
 
-				* {
+				& > * {
 					display: inline-block;
 					vertical-align: text-bottom;
 				}
