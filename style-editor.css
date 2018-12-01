@@ -11,7 +11,7 @@ Twenty Nineteen Editor Styles
  * character instead.
  */
 @font-face {
-  font-family: 'NonBreakingSpaceOverwrite';
+  font-family: 'NonBreakingSpaceOverride';
   src: local("Georgia");
   unicode-range: U+00A0;
 }
