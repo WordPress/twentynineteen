@@ -159,7 +159,7 @@ function twentynineteen_calculate_image_sizes_attr( $sizes, $size, $image_src, $
 	}
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'twentynineteen_calculate_image_sizes_attr', 10, 5 );
+add_filter( 'wp_calculate_image_sizes', 'twentynineteen_calculate_image_sizes_attr', 10, 6 );
 
 /**
  * Returns the size for avatars used in the theme.
