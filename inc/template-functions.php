@@ -132,6 +132,36 @@ function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
 add_filter( 'wp_get_attachment_image_attributes', 'twentynineteen_post_thumbnail_sizes_attr', 10, 1 );
 
 /**
+ * Add custom sizes attribute to responsive image functionality for post content images.
+ *
+ * @origin Twenty Nineteen 1.0
+ *
+ * @param string       $sizes         A source size value for use in a 'sizes' attribute.
+ * @param array|string $size          Requested size. Image size or array of width and height values
+ *                                    in pixels (in that order).
+ * @param string|null  $image_src     The URL to the image file or null.
+ * @param array|null   $image_meta    The image meta data as returned by wp_get_attachment_metadata() or null.
+ * @param int          $attachment_id Image attachment ID of the original image or 0.
+ * @param array        $block_attr    Attributes from the parent block.
+ */
+function twentynineteen_calculate_image_sizes_attr( $sizes, $size, $image_src, $image_meta, $attachment_id, $block_attr ) {
+	if ( is_admin() ) {
+		return $sizes;
+	}
+
+	$align = $block_attr[align];
+	if ( '' === $align ) {
+		$sizes = '(min-width: 768px) calc(8 * (100vw / 12) - 28px), (min-width: 1168) calc(6 * 100vw/12) - 28px), calc(100% - (2 * 1rem))';
+	} elseif ( 'wide' === $align ) {
+		$sizes = '(min-width: 768px) 80%, calc(100% - (2 * 1rem))';
+	} elseif ( 'full' === $align ) {
+		$sizes = '100vw';
+	}
+	return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'twentynineteen_calculate_image_sizes_attr', 10, 5 );
+
+/**
  * Returns the size for avatars used in the theme.
  */
 function twentynineteen_get_avatar_size() {
