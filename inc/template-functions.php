@@ -141,16 +141,20 @@ add_filter( 'wp_get_attachment_image_attributes', 'twentynineteen_post_thumbnail
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function twentynineteen_calculate_image_sizes_attr( $sizes ) {
+function twentynineteen_calculate_image_sizes_attr( $sizes, $size ) {
 	if ( is_admin() ) {
 		return $sizes;
 	}
 
-	$sizes = '(min-width: 768px) calc(8 * (100vw / 12) - 28px), (min-width: 1168) calc(6 * 100vw/12) - 28px), calc(100% - (2 * 1rem))';
+	$width = $size[0];
+
+	if ( 767 <= $width ) {
+		$sizes = '(min-width: 768px) calc(8 * (100vw / 12) - 28px), (min-width: 1168) calc(6 * 100vw/12) - 28px), calc(100% - (2 * 1rem))';
+	}
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'twentynineteen_calculate_image_sizes_attr', 10, 1 );
+add_filter( 'wp_calculate_image_sizes', 'twentynineteen_calculate_image_sizes_attr', 10, 2 );
 
 /**
  * Returns the size for avatars used in the theme.
