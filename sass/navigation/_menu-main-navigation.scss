@@ -54,7 +54,7 @@
 					margin-right: #{0.125 * $size__spacing-unit};
 				}
 
-				a,
+				& > a,
 				.menu-item-has-children > a {
 
 					&::after {
