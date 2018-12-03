@@ -3942,17 +3942,37 @@ body.page .main-navigation {
   display: block;
 }
 
+.entry .entry-content .wp-block-image .aligncenter {
+  margin: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .entry .entry-content .wp-block-image .aligncenter {
-    position: relative;
-    left: calc( calc(8 * (100vw / 12) - 28px) / 2);
-    transform: translateX(-50%);
+    max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
   .entry .entry-content .wp-block-image .aligncenter {
-    left: calc( calc(6 * (100vw / 12) - 28px) / 2);
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    width: calc(8 * (100vw / 12) - 28px);
+  }
+  .entry .entry-content .wp-block-image .aligncenter img {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry .entry-content .wp-block-image .aligncenter {
+    width: calc(6 * (100vw / 12) - 28px);
+  }
+  .entry .entry-content .wp-block-image .aligncenter img {
+    margin: 0 auto;
   }
 }
 

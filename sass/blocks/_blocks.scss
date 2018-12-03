@@ -509,15 +509,24 @@
 		}
 
 		.aligncenter {
+			
+			@include postContentMaxWidth();
 
 			@include media(tablet) {
-				position: relative;
-				right: calc( #{$size__site-tablet-content} / 2 );
-				transform: translateX( 50% );
+				margin: 0;
+				width: $size__site-tablet-content;
+
+				img {
+					margin: 0 auto;
+				}
 			}
 
 			@include media(desktop) {
-				right: calc( #{$size__site-desktop-content} / 2 );
+				width: $size__site-desktop-content;
+
+				img {
+					margin: 0 auto;
+				}
 			}
 		}
 
