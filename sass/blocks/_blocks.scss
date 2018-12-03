@@ -502,20 +502,31 @@
 
 	//! Image
 	.wp-block-image {
+		max-width: 100%;
 
 		img {
 			display: block;
 		}
 
-		&.alignleft,
-		&.alignright {
-			max-width: 100%;
+		.aligncenter {
+
+			@include media(tablet) {
+				position: relative;
+				right: calc( #{$size__site-tablet-content} / 2 );
+				transform: translateX( 50% );
+			}
+
+			@include media(desktop) {
+				right: calc( #{$size__site-desktop-content} / 2 );
+			}
 		}
 
 		&.alignfull img {
 			width: 100vw;
+			max-width: calc( 100% + (2 * #{$size__spacing-unit}));
 
 			@include media(tablet) {
+				max-width: calc( 125% + 150px );
 				margin-left: auto;
 				margin-right: auto;
 			}
