@@ -53,9 +53,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+@font-face {
+  font-family: 'NonBreakingSpaceOverride';
+  src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMoAA0AAAAACDQAAALTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACCahEICjx3CywAATYCJANUBCAFhiEHgWwbXQfILgpsY+rQRRARwyAs6uL7pxzYhxEE+32b3aeHmifR6tklkS9hiZA0ewkqGRJE+H7/+6378ASViK/PGeavqJyOzsceKi1s3BCiQsiOdn1r/RBgIJYEgCUhbm/8/8/h4saPssnTNkkiWUBrTRtjmQSajw3Ui3pZ3LYDPD+XG2C3JA/yKAS8/rU5eNfuGqRf4eNNgV4YAlIIgxglEkWe6FYpq10+wi3g+/nUgvgPFczNrz/RsTgVm/zfbPuHZlsuQECxuyqBcQwKFBjFgKO8AqP4bAN9tFJtnM9xPcbNjeXS/x1wY/xU52f5W/X1+9cnH4YwKIaoRRAkUkj/YlAAeF/624foiIDBgBmgQBeGAyhBljUPZUm/l2dTvmpqcBDUOHdbPZWd8JsBAsGr4w8/EDn82/bUPx4eh0YNrQTBuHO2FjQEAGBwK0DeI37DpQVqdERS4gZBhpeUhWCfLFz7J99aEBgsJCHvUGAdAPp4IADDCAPCEFMGpMZ9AQpTfQtQGhLbGVBZFV8BaqNyP68oTZgHNj3M8kBPfXTTC9t90UuzYhy9ciH0grVlOcqyCytisvbsERsEYztiznR0WCrmTksJwbSNK6fd1Rvr25I9oLvctUoEbNOmXJbqgYgPXEHJ82IUsrCnpkxh23F1rfZ2zcRnJYoXtauB3VTFkFXQg3uoZYD5qE0kdjDtoDoF1h2bulGmev5HbYhbrjtohQSRI4aNOkffIcT+d3v6atpaYh3JvPoQsztCcqvaBkppDSPcQ3bw3KaCBo1f5CJWTZEgW3LjLofYg51MaVezrx8xZitYbQ9KYeoRaqQdVLwSEfrKXLK1otCWOKNdR/YwYAfon5Yk8O2MJfSD10dPGA5PIJJQMkah0ugMJiv6x4Dm7LEa8xnrRGGGLAg4sAlbsA07sAt76DOsXKO3hIjtIlpnnFrt1qW4kh6NhS83P/6HB/fl1SMAAA==) format("woff2"), url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAUQAA0AAAAACDQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAE9AAAABwAAAAchf5yU0dERUYAAATYAAAAHAAAAB4AJwAbT1MvMgAAAaAAAABJAAAAYJAcgU5jbWFwAAACIAAAAF4AAAFqUUxBZ2dhc3AAAATQAAAACAAAAAgAAAAQZ2x5ZgAAApAAAAAyAAAAPL0n8y9oZWFkAAABMAAAADAAAAA2Fi93Z2hoZWEAAAFgAAAAHQAAACQOSgWaaG10eAAAAewAAAAzAAAAVC7TAQBsb2NhAAACgAAAABAAAAAsAOQBAm1heHAAAAGAAAAAHQAAACAAWQALbmFtZQAAAsQAAAF6AAADIYvD/Adwb3N0AAAEQAAAAI4AAADsapk2o3jaY2BkYGAA4ov5mwzj+W2+MnCzXwCKMNzgCBSB0LfbQDQ7AxuI4mBgAlEAFKQIRHjaY2BkYGD3+NvCwMDBAALsDAyMDKhAFAA3+wH3AAAAeNpjYGRgYBBl4GBgYgABEMnIABJzAPMZAAVmAGUAAAB42mNgZlJhnMDAysDCKsKygYGBYRqEZtrDYMT4D8gHSmEHjgUFOQwODAqqf9g9/rYwMLB7MNUAhRlBcsxBrMlASoGBEQAj8QtyAAAAeNrjYGBkAAGmWQwMjO8gmBnIZ2NA0ExAzNjAAFYJVn0ASBsD6VAIDZb7AtELAgANIgb9AHjaY2BgYGaAYBkGRgYQSAHyGMF8FgYPIM3HwMHAxMDGoMCwQIFLQV8hXvXP//9AcRCfAcb///h/ygPW+w/vb7olBjUHCTCyMcAFGZmABBO6AogThgZgIUsXAEDcEzcAAHjaY2BgECMCyoEgACZaAed42mNgYmRgYGBnYGNgYAZSDJqMgorCgoqCjECRXwwNrCAKSP5mAAFGBiRgyAAAi/YFBQAAeNqtkc1OwkAUhU/5M25cEhcsZick0AwlBJq6MWwgJkAgYV/KAA2lJeUn+hY+gktXvpKv4dLTMqKycGHsTZNv7px7z50ZAFd4hYHjdw1Ls4EiHjVncIFnzVnc4F1zDkWjrzmPW+NNcwGlzIRKI3fJlUyrEjZQxb3mDH2fNGfRx4vmHKqG0JzHg6E0F9DOlFBGBxUI1GEzLNT4S0aLuTtsGAEUuYcQHkyg3KmIum1bNUvKlrjbbAIleqHHnS4iSudpQcySMYtdFiXlAxzSbAwfMxK6kZoHKhbjjespMTioOPZnzI+4ucCeTVyKMVKLfeAS6vSWaTinuZwzyy/Dc7vaed+6KaV0kukdPUk6yOcctZPvvxxqksq2lEW8RvHjMEO2FCl/zy6p3NEm0R9OFSafJdldc4QVeyaaObMBO0/5cCaa6d9Ggyubxire+lEojscdjoWUR1xGOy8KD8mG2ZLO2l2paDc3A39qmU2z2W5YNv5+u79e6QfGJY/hAAB42m3NywrCMBQE0DupWp/1AYI7/6DEaLQu66Mrd35BKUWKJSlFv1+rue4cGM7shgR981qSon+ZNwUJ8iDgoYU2OvDRRQ99DDDECAHGmGCKmf80hZSx/Kik/LliFbtmN6xmt+yOjdg9GztV4tROnRwX/Bsaaw51nt4Lc7tWaZYHp/MlzKx51LZs5htNri+2AAAAAQAB//8AD3jaY2BkYGDgAWIxIGZiYARCESBmAfMYAAR6AEMAAAABAAAAANXtRbgAAAAA2AhRFAAAAADYCNuG) format("woff");
+}
+
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* Nested sub-menu padding: 10 levels deep */
 /* Normalize */
@@ -400,53 +413,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #111;
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.8;
   margin: 0;
   text-rendering: optimizeLegibility;
-}
-
-/* non-latin */
-body:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-body:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-body:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-body:lang(zh-cmn-Hans-CN) {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-body:lang(bn-BD, hi-IN, mr, ne-NP) {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-body:lang(gu) {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-body:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-body:lang(ja) {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-body:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-body:lang(th) {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 button,
@@ -455,91 +427,10 @@ select,
 optgroup,
 textarea {
   color: #111;
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 400;
   line-height: 1.8;
   text-rendering: optimizeLegibility;
-}
-
-/* non-latin */
-button:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
-input:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
-select:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
-optgroup:lang(ar, ary, azb, ckb, fa-IR, haz, ps),
-textarea:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-button:lang(zh-cmn-Hant-HK),
-input:lang(zh-cmn-Hant-HK),
-select:lang(zh-cmn-Hant-HK),
-optgroup:lang(zh-cmn-Hant-HK),
-textarea:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-button:lang(zh-cmn-Hant-TW),
-input:lang(zh-cmn-Hant-TW),
-select:lang(zh-cmn-Hant-TW),
-optgroup:lang(zh-cmn-Hant-TW),
-textarea:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-button:lang(zh-cmn-Hans-CN),
-input:lang(zh-cmn-Hans-CN),
-select:lang(zh-cmn-Hans-CN),
-optgroup:lang(zh-cmn-Hans-CN),
-textarea:lang(zh-cmn-Hans-CN) {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-button:lang(bn-BD, hi-IN, mr, ne-NP),
-input:lang(bn-BD, hi-IN, mr, ne-NP),
-select:lang(bn-BD, hi-IN, mr, ne-NP),
-optgroup:lang(bn-BD, hi-IN, mr, ne-NP),
-textarea:lang(bn-BD, hi-IN, mr, ne-NP) {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-button:lang(gu),
-input:lang(gu),
-select:lang(gu),
-optgroup:lang(gu),
-textarea:lang(gu) {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-button:lang(he-IL),
-input:lang(he-IL),
-select:lang(he-IL),
-optgroup:lang(he-IL),
-textarea:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-button:lang(ja),
-input:lang(ja),
-select:lang(ja),
-optgroup:lang(ja),
-textarea:lang(ja) {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-button:lang(kr-KR),
-input:lang(kr-KR),
-select:lang(kr-KR),
-optgroup:lang(kr-KR),
-textarea:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-button:lang(th),
-input:lang(th),
-select:lang(th),
-optgroup:lang(th),
-textarea:lang(th) {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .author-description .author-link,
@@ -572,246 +463,6 @@ h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-.author-description .author-link:lang(zh-cmn-Hant-HK),
-.comment-metadata:lang(zh-cmn-Hant-HK),
-.comment-reply-link:lang(zh-cmn-Hant-HK),
-.comments-title:lang(zh-cmn-Hant-HK),
-.comment-author .fn:lang(zh-cmn-Hant-HK),
-.discussion-meta-info:lang(zh-cmn-Hant-HK),
-.entry-meta:lang(zh-cmn-Hant-HK),
-.entry-footer:lang(zh-cmn-Hant-HK),
-.main-navigation:lang(zh-cmn-Hant-HK),
-.no-comments:lang(zh-cmn-Hant-HK),
-.not-found .page-title:lang(zh-cmn-Hant-HK),
-.error-404 .page-title:lang(zh-cmn-Hant-HK),
-.post-navigation .post-title:lang(zh-cmn-Hant-HK),
-.page-links:lang(zh-cmn-Hant-HK),
-.page-description:lang(zh-cmn-Hant-HK),
-.pagination .nav-links:lang(zh-cmn-Hant-HK),
-.sticky-post:lang(zh-cmn-Hant-HK),
-.site-title:lang(zh-cmn-Hant-HK),
-.site-info:lang(zh-cmn-Hant-HK),
-#cancel-comment-reply-link:lang(zh-cmn-Hant-HK),
-img:lang(zh-cmn-Hant-HK):after,
-h1:lang(zh-cmn-Hant-HK),
-h2:lang(zh-cmn-Hant-HK),
-h3:lang(zh-cmn-Hant-HK),
-h4:lang(zh-cmn-Hant-HK),
-h5:lang(zh-cmn-Hant-HK),
-h6:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.author-description .author-link:lang(zh-cmn-Hant-TW),
-.comment-metadata:lang(zh-cmn-Hant-TW),
-.comment-reply-link:lang(zh-cmn-Hant-TW),
-.comments-title:lang(zh-cmn-Hant-TW),
-.comment-author .fn:lang(zh-cmn-Hant-TW),
-.discussion-meta-info:lang(zh-cmn-Hant-TW),
-.entry-meta:lang(zh-cmn-Hant-TW),
-.entry-footer:lang(zh-cmn-Hant-TW),
-.main-navigation:lang(zh-cmn-Hant-TW),
-.no-comments:lang(zh-cmn-Hant-TW),
-.not-found .page-title:lang(zh-cmn-Hant-TW),
-.error-404 .page-title:lang(zh-cmn-Hant-TW),
-.post-navigation .post-title:lang(zh-cmn-Hant-TW),
-.page-links:lang(zh-cmn-Hant-TW),
-.page-description:lang(zh-cmn-Hant-TW),
-.pagination .nav-links:lang(zh-cmn-Hant-TW),
-.sticky-post:lang(zh-cmn-Hant-TW),
-.site-title:lang(zh-cmn-Hant-TW),
-.site-info:lang(zh-cmn-Hant-TW),
-#cancel-comment-reply-link:lang(zh-cmn-Hant-TW),
-img:lang(zh-cmn-Hant-TW):after,
-h1:lang(zh-cmn-Hant-TW),
-h2:lang(zh-cmn-Hant-TW),
-h3:lang(zh-cmn-Hant-TW),
-h4:lang(zh-cmn-Hant-TW),
-h5:lang(zh-cmn-Hant-TW),
-h6:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.author-description .author-link:lang(zh-cmn-Hans-CN),
-.comment-metadata:lang(zh-cmn-Hans-CN),
-.comment-reply-link:lang(zh-cmn-Hans-CN),
-.comments-title:lang(zh-cmn-Hans-CN),
-.comment-author .fn:lang(zh-cmn-Hans-CN),
-.discussion-meta-info:lang(zh-cmn-Hans-CN),
-.entry-meta:lang(zh-cmn-Hans-CN),
-.entry-footer:lang(zh-cmn-Hans-CN),
-.main-navigation:lang(zh-cmn-Hans-CN),
-.no-comments:lang(zh-cmn-Hans-CN),
-.not-found .page-title:lang(zh-cmn-Hans-CN),
-.error-404 .page-title:lang(zh-cmn-Hans-CN),
-.post-navigation .post-title:lang(zh-cmn-Hans-CN),
-.page-links:lang(zh-cmn-Hans-CN),
-.page-description:lang(zh-cmn-Hans-CN),
-.pagination .nav-links:lang(zh-cmn-Hans-CN),
-.sticky-post:lang(zh-cmn-Hans-CN),
-.site-title:lang(zh-cmn-Hans-CN),
-.site-info:lang(zh-cmn-Hans-CN),
-#cancel-comment-reply-link:lang(zh-cmn-Hans-CN),
-img:lang(zh-cmn-Hans-CN):after,
-h1:lang(zh-cmn-Hans-CN),
-h2:lang(zh-cmn-Hans-CN),
-h3:lang(zh-cmn-Hans-CN),
-h4:lang(zh-cmn-Hans-CN),
-h5:lang(zh-cmn-Hans-CN),
-h6:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.author-description .author-link:lang(he-IL),
-.comment-metadata:lang(he-IL),
-.comment-reply-link:lang(he-IL),
-.comments-title:lang(he-IL),
-.comment-author .fn:lang(he-IL),
-.discussion-meta-info:lang(he-IL),
-.entry-meta:lang(he-IL),
-.entry-footer:lang(he-IL),
-.main-navigation:lang(he-IL),
-.no-comments:lang(he-IL),
-.not-found .page-title:lang(he-IL),
-.error-404 .page-title:lang(he-IL),
-.post-navigation .post-title:lang(he-IL),
-.page-links:lang(he-IL),
-.page-description:lang(he-IL),
-.pagination .nav-links:lang(he-IL),
-.sticky-post:lang(he-IL),
-.site-title:lang(he-IL),
-.site-info:lang(he-IL),
-#cancel-comment-reply-link:lang(he-IL),
-img:lang(he-IL):after,
-h1:lang(he-IL),
-h2:lang(he-IL),
-h3:lang(he-IL),
-h4:lang(he-IL),
-h5:lang(he-IL),
-h6:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.author-description .author-link:lang(ja),
-.comment-metadata:lang(ja),
-.comment-reply-link:lang(ja),
-.comments-title:lang(ja),
-.comment-author .fn:lang(ja),
-.discussion-meta-info:lang(ja),
-.entry-meta:lang(ja),
-.entry-footer:lang(ja),
-.main-navigation:lang(ja),
-.no-comments:lang(ja),
-.not-found .page-title:lang(ja),
-.error-404 .page-title:lang(ja),
-.post-navigation .post-title:lang(ja),
-.page-links:lang(ja),
-.page-description:lang(ja),
-.pagination .nav-links:lang(ja),
-.sticky-post:lang(ja),
-.site-title:lang(ja),
-.site-info:lang(ja),
-#cancel-comment-reply-link:lang(ja),
-img:lang(ja):after,
-h1:lang(ja),
-h2:lang(ja),
-h3:lang(ja),
-h4:lang(ja),
-h5:lang(ja),
-h6:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.author-description .author-link:lang(ko-KR),
-.comment-metadata:lang(ko-KR),
-.comment-reply-link:lang(ko-KR),
-.comments-title:lang(ko-KR),
-.comment-author .fn:lang(ko-KR),
-.discussion-meta-info:lang(ko-KR),
-.entry-meta:lang(ko-KR),
-.entry-footer:lang(ko-KR),
-.main-navigation:lang(ko-KR),
-.no-comments:lang(ko-KR),
-.not-found .page-title:lang(ko-KR),
-.error-404 .page-title:lang(ko-KR),
-.post-navigation .post-title:lang(ko-KR),
-.page-links:lang(ko-KR),
-.page-description:lang(ko-KR),
-.pagination .nav-links:lang(ko-KR),
-.sticky-post:lang(ko-KR),
-.site-title:lang(ko-KR),
-.site-info:lang(ko-KR),
-#cancel-comment-reply-link:lang(ko-KR),
-img:lang(ko-KR):after,
-h1:lang(ko-KR),
-h2:lang(ko-KR),
-h3:lang(ko-KR),
-h4:lang(ko-KR),
-h5:lang(ko-KR),
-h6:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.author-description .author-link:lang(th),
-.comment-metadata:lang(th),
-.comment-reply-link:lang(th),
-.comments-title:lang(th),
-.comment-author .fn:lang(th),
-.discussion-meta-info:lang(th),
-.entry-meta:lang(th),
-.entry-footer:lang(th),
-.main-navigation:lang(th),
-.no-comments:lang(th),
-.not-found .page-title:lang(th),
-.error-404 .page-title:lang(th),
-.post-navigation .post-title:lang(th),
-.page-links:lang(th),
-.page-description:lang(th),
-.pagination .nav-links:lang(th),
-.sticky-post:lang(th),
-.site-title:lang(th),
-.site-info:lang(th),
-#cancel-comment-reply-link:lang(th),
-img:lang(th):after,
-h1:lang(th),
-h2:lang(th),
-h3:lang(th),
-h4:lang(th),
-h5:lang(th),
-h6:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.author-description .author-link:lang(vi),
-.comment-metadata:lang(vi),
-.comment-reply-link:lang(vi),
-.comments-title:lang(vi),
-.comment-author .fn:lang(vi),
-.discussion-meta-info:lang(vi),
-.entry-meta:lang(vi),
-.entry-footer:lang(vi),
-.main-navigation:lang(vi),
-.no-comments:lang(vi),
-.not-found .page-title:lang(vi),
-.error-404 .page-title:lang(vi),
-.post-navigation .post-title:lang(vi),
-.page-links:lang(vi),
-.page-description:lang(vi),
-.pagination .nav-links:lang(vi),
-.sticky-post:lang(vi),
-.site-title:lang(vi),
-.site-info:lang(vi),
-#cancel-comment-reply-link:lang(vi),
-img:lang(vi):after,
-h1:lang(vi),
-h2:lang(vi),
-h3:lang(vi),
-h4:lang(vi),
-h5:lang(vi),
-h6:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .main-navigation,
 .page-description,
 .author-description .author-link,
@@ -837,47 +488,7 @@ h6 {
 }
 
 .page-title {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-}
-
-.page-title:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.page-title:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.page-title:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.page-title:lang(zh-cmn-Hans-CN) {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.page-title:lang(bn-BD, hi-IN, mr, ne-NP) {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.page-title:lang(gu) {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.page-title:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.page-title:lang(ja) {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.page-title:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.page-title:lang(th) {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 }
 
 .site-branding,
@@ -1007,38 +618,6 @@ blockquote cite {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-blockquote cite:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-blockquote cite:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-blockquote cite:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-blockquote cite:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-blockquote cite:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-blockquote cite:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-blockquote cite:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-blockquote cite:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 pre {
   font-size: 0.88889em;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -1079,6 +658,89 @@ a:hover {
 
 a:focus {
   text-decoration: underline;
+}
+
+/* Arabic */
+html[lang="ar"] .site *,
+html[lang="ary"] .site *,
+html[lang="azb"] .site *,
+html[lang="ckb"] .site *,
+html[lang="fa-IR"] .site *,
+html[lang="haz"] .site *,
+html[lang="ps"] .site * {
+  font-family: Tahoma, Arial, sans-serif !important;
+}
+
+/* Cyrillic */
+html[lang="be"] .site *,
+html[lang="bg-BG"] .site *,
+html[lang="kk"] .site *,
+html[lang="mk-MK"] .site *,
+html[lang="mn"] .site *,
+html[lang="ru-RU"] .site *,
+html[lang="sah"] .site *,
+html[lang="sr-RS"] .site *,
+html[lang="tt-RU"] .site *,
+html[lang="uk"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Chinese (Hong Kong) */
+html[lang="zh-HK"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (Taiwan) */
+html[lang="zh-TW"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Chinese (China) */
+html[lang="zh-CN"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+}
+
+/* Devanagari */
+html[lang="bn-BD"] .site *,
+html[lang="hi-IN"] .site *,
+html[lang="mr"] .site *,
+html[lang="ne-NP"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Greek */
+html[lang="el"] .site * {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* Gujarati */
+html[lang="gu"] .site * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Hebrew */
+html[lang="he-IL"] .site * {
+  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+}
+
+/* Japanese */
+html[lang="ja"] .site * {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
+}
+
+/* Korean */
+html[lang="ko-KR"] .site * {
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+}
+
+/* Thai */
+html[lang="th"] .site * {
+  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+}
+
+/* Vietnamese */
+html[lang="vi"] .site * {
+  font-family: 'Libre Franklin', sans-serif !important;
 }
 
 /* Elements */
@@ -1220,39 +882,6 @@ table th {
   word-break: break-all;
 }
 
-/* non-latin */
-table:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-table:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-table:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-table:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-table:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-table:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-table:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-table:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 /* Forms */
 .button,
 button,
@@ -1301,71 +930,6 @@ input[type="submit"]:focus {
   background: #111;
   outline: thin dotted;
   outline-offset: -4px;
-}
-
-/* non-latin */
-.button:lang(zh-cmn-Hant-HK),
-button:lang(zh-cmn-Hant-HK),
-input[type="button"]:lang(zh-cmn-Hant-HK),
-input[type="reset"]:lang(zh-cmn-Hant-HK),
-input[type="submit"]:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.button:lang(zh-cmn-Hant-TW),
-button:lang(zh-cmn-Hant-TW),
-input[type="button"]:lang(zh-cmn-Hant-TW),
-input[type="reset"]:lang(zh-cmn-Hant-TW),
-input[type="submit"]:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.button:lang(zh-cmn-Hans-CN),
-button:lang(zh-cmn-Hans-CN),
-input[type="button"]:lang(zh-cmn-Hans-CN),
-input[type="reset"]:lang(zh-cmn-Hans-CN),
-input[type="submit"]:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.button:lang(he-IL),
-button:lang(he-IL),
-input[type="button"]:lang(he-IL),
-input[type="reset"]:lang(he-IL),
-input[type="submit"]:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.button:lang(ja),
-button:lang(ja),
-input[type="button"]:lang(ja),
-input[type="reset"]:lang(ja),
-input[type="submit"]:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.button:lang(ko-KR),
-button:lang(ko-KR),
-input[type="button"]:lang(ko-KR),
-input[type="reset"]:lang(ko-KR),
-input[type="submit"]:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.button:lang(th),
-button:lang(th),
-input[type="button"]:lang(th),
-input[type="reset"]:lang(th),
-input[type="submit"]:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.button:lang(vi),
-button:lang(vi),
-input[type="button"]:lang(vi),
-input[type="reset"]:lang(vi),
-input[type="submit"]:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 input[type="text"],
@@ -1790,97 +1354,17 @@ body.page .main-navigation {
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a::before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a::before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(gu)::before {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(gu)::before {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(ja)::before {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(ja)::before {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu,
@@ -1973,70 +1457,10 @@ body.page .main-navigation {
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a::before,
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a::before,
 .main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a::before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(gu)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(gu)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(gu)::before {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(he-IL)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(he-IL)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(ja)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(ja)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(ja)::before {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(kr-KR)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(kr-KR)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu .sub-menu > li > a:lang(th)::before,
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu .sub-menu > li > a:lang(th)::before,
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu .sub-menu > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .main-navigation .main-menu > .menu-item-has-children:not(.off-canvas):hover > .sub-menu {
@@ -2401,46 +1825,6 @@ body.page .main-navigation {
   position: relative;
   margin: 0 -0.35em;
   top: -1px;
-}
-
-.comment-navigation .nav-previous:lang(zh-cmn-Hant-HK),
-.comment-navigation .nav-next:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(zh-cmn-Hant-TW),
-.comment-navigation .nav-next:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(zh-cmn-Hans-CN),
-.comment-navigation .nav-next:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(he-IL),
-.comment-navigation .nav-next:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(ja),
-.comment-navigation .nav-next:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(ko-KR),
-.comment-navigation .nav-next:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(th),
-.comment-navigation .nav-next:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.comment-navigation .nav-previous:lang(vi),
-.comment-navigation .nav-next:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .comment-navigation .nav-next {
@@ -3527,86 +2911,6 @@ body.page .main-navigation {
   font-weight: 500;
 }
 
-.comment-list .pingback .comment-body .comment-edit-link:lang(zh-cmn-Hant-HK),
-.comment-list .trackback .comment-body .comment-edit-link:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(zh-cmn-Hant-TW),
-.comment-list .trackback .comment-body .comment-edit-link:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(zh-cmn-Hans-CN),
-.comment-list .trackback .comment-body .comment-edit-link:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(he-IL),
-.comment-list .trackback .comment-body .comment-edit-link:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(ja),
-.comment-list .trackback .comment-body .comment-edit-link:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(ko-KR),
-.comment-list .trackback .comment-body .comment-edit-link:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(th),
-.comment-list .trackback .comment-body .comment-edit-link:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.comment-list .pingback .comment-body .comment-edit-link:lang(vi),
-.comment-list .trackback .comment-body .comment-edit-link:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(zh-cmn-Hant-HK),
-.comment-list .trackback .comment-body:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(zh-cmn-Hant-TW),
-.comment-list .trackback .comment-body:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(zh-cmn-Hans-CN),
-.comment-list .trackback .comment-body:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(he-IL),
-.comment-list .trackback .comment-body:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(ja),
-.comment-list .trackback .comment-body:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(ko-KR),
-.comment-list .trackback .comment-body:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(th),
-.comment-list .trackback .comment-body:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.comment-list .pingback .comment-body:lang(vi),
-.comment-list .trackback .comment-body:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 #respond + .comment-reply {
   display: none;
 }
@@ -3824,46 +3128,6 @@ body.page .main-navigation {
   color: #767676;
 }
 
-.comment-form .comment-notes:lang(zh-cmn-Hant-HK),
-.comment-form label:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-form .comment-notes:lang(zh-cmn-Hant-TW),
-.comment-form label:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-form .comment-notes:lang(zh-cmn-Hans-CN),
-.comment-form label:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.comment-form .comment-notes:lang(he-IL),
-.comment-form label:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.comment-form .comment-notes:lang(ja),
-.comment-form label:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.comment-form .comment-notes:lang(ko-KR),
-.comment-form label:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.comment-form .comment-notes:lang(th),
-.comment-form label:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.comment-form .comment-notes:lang(vi),
-.comment-form label:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 @media only screen and (min-width: 768px) {
   .comment-form .comment-form-author,
   .comment-form .comment-form-email {
@@ -4070,94 +3334,6 @@ body.page .main-navigation {
   margin-bottom: 0.5rem;
 }
 
-.widget_archive ul li:lang(zh-cmn-Hant-HK),
-.widget_categories ul li:lang(zh-cmn-Hant-HK),
-.widget_meta ul li:lang(zh-cmn-Hant-HK),
-.widget_nav_menu ul li:lang(zh-cmn-Hant-HK),
-.widget_pages ul li:lang(zh-cmn-Hant-HK),
-.widget_recent_comments ul li:lang(zh-cmn-Hant-HK),
-.widget_recent_entries ul li:lang(zh-cmn-Hant-HK),
-.widget_rss ul li:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_archive ul li:lang(zh-cmn-Hant-TW),
-.widget_categories ul li:lang(zh-cmn-Hant-TW),
-.widget_meta ul li:lang(zh-cmn-Hant-TW),
-.widget_nav_menu ul li:lang(zh-cmn-Hant-TW),
-.widget_pages ul li:lang(zh-cmn-Hant-TW),
-.widget_recent_comments ul li:lang(zh-cmn-Hant-TW),
-.widget_recent_entries ul li:lang(zh-cmn-Hant-TW),
-.widget_rss ul li:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_archive ul li:lang(zh-cmn-Hans-CN),
-.widget_categories ul li:lang(zh-cmn-Hans-CN),
-.widget_meta ul li:lang(zh-cmn-Hans-CN),
-.widget_nav_menu ul li:lang(zh-cmn-Hans-CN),
-.widget_pages ul li:lang(zh-cmn-Hans-CN),
-.widget_recent_comments ul li:lang(zh-cmn-Hans-CN),
-.widget_recent_entries ul li:lang(zh-cmn-Hans-CN),
-.widget_rss ul li:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_archive ul li:lang(he-IL),
-.widget_categories ul li:lang(he-IL),
-.widget_meta ul li:lang(he-IL),
-.widget_nav_menu ul li:lang(he-IL),
-.widget_pages ul li:lang(he-IL),
-.widget_recent_comments ul li:lang(he-IL),
-.widget_recent_entries ul li:lang(he-IL),
-.widget_rss ul li:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.widget_archive ul li:lang(ja),
-.widget_categories ul li:lang(ja),
-.widget_meta ul li:lang(ja),
-.widget_nav_menu ul li:lang(ja),
-.widget_pages ul li:lang(ja),
-.widget_recent_comments ul li:lang(ja),
-.widget_recent_entries ul li:lang(ja),
-.widget_rss ul li:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.widget_archive ul li:lang(ko-KR),
-.widget_categories ul li:lang(ko-KR),
-.widget_meta ul li:lang(ko-KR),
-.widget_nav_menu ul li:lang(ko-KR),
-.widget_pages ul li:lang(ko-KR),
-.widget_recent_comments ul li:lang(ko-KR),
-.widget_recent_entries ul li:lang(ko-KR),
-.widget_rss ul li:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.widget_archive ul li:lang(th),
-.widget_categories ul li:lang(th),
-.widget_meta ul li:lang(th),
-.widget_nav_menu ul li:lang(th),
-.widget_pages ul li:lang(th),
-.widget_recent_comments ul li:lang(th),
-.widget_recent_entries ul li:lang(th),
-.widget_rss ul li:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.widget_archive ul li:lang(vi),
-.widget_categories ul li:lang(vi),
-.widget_meta ul li:lang(vi),
-.widget_nav_menu ul li:lang(vi),
-.widget_pages ul li:lang(vi),
-.widget_recent_comments ul li:lang(vi),
-.widget_recent_entries ul li:lang(vi),
-.widget_rss ul li:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .widget_archive ul ul,
 .widget_categories ul ul,
 .widget_meta ul ul,
@@ -4177,157 +3353,15 @@ body.page .main-navigation {
 .widget_recent_comments ul ul > li > a::before,
 .widget_recent_entries ul ul > li > a::before,
 .widget_rss ul ul > li > a::before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
 }
 
-.widget_archive ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_categories ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_meta ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_nav_menu ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_pages ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_recent_comments ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_recent_entries ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before,
-.widget_rss ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.widget_archive ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_categories ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_meta ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_nav_menu ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_pages ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_recent_comments ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_recent_entries ul ul > li > a:lang(zh-cmn-Hant-HK)::before,
-.widget_rss ul ul > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.widget_archive ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_categories ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_meta ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_nav_menu ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_pages ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_recent_comments ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_recent_entries ul ul > li > a:lang(zh-cmn-Hant-TW)::before,
-.widget_rss ul ul > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.widget_archive ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_categories ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_meta ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_nav_menu ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_pages ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_recent_comments ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_recent_entries ul ul > li > a:lang(zh-cmn-Hans-CN)::before,
-.widget_rss ul ul > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.widget_archive ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_categories ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_meta ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_nav_menu ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_pages ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_recent_comments ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_recent_entries ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before,
-.widget_rss ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.widget_archive ul ul > li > a:lang(gu)::before,
-.widget_categories ul ul > li > a:lang(gu)::before,
-.widget_meta ul ul > li > a:lang(gu)::before,
-.widget_nav_menu ul ul > li > a:lang(gu)::before,
-.widget_pages ul ul > li > a:lang(gu)::before,
-.widget_recent_comments ul ul > li > a:lang(gu)::before,
-.widget_recent_entries ul ul > li > a:lang(gu)::before,
-.widget_rss ul ul > li > a:lang(gu)::before {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.widget_archive ul ul > li > a:lang(he-IL)::before,
-.widget_categories ul ul > li > a:lang(he-IL)::before,
-.widget_meta ul ul > li > a:lang(he-IL)::before,
-.widget_nav_menu ul ul > li > a:lang(he-IL)::before,
-.widget_pages ul ul > li > a:lang(he-IL)::before,
-.widget_recent_comments ul ul > li > a:lang(he-IL)::before,
-.widget_recent_entries ul ul > li > a:lang(he-IL)::before,
-.widget_rss ul ul > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.widget_archive ul ul > li > a:lang(ja)::before,
-.widget_categories ul ul > li > a:lang(ja)::before,
-.widget_meta ul ul > li > a:lang(ja)::before,
-.widget_nav_menu ul ul > li > a:lang(ja)::before,
-.widget_pages ul ul > li > a:lang(ja)::before,
-.widget_recent_comments ul ul > li > a:lang(ja)::before,
-.widget_recent_entries ul ul > li > a:lang(ja)::before,
-.widget_rss ul ul > li > a:lang(ja)::before {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.widget_archive ul ul > li > a:lang(kr-KR)::before,
-.widget_categories ul ul > li > a:lang(kr-KR)::before,
-.widget_meta ul ul > li > a:lang(kr-KR)::before,
-.widget_nav_menu ul ul > li > a:lang(kr-KR)::before,
-.widget_pages ul ul > li > a:lang(kr-KR)::before,
-.widget_recent_comments ul ul > li > a:lang(kr-KR)::before,
-.widget_recent_entries ul ul > li > a:lang(kr-KR)::before,
-.widget_rss ul ul > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.widget_archive ul ul > li > a:lang(th)::before,
-.widget_categories ul ul > li > a:lang(th)::before,
-.widget_meta ul ul > li > a:lang(th)::before,
-.widget_nav_menu ul ul > li > a:lang(th)::before,
-.widget_pages ul ul > li > a:lang(th)::before,
-.widget_recent_comments ul ul > li > a:lang(th)::before,
-.widget_recent_entries ul ul > li > a:lang(th)::before,
-.widget_rss ul ul > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
-}
-
 .widget_tag_cloud .tagcloud {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
-}
-
-.widget_tag_cloud .tagcloud:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.widget_tag_cloud .tagcloud:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .widget_search .search-field {
@@ -4594,38 +3628,6 @@ body.page .main-navigation {
   outline-offset: -4px;
 }
 
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-button .wp-block-button__link:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .entry .entry-content .wp-block-button:not(.is-style-squared) .wp-block-button__link {
   border-radius: 5px;
 }
@@ -4688,52 +3690,9 @@ body.page .main-navigation {
   text-decoration: none;
 }
 
-.entry .entry-content .wp-block-archives li:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-categories li:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-latest-posts li:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-categories li:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-latest-posts li:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-categories li:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-latest-posts li:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(he-IL),
-.entry .entry-content .wp-block-categories li:lang(he-IL),
-.entry .entry-content .wp-block-latest-posts li:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(ja),
-.entry .entry-content .wp-block-categories li:lang(ja),
-.entry .entry-content .wp-block-latest-posts li:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(ko-KR),
-.entry .entry-content .wp-block-categories li:lang(ko-KR),
-.entry .entry-content .wp-block-latest-posts li:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(th),
-.entry .entry-content .wp-block-categories li:lang(th),
-.entry .entry-content .wp-block-latest-posts li:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-archives li:lang(vi),
-.entry .entry-content .wp-block-categories li:lang(vi),
-.entry .entry-content .wp-block-latest-posts li:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
+.entry .entry-content .wp-block-archives.aligncenter,
+.entry .entry-content .wp-block-categories.aligncenter {
+  text-align: center;
 }
 
 .entry .entry-content .wp-block-categories ul {
@@ -4750,50 +3709,10 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-categories ul > li > a::before {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hant-HK)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hant-TW)::before {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(zh-cmn-Hans-CN)::before {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(gu)::before {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(he-IL)::before {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(ja)::before {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(kr-KR)::before {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.entry .entry-content .wp-block-categories ul > li > a:lang(th)::before {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .entry .entry-content .wp-block-latest-posts.is-grid li {
@@ -4821,49 +3740,9 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-verse {
-  font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-size: 22px;
   line-height: 1.8;
-}
-
-.entry .entry-content .wp-block-verse:lang(ar, ary, azb, ckb, fa-IR, haz, ps) {
-  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(zh-cmn-Hant-HK) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(zh-cmn-Hant-TW) {
-  font-family: "Noto Serif CJK TC", "MingLiU", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(zh-cmn-Hans-CN) {
-  font-family: "STFangSong", "FangSong", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(bn-BD, hi-IN, mr, ne-NP) {
-  font-family: "Noto Serif Devanagari", "Kokila", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(gu) {
-  font-family: "Noto Serif Gujarati", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(he-IL) {
-  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(ja) {
-  font-family: "Noto Serif CJK JP", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(kr-KR) {
-  font-family: "Noto Serif CJK KR", "Batang", serif;
-}
-
-.entry .entry-content .wp-block-verse:lang(th) {
-  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .entry .entry-content .has-drop-cap:not(:focus):first-letter {
@@ -4872,38 +3751,6 @@ body.page .main-navigation {
   line-height: 1;
   font-weight: bold;
   margin: 0 0 0 0.25em;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .has-drop-cap:not(:focus):first-letter:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .entry .entry-content .wp-block-pullquote {
@@ -4918,6 +3765,7 @@ body.page .main-navigation {
   margin-top: calc(4 * 1rem);
   margin-bottom: calc(4.33 * 1rem);
   margin-left: 0;
+  padding-right: 0;
 }
 
 .entry .entry-content .wp-block-pullquote p {
@@ -4951,48 +3799,20 @@ body.page .main-navigation {
   font-size: calc(1rem / (1.25 * 1.125));
 }
 
-.entry .entry-content .wp-block-pullquote cite:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-pullquote cite:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .entry .entry-content .wp-block-pullquote.alignleft, .entry .entry-content .wp-block-pullquote.alignright {
   width: 100%;
   padding: 0;
 }
 
 .entry .entry-content .wp-block-pullquote.alignleft blockquote, .entry .entry-content .wp-block-pullquote.alignright blockquote {
-  margin-right: 0;
+  margin: 1rem 0;
   padding: 0;
   text-align: right;
   max-width: 100%;
+}
+
+.entry .entry-content .wp-block-pullquote.alignleft blockquote p:first-child, .entry .entry-content .wp-block-pullquote.alignright blockquote p:first-child {
+  margin-top: 0;
 }
 
 .entry .entry-content .wp-block-pullquote.is-style-solid-color {
@@ -5030,10 +3850,11 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
-  max-width: calc(100% - (2 * 1rem));
+  max-width: 100%;
   color: #fff;
   padding-right: 0;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote.has-text-color p,
@@ -5045,6 +3866,12 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-pullquote.is-style-solid-color blockquote {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-pullquote.is-style-solid-color.alignright, .entry .entry-content .wp-block-pullquote.is-style-solid-color.alignleft {
+    padding: 1rem calc(2 * 1rem);
   }
 }
 
@@ -5152,10 +3979,6 @@ body.page .main-navigation {
   line-height: 1.25;
   padding: 0;
   color: #fff;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -5170,78 +3993,6 @@ body.page .main-navigation {
   }
 }
 
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-cover-image h2:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-cover h2:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-cover-image h2:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-cover h2:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-cover-image h2:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-cover h2:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(he-IL),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(he-IL),
-.entry .entry-content .wp-block-cover-image h2:lang(he-IL),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(he-IL),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(he-IL),
-.entry .entry-content .wp-block-cover h2:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(ja),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(ja),
-.entry .entry-content .wp-block-cover-image h2:lang(ja),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(ja),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(ja),
-.entry .entry-content .wp-block-cover h2:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(ko-KR),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(ko-KR),
-.entry .entry-content .wp-block-cover-image h2:lang(ko-KR),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(ko-KR),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(ko-KR),
-.entry .entry-content .wp-block-cover h2:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(th),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(th),
-.entry .entry-content .wp-block-cover-image h2:lang(th),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(th),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(th),
-.entry .entry-content .wp-block-cover h2:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text:lang(vi),
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text:lang(vi),
-.entry .entry-content .wp-block-cover-image h2:lang(vi),
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text:lang(vi),
-.entry .entry-content .wp-block-cover .wp-block-cover-text:lang(vi),
-.entry .entry-content .wp-block-cover h2:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
 .entry .entry-content .wp-block-cover.alignleft,
 .entry .entry-content .wp-block-cover.alignright {
@@ -5252,7 +4003,7 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
   .entry .entry-content .wp-block-cover.alignleft,
   .entry .entry-content .wp-block-cover.alignright {
-    padding: 1rem;
+    padding: 1rem calc(2 * 1rem);
   }
 }
 
@@ -5304,6 +4055,10 @@ body.page .main-navigation {
   margin-bottom: 16px;
 }
 
+.entry .entry-content .wp-block-gallery figcaption a {
+  color: #fff;
+}
+
 .entry .entry-content .wp-block-audio figcaption,
 .entry .entry-content .wp-block-video figcaption,
 .entry .entry-content .wp-block-image figcaption,
@@ -5315,70 +4070,6 @@ body.page .main-navigation {
   margin: 0;
   padding: 0.5rem;
   text-align: center;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-video figcaption:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-image figcaption:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(zh-cmn-Hant-HK),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-video figcaption:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-image figcaption:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(zh-cmn-Hant-TW),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-video figcaption:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-image figcaption:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(zh-cmn-Hans-CN),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(he-IL),
-.entry .entry-content .wp-block-video figcaption:lang(he-IL),
-.entry .entry-content .wp-block-image figcaption:lang(he-IL),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(he-IL),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(ja),
-.entry .entry-content .wp-block-video figcaption:lang(ja),
-.entry .entry-content .wp-block-image figcaption:lang(ja),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(ja),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(ko-KR),
-.entry .entry-content .wp-block-video figcaption:lang(ko-KR),
-.entry .entry-content .wp-block-image figcaption:lang(ko-KR),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(ko-KR),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(th),
-.entry .entry-content .wp-block-video figcaption:lang(th),
-.entry .entry-content .wp-block-image figcaption:lang(th),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(th),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-audio figcaption:lang(vi),
-.entry .entry-content .wp-block-video figcaption:lang(vi),
-.entry .entry-content .wp-block-image figcaption:lang(vi),
-.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption:lang(vi),
-.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .entry .entry-content .wp-block-separator,
@@ -5499,38 +4190,6 @@ body.page .main-navigation {
   outline-offset: -4px;
 }
 
-.entry .entry-content .wp-block-file:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-file:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 .entry .entry-content .wp-block-code {
   border-radius: 0;
 }
@@ -5544,6 +4203,12 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-columns.alignfull {
   padding-right: 1rem;
   padding-left: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .entry .entry-content .wp-block-columns {
+    flex-wrap: nowrap;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -5573,38 +4238,6 @@ body.page .main-navigation {
 
 .entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta .wp-block-latest-comments__comment-date {
   font-weight: normal;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment-meta:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .entry .entry-content .wp-block-latest-comments .wp-block-latest-comments__comment,
@@ -5814,39 +4447,6 @@ svg {
   text-align: center;
 }
 
-/* non-latin */
-.wp-caption-text:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.wp-caption-text:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.wp-caption-text:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.wp-caption-text:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.wp-caption-text:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.wp-caption-text:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.wp-caption-text:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.wp-caption-text:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
-}
-
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
@@ -5941,39 +4541,6 @@ svg {
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
-}
-
-/* non-latin */
-.gallery-caption:lang(zh-cmn-Hant-HK) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.gallery-caption:lang(zh-cmn-Hant-TW) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.gallery-caption:lang(zh-cmn-Hans-CN) {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", "STHeiti Light", sans-serif;
-}
-
-.gallery-caption:lang(he-IL) {
-  font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-.gallery-caption:lang(ja) {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", Meiryo, "Noto Sans CJK JP", sans-serif;
-}
-
-.gallery-caption:lang(ko-KR) {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-.gallery-caption:lang(th) {
-  font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
-}
-
-.gallery-caption:lang(vi) {
-  font-family: "Libre Franklin", sans-serif;
 }
 
 .gallery-item > div > a {
