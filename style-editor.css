@@ -18,7 +18,6 @@ Twenty Nineteen Editor Styles
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
-/* Fallback for non-latin fonts */
 /* Calculates maximum width for post content */
 /* Nested sub-menu padding: 10 levels deep */
 /** === Editor Frame === */
@@ -712,6 +711,46 @@ ul.wp-block-archives li ul,
   font-weight: normal;
   content: "– " counters(submenu, "– ", none);
   counter-increment: submenu;
+}
+
+.wp-block-categories ul ul > li > a:lang(ar, ary, azb, ckb, fa-IR, haz, ps)::before {
+  font-family: "Noto Naskh Arabic", "Arabic Typesetting", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-HK)::before {
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hant-TW)::before {
+  font-family: "Noto Serif CJK TC", "MingLiU", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(zh-cmn-Hans-CN)::before {
+  font-family: "STFangSong", "FangSong", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(bn-BD, hi-IN, mr, ne-NP)::before {
+  font-family: "Noto Serif Devanagari", "Kokila", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(gu)::before {
+  font-family: "Noto Serif Gujarati", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(he-IL)::before {
+  font-family: "Noto Serif Hebrew", "FrankRuehl", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(ja)::before {
+  font-family: "Noto Serif CJK JP", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(kr-KR)::before {
+  font-family: "Noto Serif CJK KR", "Batang", serif;
+}
+
+.wp-block-categories ul ul > li > a:lang(th)::before {
+  font-family: "Noto Serif Thai", "Angsana New", serif;
 }
 
 .wp-block-categories li ul {
