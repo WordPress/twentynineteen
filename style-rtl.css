@@ -3658,7 +3658,7 @@ body.page .main-navigation {
   border-color: #111;
 }
 
-.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover:not(.has-text-color) {
+.entry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover:not(.has-background) {
   color: #111;
 }
 
