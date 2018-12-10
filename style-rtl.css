@@ -2076,8 +2076,6 @@ body.page .main-navigation {
 }
 
 .site-header.featured-image {
-  /* Hide overflow for overflowing featured image */
-  overflow: hidden;
   /* Need relative positioning to properly align layers. */
   position: relative;
   /* Add text shadow to text, to increase readability. */
