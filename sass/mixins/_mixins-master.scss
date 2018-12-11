@@ -114,24 +114,13 @@
 	}
 }
 
-/* Body font declaration, including non-latin fallbacks */
-@mixin font-body {
-	font-family: $font__body;
+/* Add font fallback to font family declarations */
+@mixin font-family( $font_family: $font__body ) {
+	font-family: $font_family;
 
-	@each $lang, $ff_body in $fonts__body {
+	@each $lang, $font__fallback in $font__fallbacks {
 		&:lang(#{$lang}) {
-			font-family: unquote($ff_body);
-		}
-	}
-}
-
-/* Heading font declaration, including non-latin fallbacks */
-@mixin font-heading {
-	font-family: $font__heading;
-
-	@each $lang, $ff_heading in $fonts__heading {
-		&:lang(#{$lang}) {
-			font-family: unquote($ff_heading);
+			font-family: unquote( $font__fallback );
 		}
 	}
 }
