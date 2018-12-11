@@ -116,22 +116,22 @@
 
 /* Body font declaration, including non-latin fallbacks */
 @mixin font-body {
-	font-family: $font__heading;
+	font-family: $font__body;
 
-	@each $lang, $ff_heading in $fonts__heading {
+	@each $lang, $ff_body in $fonts__body {
 		&:lang(#{$lang}) {
-			font-family: unquote($ff_heading);
+			font-family: unquote($ff_body);
 		}
 	}
 }
 
 /* Heading font declaration, including non-latin fallbacks */
 @mixin font-heading {
-	font-family: $font__body;
+	font-family: $font__heading;
 
-	@each $lang, $ff_body in $fonts__body {
+	@each $lang, $ff_heading in $fonts__heading {
 		&:lang(#{$lang}) {
-			font-family: unquote($ff_body);
+			font-family: unquote($ff_heading);
 		}
 	}
 }
