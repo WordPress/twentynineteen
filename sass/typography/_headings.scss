@@ -25,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font__heading;
+	@include font-family( $font__heading );
 }
 
 .main-navigation,
@@ -53,7 +53,7 @@ h6 {
 }
 
 .page-title {
-	font-family: $font__body;
+	@include font-family( $font__body );
 }
 
 .site-branding,
