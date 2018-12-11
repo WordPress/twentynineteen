@@ -114,4 +114,26 @@
 	}
 }
 
+/* Body font declaration, including non-latin fallbacks */
+@mixin font-body {
+	font-family: $font__heading;
+
+	@each $lang, $ff_heading in $fonts__heading {
+		&:lang(#{$lang}) {
+			font-family: unquote($ff_heading);
+		}
+	}
+}
+
+/* Heading font declaration, including non-latin fallbacks */
+@mixin font-heading {
+	font-family: $font__body;
+
+	@each $lang, $ff_body in $fonts__body {
+		&:lang(#{$lang}) {
+			font-family: unquote($ff_body);
+		}
+	}
+}
+
 @import "utilities";
