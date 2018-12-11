@@ -7,7 +7,3 @@ NOTE: This file is automatically populated with additional styles if the user se
 /** === Includes === */
 
 @import "sass/mixins/mixins-master";
-
-/** === Non-Latin font fallbacks === */
-
-@include non-latin-fonts( '.wp-block' );
