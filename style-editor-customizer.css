@@ -1,11 +1,5 @@
 /*!
-Twenty Nineteen Customizer Styles & Non-latin Font Fallbacks
+Twenty Nineteen Customizer Styles
 
-NOTE: This file is automatically populated with additional styles if the user selects a custom primary color in the customzier.
+NOTE: This file is automatically populated with styles if the user selects a custom primary color in the customzier.
 */
-/** === Includes === */
-/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
- * since its edges can look jagged due to lack of antialiasing. In this case, we are several
- * layers of box-shadow to add the border visually, which will render the border smoother. */
-/* Calculates maximum width for post content */
-/* Nested sub-menu padding: 10 levels deep */
