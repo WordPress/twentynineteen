@@ -1208,7 +1208,7 @@ body.page .main-navigation {
 
 .main-navigation .sub-menu > li > .menu-item-link-return {
   width: 100%;
-  font-size: 1.125em;
+  font-size: 22px;
   font-weight: normal;
   text-align: left;
 }
