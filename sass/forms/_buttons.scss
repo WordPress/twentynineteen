@@ -1,5 +1,5 @@
 .button,
-button,
+button:not(.submenu-expand):not(.menu-item-link-return),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
