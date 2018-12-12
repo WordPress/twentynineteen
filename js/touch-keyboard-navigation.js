@@ -112,7 +112,7 @@
 		currentSubMenu.parentElement.lastElementChild.className += ' expanded-true';
 
 		// Update aria-expanded state
-		toggleAriaExpandedState( currentSubMenu.previousSibling );
+		toggleAriaExpandedState( currentSubMenu );
 	}
 
 	/**
@@ -215,13 +215,13 @@
 
 		document.addEventListener('touchstart', function(event) {
 
-			if ( event.target.matches('a') ) {
+			if ( event.target.matches('.main-navigation a') ) {
 
 				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
 
 				// Open submenu if url is #
 				if ( '#' === url && event.target.nextSibling.matches('.submenu-expand') ) {
-					openSubMenu( event.target );
+					openSubMenu( event.target.nextSibling );
 				}
 			}
 
@@ -230,7 +230,8 @@
 				openSubMenu(event.target);
 
 			// Check if child of .submenu-expand is touched
-			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) && getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
+			} else if ( null != getCurrentParent( event.target, '.submenu-expand' ) &&
+								getCurrentParent( event.target, '.submenu-expand' ).matches( '.submenu-expand' ) ) {
 				openSubMenu( getCurrentParent( event.target, '.submenu-expand' ) );
 
 			// Check if .menu-item-link-return is touched
@@ -254,6 +255,7 @@
 			if ( null != mainNav && hasClass( mainNav, '.main-navigation' ) ) {
 				// Prevent default mouse events
 				event.preventDefault();
+
 			} else if (
 				event.target.matches('.submenu-expand') ||
 				null != getCurrentParent( event.target, '.submenu-expand' ) &&
