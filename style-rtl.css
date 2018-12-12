@@ -1206,6 +1206,13 @@ body.page .main-navigation {
   background: #005177;
 }
 
+.main-navigation .sub-menu > li > .menu-item-link-return {
+  width: 100%;
+  font-size: 1.125em;
+  font-weight: normal;
+  text-align: right;
+}
+
 .main-navigation .sub-menu > li > a:empty {
   display: none;
 }

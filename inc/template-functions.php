@@ -211,10 +211,10 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 		$nav_menu .= '</span>';
 		$nav_menu .= '<ul class="sub-menu hidden-links">';
 		$nav_menu .= '<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1">';
-		$nav_menu .= '<span class="menu-item-link-return">';
+		$nav_menu .= '<button class="menu-item-link-return">';
 		$nav_menu .= twentynineteen_get_icon_svg( 'chevron_left' );
 		$nav_menu .= esc_html__( 'Back', 'twentynineteen' );
-		$nav_menu .= '</span>';
+		$nav_menu .= '</button>';
 		$nav_menu .= '</li>';
 		$nav_menu .= '</ul>';
 		$nav_menu .= '</li>';
@@ -269,7 +269,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		// Inject the keyboard_arrow_left SVG inside the parent nav menu item, and let the item link to the parent item.
 		// @todo Only do this for nested submenus? If on a first-level submenu, then really the link could be "#" since the desire is to remove the target entirely.
 		$link = sprintf(
-			'<span class="menu-item-link-return" tabindex="-1">%s',
+			'<button class="menu-item-link-return" tabindex="-1">%s',
 			twentynineteen_get_icon_svg( 'chevron_left', 24 )
 		);
 
@@ -284,7 +284,7 @@ function twentynineteen_add_dropdown_icons( $output, $item, $depth, $args ) {
 		// replace closing </a> with </span>
 		$output = preg_replace(
 			'#</a>#i',
-			'</span>',
+			'</button>',
 			$output,
 			1 // Limit.
 		);
