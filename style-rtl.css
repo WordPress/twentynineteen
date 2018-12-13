@@ -884,7 +884,7 @@ table th {
 
 /* Forms */
 .button,
-button:not(.submenu-expand):not(.menu-item-link-return),
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -905,7 +905,7 @@ input[type="submit"] {
 }
 
 .button:hover,
-button:not(.submenu-expand):not(.menu-item-link-return):hover,
+button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -914,7 +914,7 @@ input[type="submit"]:hover {
 }
 
 .button:visited,
-button:not(.submenu-expand):not(.menu-item-link-return):visited,
+button:visited,
 input[type="button"]:visited,
 input[type="reset"]:visited,
 input[type="submit"]:visited {
@@ -923,7 +923,7 @@ input[type="submit"]:visited {
 }
 
 .button:focus,
-button:not(.submenu-expand):not(.menu-item-link-return):focus,
+button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
