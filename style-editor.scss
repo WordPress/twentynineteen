@@ -766,7 +766,7 @@ ul.wp-block-archives,
 	}
 }
 
-/* Make sure our non-latin font overrides don't overwrite the iconfont used in the classic editor toolbar */
+/* Make sure our non-latin font overrides don't overwrite the iconfont used in the Classic Editor toolbar */
 .wp-block[data-type="core/freeform"] .mce-btn i {
 	font-family: dashicons !important;
 }
