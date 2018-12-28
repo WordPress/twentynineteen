@@ -117,8 +117,15 @@
 
 		// Adds the necessary UI to operate the menu.
 		var visibleList  = container.parentNode.querySelector('.main-menu[id]');
-		var hiddenList   = visibleList.parentNode.nextElementSibling.querySelector('.hidden-links');
-		var toggleButton = visibleList.parentNode.nextElementSibling.querySelector('.main-menu-more-toggle');
+
+		var nextElementSibling = visibleList.parentNode.nextElementSibling;
+
+		if ( ! nextElementSibling ) {
+			return;
+		}
+
+		var hiddenList   = nextElementSibling.querySelector('.hidden-links');
+		var toggleButton = nextElementSibling.querySelector('.main-menu-more-toggle');
 
 		if ( isOverflowingNavivation( visibleList, toggleButton, container ) ) {
 
