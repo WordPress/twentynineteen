@@ -1,5 +1,21 @@
 # Twenty Nineteen
 
+:warning: This repository will be archived in early 2019. All new issues and PRs should be submitted to Trac instead: 
+
+https://core.trac.wordpress.org/newticket
+
+Twenty Nineteen issues appear under the "Bundled Theme" component on Trac:
+
+https://core.trac.wordpress.org/query?status=!closed&component=Bundled+Theme
+
+New PRs should be submitted as patches to Twenty Nineteen in WordPress core. Instructions for making a patch are here:
+
+https://make.wordpress.org/core/handbook/tutorials/working-with-patches/
+
+When this GitHub repository is archived, unresolved issues will be moved over to Trac. If you have any questions, feel free to ask in the `#core-themes` channel on WordPress.org slack.
+
+--- 
+
 [![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
 
 **Contributors:** the WordPress team  

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Twenty Nineteen Editor Styles
 */
@@ -171,6 +172,13 @@ a:focus {
   text-decoration: underline;
 }
 
+.has-primary-background-color,
+.has-secondary-background-color,
+.has-dark-gray-background-color,
+.has-light-gray-background-color {
+  color: #fff;
+}
+
 .has-primary-background-color p,
 .has-primary-background-color h1,
 .has-primary-background-color h2,
@@ -179,8 +187,46 @@ a:focus {
 .has-primary-background-color h5,
 .has-primary-background-color h6,
 .has-primary-background-color a,
-.has-primary-background-color a:hover {
+.has-secondary-background-color p,
+.has-secondary-background-color h1,
+.has-secondary-background-color h2,
+.has-secondary-background-color h3,
+.has-secondary-background-color h4,
+.has-secondary-background-color h5,
+.has-secondary-background-color h6,
+.has-secondary-background-color a,
+.has-dark-gray-background-color p,
+.has-dark-gray-background-color h1,
+.has-dark-gray-background-color h2,
+.has-dark-gray-background-color h3,
+.has-dark-gray-background-color h4,
+.has-dark-gray-background-color h5,
+.has-dark-gray-background-color h6,
+.has-dark-gray-background-color a,
+.has-light-gray-background-color p,
+.has-light-gray-background-color h1,
+.has-light-gray-background-color h2,
+.has-light-gray-background-color h3,
+.has-light-gray-background-color h4,
+.has-light-gray-background-color h5,
+.has-light-gray-background-color h6,
+.has-light-gray-background-color a {
   color: #fff;
+}
+
+.has-white-background-color {
+  color: #111;
+}
+
+.has-white-background-color p,
+.has-white-background-color h1,
+.has-white-background-color h2,
+.has-white-background-color h3,
+.has-white-background-color h4,
+.has-white-background-color h5,
+.has-white-background-color h6,
+.has-white-background-color a {
+  color: #111;
 }
 
 figcaption,
@@ -286,6 +332,20 @@ figcaption,
 .wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover {
   width: 100%;
   max-width: 100%;
+  padding: calc(1.375 * 1rem);
+}
+
+.wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover p,
+.wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/cover"][data-align="left"] .wp-block-cover,
+  .wp-block[data-type="core/cover"][data-align="right"] .wp-block-cover {
+    padding: calc(2.75 * 1rem) calc(2.75 * 1rem) calc(3.125 * 1rem);
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -379,7 +439,8 @@ figcaption,
 
 /** === Pullquote === */
 .wp-block-pullquote {
-  border: none;
+  border-color: transparent;
+  border-width: 2px;
   color: #000;
 }
 
@@ -399,14 +460,20 @@ figcaption,
   max-width: calc( 100% - (2 * 1rem));
 }
 
-@media only screen and (min-width: 768px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    max-width: 80%;
-  }
+.wp-block-pullquote.is-style-solid-color blockquote a,
+.wp-block-pullquote.is-style-solid-color blockquote.has-text-color p,
+.wp-block-pullquote.is-style-solid-color blockquote.has-text-color a {
+  color: inherit;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) {
   color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-pullquote.is-style-solid-color blockquote {
+    max-width: 80%;
+  }
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background-color) {
@@ -464,14 +531,39 @@ figcaption,
   max-width: 50%;
 }
 
-.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote:not(.is-style-solid-color),
-.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote:not(.is-style-solid-color) {
+.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote,
+.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote,
+.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote {
   padding: 0;
 }
 
-.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color,
-.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color {
-  padding: 1em;
+.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote,
+.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote {
+  width: 100%;
+  max-width: 100%;
+  padding: calc(1.375 * 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote,
+  .wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote {
+    padding: calc(2.75 * 1rem) calc(2.75 * 1rem) calc(3.125 * 1rem);
+  }
+}
+
+.wp-block[data-type="core/pullquote"][data-align="left"] blockquote,
+.wp-block[data-type="core/pullquote"][data-align="right"] blockquote {
+  margin: 1rem 0;
+}
+
+.wp-block[data-type="core/pullquote"][data-align="left"] blockquote p:first-child,
+.wp-block[data-type="core/pullquote"][data-align="right"] blockquote p:first-child {
+  margin-top: 0;
 }
 
 .wp-block[data-type="core/pullquote"][data-align="left"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
@@ -554,6 +646,13 @@ figcaption,
   padding-left: calc(2 * 1rem);
 }
 
+/* Remove duplicate rule-line when a separator
+ * is followed by an H1, or H2 */
+.wp-block[data-type="core/separator"] + .wp-block[data-type="core/heading"] h1:before,
+.wp-block[data-type="core/separator"] + .wp-block[data-type="core/heading"] h2:before {
+  display: none;
+}
+
 /** === Latest Posts, Archives, Categories === */
 ul.wp-block-archives,
 .wp-block-categories,
@@ -604,45 +703,15 @@ ul.wp-block-archives li ul,
   padding-top: 0.75rem;
 }
 
-.wp-block-categories ul ul li > a:before {
+.wp-block-categories ul ul {
+  counter-reset: submenu;
+}
+
+.wp-block-categories ul ul > li > a::before {
   font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: normal;
-}
-
-.wp-block-categories ul ul > li > a:before {
-  content: "\2013\00a0";
-}
-
-.wp-block-categories ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
-}
-
-.wp-block-categories ul ul ul ul ul ul ul ul ul ul li > a:before {
-  content: "\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0\2013\00a0";
+  content: "– " counters(submenu, "– ", none);
+  counter-increment: submenu;
 }
 
 .wp-block-categories li ul {
@@ -707,7 +776,6 @@ ul.wp-block-archives li ul,
 
 .wp-block-freeform {
   /* Add style for galleries in classic-editor block */
-  /* Add style for galleries in classic-editor block */
 }
 
 .wp-block-freeform blockquote {
@@ -722,49 +790,7 @@ ul.wp-block-archives li ul,
   color: #767676;
 }
 
-.wp-block-freeform .gallery {
-  display: flex;
-}
-
-.wp-block-freeform .gallery .gallery-item {
-  padding: 0.5rem;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
-}
-
-.wp-block-freeform .gallery .gallery-item .gallery-caption {
-  margin: 0;
-}
-
-.wp-block-freeform .gallery.gallery-columns-2 .gallery-item {
-  max-width: calc( ( 12 / 2 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-3 .gallery-item {
-  max-width: calc( ( 12 / 3 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-4 .gallery-item {
-  max-width: calc( ( 12 / 4 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-5 .gallery-item {
-  max-width: calc( ( 12 / 5 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-6 .gallery-item {
-  max-width: calc( ( 12 / 6 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-7 .gallery-item {
-  max-width: calc( ( 12 / 7 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-8 .gallery-item {
-  max-width: calc( ( 12 / 8 ) * (100% / 12));
-}
-
-.wp-block-freeform .gallery.gallery-columns-9 .gallery-item {
-  max-width: calc( ( 12 / 9 ) * (100% / 12));
+/* Make sure our non-latin font overrides don't overwrite the iconfont used in the classic editor toolbar */
+.wp-block[data-type="core/freeform"] .mce-btn i {
+  font-family: dashicons !important;
 }

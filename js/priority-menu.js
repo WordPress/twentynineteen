@@ -55,9 +55,9 @@
 	 *
 	 * @param {Element} element
 	 */
-	function showElement(element) {
+	function showButton(element) {
 		// classList.remove is not supported in IE11
-		element.className = element.className.replace('is-hidden', '');
+		element.className = element.className.replace('is-empty', '');
 	}
 
 	/**
@@ -65,10 +65,10 @@
 	 *
 	 * @param {Element} element
 	 */
-	function hideElement(element) {
+	function hideButton(element) {
 		// classList.add is not supported in IE11
-		if (!element.classList.contains('is-hidden')) {
-			element.className += ' is-hidden';
+		if (!element.classList.contains('is-empty')) {
+			element.className += ' is-empty';
 		}
 	}
 
@@ -78,7 +78,7 @@
 	 * @returns {number} Available space
 	 */
 	function getAvailableSpace( button, container ) {
-		return button.classList.contains('is-hidden') ? container.offsetWidth : container.offsetWidth - button.offsetWidth - 50;
+		return container.offsetWidth - button.offsetWidth - 22;
 	}
 
 	/**
@@ -97,9 +97,23 @@
 	var breaks       = [];
 
 	/**
+	 * Let’s bail if we our menu doesn't exist
+	 */
+	if ( ! navContainer ) {
+		return;
+	}
+
+	/**
 	 * Refreshes the list item from the menu depending on the menu size
 	 */
 	function updateNavigationMenu( container ) {
+
+		/**
+		 * Let’s bail if our menu is empty
+		 */
+		if ( ! container.parentNode.querySelector('.main-menu[id]') ) {
+			return;
+		}
 
 		// Adds the necessary UI to operate the menu.
 		var visibleList  = container.parentNode.querySelector('.main-menu[id]');
@@ -113,7 +127,7 @@
 			// Move last item to the hidden list
 			prependElement( hiddenList, ! visibleList.lastChild || null === visibleList.lastChild ? visibleList.previousElementSibling : visibleList.lastChild );
 			// Show the toggle button
-			showElement( toggleButton );
+			showButton( toggleButton );
 
 		} else {
 
@@ -126,8 +140,7 @@
 
 			// Hide the dropdown btn if hidden list is empty
 			if (breaks.length < 2) {
-				hideElement( toggleButton );
-				hideElement( hiddenList );
+				hideButton( toggleButton );
 			}
 		}
 
@@ -148,13 +161,24 @@
 		var hasSelectiveRefresh = (
 			'undefined' !== typeof wp &&
 			wp.customize &&
-			wp.customize.selectiveRefresh
+			wp.customize.selectiveRefresh &&
+			wp.customize.navMenusPreview.NavMenuInstancePartial
 		);
 
 		if ( hasSelectiveRefresh ) {
-			// Force a full refresh on partial content renders to re-run updateNavigationMenu()
-			wp.customize.selectiveRefresh.bind('partial-content-rendered', function () {
-				wp.customize.preview.send('refresh');
+			// Re-run our priority+ function on Nav Menu partial refreshes
+			wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function ( placement ) {
+
+				var isNewNavMenu = (
+					placement &&
+					placement.partial.id.includes( 'nav_menu_instance' ) &&
+					'null' !== placement.container[0].parentNode &&
+					placement.container[0].parentNode.classList.contains( 'main-navigation' )
+				);
+
+				if ( isNewNavMenu ) {
+					updateNavigationMenu( placement.container[0].parentNode );
+				}
 			});
         }
 	});
@@ -162,7 +186,7 @@
 	/**
 	 * Run our priority+ function on load
 	 */
-	window.addEventListener('load', function() {
+	window.addEventListener( 'load', function() {
 		updateNavigationMenu( navContainer );
 	});
 
