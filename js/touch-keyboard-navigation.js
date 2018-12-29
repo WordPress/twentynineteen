@@ -287,6 +287,11 @@
 				// Remove Focused elements in sibling div
 				var currentDiv        = getCurrentParent( event.target, 'div', '.main-navigation' );
 				var currentDivSibling = currentDiv.previousElementSibling === null ? currentDiv.nextElementSibling : currentDiv.previousElementSibling;
+
+				if ( ! currentDivSibling ) {
+					return;
+				}
+
 				var focusedElement    = currentDivSibling.querySelector( '.is-focused' );
 				var focusedClass      = 'is-focused';
 				var prevLi            = getCurrentParent( event.target, '.main-navigation > div > ul > li', '.main-navigation' ).previousElementSibling;
