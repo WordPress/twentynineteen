@@ -445,8 +445,8 @@ function twentynineteen_starter_content() {
 						'<div class="wp-block-cover has-background-dim-70 has-background-dim has-left-content alignfull has-undefined-content" style="background-image:url(' . get_theme_file_uri( '/img/placeholder-image-landscape.png' ) . ')"><p class="wp-block-cover-text">Digital strategy for unique small businesses</p></div>',
 						'<!-- /wp:cover -->',
 
-						'<!-- wp:paragraph -->',
-						'<p>' . _x( 'We help startups define a clear brand identity and digital strategy that will carry them through their financing rounds and scale as their business grows. This is an example of a page. Unlike posts, which are displayed on your blog&rsquo;s front page in the order they&rsquo;re published, pages are better suited for more timeless content that you want to be easily accessible, like your About or Contact information. Click the Edit link to make changes to this page or add another page after that one.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- wp:paragraph {"dropCap":true} -->',
+						'<p class="has-drop-cap">' . _x( 'We help startups define a clear brand identity and digital strategy that will carry them through their financing rounds and scale as their business grows. This is an example of a page. Unlike posts, which are displayed on your blog&rsquo;s front page in the order they&rsquo;re published, pages are better suited for more timeless content that you want to be easily accessible, like your About or Contact information. Click the Edit link to make changes to this page or add another page after that one.', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:heading -->',
@@ -489,16 +489,16 @@ function twentynineteen_starter_content() {
 						'<h2>' . _x( 'Case Studies', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 
-						'<!-- wp:pullquote {"align":"full","className":"is-style-solid-color"} -->',
-						'<figure class="wp-block-pullquote alignfull is-style-solid-color"><blockquote><p><strong>' . _x( 'Redifining a Brand', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- wp:pullquote {"align":"wide","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignwide is-style-solid-color"><blockquote><p>' . _x( 'Redifine brands', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( 'We help startups define (or refine) a clear brand identity.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
 						'<!-- /wp:pullquote -->',
 
-						'<!-- wp:pullquote {"customMainColor":"#0e0f0f","align":"full","className":"is-style-solid-color"} -->',
-						'<figure class="wp-block-pullquote alignfull is-style-solid-color" style="background-color:#0e0f0f"><blockquote><p><strong>' . _x( 'Activating new customers', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- wp:pullquote {"customMainColor":"#0e0f0f","align":"wide","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignwide is-style-solid-color" style="background-color:#0e0f0f"><blockquote><p>' . _x( 'Activate new customers', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( 'We help businesses grow.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
 						'<!-- /wp:pullquote -->',
 
-						'<!-- wp:pullquote {"customMainColor":"#e8e8e8","customTextColor":"#18191a","align":"full","className":"is-style-solid-color"} -->',
-						'<figure class="wp-block-pullquote alignfull is-style-solid-color" style="background-color:#e8e8e8"><blockquote class="has-text-color" style="color:#18191a"><p><strong>' . _x( 'Sparking interest on social media', 'Theme starter content', 'twentynineteen' ) . '</strong></p><cite>' . _x( 'We help startups define a clear brand identity and digital strategy that will scale as their business grows.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
+						'<!-- wp:pullquote {"customMainColor":"#ffffff","customTextColor":"#111111","align":"wide","className":"is-style-solid-color"} -->',
+						'<figure class="wp-block-pullquote alignwide is-style-solid-color" style="background-color:#ffffff"><blockquote class="has-text-color" style="color:#111111"><p>' . _x( 'Spark interest on social media', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( 'We help companies communicate with their customers.', 'Theme starter content', 'twentynineteen' ) . '</cite></blockquote></figure>',
 						'<!-- /wp:pullquote -->',
 
 						'<!-- wp:heading -->',
@@ -536,12 +536,12 @@ function twentynineteen_starter_content() {
 						'<h2>' . _x( 'Visit our office', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 
-						'<!-- wp:paragraph {"fontSize":"medium"} -->',
-						'<p class="has-medium-font-size">' . _x( '4324 Buena Vista Drive<br>San Francisco, CA 01234', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( '4324 Buena Vista Drive<br>San Francisco, CA 01234', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
-						'<!-- wp:paragraph {"fontSize":"medium"} -->',
-						'<p class="has-medium-font-size">' . _x( 'Monday–Friday: 8AM-6PM<br>Saturday–Sunday: By Appointment', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Monday–Friday: 8AM-6PM<br>Saturday–Sunday: By Appointment', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 						'</div><!-- /wp:column -->',
 						'</div><!-- /wp:columns -->',
