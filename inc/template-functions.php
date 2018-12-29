@@ -437,12 +437,12 @@ function twentynineteen_starter_content() {
 		'posts' => array(
 			'front' => array(
 				'post_type' => 'page',
-				'post_title' => _x( 'Business site example', 'Theme starter content', 'twentynineteen' ),
+				'post_title' => _x( 'Welcome', 'Theme starter content', 'twentynineteen' ),
 				'post_content' => join(
 					'',
 					array(
 						'<!-- wp:cover {"url":"' . get_theme_file_uri( '/img/placeholder-image-landscape.png' ) . '","align":"full","contentAlign":"left","id":784,"dimRatio":70} -->',
-						'<div class="wp-block-cover has-background-dim-70 has-background-dim has-left-content alignfull has-undefined-content" style="background-image:url(' . get_theme_file_uri( '/img/placeholder-image-landscape.png' ) . ')"><p class="wp-block-cover-text">Digital strategies for unique small businesses</p></div>',
+						'<div class="wp-block-cover has-background-dim-70 has-background-dim has-left-content alignfull has-undefined-content" style="background-image:url(' . get_theme_file_uri( '/img/placeholder-image-landscape.png' ) . ')"><p class="wp-block-cover-text">Digital strategy for unique small businesses</p></div>',
 						'<!-- /wp:cover -->',
 
 						'<!-- wp:paragraph -->',
