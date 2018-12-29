@@ -505,28 +505,29 @@ function twentynineteen_starter_content() {
 						'<h2>' . _x( 'Our Leadership', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 
-						'<!-- wp:gallery {"columns":3,"align":"wide"} -->',
-						'<ul class="wp-block-gallery alignwide columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Ava Young, Founder', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Doug Watson, Creative Director', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Taco, Good Dog', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li></ul>',
+						'<!-- wp:gallery {"columns":3,"align":"full"} -->',
+						'<ul class="wp-block-gallery alignfull columns-3 is-cropped"><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Ava Young, Founder', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Doug Watson, Creative Director', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="' . get_theme_file_uri( '/img/placeholder-image-portrait.png' ) . '" alt="placeholder" data-id="" data-link="" class=""/><figcaption>' . _x( 'Taco, Good Dog', 'Theme starter content', 'twentynineteen' ) . '</figcaption></figure></li></ul>',
 						'<!-- /wp:gallery -->',
 
 						'<!-- wp:pullquote {"align":"wide"} -->',
-						'<figure class="wp-block-pullquote alignwide"><blockquote><p>' . _x( '&rdquo;Ava&rsquo;s team was essential to our online success&rdquo;', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( '&emdash; A Happy Customer', 'Theme starter content', 'twentynineteen' ) . '<br></cite></blockquote></figure>',
+						'<figure class="wp-block-pullquote alignwide"><blockquote><p>' . _x( '&rdquo;Eva&rsquo;s team was essential to our online success&rdquo;', 'Theme starter content', 'twentynineteen' ) . '</p><cite>' . _x( '&mdash; James Paddington, Twice Media', 'Theme starter content', 'twentynineteen' ) . '<br></cite></blockquote></figure>',
 						'<!-- /wp:pullquote -->',
 
 						'<!-- wp:columns {"align":"wide"} -->',
 						'<div class="wp-block-columns alignwide has-2-columns">',
+						
 						'<!-- wp:column -->',
 						'<div class="wp-block-column">',
 						'<!-- wp:heading -->',
 						'<h2>' . _x( 'Get in touch', 'Theme starter content', 'twentynineteen' ) . '</h2>',
 						'<!-- /wp:heading -->',
 						
-						'<!-- wp:paragraph {"fontSize":"medium"} -->',
-						'<p class="has-medium-font-size">' . _x( 'Discover how we can boost your brand with a unique and powerful digital marketing strategy.', 'Theme starter content', 'twentynineteen' ) . '</p>',
+						'<!-- wp:paragraph -->',
+						'<p>' . _x( 'Discover how we can boost your brand with a unique and powerful digital marketing strategy.', 'Theme starter content', 'twentynineteen' ) . '</p>',
 						'<!-- /wp:paragraph -->',
 
 						'<!-- wp:button -->',
-						'<div class="wp-block-button"><a class="wp-block-button__link" href="#">' . _x( 'Contact Us', 'Theme starter content', 'twentynineteen' ) . '</a></div>',
+						'<div class="wp-block-button"><a class="wp-block-button__link" href="#">' . _x( 'Get in touch', 'Theme starter content', 'twentynineteen' ) . '</a></div>',
 						'<!-- /wp:button -->',
 						'</div><!-- /wp:column -->',
 
