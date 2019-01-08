@@ -20,15 +20,15 @@ When this GitHub repository is archived, unresolved issues will be moved over to
 
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.9.6  
-**Tested up to:** WordPress 4.9.8  
+**Tested up to:** WordPress 5.0  
 **Version:** 1.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
-**Tags:** one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+**Tags:** one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 ## Description
 
-Twenty Nineteen is a Gutenberg-ready theme for WordPress.
+Our 2019 default theme is designed to show off the power of the block editor. It features custom styles for all the default blocks, and is built so that what you see in the editor looks like what you'll see on your website. Twenty Nineteen is designed to be adaptable to a wide range of websites, whether you’re running a photo blog, launching a new business, or supporting a non-profit. Featuring ample whitespace and modern sans-serif headlines paired with classic serif body text, it's built to be beautiful on all screen sizes.
 
 ## Installation
 
@@ -63,18 +63,10 @@ normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 **License:** MIT
 Source: https://necolas.github.io/normalize.css/
 
-Bundled header image 1, Copyright XXXXX XXXXX
-**License:** CC0 1.0 Universal (CC0 1.0)
-Source: https://pexels.com/xxxxxxxxxx
-
-Bundled header image 2, Copyright XXXXX XXXXX
-**License:** CC0 1.0 Universal (CC0 1.0)
-Source: https://pexels.com/xxxxxxxxxx
-
 ## Changelog
 
-### X.X
+### 1.0
 
-* Released: XX-XX-XXXX
+* Released: 12-06-2019
 
 Initial release
