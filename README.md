@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
-
 **Theme Name:** Twenty Nineteen
 **Theme URI:** https://wordpress.org/themes/twentynineteen/
 **Contributors:** the WordPress team  

@@ -531,39 +531,14 @@ figcaption,
   max-width: 50%;
 }
 
-.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote,
-.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote,
-.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote {
+.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote:not(.is-style-solid-color),
+.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote:not(.is-style-solid-color) {
   padding: 0;
 }
 
-.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote,
-.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote {
-  width: 100%;
-  max-width: 100%;
-  padding: calc(1.375 * 1rem);
-}
-
-@media only screen and (min-width: 768px) {
-  .wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote,
-  .wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color blockquote {
-    padding: calc(2.75 * 1rem) calc(2.75 * 1rem) calc(3.125 * 1rem);
-  }
-}
-
-.wp-block[data-type="core/pullquote"][data-align="left"] blockquote,
-.wp-block[data-type="core/pullquote"][data-align="right"] blockquote {
-  margin: 1rem 0;
-}
-
-.wp-block[data-type="core/pullquote"][data-align="left"] blockquote p:first-child,
-.wp-block[data-type="core/pullquote"][data-align="right"] blockquote p:first-child {
-  margin-top: 0;
+.wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color,
+.wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit .wp-block-pullquote.is-style-solid-color {
+  padding: 1em;
 }
 
 .wp-block[data-type="core/pullquote"][data-align="left"] blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,

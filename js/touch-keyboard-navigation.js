@@ -215,13 +215,13 @@
 
 		document.addEventListener('touchstart', function(event) {
 
-			if ( event.target.matches('.main-navigation a') ) {
+			if ( event.target.matches('a') ) {
 
 				var url = event.target.getAttribute( 'href' ) ? event.target.getAttribute( 'href' ) : '';
 
 				// Open submenu if url is #
 				if ( '#' === url && event.target.nextSibling.matches('.submenu-expand') ) {
-					openSubMenu( event.target.nextSibling );
+					openSubMenu( event.target );
 				}
 			}
 
