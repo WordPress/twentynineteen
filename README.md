@@ -16,8 +16,6 @@ When this GitHub repository is archived, unresolved issues will be moved over to
 
 --- 
 
-[![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
-
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.9.6  
 **Tested up to:** WordPress 5.0  
