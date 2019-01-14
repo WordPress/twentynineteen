@@ -1,5 +1,5 @@
-**Theme Name:** Twenty Nineteen
-**Theme URI:** https://wordpress.org/themes/twentynineteen/
+**Theme Name:** Twenty Nineteen  
+**Theme URI:** https://wordpress.org/themes/twentynineteen/  
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.9.6  
 **Version:** 1.2  
