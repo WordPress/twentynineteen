@@ -500,34 +500,12 @@ figcaption,
 		width: calc(4 * (100vw / 12));
 		max-width: 50%;
 
-		.wp-block-pullquote {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
-		.wp-block-pullquote {
+		.wp-block-pullquote:not(.is-style-solid-color) {
 			padding: 0;
 		}
 
 		.wp-block-pullquote.is-style-solid-color {
-
-			blockquote {
-				width: 100%;
-				max-width: 100%;
-				padding: calc(1.375 * #{$size__spacing-unit});
-
-				@include media(tablet) {
-					padding: calc(2.75 * #{$size__spacing-unit}) calc(2.75 * #{$size__spacing-unit}) calc(3.125 * #{$size__spacing-unit});
-				}
-			}
-		}
-	}
-
-	blockquote {
-		margin: $size__spacing-unit 0;
-
-		p:first-child {
-			margin-top: 0;
+			padding: 1em;
 		}
 	}
 
@@ -627,14 +605,9 @@ figcaption,
 
 /* Remove duplicate rule-line when a separator
  * is followed by an H1, or H2 */
-.wp-block[data-type="core/separator"] + .wp-block[data-type="core/heading"] {
-
-	h1,
-	h2 {
-		&:before {
-			display: none;
-		}
-	}
+.wp-block[data-type="core/separator"] + .wp-block[data-type="core/heading"] h1:before,
+.wp-block[data-type="core/separator"] + .wp-block[data-type="core/heading"] h2:before {
+	display: none;
 }
 
 /** === Latest Posts, Archives, Categories === */
