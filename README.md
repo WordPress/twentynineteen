@@ -1,27 +1,10 @@
-# Twenty Nineteen
-
-:warning: This repository will be archived in early 2019. All new issues and PRs should be submitted to Trac instead: 
-
-https://core.trac.wordpress.org/newticket
-
-Twenty Nineteen issues appear under the "Bundled Theme" component on Trac:
-
-https://core.trac.wordpress.org/query?status=!closed&component=Bundled+Theme
-
-New PRs should be submitted as patches to Twenty Nineteen in WordPress core. Instructions for making a patch are here:
-
-https://make.wordpress.org/core/handbook/tutorials/working-with-patches/
-
-When this GitHub repository is archived, unresolved issues will be moved over to Trac. If you have any questions, feel free to ask in the `#core-themes` channel on WordPress.org slack.
-
---- 
-
 [![Build Status](https://travis-ci.org/WordPress/twentynineteen.svg?branch=master)](https://travis-ci.org/WordPress/twentynineteen)
 
+**Theme Name:** Twenty Nineteen
+**Theme URI:** https://wordpress.org/themes/twentynineteen/
 **Contributors:** the WordPress team  
 **Requires at least:** WordPress 4.9.6  
-**Tested up to:** WordPress 5.0  
-**Version:** 1.0  
+**Version:** 1.2  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -70,3 +53,15 @@ Source: https://necolas.github.io/normalize.css/
 * Released: 12-06-2019
 
 Initial release
+
+### 1.1
+
+* Released: 12-19-2019
+
+Bug Fixes
+
+### 1.2
+
+* Released: 01-09-2019
+
+Bug Fixes
